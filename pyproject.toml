@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "transcripts18xx"
+version = "0.1.0"
+description = "A Python package to preprocess game transcripts from 18xx.games"
+authors = ["Pascal <mup0117@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

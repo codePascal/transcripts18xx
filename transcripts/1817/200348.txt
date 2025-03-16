@@ -1,0 +1,2813 @@
+ -- Phase 2 (Operating Rounds: 2 | Train Limit: 4 | Available Tiles: Yellow) --
+ Optional rules used in this game:
+  * Volatility Expansion: 13 additional private companies and a modified initial auction
+[19:39] lars773 bids $40 for P14 - Inventor, bank will provide $30
+[19:40] YoloGaming bids $50 for P14 - Inventor, bank will provide $20
+[20:06] PhilipofPhilippi bids $70 for P14 - Inventor, bank will provide $0
+[20:30] SuperHudsonJ3A passes on P14 - Inventor
+[20:32] BulletBill passes on P14 - Inventor
+[21:07] lars773 passes on P14 - Inventor
+[21:07] YoloGaming passes on P14 - Inventor
+[21:07] PhilipofPhilippi wins the auction for P14 - Inventor with a bid of $70
+[21:11] SuperHudsonJ3A bids $30 for P21 - Station Subsidy, bank will provide $40
+[21:12] BulletBill bids $50 for P21 - Station Subsidy, bank will provide $20
+[22:15] lars773 bids $55 for P21 - Station Subsidy, bank will provide $15
+[22:16] YoloGaming bids $60 for P21 - Station Subsidy, bank will provide $10
+[22:16] PhilipofPhilippi passes on P21 - Station Subsidy
+[22:23] SuperHudsonJ3A passes on P21 - Station Subsidy
+[22:25] BulletBill bids $65 for P21 - Station Subsidy, bank will provide $5
+[22:25] lars773 passes on P21 - Station Subsidy
+[22:26] YoloGaming passes on P21 - Station Subsidy
+[22:26] BulletBill wins the auction for P21 - Station Subsidy with a bid of $65
+[22:27] lars773 bids $30 for P2 - Ohio Bridge Company, bank will provide $10
+[22:28] YoloGaming bids $35 for P2 - Ohio Bridge Company, bank will provide $5
+[23:20] PhilipofPhilippi passes on P2 - Ohio Bridge Company
+[23:22] SuperHudsonJ3A passes on P2 - Ohio Bridge Company
+[23:36] BulletBill passes on P2 - Ohio Bridge Company
+[23:40] lars773 passes on P2 - Ohio Bridge Company
+[23:40] YoloGaming wins the auction for P2 - Ohio Bridge Company with a bid of $35
+[23:40] P6 - Minor Mail Contract removed
+[23:45] PhilipofPhilippi bids $0 for P23 - Rural Ranch, bank will provide $60
+[23:45] SuperHudsonJ3A bids $25 for P23 - Rural Ranch, bank will provide $35
+[23:47] BulletBill bids $50 for P23 - Rural Ranch, bank will provide $10
+[23:48] lars773 bids $55 for P23 - Rural Ranch, bank will provide $5
+[00:08] YoloGaming passes on P23 - Rural Ranch
+[00:10] PhilipofPhilippi passes on P23 - Rural Ranch
+[00:10] SuperHudsonJ3A passes on P23 - Rural Ranch
+[00:15] BulletBill passes on P23 - Rural Ranch
+[00:15] lars773 wins the auction for P23 - Rural Ranch with a bid of $55
+[00:15] P12 - Loan Shark removed
+[00:18] YoloGaming bids $40 for P15 - Scrapper, bank will provide $0
+[00:19] PhilipofPhilippi bids $45 for P15 - Scrapper, bank will provide $0
+[00:20] SuperHudsonJ3A passes on P15 - Scrapper
+[00:31] BulletBill passes on P15 - Scrapper
+[00:31] lars773 passes on P15 - Scrapper
+[00:31] YoloGaming bids $50 for P15 - Scrapper, bank will provide $0
+[01:26] PhilipofPhilippi passes on P15 - Scrapper
+[01:26] YoloGaming wins the auction for P15 - Scrapper with a bid of $50
+[01:26] P5 - Coal Mine removed
+[01:27] PhilipofPhilippi bids $0 for P13 - Ponzi Scheme, bank will provide $100
+[01:41] SuperHudsonJ3A bids $45 for P13 - Ponzi Scheme, bank will provide $55
+[02:08] BulletBill bids $50 for P13 - Ponzi Scheme, bank will provide $50
+[02:08] lars773 passes on P13 - Ponzi Scheme
+[02:09] YoloGaming passes on P13 - Ponzi Scheme
+[04:19] PhilipofPhilippi bids $55 for P13 - Ponzi Scheme, bank will provide $45
+[04:20] SuperHudsonJ3A bids $60 for P13 - Ponzi Scheme, bank will provide $40
+[14:35] BulletBill bids $65 for P13 - Ponzi Scheme, bank will provide $35
+[15:05] PhilipofPhilippi bids $70 for P13 - Ponzi Scheme, bank will provide $30
+[15:05] SuperHudsonJ3A passes on P13 - Ponzi Scheme
+[15:07] BulletBill bids $75 for P13 - Ponzi Scheme, bank will provide $25
+[15:18] PhilipofPhilippi bids $80 for P13 - Ponzi Scheme, bank will provide $20
+[15:19] BulletBill passes on P13 - Ponzi Scheme
+[15:19] PhilipofPhilippi wins the auction for P13 - Ponzi Scheme with a bid of $80
+[15:19] P3 - Mountain Engineers removed
+[15:19] P10 - Major Coal Mine removed
+[17:19] SuperHudsonJ3A bids $30 for P19 - Efficient Track, bank will provide $10
+[17:21] BulletBill bids $35 for P19 - Efficient Track, bank will provide $5
+[19:39] lars773 passes on P19 - Efficient Track
+[19:49] YoloGaming passes on P19 - Efficient Track
+[19:49] PhilipofPhilippi bids $40 for P19 - Efficient Track, bank will provide $0
+[20:09] SuperHudsonJ3A passes on P19 - Efficient Track
+[20:21] BulletBill passes on P19 - Efficient Track
+[20:21] PhilipofPhilippi wins the auction for P19 - Efficient Track with a bid of $40
+[20:22] SuperHudsonJ3A bids $50 for P9 - Mail Contract, bank will provide $40
+[20:23] PhilipofPhilippi cannot bid $65 and is out of the auction for P9 - Mail Contract
+[20:23] BulletBill bids $60 for P9 - Mail Contract, bank will provide $30
+[21:57] lars773 bids $65 for P9 - Mail Contract, bank will provide $25
+[22:10] YoloGaming bids $75 for P9 - Mail Contract, bank will provide $15
+[22:13] SuperHudsonJ3A passes on P9 - Mail Contract
+[23:16] BulletBill bids $80 for P9 - Mail Contract, bank will provide $10
+[23:25] lars773 passes on P9 - Mail Contract
+[23:37] YoloGaming passes on P9 - Mail Contract
+[23:37] BulletBill wins the auction for P9 - Mail Contract with a bid of $80
+[23:40] lars773 bids $20 for P1 - Minor Coal Mine, bank will provide $10
+[23:40] YoloGaming bids $25 for P1 - Minor Coal Mine, bank will provide $5
+[23:41] PhilipofPhilippi passes on P1 - Minor Coal Mine
+[23:42] SuperHudsonJ3A passes on P1 - Minor Coal Mine
+[23:43] BulletBill passes on P1 - Minor Coal Mine
+[23:44] lars773 bids $30 for P1 - Minor Coal Mine, bank will provide $0
+[23:45] YoloGaming passes on P1 - Minor Coal Mine
+[23:45] lars773 wins the auction for P1 - Minor Coal Mine with a bid of $30
+[23:45] P8 - Union Bridge Company removed
+[23:45] YoloGaming bids $95 for P11 - Major Mail Contract, bank will provide $25
+[23:45] PhilipofPhilippi cannot bid $100 and is out of the auction for P11 - Major Mail Contract
+[23:48] SuperHudsonJ3A bids $100 for P11 - Major Mail Contract, bank will provide $20
+[23:52] BulletBill bids $105 for P11 - Major Mail Contract, bank will provide $15
+[23:53] lars773 passes on P11 - Major Mail Contract
+[23:55] YoloGaming passes on P11 - Major Mail Contract
+[00:10] SuperHudsonJ3A passes on P11 - Major Mail Contract
+[00:10] BulletBill wins the auction for P11 - Major Mail Contract with a bid of $105
+[00:15] lars773 bids $30 for P18 - Express Track, bank will provide $0
+[00:15] BulletBill cannot bid $35 and is out of the auction for P18 - Express Track
+[00:50] YoloGaming bids $35 for P18 - Express Track, bank will provide $0
+[00:51] PhilipofPhilippi bids $40 for P18 - Express Track, bank will provide $0
+[00:51] SuperHudsonJ3A passes on P18 - Express Track
+[01:33] lars773 passes on P18 - Express Track
+[01:33] YoloGaming passes on P18 - Express Track
+[01:33] PhilipofPhilippi wins the auction for P18 - Express Track with a bid of $40
+[01:33] P20 - Golden Parachute removed
+[01:36] SuperHudsonJ3A bids $20 for P22 - Country Ranch, bank will provide $10
+[01:36] PhilipofPhilippi cannot bid $25 and is out of the auction for P22 - Country Ranch
+[01:36] BulletBill cannot bid $25 and is out of the auction for P22 - Country Ranch
+[01:48] lars773 passes on P22 - Country Ranch
+[01:50] YoloGaming bids $25 for P22 - Country Ranch, bank will provide $5
+[02:36] SuperHudsonJ3A passes on P22 - Country Ranch
+[02:36] YoloGaming wins the auction for P22 - Country Ranch with a bid of $25
+[02:36] P7 - Train Station removed
+[02:37] PhilipofPhilippi bids $0 for P17 - Toledo Industry, bank will provide $40
+[02:37] BulletBill cannot bid $5 and is out of the auction for P17 - Toledo Industry
+[03:12] PhilipofPhilippi cannot bid $30 and is out of the auction for P17 - Toledo Industry
+[03:12] SuperHudsonJ3A bids $25 for P17 - Toledo Industry, bank will provide $15
+[03:59] lars773 bids $30 for P17 - Toledo Industry, bank will provide $10
+[03:59] YoloGaming bids $35 for P17 - Toledo Industry, bank will provide $5
+[05:39] SuperHudsonJ3A bids $40 for P17 - Toledo Industry, bank will provide $0
+[13:39] lars773 bids $55 for P17 - Toledo Industry, bank will provide $0
+[15:00] YoloGaming passes on P17 - Toledo Industry
+[15:06] SuperHudsonJ3A passes on P17 - Toledo Industry
+[15:06] lars773 wins the auction for P17 - Toledo Industry with a bid of $55
+[15:06] YoloGaming has priority deal
+[15:06] -- Stock Round 1 --
+[15:09] YoloGaming auctions ME for $115
+[15:09] ME must choose city for home token
+[15:09] ME places a token on G6 (Cincinnati)
+[15:15] PhilipofPhilippi passes on ME
+[15:44] SuperHudsonJ3A passes on ME
+[17:49] BulletBill passes on ME
+[17:52] lars773 passes on ME
+[17:52] YoloGaming wins bid on ME for $115
+[17:52] YoloGaming pars ME at $55
+[17:52] YoloGaming buys a 100% share of ME from the Treasury for $110
+[17:52] YoloGaming becomes the president of ME
+[17:52] ME floats
+[17:59] P2 - Ohio Bridge Company used for forming ME contributing $40 value
+[17:59] P22 - Country Ranch used for forming ME contributing $30 value
+[17:59] P15 - Scrapper used for forming ME contributing $40 value
+[17:59] ME starts with $5 and 2 shares
+[18:10] PhilipofPhilippi auctions A&S for $100
+[18:10] A&S must choose city for home token
+[18:10] A&S places a token on D7 (Toledo)
+[18:25] SuperHudsonJ3A passes on A&S
+[18:33] BulletBill passes on A&S
+[18:41] lars773 bids $120 for A&S
+[18:46] YoloGaming passes on A&S
+[18:46] PhilipofPhilippi passes on A&S
+[18:46] lars773 wins bid on A&S for $120
+[18:46] lars773 pars A&S at $60
+[18:46] lars773 buys a 100% share of A&S from the Treasury for $120
+[18:46] lars773 becomes the president of A&S
+[18:46] A&S floats
+[18:49] P17 - Toledo Industry used for forming A&S contributing $40 value
+[18:50] P23 - Rural Ranch used for forming A&S contributing $60 value
+[18:50] A&S starts with $20 and 2 shares
+[18:53] SuperHudsonJ3A passes
+[18:58] BulletBill auctions Belt for $120
+[18:58] Belt must choose city for home token
+[18:58] lars773 cannot bid $125 and is out of the auction for Belt
+[18:58] Belt places a token on C22 (Albany)
+[18:59] YoloGaming passes on Belt
+[18:59] PhilipofPhilippi passes on Belt
+[19:02] SuperHudsonJ3A passes on Belt
+[19:02] BulletBill wins bid on Belt for $120
+[19:02] BulletBill pars Belt at $60
+[19:02] BulletBill buys a 100% share of Belt from the Treasury for $120
+[19:02] BulletBill becomes the president of Belt
+[19:02] Belt floats
+[19:06] P11 - Major Mail Contract used for forming Belt contributing $120 value
+[19:06] Belt starts with $0 and 2 shares
+[19:27] lars773 auctions R for $100
+[19:27] R must choose city for home token
+[19:27] R places a token on H9 (Charleston)
+[19:28] YoloGaming passes on R
+[19:28] PhilipofPhilippi bids $105 for R
+[19:28] SuperHudsonJ3A passes on R
+[19:30] BulletBill passes on R
+[19:32] lars773 bids $120 for R
+[19:32] PhilipofPhilippi passes on R
+[19:32] lars773 wins bid on R for $120
+[19:32] lars773 pars R at $60
+[19:32] lars773 buys a 100% share of R from the Treasury for $120
+[19:32] lars773 becomes the president of R
+[19:32] R floats
+[19:32] P1 - Minor Coal Mine used for forming R contributing $30 value
+[19:32] R starts with $90 and 2 shares
+[19:34] YoloGaming auctions H for $135
+[19:34] H must choose city for home token
+[19:34] lars773 cannot bid $140 and is out of the auction for H
+[19:35] H places a token on D9 (Cleveland)
+[22:29] PhilipofPhilippi passes on H
+[22:30] SuperHudsonJ3A passes on H
+[22:31] BulletBill passes on H
+[22:31] YoloGaming wins bid on H for $135
+[22:31] YoloGaming pars H at $65
+[22:31] YoloGaming buys a 100% share of H from the Treasury for $130
+[22:31] YoloGaming becomes the president of H
+[22:31] H floats
+[22:31] H starts with $135 and 2 shares
+[22:32] PhilipofPhilippi auctions UR for $100
+[22:32] UR must choose city for home token
+[22:32] YoloGaming cannot bid $105 and is out of the auction for UR
+[22:32] lars773 cannot bid $105 and is out of the auction for UR
+[22:32] UR places a token on C14 (Buffalo)
+[23:00] SuperHudsonJ3A passes on UR
+[23:05] BulletBill passes on UR
+[23:05] PhilipofPhilippi wins bid on UR for $100
+[23:05] PhilipofPhilippi pars UR at $50
+[23:05] PhilipofPhilippi buys a 100% share of UR from the Treasury for $100
+[23:05] PhilipofPhilippi becomes the president of UR
+[23:05] UR floats
+[01:23] P13 - Ponzi Scheme used for forming UR contributing $100 value
+[01:23] UR starts with $0 and 2 shares
+[01:23] P13 - Ponzi Scheme closes
+[01:25] SuperHudsonJ3A auctions WC for $130
+[01:25] WC must choose city for home token
+[01:25] YoloGaming cannot bid $135 and is out of the auction for WC
+[01:25] lars773 cannot bid $135 and is out of the auction for WC
+[01:25] WC places a token on F19 (Philadelphia)
+[01:27] BulletBill passes on WC
+[01:27] PhilipofPhilippi passes on WC
+[01:27] SuperHudsonJ3A wins bid on WC for $130
+[01:27] SuperHudsonJ3A pars WC at $65
+[01:27] SuperHudsonJ3A buys a 100% share of WC from the Treasury for $130
+[01:27] SuperHudsonJ3A becomes the president of WC
+[01:27] WC floats
+[01:27] WC starts with $130 and 2 shares
+[01:33] BulletBill auctions B&A for $160
+[01:33] B&A must choose city for home token
+[01:33] YoloGaming cannot bid $165 and is out of the auction for B&A
+[01:33] PhilipofPhilippi cannot bid $165 and is out of the auction for B&A
+[01:33] SuperHudsonJ3A cannot bid $165 and is out of the auction for B&A
+[01:33] lars773 cannot bid $165 and is out of the auction for B&A
+[01:33] BulletBill wins bid on B&A for $160
+[01:33] BulletBill pars B&A at $80
+[01:33] BulletBill buys a 100% share of B&A from the Treasury for $160
+[01:33] BulletBill becomes the president of B&A
+[01:33] B&A floats
+[01:33] B&A places a token on F3 (Indianapolis)
+[01:33] P21 - Station Subsidy used for forming B&A contributing $70 value
+[01:33] P9 - Mail Contract used for forming B&A contributing $90 value
+[01:33] B&A starts with $0 and 2 shares
+[02:38] lars773 passes
+[02:39] YoloGaming passes
+[02:40] PhilipofPhilippi auctions SR for $160
+[02:40] SR must choose city for home token
+[02:40] YoloGaming cannot bid $165 and is out of the auction for SR
+[02:40] SuperHudsonJ3A cannot bid $165 and is out of the auction for SR
+[02:40] BulletBill cannot bid $165 and is out of the auction for SR
+[02:40] lars773 cannot bid $165 and is out of the auction for SR
+[02:40] PhilipofPhilippi wins bid on SR for $160
+[02:40] PhilipofPhilippi pars SR at $80
+[02:40] PhilipofPhilippi buys a 100% share of SR from the Treasury for $160
+[02:40] PhilipofPhilippi becomes the president of SR
+[02:40] SR floats
+[02:40] SR places a token on D19 (Scranton)
+[02:40] P14 - Inventor used for forming SR contributing $70 value
+[02:40] P19 - Efficient Track used for forming SR contributing $40 value
+[02:40] P18 - Express Track used for forming SR contributing $30 value
+[02:40] SR starts with $20 and 2 shares
+[13:14] SuperHudsonJ3A auctions Bess for $120
+[13:14] Bess must choose city for home token
+[13:14] YoloGaming cannot bid $125 and is out of the auction for Bess
+[13:14] PhilipofPhilippi cannot bid $125 and is out of the auction for Bess
+[13:14] BulletBill cannot bid $125 and is out of the auction for Bess
+[13:14] lars773 cannot bid $125 and is out of the auction for Bess
+[13:14] SuperHudsonJ3A wins bid on Bess for $120
+[13:14] SuperHudsonJ3A pars Bess at $60
+[13:14] SuperHudsonJ3A buys a 100% share of Bess from the Treasury for $120
+[13:14] SuperHudsonJ3A becomes the president of Bess
+[13:14] Bess floats
+[13:14] Bess starts with $120 and 2 shares
+[13:14] Bess places a token on C8 (Detroit)
+[13:17] BulletBill passes
+[13:18] lars773 passes
+[13:18] YoloGaming passes
+[13:19] PhilipofPhilippi passes
+[13:22] SuperHudsonJ3A passes
+[13:22] BulletBill has priority deal
+[13:22] -- Operating Round 1.1 (of 2) --
+[13:22] BulletBill operates B&A
+[13:44] B&A lays tile #6 with rotation 1 on F3 (Indianapolis)
+[13:45] B&A takes a loan and receives $100
+[13:45] B&A's share price moves left from $80 to $70
+[13:45] B&A passes lay/upgrade track
+[13:45] B&A skips place a token
+[13:45] B&A skips run routes
+[13:45] B&A does not run
+[13:45] B&A's share price moves left from $70 to $65
+[13:45] B&A buys a 2 train for $100 from The Depot
+[13:45] SR collects $20 from P14 - Inventor
+[13:46] B&A passes buy trains
+[13:46] B&A takes a loan and receives $100
+[13:46] B&A's share price moves left from $65 to $60
+[13:46] B&A pays $10 interest for 2 loans
+[13:46] PhilipofPhilippi operates SR
+[16:04] SR spends $15 and lays tile #57 with rotation 1 on D19 (Scranton)
+[16:04] SR lays tile #9 with rotation 1 on D21
+[16:04] SR skips place a token
+[16:04] SR skips run routes
+[16:04] SR does not run
+[16:04] SR's share price moves left from $80 to $70
+[16:04] SR takes a loan and receives $100
+[16:04] SR's share price moves left from $70 to $65
+[16:05] SR takes a loan and receives $100
+[16:05] SR's share price moves left from $65 to $60
+[16:05] SR buys a 2 train for $100 from The Depot
+[16:05] SR buys a 2 train for $100 from The Depot
+[16:05] SR passes buy trains
+[16:05] SR pays $10 interest for 2 loans
+[16:05] YoloGaming operates H
+[16:07] H lays tile #9 with rotation 0 on E8
+[16:08] H spends $20 and lays tile #9 with rotation 0 on F7
+[16:08] H skips place a token
+[16:08] H skips run routes
+[16:08] H does not run
+[16:08] H's share price moves left from $65 to $60
+[16:08] H buys a 2 train for $100 from The Depot
+[16:09] H passes buy trains
+[16:09] H passes take loans
+[16:09] SuperHudsonJ3A operates WC
+[16:10] WC lays tile #5 with rotation 4 on F19 (Philadelphia)
+[16:10] WC spends $20 and lays tile #8 with rotation 1 on F21
+[16:10] WC skips place a token
+[16:10] WC skips run routes
+[16:10] WC does not run
+[16:10] WC's share price moves left from $65 to $60
+[16:10] WC takes a loan and receives $100
+[16:10] WC's share price moves left from $60 to $55
+[16:10] WC takes a loan and receives $100
+[16:10] WC's share price moves left from $55 to $50
+[16:10] WC buys a 2 train for $100 from The Depot
+[16:10] WC buys a 2 train for $100 from The Depot
+[16:10] WC passes buy trains
+[16:10] WC pays $10 interest for 2 loans
+[16:10] WC passes payoff loans
+[16:10] lars773 operates A&S
+[16:11] A&S (P17) spends $20 and lays tile #X00 with rotation 2 on D7 (Toledo)
+[16:11] P17 - Toledo Industry closes
+[16:11] A&S takes a loan and receives $100
+[16:11] A&S's share price moves left from $60 to $55
+[16:11] A&S takes a loan and receives $100
+[16:11] A&S's share price moves left from $55 to $50
+[16:13] A&S spends $20 and lays tile #9 with rotation 1 on D5
+[16:13] A&S skips place a token
+[16:13] A&S skips run routes
+[16:13] A&S does not run
+[16:13] A&S's share price moves left from $50 to $45
+[16:13] A&S buys a 2 train for $100 from The Depot
+[16:14] A&S passes buy trains
+[16:14] A&S pays $10 interest for 2 loans
+[16:14] BulletBill operates Belt
+[16:15] Belt lays tile #57 with rotation 2 on C22 (Albany)
+[16:15] Belt takes a loan and receives $100
+[16:15] Belt's share price moves left from $60 to $55
+[16:15] Belt takes a loan and receives $100
+[16:15] Belt's share price moves left from $55 to $50
+[16:15] Belt spends $20 and lays tile #8 with rotation 0 on D23
+[16:15] Belt skips place a token
+[16:15] Belt skips run routes
+[16:15] Belt does not run
+[16:15] Belt's share price moves left from $50 to $45
+[16:15] Belt buys a 2 train for $100 from The Depot
+[16:15] Belt passes buy trains
+[16:15] Belt pays $10 interest for 2 loans
+[16:15] lars773 operates R
+[16:17] R spends $10 and lays tile #5 with rotation 0 on H9 (Charleston)
+[16:17] R spends $30 and lays tile #8 with rotation 4 on H7
+[16:17] R skips place a token
+[16:17] R skips run routes
+[16:17] R does not run
+[16:17] R's share price moves left from $60 to $55
+[16:18] R takes a loan and receives $100
+[16:18] R's share price moves left from $55 to $50
+[16:18] R buys a 2 train for $100 from The Depot
+[16:18] R passes buy trains
+[16:18] R pays $5 interest for 1 loan
+[16:18] R passes take loans
+[16:18] SuperHudsonJ3A operates Bess
+[16:24] Bess lays tile #8 with rotation 1 on C10
+[16:24] Bess passes lay/upgrade track
+[16:24] Bess skips place a token
+[16:24] Bess skips run routes
+[16:24] Bess does not run
+[16:24] Bess's share price moves left from $60 to $55
+[16:24] Bess takes a loan and receives $100
+[16:24] Bess's share price moves left from $55 to $50
+[16:24] Bess buys a 2 train for $100 from The Depot
+[16:24] Bess buys a 2 train for $100 from The Depot
+[16:25] Bess passes buy trains
+[16:25] Bess pays $5 interest for 1 loan
+[16:25] Bess passes take loans
+[16:25] YoloGaming operates ME
+[16:30] P2 - Ohio Bridge Company builds bridge on G6
+[16:30] ME receives a discount of $10 from P2 - Ohio Bridge Company
+[16:30] ME lays tile #6 with rotation 1 on G6 (Cincinnati)
+[16:31] ME takes a loan and receives $100
+[16:31] ME's share price moves left from $55 to $50
+[16:32] ME passes lay/upgrade track
+[16:32] ME skips place a token
+[16:32] ME skips run routes
+[16:32] ME does not run
+[16:32] ME's share price moves left from $50 to $45
+[16:32] ME buys a 2 train for $100 from The Depot
+[16:32] ME passes buy trains
+[16:32] ME pays $5 interest for 1 loan
+[16:32] ME passes take loans
+[16:32] PhilipofPhilippi operates UR
+[16:32] UR lays tile #57 with rotation 2 on C14 (Buffalo)
+[16:33] UR takes a loan and receives $100
+[16:33] UR's share price moves left from $50 to $45
+[16:33] UR passes lay/upgrade track
+[16:33] UR skips place a token
+[16:33] UR skips run routes
+[16:33] UR does not run
+[16:33] UR's share price moves left from $45 to $40
+[16:33] UR buys a 2 train for $100 from The Depot
+[16:34] UR passes buy trains
+[16:34] UR takes a loan and receives $100
+[16:34] UR's share price moves left from $40 to $0
+[16:34] UR pays $10 interest for 2 loans
+[16:34] -- Event: All 2 trains are exported --
+[16:34] -- Merger and Conversion Round 1.1 (of 2) --
+[16:34] B&A converts from 2 to 5 shares
+[16:34] B&A passes taking loans
+[16:34] B&A acquires 1 token
+[16:35] SR passes convert or merge corporation
+[16:39] H merges with ME at share price $100 receiving companies (P2 - Ohio Bridge Company, P22 - Country Ranch, P15 - Scrapper), loans (1), trains (2), and tokens (1: hexes G6)
+[16:40] H passes taking loans
+[16:40] WC passes convert or merge corporation
+[16:41] R merges with A&S at share price $90 receiving $70, companies (P23 - Rural Ranch), loans (2), trains (2), and tokens (1: hexes D7)
+[16:41] R passes taking loans
+[16:44] Bess converts from 2 to 5 shares
+[16:44] Bess takes a loan and receives $100
+[16:44] Bess's share price moves left from $50 to $45
+[16:44] Bess passes taking loans
+[16:44] Bess pays $50 for 1 token
+[16:50] Belt converts from 2 to 5 shares
+[16:50] Belt passes taking loans
+[16:50] Belt pays $50 for 1 token
+[16:50] -- Acquisition Round 1.1 (of 2) --
+[16:50] UR offered for acquisition
+[16:50] PhilipofPhilippi cannot bid $10 and is out of the auction for UR
+[16:51] SuperHudsonJ3A bids $10 for UR
+[16:58] BulletBill bids $20 for UR
+[18:02] lars773 passes on UR
+[18:03] YoloGaming passes on UR
+[18:06] SuperHudsonJ3A bids $30 for UR
+[18:07] BulletBill bids $40 for UR
+[18:29] SuperHudsonJ3A bids $50 for UR
+[18:29] BulletBill bids $60 for UR
+[18:31] SuperHudsonJ3A passes on UR
+[18:31] BulletBill wins the auction of UR for $60
+[18:31] B&A acquires UR receiving $90, loans (2), trains (2), and , tokens (1: 1 on hexes C14)
+[18:32] B&A passes taking additional loans
+[18:32] UR has 2 outstanding loan, if unpaid will reduce B&A share price
+[18:32] B&A pays off a loan for $100
+[18:32] B&A's share price moves left from $60 to $55
+[18:32] UR settles with shareholders $60 = $30 ($60 to PhilipofPhilippi)
+[18:32] Bess may be offered for sale for $230
+[18:38] SuperHudsonJ3A declines to put Bess up for sale
+[18:38] Belt may be offered for sale for $230
+[18:38] BulletBill declines to put Belt up for sale
+[18:38] WC may be offered for sale for $100
+[18:38] SuperHudsonJ3A declines to put WC up for sale
+[18:38] SR may be offered for sale for $120
+[18:39] PhilipofPhilippi declines to put SR up for sale
+[18:39] B&A may be offered for sale for $280
+[18:40] BulletBill declines to put B&A up for sale
+[18:40] R may be offered for sale for $450
+[18:51] lars773 declines to put R up for sale
+[18:51] H may be offered for sale for $500
+[18:52] YoloGaming declines to put H up for sale
+[18:52] -- Operating Round 1.2 (of 2) --
+[18:52] B&A collects $15 from P9 - Mail Contract
+[18:52] Belt collects $20 from P11 - Major Mail Contract
+[18:52] YoloGaming operates H
+[18:52] H receives a discount of $10 from P2 - Ohio Bridge Company
+[18:52] H (P22) lays tile #8 with rotation 4 on G4
+[18:52] P22 - Country Ranch closes
+[18:52] H adds ranch to G4
+[18:52] H takes a loan and receives $100
+[18:52] H's share price moves left from $100 to $90
+[18:52] H receives a discount of $10 from P2 - Ohio Bridge Company
+[18:52] H spends $20 and lays tile #6 with rotation 1 on H3 (Louisville)
+[18:52] H skips place a token
+[18:52] H runs a 2 train for $60: D9-G6
+[18:52] H runs a 2 train for $60: G6-H3
+[18:53] H pays out $120 = $24 per share ($72 to H, $48 to YoloGaming)
+[18:53] H's share price moves right from $90 to $100
+[18:56] H takes a loan and receives $100
+[18:56] H's share price moves left from $100 to $90
+[18:56] H buys a 2+ train for $100 from The Depot
+[18:56] -- Phase 2+ (Operating Rounds: 2 | Train Limit: 4 | Available Tiles: Yellow) --
+[18:56] H buys a 2+ train for $100 from The Depot
+[18:56] H pays $45 interest for 3 loans
+[18:56] H passes take loans
+[18:56] lars773 operates R
+[19:18] R lays tile #9 with rotation 1 on D3
+[19:18] R passes lay/upgrade track
+[19:18] R skips place a token
+[19:18] R runs a 2 train for $60: D7-C8
+[19:18] R runs a 2 train for $60: D7-D1
+[19:19] R pays out $120 = $24 per share ($72 to R, $48 to lars773)
+[19:19] R's share price moves right from $90 to $100
+[19:19] R buys a 2+ train for $100 from The Depot
+[19:19] R passes buy trains
+[19:19] R pays $45 interest for 3 loans
+[19:19] R passes take loans
+[19:19] PhilipofPhilippi operates SR
+[19:21] SR lays tile #9 with rotation 1 on D17
+[19:21] SR lays tile #8 with rotation 2 on D15
+[19:21] SR skips place a token
+[19:21] SR runs a 2 train for $40: D19-C14
+[19:21] SR runs for $40 and pays half
+[19:21] SR withholds $20
+[19:21] SR pays out $20 = $10 per share ($20 to PhilipofPhilippi)
+[19:21] SR passes buy trains
+[19:21] SR pays $30 interest for 2 loans
+[19:21] BulletBill operates B&A
+[19:24] B&A lays tile #8 with rotation 0 on E2
+[19:24] B&A passes lay/upgrade track
+[19:24] B&A skips place a token
+[19:24] B&A runs a 2 train for $40: C14-D19
+[19:24] B&A runs a 2 train for $50: F3-D1
+[19:25] B&A runs for $90 and pays half
+[19:25] B&A withholds $45
+[19:25] B&A pays out $45 = $9 per share ($27 to B&A, $18 to BulletBill)
+[19:25] B&A passes buy trains
+[19:25] B&A pays $45 interest for 3 loans
+[19:25] B&A passes take loans
+[19:25] SuperHudsonJ3A operates WC
+[19:25] WC spends $20 and lays tile #7 with rotation 1 on G20
+[19:25] WC passes lay/upgrade track
+[19:25] WC skips place a token
+[19:25] WC runs a 2 train for $50: F19-G18
+[19:25] WC runs a 2 train for $60: F19-E22
+[19:25] WC runs for $110 and pays half
+[19:25] WC withholds $55
+[19:25] WC pays out $55 = $27.5 per share ($55 to SuperHudsonJ3A)
+[19:25] WC's share price moves right from $50 to $55
+[19:25] WC buys a 2+ train for $100 from The Depot
+[19:25] WC passes buy trains
+[19:25] WC pays $30 interest for 2 loans
+[19:25] BulletBill operates Belt
+[19:26] Belt lays tile #9 with rotation 2 on B21
+[19:26] Belt passes lay/upgrade track
+[19:26] Belt places a token on E22 (New York)
+[19:26] Belt runs a 2 train for $60: E22-C22
+[19:28] Belt runs for $60 and pays half
+[19:28] Belt withholds $30
+[19:28] Belt pays out $30 = $6 per share ($18 to Belt, $12 to BulletBill)
+[19:28] Belt takes a loan and receives $100
+[19:28] Belt's share price moves left from $45 to $40
+[19:28] Belt takes a loan and receives $100
+[19:28] Belt's share price moves left from $40 to $0
+[19:28] Belt buys a 3 train for $250 from The Depot
+[19:28] SR collects $30 from P14 - Inventor
+[19:28] -- Phase 3 (Operating Rounds: 2 | Train Limit: 4 | Available Tiles: Yellow, Green) --
+[19:28] Belt passes buy trains
+[19:28] Belt takes a loan and receives $100
+[19:28] Belt's share price moves left from $0 to $0
+[19:28] Belt pays $75 interest for 5 loans
+[19:28] SuperHudsonJ3A operates Bess
+[19:28] Bess lays tile #592 with rotation 1 on D7 (Toledo)
+[19:28] Bess passes lay track
+[19:29] Bess places a token on D7 (Toledo)
+[19:29] Bess runs a 2 train for $80: D7-C8
+[19:29] Bess runs a 2 train for $100: D7-D1
+[19:29] Bess runs for $180 and pays half
+[19:29] Bess withholds $90
+[19:29] Bess pays out $90 = $18 per share ($54 to Bess, $36 to SuperHudsonJ3A)
+[19:29] Bess's share price moves right from $45 to $55 (2 steps)
+[19:29] Bess takes a loan and receives $100
+[19:29] Bess's share price moves left from $55 to $50
+[19:29] Bess buys a 3 train for $250 from The Depot
+[19:29] Bess passes buy trains
+[19:29] Bess pays $45 interest for 3 loans
+[19:29] Bess passes take loans
+[19:29] -- Event: A 3 train exports --
+[19:29] -- Merger and Conversion Round 1.2 (of 2) --
+[20:57] R passes convert or merge corporation
+[20:57] H passes convert or merge corporation
+[20:57] SR passes convert or merge corporation
+[20:57] B&A passes convert or merge corporation
+[20:58] WC passes convert or merge corporation
+[20:58] Bess passes convert or merge corporation
+[20:58] -- Acquisition Round 1.2 (of 2) --
+[20:58] Belt offered for acquisition
+[20:58] BulletBill cannot bid $10 and is out of the auction for Belt
+[20:58] lars773 cannot bid $10 and is out of the auction for Belt
+[20:58] YoloGaming cannot bid $10 and is out of the auction for Belt
+[20:58] PhilipofPhilippi cannot bid $10 and is out of the auction for Belt
+[20:58] SuperHudsonJ3A cannot bid $10 and is out of the auction for Belt
+[20:58] All players pass on Belt, not acquired
+[20:58] Bess cannot be bought at $250, skipping
+[20:58] WC cannot be bought at $110, skipping
+[20:58] B&A cannot be bought at $280, skipping
+[20:58] SR cannot be bought at $120, skipping
+[20:58] H cannot be bought at $450, skipping
+[20:58] R cannot be bought at $500, skipping
+[20:58] -- Stock Round 2 --
+[20:58] BulletBill passes
+[20:59] lars773 buys a 20% share of Bess from the Treasury for $50
+[21:00] YoloGaming buys a 20% share of Bess from the Treasury for $50
+[21:01] PhilipofPhilippi buys a 20% share of Bess from the Treasury for $50
+[21:01] SuperHudsonJ3A buys a 20% share of H from the Treasury for $90
+[21:02] BulletBill passes
+[22:00] lars773 passes
+[22:35] YoloGaming passes
+[22:50] PhilipofPhilippi sells a 20% share of Bess and receives $50
+[22:52] PhilipofPhilippi buys a 20% share of B&A from the Treasury for $55
+[22:56] Bess redeems a 20% share  from the market for $50
+[22:59] BulletBill passes
+[23:04] lars773 passes
+[23:06] YoloGaming shorts a 20% share of B&A for $55
+[23:06] YoloGaming buys a 20% share of Bess from the Treasury for $50
+[23:07] PhilipofPhilippi shorts a 20% share of Bess for $50
+[23:07] PhilipofPhilippi buys a 20% share of B&A from the Treasury for $55
+[23:15] SuperHudsonJ3A sells a 20% share of H and receives $90
+[23:15] SuperHudsonJ3A buys a 20% share of Bess from the market for $50
+[23:32] B&A redeems a 20% share  from the market for $55
+[23:35] lars773 passes
+[23:35] H redeems a 20% share  from the market for $90
+[00:17] PhilipofPhilippi passes
+[00:38] SuperHudsonJ3A passes
+[00:43] BulletBill passes
+[00:43] lars773 passes
+[00:45] YoloGaming passes
+[00:45] Bess's share price moves right from $50 to $55
+[00:45] PhilipofPhilippi has priority deal
+[00:45] -- Operating Round 2.1 (of 2) --
+[00:45] B&A collects $15 from P9 - Mail Contract
+[00:45] Belt collects $20 from P11 - Major Mail Contract
+[00:45] lars773 operates R
+[00:49] R lays tile #83 with rotation 3 on E8
+[00:50] R passes lay track
+[00:50] R skips place a token
+[00:50] R runs a 2+ train for $80: D7-C8
+[00:50] R runs a 2 train for $90: D7-D9
+[00:50] R runs a 2 train for $100: D7-D1
+[00:51] R runs for $270 and pays half
+[00:51] R withholds $135
+[00:51] R pays out $135 = $27 per share ($81 to R, $54 to lars773)
+[00:51] R's share price moves right from $100 to $110
+[00:53] R passes buy trains
+[00:53] R pays $75 interest for 3 loans
+[00:53] R pays off a loan for $100
+[00:53] R's share price moves right from $110 to $120
+[00:53] R passes take loans
+[00:53] YoloGaming operates H
+[00:54] H lays tile #619 with rotation 5 on G6 (Cincinnati)
+[00:56] H spends $20 and lays tile #9 with rotation 2 on F5
+[00:56] H skips place a token
+[00:57] H runs a 2+ train for $70: G6-H3
+[00:57] H runs a 2+ train for $90: G6-D7
+[00:57] H pays out $160 = $32 per share ($96 to H, $64 to YoloGaming)
+[00:57] H's share price moves right from $90 to $100
+[00:57] H skips buy trains
+[00:57] H pays $75 interest for 3 loans
+[00:57] H passes take loans
+[00:57] PhilipofPhilippi operates SR
+[01:07] SR lays tile #80 with rotation 0 on D23
+[01:08] SR passes lay track
+[01:08] SR skips place a token
+[01:08] SR runs a 2 train for $40: D19-C14
+[01:08] SR runs a 2 train for $60: D19-E22
+[01:08] SR withholds $100
+[01:08] SR's share price moves left from $60 to $55
+[01:08] SR passes buy trains
+[01:08] SR pays $50 interest for 2 loans
+[01:08] BulletBill operates B&A
+[01:08] B&A lays tile #7 with rotation 5 on E4
+[01:09] B&A spends $20 and lays tile #14 with rotation 0 on F3 (Indianapolis)
+[01:09] B&A places a token on G6 (Cincinnati)
+[01:09] B&A runs a 2 train for $80: F3-D1
+[01:09] B&A runs a 2 train for $90: G6-D7
+[01:10] B&A withholds $170
+[01:10] B&A's share price moves left from $55 to $50
+[01:10] B&A buys a 3 train for $250 from The Depot
+[01:10] B&A passes buy trains
+[01:10] B&A takes a loan and receives $100
+[01:10] B&A's share price moves left from $50 to $45
+[01:10] B&A pays $100 interest for 4 loans
+[01:11] B&A passes take loans
+[01:11] SuperHudsonJ3A operates WC
+[01:11] WC lays tile #619 with rotation 1 on F19 (Philadelphia)
+[01:11] WC skips place a token
+[01:11] WC runs a 2+ train for $60: F19-G18
+[01:11] WC runs a 2 train for $70: F19-E22
+[01:12] WC runs for $130 and pays half
+[01:12] WC withholds $65
+[01:12] WC pays out $65 = $32.5 per share ($65 to SuperHudsonJ3A)
+[01:12] WC's share price moves right from $55 to $60
+[01:12] WC passes buy trains
+[01:12] WC pays $50 interest for 2 loans
+[01:12] SuperHudsonJ3A operates Bess
+[01:12] Bess spends $20 and lays tile #592 with rotation 0 on C8 (Detroit)
+[01:12] Bess spends $20 and lays tile #8 with rotation 4 on B11
+[01:12] Bess skips place a token
+[01:13] Bess runs a 3 train for $140: D1-D7-G6
+[01:13] Bess runs a 2 train for $80: C8-B13
+[01:13] Bess runs a 2 train for $100: D7-C8
+[01:13] Bess runs for $320 and pays half
+[01:13] Bess withholds $160
+[01:13] Bess pays out $160 = $32 per share ($96 to SuperHudsonJ3A, $64 to YoloGaming, $32 to lars773, $-32 to PhilipofPhilippi)
+[01:13] Bess's share price moves right from $55 to $65 (2 steps)
+[01:13] PhilipofPhilippi enters Cash Crisis and owes the bank $10
+[01:13] PhilipofPhilippi sells a 20% share of B&A and receives $45
+[01:14] Bess passes buy trains
+[01:14] Bess pays $75 interest for 3 loans
+[01:14] Bess pays off a loan for $100
+[01:14] Bess's share price moves right from $65 to $70
+[01:14] Bess pays off a loan for $100
+[01:14] Bess's share price moves right from $70 to $80
+[01:14] Bess passes take loans
+[01:14] BulletBill operates Belt
+[01:23] Belt lays tile #14 with rotation 1 on D19 (Scranton)
+[01:23] Belt passes lay track
+[01:23] Belt skips place a token
+[01:23] Belt runs a 3 train for $90: E22-D19-C14
+[01:23] Belt runs a 2 train for $50: C22-A20
+[01:23] Belt pays out $140 = $28 per share ($84 to Belt, $56 to BulletBill)
+[01:23] Belt's share price moves right from $0 to $40 (2 steps)
+[01:23] Belt passes buy trains
+[01:23] Belt pays $125 interest for 5 loans
+[01:23] -- Event: A 3 train exports --
+[01:23] -- Merger and Conversion Round 2.1 (of 2) --
+[01:24] R passes convert or merge corporation
+[01:27] H passes convert or merge corporation
+[01:32] Bess passes convert or merge corporation
+[01:33] WC passes convert or merge corporation
+[01:33] SR passes convert or merge corporation
+[01:34] B&A passes convert or merge corporation
+[01:34] Belt passes convert or merge corporation
+[01:34] -- Acquisition Round 2.1 (of 2) --
+[01:34] Belt cannot be bought at $200, skipping
+[01:34] B&A cannot be bought at $230, skipping
+[01:34] SR may be offered for sale for $110
+[01:34] PhilipofPhilippi declines to put SR up for sale
+[01:34] WC may be offered for sale for $120
+[01:34] SuperHudsonJ3A declines to put WC up for sale
+[01:34] Bess cannot be bought at $400, skipping
+[01:34] H cannot be bought at $500, skipping
+[01:34] R may be offered for sale for $600
+[01:35] lars773 declines to put R up for sale
+[01:35] -- Operating Round 2.2 (of 2) --
+[01:35] B&A collects $15 from P9 - Mail Contract
+[01:35] Belt collects $20 from P11 - Major Mail Contract
+[01:35] lars773 operates R
+[01:37] R receives a discount of $15 from P1 - Minor Coal Mine
+[01:37] R (MINC) lays tile #9 with rotation 0 on I8
+[01:37] P1 - Minor Coal Mine closes
+[01:37] R adds mine to I8
+[01:38] R passes lay/upgrade track
+[01:38] R skips place a token
+[01:38] R runs a 2+ train for $90: D7-G6
+[01:38] R runs a 2 train for $100: D7-D1
+[01:38] R runs a 2 train for $100: D7-C8
+[01:39] R runs for $290 and pays half
+[01:39] R withholds $145
+[01:39] R pays out $145 = $29 per share ($87 to R, $58 to lars773)
+[01:39] R's share price moves right from $120 to $135
+[01:39] R buys a 3 train for $250 from The Depot
+[01:39] R pays $40 interest for 2 loans
+[01:40] R passes take loans
+[01:40] YoloGaming operates H
+[01:41] H lays tile #81 with rotation 0 on H7
+[01:41] H spends $20 and lays tile #8 with rotation 3 on I6
+[01:41] H skips place a token
+[01:41] H runs a 2+ train for $70: G6-H3
+[01:41] H runs a 2+ train for $70: G6-F3
+[01:41] H runs a 2 train for $90: G6-J7
+[01:41] H runs a 2 train for $90: G6-D7
+[01:41] H pays out $320 = $64 per share ($192 to H, $128 to YoloGaming)
+[01:41] H's share price moves right from $100 to $120 (2 steps)
+[01:41] H skips buy trains
+[01:41] H pays $60 interest for 3 loans
+[01:41] H pays off a loan for $100
+[01:41] H's share price moves right from $120 to $135
+[01:41] H passes take loans
+[01:41] SuperHudsonJ3A operates Bess
+[01:42] Bess lays tile #8 with rotation 5 on B7
+[01:42] Bess passes lay/upgrade track
+[01:42] Bess skips place a token
+[01:42] Bess runs a 3 train for $140: D1-D7-G6
+[01:42] Bess runs a 2 train for $80: C8-B13
+[01:42] Bess runs a 2 train for $100: D7-C8
+[01:42] Bess runs for $320 and pays half
+[01:42] Bess withholds $160
+[01:42] Bess pays out $160 = $32 per share ($96 to SuperHudsonJ3A, $64 to YoloGaming, $32 to lars773, $-32 to PhilipofPhilippi)
+[01:42] Bess's share price moves right from $80 to $100 (2 steps)
+[01:43] Bess passes buy trains
+[01:43] Bess pays $20 interest for 1 loan
+[01:43] Bess pays off a loan for $100
+[01:43] Bess's share price moves right from $100 to $110
+[01:43] Bess passes take loans
+[01:43] SuperHudsonJ3A operates WC
+[01:43] WC lays tile #7 with rotation 4 on F17
+[01:43] WC spends $20 and lays tile #592 with rotation 0 on G18 (Baltimore)
+[01:43] WC skips place a token
+[01:43] WC runs a 2+ train for $70: F19-E22
+[01:43] WC runs a 2 train for $80: F19-G18
+[01:43] WC runs a 2 train for $80: F19-G18
+[01:43] WC runs for $230 and pays half
+[01:43] WC withholds $115
+[01:43] WC pays out $115 = $57.5 per share ($115 to SuperHudsonJ3A)
+[01:43] WC's share price moves right from $60 to $65
+[01:43] WC passes buy trains
+[01:43] WC pays $40 interest for 2 loans
+[01:43] PhilipofPhilippi operates SR
+[01:51] SR spends $20 and lays tile #54 with rotation 0 on E22 (New York)
+[01:51] SR lays tile #8 with rotation 0 on E20
+[01:51] SR skips place a token
+[01:51] SR runs a 2 train for $60: D19-F19
+[01:51] SR runs a 2 train for $90: D19-E22
+[01:51] SR pays out $150 = $75 per share ($150 to PhilipofPhilippi)
+[01:51] SR's share price moves right from $55 to $65 (2 steps)
+[01:52] SR passes buy trains
+[01:52] SR pays $40 interest for 2 loans
+[01:52] BulletBill operates B&A
+[01:53] B&A lays tile #15 with rotation 2 on C14 (Buffalo)
+[01:53] B&A passes lay track
+[01:53] B&A skips place a token
+[01:53] B&A runs a 3 train for $120: G6-F3-D1
+[01:53] B&A runs a 2 train for $90: G6-J7
+[01:53] B&A runs a 2 train for $90: G6-D7
+[01:53] B&A runs for $300 and pays half
+[01:53] B&A withholds $150
+[01:53] B&A pays out $150 = $30 per share ($60 to BulletBill, $60 to B&A, $30 to PhilipofPhilippi, $-30 to YoloGaming)
+[01:53] B&A's share price moves right from $45 to $55 (2 steps)
+[01:54] B&A buys a 3 train for $250 from The Depot
+[01:54] B&A takes a loan and receives $100
+[01:54] B&A's share price moves left from $55 to $50
+[01:54] B&A pays $100 interest for 5 loans
+[01:54] BulletBill operates Belt
+[01:54] Belt lays tile #82 with rotation 4 on D21
+[01:55] Belt passes lay track
+[01:55] Belt skips place a token
+[01:55] Belt runs a 3 train for $110: E22-C22-A20
+[01:55] Belt runs a 2 train for $90: E22-D19
+[01:55] Belt runs for $200 and pays half
+[01:55] Belt withholds $100
+[01:55] Belt pays out $100 = $20 per share ($60 to Belt, $40 to BulletBill)
+[01:55] Belt's share price moves right from $40 to $50 (2 steps)
+[01:55] Belt passes buy trains
+[01:55] Belt pays $100 interest for 5 loans
+[01:55] Belt pays off a loan for $100
+[01:55] Belt's share price moves right from $50 to $55
+[01:55] Belt passes take loans
+[01:55] -- Event: A 3 train exports --
+[01:55] -- Merger and Conversion Round 2.2 (of 2) --
+[01:59] R converts from 5 to 10 shares
+[02:00] lars773 buys a 10% share of R from the Treasury for $135
+[02:00] YoloGaming buys a 10% share of R from the Treasury for $135
+[02:02] PhilipofPhilippi passes buy/sell shares post conversion
+[02:04] SuperHudsonJ3A passes buy/sell shares post conversion
+[02:04] BulletBill passes buy/sell shares post conversion
+[02:05] R passes taking loans
+[02:05] R pays $100 for 2 tokens
+[02:06] H passes convert or merge corporation
+[02:06] Bess passes convert or merge corporation
+[02:07] WC passes convert or merge corporation
+[02:19] SR converts from 2 to 5 shares
+[02:19] PhilipofPhilippi buys a 20% share of SR from the Treasury for $65
+[02:28] SuperHudsonJ3A passes buy/sell shares post conversion
+[02:30] BulletBill passes buy/sell shares post conversion
+[02:31] YoloGaming passes buy/sell shares post conversion
+[02:31] SR passes taking loans
+[02:31] SR pays $50 for 1 token
+[03:10] Belt passes convert or merge corporation
+[03:10] B&A passes convert or merge corporation
+[03:10] -- Acquisition Round 2.2 (of 2) --
+[03:10] B&A may be offered for sale for $250
+[03:10] BulletBill declines to put B&A up for sale
+[03:10] Belt may be offered for sale for $280
+[03:10] BulletBill declines to put Belt up for sale
+[03:10] SR may be offered for sale for $330
+[11:16] PhilipofPhilippi declines to put SR up for sale
+[11:16] WC may be offered for sale for $130
+[11:16] SuperHudsonJ3A declines to put WC up for sale
+[11:16] Bess may be offered for sale for $550
+[11:16] SuperHudsonJ3A declines to put Bess up for sale
+[11:16] H may be offered for sale for $680
+[11:16] YoloGaming declines to put H up for sale
+[11:16] R may be offered for sale for $1350
+[11:29] lars773 declines to put R up for sale
+[11:29] -- Stock Round 3 --
+[13:02] PhilipofPhilippi buys a 20% share of B&A from the market for $50
+[13:03] SuperHudsonJ3A buys a 20% share of B&A from the Treasury for $50
+[13:04] BulletBill buys a 20% share of B&A from the Treasury for $50
+[13:13] lars773 passes
+[13:17] YoloGaming sells 2 shares of Bess and receives $220
+[13:17] YoloGaming auctions NYOW for $280
+[13:17] NYOW must choose city for home token
+[13:17] PhilipofPhilippi cannot bid $285 and is out of the auction for NYOW
+[13:17] BulletBill cannot bid $285 and is out of the auction for NYOW
+[13:17] lars773 cannot bid $285 and is out of the auction for NYOW
+[13:18] NYOW places a token on F19 (Philadelphia)
+[13:18] SuperHudsonJ3A passes on NYOW
+[13:18] YoloGaming wins bid on NYOW for $280
+[13:18] YoloGaming pars NYOW at $135
+[13:18] YoloGaming buys a 100% share of NYOW from the Treasury for $270
+[13:18] YoloGaming becomes the president of NYOW
+[13:18] NYOW floats
+[13:19] NYOW starts with $280 and 5 shares
+[13:19] NYOW buys 1 token for $50
+[13:19] PhilipofPhilippi sells a 20% share of B&A and receives $50
+[13:19] PhilipofPhilippi buys a 20% share of Bess from the market for $110
+[13:24] SuperHudsonJ3A auctions NYSW for $250
+[13:24] NYSW must choose city for home token
+[13:24] PhilipofPhilippi cannot bid $255 and is out of the auction for NYSW
+[13:24] BulletBill cannot bid $255 and is out of the auction for NYSW
+[13:24] lars773 cannot bid $255 and is out of the auction for NYSW
+[13:24] YoloGaming cannot bid $255 and is out of the auction for NYSW
+[13:24] SuperHudsonJ3A wins bid on NYSW for $250
+[13:24] SuperHudsonJ3A pars NYSW at $120
+[13:24] SuperHudsonJ3A buys a 100% share of NYSW from the Treasury for $240
+[13:24] SuperHudsonJ3A becomes the president of NYSW
+[13:24] NYSW floats
+[13:24] NYSW places a token on E22 (New York)
+[13:24] NYSW starts with $250 and 2 shares
+[13:57] BulletBill shorts a 20% share of SR for $65
+[13:58] BulletBill declines to buy shares
+[14:09] lars773 sells a 20% share of Bess and receives $110
+[14:09] lars773 buys a 20% share of B&A from the market for $50
+[14:10] YoloGaming shorts a 20% share of SR for $65
+[14:10] YoloGaming buys a 20% share of NYOW from the Treasury for $135
+[14:11] PhilipofPhilippi passes
+[14:21] Bess (SuperHudsonJ3A) takes a loan and receives $100
+[14:21] Bess's share price moves left from $110 to $100
+[14:21] Bess redeems a 20% share  from the market for $100
+[14:24] BulletBill shorts a 20% share of SR for $65
+[14:25] BulletBill auctions J for $250
+[14:25] J must choose city for home token
+[14:25] PhilipofPhilippi cannot bid $255 and is out of the auction for J
+[14:25] SuperHudsonJ3A cannot bid $255 and is out of the auction for J
+[14:25] lars773 cannot bid $255 and is out of the auction for J
+[14:25] YoloGaming cannot bid $255 and is out of the auction for J
+[14:25] BulletBill wins bid on J for $250
+[14:25] BulletBill pars J at $120
+[14:25] BulletBill buys a 100% share of J from the Treasury for $240
+[14:25] BulletBill becomes the president of J
+[14:25] J floats
+[14:25] J places a token on D19 (Scranton)
+[14:25] J starts with $250 and 2 shares
+[14:35] lars773 buys a 20% share of Belt from the Treasury for $55
+[15:10] YoloGaming passes
+[15:11] PhilipofPhilippi passes
+[15:42] SuperHudsonJ3A shorts a 20% share of SR for $65
+[15:42] SuperHudsonJ3A buys a 20% share of H from the Treasury for $135
+[15:43] BulletBill shorts a 20% share of SR for $65
+[15:43] BulletBill buys a 20% share of Belt from the Treasury for $55
+[15:45] lars773 passes
+[15:50] YoloGaming passes
+[15:51] PhilipofPhilippi passes
+[15:52] Bess (SuperHudsonJ3A) takes a loan and receives $100
+[15:52] Bess's share price moves left from $100 to $90
+[15:52] Bess redeems a 20% share  from the market for $90
+[15:56] BulletBill passes
+[15:57] lars773 passes
+[18:07] YoloGaming passes
+[18:07] PhilipofPhilippi passes
+[18:08] SuperHudsonJ3A passes
+[18:08] SR's share price moves left from $65 to $40
+[18:08] B&A's share price moves right from $50 to $55
+[18:08] BulletBill has priority deal
+[18:08] -- Operating Round 3.1 (of 2) --
+[18:08] Belt collects $20 from P11 - Major Mail Contract
+[18:08] B&A collects $15 from P9 - Mail Contract
+[18:08] lars773 operates R
+[18:31] R (P23) lays tile #8 with rotation 4 on B15
+[18:31] R adds ranch to B15
+[18:32] R passes lay/upgrade track
+[18:32] R places a token on C14 (Buffalo)
+[18:32] R runs a 3 train for $120: J7-H9-G6
+[18:32] R runs a 2+ train for $90: D7-G6
+[18:32] R runs a 2 train for $100: D7-D1
+[18:32] R runs a 2 train for $100: D7-C8
+[18:32] R pays out $410 = $41 per share ($246 to R, $123 to lars773, $41 to YoloGaming)
+[18:32] R's share price moves right from $135 to $165 (2 steps)
+[18:32] R skips buy trains
+[18:32] R pays $40 interest for 2 loans
+[18:33] R pays off a loan for $100
+[18:33] R's share price moves right from $165 to $180
+[18:33] R pays off a loan for $100
+[18:33] R's share price moves right from $180 to $200
+[18:33] R passes take loans
+[18:33] YoloGaming operates H
+[18:34] H lays tile #14 with rotation 0 on H3 (Louisville)
+[18:34] H passes lay track
+[18:34] H skips place a token
+[18:34] H runs a 2+ train for $80: G6-H3
+[18:34] H runs a 2+ train for $70: G6-F3
+[18:34] H runs a 2 train for $90: G6-J7
+[18:34] H runs a 2 train for $90: G6-D7
+[18:34] H runs for $330 and pays half
+[18:34] H withholds $165
+[18:34] H pays out $165 = $33 per share ($66 to YoloGaming, $66 to H, $33 to SuperHudsonJ3A)
+[18:34] H's share price moves right from $135 to $150
+[18:34] H skips buy trains
+[18:34] H pays $40 interest for 2 loans
+[18:35] H pays off a loan for $100
+[18:35] H's share price moves right from $150 to $165
+[18:35] H pays off a loan for $100
+[18:35] H's share price moves right from $165 to $180
+[18:35] H passes take loans
+[18:35] YoloGaming operates NYOW
+[18:43] NYOW lays tile #82 with rotation 4 on F17
+[18:43] NYOW passes lay track
+[18:43] NYOW passes place a token
+[18:43] NYOW skips run routes
+[18:43] NYOW does not run
+[18:43] NYOW's share price moves left from $135 to $120
+[18:43] NYOW takes a loan and receives $100
+[18:43] NYOW's share price moves left from $120 to $110
+[18:43] NYOW takes a loan and receives $100
+[18:43] NYOW's share price moves left from $110 to $100
+[18:43] NYOW takes a loan and receives $100
+[18:43] NYOW's share price moves left from $100 to $90
+[18:43] NYOW takes a loan and receives $100
+[18:43] NYOW's share price moves left from $90 to $80
+[18:43] NYOW takes a loan and receives $100
+[18:43] NYOW's share price moves left from $80 to $70
+[18:43] NYOW buys a 3 train for $250 from The Depot
+[18:43] NYOW buys a 3 train for $250 from The Depot
+[18:43] NYOW buys a 3 train for $250 from The Depot
+[18:44] NYOW passes buy trains
+[18:44] NYOW pays $100 interest for 5 loans
+[18:44] SuperHudsonJ3A operates NYSW
+[18:58] NYSW lays tile #81 with rotation 0 on E20
+[18:58] NYSW passes lay track
+[18:58] NYSW skips place a token
+[18:58] NYSW skips run routes
+[18:58] NYSW does not run
+[18:58] NYSW's share price moves left from $120 to $110
+[18:58] NYSW buys a 3 train for $250 from The Depot
+[18:58] NYSW passes buy trains
+[18:58] NYSW passes take loans
+[18:58] BulletBill operates J
+[19:13] J lays tile #15 with rotation 2 on C22 (Albany)
+[19:14] J passes lay track
+[19:14] J skips place a token
+[19:14] J skips run routes
+[19:14] J does not run
+[19:14] J's share price moves left from $120 to $110
+[19:14] J takes a loan and receives $100
+[19:14] J's share price moves left from $110 to $100
+[19:14] J takes a loan and receives $100
+[19:14] J's share price moves left from $100 to $90
+[19:14] J buys a 4 train for $400 from The Depot
+[19:14] SR collects $40 from P14 - Inventor
+[19:14] -- Phase 4 (Operating Rounds: 2 | Train Limit: 3 | Available Tiles: Yellow, Green) --
+[19:14] H collects $30 from P15 - Scrapper for 2
+[19:14] H collects $30 from P15 - Scrapper for 2
+[19:14] -- Event: 2+ trains are obsolete --
+[19:14] -- Event: 2 trains rust ( B&A x2, SR x2, H x2, WC x2, R x2, Belt x1, Bess x2, The Depot x27) --
+[19:14] J passes buy trains
+[19:14] J pays $40 interest for 2 loans
+[19:14] SuperHudsonJ3A operates Bess
+[19:14] Bess lays tile #6 with rotation 4 on B5 (Lansing)
+[19:14] Bess passes lay/upgrade track
+[19:14] Bess skips place a token
+[19:14] Bess runs a 3 train for $150: C8-D7-D1
+[19:15] Bess runs for $150 and pays half
+[19:15] Bess withholds $75
+[19:15] Bess pays out $75 = $15 per share ($45 to SuperHudsonJ3A, $30 to Bess)
+[19:16] Bess passes buy trains
+[19:16] Bess pays $40 interest for 2 loans
+[19:16] Bess pays off a loan for $100
+[19:16] Bess's share price moves right from $90 to $100
+[19:16] Bess passes take loans
+[19:16] SuperHudsonJ3A operates WC
+[19:16] WC passes lay/upgrade track
+[19:16] WC skips place a token
+[19:16] WC runs a 2+ train for $90: F19-E22
+[19:17] -- Event: Obsolete trains rust --
+[19:17] WC pays out $90 = $45 per share ($90 to SuperHudsonJ3A)
+[19:17] WC's share price moves right from $65 to $70
+[19:17] WC buys a 3 train for $1 from NYSW
+[19:17] WC passes buy trains
+[19:17] WC pays $40 interest for 2 loans
+[19:17] BulletBill operates Belt
+[19:19] Belt passes lay/upgrade track
+[19:19] Belt skips place a token
+[19:19] Belt runs a 3 train for $120: C22-E22-D19
+[19:20] Belt runs for $120 and pays half
+[19:20] Belt withholds $60
+[19:20] Belt pays out $60 = $12 per share ($36 to BulletBill, $12 to lars773, $12 to Belt)
+[19:20] Belt's share price moves right from $55 to $60
+[19:20] Belt passes buy trains
+[19:20] Belt pays $80 interest for 4 loans
+[19:20] Belt pays off a loan for $100
+[19:20] Belt's share price moves right from $60 to $65
+[19:20] Belt passes take loans
+[19:20] BulletBill operates B&A
+[19:21] B&A lays tile #83 with rotation 0 on E4
+[19:22] B&A passes lay track
+[19:22] B&A skips place a token
+[19:22] B&A runs a 3 train for $120: G6-F3-D1
+[19:22] B&A runs a 3 train for $140: J7-G6-D7
+[19:22] B&A runs for $260 and pays half
+[19:22] B&A withholds $130
+[19:22] B&A pays out $130 = $26 per share ($78 to BulletBill, $26 to lars773, $26 to PhilipofPhilippi, $26 to SuperHudsonJ3A, $-26 to YoloGaming)
+[19:22] B&A's share price moves right from $55 to $65 (2 steps)
+[19:23] B&A passes buy trains
+[19:23] B&A pays $100 interest for 5 loans
+[19:23] B&A pays off a loan for $100
+[19:23] B&A's share price moves right from $65 to $70
+[19:23] B&A passes take loans
+[19:23] PhilipofPhilippi operates SR
+[19:30] SR lays tile #9 with rotation 2 on C18
+[19:30] SR lays tile #6 with rotation 5 on B17 (Rochester)
+[19:30] SR places a token on B17 (Rochester)
+[19:30] SR skips run routes
+[19:30] SR does not run
+[19:30] SR's share price moves left from $40 to $0
+[19:30] SR takes a loan and receives $100
+[19:30] SR's share price moves left from $0 to $0
+[19:30] SR takes a loan and receives $100
+[19:30] SR's share price moves left from $0 to $0
+[19:30] SR takes a loan and receives $100
+[19:30] SR passes buy trains
+[19:30] SR pays $100 interest for 5 loans
+[19:30] SR passes payoff loans
+[19:30] SR has no trains and liquidates
+[19:30] -- Event: A 4 train exports --
+[19:30] -- Merger and Conversion Round 3.1 (of 2) --
+[19:30] R skips convert or merge corporation
+[19:31] H passes convert or merge corporation
+[19:34] NYSW passes convert or merge corporation
+[19:34] Bess passes convert or merge corporation
+[19:35] J converts from 2 to 5 shares
+[19:35] BulletBill buys a 20% share of J from the Treasury for $90
+[20:01] lars773 passes buy/sell shares post conversion
+[20:02] YoloGaming passes buy/sell shares post conversion
+[20:09] SuperHudsonJ3A passes buy/sell shares post conversion
+[20:17] J passes taking loans
+[20:17] J pays $50 for 1 token
+[20:19] NYOW converts from 5 to 10 shares
+[20:19] YoloGaming buys a 10% share of NYOW from the Treasury for $70
+[20:20] SuperHudsonJ3A passes buy/sell shares post conversion
+[20:21] lars773 passes buy/sell shares post conversion
+[20:22] NYOW takes a loan and receives $100
+[20:22] NYOW's share price moves left from $70 to $65
+[20:22] NYOW passes taking loans
+[20:22] NYOW pays $100 for 2 tokens
+[20:22] WC merges with NYSW at share price $180 receiving $1, and tokens (1: hexes E22)
+[20:22] SuperHudsonJ3A buys a 20% share of WC from the Treasury for $180
+[20:25] lars773 passes buy/sell shares post conversion
+[20:28] WC passes taking loans
+[20:31] B&A passes convert or merge corporation
+[20:31] Belt passes convert or merge corporation
+[20:31] -- Acquisition Round 3.1 (of 2) --
+[20:31] SR is being liquidated, bank offers $0, corporation had $280 and 5 loans
+[20:31] PhilipofPhilippi cannot bid $10 and is out of the auction for SR
+[20:31] SuperHudsonJ3A passes on SR
+[20:31] BulletBill passes on SR
+[20:33] lars773 bids $10 for SR
+[20:33] YoloGaming passes on SR
+[20:33] lars773 wins the auction of SR for $10
+[20:33] R acquires SR receiving companies (P14 - Inventor, P19 - Efficient Track, P18 - Express Track), and , tokens (2: 2 on hexes D19,B17)
+[20:34] R passes taking additional loans
+[20:34] PhilipofPhilippi settles SR debts for $210
+[20:34] NYOW may be offered for sale for $650
+[20:34] PhilipofPhilippi enters Cash Crisis and owes the bank $176
+[20:38] PhilipofPhilippi sells a 20% share of B&A and receives $70
+[20:38] -- PhilipofPhilippi goes bankrupt and sells remaining shares --
+[20:38] YoloGaming declines to put NYOW up for sale
+[20:38] Belt may be offered for sale for $330
+[20:39] BulletBill declines to put Belt up for sale
+[20:39] B&A may be offered for sale for $350
+[20:39] BulletBill declines to put B&A up for sale
+[20:39] J may be offered for sale for $450
+[20:39] BulletBill declines to put J up for sale
+[20:39] Bess may be offered for sale for $500
+[20:40] SuperHudsonJ3A declines to put Bess up for sale
+[20:40] WC may be offered for sale for $900
+[20:40] SuperHudsonJ3A declines to put WC up for sale
+[20:40] H may be offered for sale for $900
+[20:40] YoloGaming declines to put H up for sale
+[20:40] R may be offered for sale for $2000
+[20:41] lars773 declines to put R up for sale
+[20:41] -- Operating Round 3.2 (of 2) --
+[20:41] B&A collects $15 from P9 - Mail Contract
+[20:41] Belt collects $20 from P11 - Major Mail Contract
+[20:41] lars773 operates R
+[21:00] R lays tile #15 with rotation 0 on H9 (Charleston)
+[21:00] R lays tile #9 with rotation 2 on G8
+[21:00] R passes place a token
+[21:02] R runs a 3 train for $140: D1-D7-G6
+[21:02] R runs a 2+ train for $100: D7-C8
+[21:02] -- Event: Obsolete trains rust --
+[21:02] R pays out $240 = $24 per share ($144 to R, $72 to lars773, $24 to YoloGaming)
+[21:02] R's share price moves right from $200 to $220
+[21:02] R takes a loan and receives $100
+[21:02] R's share price moves left from $220 to $200
+[21:02] R buys a 4 train for $400 from The Depot
+[21:02] R passes buy trains
+[21:02] R pays $20 interest for 1 loan
+[21:03] R passes take loans
+[21:03] YoloGaming operates H
+[21:03] H lays tile #9 with rotation 2 on E10
+[21:04] H passes lay/upgrade track
+[21:04] H skips place a token
+[21:04] H runs a 2+ train for $90: G6-J7
+[21:04] H runs a 2+ train for $90: G6-D7
+[21:04] H collects $30 from P15 - Scrapper for 2+
+[21:04] H collects $30 from P15 - Scrapper for 2+
+[21:04] -- Event: Obsolete trains rust --
+[21:04] H runs for $180 and pays half
+[21:04] H withholds $90
+[21:04] H pays out $90 = $18 per share ($36 to YoloGaming, $36 to H, $18 to SuperHudsonJ3A)
+[21:04] H takes a loan and receives $100
+[21:04] H's share price moves left from $180 to $165
+[21:05] H takes a loan and receives $100
+[21:05] H's share price moves left from $165 to $150
+[21:05] H buys a 4 train for $400 from The Depot
+[21:05] H buys a 3 train for $160 from NYOW
+[21:06] H passes buy trains
+[21:06] H pays $40 interest for 2 loans
+[21:06] H passes take loans
+[21:06] SuperHudsonJ3A operates WC
+[21:08] WC spends $15 and lays tile #9 with rotation 1 on F15
+[21:08] WC passes lay/upgrade track
+[21:08] WC skips place a token
+[21:08] WC runs a 3 train for $140: E22-F19-G18
+[21:08] WC runs for $140 and pays half
+[21:08] WC withholds $70
+[21:08] WC pays out $70 = $14 per share ($42 to SuperHudsonJ3A, $28 to WC)
+[21:08] WC takes a loan and receives $100
+[21:08] WC's share price moves left from $180 to $165
+[21:08] WC takes a loan and receives $100
+[21:08] WC's share price moves left from $165 to $150
+[21:08] WC buys a 4 train for $400 from The Depot
+[21:08] WC passes buy trains
+[21:08] WC pays $80 interest for 4 loans
+[21:09] WC passes take loans
+[21:09] SuperHudsonJ3A operates Bess
+[21:09] Bess passes lay/upgrade track
+[21:09] Bess skips place a token
+[21:09] Bess runs a 3 train for $150: C8-D7-D1
+[21:09] Bess runs for $150 and pays half
+[21:09] Bess withholds $75
+[21:09] Bess pays out $75 = $15 per share ($45 to SuperHudsonJ3A, $30 to Bess)
+[21:09] Bess takes a loan and receives $100
+[21:09] Bess's share price moves left from $100 to $90
+[21:09] Bess takes a loan and receives $100
+[21:09] Bess's share price moves left from $90 to $80
+[21:09] Bess takes a loan and receives $100
+[21:09] Bess's share price moves left from $80 to $70
+[21:09] Bess takes a loan and receives $100
+[21:09] Bess's share price moves left from $70 to $65
+[21:09] Bess buys a 4 train for $400 from The Depot
+[21:09] Bess passes buy trains
+[21:09] Bess pays $100 interest for 5 loans
+[21:09] BulletBill operates J
+[21:13] J lays tile #81 with rotation 0 on D15
+[21:13] J passes lay track
+[21:13] J passes place a token
+[21:13] J runs a 4 train for $150: A20-C22-D19-E22
+[21:14] J pays out $150 = $30 per share ($90 to BulletBill, $60 to J)
+[21:14] J's share price moves right from $90 to $100
+[21:14] J passes buy trains
+[21:14] J pays $40 interest for 2 loans
+[21:14] J passes take loans
+[21:14] BulletBill operates B&A
+[21:15] B&A lays tile #83 with rotation 1 on D5
+[21:15] B&A passes lay track
+[21:15] B&A skips place a token
+[21:15] B&A runs a 3 train for $130: D7-G6-H3
+[21:15] B&A runs a 3 train for $140: J7-G6-D7
+[21:15] B&A runs for $270 and pays half
+[21:15] B&A withholds $135
+[21:15] B&A pays out $135 = $27 per share ($81 to BulletBill, $27 to lars773, $27 to SuperHudsonJ3A, $-27 to YoloGaming)
+[21:15] B&A's share price moves right from $70 to $80
+[21:15] B&A passes buy trains
+[21:15] B&A pays $80 interest for 4 loans
+[21:16] B&A passes payoff loans
+[21:16] BulletBill operates Belt
+[21:16] Belt passes lay/upgrade track
+[21:16] Belt skips place a token
+[21:16] Belt runs a 3 train for $120: C22-E22-D19
+[21:16] Belt pays out $120 = $24 per share ($72 to BulletBill, $24 to lars773, $24 to Belt)
+[21:16] Belt's share price moves right from $65 to $70
+[21:17] Belt passes buy trains
+[21:17] Belt pays $60 interest for 3 loans
+[21:17] Belt passes take loans
+[21:17] YoloGaming operates NYOW
+[21:19] NYOW lays tile #57 with rotation 1 on F13 (Pittsburgh)
+[21:19] NYOW passes lay/upgrade track
+[21:19] NYOW places a token on F13 (Pittsburgh)
+[21:20] NYOW runs a 3 train for $140: E22-F19-G18
+[21:20] NYOW runs a 3 train for $140: E22-F19-G18
+[21:23] NYOW pays out $280 = $28 per share ($168 to NYOW, $112 to YoloGaming)
+[21:23] NYOW's share price moves right from $65 to $80 (2 steps)
+[21:23] NYOW passes buy trains
+[21:23] NYOW pays $120 interest for 6 loans
+[21:23] NYOW pays off a loan for $100
+[21:23] NYOW's share price moves right from $80 to $90
+[21:23] NYOW pays off a loan for $100
+[21:23] NYOW's share price moves right from $90 to $100
+[21:23] NYOW passes take loans
+[21:23] -- Event: A 4 train exports --
+[21:23] -- Merger and Conversion Round 3.2 (of 2) --
+[21:23] R skips convert or merge corporation
+[21:23] H converts from 5 to 10 shares
+[21:23] YoloGaming buys a 10% share of H from the Treasury for $150
+[21:47] SuperHudsonJ3A sells a 10% share of H and receives $150
+[22:15] BulletBill passes buy/sell shares post conversion
+[22:18] lars773 passes buy/sell shares post conversion
+[22:26] H passes taking loans
+[22:26] H pays $100 for 2 tokens
+[22:26] WC converts from 5 to 10 shares
+[22:26] SuperHudsonJ3A buys a 10% share of WC from the Treasury for $150
+[22:26] SuperHudsonJ3A buys a 10% share of WC from the Treasury for $150
+[22:34] BulletBill passes buy/sell shares post conversion
+[22:35] lars773 passes buy/sell shares post conversion
+[22:37] WC passes taking loans
+[22:37] WC pays $100 for 2 tokens
+[22:39] J merges with Belt at share price $80 receiving $28, companies (P11 - Major Mail Contract), loans (3), trains (3), and tokens (2: hexes C22,E22)
+[22:42] lars773 passes buy/sell shares post conversion
+[22:42] J passes taking loans
+[22:42] NYOW skips convert or merge corporation
+[22:42] B&A converts from 5 to 10 shares
+[22:42] BulletBill buys a 10% share of B&A from the Treasury for $80
+[22:42] BulletBill buys a 10% share of B&A from the Treasury for $80
+[22:42] BulletBill buys a 10% share of B&A from the Treasury for $80
+[22:44] lars773 passes buy/sell shares post conversion
+[22:56] SuperHudsonJ3A passes buy/sell shares post conversion
+[22:57] B&A passes taking loans
+[22:57] B&A pays $50 for 2 tokens
+[22:57] Bess passes convert or merge corporation
+[22:57] -- Acquisition Round 3.2 (of 2) --
+[22:57] Bess may be offered for sale for $330
+[22:57] SuperHudsonJ3A declines to put Bess up for sale
+[22:57] J cannot be bought at $800, skipping
+[22:57] B&A may be offered for sale for $800
+[23:01] BulletBill declines to put B&A up for sale
+[23:01] NYOW may be offered for sale for $1000
+[23:12] YoloGaming declines to put NYOW up for sale
+[23:12] WC cannot be bought at $1500, skipping
+[23:12] H may be offered for sale for $1500
+[23:12] YoloGaming declines to put H up for sale
+[23:12] R may be offered for sale for $2000
+[23:12] lars773 declines to put R up for sale
+[23:12] -- Stock Round 4 --
+[23:15] B&A redeems a 10% share  from the market for $80
+[23:25] R (lars773) takes a loan and receives $100
+[23:25] R's share price moves left from $200 to $180
+[23:25] R (lars773) takes a loan and receives $100
+[23:25] R's share price moves left from $180 to $165
+[23:26] lars773 finishes acting for R
+[23:31] YoloGaming sells a 10% share of R and receives $165
+[23:31] YoloGaming buys a 10% share of B&A from the Treasury for $80
+[02:33] SuperHudsonJ3A passes
+[02:35] BulletBill passes
+[02:40] lars773 buys a 10% share of R from the market for $165
+[02:40] YoloGaming buys a 10% share of NYOW from the Treasury for $100
+[03:08] SuperHudsonJ3A passes
+[03:08] BulletBill passes
+[03:16] lars773 buys a 10% share of R from the Treasury for $165
+[03:17] YoloGaming passes
+[03:19] SuperHudsonJ3A passes
+[03:19] BulletBill passes
+[03:29] lars773 passes
+[03:29] H's share price moves left from $150 to $135
+[03:29] YoloGaming has priority deal
+[03:29] -- Operating Round 4.1 (of 2) --
+[03:29] B&A collects $15 from P9 - Mail Contract
+[03:29] J collects $20 from P11 - Major Mail Contract
+[03:29] lars773 operates R
+[03:29] R lays tile #83 with rotation 0 on F7
+[03:31] R passes lay track
+[03:31] R passes place a token
+[03:31] R runs a 4 train for $180: D1-F3-D7-C8
+[03:31] R runs a 3 train for $140: D7-H9-J7
+[03:31] R pays out $320 = $32 per share ($160 to lars773, $160 to R)
+[03:31] R's share price moves right from $165 to $180
+[03:31] R passes buy trains
+[03:31] R pays $90 interest for 3 loans
+[03:31] R pays off a loan for $100
+[03:31] R's share price moves right from $180 to $200
+[03:31] R pays off a loan for $100
+[03:31] R's share price moves right from $200 to $220
+[03:31] R pays off a loan for $100
+[03:31] R's share price moves right from $220 to $245
+[03:33] R passes take loans
+[03:33] SuperHudsonJ3A operates WC
+[03:43] WC lays tile #619 with rotation 4 on F13 (Pittsburgh)
+[03:44] WC spends $30 and lays tile #8 with rotation 2 on F11
+[03:44] WC places a token on F13 (Pittsburgh)
+[03:44] WC runs a 4 train for $170: G18-F13-D9-D7
+[03:44] WC runs a 3 train for $140: E22-F19-G18
+[03:45] WC runs for $310 and pays half
+[03:45] WC withholds $150
+[03:45] WC pays out $160 = $16 per share ($80 to SuperHudsonJ3A, $80 to WC)
+[03:45] WC's share price moves right from $150 to $165
+[03:45] WC passes buy trains
+[03:45] WC pays $120 interest for 4 loans
+[03:45] WC pays off a loan for $100
+[03:45] WC's share price moves right from $165 to $180
+[03:45] WC pays off a loan for $100
+[03:45] WC's share price moves right from $180 to $200
+[03:45] WC passes take loans
+[03:45] YoloGaming operates H
+[03:46] H lays tile #8 with rotation 1 on H5
+[03:46] H passes lay/upgrade track
+[03:47] H passes place a token
+[03:47] H runs a 4 train for $170: J7-H9-G6-H3
+[03:47] H runs a 3 train for $140: D1-G6-D7
+[03:48] H runs for $310 and pays half
+[03:48] H withholds $150
+[03:48] H pays out $160 = $16 per share ($96 to H, $48 to YoloGaming)
+[03:48] H's share price moves right from $135 to $150
+[03:48] H passes buy trains
+[03:48] H pays $60 interest for 2 loans
+[03:48] H pays off a loan for $100
+[03:48] H's share price moves right from $150 to $165
+[03:48] H pays off a loan for $100
+[03:48] H's share price moves right from $165 to $180
+[03:48] H passes take loans
+[03:48] YoloGaming operates NYOW
+[03:50] NYOW lays tile #80 with rotation 1 on G20
+[03:50] NYOW passes lay track
+[03:50] NYOW places a token on D9 (Cleveland)
+[03:51] NYOW runs a 3 train for $140: E22-F19-G18
+[03:51] NYOW runs a 3 train for $140: E22-F19-G18
+[03:51] NYOW runs for $280 and pays half
+[03:51] NYOW withholds $140
+[03:51] NYOW pays out $140 = $14 per share ($70 to YoloGaming, $70 to NYOW)
+[03:51] NYOW's share price moves right from $100 to $110
+[03:51] NYOW passes buy trains
+[03:51] NYOW pays $120 interest for 4 loans
+[03:51] NYOW pays off a loan for $100
+[03:51] NYOW's share price moves right from $110 to $120
+[03:51] NYOW pays off a loan for $100
+[03:51] NYOW's share price moves right from $120 to $135
+[03:51] NYOW passes take loans
+[03:51] BulletBill operates B&A
+[04:02] B&A lays tile #8 with rotation 3 on G2
+[04:02] B&A passes lay/upgrade track
+[04:02] B&A places a token on C8 (Detroit)
+[04:03] B&A runs a 3 train for $130: D7-C8-B13
+[04:03] B&A runs a 3 train for $140: J7-G6-D7
+[04:03] B&A runs for $270 and pays half
+[04:03] B&A withholds $130
+[04:03] B&A pays out $140 = $14 per share ($84 to BulletBill, $28 to B&A, $14 to SuperHudsonJ3A, $14 to lars773)
+[04:03] B&A's share price moves right from $80 to $90
+[04:03] B&A passes buy trains
+[04:03] B&A pays $120 interest for 4 loans
+[04:03] B&A pays off a loan for $100
+[04:03] B&A's share price moves right from $90 to $100
+[04:03] B&A pays off a loan for $100
+[04:03] B&A's share price moves right from $100 to $110
+[04:03] B&A pays off a loan for $100
+[04:03] B&A's share price moves right from $110 to $120
+[04:03] B&A passes take loans
+[04:03] BulletBill operates J
+[04:03] J lays tile #8 with rotation 3 on E14
+[04:03] J spends $20 and lays tile #82 with rotation 1 on F15
+[04:04] J places a token on G18 (Baltimore)
+[04:04] J runs a 4 train for $150: D19-E22-C22-A20
+[04:04] J runs a 3 train for $140: G18-D19-E22
+[04:04] J runs for $290 and pays half
+[04:04] J withholds $140
+[04:04] J pays out $150 = $15 per share ($90 to BulletBill, $45 to J, $15 to lars773)
+[04:04] J's share price moves right from $80 to $90
+[04:04] J passes buy trains
+[04:04] J pays $150 interest for 5 loans
+[04:04] J pays off a loan for $100
+[04:04] J's share price moves right from $90 to $100
+[04:04] J passes take loans
+[04:04] SuperHudsonJ3A operates Bess
+[04:05] Bess lays tile #9 with rotation 0 on C4
+[04:05] Bess passes lay/upgrade track
+[04:05] Bess skips place a token
+[04:05] Bess runs a 4 train for $180: D1-D7-C8-B13
+[04:05] Bess runs a 3 train for $140: D7-H9-J7
+[04:05] Bess runs for $320 and pays half
+[04:05] Bess withholds $160
+[04:05] Bess pays out $160 = $32 per share ($96 to SuperHudsonJ3A, $64 to Bess)
+[04:05] Bess's share price moves right from $65 to $80 (2 steps)
+[04:05] Bess passes buy trains
+[04:05] Bess pays $150 interest for 5 loans
+[04:05] Bess pays off a loan for $100
+[04:05] Bess's share price moves right from $80 to $90
+[04:05] Bess passes take loans
+[04:05] -- Event: A 4 train exports --
+[04:05] -- Merger and Conversion Round 4.1 (of 2) --
+[04:05] R skips convert or merge corporation
+[04:05] WC skips convert or merge corporation
+[04:05] H skips convert or merge corporation
+[04:05] NYOW skips convert or merge corporation
+[04:05] B&A skips convert or merge corporation
+[04:05] J skips convert or merge corporation
+[04:08] Bess converts from 5 to 10 shares
+[04:08] SuperHudsonJ3A buys a 10% share of Bess from the Treasury for $90
+[04:08] SuperHudsonJ3A buys a 10% share of Bess from the Treasury for $90
+[04:10] BulletBill buys a 10% share of Bess from the Treasury for $90
+[04:11] lars773 buys a 10% share of Bess from the Treasury for $90
+[04:11] YoloGaming buys a 10% share of Bess from the Treasury for $90
+[04:11] Bess passes taking loans
+[04:11] Bess pays $100 for 2 tokens
+[04:11] -- Acquisition Round 4.1 (of 2) --
+[04:11] Bess may be offered for sale for $900
+[04:11] SuperHudsonJ3A declines to put Bess up for sale
+[04:11] J may be offered for sale for $1000
+[04:11] BulletBill declines to put J up for sale
+[04:11] B&A may be offered for sale for $1200
+[04:12] BulletBill declines to put B&A up for sale
+[04:12] NYOW may be offered for sale for $1350
+[04:12] YoloGaming declines to put NYOW up for sale
+[04:12] H may be offered for sale for $1800
+[04:12] YoloGaming declines to put H up for sale
+[04:12] WC may be offered for sale for $2000
+[04:12] SuperHudsonJ3A declines to put WC up for sale
+[04:12] R cannot be bought at $2450, skipping
+[04:12] -- Operating Round 4.2 (of 2) --
+[04:12] B&A collects $15 from P9 - Mail Contract
+[04:12] J collects $20 from P11 - Major Mail Contract
+[04:12] lars773 operates R
+[04:13] R passes lay/upgrade track
+[04:13] R passes place a token
+[04:13] R runs a 4 train for $190: J7-H9-D7-C8
+[04:13] R runs a 3 train for $140: E22-D19-G18
+[04:14] R pays out $330 = $33 per share ($165 to lars773, $165 to R)
+[04:14] R's share price moves right from $245 to $270
+[04:14] R takes a loan and receives $100
+[04:14] R's share price moves left from $270 to $245
+[04:14] R takes a loan and receives $100
+[04:14] R's share price moves left from $245 to $220
+[04:14] R takes a loan and receives $100
+[04:14] R's share price moves left from $220 to $200
+[04:15] R buys a 5 train for $600 from The Depot
+[04:15] R collects $50 from P14 - Inventor
+[04:15] -- Phase 5 (Operating Rounds: 2 | Train Limit: 3 | Available Tiles: Yellow, Green, Brown) --
+[04:15] R pays $45 interest for 3 loans
+[04:15] R passes take loans
+[04:15] SuperHudsonJ3A operates WC
+[04:16] WC lays tile #62 with rotation 0 on E22 (New York)
+[04:16] WC passes lay track
+[04:16] WC places a token on G18 (Baltimore)
+[04:16] WC runs a 4 train for $190: E22-F19-F13-D9
+[04:16] WC runs a 3 train for $160: E22-F19-G18
+[04:17] WC takes a loan and receives $100
+[04:17] WC's share price moves left from $200 to $180
+[04:17] WC takes a loan and receives $100
+[04:17] WC's share price moves left from $180 to $165
+[04:17] WC takes a loan and receives $100
+[04:17] WC's share price moves left from $165 to $150
+[04:17] WC runs for $350 and pays half
+[04:17] WC withholds $170
+[04:17] WC pays out $180 = $18 per share ($90 to SuperHudsonJ3A, $90 to WC)
+[04:17] WC's share price moves right from $150 to $165
+[04:17] WC buys a 5 train for $600 from The Depot
+[04:17] WC takes a loan and receives $100
+[04:17] WC's share price moves left from $165 to $150
+[04:17] WC pays $90 interest for 6 loans
+[04:17] WC passes take loans
+[04:17] YoloGaming operates H
+[04:18] H lays tile #63 with rotation 0 on G6 (Cincinnati)
+[04:18] H passes lay track
+[04:18] H places a token on H9 (Charleston)
+[04:19] H runs a 4 train for $190: H1-H3-G6-D7
+[04:19] H runs a 3 train for $170: D1-G6-J7
+[04:19] H runs for $360 and pays half
+[04:19] H withholds $180
+[04:19] H pays out $180 = $18 per share ($108 to H, $54 to YoloGaming)
+[04:19] H's share price moves right from $180 to $200
+[04:19] H takes a loan and receives $100
+[04:19] H's share price moves left from $200 to $180
+[04:19] H takes a loan and receives $100
+[04:19] H's share price moves left from $180 to $165
+[04:19] H takes a loan and receives $100
+[04:19] H's share price moves left from $165 to $150
+[04:20] H takes a loan and receives $100
+[04:20] H's share price moves left from $150 to $135
+[04:20] H buys a 5 train for $600 from The Depot
+[04:20] H pays $60 interest for 4 loans
+[04:20] H passes take loans
+[04:20] YoloGaming operates NYOW
+[04:20] NYOW lays tile #593 with rotation 0 on G18 (Baltimore)
+[04:20] NYOW passes lay track
+[04:20] NYOW places a token on E22 (New York)
+[04:23] NYOW runs a 3 train for $170: E22-F19-G18
+[04:23] NYOW runs a 3 train for $170: E22-F19-G18
+[04:24] NYOW pays out $340 = $34 per share ($170 to YoloGaming, $170 to NYOW)
+[04:24] NYOW's share price moves right from $135 to $165 (2 steps)
+[04:24] NYOW passes buy trains
+[04:24] NYOW pays $30 interest for 2 loans
+[04:24] NYOW pays off a loan for $100
+[04:24] NYOW's share price moves right from $165 to $180
+[04:24] NYOW pays off a loan for $100
+[04:24] NYOW's share price moves right from $180 to $200
+[04:25] NYOW passes take loans
+[04:25] BulletBill operates B&A
+[04:25] B&A lays tile #82 with rotation 0 on F21
+[04:25] B&A passes lay track
+[04:26] B&A places a token on G18 (Baltimore)
+[04:26] B&A runs a 3 train for $170: D1-G6-J7
+[04:26] B&A runs a 3 train for $170: E22-G18-D19
+[04:27] B&A withholds $340
+[04:27] B&A's share price moves left from $120 to $110
+[04:27] B&A takes a loan and receives $100
+[04:27] B&A's share price moves left from $110 to $100
+[04:27] B&A takes a loan and receives $100
+[04:27] B&A's share price moves left from $100 to $90
+[04:27] B&A takes a loan and receives $100
+[04:27] B&A's share price moves left from $90 to $80
+[04:27] B&A buys a 5 train for $600 from The Depot
+[04:27] B&A pays $60 interest for 4 loans
+[04:28] B&A passes take loans
+[04:28] BulletBill operates J
+[04:28] J lays tile #63 with rotation 0 on D19 (Scranton)
+[04:28] J passes lay track
+[04:28] J skips place a token
+[04:28] J runs a 4 train for $200: A20-C22-D19-E22
+[04:28] J runs a 3 train for $180: D19-G18-E22
+[04:28] J withholds $380
+[04:28] J's share price moves left from $100 to $90
+[04:28] J takes a loan and receives $100
+[04:28] J's share price moves left from $90 to $80
+[04:28] J takes a loan and receives $100
+[04:28] J's share price moves left from $80 to $70
+[04:28] J takes a loan and receives $100
+[04:28] J's share price moves left from $70 to $65
+[04:28] J buys a 5 train for $600 from The Depot
+[04:28] J pays $105 interest for 7 loans
+[04:29] J passes take loans
+[04:29] SuperHudsonJ3A operates Bess
+[04:29] Bess lays tile #593 with rotation 5 on D7 (Toledo)
+[04:35] Bess passes lay track
+[04:35] Bess places a token on F3 (Indianapolis)
+[04:35] Bess runs a 4 train for $180: D7-C8-B13-C14
+[04:35] Bess runs a 3 train for $170: D1-D7-G6
+[04:35] Bess withholds $350
+[04:35] Bess's share price moves left from $90 to $80
+[04:35] Bess takes a loan and receives $100
+[04:35] Bess's share price moves left from $80 to $70
+[04:35] Bess takes a loan and receives $100
+[04:35] Bess's share price moves left from $70 to $65
+[04:35] Bess buys a 6 train for $750 from The Depot
+[04:35] R collects $60 from P14 - Inventor
+[04:35] -- Phase 6 (Operating Rounds: 2 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+[04:35] H collects $75 from P15 - Scrapper for 3
+[04:35] -- Event: 3 trains rust ( J x1, Bess x1, The Depot x3, B&A x2, R x1, H x1, NYOW x2, WC x1) --
+[04:35] Bess pays $90 interest for 6 loans
+[04:35] Bess passes take loans
+[04:35] -- Event: A 6 train exports --
+[04:35] -- Merger and Conversion Round 4.2 (of 2) --
+[04:35] R skips convert or merge corporation
+[04:35] NYOW skips convert or merge corporation
+[04:35] WC skips convert or merge corporation
+[04:35] H skips convert or merge corporation
+[04:35] B&A skips convert or merge corporation
+[04:35] J skips convert or merge corporation
+[04:35] Bess skips convert or merge corporation
+[04:35] -- Acquisition Round 4.2 (of 2) --
+[04:35] Bess cannot be bought at $650, skipping
+[04:35] J cannot be bought at $650, skipping
+[04:35] B&A may be offered for sale for $800
+[04:35] BulletBill declines to put B&A up for sale
+[04:35] H may be offered for sale for $1350
+[04:38] YoloGaming declines to put H up for sale
+[04:38] WC cannot be bought at $1500, skipping
+[04:38] NYOW cannot be bought at $2000, skipping
+[04:38] R cannot be bought at $2000, skipping
+[04:38] -- Stock Round 5 --
+[04:40] YoloGaming buys a 10% share of Bess from the Treasury for $65
+[04:41] SuperHudsonJ3A buys a 10% share of H from the Treasury for $135
+[04:42] BulletBill buys a 10% share of Bess from the Treasury for $65
+[12:13] lars773 shorts a 10% share of NYOW for $200
+[12:14] lars773 auctions GT for $400
+[12:14] GT must choose city for home token
+[12:14] YoloGaming cannot bid $405 and is out of the auction for GT
+[12:14] SuperHudsonJ3A cannot bid $405 and is out of the auction for GT
+[12:14] BulletBill cannot bid $405 and is out of the auction for GT
+[12:14] lars773 wins bid on GT for $400
+[12:14] lars773 pars GT at $200
+[12:14] lars773 buys a 100% share of GT from the Treasury for $400
+[12:14] lars773 becomes the president of GT
+[12:14] GT floats
+[12:14] GT starts with $400 and 10 shares
+[12:14] GT buys 3 tokens for $150
+[12:14] GT places a token on D7 (Toledo)
+[12:32] YoloGaming buys a 10% share of H from the market for $135
+[12:35] SuperHudsonJ3A shorts a 10% share of NYOW for $200
+[12:35] SuperHudsonJ3A buys a 10% share of J from the Treasury for $65
+[12:49] BulletBill shorts a 10% share of NYOW for $200
+[12:49] BulletBill buys a 10% share of H from the Treasury for $135
+[12:51] lars773 shorts a 10% share of NYOW for $200
+[12:58] lars773 buys a 10% share of GT from the Treasury for $200
+[13:01] YoloGaming buys a 10% share of J from the Treasury for $65
+[13:02] SuperHudsonJ3A buys a 10% share of J from the Treasury for $65
+[13:03] BulletBill buys a 10% share of H from the Treasury for $135
+[13:05] lars773 passes
+[13:05] YoloGaming sells 2 shares of NYOW and receives $400
+[13:06] YoloGaming buys a 10% share of H from the Treasury for $135
+[13:09] SuperHudsonJ3A shorts a 10% share of NYOW for $200
+[13:09] SuperHudsonJ3A buys a 10% share of B&A from the Treasury for $80
+[13:27] BulletBill shorts a 10% share of NYOW for $200
+[13:27] BulletBill buys a 10% share of H from the Treasury for $135
+[13:54] R (lars773) takes a loan and receives $100
+[13:54] R's share price moves left from $200 to $180
+[13:54] lars773 finishes acting for R
+[13:55] YoloGaming buys a 10% share of H from the Treasury for $135
+[14:03] SuperHudsonJ3A buys a 10% share of B&A from the Treasury for $80
+[14:04] BulletBill passes
+[14:32] lars773 passes
+[14:35] YoloGaming passes
+[15:08] SuperHudsonJ3A passes
+[15:08] NYOW's share price moves left from $200 to $90
+[15:08] H's share price moves right from $135 to $150
+[15:08] B&A's share price moves right from $80 to $90
+[15:08] J's share price moves right from $65 to $70
+[15:08] Bess's share price moves right from $65 to $70
+[15:08] BulletBill has priority deal
+[15:08] -- Operating Round 5.1 (of 2) --
+[15:08] B&A collects $15 from P9 - Mail Contract
+[15:08] J collects $20 from P11 - Major Mail Contract
+[15:08] lars773 operates GT
+[16:15] GT lays tile #83 with rotation 4 on D3
+[16:15] GT passes lay track
+[16:15] GT places a token on B5 (Lansing)
+[16:15] GT skips run routes
+[16:15] GT does not run
+[16:15] GT's share price moves left from $200 to $180
+[16:15] GT takes a loan and receives $100
+[16:15] GT's share price moves left from $180 to $165
+[16:15] GT takes a loan and receives $100
+[16:15] GT's share price moves left from $165 to $150
+[16:16] GT buys a 5 train for $560 from R
+[16:17] GT passes buy trains
+[16:17] GT pays $70 interest for 2 loans
+[16:17] GT passes take loans
+[16:17] lars773 operates R
+[16:17] R lays tile #15 with rotation 4 on B5 (Lansing)
+[16:18] R passes lay track
+[16:18] R places a token on B5 (Lansing)
+[16:18] R runs a 4 train for $220: D1-D7-H9-J7
+[16:18] R takes a loan and receives $100
+[16:18] R's share price moves left from $180 to $165
+[16:19] R pays out $220 = $22 per share ($110 to lars773, $110 to R)
+[16:19] R's share price moves right from $165 to $180
+[16:19] R buys a 6 train for $750 from The Depot
+[16:19] R pays $175 interest for 5 loans
+[16:20] R passes take loans
+[16:20] SuperHudsonJ3A operates WC
+[17:06] WC spends $20 and lays tile #9 with rotation 0 on H17
+[17:06] WC spends $20 and lays tile #57 with rotation 0 on I16 (Richmond)
+[17:06] WC skips place a token
+[17:06] WC runs a 5 train for $240: E22-F19-G18-I16-J15
+[17:06] WC runs a 4 train for $190: E22-F19-F13-D9
+[17:07] WC runs for $430 and pays half
+[17:07] WC withholds $210
+[17:07] WC pays out $220 = $22 per share ($110 to SuperHudsonJ3A, $110 to WC)
+[17:07] WC's share price moves right from $150 to $165
+[17:07] WC skips buy trains
+[17:07] WC pays $210 interest for 6 loans
+[17:07] WC pays off a loan for $100
+[17:07] WC's share price moves right from $165 to $180
+[17:07] WC passes take loans
+[17:07] YoloGaming operates H
+[17:09] H lays tile #7 with rotation 2 on I2
+[17:09] H spends $20 and lays tile #63 with rotation 0 on H3 (Louisville)
+[17:10] H places a token on H3 (Louisville)
+[17:10] H runs a 5 train for $240: J7-H9-G6-H3-H1
+[17:10] H runs a 4 train for $210: H1-H3-G6-D7
+[17:10] H runs for $450 and pays half
+[17:10] H withholds $220
+[17:10] H pays out $230 = $23 per share ($138 to YoloGaming, $69 to BulletBill, $23 to SuperHudsonJ3A)
+[17:10] H's share price moves right from $150 to $165
+[17:10] H skips buy trains
+[17:10] H pays $140 interest for 4 loans
+[17:10] H pays off a loan for $100
+[17:10] H's share price moves right from $165 to $180
+[17:10] H pays off a loan for $100
+[17:10] H's share price moves right from $180 to $200
+[17:10] H pays off a loan for $100
+[17:10] H's share price moves right from $200 to $220
+[17:10] H pays off a loan for $100
+[17:10] H's share price moves right from $220 to $245
+[17:11] H passes take loans
+[17:11] YoloGaming operates NYOW
+[17:11] NYOW lays tile #63 with rotation 0 on F19 (Philadelphia)
+[17:11] NYOW passes lay track
+[17:11] NYOW skips place a token
+[17:11] NYOW skips run routes
+[17:11] NYOW does not run
+[17:11] NYOW's share price moves left from $90 to $80
+[17:11] NYOW buys a 5 train for $1 from H
+[17:12] NYOW passes buy trains
+[17:12] NYOW passes take loans
+[17:12] BulletBill operates B&A
+[17:15] B&A lays tile #593 with rotation 4 on C8 (Detroit)
+[17:15] B&A passes lay track
+[17:15] B&A skips place a token
+[17:15] B&A runs a 5 train for $270: C8-B13-C14-G18-E22
+[17:15] B&A runs for $270 and pays half
+[17:15] B&A withholds $130
+[17:15] B&A pays out $140 = $14 per share ($84 to BulletBill, $42 to SuperHudsonJ3A, $14 to lars773)
+[17:15] B&A's share price moves right from $90 to $100
+[17:15] B&A passes buy trains
+[17:15] B&A pays $140 interest for 4 loans
+[17:15] B&A pays off a loan for $100
+[17:15] B&A's share price moves right from $100 to $110
+[17:15] B&A pays off a loan for $100
+[17:15] B&A's share price moves right from $110 to $120
+[17:15] B&A passes take loans
+[17:15] BulletBill operates J
+[17:15] J lays tile #63 with rotation 0 on C22 (Albany)
+[17:16] J passes lay track
+[17:16] J skips place a token
+[17:16] J runs a 5 train for $270: G18-D19-E22-C22-A20
+[17:16] J runs a 4 train for $210: J15-I16-G18-E22
+[17:16] J runs for $480 and pays half
+[17:16] J withholds $240
+[17:16] J pays out $240 = $24 per share ($144 to BulletBill, $48 to SuperHudsonJ3A, $24 to lars773, $24 to YoloGaming)
+[17:16] J's share price moves right from $70 to $90 (2 steps)
+[17:16] J skips buy trains
+[17:16] J pays $245 interest for 7 loans
+[17:16] J pays off a loan for $100
+[17:16] J's share price moves right from $90 to $100
+[17:16] J pays off a loan for $100
+[17:16] J's share price moves right from $100 to $110
+[17:16] J passes take loans
+[17:16] SuperHudsonJ3A operates Bess
+[17:18] Bess lays tile #7 with rotation 4 on C6
+[17:18] Bess spends $20 and lays tile #82 with rotation 5 on G8
+[17:18] Bess places a token on H3 (Louisville)
+[17:18] Bess runs a 6 train for $280: G6-H3-F3-D7-C8-B5
+[17:18] Bess runs a 4 train for $210: G6-D7-C8-B13
+[17:18] Bess runs for $490 and pays half
+[17:18] Bess withholds $240
+[17:18] Bess pays out $250 = $25 per share ($125 to SuperHudsonJ3A, $50 to BulletBill, $50 to YoloGaming, $25 to lars773)
+[17:18] Bess's share price moves right from $70 to $90 (2 steps)
+[17:18] Bess skips buy trains
+[17:18] Bess pays $210 interest for 6 loans
+[17:18] Bess pays off a loan for $100
+[17:18] Bess's share price moves right from $90 to $100
+[17:18] Bess pays off a loan for $100
+[17:18] Bess's share price moves right from $100 to $110
+[17:18] Bess passes take loans
+[17:18] -- Event: A 6 train exports --
+[17:18] -- Merger and Conversion Round 5.1 (of 2) --
+[17:18] H skips convert or merge corporation
+[17:18] R skips convert or merge corporation
+[17:18] WC skips convert or merge corporation
+[17:18] GT skips convert or merge corporation
+[17:18] B&A skips convert or merge corporation
+[17:18] J skips convert or merge corporation
+[17:18] Bess skips convert or merge corporation
+[17:18] NYOW skips convert or merge corporation
+[17:18] -- Acquisition Round 5.1 (of 2) --
+[17:18] NYOW may be offered for sale for $800
+[17:19] YoloGaming declines to put NYOW up for sale
+[17:19] Bess may be offered for sale for $1100
+[17:19] SuperHudsonJ3A declines to put Bess up for sale
+[17:19] J may be offered for sale for $1100
+[17:21] BulletBill declines to put J up for sale
+[17:21] B&A may be offered for sale for $1200
+[17:21] BulletBill declines to put B&A up for sale
+[17:21] GT may be offered for sale for $1500
+[17:23] lars773 declines to put GT up for sale
+[17:23] WC may be offered for sale for $1800
+[17:26] SuperHudsonJ3A declines to put WC up for sale
+[17:26] R may be offered for sale for $1800
+[17:27] lars773 declines to put R up for sale
+[17:27] H cannot be bought at $2450, skipping
+[17:27] -- Operating Round 5.2 (of 2) --
+[17:27] B&A collects $15 from P9 - Mail Contract
+[17:27] J collects $20 from P11 - Major Mail Contract
+[17:27] YoloGaming operates H
+[17:28] H lays tile #63 with rotation 0 on F13 (Pittsburgh)
+[17:28] H passes lay track
+[17:28] H skips place a token
+[17:29] H runs a 4 train for $210: H1-H3-G6-D7
+[17:29] H withholds $210
+[17:29] H's share price moves left from $245 to $220
+[17:29] H takes a loan and receives $100
+[17:29] H's share price moves left from $220 to $200
+[17:29] H buys a 7 train for $900 from The Depot
+[17:29] R collects $70 from P14 - Inventor
+[17:29] -- Phase 7 (Operating Rounds: 2 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown, Gray) --
+[17:29] H pays $25 interest for 1 loan
+[17:29] H passes take loans
+[17:29] lars773 operates R
+[17:34] R lays tile #83 with rotation 5 on C6
+[17:40] R passes lay track
+[17:40] R skips place a token
+[17:40] R runs a 6 train for $310: D7-C8-B13-C14-D19-E22
+[17:40] R runs a 4 train for $260: D1-D7-H9-J7
+[17:40] R pays out $570 = $57 per share ($285 to lars773, $285 to R)
+[17:40] R's share price moves right from $180 to $220 (2 steps)
+[17:40] R skips buy trains
+[17:40] R pays $125 interest for 5 loans
+[17:40] R pays off a loan for $100
+[17:40] R's share price moves right from $220 to $245
+[17:40] R pays off a loan for $100
+[17:40] R's share price moves right from $245 to $270
+[17:40] R passes take loans
+[17:40] SuperHudsonJ3A operates WC
+[17:43] WC lays tile #X30 with rotation 4 on E22 (New York)
+[17:43] WC passes lay track
+[17:43] WC skips place a token
+[17:44] WC runs a 5 train for $300: E22-F19-G18-F13-D9
+[17:44] WC runs a 4 train for $260: G18-E22-C22-A20
+[17:44] WC runs for $560 and pays half
+[17:44] WC withholds $280
+[17:44] WC pays out $280 = $28 per share ($140 to SuperHudsonJ3A, $140 to WC)
+[17:44] WC's share price moves right from $180 to $200
+[17:44] WC skips buy trains
+[17:44] WC pays $125 interest for 5 loans
+[17:44] WC pays off a loan for $100
+[17:44] WC's share price moves right from $200 to $220
+[17:44] WC pays off a loan for $100
+[17:44] WC's share price moves right from $220 to $245
+[17:44] WC pays off a loan for $100
+[17:44] WC's share price moves right from $245 to $270
+[17:45] WC passes take loans
+[17:45] lars773 operates GT
+[18:03] GT lays tile #597 with rotation 0 on C8 (Detroit)
+[18:03] GT passes lay track
+[18:03] GT passes place a token
+[18:03] GT runs a 5 train for $310: D1-B5-C8-D7-D9
+[18:10] GT runs for $310 and pays half
+[18:10] GT withholds $150
+[18:10] GT pays out $160 = $16 per share ($112 to GT, $48 to lars773)
+[18:10] GT's share price moves right from $150 to $165
+[18:11] GT passes buy trains
+[18:11] GT pays $50 interest for 2 loans
+[18:11] GT pays off a loan for $100
+[18:11] GT's share price moves right from $165 to $180
+[18:11] GT pays off a loan for $100
+[18:11] GT's share price moves right from $180 to $200
+[18:11] GT passes take loans
+[18:11] BulletBill operates B&A
+[18:14] B&A lays tile #63 with rotation 0 on F3 (Indianapolis)
+[18:14] B&A passes lay track
+[18:14] B&A skips place a token
+[18:14] B&A runs a 5 train for $310: C8-B13-C14-G18-E22
+[18:14] B&A withholds $310
+[18:14] B&A's share price moves left from $120 to $110
+[18:14] B&A takes a loan and receives $100
+[18:14] B&A's share price moves left from $110 to $100
+[18:14] B&A takes a loan and receives $100
+[18:14] B&A's share price moves left from $100 to $90
+[18:14] B&A takes a loan and receives $100
+[18:14] B&A's share price moves left from $90 to $80
+[18:14] B&A takes a loan and receives $100
+[18:14] B&A's share price moves left from $80 to $70
+[18:14] B&A takes a loan and receives $100
+[18:14] B&A's share price moves left from $70 to $65
+[18:14] B&A takes a loan and receives $100
+[18:14] B&A's share price moves left from $65 to $60
+[18:14] B&A buys a 7 train for $900 from The Depot
+[18:14] B&A takes a loan and receives $100
+[18:14] B&A's share price moves left from $60 to $55
+[18:14] B&A takes a loan and receives $100
+[18:14] B&A's share price moves left from $55 to $50
+[18:14] B&A pays $250 interest for 10 loans
+[18:14] BulletBill operates J
+[18:17] J lays tile #15 with rotation 0 on I16 (Richmond)
+[18:17] J passes lay track
+[18:17] J skips place a token
+[18:17] J runs a 5 train for $290: E22-D19-G18-I16-J15
+[18:17] J runs a 4 train for $260: G18-E22-C22-A20
+[18:19] J runs for $550 and pays half
+[18:19] J withholds $270
+[18:19] J pays out $280 = $28 per share ($168 to BulletBill, $56 to SuperHudsonJ3A, $28 to lars773, $28 to YoloGaming)
+[18:19] J's share price moves right from $110 to $135 (2 steps)
+[18:19] J skips buy trains
+[18:19] J pays $125 interest for 5 loans
+[18:19] J pays off a loan for $100
+[18:19] J's share price moves right from $135 to $150
+[18:19] J pays off a loan for $100
+[18:19] J's share price moves right from $150 to $165
+[18:19] J passes take loans
+[18:19] SuperHudsonJ3A operates Bess
+[18:21] Bess lays tile #597 with rotation 5 on D7 (Toledo)
+[18:21] Bess passes lay track
+[18:21] Bess skips place a token
+[18:21] Bess runs a 6 train for $350: D1-F3-D7-C8-B13-C14
+[18:21] Bess runs a 4 train for $250: D9-D7-C8-B5
+[18:21] Bess runs for $600 and pays half
+[18:21] Bess withholds $300
+[18:21] Bess pays out $300 = $30 per share ($150 to SuperHudsonJ3A, $60 to BulletBill, $60 to YoloGaming, $30 to lars773)
+[18:21] Bess's share price moves right from $110 to $135 (2 steps)
+[18:21] Bess skips buy trains
+[18:21] Bess pays $100 interest for 4 loans
+[18:24] Bess pays off a loan for $100
+[18:24] Bess's share price moves right from $135 to $150
+[18:24] Bess pays off a loan for $100
+[18:24] Bess's share price moves right from $150 to $165
+[18:24] Bess passes take loans
+[18:24] YoloGaming operates NYOW
+[18:56] NYOW lays tile #546 with rotation 0 on H7
+[18:56] NYOW passes lay track
+[18:56] NYOW skips place a token
+[18:56] NYOW runs a 5 train for $320: E22-F19-F13-D9-J7
+[18:56] NYOW pays out $320 = $32 per share ($160 to NYOW, $96 to YoloGaming, $-64 to BulletBill, $-64 to lars773, $-64 to SuperHudsonJ3A)
+[18:56] NYOW's share price moves right from $80 to $100 (2 steps)
+[18:57] NYOW passes buy trains
+[18:57] NYOW passes take loans
+[18:57] -- Event: A 7 train exports --
+[18:57] -- Merger and Conversion Round 5.2 (of 2) --
+[18:57] R skips convert or merge corporation
+[18:57] WC skips convert or merge corporation
+[18:57] H skips convert or merge corporation
+[18:57] GT skips convert or merge corporation
+[18:57] J skips convert or merge corporation
+[18:57] Bess skips convert or merge corporation
+[18:57] NYOW skips convert or merge corporation
+[18:57] B&A skips convert or merge corporation
+[18:57] -- Acquisition Round 5.2 (of 2) --
+[18:57] B&A cannot be bought at $500, skipping
+[18:57] NYOW may be offered for sale for $1000
+[18:57] YoloGaming declines to put NYOW up for sale
+[18:57] Bess cannot be bought at $1650, skipping
+[18:57] J cannot be bought at $1650, skipping
+[18:57] GT may be offered for sale for $2000
+[18:58] lars773 declines to put GT up for sale
+[18:58] H cannot be bought at $2000, skipping
+[18:58] WC cannot be bought at $2700, skipping
+[18:58] R cannot be bought at $2700, skipping
+[18:58] -- Stock Round 6 --
+[19:14] BulletBill buys a 10% share of NYOW from the market for $100
+[19:15] lars773 buys a 10% share of NYOW from the market for $100
+[19:17] YoloGaming buys a 10% share of NYOW from the Treasury for $100
+[19:19] SuperHudsonJ3A buys a 10% share of NYOW from the market for $100
+[19:23] BulletBill buys a 10% share of NYOW from the market for $100
+[19:42] lars773 buys a 10% share of NYOW from the market for $100
+[19:44] YoloGaming buys a 10% share of NYOW from the Treasury for $100
+[19:53] SuperHudsonJ3A buys a 10% share of NYOW from the market for $100
+[19:56] BulletBill buys a 10% share of NYOW from the market for $100
+[19:57] lars773 buys a 10% share of NYOW from the market for $100
+[19:58] YoloGaming buys a 10% share of NYOW from the Treasury for $100
+[20:19] SuperHudsonJ3A buys a 10% share of WC from the Treasury for $270
+[20:21] BulletBill sells a 10% share of Bess and receives $165
+[20:21] BulletBill buys a 10% share of NYOW from the Treasury for $100
+[20:35] lars773 sells a 10% share of B&A and receives $50
+[20:35] lars773 buys a 10% share of R from the Treasury for $270
+[20:55] YoloGaming buys a 10% share of B&A from the market for $50
+[20:56] SuperHudsonJ3A buys a 10% share of Bess from the market for $165
+[20:57] BulletBill sells a 10% share of Bess and receives $165
+[20:57] BulletBill buys a 10% share of NYOW from the Treasury for $100
+[20:57] lars773 passes
+[20:58] YoloGaming shorts a 10% share of GT for $200
+[20:59] YoloGaming sells 2 shares of Bess and receives $330
+[21:00] YoloGaming auctions DL&W for $400
+[21:00] DL&W must choose city for home token
+[21:00] BulletBill cannot bid $405 and is out of the auction for DL&W
+[21:00] lars773 cannot bid $405 and is out of the auction for DL&W
+[21:00] SuperHudsonJ3A cannot bid $405 and is out of the auction for DL&W
+[21:00] YoloGaming wins bid on DL&W for $400
+[21:00] YoloGaming pars DL&W at $200
+[21:00] YoloGaming buys a 100% share of DL&W from the Treasury for $400
+[21:00] YoloGaming becomes the president of DL&W
+[21:00] DL&W floats
+[21:00] DL&W starts with $400 and 10 shares
+[21:00] DL&W buys 3 tokens for $150
+[21:00] DL&W places a token on E22 (New York)
+[21:08] SuperHudsonJ3A sells a 10% share of H and receives $200
+[21:09] SuperHudsonJ3A buys a 10% share of GT from the market for $200
+[21:34] BulletBill passes
+[21:50] lars773 passes
+[21:56] YoloGaming shorts a 10% share of GT for $200
+[21:56] YoloGaming buys a 10% share of DL&W from the Treasury for $200
+[21:58] SuperHudsonJ3A passes
+[22:06] BulletBill passes
+[22:24] lars773 shorts a 10% share of H for $200
+[22:24] lars773 buys a 10% share of GT from the market for $200
+[22:25] YoloGaming shorts a 10% share of GT for $200
+[22:25] YoloGaming buys a 10% share of DL&W from the Treasury for $200
+[22:40] SuperHudsonJ3A sells a 10% share of J and receives $165
+[22:40] SuperHudsonJ3A buys a 10% share of GT from the market for $200
+[23:12] BulletBill passes
+[23:13] lars773 passes
+[23:14] YoloGaming buys a 10% share of DL&W from the Treasury for $200
+[23:58] SuperHudsonJ3A passes
+[23:58] BulletBill passes
+[23:59] lars773 sells a 10% share of R and receives $270
+[23:59] lars773 buys a 10% share of GT from the Treasury for $200
+[00:09] YoloGaming passes
+[00:10] SuperHudsonJ3A passes
+[00:11] BulletBill passes
+[00:11] R redeems a 10% share  from the market for $270
+[00:11] YoloGaming passes
+[02:17] Bess (SuperHudsonJ3A) takes a loan and receives $100
+[02:17] Bess's share price moves left from $165 to $150
+[02:17] Bess (SuperHudsonJ3A) takes a loan and receives $100
+[02:17] Bess's share price moves left from $150 to $135
+[02:17] Bess (SuperHudsonJ3A) takes a loan and receives $100
+[02:17] Bess's share price moves left from $135 to $120
+[02:17] Bess redeems a 20% share  from the market for $240
+[02:26] BulletBill passes
+[02:57] lars773 sells a 10% share of NYOW and receives $100
+[02:57] lars773 buys a 10% share of GT from the Treasury for $200
+[02:58] NYOW redeems a 10% share  from the market for $100
+[03:11] Bess (SuperHudsonJ3A) takes a loan and receives $100
+[03:11] Bess's share price moves left from $120 to $110
+[03:11] Bess redeems a 10% share  from the market for $110
+[03:13] BulletBill sells a 10% share of H and receives $200
+[03:13] BulletBill buys a 10% share of NYOW from the Treasury for $100
+[03:16] lars773 passes
+[03:18] YoloGaming passes
+[03:19] SuperHudsonJ3A passes
+[03:19] BulletBill passes
+[03:19] H's share price moves left from $200 to $150
+[03:19] J's share price moves left from $165 to $150
+[03:19] NYOW's share price moves right from $100 to $110
+[03:19] B&A's share price moves right from $50 to $55
+[03:19] lars773 has priority deal
+[03:19] -- Operating Round 6.1 (of 2) --
+[03:19] J collects $20 from P11 - Major Mail Contract
+[03:19] B&A collects $15 from P9 - Mail Contract
+[03:19] lars773 operates R
+[03:23] R lays tile #611 with rotation 2 on C14 (Buffalo)
+[03:23] R passes lay track
+[03:23] R skips place a token
+[03:23] R runs a 6 train for $380: D7-C8-B13-C14-D19-E22
+[03:23] R runs a 4 train for $280: D1-D7-H9-J7
+[03:24] R runs for $660 and pays half
+[03:24] R withholds $330
+[03:24] R pays out $330 = $33 per share ($165 to lars773, $165 to R)
+[03:24] R's share price moves right from $270 to $300
+[03:24] R skips buy trains
+[03:24] R pays $75 interest for 3 loans
+[03:24] R pays off a loan for $100
+[03:24] R's share price moves right from $300 to $330
+[03:24] R pays off a loan for $100
+[03:24] R's share price moves right from $330 to $360
+[03:24] R pays off a loan for $100
+[03:24] R's share price moves right from $360 to $400
+[03:24] R passes take loans
+[03:24] SuperHudsonJ3A operates WC
+[03:28] WC lays tile #597 with rotation 0 on G18 (Baltimore)
+[03:28] WC passes lay track
+[03:28] WC skips place a token
+[03:29] WC runs a 5 train for $320: E22-F19-G18-F13-D9
+[03:29] WC runs a 4 train for $280: G18-E22-C22-A20
+[03:29] WC runs for $600 and pays half
+[03:29] WC withholds $300
+[03:29] WC pays out $300 = $30 per share ($180 to SuperHudsonJ3A, $120 to WC)
+[03:29] WC's share price moves right from $270 to $300
+[03:29] WC skips buy trains
+[03:29] WC pays $50 interest for 2 loans
+[03:29] WC passes payoff loans
+[03:29] lars773 operates GT
+[03:30] GT lays tile #63 with rotation 0 on H9 (Charleston)
+[03:30] GT passes lay track
+[03:30] GT passes place a token
+[03:30] GT runs a 5 train for $350: D1-B5-C8-D7-J7
+[03:30] GT runs for $350 and pays half
+[03:30] GT withholds $170
+[03:30] GT pays out $180 = $18 per share ($108 to lars773, $90 to GT, $36 to SuperHudsonJ3A, $-54 to YoloGaming)
+[03:30] GT takes a loan and receives $100
+[03:30] GT's share price moves left from $200 to $180
+[03:30] GT takes a loan and receives $100
+[03:30] GT's share price moves left from $180 to $165
+[03:30] GT takes a loan and receives $100
+[03:30] GT's share price moves left from $165 to $150
+[03:30] GT takes a loan and receives $100
+[03:30] GT's share price moves left from $150 to $135
+[03:30] GT takes a loan and receives $100
+[03:30] GT's share price moves left from $135 to $120
+[03:30] GT takes a loan and receives $100
+[03:30] GT's share price moves left from $120 to $110
+[03:31] GT buys a 8 train for $1100 from The Depot
+[03:31] R collects $80 from P14 - Inventor
+[03:31] -- Phase 8 (Operating Rounds: 2 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown, Gray) --
+[03:31] H collects $150 from P15 - Scrapper for 4
+[03:31] -- Event: 4 trains rust ( J x1, The Depot x3, R x1, H x1, WC x1, Bess x1) --
+[03:31] First 8 train bought/exported, ending game at the end of 7.2
+[03:31] GT pays $150 interest for 6 loans
+[03:31] GT passes take loans
+[03:31] YoloGaming operates DL&W
+[03:43] DL&W lays tile #83 with rotation 2 on B21
+[03:43] DL&W spends $20 and lays tile #9 with rotation 1 on B19
+[03:43] DL&W places a token on C22 (Albany)
+[03:43] DL&W skips run routes
+[03:43] DL&W does not run
+[03:43] DL&W's share price moves left from $200 to $180
+[03:43] DL&W takes a loan and receives $100
+[03:43] DL&W's share price moves left from $180 to $165
+[03:43] DL&W takes a loan and receives $100
+[03:43] DL&W's share price moves left from $165 to $150
+[03:43] DL&W takes a loan and receives $100
+[03:43] DL&W's share price moves left from $150 to $135
+[03:43] DL&W takes a loan and receives $100
+[03:43] DL&W's share price moves left from $135 to $120
+[03:43] DL&W buys a 8 train for $1100 from The Depot
+[03:43] DL&W passes buy trains
+[03:43] DL&W pays $100 interest for 4 loans
+[03:43] DL&W passes take loans
+[03:43] YoloGaming operates H
+[03:43] H lays tile #81 with rotation 0 on F11
+[03:43] H receives a discount of $10 from P2 - Ohio Bridge Company
+[03:43] H spends $20 and lays tile #9 with rotation 0 on G10
+[03:43] H skips place a token
+[03:43] H runs a 7 train for $350: J7-H9-D9-G6-H3-H1
+[03:43] H pays out $350 = $35 per share ($210 to YoloGaming, $70 to BulletBill, $-35 to lars773)
+[03:43] H's share price moves right from $150 to $180 (2 steps)
+[03:43] H buys a 8 train for $1 from DL&W
+[03:43] H pays $25 interest for 1 loan
+[03:43] H pays off a loan for $100
+[03:43] H's share price moves right from $180 to $200
+[03:43] H passes take loans
+[03:43] BulletBill operates J
+[03:44] J lays tile #448 with rotation 0 on I16 (Richmond)
+[03:44] J passes lay track
+[03:44] J skips place a token
+[03:44] J runs a 5 train for $320: J15-I16-G18-E22-F19
+[03:45] J runs for $320 and pays half
+[03:45] J withholds $160
+[03:45] J pays out $160 = $16 per share ($96 to BulletBill, $16 to lars773, $16 to YoloGaming, $16 to SuperHudsonJ3A)
+[03:45] J's share price moves right from $150 to $165
+[03:45] J passes buy trains
+[03:45] J pays $75 interest for 3 loans
+[03:45] J pays off a loan for $100
+[03:45] J's share price moves right from $165 to $180
+[03:45] J passes take loans
+[03:45] SuperHudsonJ3A operates Bess
+[03:47] Bess lays tile #8 with rotation 2 on I4
+[03:47] Bess spends $20 and lays tile #81 with rotation 1 on I6
+[03:47] Bess skips place a token
+[03:48] Bess runs a 6 train for $360: J7-H3-F3-D7-C8-B13
+[03:48] Bess runs for $360 and pays half
+[03:48] Bess withholds $180
+[03:48] Bess pays out $180 = $18 per share ($108 to SuperHudsonJ3A, $54 to Bess, $18 to lars773)
+[03:48] Bess's share price moves right from $110 to $120
+[03:48] Bess passes buy trains
+[03:48] Bess pays $150 interest for 6 loans
+[03:48] Bess pays off a loan for $100
+[03:48] Bess's share price moves right from $120 to $135
+[03:49] Bess passes take loans
+[03:49] YoloGaming operates NYOW
+[03:50] NYOW lays tile #544 with rotation 2 on F7
+[03:50] NYOW spends $20 and lays tile #9 with rotation 2 on E6
+[03:50] NYOW skips place a token
+[03:50] NYOW runs a 5 train for $320: D9-F13-F19-E22-G18
+[03:50] NYOW runs for $320 and pays half
+[03:50] NYOW withholds $160
+[03:50] NYOW pays out $160 = $16 per share ($96 to YoloGaming, $64 to BulletBill)
+[03:50] NYOW's share price moves right from $110 to $120
+[03:50] NYOW takes a loan and receives $100
+[03:50] NYOW's share price moves left from $120 to $110
+[03:50] NYOW takes a loan and receives $100
+[03:50] NYOW's share price moves left from $110 to $100
+[03:50] NYOW takes a loan and receives $100
+[03:50] NYOW's share price moves left from $100 to $90
+[03:50] NYOW takes a loan and receives $100
+[03:50] NYOW's share price moves left from $90 to $80
+[03:50] NYOW buys a 8 train for $1100 from The Depot
+[03:50] NYOW pays $100 interest for 4 loans
+[03:51] NYOW passes take loans
+[03:51] BulletBill operates B&A
+[03:51] B&A lays tile #546 with rotation 2 on C6
+[03:51] B&A skips place a token
+[03:53] B&A runs a 7 train for $420: E22-G18-C14-B13-C8-D7
+[03:53] B&A runs a 5 train for $250: D1-F3-G6-D7
+[03:53] B&A withholds $670
+[03:53] B&A's share price moves left from $55 to $50
+[03:53] B&A skips buy trains
+[03:53] B&A pays $250 interest for 10 loans
+[03:53] B&A pays off a loan for $100
+[03:53] B&A's share price moves right from $50 to $55
+[03:53] B&A pays off a loan for $100
+[03:53] B&A's share price moves right from $55 to $60
+[03:53] B&A pays off a loan for $100
+[03:53] B&A's share price moves right from $60 to $65
+[03:53] B&A pays off a loan for $100
+[03:53] B&A's share price moves right from $65 to $70
+[03:53] B&A passes take loans
+[03:53] -- Event: A 8 train exports --
+[03:53] -- Merger and Conversion Round 6.1 (of 2) --
+[03:53] R skips convert or merge corporation
+[03:53] WC skips convert or merge corporation
+[03:53] H skips convert or merge corporation
+[03:53] J skips convert or merge corporation
+[03:53] Bess skips convert or merge corporation
+[03:53] DL&W skips convert or merge corporation
+[03:53] GT skips convert or merge corporation
+[03:53] NYOW skips convert or merge corporation
+[03:53] B&A skips convert or merge corporation
+[03:53] -- Acquisition Round 6.1 (of 2) --
+[03:53] B&A may be offered for sale for $700
+[03:53] BulletBill declines to put B&A up for sale
+[03:53] NYOW may be offered for sale for $800
+[03:54] YoloGaming declines to put NYOW up for sale
+[03:54] GT may be offered for sale for $1100
+[03:56] lars773 declines to put GT up for sale
+[03:56] DL&W may be offered for sale for $1200
+[03:58] DL&W is offered at auction, buying corporation will receive $600 for treasury shares
+[03:58] BulletBill cannot bid $1200 and is out of the auction for DL&W
+[03:59] SuperHudsonJ3A passes on DL&W
+[04:02] lars773 passes on DL&W
+[04:04] YoloGaming passes on DL&W
+[04:04] All players pass on DL&W, not sold
+[04:04] Bess may be offered for sale for $1350
+[04:17] SuperHudsonJ3A declines to put Bess up for sale
+[04:17] J cannot be bought at $1800, skipping
+[04:17] H cannot be bought at $2000, skipping
+[04:17] WC cannot be bought at $3000, skipping
+[04:17] R cannot be bought at $4000, skipping
+[04:17] -- Operating Round 6.2 (of 2) --
+[04:17] J collects $20 from P11 - Major Mail Contract
+[04:17] B&A collects $15 from P9 - Mail Contract
+[04:17] lars773 operates R
+[05:08] R lays tile #448 with rotation 4 on B5 (Lansing)
+[05:08] R passes lay track
+[05:08] R skips place a token
+[05:08] R takes a loan and receives $100
+[05:08] R's share price moves left from $400 to $360
+[05:08] R takes a loan and receives $100
+[05:08] R's share price moves left from $360 to $330
+[05:08] R takes a loan and receives $100
+[05:08] R's share price moves left from $330 to $300
+[05:08] R runs a 6 train for $410: D1-B5-C8-D7-H9-J7
+[05:08] R pays out $410 = $41 per share ($205 to lars773, $205 to R)
+[05:08] R's share price moves right from $300 to $330
+[05:09] R buys a 8 train for $650 from GT
+[05:09] R pays $90 interest for 3 loans
+[05:09] R passes take loans
+[05:09] SuperHudsonJ3A operates WC
+[12:25] WC lays tile #546 with rotation 4 on D23
+[12:25] WC passes lay track
+[12:25] WC skips place a token
+[12:25] WC runs a 5 train for $320: D9-F13-G18-E22-C22
+[12:25] WC takes a loan and receives $100
+[12:25] WC's share price moves left from $300 to $270
+[12:25] WC takes a loan and receives $100
+[12:25] WC's share price moves left from $270 to $245
+[12:25] WC takes a loan and receives $100
+[12:25] WC's share price moves left from $245 to $220
+[12:25] WC takes a loan and receives $100
+[12:25] WC's share price moves left from $220 to $200
+[12:26] WC runs for $320 and pays half
+[12:26] WC withholds $160
+[12:26] WC pays out $160 = $16 per share ($96 to SuperHudsonJ3A, $64 to WC)
+[12:26] WC buys a 8 train for $1100 from The Depot
+[12:26] WC pays $180 interest for 6 loans
+[12:26] WC passes take loans
+[12:26] YoloGaming operates H
+[12:30] H lays tile #544 with rotation 0 on D5
+[12:30] H passes lay track
+[12:30] H skips place a token
+[12:30] H runs a 8 train for $330: H1-H3-G6-H9-D9-D7
+[12:30] H runs a 7 train for $390: J7-H9-H3-G6-C8-B13-C14
+[12:30] H pays out $720 = $72 per share ($432 to YoloGaming, $144 to BulletBill, $-72 to lars773)
+[12:30] H's share price moves right from $200 to $245 (2 steps)
+[12:30] H skips buy trains
+[12:30] H passes take loans
+[12:30] BulletBill operates J
+[12:49] J lays tile #15 with rotation 4 on B17 (Rochester)
+[12:49] J passes lay track
+[12:49] J skips place a token
+[12:49] J runs a 5 train for $320: J15-I16-G18-E22-F19
+[12:51] J runs for $320 and pays half
+[12:51] J withholds $160
+[12:51] J pays out $160 = $16 per share ($96 to BulletBill, $16 to lars773, $16 to YoloGaming, $16 to SuperHudsonJ3A)
+[12:52] J passes buy trains
+[12:52] J pays $60 interest for 2 loans
+[12:52] J pays off a loan for $100
+[12:52] J's share price moves right from $180 to $200
+[12:52] J passes take loans
+[12:52] SuperHudsonJ3A operates Bess
+[12:53] Bess passes lay/upgrade track
+[12:53] Bess skips place a token
+[12:53] Bess runs a 6 train for $380: J7-D7-C8-F3-H3-G6
+[12:53] Bess runs for $380 and pays half
+[12:53] Bess withholds $190
+[12:53] Bess pays out $190 = $19 per share ($114 to SuperHudsonJ3A, $57 to Bess, $19 to lars773)
+[12:53] Bess's share price moves right from $135 to $150
+[12:54] Bess passes buy trains
+[12:54] Bess pays $150 interest for 5 loans
+[12:54] Bess pays off a loan for $100
+[12:54] Bess's share price moves right from $150 to $165
+[12:54] Bess passes take loans
+[12:54] YoloGaming operates DL&W
+[13:03] DL&W lays tile #9 with rotation 0 on C16
+[13:03] DL&W spends $20 and lays tile #546 with rotation 0 on D15
+[13:04] DL&W places a token on B17 (Rochester)
+[13:04] DL&W skips run routes
+[13:04] DL&W does not run
+[13:04] DL&W's share price moves left from $120 to $110
+[13:04] DL&W passes buy trains
+[13:04] DL&W takes a loan and receives $100
+[13:04] DL&W's share price moves left from $110 to $100
+[13:04] DL&W takes a loan and receives $100
+[13:04] DL&W's share price moves left from $100 to $90
+[13:04] DL&W pays $180 interest for 6 loans
+[13:04] DL&W passes take loans
+[13:04] DL&W has no trains and liquidates
+[13:04] lars773 operates GT
+[13:08] GT passes lay/upgrade track
+[13:08] GT passes place a token
+[13:09] GT runs a 5 train for $360: D1-B5-C8-D7-J7
+[13:09] GT pays out $360 = $36 per share ($216 to lars773, $180 to GT, $72 to SuperHudsonJ3A, $-108 to YoloGaming)
+[13:09] GT's share price moves right from $110 to $135 (2 steps)
+[13:09] GT passes buy trains
+[13:09] GT pays $180 interest for 6 loans
+[13:09] GT pays off a loan for $100
+[13:09] GT's share price moves right from $135 to $150
+[13:09] GT pays off a loan for $100
+[13:09] GT's share price moves right from $150 to $165
+[13:09] GT pays off a loan for $100
+[13:09] GT's share price moves right from $165 to $180
+[13:09] GT pays off a loan for $100
+[13:09] GT's share price moves right from $180 to $200
+[13:09] GT pays off a loan for $100
+[13:09] GT's share price moves right from $200 to $220
+[13:09] GT pays off a loan for $100
+[13:09] GT's share price moves right from $220 to $245
+[13:10] GT passes take loans
+[13:10] YoloGaming operates NYOW
+[13:13] NYOW lays tile #83 with rotation 0 on E14
+[13:14] NYOW passes lay track
+[13:14] NYOW skips place a token
+[13:14] NYOW runs a 8 train for $360: D7-D9-F13-F19-E22-D19
+[13:14] NYOW runs a 5 train for $260: G18-F19-E22-C22
+[13:14] NYOW runs for $620 and pays half
+[13:14] NYOW withholds $310
+[13:14] NYOW pays out $310 = $31 per share ($186 to YoloGaming, $124 to BulletBill)
+[13:14] NYOW's share price moves right from $80 to $100 (2 steps)
+[13:14] NYOW skips buy trains
+[13:14] NYOW pays $120 interest for 4 loans
+[13:14] NYOW pays off a loan for $100
+[13:14] NYOW's share price moves right from $100 to $110
+[13:14] NYOW pays off a loan for $100
+[13:14] NYOW's share price moves right from $110 to $120
+[13:14] NYOW passes take loans
+[13:14] BulletBill operates B&A
+[13:21] B&A passes lay/upgrade track
+[13:21] B&A skips place a token
+[13:21] B&A runs a 7 train for $410: D7-G6-C8-B13-C14-G18-F19
+[13:21] B&A runs a 5 train for $280: J15-I16-G18-E22
+[13:21] B&A runs for $690 and pays half
+[13:21] B&A withholds $340
+[13:21] B&A pays out $350 = $35 per share ($210 to BulletBill, $105 to SuperHudsonJ3A, $35 to YoloGaming)
+[13:21] B&A's share price moves right from $70 to $90 (2 steps)
+[13:21] B&A skips buy trains
+[13:21] B&A pays $180 interest for 6 loans
+[13:21] B&A pays off a loan for $100
+[13:21] B&A's share price moves right from $90 to $100
+[13:21] B&A pays off a loan for $100
+[13:21] B&A's share price moves right from $100 to $110
+[13:21] B&A passes take loans
+[13:21] -- Event: A 8 train exports --
+[13:21] -- Merger and Conversion Round 6.2 (of 2) --
+[13:21] R skips convert or merge corporation
+[13:21] H skips convert or merge corporation
+[13:21] GT skips convert or merge corporation
+[13:21] WC skips convert or merge corporation
+[13:21] J skips convert or merge corporation
+[13:21] Bess skips convert or merge corporation
+[13:21] NYOW skips convert or merge corporation
+[13:21] B&A skips convert or merge corporation
+[13:21] -- Acquisition Round 6.2 (of 2) --
+[13:21] DL&W is being liquidated, bank offers $0, corporation had $31 and 6 loans
+[13:22] SuperHudsonJ3A bids $10 for DL&W
+[14:13] BulletBill bids $20 for DL&W
+[15:27] lars773 bids $30 for DL&W
+[15:28] YoloGaming bids $40 for DL&W
+[15:28] SuperHudsonJ3A bids $50 for DL&W
+[15:30] BulletBill passes on DL&W
+[15:31] lars773 passes on DL&W
+[15:31] YoloGaming bids $60 for DL&W
+[15:38] SuperHudsonJ3A bids $70 for DL&W
+[15:55] YoloGaming bids $80 for DL&W
+[15:57] SuperHudsonJ3A bids $90 for DL&W
+[15:57] YoloGaming bids $100 for DL&W
+[15:57] SuperHudsonJ3A bids $110 for DL&W
+[15:57] YoloGaming bids $120 for DL&W
+[15:58] SuperHudsonJ3A passes on DL&W
+[15:58] YoloGaming wins the auction of DL&W for $120
+[15:59] NYOW acquires DL&W receiving tokens (4: 3 on hexes E22,C22,B17 & 1 on the charter)
+[15:59] NYOW takes a loan and receives $100
+[15:59] NYOW's share price moves left from $120 to $110
+[15:59] NYOW takes a loan and receives $100
+[15:59] NYOW's share price moves left from $110 to $100
+[15:59] NYOW passes taking additional loans
+[15:59] YoloGaming settles DL&W debts for $449
+[15:59] B&A cannot be bought at $1100, skipping
+[15:59] NYOW cannot be bought at $1000, skipping
+[15:59] Bess cannot be bought at $1650, skipping
+[15:59] J cannot be bought at $2000, skipping
+[15:59] WC cannot be bought at $2000, skipping
+[15:59] GT cannot be bought at $2450, skipping
+[15:59] H cannot be bought at $2450, skipping
+[15:59] R cannot be bought at $3300, skipping
+[15:59] -- Stock Round 7 --
+[16:02] lars773 buys a 10% share of H from the market for $245
+[16:06] YoloGaming buys a 10% share of WC from the Treasury for $200
+[16:08] SuperHudsonJ3A sells a 10% share of J and receives $200
+[16:08] SuperHudsonJ3A buys a 10% share of H from the market for $245
+[16:10] BulletBill sells a 10% share of H and receives $245
+[16:10] BulletBill buys a 10% share of WC from the Treasury for $200
+[17:28] lars773 buys a 10% share of WC from the Treasury for $200
+[17:29] YoloGaming buys a 10% share of WC from the Treasury for $200
+[17:32] SuperHudsonJ3A sells a 10% share of GT and receives $245
+[17:32] SuperHudsonJ3A buys a 10% share of H from the market for $245
+[18:24] BulletBill sells a 10% share of H and receives $245
+[18:24] BulletBill buys a 10% share of R from the Treasury for $330
+[18:38] lars773 buys a 10% share of J from the market for $200
+[18:39] YoloGaming passes
+[18:45] SuperHudsonJ3A sells a 10% share of GT and receives $245
+[18:46] SuperHudsonJ3A buys a 10% share of R from the Treasury for $330
+[19:12] BulletBill passes
+[19:16] GT (lars773) takes a loan and receives $100
+[19:16] GT's share price moves left from $245 to $220
+[19:16] GT (lars773) takes a loan and receives $100
+[19:16] GT's share price moves left from $220 to $200
+[19:16] GT (lars773) takes a loan and receives $100
+[19:16] GT's share price moves left from $200 to $180
+[19:17] GT redeems a 20% share  from the market for $360
+[20:36] YoloGaming sells a 10% share of J and receives $200
+[20:36] YoloGaming buys a 10% share of GT from the Treasury for $180
+[20:36] SuperHudsonJ3A sells a 10% share of H and receives $245
+[20:36] SuperHudsonJ3A buys a 10% share of R from the Treasury for $330
+[20:37] BulletBill passes
+[22:47] lars773 passes
+[22:47] YoloGaming passes
+[22:49] SuperHudsonJ3A sells a 10% share of H and receives $245
+[22:49] SuperHudsonJ3A buys a 10% share of R from the Treasury for $330
+[22:50] BulletBill sells a 10% share of J and receives $200
+[22:50] BulletBill buys a 10% share of R from the Treasury for $330
+[22:51] lars773 passes
+[22:51] YoloGaming passes
+[22:51] SuperHudsonJ3A passes
+[23:11] BulletBill passes
+[23:11] R's share price moves right from $330 to $360
+[23:11] H's share price moves left from $245 to $165
+[23:11] WC's share price moves right from $200 to $220
+[23:11] J's share price moves left from $200 to $150
+[23:11] B&A's share price moves right from $110 to $120
+[23:11] NYOW's share price moves right from $100 to $110
+[23:11] lars773 has priority deal
+[23:11] -- Operating Round 7.1 (of 2) --
+[23:11] J collects $20 from P11 - Major Mail Contract
+[23:11] B&A collects $15 from P9 - Mail Contract
+[23:11] lars773 operates R
+[23:34] R lays tile #546 with rotation 3 on E4
+[23:34] R passes lay track
+[23:34] R skips place a token
+[23:34] R runs a 8 train for $510: G18-E22-D19-C14-B13-C8-D7-G6
+[23:34] R runs a 6 train for $410: D1-B5-C8-D7-H9-J7
+[23:34] R pays out $920 = $92 per share ($460 to lars773, $276 to SuperHudsonJ3A, $184 to BulletBill)
+[23:34] R's share price moves right from $360 to $440 (2 steps)
+[23:34] R skips buy trains
+[23:34] R pays $75 interest for 3 loans
+[23:34] R pays off a loan for $100
+[23:34] R's share price moves right from $440 to $490
+[23:34] R pays off a loan for $100
+[23:34] R's share price moves right from $490 to $540
+[23:34] R pays off a loan for $100
+[23:34] R's share price moves right from $540 to $600
+[23:35] R passes take loans
+[23:35] SuperHudsonJ3A operates WC
+[00:33] WC spends $20 and lays tile #9 with rotation 1 on D25
+[00:33] WC spends $40 and lays tile #7 with rotation 1 on D27
+[00:33] WC skips place a token
+[00:34] WC runs a 8 train for $360: J15-I16-G18-F19-E22-D19
+[00:34] WC runs a 5 train for $320: D9-F13-G18-E22-C22
+[00:35] WC pays out $680 = $68 per share ($408 to SuperHudsonJ3A, $136 to YoloGaming, $68 to lars773, $68 to BulletBill)
+[00:35] WC's share price moves right from $220 to $270 (2 steps)
+[00:35] WC skips buy trains
+[00:35] WC pays $150 interest for 6 loans
+[00:35] WC pays off a loan for $100
+[00:35] WC's share price moves right from $270 to $300
+[00:35] WC pays off a loan for $100
+[00:35] WC's share price moves right from $300 to $330
+[00:35] WC pays off a loan for $100
+[00:35] WC's share price moves right from $330 to $360
+[00:35] WC pays off a loan for $100
+[00:35] WC's share price moves right from $360 to $400
+[00:35] WC pays off a loan for $100
+[00:35] WC's share price moves right from $400 to $440
+[00:35] WC pays off a loan for $100
+[00:35] WC's share price moves right from $440 to $490
+[00:35] WC passes take loans
+[00:35] lars773 operates GT
+[00:41] GT lays tile #81 with rotation 0 on E2
+[00:41] GT passes lay track
+[00:42] GT passes place a token
+[00:42] GT runs a 5 train for $360: D1-B5-C8-D7-J7
+[00:42] GT pays out $360 = $36 per share ($216 to lars773, $216 to GT, $-72 to YoloGaming)
+[00:42] GT's share price moves right from $180 to $220 (2 steps)
+[00:42] GT buys a 6 train for $1 from R
+[00:42] GT pays $75 interest for 3 loans
+[00:42] GT pays off a loan for $100
+[00:42] GT's share price moves right from $220 to $245
+[00:42] GT pays off a loan for $100
+[00:42] GT's share price moves right from $245 to $270
+[00:42] GT pays off a loan for $100
+[00:42] GT's share price moves right from $270 to $300
+[00:42] GT passes take loans
+[00:42] SuperHudsonJ3A operates Bess
+[00:43] Bess lays tile #82 with rotation 2 on G2
+[00:43] Bess passes lay track
+[00:43] Bess skips place a token
+[00:43] Bess runs a 6 train for $380: J7-D7-C8-F3-H3-G6
+[00:43] Bess runs for $380 and pays half
+[00:43] Bess withholds $190
+[00:43] Bess pays out $190 = $19 per share ($114 to SuperHudsonJ3A, $57 to Bess, $19 to lars773)
+[00:43] Bess's share price moves right from $165 to $180
+[00:44] Bess passes buy trains
+[00:44] Bess pays $100 interest for 4 loans
+[00:44] Bess passes payoff loans
+[00:44] YoloGaming operates H
+[00:50] H lays tile #544 with rotation 2 on G8
+[00:50] H passes lay track
+[00:50] H skips place a token
+[00:50] H runs a 8 train for $350: D1-H3-G6-H9-D9-D7
+[00:50] H runs a 7 train for $390: J7-H9-H3-G6-C8-B13-C14
+[00:50] H pays out $740 = $74 per share ($444 to YoloGaming)
+[00:50] H's share price moves right from $165 to $200 (2 steps)
+[00:50] H skips buy trains
+[00:50] H passes take loans
+[00:50] BulletBill operates J
+[00:52] J passes lay/upgrade track
+[00:52] J skips place a token
+[00:52] J runs a 5 train for $320: J15-I16-G18-E22-F19
+[00:52] J runs for $320 and pays half
+[00:52] J withholds $160
+[00:52] J pays out $160 = $16 per share ($80 to BulletBill, $32 to lars773)
+[00:52] J's share price moves right from $150 to $165
+[00:52] J passes buy trains
+[00:52] J pays $25 interest for 1 loan
+[00:52] J pays off a loan for $100
+[00:52] J's share price moves right from $165 to $180
+[00:52] J passes take loans
+[00:52] BulletBill operates B&A
+[00:52] B&A passes lay/upgrade track
+[00:52] B&A skips place a token
+[00:52] B&A runs a 7 train for $410: D7-G6-C8-B13-C14-G18-F19
+[00:52] B&A runs a 5 train for $320: J15-I16-G18-E22-C22
+[00:53] B&A runs for $730 and pays half
+[00:53] B&A withholds $360
+[00:53] B&A pays out $370 = $37 per share ($222 to BulletBill, $111 to SuperHudsonJ3A, $37 to YoloGaming)
+[00:53] B&A's share price moves right from $120 to $150 (2 steps)
+[00:53] B&A skips buy trains
+[00:53] B&A pays $100 interest for 4 loans
+[00:53] B&A pays off a loan for $100
+[00:53] B&A's share price moves right from $150 to $165
+[00:53] B&A pays off a loan for $100
+[00:53] B&A's share price moves right from $165 to $180
+[00:53] B&A passes take loans
+[00:53] YoloGaming operates NYOW
+[00:54] NYOW lays tile #546 with rotation 4 on F11
+[00:54] NYOW spends $20 and lays tile #8 with rotation 4 on F9
+[00:54] NYOW places a token on C26 (Boston)
+[00:55] NYOW runs a 8 train for $470: G18-F19-E22-C22-B17-F13-D9-D7
+[00:55] NYOW runs a 5 train for $260: G18-F19-E22-D19
+[00:55] NYOW runs for $730 and pays half
+[00:55] NYOW withholds $360
+[00:55] NYOW pays out $370 = $37 per share ($222 to YoloGaming, $148 to BulletBill)
+[00:55] NYOW's share price moves right from $110 to $135 (2 steps)
+[00:55] NYOW skips buy trains
+[00:55] NYOW pays $100 interest for 4 loans
+[00:55] NYOW pays off a loan for $100
+[00:55] NYOW's share price moves right from $135 to $150
+[00:55] NYOW pays off a loan for $100
+[00:55] NYOW's share price moves right from $150 to $165
+[00:55] NYOW pays off a loan for $100
+[00:55] NYOW's share price moves right from $165 to $180
+[00:55] NYOW passes take loans
+[00:55] -- Event: A 8 train exports --
+[00:55] -- Merger and Conversion Round 7.1 (of 2) --
+[00:55] R skips convert or merge corporation
+[00:55] WC skips convert or merge corporation
+[00:55] GT skips convert or merge corporation
+[00:55] H skips convert or merge corporation
+[00:55] Bess skips convert or merge corporation
+[00:55] J skips convert or merge corporation
+[00:55] B&A skips convert or merge corporation
+[00:55] NYOW skips convert or merge corporation
+[00:55] -- Acquisition Round 7.1 (of 2) --
+[00:55] NYOW may be offered for sale for $1800
+[00:55] YoloGaming declines to put NYOW up for sale
+[00:55] B&A may be offered for sale for $1800
+[00:56] BulletBill declines to put B&A up for sale
+[00:56] J may be offered for sale for $1800
+[00:56] BulletBill declines to put J up for sale
+[00:56] Bess may be offered for sale for $1800
+[00:56] SuperHudsonJ3A declines to put Bess up for sale
+[00:56] H may be offered for sale for $2000
+[00:57] YoloGaming declines to put H up for sale
+[00:57] GT may be offered for sale for $3000
+[00:57] lars773 declines to put GT up for sale
+[00:57] WC cannot be bought at $4900, skipping
+[00:57] R cannot be bought at $6000, skipping
+[00:57] -- Operating Round 7.2 (of 2) --
+[00:57] J collects $20 from P11 - Major Mail Contract
+[00:57] B&A collects $15 from P9 - Mail Contract
+[00:57] lars773 operates R
+[00:58] R passes lay/upgrade track
+[00:58] R skips place a token
+[01:00] R runs a 8 train for $540: G18-E22-D19-C14-B13-C8-D7-D1
+[01:00] R pays out $540 = $54 per share ($270 to lars773, $162 to SuperHudsonJ3A, $108 to BulletBill)
+[01:00] R passes buy trains
+[01:00] R passes take loans
+[01:00] SuperHudsonJ3A operates WC
+[01:02] WC lays tile #592 with rotation 1 on C26 (Boston)
+[01:02] WC passes lay track
+[01:02] WC skips place a token
+[01:03] WC runs a 8 train for $360: J15-I16-G18-F19-E22-D19
+[01:03] WC runs a 5 train for $350: D7-F13-G18-E22-C26
+[01:03] WC pays out $710 = $71 per share ($426 to SuperHudsonJ3A, $142 to YoloGaming, $71 to lars773, $71 to BulletBill)
+[01:03] WC's share price moves right from $490 to $540
+[01:03] WC skips buy trains
+[01:03] WC passes take loans
+[01:03] lars773 operates GT
+[01:03] GT passes lay/upgrade track
+[01:03] GT passes place a token
+[01:03] GT runs a 6 train for $320: D1-D7-C8-B13-C14
+[01:03] GT runs a 5 train for $360: D1-B5-C8-D7-J7
+[01:04] GT pays out $680 = $68 per share ($408 to lars773, $408 to GT, $-136 to YoloGaming)
+[01:04] GT's share price moves right from $300 to $360 (2 steps)
+[01:04] GT skips buy trains
+[01:04] GT passes take loans
+[01:04] YoloGaming operates H
+[01:04] H lays tile #82 with rotation 5 on E6
+[01:04] H passes lay track
+[01:04] H skips place a token
+[01:05] H runs a 8 train for $350: D1-H3-G6-H9-D9-D7
+[01:05] H runs a 7 train for $390: J7-H9-H3-G6-C8-B13-C14
+[01:05] H pays out $740 = $74 per share ($444 to YoloGaming)
+[01:05] H's share price moves right from $200 to $245 (2 steps)
+[01:05] H skips buy trains
+[01:05] H passes take loans
+[01:05] SuperHudsonJ3A operates Bess
+[01:05] Bess passes lay/upgrade track
+[01:05] Bess skips place a token
+[01:05] Bess runs a 6 train for $380: J7-D7-C8-F3-H3-G6
+[01:05] Bess pays out $380 = $38 per share ($228 to SuperHudsonJ3A, $114 to Bess, $38 to lars773)
+[01:05] Bess's share price moves right from $180 to $220 (2 steps)
+[01:06] Bess passes buy trains
+[01:06] Bess pays $40 interest for 4 loans
+[01:06] Bess pays off a loan for $100
+[01:06] Bess's share price moves right from $220 to $245
+[01:06] Bess pays off a loan for $100
+[01:06] Bess's share price moves right from $245 to $270
+[01:06] Bess passes take loans
+[01:06] BulletBill operates J
+[01:14] J passes lay/upgrade track
+[01:14] J skips place a token
+[01:14] J runs a 5 train for $330: J15-I16-G18-E22-C26
+[01:14] J pays out $330 = $33 per share ($165 to BulletBill, $66 to lars773)
+[01:14] J's share price moves right from $180 to $200
+[01:14] J passes buy trains
+[01:14] J passes take loans
+[01:14] BulletBill operates B&A
+[01:14] B&A passes lay/upgrade track
+[01:14] B&A skips place a token
+[01:14] B&A runs a 7 train for $410: D7-G6-C8-B13-C14-G18-F19
+[01:14] B&A runs a 5 train for $330: J15-I16-G18-E22-C26
+[01:14] B&A runs for $740 and pays half
+[01:14] B&A withholds $370
+[01:14] B&A pays out $370 = $37 per share ($222 to BulletBill, $111 to SuperHudsonJ3A, $37 to YoloGaming)
+[01:14] B&A's share price moves right from $180 to $220 (2 steps)
+[01:14] B&A skips buy trains
+[01:14] B&A pays $20 interest for 2 loans
+[01:14] B&A pays off a loan for $100
+[01:14] B&A's share price moves right from $220 to $245
+[01:14] B&A pays off a loan for $100
+[01:14] B&A's share price moves right from $245 to $270
+[01:14] B&A passes take loans
+[01:14] YoloGaming operates NYOW
+[01:22] NYOW lays tile #82 with rotation 2 on F5
+[01:22] NYOW passes lay track
+[01:22] NYOW places a token on C8 (Detroit)
+[01:23] NYOW runs a 8 train for $510: G18-E22-C22-B17-F13-D9-C8-D7
+[01:23] NYOW runs a 5 train for $270: C26-E22-F19-G18
+[01:23] NYOW pays out $780 = $78 per share ($468 to YoloGaming, $312 to BulletBill)
+[01:23] NYOW's share price moves right from $180 to $220 (2 steps)
+[01:23] NYOW skips buy trains
+[01:23] NYOW pays $10 interest for 1 loan
+[01:23] NYOW passes take loans
+[01:23] -- Event: A 8 train exports --
+[01:23] -- Merger and Conversion Round 7.2 (of 2) --
+[01:23] R skips convert or merge corporation
+[01:23] WC skips convert or merge corporation
+[01:23] GT skips convert or merge corporation
+[01:23] Bess skips convert or merge corporation
+[01:23] B&A skips convert or merge corporation
+[01:23] H skips convert or merge corporation
+[01:23] NYOW skips convert or merge corporation
+[01:23] J skips convert or merge corporation
+[01:23] -- Acquisition Round 7.2 (of 2) --
+[01:23] J may be offered for sale for $2000
+[01:45] • Action(pass) via Master Mode by: YoloGaming
+[01:45] BulletBill declines to put J up for sale
+[01:45] NYOW may be offered for sale for $2200
+[01:45] YoloGaming declines to put NYOW up for sale
+[01:45] H cannot be bought at $2450, skipping
+[01:45] B&A cannot be bought at $2700, skipping
+[01:45] Bess may be offered for sale for $2700
+[01:45] • Action(pass) via Master Mode by: YoloGaming
+[01:45] SuperHudsonJ3A declines to put Bess up for sale
+[01:45] GT may be offered for sale for $3600
+[01:45] • Action(pass) via Master Mode by: YoloGaming
+[01:45] lars773 declines to put GT up for sale
+[01:45] WC cannot be bought at $5400, skipping
+[01:45] R cannot be bought at $6000, skipping
+[01:45] -- Game over: SuperHudsonJ3A ($9825), lars773 ($8043), BulletBill ($7964), YoloGaming ($5256), PhilipofPhilippi ($0) --
