@@ -4,7 +4,7 @@ import pandas as pd
 
 from pathlib import Path
 
-from .game_patterns import GamePattern
+from transcripts18xx.games.pattern import GamePattern
 
 
 class GameTranscriptProcessor(object):
@@ -17,14 +17,21 @@ class GameTranscriptProcessor(object):
     def parse_transcript(self):
         """Reads and extracts key actions from the game transcript."""
         with open(self._transcript_file, 'r', encoding='utf-8') as file:
-            lines = file.readline()
-        for line in lines:
+            lines = file.readlines()
+        for i, line in enumerate(lines):
             parsed_data = self._game.extract_pattern(line)
             if parsed_data:
+                parsed_data['id'] = i
                 self.data.append(parsed_data)
+            else:
+                print(line)
 
     def save_to_dataframe(self):
         """Saves the extracted data as a structured pandas DataFrame."""
         df = pd.DataFrame(self.data)
-        df.to_csv('game_data.csv', index=False)
+        df.to_csv(
+            Path(__file__).parent.parent.joinpath('game_state.csv'),
+            index=False,
+            sep=','
+        )
         return df
