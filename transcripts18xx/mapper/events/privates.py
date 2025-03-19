@@ -3,11 +3,21 @@
 import re
 
 
-def close(line: str) -> dict | None:
+def all_close(line: str) -> dict | None:
     match = re.search(r'-- Event: Private companies close', line)
     if match:
         return dict(
             event='PrivatesClose'
+        )
+    return None
+
+
+def closes(line: str) -> dict | None:
+    match = re.search(r'(\D) closes', line)
+    if match:
+        return dict(
+            event='PrivatesClose',
+            private=match.group(1)
         )
     return None
 
