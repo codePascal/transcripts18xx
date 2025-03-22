@@ -26,24 +26,51 @@ class TestPlayerActions(unittest.TestCase):
         self.assertEqual(expected, player.bids(line))
 
     def test_operates_company(self):
-        # TODO
-        pass
+        line = 'riverfiend bids $170 for Camden & Amboy'
+        expected = {
+            'action': 'BidPlaced',
+            'player': 'riverfiend',
+            'amount': '170',
+            'private': 'Camden & Amboy'
+        }
+        self.assertEqual(expected, player.bids(line))
 
     def test_pars_company(self):
-        line = 'leesin pars NYNH at $82'
-        # TODO
+        line = 'leesin pars B&O at $82'
+        expected = {
+            'action': 'CompanyPared',
+            'player': 'leesin',
+            'amount': '82',
+            'company': 'B&O'
+        }
+        self.assertEqual(expected, player.pars_company(line))
 
     def test_declines_sell_shares(self):
         line = 'riverfiend declines to sell shares'
-        # TODO
+        expected = {
+            'action': 'SharesSellSkipped',
+            'player': 'riverfiend',
+        }
+        self.assertEqual(expected, player.declines_sell_shares(line))
 
     def test_declines_buy_shares(self):
-        # TODO
-        pass
+        line = 'riverfiend declines to buy shares'
+        expected = {
+            'action': 'SharesBuySkipped',
+            'player': 'riverfiend',
+        }
+        self.assertEqual(expected, player.declines_buy_shares(line))
 
     def test_sells_shares(self):
-        line = 'leesin sells 4 shares of PRR and receives $284'
-        # TODO
+        line = 'leesin sells 4 shares of B&O and receives $284'
+        expected = {
+            'action': 'SharesSold',
+            'player': 'leesin',
+            'percentage': '40',
+            'company': 'B&O',
+            'amount': '284'
+        }
+        self.assertEqual(expected, player.sells_shares(line))
 
     def test_contributes_for_train(self):
         line = 'mpakfm contributes $990'

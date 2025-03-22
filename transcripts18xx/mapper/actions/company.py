@@ -61,7 +61,7 @@ def runs_train(line: str) -> dict | None:
 
 
 def pays_dividend(line: str) -> dict | None:
-    match = re.search(r'(\.*?) pays out \$(\d+) = \$(\d+) per share', line)
+    match = re.search(r'(.*?) pays out \$(\d+) = \$(\d+) per share', line)
     if match:
         return dict(
             action='DividendPayed',
@@ -84,7 +84,7 @@ def withholds(line: str) -> dict | None:
 
 
 def skips_token(line: str) -> dict | None:
-    match = re.search(r'(\.*?) skips place a token', line)
+    match = re.search(r'(.*?) skips place a token', line)
     if match:
         return dict(
             action='TokenSkipped',
@@ -107,7 +107,7 @@ def skips_run_train(line: str) -> dict | None:
     match = re.search(r'(.*?) skips run routes', line)
     if match:
         return dict(
-            action='RunTrainSkipped',
+            action='TrainRunSkipped',
             company=match.group(1),
         )
     return None

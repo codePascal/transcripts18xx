@@ -11,7 +11,7 @@ def events(line: str) -> list:
 
 
 def floats(line: str) -> dict | None:
-    match = re.search(r'(\D) floats', line)
+    match = re.search(r'(\w+) floats', line)
     if match:
         return dict(
             event='CompanyFloating',
@@ -21,7 +21,7 @@ def floats(line: str) -> dict | None:
 
 
 def choose_home(line: str) -> dict | None:
-    match = re.search(r'(\D) must choose city for token', line)
+    match = re.search(r'(\w+) must choose city for token', line)
     if match:
         return dict(
             event='SelectHome',

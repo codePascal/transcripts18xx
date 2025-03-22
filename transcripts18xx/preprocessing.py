@@ -44,11 +44,13 @@ class GameTranscriptProcessor(object):
         """Reads and extracts actions and events from the game transcript."""
         with open(self._transcript_file, 'r', encoding='utf-8') as file:
             lines = file.readlines()
+        print('Unprocessed lines:')
         for i, line in enumerate(lines):
             line = self._preprocess_line(line)
             parsed_data = self._game.extract_pattern(line)
             if parsed_data:
                 parsed_data['id'] = i
+                parsed_data['line'] = line
                 self._data.append(parsed_data)
             else:
                 print(line)
