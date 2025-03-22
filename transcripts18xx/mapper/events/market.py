@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import re
+import enum
+
+
+class MarketEvents(enum.IntEnum):
+    SharePriceMoves = 0
 
 
 def events(line: str) -> list:
@@ -15,7 +20,7 @@ def share_price_moves(line: str) -> dict | None:
     )
     if match:
         return dict(
-            event='SharePriceMove',
+            event=MarketEvents.SharePriceMoves.name,
             company=match.group(1),
             direction=match.group(2),
             share_price=match.group(4)

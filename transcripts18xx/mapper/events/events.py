@@ -1,7 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import enum
 
-from . import privates, trains, phases, player, company, market
+from . import company
+from . import market
+from . import phases
+from . import player
+from . import privates
+from . import trains
+
+
+class GameEvents(enum.Enum):
+    Company = company.CompanyEvents
+    Market = market.MarketEvents
+    Phases = phases.PhaseEvents
+    Player = player.PlayerEvents
+    Privates = privates.PrivatesEvents
+    Train = trains.TrainEvents
 
 
 def events(line: str) -> list:

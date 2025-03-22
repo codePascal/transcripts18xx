@@ -10,7 +10,7 @@ class TestMarketEvents(unittest.TestCase):
     def test_share_price_moves(self):
         line = "B&O's share price moves right from $82 to $95"
         expected = {
-            'event': 'SharePriceMove',
+            'event': market.MarketEvents.SharePriceMoves.name,
             'company': 'B&O',
             'direction': 'right',
             'share_price': '95'

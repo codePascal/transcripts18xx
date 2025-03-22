@@ -28,6 +28,7 @@ def actions(line: str) -> list:
 
 
 def receive_share(line: str) -> dict | None:
+    # TODO: market event
     match = re.search(r'(.*?) receives a (\d+)% share of (.*)', line)
     if match:
         return dict(
@@ -40,6 +41,7 @@ def receive_share(line: str) -> dict | None:
 
 
 def receive_funds(line: str) -> dict | None:
+    # TODO: company event
     if 'share' in line:
         return None
     match = re.search(r'(.*?) receives \$(\d+)', line)

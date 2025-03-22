@@ -10,7 +10,7 @@ class TestCompanyEvents(unittest.TestCase):
     def test_floats(self):
         line = 'B&O floats'
         expected = {
-            'event': 'CompanyFloating',
+            'event': company.CompanyEvents.CompanyFloats.name,
             'company': 'B&O'
         }
         self.assertEqual(expected, company.floats(line))
@@ -18,7 +18,7 @@ class TestCompanyEvents(unittest.TestCase):
     def test_choose_home(self):
         line = 'B&O must choose city for token'
         expected = {
-            'event': 'SelectHome',
+            'event': company.CompanyEvents.SelectsHome.name,
             'company': 'B&O'
         }
         self.assertEqual(expected, company.choose_home(line))
@@ -26,7 +26,7 @@ class TestCompanyEvents(unittest.TestCase):
     def test_does_not_run(self):
         line = 'B&O does not run'
         expected = {
-            'event': 'DoesNotRun',
+            'event': company.CompanyEvents.DoesNotRun.name,
             'company': 'B&O',
         }
         self.assertEqual(expected, company.does_not_run(line))

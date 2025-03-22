@@ -10,7 +10,7 @@ class TestPlayerEvents(unittest.TestCase):
     def test_becomes_president(self):
         line = 'player1 becomes the president of B&O'
         expected = {
-            'event': 'PresidentNomination',
+            'event': player.PlayerEvents.PresidentNomination.name,
             'player': 'player1',
             'company': 'B&O'
         }
@@ -19,7 +19,7 @@ class TestPlayerEvents(unittest.TestCase):
     def test_has_priority_deal(self):
         line = 'player1 has priority deal'
         expected = {
-            'event': 'PriorityDeal',
+            'event': player.PlayerEvents.PriorityDeal.name,
             'player': 'player1'
         }
         self.assertEqual(expected, player.has_priority_deal(line))
@@ -27,7 +27,7 @@ class TestPlayerEvents(unittest.TestCase):
     def test_operates_company(self):
         line = 'player1 operates B&O'
         expected = {
-            'event': 'CompanyOperation',
+            'event': player.PlayerEvents.OperatesCompany.name,
             'player': 'player1',
             'company': 'B&O'
         }
