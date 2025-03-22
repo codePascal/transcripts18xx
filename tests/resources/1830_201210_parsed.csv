@@ -450,9 +450,9 @@ OperatesCompany,,223,"riverfiend operates C&O
 ,,224,"C&O buys Delaware & Hudson from riverfiend for $140
 ",BuyPrivate,riverfiend,140,Delaware & Hudson,,C&O,,,,,,,,,,,,,
 ,,225,"C&O (DH) spends $120 and lays tile #57 with rotation 2 on F16 (Scranton)
-",LayTile,,120,,,C&O (DH),,,,F16 (Scranton),57,2,,,,,,,
+",LayTile,,120,,,C&O,,,,F16 (Scranton),57,2,,,,,,,
 ,,226,"C&O (DH) places a token on F16 (Scranton)
-",PlaceToken,,,,,C&O (DH),,,,F16 (Scranton),,,,,,,,,
+",PlaceToken,,,,,C&O,,,,F16 (Scranton),,,,,,,,,
 ,,227,"C&O skips lay track
 ",SkipTile,,,,,C&O,,,,,,,,,,,,,
 ,,228,"C&O skips place a token
