@@ -61,7 +61,8 @@ def _place_tile_for_free(line: str) -> dict | None:
 
 def _place_tile_for_money(line: str) -> dict | None:
     match = re.search(
-        r'(.*?) spends \$(\d+) and lays tile #(.*?) with rotation (\d+) on (.*)',
+        r'(.*?) spends \$(\d+) and lays tile #(.*?) with rotation (\d+) on'
+        r' (.*)',
         line
     )
     if match:

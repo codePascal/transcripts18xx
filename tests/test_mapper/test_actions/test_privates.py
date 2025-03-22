@@ -17,7 +17,9 @@ class TestPrivateActions(unittest.TestCase):
         }
         self.assertEqual(expected, privates.buy_private(line))
 
-        line = 'player1 wins the auction for Schuylkill Valley with a bid of $30'
+        line = str(
+            'player1 wins the auction for Schuylkill Valley with a bid of $30'
+        )
         expected = {
             'action': privates.PrivatesActions.BuyPrivate.name,
             'player': 'player1',
@@ -26,7 +28,10 @@ class TestPrivateActions(unittest.TestCase):
         }
         self.assertEqual(expected, privates.buy_private(line))
 
-        line = 'player1 wins the auction for Schuylkill Valley with the only bid of $40'
+        line = str(
+            'player1 wins the auction for Schuylkill Valley with the only bid '
+            'of $40'
+        )
         expected = {
             'action': privates.PrivatesActions.BuyPrivate.name,
             'player': 'player1',
