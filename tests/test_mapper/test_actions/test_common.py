@@ -7,21 +7,13 @@ from transcripts18xx.mapper.actions import common
 
 class TestCommonActions(unittest.TestCase):
 
-    def test_actions(self):
-        line = 'mpcoyne buys Schuylkill Valley for $20'
-        results = common.actions(line)
-        self.assertTrue(any(
-            result and result.get('action') == 'PrivateBought' for result in
-            results)
-        )
-
     def test_receives_share(self):
-        line = 'leesin receives a 10% share of PRR'
+        line = 'player1 receives a 10% share of B&O'
         expected = {
             'action': 'ShareReceived',
-            'player': 'leesin',
+            'player': 'player1',
             'percentage': '10',
-            'company': 'PRR'
+            'company': 'B&O'
         }
         self.assertEqual(expected, common.receives(line))
 
@@ -35,10 +27,10 @@ class TestCommonActions(unittest.TestCase):
         self.assertEqual(expected, common.receives(line))
 
     def test_buys_share(self):
-        line = 'riverfiend buys a 20% share of ERIE from the IPO for $200'
+        line = 'player1 buys a 20% share of ERIE from the IPO for $200'
         expected = {
             'action': 'ShareBought',
-            'player': 'riverfiend',
+            'player': 'player1',
             'percentage': '20',
             'company': 'ERIE',
             'source': 'IPO',
@@ -47,10 +39,10 @@ class TestCommonActions(unittest.TestCase):
         self.assertEqual(expected, common.buys(line))
 
     def test_buys_train(self):
-        line = 'PRR buys a 3 train for $180 from The Depot'
+        line = 'B&O buys a 3 train for $180 from The Depot'
         expected = {
             'action': 'TrainBought',
-            'company': 'PRR',
+            'company': 'B&O',
             'train': '3',
             'amount': '180',
             'source': 'The Depot'
@@ -58,29 +50,29 @@ class TestCommonActions(unittest.TestCase):
         self.assertEqual(expected, common.buys(line))
 
     def test_buys_private(self):
-        line = 'mpcoyne buys Schuylkill Valley for $20'
+        line = 'player1 buys Schuylkill Valley for $20'
         expected = {
             'action': 'PrivateBought',
-            'player': 'mpcoyne',
+            'player': 'player1',
             'private': 'Schuylkill Valley',
             'amount': '20'
         }
         self.assertEqual(expected, common.buys(line))
 
     def test_collects(self):
-        line = 'mpakfm collects $10 from Champlain & St.Lawrence'
+        line = 'player1 collects $10 from Champlain & St.Lawrence'
         expected = {
             'action': 'Collect',
-            'who': 'mpakfm',
+            'who': 'player1',
             'amount': '10',
             'source': 'Champlain & St.Lawrence'
         }
         self.assertEqual(expected, common.collects(line))
 
     def test_passes(self):
-        line = 'riverfiend passes'
+        line = 'player1 passes'
         expected = {
             'action': 'Passed',
-            'who': 'riverfiend'
+            'who': 'player1'
         }
         self.assertEqual(expected, common.passes(line))

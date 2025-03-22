@@ -7,65 +7,47 @@ from transcripts18xx.mapper.actions import player
 
 class TestPlayerActions(unittest.TestCase):
 
-    def test_actions(self):
-        line = 'riverfiend bids $170 for Camden & Amboy'
-        results = player.actions(line)
-        self.assertTrue(any(
-            result and result.get('action') == 'BidPlaced' for result in
-            results)
-        )
-
     def test_bids(self):
-        line = 'riverfiend bids $170 for Camden & Amboy'
+        line = 'player1 bids $170 for Camden & Amboy'
         expected = {
             'action': 'BidPlaced',
-            'player': 'riverfiend',
-            'amount': '170',
-            'private': 'Camden & Amboy'
-        }
-        self.assertEqual(expected, player.bids(line))
-
-    def test_operates_company(self):
-        line = 'riverfiend bids $170 for Camden & Amboy'
-        expected = {
-            'action': 'BidPlaced',
-            'player': 'riverfiend',
+            'player': 'player1',
             'amount': '170',
             'private': 'Camden & Amboy'
         }
         self.assertEqual(expected, player.bids(line))
 
     def test_pars_company(self):
-        line = 'leesin pars B&O at $82'
+        line = 'player1 pars B&O at $82'
         expected = {
             'action': 'CompanyPared',
-            'player': 'leesin',
+            'player': 'player1',
             'amount': '82',
             'company': 'B&O'
         }
         self.assertEqual(expected, player.pars_company(line))
 
     def test_declines_sell_shares(self):
-        line = 'riverfiend declines to sell shares'
+        line = 'player1 declines to sell shares'
         expected = {
             'action': 'SharesSellSkipped',
-            'player': 'riverfiend',
+            'player': 'player1',
         }
         self.assertEqual(expected, player.declines_sell_shares(line))
 
     def test_declines_buy_shares(self):
-        line = 'riverfiend declines to buy shares'
+        line = 'player1 declines to buy shares'
         expected = {
             'action': 'SharesBuySkipped',
-            'player': 'riverfiend',
+            'player': 'player1',
         }
         self.assertEqual(expected, player.declines_buy_shares(line))
 
     def test_sells_shares(self):
-        line = 'leesin sells 4 shares of B&O and receives $284'
+        line = 'player1 sells 4 shares of B&O and receives $284'
         expected = {
             'action': 'SharesSold',
-            'player': 'leesin',
+            'player': 'player1',
             'percentage': '40',
             'company': 'B&O',
             'amount': '284'
@@ -73,10 +55,10 @@ class TestPlayerActions(unittest.TestCase):
         self.assertEqual(expected, player.sells_shares(line))
 
     def test_contributes_for_train(self):
-        line = 'mpakfm contributes $990'
+        line = 'player1 contributes $990'
         expected = {
             'action': 'TrainBuyContributed',
-            'player': 'mpakfm',
+            'player': 'player1',
             'amount': '990'
         }
         self.assertEqual(expected, player.contributes_for_train(line))

@@ -15,23 +15,23 @@ def all_close(line: str) -> dict | None:
     match = re.search(r'-- Event: Private companies close', line)
     if match:
         return dict(
-            event='PrivatesClose'
+            event='AllPrivatesClose'
         )
     return None
 
 
 def closes(line: str) -> dict | None:
-    match = re.search(r'(\D) closes', line)
+    match = re.search(r'(.*?) closes', line)
     if match:
         return dict(
-            event='PrivatesClose',
+            event='PrivateCloses',
             private=match.group(1)
         )
     return None
 
 
 def is_auctioned(line: str) -> dict | None:
-    match = re.search(r'(\w+) goes up for auction', line)
+    match = re.search(r'(.*?) goes up for auction', line)
     if match:
         return dict(
             event='PrivateAuction',

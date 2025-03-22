@@ -11,14 +11,13 @@ def events(line: str) -> list:
 
 def share_price_moves(line: str) -> dict | None:
     match = re.search(
-        r"(\D)'s share price moves (.*?) from \$(\d+) to \$(\d+)", line
+        r"(.*?)'s share price moves (.*?) from \$(\d+) to \$(\d+)", line
     )
     if match:
         return dict(
             event='SharePriceMove',
             company=match.group(1),
             direction=match.group(2),
-            old_price=match.group(3),
-            new_price=match.group(4)
+            share_price=match.group(4)
         )
     return None

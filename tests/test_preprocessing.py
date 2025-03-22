@@ -31,4 +31,4 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
 
     def test_shape(self):
         self.assertEqual(1346, self.df.shape[0])
-        self.assertEqual(24, self.df.shape[1])
+        self.assertEqual(23, self.df.shape[1])

@@ -5,7 +5,7 @@ import re
 
 def events(line: str) -> list:
     return [
-        phase_change(line),
+        phase_changed(line),
         operating_round(line),
         stock_round(line),
         game_over(line),
@@ -13,12 +13,12 @@ def events(line: str) -> list:
     ]
 
 
-def phase_change(line: str) -> dict | None:
+def phase_changed(line: str) -> dict | None:
     # `-- Phase x ...`
     match = re.search(r'-- Phase (\w+) \(', line)
     if match:
         return dict(
-            event='PhaseChange',
+            event='PhaseChanged',
             phase=match.group(1)
         )
     return None

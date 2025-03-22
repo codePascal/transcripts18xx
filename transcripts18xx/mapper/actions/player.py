@@ -6,7 +6,6 @@ import re
 def actions(line: str) -> list:
     return [
         bids(line),
-        operates_company(line),
         pars_company(line),
         declines_sell_shares(line),
         sells_shares(line),
@@ -23,17 +22,6 @@ def bids(line: str) -> dict | None:
             player=match.group(1),
             amount=match.group(2),
             private=match.group(3),
-        )
-    return None
-
-
-def operates_company(line: str) -> dict | None:
-    match = re.search(r'(.*?) operates (.*)', line)
-    if match:
-        return dict(
-            event='CompanyOperated',
-            player=match.group(1),
-            company=match.group(2)
         )
     return None
 

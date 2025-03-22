@@ -44,7 +44,7 @@ def collects(line: str) -> dict | None:
 
 
 def passes(line: str) -> dict | None:
-    match = re.search(r'(\w+) passes', line)
+    match = re.search(r'(.*?) passes', line)
     if match:
         return dict(
             action='Passed',
@@ -106,16 +106,16 @@ def _buy_train(line: str) -> dict | None:
 
 
 def _buy_private(line: str) -> dict | None:
-    match = re.search(r'(\w+) buys (.*?) for \$(\d+)', line)
+    match = re.search(r'(.*?) buys (.*?) for \$(\d+)', line)
     if match is None:
         # When others have made a bid
         match = re.search(
-            r'(\w+) wins the auction for (.*?) with a bid of \$(\d+)', line
+            r'(.*?) wins the auction for (.*?) with a bid of \$(\d+)', line
         )
     if match is None:
         # If no other bids present, another log will be printed
         match = re.search(
-            r'(\w+) wins the auction for (.*?) with the only bid of \$(\d+)',
+            r'(.*?) wins the auction for (.*?) with the only bid of \$(\d+)',
             line
         )
     if match:

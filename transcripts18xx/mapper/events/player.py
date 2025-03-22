@@ -6,12 +6,13 @@ import re
 def events(line: str) -> list:
     return [
         becomes_president(line),
-        has_priority_deal(line)
+        has_priority_deal(line),
+        operates_company(line),
     ]
 
 
 def becomes_president(line: str) -> dict | None:
-    match = re.search(r'(\w+) becomes the president of (.*)', line)
+    match = re.search(r'(.*?) becomes the president of (.*)', line)
     if match:
         return dict(
             event='PresidentNomination',
@@ -22,10 +23,21 @@ def becomes_president(line: str) -> dict | None:
 
 
 def has_priority_deal(line: str) -> dict | None:
-    match = re.search(r'(\w+) has priority deal', line)
+    match = re.search(r'(.*?) has priority deal', line)
     if match:
         return dict(
             event='PriorityDeal',
             player=match.group(1)
+        )
+    return None
+
+
+def operates_company(line: str) -> dict | None:
+    match = re.search(r'(.*?) operates (.*)', line)
+    if match:
+        return dict(
+            event='CompanyOperation',
+            player=match.group(1),
+            company=match.group(2)
         )
     return None

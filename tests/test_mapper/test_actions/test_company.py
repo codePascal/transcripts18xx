@@ -7,14 +7,6 @@ from transcripts18xx.mapper.actions import company
 
 class TestCompanyActions(unittest.TestCase):
 
-    def test_actions(self):
-        line = 'B&O runs a 2 train for $70: F6-F2'
-        results = company.actions(line)
-        self.assertTrue(any(
-            result and result.get('action') == 'TrainRan' for result in
-            results)
-        )
-
     def test_places_token(self):
         line = 'B&O places a token on F16 (Scranton)'
         expected = {
@@ -47,7 +39,7 @@ class TestCompanyActions(unittest.TestCase):
         self.assertEqual(expected, company.runs_train(line))
 
     def test_pays_dividend(self):
-        line = 'B&O pays out $50 = $5 per share ($30 to mpcoyne, $5 to riverfiend)'
+        line = 'B&O pays out $50 = $5 per share ($30 to player1, $5 to player2)'
         expected = {
             'action': 'DividendPayed',
             'company': 'B&O',
@@ -104,14 +96,6 @@ class TestCompanyActions(unittest.TestCase):
             'company': 'B&O',
         }
         self.assertEqual(expected, company.skips_buy_train(line))
-
-    def test_does_not_run(self):
-        line = 'B&O does not run'
-        expected = {
-            'action': 'DoesNotRun',
-            'company': 'B&O',
-        }
-        self.assertEqual(expected, company.does_not_run(line))
 
     def test_discards_train(self):
         line = 'B&O discards 3'

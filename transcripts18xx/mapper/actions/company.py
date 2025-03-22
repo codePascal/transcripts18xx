@@ -13,7 +13,6 @@ def actions(line: str) -> list:
         skips_run_train(line),
         skips_buy_private(line),
         pays_dividend(line),
-        does_not_run(line),
         skips_buy_train(line),
         withholds(line),
         discards_train(line),
@@ -129,16 +128,6 @@ def skips_buy_train(line: str) -> dict | None:
         return dict(
             action='TrainBuySkipped',
             company=match.group(1),
-        )
-    return None
-
-
-def does_not_run(line: str) -> dict | None:
-    match = re.search(r'(.*?) does not run', line)
-    if match:
-        return dict(
-            action='DoesNotRun',
-            company=match.group(1)
         )
     return None
 
