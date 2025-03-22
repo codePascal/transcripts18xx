@@ -68,7 +68,7 @@ PresidentNomination,,32,"mpcoyne becomes the president of B&O
 PriorityDeal,,33,"riverfiend has priority deal
 ",,riverfiend,,,,,,,,,,,,,,,,,
 StockRound,,34,"-- Stock Round 1 --
-",,,,,,,1,,,,,,,,,,,,
+",,,,,,,SR 1,,,,,,,,,,,,
 ,,35,"riverfiend pars C&O at $67
 ",ParCompany,riverfiend,67,,,C&O,,,,,,,,,,,,,
 ,,36,"riverfiend buys a 20% share of C&O from the IPO for $134
@@ -138,7 +138,7 @@ CompanyFloats,,62,"NYC floats
 PriorityDeal,,68,"mpcoyne has priority deal
 ",,mpcoyne,,,,,,,,,,,,,,,,,
 OperatingRound,,69,"-- Operating Round 1.1 (of 1) --
-",,,,,,,1.1,,,,,,,,,,,,
+",,,,,,,OR 1.1,,,,,,,,,,,,
 ,,70,"mpcoyne collects $5 from Schuylkill Valley
 ",CollectPrivate,,5,,,,,Schuylkill Valley,mpcoyne,,,,,,,,,,
 ,,71,"mpcoyne collects $30 from Baltimore & Ohio
@@ -214,7 +214,7 @@ SharePriceMoves,,103,"C&O's share price moves left from $67 to $65
 ,,106,"C&O skips buy companies
 ",SkipPrivate,,,,,C&O,,,,,,,,,,,,,
 StockRound,,107,"-- Stock Round 2 --
-",,,,,,,2,,,,,,,,,,,,
+",,,,,,,SR 2,,,,,,,,,,,,
 ,,108,"mpcoyne passes
 ",Pass,mpcoyne,,,,,,,,,,,,,,,,,
 ,,109,"riverfiend buys a 10% share of B&O from the IPO for $90
@@ -246,7 +246,7 @@ SharePriceMoves,,121,"C&O's share price moves up from $65 to $67
 PriorityDeal,,122,"leesin has priority deal
 ",,leesin,,,,,,,,,,,,,,,,,
 OperatingRound,,123,"-- Operating Round 2.1 (of 1) --
-",,,,,,,2.1,,,,,,,,,,,,
+",,,,,,,OR 2.1,,,,,,,,,,,,
 ,,124,"leesin collects $20 from Mohawk & Hudson
 ",CollectPrivate,,20,,,,,Mohawk & Hudson,leesin,,,,,,,,,,
 ,,125,"leesin collects $25 from Camden & Amboy
@@ -308,7 +308,7 @@ SharePriceMoves,,150,"C&O's share price moves right from $67 to $71
 ,,153,"C&O skips buy companies
 ",SkipPrivate,,,,,C&O,,,,,,,,,,,,,
 StockRound,,154,"-- Stock Round 3 --
-",,,,,,,3,,,,,,,,,,,,
+",,,,,,,SR 3,,,,,,,,,,,,
 ,,155,"leesin sells 4 shares of C&O and receives $284
 ",SellShare,leesin,284,,40,C&O,,,,,,,,,,,,,
 SharePriceMoves,,156,"C&O's share price moves down from $71 to $60
@@ -372,7 +372,7 @@ CompanyFloats,,178,"PRR floats
 PriorityDeal,,185,"mpakfm has priority deal
 ",,mpakfm,,,,,,,,,,,,,,,,,
 OperatingRound,,186,"-- Operating Round 3.1 (of 1) --
-",,,,,,,3.1,,,,,,,,,,,,
+",,,,,,,OR 3.1,,,,,,,,,,,,
 ,,187,"mpakfm collects $10 from Champlain & St.Lawrence
 ",CollectPrivate,,10,,,,,Champlain & St.Lawrence,mpakfm,,,,,,,,,,
 ,,188,"mpcoyne collects $5 from Schuylkill Valley
@@ -470,7 +470,7 @@ SharePriceMoves,,231,"C&O's share price moves up from $60 to $67
 ,,234,"C&O passes buy companies
 ",PassPrivate,,,,,C&O,,,,,,,,,,,,,
 StockRound,,235,"-- Stock Round 4 --
-",,,,,,,4,,,,,,,,,,,,
+",,,,,,,SR 4,,,,,,,,,,,,
 ,,236,"mpakfm buys a 10% share of C&O from the market for $67
 ",BuyShare,mpakfm,67,,10,C&O,,market,,,,,,,,,,,
 ,,237,"mpakfm declines to sell shares
@@ -602,7 +602,7 @@ SharePriceMoves,,299,"B&O's share price moves up from $90 to $100
 PriorityDeal,,300,"mpakfm has priority deal
 ",,mpakfm,,,,,,,,,,,,,,,,,
 OperatingRound,,301,"-- Operating Round 4.1 (of 2) --
-",,,,,,,4.1,,,,,,,,,,,,
+",,,,,,,OR 4.1,,,,,,,,,,,,
 ,,302,"mpakfm collects $10 from Champlain & St.Lawrence
 ",CollectPrivate,,10,,,,,Champlain & St.Lawrence,mpakfm,,,,,,,,,,
 ,,303,"mpcoyne collects $5 from Schuylkill Valley
@@ -710,7 +710,7 @@ SharePriceMoves,,352,"PRR's share price moves left from $50 to $40
 ,,354,"PRR passes buy companies
 ",PassPrivate,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,355,"-- Operating Round 4.2 (of 2) --
-",,,,,,,4.2,,,,,,,,,,,,
+",,,,,,,OR 4.2,,,,,,,,,,,,
 ,,356,"mpakfm collects $10 from Champlain & St.Lawrence
 ",CollectPrivate,,10,,,,,Champlain & St.Lawrence,mpakfm,,,,,,,,,,
 ,,357,"B&O collects $5 from Schuylkill Valley
@@ -806,7 +806,7 @@ SharePriceMoves,,400,"PRR's share price moves right from $40 to $50
 ,,402,"PRR passes buy companies
 ",PassPrivate,,,,,PRR,,,,,,,,,,,,,
 StockRound,,403,"-- Stock Round 5 --
-",,,,,,,5,,,,,,,,,,,,
+",,,,,,,SR 5,,,,,,,,,,,,
 ,,404,"mpakfm buys a 10% share of NYNH from the IPO for $82
 ",BuyShare,mpakfm,82,,10,NYNH,,IPO,,,,,,,,,,,
 ,,405,"mpakfm declines to sell shares
@@ -908,7 +908,7 @@ SharePriceMoves,,452,"NYNH's share price moves up from $82 to $90
 PriorityDeal,,453,"leesin has priority deal
 ",,leesin,,,,,,,,,,,,,,,,,
 OperatingRound,,454,"-- Operating Round 5.1 (of 2) --
-",,,,,,,5.1,,,,,,,,,,,,
+",,,,,,,OR 5.1,,,,,,,,,,,,
 ,,455,"mpakfm collects $10 from Champlain & St.Lawrence
 ",CollectPrivate,,10,,,,,Champlain & St.Lawrence,mpakfm,,,,,,,,,,
 ,,456,"B&O collects $5 from Schuylkill Valley
@@ -1028,7 +1028,7 @@ SharePriceMoves,,511,"C&O's share price moves up from $40 to $50
 ,,513,"C&O passes buy companies
 ",PassPrivate,,,,,C&O,,,,,,,,,,,,,
 OperatingRound,,514,"-- Operating Round 5.2 (of 2) --
-",,,,,,,5.2,,,,,,,,,,,,
+",,,,,,,OR 5.2,,,,,,,,,,,,
 ,,515,"mpakfm collects $10 from Champlain & St.Lawrence
 ",CollectPrivate,,10,,,,,Champlain & St.Lawrence,mpakfm,,,,,,,,,,
 ,,516,"B&O collects $5 from Schuylkill Valley
@@ -1146,7 +1146,7 @@ SharePriceMoves,,570,"PRR's share price moves left from $40 to $30
 ,,572,"PRR skips buy companies
 ",SkipPrivate,,,,,PRR,,,,,,,,,,,,,
 StockRound,,573,"-- Stock Round 6 --
-",,,,,,,6,,,,,,,,,,,,
+",,,,,,,SR 6,,,,,,,,,,,,
 ,,574,"leesin sells 2 shares of NYC and receives $180
 ",SellShare,leesin,180,,20,NYC,,,,,,,,,,,,,
 SharePriceMoves,,575,"NYC's share price moves down from $90 to $76
@@ -1318,7 +1318,7 @@ SharePriceMoves,,657,"C&O's share price moves up from $40 to $50
 PriorityDeal,,658,"leesin has priority deal
 ",,leesin,,,,,,,,,,,,,,,,,
 OperatingRound,,659,"-- Operating Round 6.1 (of 3) --
-",,,,,,,6.1,,,,,,,,,,,,
+",,,,,,,OR 6.1,,,,,,,,,,,,
 OperatesCompany,,660,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,661,"B&O lays tile #65 with rotation 5 on H18 (Philadelphia & Trenton)
@@ -1442,7 +1442,7 @@ SharePriceMoves,,718,"PRR's share price moves left from $20 to $10
 ,,720,"PRR skips buy companies
 ",SkipPrivate,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,721,"-- Operating Round 6.2 (of 3) --
-",,,,,,,6.2,,,,,,,,,,,,
+",,,,,,,OR 6.2,,,,,,,,,,,,
 OperatesCompany,,722,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,723,"B&O lays tile #27 with rotation 1 on I17
@@ -1556,7 +1556,7 @@ OperatesCompany,,771,"leesin operates PRR
 ,,777,"PRR skips buy companies
 ",SkipPrivate,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,778,"-- Operating Round 6.3 (of 3) --
-",,,,,,,6.3,,,,,,,,,,,,
+",,,,,,,OR 6.3,,,,,,,,,,,,
 OperatesCompany,,779,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,780,"B&O lays tile #8 with rotation 2 on H6
@@ -1678,7 +1678,7 @@ TrainRust,,836,"-- Event: 4 trains rust ( The Depot x1, NYC x2, ERIE x1) --
 ,,838,"PRR skips buy companies
 ",SkipPrivate,,,,,PRR,,,,,,,,,,,,,
 StockRound,,839,"-- Stock Round 7 --
-",,,,,,,7,,,,,,,,,,,,
+",,,,,,,SR 7,,,,,,,,,,,,
 ,,840,"leesin buys a 10% share of B&M from the market for $68
 ",BuyShare,leesin,68,,10,B&M,,market,,,,,,,,,,,
 ,,841,"leesin declines to sell shares
@@ -1830,7 +1830,7 @@ SharePriceMoves,,913,"PRR's share price moves up from $10 to $20
 PriorityDeal,,914,"riverfiend has priority deal
 ",,riverfiend,,,,,,,,,,,,,,,,,
 OperatingRound,,915,"-- Operating Round 7.1 (of 3) --
-",,,,,,,7.1,,,,,,,,,,,,
+",,,,,,,OR 7.1,,,,,,,,,,,,
 OperatesCompany,,916,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,917,"B&O passes lay/upgrade track
@@ -1970,7 +1970,7 @@ SharePriceMoves,,982,"PRR's share price moves right from $20 to $30
 ,,984,"PRR skips buy companies
 ",SkipPrivate,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,985,"-- Operating Round 7.2 (of 3) --
-",,,,,,,7.2,,,,,,,,,,,,
+",,,,,,,OR 7.2,,,,,,,,,,,,
 OperatesCompany,,986,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,987,"B&O lays tile #57 with rotation 1 on H4 (Columbus)
@@ -2100,7 +2100,7 @@ SharePriceMoves,,1047,"PRR's share price moves right from $30 to $40
 ,,1049,"PRR skips buy companies
 ",SkipPrivate,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,1050,"-- Operating Round 7.3 (of 3) --
-",,,,,,,7.3,,,,,,,,,,,,
+",,,,,,,OR 7.3,,,,,,,,,,,,
 OperatesCompany,,1051,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,1052,"B&O lays tile #43 with rotation 4 on H14
@@ -2232,7 +2232,7 @@ SharePriceMoves,,1113,"PRR's share price moves left from $40 to $30
 ,,1115,"PRR skips buy companies
 ",SkipPrivate,,,,,PRR,,,,,,,,,,,,,
 StockRound,,1116,"-- Stock Round 8 --
-",,,,,,,8,,,,,,,,,,,,
+",,,,,,,SR 8,,,,,,,,,,,,
 ,,1117,"riverfiend sells a 10% share of CPR and receives $112
 ",SellShare,riverfiend,112,,10,CPR,,,,,,,,,,,,,
 SharePriceMoves,,1118,"CPR's share price moves down from $112 to $100
@@ -2296,7 +2296,7 @@ SharePriceMoves,,1146,"PRR's share price moves up from $30 to $40
 PriorityDeal,,1147,"mpakfm has priority deal
 ",,mpakfm,,,,,,,,,,,,,,,,,
 OperatingRound,,1148,"-- Operating Round 8.1 (of 3) --
-",,,,,,,8.1,,,,,,,,,,,,
+",,,,,,,OR 8.1,,,,,,,,,,,,
 OperatesCompany,,1149,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,1150,"B&O lays tile #28 with rotation 3 on F12
@@ -2428,7 +2428,7 @@ SharePriceMoves,,1211,"PRR's share price moves right from $40 to $50
 ,,1213,"PRR skips buy companies
 ",SkipPrivate,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,1214,"-- Operating Round 8.2 (of 3) --
-",,,,,,,8.2,,,,,,,,,,,,
+",,,,,,,OR 8.2,,,,,,,,,,,,
 OperatesCompany,,1215,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,1216,"B&O passes lay/upgrade track
@@ -2558,7 +2558,7 @@ SharePriceMoves,,1276,"PRR's share price moves right from $50 to $60
 ,,1278,"PRR skips buy companies
 ",SkipPrivate,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,1279,"-- Operating Round 8.3 (of 3) --
-",,,,,,,8.3,,,,,,,,,,,,
+",,,,,,,OR 8.3,,,,,,,,,,,,
 OperatesCompany,,1280,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,1281,"B&O passes lay/upgrade track

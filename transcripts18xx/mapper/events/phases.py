@@ -57,7 +57,7 @@ def operating_round(line: str) -> dict | None:
     if match:
         return dict(
             event=PhaseEvents.OperatingRound.name,
-            round=match.group(1)
+            round='OR {}'.format(match.group(1))
         )
     return None
 
@@ -68,6 +68,6 @@ def stock_round(line: str) -> dict | None:
     if match:
         return dict(
             event=PhaseEvents.StockRound.name,
-            round=match.group(1)
+            round='SR {}'.format(match.group(1))
         )
     return None
