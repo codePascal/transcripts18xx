@@ -156,7 +156,7 @@ CompanyOperation,,76,"mpcoyne operates B&O
 ,,77,"B&O places a token on I15
 ",TokenPlaced,,,,,B&O,,,,I15,,,,,,,,,
 ,,78,"B&O spends $80 and lays tile #7 with rotation 1 on I17
-",TilePlaced,,,,,B&O spends $80 and,,,,I17,7,1,,,,,,,
+",TilePlaced,,80,,,B&O,,,,I17,7,1,,,,,,,
 ,,79,"B&O skips place a token
 ",TokenSkipped,,,,,B&O,,,,,,,,,,,,,
 ,,80,"B&O skips run routes
@@ -450,7 +450,7 @@ CompanyOperation,,223,"riverfiend operates C&O
 ,,224,"C&O buys Delaware & Hudson from riverfiend for $140
 ",PrivateBought,riverfiend,140,Delaware & Hudson,,C&O,,,,,,,,,,,,,
 ,,225,"C&O (DH) spends $120 and lays tile #57 with rotation 2 on F16 (Scranton)
-",TilePlaced,,,,,C&O (DH) spends $120 and,,,,F16 (Scranton),57,2,,,,,,,
+",TilePlaced,,120,,,C&O (DH),,,,F16 (Scranton),57,2,,,,,,,
 ,,226,"C&O (DH) places a token on F16 (Scranton)
 ",TokenPlaced,,,,,C&O (DH),,,,F16 (Scranton),,,,,,,,,
 ,,227,"C&O skips lay track
@@ -662,7 +662,7 @@ TrainRust,,327,"-- Event: 2 trains rust ( B&O x1, NYC x1, C&O x2, PRR x2) --
 CompanyOperation,,330,"mpakfm operates NYC
 ",,mpakfm,,,,NYC,,,,,,,,,,,,,
 ,,331,"NYC spends $80 and lays tile #57 with rotation 1 on F22 (Providence)
-",TilePlaced,,,,,NYC spends $80 and,,,,F22 (Providence),57,1,,,,,,,
+",TilePlaced,,80,,,NYC,,,,F22 (Providence),57,1,,,,,,,
 ,,332,"NYC places a token on F22 (Providence)  for $40
 ",TokenPlaced,,,,,NYC,,,,F22 (Providence)  for $40,,,,,,,,,
 ,,333,"NYC runs a 3 train for $80: E19-F20-G19
@@ -980,7 +980,7 @@ SharePriceMove,,485,"ERIE's share price moves left from $90 to $82
 CompanyOperation,,489,"leesin operates NYNH
 ",,leesin,,,,NYNH,,,,,,,,,,,,,
 ,,490,"NYNH spends $80 and lays tile #54 with rotation 0 on G19 (New York & Newark)
-",TilePlaced,,,,,NYNH spends $80 and,,,,G19 (New York & Newark),54,0,,,,,,,
+",TilePlaced,,80,,,NYNH,,,,G19 (New York & Newark),54,0,,,,,,,
 ,,491,"NYNH skips place a token
 ",TokenSkipped,,,,,NYNH,,,,,,,,,,,,,
 ,,492,"NYNH runs a 4 train for $90: G19-E19
@@ -1058,7 +1058,7 @@ SharePriceMove,,525,"B&O's share price moves right from $110 to $120
 CompanyOperation,,528,"mpakfm operates NYC
 ",,mpakfm,,,,NYC,,,,,,,,,,,,,
 ,,529,"NYC spends $120 and lays tile #7 with rotation 4 on E21
-",TilePlaced,,,,,NYC spends $120 and,,,,E21,7,4,,,,,,,
+",TilePlaced,,120,,,NYC,,,,E21,7,4,,,,,,,
 ,,530,"NYC skips place a token
 ",TokenSkipped,,,,,NYC,,,,,,,,,,,,,
 ,,531,"NYC runs a 4 train for $120: E19-F20-F22-E23
@@ -1940,7 +1940,7 @@ SharePriceMove,,966,"C&O's share price moves up from $68 to $69
 CompanyOperation,,969,"riverfiend operates ERIE
 ",,riverfiend,,,,ERIE,,,,,,,,,,,,,
 ,,970,"ERIE spends $80 and lays tile #59 with rotation 3 on D10 (Hamilton & Toronto)
-",TilePlaced,,,,,ERIE spends $80 and,,,,D10 (Hamilton & Toronto),59,3,,,,,,,
+",TilePlaced,,80,,,ERIE,,,,D10 (Hamilton & Toronto),59,3,,,,,,,
 ,,971,"ERIE skips place a token
 ",TokenSkipped,,,,,ERIE,,,,,,,,,,,,,
 ,,972,"ERIE runs a 6 train for $160: D10-E11-E11-D14
@@ -1990,7 +1990,7 @@ SharePriceMove,,991,"B&O's share price moves right from $240 to $260
 CompanyOperation,,994,"leesin operates NYNH
 ",,leesin,,,,NYNH,,,,,,,,,,,,,
 ,,995,"NYNH spends $120 and lays tile #9 with rotation 0 on C17
-",TilePlaced,,,,,NYNH spends $120 and,,,,C17,9,0,,,,,,,
+",TilePlaced,,120,,,NYNH,,,,C17,9,0,,,,,,,
 ,,996,"NYNH skips place a token
 ",TokenSkipped,,,,,NYNH,,,,,,,,,,,,,
 ,,997,"NYNH runs a 5 train for $230: E23-E19-F20-G19-F16
@@ -2120,7 +2120,7 @@ SharePriceMove,,1056,"B&O's share price moves right from $260 to $280
 CompanyOperation,,1059,"leesin operates NYNH
 ",,leesin,,,,NYNH,,,,,,,,,,,,,
 ,,1060,"NYNH spends $80 and lays tile #9 with rotation 0 on B18
-",TilePlaced,,,,,NYNH spends $80 and,,,,B18,9,0,,,,,,,
+",TilePlaced,,80,,,NYNH,,,,B18,9,0,,,,,,,
 ,,1061,"NYNH skips place a token
 ",TokenSkipped,,,,,NYNH,,,,,,,,,,,,,
 ,,1062,"NYNH runs a 5 train for $230: E23-E19-F20-G19-F16
@@ -2544,7 +2544,7 @@ SharePriceMove,,1268,"C&O's share price moves right from $75 to $80
 CompanyOperation,,1271,"leesin operates PRR
 ",,leesin,,,,PRR,,,,,,,,,,,,,
 ,,1272,"PRR spends $120 and lays tile #7 with rotation 2 on G13
-",TilePlaced,,,,,PRR spends $120 and,,,,G13,7,2,,,,,,,
+",TilePlaced,,120,,,PRR,,,,G13,7,2,,,,,,,
 ,,1273,"PRR places a token on E11 (Dunkirk & Buffalo)  for $100
 ",TokenPlaced,,,,,PRR,,,,E11 (Dunkirk & Buffalo)  for $100,,,,,,,,,
 ,,1274,"PRR runs a D train for $510: A11-B10-D10-D10-E11-F10-H10-H12-H16-I19-H18-G19-G17-F16
@@ -2674,7 +2674,7 @@ SharePriceMove,,1333,"C&O's share price moves up from $80 to $90
 CompanyOperation,,1336,"leesin operates PRR
 ",,leesin,,,,PRR,,,,,,,,,,,,,
 ,,1337,"PRR spends $120 and lays tile #7 with rotation 3 on G15
-",TilePlaced,,,,,PRR spends $120 and,,,,G15,7,3,,,,,,,
+",TilePlaced,,120,,,PRR,,,,G15,7,3,,,,,,,
 ,,1338,"PRR skips place a token
 ",TokenSkipped,,,,,PRR,,,,,,,,,,,,,
 ,,1339,"PRR runs a D train for $420: A11-B10-D10-D10-E11-F10-H10-H12-H16-H18-G17-F16

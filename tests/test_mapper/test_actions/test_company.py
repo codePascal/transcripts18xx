@@ -27,12 +27,33 @@ class TestCompanyActions(unittest.TestCase):
         }
         self.assertEqual(expected, company.lays_tile(line))
 
+        line = 'B&O (HO) spends $80 and lays tile #7 with rotation 1 on I17'
+        expected = {
+            'action': 'TilePlaced',
+            'company': 'B&O (HO)',
+            'amount': '80',
+            'tile': '7',
+            'rotation': '1',
+            'location': 'I17'
+        }
+        self.assertEqual(expected, company.lays_tile(line))
+
     def test_runs_train(self):
         line = 'B&O runs a 3 train for $90: I15-H12-H10'
         expected = {
             'action': 'TrainRan',
             'company': 'B&O',
             'train': '3',
+            'amount': '90',
+            'route': 'I15-H12-H10'
+        }
+        self.assertEqual(expected, company.runs_train(line))
+
+        line = 'B&O runs a D train for $90: I15-H12-H10'
+        expected = {
+            'action': 'TrainRan',
+            'company': 'B&O',
+            'train': 'D',
             'amount': '90',
             'route': 'I15-H12-H10'
         }

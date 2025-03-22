@@ -33,21 +33,35 @@ def places_token(line: str) -> dict | None:
 
 def lays_tile(line: str) -> dict | None:
     match = re.search(
-        r'(.*?) lays tile #(.*?) with rotation (\d+) on (.*)', line
+        r'(.*?) spends \$(\d+) and lays tile #(.*?) with rotation (\d+) on (.*)',
+        line
     )
     if match:
         return dict(
             action='TilePlaced',
             company=match.group(1),
-            tile=match.group(2),
-            rotation=match.group(3),
-            location=match.group(4)
+            amount=match.group(2),
+            tile=match.group(3),
+            rotation=match.group(4),
+            location=match.group(5)
         )
+    else:
+        match = re.search(
+            r'(.*?) lays tile #(.*?) with rotation (\d+) on (.*)', line
+        )
+        if match:
+            return dict(
+                action='TilePlaced',
+                company=match.group(1),
+                tile=match.group(2),
+                rotation=match.group(3),
+                location=match.group(4)
+            )
     return None
 
 
 def runs_train(line: str) -> dict | None:
-    match = re.search(r'(.*?) runs a (\w+) train for \$(\d+): (.*)', line)
+    match = re.search(r'(.*?) runs a (\w) train for \$(\d+): (.*)', line)
     if match:
         return dict(
             action='TrainRan',
