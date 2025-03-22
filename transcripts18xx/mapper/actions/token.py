@@ -20,8 +20,14 @@ def actions(line: str) -> list:
 
 def place_token(line: str) -> dict | None:
     if 'for' in line:
-        return _place_token_for_money(line)
-    return _place_token_for_free(line)
+        ret = _place_token_for_money(line)
+    else:
+        ret = _place_token_for_free(line)
+    if ret:
+        if '(' in ret['company']:
+            # If a company uses a private it is recorded as e.g. `B&O (MH) ...`
+            ret['company'] = ret['company'].split('(')[0].strip()
+    return ret
 
 
 def skip_token(line: str) -> dict | None:

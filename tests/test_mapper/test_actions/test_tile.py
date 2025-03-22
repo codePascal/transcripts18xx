@@ -18,11 +18,10 @@ class TestTileActions(unittest.TestCase):
         }
         self.assertEqual(expected, tile.lay_tile(line))
 
-        # TODO: what to do with `company (XY) ...`
         line = 'B&O (HO) spends $80 and lays tile #7 with rotation 1 on I17'
         expected = {
             'action': tile.TileActions.LayTile.name,
-            'company': 'B&O (HO)',
+            'company': 'B&O',
             'amount': '80',
             'tile': '7',
             'rotation': '1',

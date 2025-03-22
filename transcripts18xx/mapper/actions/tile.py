@@ -20,8 +20,14 @@ def actions(line: str) -> list:
 
 def lay_tile(line: str) -> dict | None:
     if 'spends' in line:
-        return _place_tile_for_money(line)
-    return _place_tile_for_free(line)
+        ret = _place_tile_for_money(line)
+    else:
+        ret = _place_tile_for_free(line)
+    if ret:
+        if '(' in ret['company']:
+            # If a company uses a private it is recorded as e.g. `B&O (MH) ...`
+            ret['company'] = ret['company'].split('(')[0].strip()
+    return ret
 
 
 def skip_tile(line: str) -> dict | None:

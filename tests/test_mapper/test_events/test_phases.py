@@ -33,7 +33,7 @@ class TestPhasesEvents(unittest.TestCase):
         line = '-- Operating Round 1.2 (of 3) --'
         expected = {
             'event': phases.PhaseEvents.OperatingRound.name,
-            'round': '1.2'
+            'round': 'OR 1.2'
         }
         self.assertEqual(expected, phases.operating_round(line))
 
@@ -41,6 +41,6 @@ class TestPhasesEvents(unittest.TestCase):
         line = '-- Stock Round 3 --'
         expected = {
             'event': phases.PhaseEvents.StockRound.name,
-            'round': '3'
+            'round': 'SR 3'
         }
         self.assertEqual(expected, phases.stock_round(line))

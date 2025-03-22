@@ -16,7 +16,8 @@ class TestTokenActions(unittest.TestCase):
         }
         self.assertEqual(expected, token.place_token(line))
 
-        line = 'B&O places a token on F16 (Scranton) for $40'
+        line = 'B&O (HO)' \
+               ' places a token on F16 (Scranton) for $40'
         expected = {
             'action': token.TokenActions.PlaceToken.name,
             'company': 'B&O',
