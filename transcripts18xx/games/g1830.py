@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""g1830.py
+
+Module implements the game patterns for the game 1830.
+
+See Also:
+    https://github.com/tobymao/18xx/wiki/1830
+"""
 
 from ..mapper.actions import actions
 from ..mapper.events import events
