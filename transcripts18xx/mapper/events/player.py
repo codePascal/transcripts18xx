@@ -3,6 +3,13 @@
 import re
 
 
+def events(line: str) -> list:
+    return [
+        becomes_president(line),
+        has_priority_deal(line)
+    ]
+
+
 def becomes_president(line: str) -> dict | None:
     match = re.search(r'(\w+) becomes the president of (.*)', line)
     if match:

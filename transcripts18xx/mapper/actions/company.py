@@ -3,6 +3,23 @@
 import re
 
 
+def actions(line: str) -> list:
+    return [
+        places_token(line),
+        skips_token(line),
+        lays_tile(line),
+        skips_tile(line),
+        runs_train(line),
+        skips_run_train(line),
+        skips_buy_private(line),
+        pays_dividend(line),
+        does_not_run(line),
+        skips_buy_train(line),
+        withholds(line),
+        discards_train(line),
+        exchanges_train(line)
+    ]
+
 def places_token(line: str) -> dict | None:
     match = re.search(r'(\D) places a token on (.*)', line)
     if match:
@@ -15,7 +32,9 @@ def places_token(line: str) -> dict | None:
 
 
 def lays_tile(line: str) -> dict | None:
-    match = re.search(r'(\D) lays tile #(.*?) with rotation (\d+) on (.*)', line)
+    match = re.search(
+        r'(\D) lays tile #(.*?) with rotation (\d+) on (.*)', line
+    )
     if match:
         return dict(
             action='TilePlaced',
@@ -28,7 +47,7 @@ def lays_tile(line: str) -> dict | None:
 
 
 def runs_train(line: str) -> dict | None:
-    match = re.search(r'(\D) runs a (\d+) train for \$(\d+): (.*)', line)
+    match = re.search(r'(\D) runs a (\w+) train for \$(\d+): (.*)', line)
     if match:
         return dict(
             action='TrainRan',
@@ -52,6 +71,17 @@ def pays_dividend(line: str) -> dict | None:
     return None
 
 
+def withholds(line: str) -> dict | None:
+    match = re.search(r'(\D) withholds \$(\d+)', line)
+    if match:
+        return dict(
+            action='DividendWithheld',
+            company=match.group(1),
+            amount=match.group(2)
+        )
+    return None
+
+
 def skips_token(line: str) -> dict | None:
     match = re.search(r'(\D) skips place a token', line)
     if match:
@@ -63,7 +93,7 @@ def skips_token(line: str) -> dict | None:
 
 
 def skips_tile(line: str) -> dict | None:
-    match = re.search(r'(\D) skips place tile', line)
+    match = re.search(r'(\D) skips lay track', line)
     if match:
         return dict(
             action='TileSkipped',
@@ -88,5 +118,52 @@ def skips_buy_private(line: str) -> dict | None:
         return dict(
             action='PrivateBuySkipped',
             company=match.group(1),
+        )
+    return None
+
+
+def skips_buy_train(line: str) -> dict | None:
+    match = re.search(r'(\D) skips buy trains', line)
+    if match:
+        return dict(
+            action='TrainBuySkipped',
+            company=match.group(1),
+        )
+    return None
+
+
+def does_not_run(line: str) -> dict | None:
+    match = re.search(r'(\D) does not run', line)
+    if match:
+        return dict(
+            action='RunTrainSkipped',
+            company=match.group(1)
+        )
+    return None
+
+
+def discards_train(line: str) -> dict | None:
+    match = re.search(r'(\D) discards (.*?)', line)
+    if match:
+        return dict(
+            action='TrainDiscarded',
+            company=match.group(1),
+            train=match.group(2)
+        )
+    return None
+
+
+def exchanges_train(line: str) -> dict | None:
+    match = re.search(
+        r'(\D) exchanges a (\d+) for a (\w+) train for \$(\d+) from (.*?)', line
+    )
+    if match:
+        return dict(
+            action='TrainExchanged',
+            company=match.group(1),
+            old_train=match.group(2),
+            new_train=match.group(3),
+            amount=match.group(3),
+            source=match.group(4)
         )
     return None

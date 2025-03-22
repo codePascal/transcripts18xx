@@ -3,6 +3,14 @@
 import re
 
 
+def events(line: str) -> list:
+    return [
+        all_close(line),
+        closes(line),
+        is_auctioned(line)
+    ]
+
+
 def all_close(line: str) -> dict | None:
     match = re.search(r'-- Event: Private companies close', line)
     if match:

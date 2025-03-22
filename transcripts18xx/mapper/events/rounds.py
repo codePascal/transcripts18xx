@@ -3,9 +3,19 @@
 import re
 
 
+def events(line: str) -> list:
+    return [
+        phase_change(line),
+        operating_round(line),
+        stock_round(line),
+        game_over(line),
+        bank_broke(line)
+    ]
+
+
 def phase_change(line: str) -> dict | None:
     # `-- Phase x ...`
-    match = re.search(r'-- Phase (\d+)', line)
+    match = re.search(r'-- Phase (\w+) \(', line)
     if match:
         return dict(
             event='PhaseChange',
@@ -14,11 +24,20 @@ def phase_change(line: str) -> dict | None:
     return None
 
 
+def bank_broke(line: str) -> dict | None:
+    match = re.search(r'-- The bank has broken --', line)
+    if match:
+        return dict(
+            event='BankBroken',
+        )
+    return None
+
+
 def game_over(line: str) -> dict | None:
     match = re.search(r'-- Game over:', line)
     if match:
         return dict(
-            event='Game Over',
+            event='GameOver',
         )
     return None
 
