@@ -175,3 +175,5 @@ cython_debug/
 
 # Some test outputs
 game_state.csv
+resources/data_analysis.xlsx
+resources/~$data_analysis.xlsx
