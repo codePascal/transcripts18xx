@@ -28,7 +28,7 @@ class GamePattern(abc.ABC):
             return None
         if len(match) != 1:
             # This is bad as well: more than one recipe resulted in a match!
-            raise IndexError()
+            raise IndexError('More than one match: {}'.format(match))
         return match[0]
 
     @abc.abstractmethod

@@ -97,8 +97,6 @@ PresidentNomination,,41,"mpakfm becomes the president of NYC
 ",ShareBought,riverfiend,67,,10,C&O,,IPO,,,,,,,,,,,
 CompanyFloating,,48,"C&O floats
 ",,,,,,C&O,,,,,,,,,,,,,
-,,49,"C&O receives $670
-",FundsReceived,,670,,,C&O,,,,,,,,,,,,,
 ,,50,"leesin buys a 10% share of C&O from the IPO for $67
 ",ShareBought,leesin,67,,10,C&O,,IPO,,,,,,,,,,,
 ,,51,"mpakfm buys a 10% share of NYC from the IPO for $90
@@ -115,8 +113,6 @@ CompanyFloating,,48,"C&O floats
 ",ShareBought,mpcoyne,90,,10,B&O,,IPO,,,,,,,,,,,
 CompanyFloating,,57,"B&O floats
 ",,,,,,B&O,,,,,,,,,,,,,
-,,58,"B&O receives $900
-",FundsReceived,,900,,,B&O,,,,,,,,,,,,,
 ,,59,"riverfiend passes
 ",Passed,riverfiend,,,,,,,,,,,,,,,,,
 ,,60,"leesin has no valid actions and passes
@@ -125,8 +121,6 @@ CompanyFloating,,57,"B&O floats
 ",ShareBought,mpakfm,90,,10,NYC,,IPO,,,,,,,,,,,
 CompanyFloating,,62,"NYC floats
 ",,,,,,NYC,,,,,,,,,,,,,
-,,63,"NYC receives $900
-",FundsReceived,,900,,,NYC,,,,,,,,,,,,,
 ,,64,"mpcoyne has no valid actions and passes
 ",Passed,mpcoyne,,,,,,,,,,,,,,,,,
 ,,65,"riverfiend passes
@@ -170,7 +164,7 @@ SharePriceMove,,82,"B&O's share price moves left from $90 to $82
 PrivateCloses,,84,"Baltimore & Ohio closes
 ",,,,Baltimore & Ohio,,,,,,,,,,,,,,,
 ,,85,"B&O passes buy trains
-",TrainsPassed,,,,,B&O,,,,,,,,,,,,,
+",TrainPassed,,,,,B&O,,,,,,,,,,,,,
 ,,86,"B&O skips buy companies
 ",PrivateBuySkipped,,,,,B&O,,,,,,,,,,,,,
 CompanyOperation,,87,"mpakfm operates NYC
@@ -190,7 +184,7 @@ SharePriceMove,,93,"NYC's share price moves left from $90 to $82
 ,,94,"NYC buys a 2 train for $80 from The Depot
 ",TrainBought,,80,,,NYC,,The Depot,,,,,,,2,,,,
 ,,95,"NYC passes buy trains
-",TrainsPassed,,,,,NYC,,,,,,,,,,,,,
+",TrainPassed,,,,,NYC,,,,,,,,,,,,,
 ,,96,"NYC skips buy companies
 ",PrivateBuySkipped,,,,,NYC,,,,,,,,,,,,,
 CompanyOperation,,97,"riverfiend operates C&O
@@ -210,7 +204,7 @@ SharePriceMove,,103,"C&O's share price moves left from $67 to $65
 ,,104,"C&O buys a 2 train for $80 from The Depot
 ",TrainBought,,80,,,C&O,,The Depot,,,,,,,2,,,,
 ,,105,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,106,"C&O skips buy companies
 ",PrivateBuySkipped,,,,,C&O,,,,,,,,,,,,,
 StockRound,,107,"-- Stock Round 2 --
@@ -220,11 +214,11 @@ StockRound,,107,"-- Stock Round 2 --
 ,,109,"riverfiend buys a 10% share of B&O from the IPO for $90
 ",ShareBought,riverfiend,90,,10,B&O,,IPO,,,,,,,,,,,
 ,,110,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,111,"leesin buys a 10% share of C&O from the IPO for $67
 ",ShareBought,leesin,67,,10,C&O,,IPO,,,,,,,,,,,
 ,,112,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,113,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,114,"mpcoyne passes
@@ -232,7 +226,7 @@ StockRound,,107,"-- Stock Round 2 --
 ,,115,"riverfiend buys a 10% share of C&O from the IPO for $67
 ",ShareBought,riverfiend,67,,10,C&O,,IPO,,,,,,,,,,,
 ,,116,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,117,"leesin passes
 ",Passed,leesin,,,,,,,,,,,,,,,,,
 ,,118,"mpakfm passes
@@ -262,7 +256,7 @@ CompanyOperation,,129,"mpcoyne operates B&O
 ,,130,"B&O lays tile #57 with rotation 2 on H16 (Lancaster)
 ",TilePlaced,,,,,B&O,,,,H16 (Lancaster),57,2,,,,,,,
 ,,131,"B&O places a token on H16 (Lancaster)  for $40
-",TokenPlaced,,,,,B&O,,,,H16 (Lancaster)  for $40,,,,,,,,,
+",TokenPlaced,,40,,,B&O,,,,H16 (Lancaster) ,,,,,,,,,
 ,,132,"B&O runs a 2 train for $50: I15-H16
 ",TrainRan,,50,,,B&O,,,,,,,,,2,I15-H16,,,
 ,,133,"B&O pays out $50 = $5 per share ($30 to mpcoyne, $5 to riverfiend)
@@ -270,7 +264,7 @@ CompanyOperation,,129,"mpcoyne operates B&O
 SharePriceMove,,134,"B&O's share price moves right from $82 to $90
 ",,,,,,B&O,,,,,,,right,90,,,,,
 ,,135,"B&O passes buy trains
-",TrainsPassed,,,,,B&O,,,,,,,,,,,,,
+",TrainPassed,,,,,B&O,,,,,,,,,,,,,
 ,,136,"B&O skips buy companies
 ",PrivateBuySkipped,,,,,B&O,,,,,,,,,,,,,
 CompanyOperation,,137,"mpakfm operates NYC
@@ -286,7 +280,7 @@ DoesNotRun,,141,"NYC does not run
 SharePriceMove,,142,"NYC's share price moves left from $82 to $76
 ",,,,,,NYC,,,,,,,left,76,,,,,
 ,,143,"NYC passes buy trains
-",TrainsPassed,,,,,NYC,,,,,,,,,,,,,
+",TrainPassed,,,,,NYC,,,,,,,,,,,,,
 ,,144,"NYC skips buy companies
 ",PrivateBuySkipped,,,,,NYC,,,,,,,,,,,,,
 CompanyOperation,,145,"riverfiend operates C&O
@@ -304,13 +298,13 @@ SharePriceMove,,150,"C&O's share price moves right from $67 to $71
 ,,151,"C&O buys a 2 train for $80 from The Depot
 ",TrainBought,,80,,,C&O,,The Depot,,,,,,,2,,,,
 ,,152,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,153,"C&O skips buy companies
 ",PrivateBuySkipped,,,,,C&O,,,,,,,,,,,,,
 StockRound,,154,"-- Stock Round 3 --
 ",,,,,,,3,,,,,,,,,,,,
 ,,155,"leesin sells 4 shares of C&O and receives $284
-",SharesSold,leesin,284,,40,C&O,,,,,,,,,,,,,
+",ShareSold,leesin,284,,40,C&O,,,,,,,,,,,,,
 SharePriceMove,,156,"C&O's share price moves down from $71 to $60
 ",,,,,,C&O,,,,,,,down,60,,,,,
 ,,157,"leesin pars PRR at $76
@@ -324,21 +318,21 @@ PresidentNomination,,159,"leesin becomes the president of PRR
 ,,161,"mpcoyne buys a 10% share of C&O from the market for $60
 ",ShareBought,mpcoyne,60,,10,C&O,,market,,,,,,,,,,,
 ,,162,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,163,"riverfiend buys a 10% share of B&O from the IPO for $90
 ",ShareBought,riverfiend,90,,10,B&O,,IPO,,,,,,,,,,,
 ,,164,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,165,"leesin buys a 10% share of PRR from the IPO for $76
 ",ShareBought,leesin,76,,10,PRR,,IPO,,,,,,,,,,,
 ,,166,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,167,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,168,"mpcoyne passes
 ",Passed,mpcoyne,,,,,,,,,,,,,,,,,
 ,,169,"riverfiend sells a 10% share of B&O and receives $90
-",SharesSold,riverfiend,90,,10,B&O,,,,,,,,,,,,,
+",ShareSold,riverfiend,90,,10,B&O,,,,,,,,,,,,,
 SharePriceMove,,170,"B&O's share price moves down from $90 to $82
 ",,,,,,B&O,,,,,,,down,82,,,,,
 ,,171,"riverfiend buys a 10% share of NYC from the IPO for $90
@@ -346,7 +340,7 @@ SharePriceMove,,170,"B&O's share price moves down from $90 to $82
 ,,172,"leesin buys a 10% share of PRR from the IPO for $76
 ",ShareBought,leesin,76,,10,PRR,,IPO,,,,,,,,,,,
 ,,173,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,174,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,175,"mpcoyne passes
@@ -357,10 +351,8 @@ SharePriceMove,,170,"B&O's share price moves down from $90 to $82
 ",ShareBought,leesin,76,,10,PRR,,IPO,,,,,,,,,,,
 CompanyFloating,,178,"PRR floats
 ",,,,,,PRR,,,,,,,,,,,,,
-,,179,"PRR receives $760
-",FundsReceived,,760,,,PRR,,,,,,,,,,,,,
 ,,180,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,181,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,182,"mpcoyne passes
@@ -386,7 +378,7 @@ OperatingRound,,186,"-- Operating Round 3.1 (of 1) --
 CompanyOperation,,192,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,193,"B&O passes lay/upgrade track
-",TilesPassed,,,,,B&O,,,,,,,,,,,,,
+",TilePassed,,,,,B&O,,,,,,,,,,,,,
 ,,194,"B&O skips place a token
 ",TokenSkipped,,,,,B&O,,,,,,,,,,,,,
 ,,195,"B&O runs a 2 train for $50: I15-H16
@@ -396,7 +388,7 @@ CompanyOperation,,192,"mpcoyne operates B&O
 SharePriceMove,,197,"B&O's share price moves right from $82 to $90
 ",,,,,,B&O,,,,,,,right,90,,,,,
 ,,198,"B&O passes buy trains
-",TrainsPassed,,,,,B&O,,,,,,,,,,,,,
+",TrainPassed,,,,,B&O,,,,,,,,,,,,,
 ,,199,"B&O skips buy companies
 ",PrivateBuySkipped,,,,,B&O,,,,,,,,,,,,,
 CompanyOperation,,200,"leesin operates PRR
@@ -442,7 +434,7 @@ SharePriceMove,,219,"NYC's share price moves right from $76 to $82
 ,,220,"NYC buys a 3 train for $180 from The Depot
 ",TrainBought,,180,,,NYC,,The Depot,,,,,,,3,,,,
 ,,221,"NYC passes buy trains
-",TrainsPassed,,,,,NYC,,,,,,,,,,,,,
+",TrainPassed,,,,,NYC,,,,,,,,,,,,,
 ,,222,"NYC passes buy companies
 ",PrivatesPassed,,,,,NYC,,,,,,,,,,,,,
 CompanyOperation,,223,"riverfiend operates C&O
@@ -466,7 +458,7 @@ SharePriceMove,,231,"C&O's share price moves up from $60 to $67
 ,,232,"C&O buys a 3 train for $180 from The Depot
 ",TrainBought,,180,,,C&O,,The Depot,,,,,,,3,,,,
 ,,233,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,234,"C&O passes buy companies
 ",PrivatesPassed,,,,,C&O,,,,,,,,,,,,,
 StockRound,,235,"-- Stock Round 4 --
@@ -474,15 +466,15 @@ StockRound,,235,"-- Stock Round 4 --
 ,,236,"mpakfm buys a 10% share of C&O from the market for $67
 ",ShareBought,mpakfm,67,,10,C&O,,market,,,,,,,,,,,
 ,,237,"mpakfm declines to sell shares
-",SharesSellSkipped,mpakfm,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpakfm,,,,,,,,,,,,,,,,,
 ,,238,"mpcoyne passes
 ",Passed,mpcoyne,,,,,,,,,,,,,,,,,
 ,,239,"riverfiend buys a 10% share of PRR from the IPO for $76
 ",ShareBought,riverfiend,76,,10,PRR,,IPO,,,,,,,,,,,
 ,,240,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,241,"leesin sells 4 shares of PRR and receives $284
-",SharesSold,leesin,284,,40,PRR,,,,,,,,,,,,,
+",ShareSold,leesin,284,,40,PRR,,,,,,,,,,,,,
 SharePriceMove,,242,"PRR's share price moves down from $71 to $60
 ",,,,,,PRR,,,,,,,down,60,,,,,
 ,,243,"leesin buys a 10% share of C&O from the market for $67
@@ -494,11 +486,11 @@ SharePriceMove,,242,"PRR's share price moves down from $71 to $60
 ,,246,"riverfiend buys a 10% share of B&O from the market for $90
 ",ShareBought,riverfiend,90,,10,B&O,,market,,,,,,,,,,,
 ,,247,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,248,"leesin buys a 10% share of C&O from the market for $67
 ",ShareBought,leesin,67,,10,C&O,,market,,,,,,,,,,,
 ,,249,"leesin sells a 10% share of C&O and receives $67
-",SharesSold,leesin,67,,10,C&O,,,,,,,,,,,,,
+",ShareSold,leesin,67,,10,C&O,,,,,,,,,,,,,
 SharePriceMove,,250,"C&O's share price moves down from $67 to $60
 ",,,,,,C&O,,,,,,,down,60,,,,,
 ,,251,"mpakfm passes
@@ -510,17 +502,17 @@ SharePriceMove,,250,"C&O's share price moves down from $67 to $60
 ,,254,"leesin buys a 10% share of B&O from the IPO for $90
 ",ShareBought,leesin,90,,10,B&O,,IPO,,,,,,,,,,,
 ,,255,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,256,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,257,"mpcoyne sells a 10% share of C&O and receives $60
-",SharesSold,mpcoyne,60,,10,C&O,,,,,,,,,,,,,
+",ShareSold,mpcoyne,60,,10,C&O,,,,,,,,,,,,,
 SharePriceMove,,258,"C&O's share price moves down from $60 to $50
 ",,,,,,C&O,,,,,,,down,50,,,,,
 ,,259,"mpcoyne buys a 10% share of PRR from the IPO for $76
 ",ShareBought,mpcoyne,76,,10,PRR,,IPO,,,,,,,,,,,
 ,,260,"mpcoyne sells a 10% share of PRR and receives $60
-",SharesSold,mpcoyne,60,,10,PRR,,,,,,,,,,,,,
+",ShareSold,mpcoyne,60,,10,PRR,,,,,,,,,,,,,
 SharePriceMove,,261,"PRR's share price moves down from $60 to $50
 ",,,,,,PRR,,,,,,,down,50,,,,,
 ,,262,"riverfiend passes
@@ -528,13 +520,13 @@ SharePriceMove,,261,"PRR's share price moves down from $60 to $50
 ,,263,"leesin buys a 10% share of B&O from the IPO for $90
 ",ShareBought,leesin,90,,10,B&O,,IPO,,,,,,,,,,,
 ,,264,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,265,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,266,"mpcoyne buys a 10% share of NYC from the IPO for $90
 ",ShareBought,mpcoyne,90,,10,NYC,,IPO,,,,,,,,,,,
 ,,267,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,268,"riverfiend passes
 ",Passed,riverfiend,,,,,,,,,,,,,,,,,
 ,,269,"leesin pars NYNH at $82
@@ -544,7 +536,7 @@ SharePriceMove,,261,"PRR's share price moves down from $60 to $50
 PresidentNomination,,271,"leesin becomes the president of NYNH
 ",,leesin,,,,NYNH,,,,,,,,,,,,,
 ,,272,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,273,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,274,"mpcoyne passes
@@ -554,7 +546,7 @@ PresidentNomination,,271,"leesin becomes the president of NYNH
 ,,276,"leesin buys a 10% share of NYNH from the IPO for $82
 ",ShareBought,leesin,82,,10,NYNH,,IPO,,,,,,,,,,,
 ,,277,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,278,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,279,"mpcoyne passes
@@ -564,7 +556,7 @@ PresidentNomination,,271,"leesin becomes the president of NYNH
 ,,281,"leesin buys a 10% share of NYNH from the IPO for $82
 ",ShareBought,leesin,82,,10,NYNH,,IPO,,,,,,,,,,,
 ,,282,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,283,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,284,"mpcoyne passes
@@ -574,7 +566,7 @@ PresidentNomination,,271,"leesin becomes the president of NYNH
 ,,286,"leesin buys a 10% share of NYNH from the IPO for $82
 ",ShareBought,leesin,82,,10,NYNH,,IPO,,,,,,,,,,,
 ,,287,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,288,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,289,"mpcoyne passes
@@ -585,10 +577,8 @@ PresidentNomination,,271,"leesin becomes the president of NYNH
 ",ShareBought,leesin,82,,10,NYNH,,IPO,,,,,,,,,,,
 CompanyFloating,,292,"NYNH floats
 ",,,,,,NYNH,,,,,,,,,,,,,
-,,293,"NYNH receives $820
-",FundsReceived,,820,,,NYNH,,,,,,,,,,,,,
 ,,294,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,295,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,296,"mpcoyne passes
@@ -628,7 +618,7 @@ SharePriceMove,,312,"B&O's share price moves right from $100 to $112
 ,,313,"B&O buys a 3 train for $180 from The Depot
 ",TrainBought,,180,,,B&O,,The Depot,,,,,,,3,,,,
 ,,314,"B&O passes buy trains
-",TrainsPassed,,,,,B&O,,,,,,,,,,,,,
+",TrainPassed,,,,,B&O,,,,,,,,,,,,,
 ,,315,"B&O buys Schuylkill Valley from mpcoyne for $40
 ",PrivateBought,mpcoyne,40,Schuylkill Valley,,B&O,,,,,,,,,,,,,
 ,,316,"B&O passes buy companies
@@ -640,7 +630,7 @@ CompanyOperation,,317,"leesin operates NYNH
 ,,319,"NYNH lays tile #14 with rotation 2 on E19 (Albany)
 ",TilePlaced,,,,,NYNH,,,,E19 (Albany),14,2,,,,,,,
 ,,320,"NYNH places a token on E19 (Albany)  for $40
-",TokenPlaced,,,,,NYNH,,,,E19 (Albany)  for $40,,,,,,,,,
+",TokenPlaced,,40,,,NYNH,,,,E19 (Albany) ,,,,,,,,,
 ,,321,"NYNH skips run routes
 ",TrainRunSkipped,,,,,NYNH,,,,,,,,,,,,,
 DoesNotRun,,322,"NYNH does not run
@@ -656,7 +646,7 @@ PhaseChanged,4,326,"-- Phase 4 (Operating Rounds: 2 | Train Limit: 3 | Available
 TrainRust,,327,"-- Event: 2 trains rust ( B&O x1, NYC x1, C&O x2, PRR x2) --
 ",,,,,,,,,,,,,,,2,,,,
 ,,328,"NYNH passes buy trains
-",TrainsPassed,,,,,NYNH,,,,,,,,,,,,,
+",TrainPassed,,,,,NYNH,,,,,,,,,,,,,
 ,,329,"NYNH passes buy companies
 ",PrivatesPassed,,,,,NYNH,,,,,,,,,,,,,
 CompanyOperation,,330,"mpakfm operates NYC
@@ -664,7 +654,7 @@ CompanyOperation,,330,"mpakfm operates NYC
 ,,331,"NYC spends $80 and lays tile #57 with rotation 1 on F22 (Providence)
 ",TilePlaced,,80,,,NYC,,,,F22 (Providence),57,1,,,,,,,
 ,,332,"NYC places a token on F22 (Providence)  for $40
-",TokenPlaced,,,,,NYC,,,,F22 (Providence)  for $40,,,,,,,,,
+",TokenPlaced,,40,,,NYC,,,,F22 (Providence) ,,,,,,,,,
 ,,333,"NYC runs a 3 train for $80: E19-F20-G19
 ",TrainRan,,80,,,NYC,,,,,,,,,3,E19-F20-G19,,,
 ,,334,"NYC pays out $80 = $8 per share ($48 to mpakfm, $8 to mpcoyne, $8 to riverfiend)
@@ -674,7 +664,7 @@ SharePriceMove,,335,"NYC's share price moves right from $82 to $90
 ,,336,"NYC buys a 4 train for $300 from The Depot
 ",TrainBought,,300,,,NYC,,The Depot,,,,,,,4,,,,
 ,,337,"NYC passes buy trains
-",TrainsPassed,,,,,NYC,,,,,,,,,,,,,
+",TrainPassed,,,,,NYC,,,,,,,,,,,,,
 ,,338,"NYC passes buy companies
 ",PrivatesPassed,,,,,NYC,,,,,,,,,,,,,
 CompanyOperation,,339,"riverfiend operates C&O
@@ -690,7 +680,7 @@ CompanyOperation,,339,"riverfiend operates C&O
 SharePriceMove,,344,"C&O's share price moves up from $50 to $60
 ",,,,,,C&O,,,,,,,up,60,,,,,
 ,,345,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,346,"C&O passes buy companies
 ",PrivatesPassed,,,,,C&O,,,,,,,,,,,,,
 CompanyOperation,,347,"leesin operates PRR
@@ -706,7 +696,7 @@ CompanyOperation,,347,"leesin operates PRR
 SharePriceMove,,352,"PRR's share price moves left from $50 to $40
 ",,,,,,PRR,,,,,,,left,40,,,,,
 ,,353,"PRR passes buy trains
-",TrainsPassed,,,,,PRR,,,,,,,,,,,,,
+",TrainPassed,,,,,PRR,,,,,,,,,,,,,
 ,,354,"PRR passes buy companies
 ",PrivatesPassed,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,355,"-- Operating Round 4.2 (of 2) --
@@ -734,7 +724,7 @@ CompanyOperation,,361,"mpcoyne operates B&O
 SharePriceMove,,366,"B&O's share price moves right from $112 to $126
 ",,,,,,B&O,,,,,,,right,126,,,,,
 ,,367,"B&O passes buy trains
-",TrainsPassed,,,,,B&O,,,,,,,,,,,,,
+",TrainPassed,,,,,B&O,,,,,,,,,,,,,
 ,,368,"B&O passes buy companies
 ",PrivatesPassed,,,,,B&O,,,,,,,,,,,,,
 CompanyOperation,,369,"mpakfm operates NYC
@@ -752,7 +742,7 @@ CompanyOperation,,369,"mpakfm operates NYC
 SharePriceMove,,375,"NYC's share price moves right from $90 to $100
 ",,,,,,NYC,,,,,,,right,100,,,,,
 ,,376,"NYC passes buy trains
-",TrainsPassed,,,,,NYC,,,,,,,,,,,,,
+",TrainPassed,,,,,NYC,,,,,,,,,,,,,
 ,,377,"NYC passes buy companies
 ",PrivatesPassed,,,,,NYC,,,,,,,,,,,,,
 CompanyOperation,,378,"leesin operates NYNH
@@ -770,7 +760,7 @@ CompanyOperation,,378,"leesin operates NYNH
 SharePriceMove,,384,"NYNH's share price moves right from $76 to $82
 ",,,,,,NYNH,,,,,,,right,82,,,,,
 ,,385,"NYNH passes buy trains
-",TrainsPassed,,,,,NYNH,,,,,,,,,,,,,
+",TrainPassed,,,,,NYNH,,,,,,,,,,,,,
 ,,386,"NYNH passes buy companies
 ",PrivatesPassed,,,,,NYNH,,,,,,,,,,,,,
 CompanyOperation,,387,"riverfiend operates C&O
@@ -786,7 +776,7 @@ CompanyOperation,,387,"riverfiend operates C&O
 SharePriceMove,,392,"C&O's share price moves up from $60 to $67
 ",,,,,,C&O,,,,,,,up,67,,,,,
 ,,393,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,394,"C&O passes buy companies
 ",PrivatesPassed,,,,,C&O,,,,,,,,,,,,,
 CompanyOperation,,395,"leesin operates PRR
@@ -802,7 +792,7 @@ CompanyOperation,,395,"leesin operates PRR
 SharePriceMove,,400,"PRR's share price moves right from $40 to $50
 ",,,,,,PRR,,,,,,,right,50,,,,,
 ,,401,"PRR passes buy trains
-",TrainsPassed,,,,,PRR,,,,,,,,,,,,,
+",TrainPassed,,,,,PRR,,,,,,,,,,,,,
 ,,402,"PRR passes buy companies
 ",PrivatesPassed,,,,,PRR,,,,,,,,,,,,,
 StockRound,,403,"-- Stock Round 5 --
@@ -810,21 +800,21 @@ StockRound,,403,"-- Stock Round 5 --
 ,,404,"mpakfm buys a 10% share of NYNH from the IPO for $82
 ",ShareBought,mpakfm,82,,10,NYNH,,IPO,,,,,,,,,,,
 ,,405,"mpakfm declines to sell shares
-",SharesSellSkipped,mpakfm,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpakfm,,,,,,,,,,,,,,,,,
 ,,406,"mpcoyne buys a 10% share of NYNH from the IPO for $82
 ",ShareBought,mpcoyne,82,,10,NYNH,,IPO,,,,,,,,,,,
 ,,407,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,408,"riverfiend sells 2 shares of B&O and receives $252
-",SharesSold,riverfiend,252,,20,B&O,,,,,,,,,,,,,
+",ShareSold,riverfiend,252,,20,B&O,,,,,,,,,,,,,
 SharePriceMove,,409,"B&O's share price moves down from $126 to $100
 ",,,,,,B&O,,,,,,,down,100,,,,,
 ,,410,"riverfiend sells a 10% share of NYC and receives $100
-",SharesSold,riverfiend,100,,10,NYC,,,,,,,,,,,,,
+",ShareSold,riverfiend,100,,10,NYC,,,,,,,,,,,,,
 SharePriceMove,,411,"NYC's share price moves down from $100 to $90
 ",,,,,,NYC,,,,,,,down,90,,,,,
 ,,412,"riverfiend sells a 10% share of C&O and receives $67
-",SharesSold,riverfiend,67,,10,C&O,,,,,,,,,,,,,
+",ShareSold,riverfiend,67,,10,C&O,,,,,,,,,,,,,
 SharePriceMove,,413,"C&O's share price moves down from $67 to $60
 ",,,,,,C&O,,,,,,,down,60,,,,,
 ,,414,"riverfiend pars ERIE at $100
@@ -836,39 +826,39 @@ PresidentNomination,,416,"riverfiend becomes the president of ERIE
 ,,417,"leesin buys a 10% share of C&O from the market for $60
 ",ShareBought,leesin,60,,10,C&O,,market,,,,,,,,,,,
 ,,418,"leesin sells 2 shares of C&O and receives $120
-",SharesSold,leesin,120,,20,C&O,,,,,,,,,,,,,
+",ShareSold,leesin,120,,20,C&O,,,,,,,,,,,,,
 SharePriceMove,,419,"C&O's share price moves down from $60 to $40
 ",,,,,,C&O,,,,,,,down,40,,,,,
 ,,420,"mpakfm buys a 10% share of NYNH from the IPO for $82
 ",ShareBought,mpakfm,82,,10,NYNH,,IPO,,,,,,,,,,,
 ,,421,"mpakfm declines to sell shares
-",SharesSellSkipped,mpakfm,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpakfm,,,,,,,,,,,,,,,,,
 ,,422,"mpcoyne buys a 10% share of C&O from the market for $40
 ",ShareBought,mpcoyne,40,,10,C&O,,market,,,,,,,,,,,
 ,,423,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,424,"riverfiend buys a 10% share of ERIE from the IPO for $100
 ",ShareBought,riverfiend,100,,10,ERIE,,IPO,,,,,,,,,,,
 ,,425,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,426,"leesin buys a 10% share of NYC from the market for $90
 ",ShareBought,leesin,90,,10,NYC,,market,,,,,,,,,,,
 ,,427,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,428,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,429,"mpcoyne buys a 10% share of C&O from the market for $40
 ",ShareBought,mpcoyne,40,,10,C&O,,market,,,,,,,,,,,
 ,,430,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,431,"riverfiend buys a 10% share of ERIE from the IPO for $100
 ",ShareBought,riverfiend,100,,10,ERIE,,IPO,,,,,,,,,,,
 ,,432,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,433,"leesin buys a 10% share of ERIE from the IPO for $100
 ",ShareBought,leesin,100,,10,ERIE,,IPO,,,,,,,,,,,
 ,,434,"leesin sells a 10% share of ERIE and receives $100
-",SharesSold,leesin,100,,10,ERIE,,,,,,,,,,,,,
+",ShareSold,leesin,100,,10,ERIE,,,,,,,,,,,,,
 SharePriceMove,,435,"ERIE's share price moves down from $100 to $90
 ",,,,,,ERIE,,,,,,,down,90,,,,,
 ,,436,"mpakfm passes
@@ -878,11 +868,11 @@ SharePriceMove,,435,"ERIE's share price moves down from $100 to $90
 ,,438,"riverfiend buys a 10% share of NYNH from the IPO for $82
 ",ShareBought,riverfiend,82,,10,NYNH,,IPO,,,,,,,,,,,
 ,,439,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,440,"leesin buys a 10% share of NYC from the IPO for $90
 ",ShareBought,leesin,90,,10,NYC,,IPO,,,,,,,,,,,
 ,,441,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,442,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,443,"mpcoyne passes
@@ -891,10 +881,8 @@ SharePriceMove,,435,"ERIE's share price moves down from $100 to $90
 ",ShareBought,riverfiend,100,,10,ERIE,,IPO,,,,,,,,,,,
 CompanyFloating,,445,"ERIE floats
 ",,,,,,ERIE,,,,,,,,,,,,,
-,,446,"ERIE receives $1000
-",FundsReceived,,1000,,,ERIE,,,,,,,,,,,,,
 ,,447,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,448,"leesin passes
 ",Passed,leesin,,,,,,,,,,,,,,,,,
 ,,449,"mpakfm passes
@@ -932,7 +920,7 @@ CompanyOperation,,460,"mpcoyne operates B&O
 SharePriceMove,,465,"B&O's share price moves right from $100 to $110
 ",,,,,,B&O,,,,,,,right,110,,,,,
 ,,466,"B&O passes buy trains
-",TrainsPassed,,,,,B&O,,,,,,,,,,,,,
+",TrainPassed,,,,,B&O,,,,,,,,,,,,,
 ,,467,"B&O passes buy companies
 ",PrivatesPassed,,,,,B&O,,,,,,,,,,,,,
 CompanyOperation,,468,"mpakfm operates NYC
@@ -950,7 +938,7 @@ CompanyOperation,,468,"mpakfm operates NYC
 SharePriceMove,,474,"NYC's share price moves right from $90 to $100
 ",,,,,,NYC,,,,,,,right,100,,,,,
 ,,475,"NYC passes buy trains
-",TrainsPassed,,,,,NYC,,,,,,,,,,,,,
+",TrainPassed,,,,,NYC,,,,,,,,,,,,,
 ,,476,"NYC passes buy companies
 ",PrivatesPassed,,,,,NYC,,,,,,,,,,,,,
 CompanyOperation,,477,"riverfiend operates ERIE
@@ -974,7 +962,7 @@ SharePriceMove,,485,"ERIE's share price moves left from $90 to $82
 ,,486,"ERIE buys a 4 train for $300 from The Depot
 ",TrainBought,,300,,,ERIE,,The Depot,,,,,,,4,,,,
 ,,487,"ERIE passes buy trains
-",TrainsPassed,,,,,ERIE,,,,,,,,,,,,,
+",TrainPassed,,,,,ERIE,,,,,,,,,,,,,
 ,,488,"ERIE passes buy companies
 ",PrivatesPassed,,,,,ERIE,,,,,,,,,,,,,
 CompanyOperation,,489,"leesin operates NYNH
@@ -992,7 +980,7 @@ CompanyOperation,,489,"leesin operates NYNH
 SharePriceMove,,495,"NYNH's share price moves right from $90 to $100
 ",,,,,,NYNH,,,,,,,right,100,,,,,
 ,,496,"NYNH passes buy trains
-",TrainsPassed,,,,,NYNH,,,,,,,,,,,,,
+",TrainPassed,,,,,NYNH,,,,,,,,,,,,,
 ,,497,"NYNH passes buy companies
 ",PrivatesPassed,,,,,NYNH,,,,,,,,,,,,,
 CompanyOperation,,498,"leesin operates PRR
@@ -1008,7 +996,7 @@ CompanyOperation,,498,"leesin operates PRR
 SharePriceMove,,503,"PRR's share price moves left from $50 to $40
 ",,,,,,PRR,,,,,,,left,40,,,,,
 ,,504,"PRR passes buy trains
-",TrainsPassed,,,,,PRR,,,,,,,,,,,,,
+",TrainPassed,,,,,PRR,,,,,,,,,,,,,
 ,,505,"PRR passes buy companies
 ",PrivatesPassed,,,,,PRR,,,,,,,,,,,,,
 CompanyOperation,,506,"riverfiend operates C&O
@@ -1024,7 +1012,7 @@ CompanyOperation,,506,"riverfiend operates C&O
 SharePriceMove,,511,"C&O's share price moves up from $40 to $50
 ",,,,,,C&O,,,,,,,up,50,,,,,
 ,,512,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,513,"C&O passes buy companies
 ",PrivatesPassed,,,,,C&O,,,,,,,,,,,,,
 OperatingRound,,514,"-- Operating Round 5.2 (of 2) --
@@ -1052,7 +1040,7 @@ CompanyOperation,,520,"mpcoyne operates B&O
 SharePriceMove,,525,"B&O's share price moves right from $110 to $120
 ",,,,,,B&O,,,,,,,right,120,,,,,
 ,,526,"B&O passes buy trains
-",TrainsPassed,,,,,B&O,,,,,,,,,,,,,
+",TrainPassed,,,,,B&O,,,,,,,,,,,,,
 ,,527,"B&O passes buy companies
 ",PrivatesPassed,,,,,B&O,,,,,,,,,,,,,
 CompanyOperation,,528,"mpakfm operates NYC
@@ -1088,7 +1076,7 @@ CompanyOperation,,537,"leesin operates NYNH
 SharePriceMove,,543,"NYNH's share price moves left from $100 to $90
 ",,,,,,NYNH,,,,,,,left,90,,,,,
 ,,544,"NYNH passes buy trains
-",TrainsPassed,,,,,NYNH,,,,,,,,,,,,,
+",TrainPassed,,,,,NYNH,,,,,,,,,,,,,
 ,,545,"NYNH passes buy companies
 ",PrivatesPassed,,,,,NYNH,,,,,,,,,,,,,
 CompanyOperation,,546,"riverfiend operates ERIE
@@ -1134,7 +1122,7 @@ CompanyOperation,,565,"leesin operates PRR
 ,,566,"PRR lays tile #63 with rotation 0 on H16 (Lancaster)
 ",TilePlaced,,,,,PRR,,,,H16 (Lancaster),63,0,,,,,,,
 ,,567,"PRR places a token on H18 (Philadelphia & Trenton)  for $40
-",TokenPlaced,,,,,PRR,,,,H18 (Philadelphia & Trenton)  for $40,,,,,,,,,
+",TokenPlaced,,40,,,PRR,,,,H18 (Philadelphia & Trenton) ,,,,,,,,,
 ,,568,"PRR runs a 3 train for $130: H18-H16-I15
 ",TrainRan,,130,,,PRR,,,,,,,,,3,H18-H16-I15,,,
 ,,569,"PRR withholds $130
@@ -1148,7 +1136,7 @@ SharePriceMove,,570,"PRR's share price moves left from $40 to $30
 StockRound,,573,"-- Stock Round 6 --
 ",,,,,,,6,,,,,,,,,,,,
 ,,574,"leesin sells 2 shares of NYC and receives $180
-",SharesSold,leesin,180,,20,NYC,,,,,,,,,,,,,
+",ShareSold,leesin,180,,20,NYC,,,,,,,,,,,,,
 SharePriceMove,,575,"NYC's share price moves down from $90 to $76
 ",,,,,,NYC,,,,,,,down,76,,,,,
 ,,576,"leesin buys a 10% share of PRR from the market for $30
@@ -1162,21 +1150,21 @@ SharePriceMove,,575,"NYC's share price moves down from $90 to $76
 ,,580,"leesin buys a 10% share of PRR from the market for $30
 ",ShareBought,leesin,30,,10,PRR,,market,,,,,,,,,,,
 ,,581,"mpakfm sells 2 shares of NYNH and receives $180
-",SharesSold,mpakfm,180,,20,NYNH,,,,,,,,,,,,,
+",ShareSold,mpakfm,180,,20,NYNH,,,,,,,,,,,,,
 SharePriceMove,,582,"NYNH's share price moves down from $90 to $76
 ",,,,,,NYNH,,,,,,,down,76,,,,,
 ,,583,"mpakfm buys a 10% share of B&O from the market for $120
 ",ShareBought,mpakfm,120,,10,B&O,,market,,,,,,,,,,,
 ,,584,"mpcoyne sells a 10% share of NYC and receives $76
-",SharesSold,mpcoyne,76,,10,NYC,,,,,,,,,,,,,
+",ShareSold,mpcoyne,76,,10,NYC,,,,,,,,,,,,,
 SharePriceMove,,585,"NYC's share price moves down from $76 to $71
 ",,,,,,NYC,,,,,,,down,71,,,,,
 ,,586,"mpcoyne sells a 10% share of NYNH and receives $76
-",SharesSold,mpcoyne,76,,10,NYNH,,,,,,,,,,,,,
+",ShareSold,mpcoyne,76,,10,NYNH,,,,,,,,,,,,,
 SharePriceMove,,587,"NYNH's share price moves down from $76 to $71
 ",,,,,,NYNH,,,,,,,down,71,,,,,
 ,,588,"mpcoyne sells 2 shares of C&O and receives $120
-",SharesSold,mpcoyne,120,,20,C&O,,,,,,,,,,,,,
+",ShareSold,mpcoyne,120,,20,C&O,,,,,,,,,,,,,
 SharePriceMove,,589,"C&O's share price moves down from $60 to $40
 ",,,,,,C&O,,,,,,,down,40,,,,,
 ,,590,"mpcoyne pars B&M at $76
@@ -1188,43 +1176,41 @@ PresidentNomination,,592,"mpcoyne becomes the president of B&M
 ,,593,"riverfiend buys a 10% share of B&M from the IPO for $76
 ",ShareBought,riverfiend,76,,10,B&M,,IPO,,,,,,,,,,,
 ,,594,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,595,"leesin buys a 10% share of ERIE from the market for $76
 ",ShareBought,leesin,76,,10,ERIE,,market,,,,,,,,,,,
 ,,596,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,597,"mpakfm buys a 10% share of ERIE from the IPO for $100
 ",ShareBought,mpakfm,100,,10,ERIE,,IPO,,,,,,,,,,,
 ,,598,"mpakfm declines to sell shares
-",SharesSellSkipped,mpakfm,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpakfm,,,,,,,,,,,,,,,,,
 ,,599,"mpcoyne buys a 10% share of B&M from the IPO for $76
 ",ShareBought,mpcoyne,76,,10,B&M,,IPO,,,,,,,,,,,
 ,,600,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,601,"riverfiend buys a 10% share of B&M from the IPO for $76
 ",ShareBought,riverfiend,76,,10,B&M,,IPO,,,,,,,,,,,
 ,,602,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,603,"leesin buys a 10% share of ERIE from the IPO for $100
 ",ShareBought,leesin,100,,10,ERIE,,IPO,,,,,,,,,,,
 ,,604,"leesin sells 2 shares of ERIE and receives $152
-",SharesSold,leesin,152,,20,ERIE,,,,,,,,,,,,,
+",ShareSold,leesin,152,,20,ERIE,,,,,,,,,,,,,
 SharePriceMove,,605,"ERIE's share price moves down from $76 to $66
 ",,,,,,ERIE,,,,,,,down,66,,,,,
 ,,606,"mpakfm buys a 10% share of B&O from the market for $120
 ",ShareBought,mpakfm,120,,10,B&O,,market,,,,,,,,,,,
 ,,607,"mpakfm declines to sell shares
-",SharesSellSkipped,mpakfm,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpakfm,,,,,,,,,,,,,,,,,
 ,,608,"mpcoyne buys a 10% share of B&M from the IPO for $76
 ",ShareBought,mpcoyne,76,,10,B&M,,IPO,,,,,,,,,,,
 CompanyFloating,,609,"B&M floats
 ",,,,,,B&M,,,,,,,,,,,,,
-,,610,"B&M receives $760
-",FundsReceived,,760,,,B&M,,,,,,,,,,,,,
 ,,611,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,612,"riverfiend sells 2 shares of B&M and receives $152
-",SharesSold,riverfiend,152,,20,B&M,,,,,,,,,,,,,
+",ShareSold,riverfiend,152,,20,B&M,,,,,,,,,,,,,
 SharePriceMove,,613,"B&M's share price moves down from $76 to $67
 ",,,,,,B&M,,,,,,,down,67,,,,,
 ,,614,"riverfiend buys a 10% share of C&O from the market for $40
@@ -1232,23 +1218,23 @@ SharePriceMove,,613,"B&M's share price moves down from $76 to $67
 ,,615,"leesin buys a 10% share of B&M from the market for $67
 ",ShareBought,leesin,67,,10,B&M,,market,,,,,,,,,,,
 ,,616,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,617,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,618,"mpcoyne buys a 10% share of B&M from the market for $67
 ",ShareBought,mpcoyne,67,,10,B&M,,market,,,,,,,,,,,
 ,,619,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,620,"riverfiend buys a 10% share of NYNH from the market for $71
 ",ShareBought,riverfiend,71,,10,NYNH,,market,,,,,,,,,,,
 ,,621,"riverfiend sells 2 shares of NYNH and receives $142
-",SharesSold,riverfiend,142,,20,NYNH,,,,,,,,,,,,,
+",ShareSold,riverfiend,142,,20,NYNH,,,,,,,,,,,,,
 SharePriceMove,,622,"NYNH's share price moves down from $71 to $67
 ",,,,,,NYNH,,,,,,,down,67,,,,,
 ,,623,"leesin buys a 10% share of B&M from the IPO for $76
 ",ShareBought,leesin,76,,10,B&M,,IPO,,,,,,,,,,,
 ,,624,"leesin sells 2 shares of B&M and receives $134
-",SharesSold,leesin,134,,20,B&M,,,,,,,,,,,,,
+",ShareSold,leesin,134,,20,B&M,,,,,,,,,,,,,
 SharePriceMove,,625,"B&M's share price moves down from $67 to $67
 ",,,,,,B&M,,,,,,,down,67,,,,,
 ,,626,"mpakfm passes
@@ -1256,25 +1242,25 @@ SharePriceMove,,625,"B&M's share price moves down from $67 to $67
 ,,627,"mpcoyne buys a 10% share of ERIE from the market for $66
 ",ShareBought,mpcoyne,66,,10,ERIE,,market,,,,,,,,,,,
 ,,628,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,629,"riverfiend buys a 10% share of ERIE from the market for $66
 ",ShareBought,riverfiend,66,,10,ERIE,,market,,,,,,,,,,,
 ,,630,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,631,"leesin buys a 10% share of C&O from the market for $40
 ",ShareBought,leesin,40,,10,C&O,,market,,,,,,,,,,,
 ,,632,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,633,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,634,"mpcoyne buys a 10% share of B&M from the market for $67
 ",ShareBought,mpcoyne,67,,10,B&M,,market,,,,,,,,,,,
 ,,635,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,636,"riverfiend buys a 10% share of NYC from the market for $71
 ",ShareBought,riverfiend,71,,10,NYC,,market,,,,,,,,,,,
 ,,637,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,638,"leesin pars CPR at $100
 ",CompanyPared,leesin,100,,,CPR,,,,,,,,,,,,,
 ,,639,"leesin buys a 20% share of CPR from the IPO for $200
@@ -1282,7 +1268,7 @@ SharePriceMove,,625,"B&M's share price moves down from $67 to $67
 PresidentNomination,,640,"leesin becomes the president of CPR
 ",,leesin,,,,CPR,,,,,,,,,,,,,
 ,,641,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,642,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,643,"mpcoyne passes
@@ -1290,7 +1276,7 @@ PresidentNomination,,640,"leesin becomes the president of CPR
 ,,644,"riverfiend buys a 10% share of C&O from the market for $40
 ",ShareBought,riverfiend,40,,10,C&O,,market,,,,,,,,,,,
 ,,645,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,646,"leesin passes
 ",Passed,leesin,,,,,,,,,,,,,,,,,
 ,,647,"mpakfm passes
@@ -1298,7 +1284,7 @@ PresidentNomination,,640,"leesin becomes the president of CPR
 ,,648,"mpcoyne passes
 ",Passed,mpcoyne,,,,,,,,,,,,,,,,,
 ,,649,"riverfiend sells a 10% share of PRR and receives $30
-",SharesSold,riverfiend,30,,10,PRR,,,,,,,,,,,,,
+",ShareSold,riverfiend,30,,10,PRR,,,,,,,,,,,,,
 SharePriceMove,,650,"PRR's share price moves down from $30 to $20
 ",,,,,,PRR,,,,,,,down,20,,,,,
 ,,651,"riverfiend buys a 10% share of C&O from the market for $40
@@ -1376,7 +1362,7 @@ CompanyOperation,,685,"mpcoyne operates B&M
 ,,687,"B&M lays tile #63 with rotation 0 on F16 (Scranton)
 ",TilePlaced,,,,,B&M,,,,F16 (Scranton),63,0,,,,,,,
 ,,688,"B&M places a token on F16 (Scranton)  for $40
-",TokenPlaced,,,,,B&M,,,,F16 (Scranton)  for $40,,,,,,,,,
+",TokenPlaced,,40,,,B&M,,,,F16 (Scranton) ,,,,,,,,,
 ,,689,"B&M skips run routes
 ",TrainRunSkipped,,,,,B&M,,,,,,,,,,,,,
 DoesNotRun,,690,"B&M does not run
@@ -1390,7 +1376,7 @@ PhaseChanged,6,693,"-- Phase 6 (Operating Rounds: 3 | Train Limit: 2 | Available
 TrainRust,,694,"-- Event: 3 trains rust ( PRR x1, The Depot x1, C&O x1, B&O x1, NYNH x1) --
 ",,,,,,,,,,,,,,,3,,,,
 ,,695,"B&M passes buy trains
-",TrainsPassed,,,,,B&M,,,,,,,,,,,,,
+",TrainPassed,,,,,B&M,,,,,,,,,,,,,
 ,,696,"B&M skips buy companies
 ",PrivateBuySkipped,,,,,B&M,,,,,,,,,,,,,
 CompanyOperation,,697,"riverfiend operates ERIE
@@ -1406,7 +1392,7 @@ CompanyOperation,,697,"riverfiend operates ERIE
 SharePriceMove,,702,"ERIE's share price moves left from $66 to $60
 ",,,,,,ERIE,,,,,,,left,60,,,,,
 ,,703,"ERIE passes buy trains
-",TrainsPassed,,,,,ERIE,,,,,,,,,,,,,
+",TrainPassed,,,,,ERIE,,,,,,,,,,,,,
 ,,704,"ERIE skips buy companies
 ",PrivateBuySkipped,,,,,ERIE,,,,,,,,,,,,,
 CompanyOperation,,705,"riverfiend operates C&O
@@ -1422,7 +1408,7 @@ CompanyOperation,,705,"riverfiend operates C&O
 SharePriceMove,,710,"C&O's share price moves up from $50 to $60
 ",,,,,,C&O,,,,,,,up,60,,,,,
 ,,711,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,712,"C&O skips buy companies
 ",PrivateBuySkipped,,,,,C&O,,,,,,,,,,,,,
 CompanyOperation,,713,"leesin operates PRR
@@ -1438,7 +1424,7 @@ CompanyOperation,,713,"leesin operates PRR
 SharePriceMove,,718,"PRR's share price moves left from $20 to $10
 ",,,,,,PRR,,,,,,,left,10,,,,,
 ,,719,"PRR passes buy trains
-",TrainsPassed,,,,,PRR,,,,,,,,,,,,,
+",TrainPassed,,,,,PRR,,,,,,,,,,,,,
 ,,720,"PRR skips buy companies
 ",PrivateBuySkipped,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,721,"-- Operating Round 6.2 (of 3) --
@@ -1456,7 +1442,7 @@ CompanyOperation,,722,"mpcoyne operates B&O
 SharePriceMove,,727,"B&O's share price moves right from $155 to $170
 ",,,,,,B&O,,,,,,,right,170,,,,,
 ,,728,"B&O passes buy trains
-",TrainsPassed,,,,,B&O,,,,,,,,,,,,,
+",TrainPassed,,,,,B&O,,,,,,,,,,,,,
 ,,729,"B&O skips buy companies
 ",PrivateBuySkipped,,,,,B&O,,,,,,,,,,,,,
 CompanyOperation,,730,"mpakfm operates NYC
@@ -1490,7 +1476,7 @@ CompanyOperation,,739,"leesin operates NYNH
 SharePriceMove,,744,"NYNH's share price moves right from $69 to $70
 ",,,,,,NYNH,,,,,,,right,70,,,,,
 ,,745,"NYNH passes buy trains
-",TrainsPassed,,,,,NYNH,,,,,,,,,,,,,
+",TrainPassed,,,,,NYNH,,,,,,,,,,,,,
 ,,746,"NYNH skips buy companies
 ",PrivateBuySkipped,,,,,NYNH,,,,,,,,,,,,,
 CompanyOperation,,747,"riverfiend operates C&O
@@ -1506,7 +1492,7 @@ CompanyOperation,,747,"riverfiend operates C&O
 SharePriceMove,,752,"C&O's share price moves up from $60 to $67
 ",,,,,,C&O,,,,,,,up,67,,,,,
 ,,753,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,754,"C&O skips buy companies
 ",PrivateBuySkipped,,,,,C&O,,,,,,,,,,,,,
 CompanyOperation,,755,"mpcoyne operates B&M
@@ -1522,7 +1508,7 @@ CompanyOperation,,755,"mpcoyne operates B&M
 SharePriceMove,,760,"B&M's share price moves right from $60 to $67
 ",,,,,,B&M,,,,,,,right,67,,,,,
 ,,761,"B&M passes buy trains
-",TrainsPassed,,,,,B&M,,,,,,,,,,,,,
+",TrainPassed,,,,,B&M,,,,,,,,,,,,,
 ,,762,"B&M skips buy companies
 ",PrivateBuySkipped,,,,,B&M,,,,,,,,,,,,,
 CompanyOperation,,763,"riverfiend operates ERIE
@@ -1546,13 +1532,13 @@ CompanyOperation,,771,"leesin operates PRR
 ,,772,"PRR lays tile #41 with rotation 1 on I17
 ",TilePlaced,,,,,PRR,,,,I17,41,1,,,,,,,
 ,,773,"PRR places a token on H16 (Lancaster)  for $100
-",TokenPlaced,,,,,PRR,,,,H16 (Lancaster)  for $100,,,,,,,,,
+",TokenPlaced,,100,,,PRR,,,,H16 (Lancaster) ,,,,,,,,,
 ,,774,"PRR runs a 4 train for $180: H16-I19-H18-G19
 ",TrainRan,,180,,,PRR,,,,,,,,,4,H16-I19-H18-G19,,,
 ,,775,"PRR withholds $180
 ",DividendWithheld,,180,,,PRR,,,,,,,,,,,,,
 ,,776,"PRR passes buy trains
-",TrainsPassed,,,,,PRR,,,,,,,,,,,,,
+",TrainPassed,,,,,PRR,,,,,,,,,,,,,
 ,,777,"PRR skips buy companies
 ",PrivateBuySkipped,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,778,"-- Operating Round 6.3 (of 3) --
@@ -1570,15 +1556,15 @@ CompanyOperation,,779,"mpcoyne operates B&O
 SharePriceMove,,784,"B&O's share price moves right from $170 to $185
 ",,,,,,B&O,,,,,,,right,185,,,,,
 ,,785,"B&O passes buy trains
-",TrainsPassed,,,,,B&O,,,,,,,,,,,,,
+",TrainPassed,,,,,B&O,,,,,,,,,,,,,
 ,,786,"B&O skips buy companies
 ",PrivateBuySkipped,,,,,B&O,,,,,,,,,,,,,
 CompanyOperation,,787,"mpakfm operates NYC
 ",,mpakfm,,,,NYC,,,,,,,,,,,,,
 ,,788,"NYC passes lay/upgrade track
-",TilesPassed,,,,,NYC,,,,,,,,,,,,,
+",TilePassed,,,,,NYC,,,,,,,,,,,,,
 ,,789,"NYC places a token on G19 (New York & Newark)  for $100
-",TokenPlaced,,,,,NYC,,,,G19 (New York & Newark)  for $100,,,,,,,,,
+",TokenPlaced,,100,,,NYC,,,,G19 (New York & Newark) ,,,,,,,,,
 ,,790,"NYC runs a 4 train for $190: G19-F20-E19-E23
 ",TrainRan,,190,,,NYC,,,,,,,,,4,G19-F20-E19-E23,,,
 ,,791,"NYC runs a 4 train for $210: G19-E19-F22-E23
@@ -1604,7 +1590,7 @@ CompanyOperation,,796,"leesin operates NYNH
 SharePriceMove,,801,"NYNH's share price moves up from $70 to $75
 ",,,,,,NYNH,,,,,,,up,75,,,,,
 ,,802,"NYNH passes buy trains
-",TrainsPassed,,,,,NYNH,,,,,,,,,,,,,
+",TrainPassed,,,,,NYNH,,,,,,,,,,,,,
 ,,803,"NYNH skips buy companies
 ",PrivateBuySkipped,,,,,NYNH,,,,,,,,,,,,,
 CompanyOperation,,804,"riverfiend operates C&O
@@ -1620,7 +1606,7 @@ CompanyOperation,,804,"riverfiend operates C&O
 SharePriceMove,,809,"C&O's share price moves right from $67 to $68
 ",,,,,,C&O,,,,,,,right,68,,,,,
 ,,810,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,811,"C&O skips buy companies
 ",PrivateBuySkipped,,,,,C&O,,,,,,,,,,,,,
 CompanyOperation,,812,"mpcoyne operates B&M
@@ -1636,7 +1622,7 @@ CompanyOperation,,812,"mpcoyne operates B&M
 SharePriceMove,,817,"B&M's share price moves right from $67 to $68
 ",,,,,,B&M,,,,,,,right,68,,,,,
 ,,818,"B&M passes buy trains
-",TrainsPassed,,,,,B&M,,,,,,,,,,,,,
+",TrainPassed,,,,,B&M,,,,,,,,,,,,,
 ,,819,"B&M skips buy companies
 ",PrivateBuySkipped,,,,,B&M,,,,,,,,,,,,,
 CompanyOperation,,820,"riverfiend operates ERIE
@@ -1674,7 +1660,7 @@ PhaseChanged,D,835,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Available
 TrainRust,,836,"-- Event: 4 trains rust ( The Depot x1, NYC x2, ERIE x1) --
 ",,,,,,,,,,,,,,,4,,,,
 ,,837,"PRR passes buy trains
-",TrainsPassed,,,,,PRR,,,,,,,,,,,,,
+",TrainPassed,,,,,PRR,,,,,,,,,,,,,
 ,,838,"PRR skips buy companies
 ",PrivateBuySkipped,,,,,PRR,,,,,,,,,,,,,
 StockRound,,839,"-- Stock Round 7 --
@@ -1682,113 +1668,111 @@ StockRound,,839,"-- Stock Round 7 --
 ,,840,"leesin buys a 10% share of B&M from the market for $68
 ",ShareBought,leesin,68,,10,B&M,,market,,,,,,,,,,,
 ,,841,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,842,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,843,"mpcoyne buys a 10% share of PRR from the market for $10
 ",ShareBought,mpcoyne,10,,10,PRR,,market,,,,,,,,,,,
 ,,844,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,845,"riverfiend sells 2 shares of C&O and receives $136
-",SharesSold,riverfiend,136,,20,C&O,,,,,,,,,,,,,
+",ShareSold,riverfiend,136,,20,C&O,,,,,,,,,,,,,
 ,,846,"riverfiend buys a 10% share of PRR from the IPO for $76
 ",ShareBought,riverfiend,76,,10,PRR,,IPO,,,,,,,,,,,
 ,,847,"leesin buys a 10% share of PRR from the IPO for $76
 ",ShareBought,leesin,76,,10,PRR,,IPO,,,,,,,,,,,
 ,,848,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,849,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,850,"mpcoyne buys a 10% share of C&O from the market for $68
 ",ShareBought,mpcoyne,68,,10,C&O,,market,,,,,,,,,,,
 ,,851,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,852,"riverfiend buys a 10% share of B&M from the IPO for $76
 ",ShareBought,riverfiend,76,,10,B&M,,IPO,,,,,,,,,,,
 ,,853,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,854,"leesin buys a 10% share of NYC from the market for $90
 ",ShareBought,leesin,90,,10,NYC,,market,,,,,,,,,,,
 ,,855,"leesin sells a 10% share of NYC and receives $90
-",SharesSold,leesin,90,,10,NYC,,,,,,,,,,,,,
+",ShareSold,leesin,90,,10,NYC,,,,,,,,,,,,,
 SharePriceMove,,856,"NYC's share price moves down from $90 to $80
 ",,,,,,NYC,,,,,,,down,80,,,,,
 ,,857,"mpakfm sells a 10% share of ERIE and receives $60
-",SharesSold,mpakfm,60,,10,ERIE,,,,,,,,,,,,,
+",ShareSold,mpakfm,60,,10,ERIE,,,,,,,,,,,,,
 SharePriceMove,,858,"ERIE's share price moves down from $60 to $55
 ",,,,,,ERIE,,,,,,,down,55,,,,,
 ,,859,"mpakfm declines to buy shares
-",SharesBuySkipped,mpakfm,,,,,,,,,,,,,,,,,
+",ShareBuySkipped,mpakfm,,,,,,,,,,,,,,,,,
 ,,860,"mpcoyne buys a 10% share of ERIE from the market for $55
 ",ShareBought,mpcoyne,55,,10,ERIE,,market,,,,,,,,,,,
 ,,861,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,862,"riverfiend buys a 10% share of B&M from the IPO for $76
 ",ShareBought,riverfiend,76,,10,B&M,,IPO,,,,,,,,,,,
 ,,863,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,864,"leesin buys a 10% share of C&O from the market for $68
 ",ShareBought,leesin,68,,10,C&O,,market,,,,,,,,,,,
 ,,865,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,866,"mpakfm sells a 10% share of C&O and receives $68
-",SharesSold,mpakfm,68,,10,C&O,,,,,,,,,,,,,
+",ShareSold,mpakfm,68,,10,C&O,,,,,,,,,,,,,
 ,,867,"mpakfm declines to buy shares
-",SharesBuySkipped,mpakfm,,,,,,,,,,,,,,,,,
+",ShareBuySkipped,mpakfm,,,,,,,,,,,,,,,,,
 ,,868,"mpcoyne buys a 10% share of C&O from the market for $68
 ",ShareBought,mpcoyne,68,,10,C&O,,market,,,,,,,,,,,
 ,,869,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,870,"riverfiend buys a 10% share of B&M from the IPO for $76
 ",ShareBought,riverfiend,76,,10,B&M,,IPO,,,,,,,,,,,
 ,,871,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,872,"leesin buys a 10% share of CPR from the IPO for $100
 ",ShareBought,leesin,100,,10,CPR,,IPO,,,,,,,,,,,
 ,,873,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,874,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,875,"mpcoyne buys a 10% share of NYNH from the market for $75
 ",ShareBought,mpcoyne,75,,10,NYNH,,market,,,,,,,,,,,
 ,,876,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,877,"riverfiend buys a 10% share of NYNH from the market for $75
 ",ShareBought,riverfiend,75,,10,NYNH,,market,,,,,,,,,,,
 ,,878,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,879,"leesin buys a 10% share of CPR from the IPO for $100
 ",ShareBought,leesin,100,,10,CPR,,IPO,,,,,,,,,,,
 ,,880,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,881,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,882,"mpcoyne buys a 10% share of ERIE from the IPO for $100
 ",ShareBought,mpcoyne,100,,10,ERIE,,IPO,,,,,,,,,,,
 ,,883,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,884,"riverfiend buys a 10% share of CPR from the IPO for $100
 ",ShareBought,riverfiend,100,,10,CPR,,IPO,,,,,,,,,,,
 ,,885,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,886,"leesin buys a 10% share of CPR from the IPO for $100
 ",ShareBought,leesin,100,,10,CPR,,IPO,,,,,,,,,,,
 CompanyFloating,,887,"CPR floats
 ",,,,,,CPR,,,,,,,,,,,,,
-,,888,"CPR receives $1000
-",FundsReceived,,1000,,,CPR,,,,,,,,,,,,,
 ,,889,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,890,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,891,"mpcoyne buys a 10% share of ERIE from the IPO for $100
 ",ShareBought,mpcoyne,100,,10,ERIE,,IPO,,,,,,,,,,,
 ,,892,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,893,"riverfiend buys a 10% share of NYNH from the market for $75
 ",ShareBought,riverfiend,75,,10,NYNH,,market,,,,,,,,,,,
 ,,894,"riverfiend declines to sell shares
-",SharesSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,895,"leesin passes
 ",Passed,leesin,,,,,,,,,,,,,,,,,
 ,,896,"mpakfm passes
@@ -1796,7 +1780,7 @@ CompanyFloating,,887,"CPR floats
 ,,897,"mpcoyne buys a 10% share of NYC from the market for $80
 ",ShareBought,mpcoyne,80,,10,NYC,,market,,,,,,,,,,,
 ,,898,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,899,"riverfiend passes
 ",Passed,riverfiend,,,,,,,,,,,,,,,,,
 ,,900,"leesin passes
@@ -1806,7 +1790,7 @@ CompanyFloating,,887,"CPR floats
 ,,902,"mpcoyne buys a 10% share of NYNH from the market for $75
 ",ShareBought,mpcoyne,75,,10,NYNH,,market,,,,,,,,,,,
 ,,903,"mpcoyne declines to sell shares
-",SharesSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,904,"riverfiend passes
 ",Passed,riverfiend,,,,,,,,,,,,,,,,,
 ,,905,"leesin passes
@@ -1834,7 +1818,7 @@ OperatingRound,,915,"-- Operating Round 7.1 (of 3) --
 CompanyOperation,,916,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,917,"B&O passes lay/upgrade track
-",TilesPassed,,,,,B&O,,,,,,,,,,,,,
+",TilePassed,,,,,B&O,,,,,,,,,,,,,
 ,,918,"B&O skips place a token
 ",TokenSkipped,,,,,B&O,,,,,,,,,,,,,
 ,,919,"B&O runs a 5 train for $250: F2-H10-I15-H16-H18
@@ -1844,7 +1828,7 @@ CompanyOperation,,916,"mpcoyne operates B&O
 SharePriceMove,,921,"B&O's share price moves right from $220 to $240
 ",,,,,,B&O,,,,,,,right,240,,,,,
 ,,922,"B&O passes buy trains
-",TrainsPassed,,,,,B&O,,,,,,,,,,,,,
+",TrainPassed,,,,,B&O,,,,,,,,,,,,,
 ,,923,"B&O skips buy companies
 ",PrivateBuySkipped,,,,,B&O,,,,,,,,,,,,,
 CompanyOperation,,924,"leesin operates CPR
@@ -1862,7 +1846,7 @@ DoesNotRun,,929,"CPR does not run
 SharePriceMove,,930,"CPR's share price moves left from $100 to $90
 ",,,,,,CPR,,,,,,,left,90,,,,,
 ,,931,"leesin sells a 10% share of C&O and receives $69
-",SharesSold,leesin,69,,10,C&O,,,,,,,,,,,,,
+",ShareSold,leesin,69,,10,C&O,,,,,,,,,,,,,
 SharePriceMove,,932,"C&O's share price moves down from $69 to $68
 ",,,,,,C&O,,,,,,,down,68,,,,,
 ,,933,"leesin contributes $100
@@ -1884,13 +1868,13 @@ CompanyOperation,,936,"leesin operates NYNH
 SharePriceMove,,941,"NYNH's share price moves right from $82 to $90
 ",,,,,,NYNH,,,,,,,right,90,,,,,
 ,,942,"NYNH passes buy trains
-",TrainsPassed,,,,,NYNH,,,,,,,,,,,,,
+",TrainPassed,,,,,NYNH,,,,,,,,,,,,,
 ,,943,"NYNH skips buy companies
 ",PrivateBuySkipped,,,,,NYNH,,,,,,,,,,,,,
 CompanyOperation,,944,"mpakfm operates NYC
 ",,mpakfm,,,,NYC,,,,,,,,,,,,,
 ,,945,"NYC passes lay/upgrade track
-",TilesPassed,,,,,NYC,,,,,,,,,,,,,
+",TilePassed,,,,,NYC,,,,,,,,,,,,,
 ,,946,"NYC skips place a token
 ",TokenSkipped,,,,,NYC,,,,,,,,,,,,,
 ,,947,"NYC skips run routes
@@ -1918,13 +1902,13 @@ CompanyOperation,,953,"mpcoyne operates B&M
 SharePriceMove,,958,"B&M's share price moves right from $69 to $70
 ",,,,,,B&M,,,,,,,right,70,,,,,
 ,,959,"B&M passes buy trains
-",TrainsPassed,,,,,B&M,,,,,,,,,,,,,
+",TrainPassed,,,,,B&M,,,,,,,,,,,,,
 ,,960,"B&M skips buy companies
 ",PrivateBuySkipped,,,,,B&M,,,,,,,,,,,,,
 CompanyOperation,,961,"riverfiend operates C&O
 ",,riverfiend,,,,C&O,,,,,,,,,,,,,
 ,,962,"C&O passes lay/upgrade track
-",TilesPassed,,,,,C&O,,,,,,,,,,,,,
+",TilePassed,,,,,C&O,,,,,,,,,,,,,
 ,,963,"C&O skips place a token
 ",TokenSkipped,,,,,C&O,,,,,,,,,,,,,
 ,,964,"C&O runs a 5 train for $260: G19-F16-G17-G19-H18
@@ -1934,7 +1918,7 @@ CompanyOperation,,961,"riverfiend operates C&O
 SharePriceMove,,966,"C&O's share price moves up from $68 to $69
 ",,,,,,C&O,,,,,,,up,69,,,,,
 ,,967,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,968,"C&O skips buy companies
 ",PrivateBuySkipped,,,,,C&O,,,,,,,,,,,,,
 CompanyOperation,,969,"riverfiend operates ERIE
@@ -1950,7 +1934,7 @@ CompanyOperation,,969,"riverfiend operates ERIE
 SharePriceMove,,974,"ERIE's share price moves right from $60 to $66
 ",,,,,,ERIE,,,,,,,right,66,,,,,
 ,,975,"ERIE passes buy trains
-",TrainsPassed,,,,,ERIE,,,,,,,,,,,,,
+",TrainPassed,,,,,ERIE,,,,,,,,,,,,,
 ,,976,"ERIE skips buy companies
 ",PrivateBuySkipped,,,,,ERIE,,,,,,,,,,,,,
 CompanyOperation,,977,"leesin operates PRR
@@ -1966,7 +1950,7 @@ CompanyOperation,,977,"leesin operates PRR
 SharePriceMove,,982,"PRR's share price moves right from $20 to $30
 ",,,,,,PRR,,,,,,,right,30,,,,,
 ,,983,"PRR passes buy trains
-",TrainsPassed,,,,,PRR,,,,,,,,,,,,,
+",TrainPassed,,,,,PRR,,,,,,,,,,,,,
 ,,984,"PRR skips buy companies
 ",PrivateBuySkipped,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,985,"-- Operating Round 7.2 (of 3) --
@@ -1984,7 +1968,7 @@ CompanyOperation,,986,"mpcoyne operates B&O
 SharePriceMove,,991,"B&O's share price moves right from $240 to $260
 ",,,,,,B&O,,,,,,,right,260,,,,,
 ,,992,"B&O passes buy trains
-",TrainsPassed,,,,,B&O,,,,,,,,,,,,,
+",TrainPassed,,,,,B&O,,,,,,,,,,,,,
 ,,993,"B&O skips buy companies
 ",PrivateBuySkipped,,,,,B&O,,,,,,,,,,,,,
 CompanyOperation,,994,"leesin operates NYNH
@@ -2000,7 +1984,7 @@ CompanyOperation,,994,"leesin operates NYNH
 SharePriceMove,,999,"NYNH's share price moves right from $90 to $100
 ",,,,,,NYNH,,,,,,,right,100,,,,,
 ,,1000,"NYNH passes buy trains
-",TrainsPassed,,,,,NYNH,,,,,,,,,,,,,
+",TrainPassed,,,,,NYNH,,,,,,,,,,,,,
 ,,1001,"NYNH skips buy companies
 ",PrivateBuySkipped,,,,,NYNH,,,,,,,,,,,,,
 CompanyOperation,,1002,"leesin operates CPR
@@ -2032,7 +2016,7 @@ CompanyOperation,,1010,"mpakfm operates NYC
 SharePriceMove,,1015,"NYC's share price moves right from $75 to $80
 ",,,,,,NYC,,,,,,,right,80,,,,,
 ,,1016,"NYC passes buy trains
-",TrainsPassed,,,,,NYC,,,,,,,,,,,,,
+",TrainPassed,,,,,NYC,,,,,,,,,,,,,
 ,,1017,"NYC skips buy companies
 ",PrivateBuySkipped,,,,,NYC,,,,,,,,,,,,,
 CompanyOperation,,1018,"mpcoyne operates B&M
@@ -2048,7 +2032,7 @@ CompanyOperation,,1018,"mpcoyne operates B&M
 SharePriceMove,,1023,"B&M's share price moves up from $70 to $75
 ",,,,,,B&M,,,,,,,up,75,,,,,
 ,,1024,"B&M passes buy trains
-",TrainsPassed,,,,,B&M,,,,,,,,,,,,,
+",TrainPassed,,,,,B&M,,,,,,,,,,,,,
 ,,1025,"B&M skips buy companies
 ",PrivateBuySkipped,,,,,B&M,,,,,,,,,,,,,
 CompanyOperation,,1026,"riverfiend operates C&O
@@ -2064,7 +2048,7 @@ CompanyOperation,,1026,"riverfiend operates C&O
 SharePriceMove,,1031,"C&O's share price moves right from $69 to $70
 ",,,,,,C&O,,,,,,,right,70,,,,,
 ,,1032,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,1033,"C&O skips buy companies
 ",PrivateBuySkipped,,,,,C&O,,,,,,,,,,,,,
 CompanyOperation,,1034,"riverfiend operates ERIE
@@ -2080,7 +2064,7 @@ CompanyOperation,,1034,"riverfiend operates ERIE
 SharePriceMove,,1039,"ERIE's share price moves right from $66 to $71
 ",,,,,,ERIE,,,,,,,right,71,,,,,
 ,,1040,"ERIE passes buy trains
-",TrainsPassed,,,,,ERIE,,,,,,,,,,,,,
+",TrainPassed,,,,,ERIE,,,,,,,,,,,,,
 ,,1041,"ERIE skips buy companies
 ",PrivateBuySkipped,,,,,ERIE,,,,,,,,,,,,,
 CompanyOperation,,1042,"leesin operates PRR
@@ -2096,7 +2080,7 @@ CompanyOperation,,1042,"leesin operates PRR
 SharePriceMove,,1047,"PRR's share price moves right from $30 to $40
 ",,,,,,PRR,,,,,,,right,40,,,,,
 ,,1048,"PRR passes buy trains
-",TrainsPassed,,,,,PRR,,,,,,,,,,,,,
+",TrainPassed,,,,,PRR,,,,,,,,,,,,,
 ,,1049,"PRR skips buy companies
 ",PrivateBuySkipped,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,1050,"-- Operating Round 7.3 (of 3) --
@@ -2130,7 +2114,7 @@ CompanyOperation,,1059,"leesin operates NYNH
 SharePriceMove,,1064,"NYNH's share price moves up from $100 to $110
 ",,,,,,NYNH,,,,,,,up,110,,,,,
 ,,1065,"NYNH passes buy trains
-",TrainsPassed,,,,,NYNH,,,,,,,,,,,,,
+",TrainPassed,,,,,NYNH,,,,,,,,,,,,,
 ,,1066,"NYNH skips buy companies
 ",PrivateBuySkipped,,,,,NYNH,,,,,,,,,,,,,
 CompanyOperation,,1067,"leesin operates CPR
@@ -2162,7 +2146,7 @@ CompanyOperation,,1075,"mpakfm operates NYC
 SharePriceMove,,1080,"NYC's share price moves up from $80 to $90
 ",,,,,,NYC,,,,,,,up,90,,,,,
 ,,1081,"NYC passes buy trains
-",TrainsPassed,,,,,NYC,,,,,,,,,,,,,
+",TrainPassed,,,,,NYC,,,,,,,,,,,,,
 ,,1082,"NYC skips buy companies
 ",PrivateBuySkipped,,,,,NYC,,,,,,,,,,,,,
 CompanyOperation,,1083,"mpcoyne operates B&M
@@ -2196,7 +2180,7 @@ CompanyOperation,,1092,"riverfiend operates ERIE
 SharePriceMove,,1097,"ERIE's share price moves right from $71 to $76
 ",,,,,,ERIE,,,,,,,right,76,,,,,
 ,,1098,"ERIE passes buy trains
-",TrainsPassed,,,,,ERIE,,,,,,,,,,,,,
+",TrainPassed,,,,,ERIE,,,,,,,,,,,,,
 ,,1099,"ERIE skips buy companies
 ",PrivateBuySkipped,,,,,ERIE,,,,,,,,,,,,,
 CompanyOperation,,1100,"riverfiend operates C&O
@@ -2212,7 +2196,7 @@ CompanyOperation,,1100,"riverfiend operates C&O
 SharePriceMove,,1105,"C&O's share price moves up from $70 to $75
 ",,,,,,C&O,,,,,,,up,75,,,,,
 ,,1106,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,1107,"C&O skips buy companies
 ",PrivateBuySkipped,,,,,C&O,,,,,,,,,,,,,
 CompanyOperation,,1108,"leesin operates PRR
@@ -2228,43 +2212,43 @@ CompanyOperation,,1108,"leesin operates PRR
 SharePriceMove,,1113,"PRR's share price moves left from $40 to $30
 ",,,,,,PRR,,,,,,,left,30,,,,,
 ,,1114,"PRR passes buy trains
-",TrainsPassed,,,,,PRR,,,,,,,,,,,,,
+",TrainPassed,,,,,PRR,,,,,,,,,,,,,
 ,,1115,"PRR skips buy companies
 ",PrivateBuySkipped,,,,,PRR,,,,,,,,,,,,,
 StockRound,,1116,"-- Stock Round 8 --
 ",,,,,,,8,,,,,,,,,,,,
 ,,1117,"riverfiend sells a 10% share of CPR and receives $112
-",SharesSold,riverfiend,112,,10,CPR,,,,,,,,,,,,,
+",ShareSold,riverfiend,112,,10,CPR,,,,,,,,,,,,,
 SharePriceMove,,1118,"CPR's share price moves down from $112 to $100
 ",,,,,,CPR,,,,,,,down,100,,,,,
 ,,1119,"riverfiend declines to buy shares
-",SharesBuySkipped,riverfiend,,,,,,,,,,,,,,,,,
+",ShareBuySkipped,riverfiend,,,,,,,,,,,,,,,,,
 ,,1120,"leesin buys a 10% share of NYC from the market for $90
 ",ShareBought,leesin,90,,10,NYC,,market,,,,,,,,,,,
 ,,1121,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,1122,"mpakfm buys a 10% share of CPR from the IPO for $100
 ",ShareBought,mpakfm,100,,10,CPR,,IPO,,,,,,,,,,,
 ,,1123,"mpakfm sells a 10% share of CPR and receives $100
-",SharesSold,mpakfm,100,,10,CPR,,,,,,,,,,,,,
+",ShareSold,mpakfm,100,,10,CPR,,,,,,,,,,,,,
 SharePriceMove,,1124,"CPR's share price moves down from $100 to $90
 ",,,,,,CPR,,,,,,,down,90,,,,,
 ,,1125,"mpcoyne sells 2 shares of NYNH and receives $220
-",SharesSold,mpcoyne,220,,20,NYNH,,,,,,,,,,,,,
+",ShareSold,mpcoyne,220,,20,NYNH,,,,,,,,,,,,,
 SharePriceMove,,1126,"NYNH's share price moves down from $110 to $100
 ",,,,,,NYNH,,,,,,,down,100,,,,,
 ,,1127,"mpcoyne sells a 10% share of C&O and receives $75
-",SharesSold,mpcoyne,75,,10,C&O,,,,,,,,,,,,,
+",ShareSold,mpcoyne,75,,10,C&O,,,,,,,,,,,,,
 SharePriceMove,,1128,"C&O's share price moves down from $75 to $70
 ",,,,,,C&O,,,,,,,down,70,,,,,
 ,,1129,"mpcoyne declines to buy shares
-",SharesBuySkipped,mpcoyne,,,,,,,,,,,,,,,,,
+",ShareBuySkipped,mpcoyne,,,,,,,,,,,,,,,,,
 ,,1130,"riverfiend passes
 ",Passed,riverfiend,,,,,,,,,,,,,,,,,
 ,,1131,"leesin buys a 10% share of NYC from the IPO for $90
 ",ShareBought,leesin,90,,10,NYC,,IPO,,,,,,,,,,,
 ,,1132,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,1133,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,1134,"mpcoyne passes
@@ -2274,7 +2258,7 @@ SharePriceMove,,1128,"C&O's share price moves down from $75 to $70
 ,,1136,"leesin buys a 10% share of CPR from the market for $90
 ",ShareBought,leesin,90,,10,CPR,,market,,,,,,,,,,,
 ,,1137,"leesin declines to sell shares
-",SharesSellSkipped,leesin,,,,,,,,,,,,,,,,,
+",ShareSellSkipped,leesin,,,,,,,,,,,,,,,,,
 ,,1138,"mpakfm passes
 ",Passed,mpakfm,,,,,,,,,,,,,,,,,
 ,,1139,"mpcoyne passes
@@ -2328,13 +2312,13 @@ CompanyOperation,,1158,"leesin operates NYNH
 SharePriceMove,,1163,"NYNH's share price moves up from $100 to $110
 ",,,,,,NYNH,,,,,,,up,110,,,,,
 ,,1164,"NYNH passes buy trains
-",TrainsPassed,,,,,NYNH,,,,,,,,,,,,,
+",TrainPassed,,,,,NYNH,,,,,,,,,,,,,
 ,,1165,"NYNH skips buy companies
 ",PrivateBuySkipped,,,,,NYNH,,,,,,,,,,,,,
 CompanyOperation,,1166,"mpakfm operates NYC
 ",,mpakfm,,,,NYC,,,,,,,,,,,,,
 ,,1167,"NYC passes lay/upgrade track
-",TilesPassed,,,,,NYC,,,,,,,,,,,,,
+",TilePassed,,,,,NYC,,,,,,,,,,,,,
 ,,1168,"NYC skips place a token
 ",TokenSkipped,,,,,NYC,,,,,,,,,,,,,
 ,,1169,"NYC runs a D train for $280: E23-F24-F22-F20-E19-F20-G19-F16
@@ -2344,7 +2328,7 @@ CompanyOperation,,1166,"mpakfm operates NYC
 SharePriceMove,,1171,"NYC's share price moves right from $100 to $110
 ",,,,,,NYC,,,,,,,right,110,,,,,
 ,,1172,"NYC passes buy trains
-",TrainsPassed,,,,,NYC,,,,,,,,,,,,,
+",TrainPassed,,,,,NYC,,,,,,,,,,,,,
 ,,1173,"NYC skips buy companies
 ",PrivateBuySkipped,,,,,NYC,,,,,,,,,,,,,
 CompanyOperation,,1174,"leesin operates CPR
@@ -2360,7 +2344,7 @@ CompanyOperation,,1174,"leesin operates CPR
 SharePriceMove,,1179,"CPR's share price moves right from $90 to $100
 ",,,,,,CPR,,,,,,,right,100,,,,,
 ,,1180,"CPR passes buy trains
-",TrainsPassed,,,,,CPR,,,,,,,,,,,,,
+",TrainPassed,,,,,CPR,,,,,,,,,,,,,
 ,,1181,"CPR skips buy companies
 ",PrivateBuySkipped,,,,,CPR,,,,,,,,,,,,,
 CompanyOperation,,1182,"riverfiend operates ERIE
@@ -2376,7 +2360,7 @@ CompanyOperation,,1182,"riverfiend operates ERIE
 SharePriceMove,,1187,"ERIE's share price moves right from $82 to $90
 ",,,,,,ERIE,,,,,,,right,90,,,,,
 ,,1188,"ERIE passes buy trains
-",TrainsPassed,,,,,ERIE,,,,,,,,,,,,,
+",TrainPassed,,,,,ERIE,,,,,,,,,,,,,
 ,,1189,"ERIE skips buy companies
 ",PrivateBuySkipped,,,,,ERIE,,,,,,,,,,,,,
 CompanyOperation,,1190,"mpcoyne operates B&M
@@ -2408,7 +2392,7 @@ CompanyOperation,,1198,"riverfiend operates C&O
 SharePriceMove,,1203,"C&O's share price moves up from $70 to $75
 ",,,,,,C&O,,,,,,,up,75,,,,,
 ,,1204,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,1205,"C&O skips buy companies
 ",PrivateBuySkipped,,,,,C&O,,,,,,,,,,,,,
 CompanyOperation,,1206,"leesin operates PRR
@@ -2424,7 +2408,7 @@ CompanyOperation,,1206,"leesin operates PRR
 SharePriceMove,,1211,"PRR's share price moves right from $40 to $50
 ",,,,,,PRR,,,,,,,right,50,,,,,
 ,,1212,"PRR passes buy trains
-",TrainsPassed,,,,,PRR,,,,,,,,,,,,,
+",TrainPassed,,,,,PRR,,,,,,,,,,,,,
 ,,1213,"PRR skips buy companies
 ",PrivateBuySkipped,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,1214,"-- Operating Round 8.2 (of 3) --
@@ -2432,7 +2416,7 @@ OperatingRound,,1214,"-- Operating Round 8.2 (of 3) --
 CompanyOperation,,1215,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,1216,"B&O passes lay/upgrade track
-",TilesPassed,,,,,B&O,,,,,,,,,,,,,
+",TilePassed,,,,,B&O,,,,,,,,,,,,,
 ,,1217,"B&O skips place a token
 ",TokenSkipped,,,,,B&O,,,,,,,,,,,,,
 ,,1218,"B&O runs a 6 train for $250: I15-I19-H18-G19-G17-F16
@@ -2458,13 +2442,13 @@ CompanyOperation,,1223,"leesin operates NYNH
 SharePriceMove,,1228,"NYNH's share price moves right from $110 to $120
 ",,,,,,NYNH,,,,,,,right,120,,,,,
 ,,1229,"NYNH passes buy trains
-",TrainsPassed,,,,,NYNH,,,,,,,,,,,,,
+",TrainPassed,,,,,NYNH,,,,,,,,,,,,,
 ,,1230,"NYNH skips buy companies
 ",PrivateBuySkipped,,,,,NYNH,,,,,,,,,,,,,
 CompanyOperation,,1231,"mpakfm operates NYC
 ",,mpakfm,,,,NYC,,,,,,,,,,,,,
 ,,1232,"NYC passes lay/upgrade track
-",TilesPassed,,,,,NYC,,,,,,,,,,,,,
+",TilePassed,,,,,NYC,,,,,,,,,,,,,
 ,,1233,"NYC skips place a token
 ",TokenSkipped,,,,,NYC,,,,,,,,,,,,,
 ,,1234,"NYC runs a D train for $280: E23-F24-F22-F20-E19-F20-G19-F16
@@ -2474,7 +2458,7 @@ CompanyOperation,,1231,"mpakfm operates NYC
 SharePriceMove,,1236,"NYC's share price moves right from $110 to $120
 ",,,,,,NYC,,,,,,,right,120,,,,,
 ,,1237,"NYC passes buy trains
-",TrainsPassed,,,,,NYC,,,,,,,,,,,,,
+",TrainPassed,,,,,NYC,,,,,,,,,,,,,
 ,,1238,"NYC skips buy companies
 ",PrivateBuySkipped,,,,,NYC,,,,,,,,,,,,,
 CompanyOperation,,1239,"leesin operates CPR
@@ -2490,7 +2474,7 @@ CompanyOperation,,1239,"leesin operates CPR
 SharePriceMove,,1244,"CPR's share price moves right from $100 to $111
 ",,,,,,CPR,,,,,,,right,111,,,,,
 ,,1245,"CPR passes buy trains
-",TrainsPassed,,,,,CPR,,,,,,,,,,,,,
+",TrainPassed,,,,,CPR,,,,,,,,,,,,,
 ,,1246,"CPR skips buy companies
 ",PrivateBuySkipped,,,,,CPR,,,,,,,,,,,,,
 CompanyOperation,,1247,"riverfiend operates ERIE
@@ -2506,7 +2490,7 @@ CompanyOperation,,1247,"riverfiend operates ERIE
 SharePriceMove,,1252,"ERIE's share price moves right from $90 to $100
 ",,,,,,ERIE,,,,,,,right,100,,,,,
 ,,1253,"ERIE passes buy trains
-",TrainsPassed,,,,,ERIE,,,,,,,,,,,,,
+",TrainPassed,,,,,ERIE,,,,,,,,,,,,,
 ,,1254,"ERIE skips buy companies
 ",PrivateBuySkipped,,,,,ERIE,,,,,,,,,,,,,
 CompanyOperation,,1255,"mpcoyne operates B&M
@@ -2528,7 +2512,7 @@ SharePriceMove,,1260,"B&M's share price moves right from $82 to $90
 CompanyOperation,,1263,"riverfiend operates C&O
 ",,riverfiend,,,,C&O,,,,,,,,,,,,,
 ,,1264,"C&O passes lay/upgrade track
-",TilesPassed,,,,,C&O,,,,,,,,,,,,,
+",TilePassed,,,,,C&O,,,,,,,,,,,,,
 ,,1265,"C&O passes place a token
 ",TokenPassed,,,,,C&O,,,,,,,,,,,,,
 ,,1266,"C&O runs a 5 train for $270: G19-F16-E11-D10-D10
@@ -2538,7 +2522,7 @@ CompanyOperation,,1263,"riverfiend operates C&O
 SharePriceMove,,1268,"C&O's share price moves right from $75 to $80
 ",,,,,,C&O,,,,,,,right,80,,,,,
 ,,1269,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,1270,"C&O skips buy companies
 ",PrivateBuySkipped,,,,,C&O,,,,,,,,,,,,,
 CompanyOperation,,1271,"leesin operates PRR
@@ -2546,7 +2530,7 @@ CompanyOperation,,1271,"leesin operates PRR
 ,,1272,"PRR spends $120 and lays tile #7 with rotation 2 on G13
 ",TilePlaced,,120,,,PRR,,,,G13,7,2,,,,,,,
 ,,1273,"PRR places a token on E11 (Dunkirk & Buffalo)  for $100
-",TokenPlaced,,,,,PRR,,,,E11 (Dunkirk & Buffalo)  for $100,,,,,,,,,
+",TokenPlaced,,100,,,PRR,,,,E11 (Dunkirk & Buffalo) ,,,,,,,,,
 ,,1274,"PRR runs a D train for $510: A11-B10-D10-D10-E11-F10-H10-H12-H16-I19-H18-G19-G17-F16
 ",TrainRan,,510,,,PRR,,,,,,,,,D,A11-B10-D10-D10-E11-F10-H10-H12-H16-I19-H18-G19-G17-F16,,,
 ,,1275,"PRR pays out $510 = $51 per share ($408 to leesin, $51 to mpcoyne, $51 to riverfiend)
@@ -2554,7 +2538,7 @@ CompanyOperation,,1271,"leesin operates PRR
 SharePriceMove,,1276,"PRR's share price moves right from $50 to $60
 ",,,,,,PRR,,,,,,,right,60,,,,,
 ,,1277,"PRR passes buy trains
-",TrainsPassed,,,,,PRR,,,,,,,,,,,,,
+",TrainPassed,,,,,PRR,,,,,,,,,,,,,
 ,,1278,"PRR skips buy companies
 ",PrivateBuySkipped,,,,,PRR,,,,,,,,,,,,,
 OperatingRound,,1279,"-- Operating Round 8.3 (of 3) --
@@ -2562,7 +2546,7 @@ OperatingRound,,1279,"-- Operating Round 8.3 (of 3) --
 CompanyOperation,,1280,"mpcoyne operates B&O
 ",,mpcoyne,,,,B&O,,,,,,,,,,,,,
 ,,1281,"B&O passes lay/upgrade track
-",TilesPassed,,,,,B&O,,,,,,,,,,,,,
+",TilePassed,,,,,B&O,,,,,,,,,,,,,
 ,,1282,"B&O skips place a token
 ",TokenSkipped,,,,,B&O,,,,,,,,,,,,,
 ,,1283,"B&O runs a 6 train for $250: I15-I19-H18-G19-G17-F16
@@ -2588,13 +2572,13 @@ CompanyOperation,,1288,"leesin operates NYNH
 SharePriceMove,,1293,"NYNH's share price moves right from $120 to $130
 ",,,,,,NYNH,,,,,,,right,130,,,,,
 ,,1294,"NYNH passes buy trains
-",TrainsPassed,,,,,NYNH,,,,,,,,,,,,,
+",TrainPassed,,,,,NYNH,,,,,,,,,,,,,
 ,,1295,"NYNH skips buy companies
 ",PrivateBuySkipped,,,,,NYNH,,,,,,,,,,,,,
 CompanyOperation,,1296,"mpakfm operates NYC
 ",,mpakfm,,,,NYC,,,,,,,,,,,,,
 ,,1297,"NYC passes lay/upgrade track
-",TilesPassed,,,,,NYC,,,,,,,,,,,,,
+",TilePassed,,,,,NYC,,,,,,,,,,,,,
 ,,1298,"NYC skips place a token
 ",TokenSkipped,,,,,NYC,,,,,,,,,,,,,
 ,,1299,"NYC runs a D train for $280: E23-F24-F22-F20-E19-F20-G19-F16
@@ -2604,7 +2588,7 @@ CompanyOperation,,1296,"mpakfm operates NYC
 SharePriceMove,,1301,"NYC's share price moves right from $120 to $130
 ",,,,,,NYC,,,,,,,right,130,,,,,
 ,,1302,"NYC passes buy trains
-",TrainsPassed,,,,,NYC,,,,,,,,,,,,,
+",TrainPassed,,,,,NYC,,,,,,,,,,,,,
 ,,1303,"NYC skips buy companies
 ",PrivateBuySkipped,,,,,NYC,,,,,,,,,,,,,
 CompanyOperation,,1304,"leesin operates CPR
@@ -2620,7 +2604,7 @@ CompanyOperation,,1304,"leesin operates CPR
 SharePriceMove,,1309,"CPR's share price moves right from $111 to $125
 ",,,,,,CPR,,,,,,,right,125,,,,,
 ,,1310,"CPR passes buy trains
-",TrainsPassed,,,,,CPR,,,,,,,,,,,,,
+",TrainPassed,,,,,CPR,,,,,,,,,,,,,
 ,,1311,"CPR skips buy companies
 ",PrivateBuySkipped,,,,,CPR,,,,,,,,,,,,,
 CompanyOperation,,1312,"riverfiend operates ERIE
@@ -2636,13 +2620,13 @@ CompanyOperation,,1312,"riverfiend operates ERIE
 SharePriceMove,,1317,"ERIE's share price moves right from $100 to $111
 ",,,,,,ERIE,,,,,,,right,111,,,,,
 ,,1318,"ERIE passes buy trains
-",TrainsPassed,,,,,ERIE,,,,,,,,,,,,,
+",TrainPassed,,,,,ERIE,,,,,,,,,,,,,
 ,,1319,"ERIE skips buy companies
 ",PrivateBuySkipped,,,,,ERIE,,,,,,,,,,,,,
 CompanyOperation,,1320,"mpcoyne operates B&M
 ",,mpcoyne,,,,B&M,,,,,,,,,,,,,
 ,,1321,"B&M passes lay/upgrade track
-",TilesPassed,,,,,B&M,,,,,,,,,,,,,
+",TilePassed,,,,,B&M,,,,,,,,,,,,,
 ,,1322,"B&M skips place a token
 ",TokenSkipped,,,,,B&M,,,,,,,,,,,,,
 ,,1323,"B&M runs a D train for $400: I15-I19-H18-G19-G17-F16-F20-F22-F24-E23-E19
@@ -2660,7 +2644,7 @@ CompanyOperation,,1328,"riverfiend operates C&O
 ,,1329,"C&O lays tile #15 with rotation 1 on H4 (Columbus)
 ",TilePlaced,,,,,C&O,,,,H4 (Columbus),15,1,,,,,,,
 ,,1330,"C&O places a token on H18 (Philadelphia & Trenton)  for $100
-",TokenPlaced,,,,,C&O,,,,H18 (Philadelphia & Trenton)  for $100,,,,,,,,,
+",TokenPlaced,,100,,,C&O,,,,H18 (Philadelphia & Trenton) ,,,,,,,,,
 ,,1331,"C&O runs a 5 train for $260: H18-G19-G17-F16-G19
 ",TrainRan,,260,,,C&O,,,,,,,,,5,H18-G19-G17-F16-G19,,,
 ,,1332,"C&O pays out $260 = $26 per share ($156 to riverfiend, $52 to C&O, $26 to mpcoyne, $26 to leesin)
@@ -2668,7 +2652,7 @@ CompanyOperation,,1328,"riverfiend operates C&O
 SharePriceMove,,1333,"C&O's share price moves up from $80 to $90
 ",,,,,,C&O,,,,,,,up,90,,,,,
 ,,1334,"C&O passes buy trains
-",TrainsPassed,,,,,C&O,,,,,,,,,,,,,
+",TrainPassed,,,,,C&O,,,,,,,,,,,,,
 ,,1335,"C&O skips buy companies
 ",PrivateBuySkipped,,,,,C&O,,,,,,,,,,,,,
 CompanyOperation,,1336,"leesin operates PRR
@@ -2686,7 +2670,7 @@ BankBroken,,1340,"-- The bank has broken --
 SharePriceMove,,1342,"PRR's share price moves right from $60 to $67
 ",,,,,,PRR,,,,,,,right,67,,,,,
 ,,1343,"PRR passes buy trains
-",TrainsPassed,,,,,PRR,,,,,,,,,,,,,
+",TrainPassed,,,,,PRR,,,,,,,,,,,,,
 ,,1344,"PRR skips buy companies
 ",PrivateBuySkipped,,,,,PRR,,,,,,,,,,,,,
 GameOver,,1345,"-- Game over: mpcoyne ($6735), leesin ($6648), riverfiend ($5523), mpakfm ($2740) --",,,,,,,,,,,,,,,,,,,
