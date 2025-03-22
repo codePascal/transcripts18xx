@@ -20,8 +20,9 @@ def actions(line: str) -> list:
         exchanges_train(line)
     ]
 
+
 def places_token(line: str) -> dict | None:
-    match = re.search(r'(\D) places a token on (.*)', line)
+    match = re.search(r'(.*?) places a token on (.*)', line)
     if match:
         return dict(
             action='TokenPlaced',
@@ -33,7 +34,7 @@ def places_token(line: str) -> dict | None:
 
 def lays_tile(line: str) -> dict | None:
     match = re.search(
-        r'(\D) lays tile #(.*?) with rotation (\d+) on (.*)', line
+        r'(.*?) lays tile #(.*?) with rotation (\d+) on (.*)', line
     )
     if match:
         return dict(
@@ -47,7 +48,7 @@ def lays_tile(line: str) -> dict | None:
 
 
 def runs_train(line: str) -> dict | None:
-    match = re.search(r'(\D) runs a (\w+) train for \$(\d+): (.*)', line)
+    match = re.search(r'(.*?) runs a (\w+) train for \$(\d+): (.*)', line)
     if match:
         return dict(
             action='TrainRan',
@@ -60,7 +61,7 @@ def runs_train(line: str) -> dict | None:
 
 
 def pays_dividend(line: str) -> dict | None:
-    match = re.search(r'(\D) pays out \$(\d+) = \$(\d+) per share', line)
+    match = re.search(r'(\.*?) pays out \$(\d+) = \$(\d+) per share', line)
     if match:
         return dict(
             action='DividendPayed',
@@ -72,7 +73,7 @@ def pays_dividend(line: str) -> dict | None:
 
 
 def withholds(line: str) -> dict | None:
-    match = re.search(r'(\D) withholds \$(\d+)', line)
+    match = re.search(r'(.*?) withholds \$(\d+)', line)
     if match:
         return dict(
             action='DividendWithheld',
@@ -83,7 +84,7 @@ def withholds(line: str) -> dict | None:
 
 
 def skips_token(line: str) -> dict | None:
-    match = re.search(r'(\D) skips place a token', line)
+    match = re.search(r'(\.*?) skips place a token', line)
     if match:
         return dict(
             action='TokenSkipped',
@@ -93,7 +94,7 @@ def skips_token(line: str) -> dict | None:
 
 
 def skips_tile(line: str) -> dict | None:
-    match = re.search(r'(\D) skips lay track', line)
+    match = re.search(r'(.*?) skips lay track', line)
     if match:
         return dict(
             action='TileSkipped',
@@ -103,17 +104,17 @@ def skips_tile(line: str) -> dict | None:
 
 
 def skips_run_train(line: str) -> dict | None:
-    match = re.search(r'(\D) skips run routes', line)
+    match = re.search(r'(.*?) skips run routes', line)
     if match:
         return dict(
-            action='TrainSkipped',
+            action='RunTrainSkipped',
             company=match.group(1),
         )
     return None
 
 
 def skips_buy_private(line: str) -> dict | None:
-    match = re.search(r'(\D) skips buy companies', line)
+    match = re.search(r'(.*?) skips buy companies', line)
     if match:
         return dict(
             action='PrivateBuySkipped',
@@ -123,7 +124,7 @@ def skips_buy_private(line: str) -> dict | None:
 
 
 def skips_buy_train(line: str) -> dict | None:
-    match = re.search(r'(\D) skips buy trains', line)
+    match = re.search(r'(.*?) skips buy trains', line)
     if match:
         return dict(
             action='TrainBuySkipped',
@@ -133,17 +134,17 @@ def skips_buy_train(line: str) -> dict | None:
 
 
 def does_not_run(line: str) -> dict | None:
-    match = re.search(r'(\D) does not run', line)
+    match = re.search(r'(.*?) does not run', line)
     if match:
         return dict(
-            action='RunTrainSkipped',
+            action='DoesNotRun',
             company=match.group(1)
         )
     return None
 
 
 def discards_train(line: str) -> dict | None:
-    match = re.search(r'(\D) discards (.*?)', line)
+    match = re.search(r'(.*?) discards (\w+)', line)
     if match:
         return dict(
             action='TrainDiscarded',
@@ -155,7 +156,8 @@ def discards_train(line: str) -> dict | None:
 
 def exchanges_train(line: str) -> dict | None:
     match = re.search(
-        r'(\D) exchanges a (\d+) for a (\w+) train for \$(\d+) from (.*?)', line
+        r'(.*?) exchanges a (\d+) for a (\D) train for \$(\d+) from (.*)',
+        line
     )
     if match:
         return dict(
@@ -163,7 +165,7 @@ def exchanges_train(line: str) -> dict | None:
             company=match.group(1),
             old_train=match.group(2),
             new_train=match.group(3),
-            amount=match.group(3),
-            source=match.group(4)
+            amount=match.group(4),
+            source=match.group(5)
         )
     return None

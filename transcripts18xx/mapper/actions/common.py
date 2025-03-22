@@ -32,7 +32,7 @@ def buys(line: str) -> dict | None:
 
 
 def collects(line: str) -> dict | None:
-    match = re.search(r'(\D) collects \$(\d+) from (.*)', line)
+    match = re.search(r'(.*?) collects \$(\d+) from (.*)', line)
     if match:
         return dict(
             action='Collect',
@@ -54,7 +54,7 @@ def passes(line: str) -> dict | None:
 
 
 def _receive_share(line: str) -> dict | None:
-    match = re.search(r'(\D) receives a (\d+)% share of (.*)', line)
+    match = re.search(r'(.*?) receives a (\d+)% share of (.*)', line)
     if match:
         return dict(
             action='ShareReceived',
@@ -66,7 +66,7 @@ def _receive_share(line: str) -> dict | None:
 
 
 def _receive_funds(line: str) -> dict | None:
-    match = re.search(r'(\D) receives \$(\d+)', line)
+    match = re.search(r'(.*?) receives \$(\d+)', line)
     if match:
         return dict(
             action='FundsReceived',
@@ -78,7 +78,7 @@ def _receive_funds(line: str) -> dict | None:
 
 def _buy_share(line: str) -> dict | None:
     match = re.search(
-        r'(\D) buys a (\d+)% share of (.*?) from the (.*?) for \$(\d+)', line
+        r'(.*?) buys a (\d+)% share of (.*?) from the (.*?) for \$(\d+)', line
     )
     if match:
         return dict(
@@ -93,7 +93,7 @@ def _buy_share(line: str) -> dict | None:
 
 
 def _buy_train(line: str) -> dict | None:
-    match = re.search(r'(\D) buys a (\w+) train for \$(\d+) from (.*)', line)
+    match = re.search(r'(.*?) buys a (\w+) train for \$(\d+) from (.*)', line)
     if match:
         return dict(
             action='TrainBought',

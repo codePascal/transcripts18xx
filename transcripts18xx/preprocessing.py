@@ -32,11 +32,20 @@ class GameTranscriptProcessor(object):
         self._game = game
         self._data = list()
 
+    @staticmethod
+    def _preprocess_line(line: str) -> str:
+        # Sometimes there is a timestamp [hh:mm], cut it
+        if line.startswith('['):
+            line = line[8:]
+        line = line.lstrip()
+        return line
+
     def parse_transcript(self) -> None:
         """Reads and extracts actions and events from the game transcript."""
         with open(self._transcript_file, 'r', encoding='utf-8') as file:
             lines = file.readlines()
         for i, line in enumerate(lines):
+            line = self._preprocess_line(line)
             parsed_data = self._game.extract_pattern(line)
             if parsed_data:
                 parsed_data['id'] = i

@@ -28,7 +28,7 @@ def bids(line: str) -> dict | None:
 
 
 def operates_company(line: str) -> dict | None:
-    match = re.search(r'(\D) operates (.*)', line)
+    match = re.search(r'(\w+) operates (.*)', line)
     if match:
         return dict(
             event='CompanyOperated',
@@ -51,7 +51,7 @@ def pars_company(line: str) -> dict | None:
 
 
 def declines_sell_shares(line: str) -> dict | None:
-    match = re.search(r'(\D) declines to sell shares', line)
+    match = re.search(r'(\w+) declines to sell shares', line)
     if match:
         return dict(
             action='SellSharesSkipped',
@@ -61,7 +61,7 @@ def declines_sell_shares(line: str) -> dict | None:
 
 
 def declines_buy_shares(line: str) -> dict | None:
-    match = re.search(r'(\D) declines to buy shares', line)
+    match = re.search(r'(\w+) declines to buy shares', line)
     if match:
         return dict(
             action='BuySharesSkipped',
@@ -72,17 +72,17 @@ def declines_buy_shares(line: str) -> dict | None:
 
 def sells_shares(line: str) -> dict | None:
     match = re.search(
-        r'(\D) sells (\d+) shares of (.*?) and receives \$(\d+)', line
+        r'(\w+) sells (\d+) shares of (.*?) and receives \$(\d+)', line
     )
     if not match:
         match = re.search(
-            r'(\D) sells a (\d)0% share of (.*?) and receives \$(\d+)', line
+            r'(\w+) sells a (\d)0% share of (.*?) and receives \$(\d+)', line
         )
     if match:
         return dict(
             action='SharesSold',
             player=match.group(1),
-            num_shares=match.group(2),
+            percentage=10 * match.group(2),  # assume 10 shares per company
             company=match.group(3),
             amount=match.group(4)
         )
@@ -90,7 +90,7 @@ def sells_shares(line: str) -> dict | None:
 
 
 def contributes_for_train(line: str) -> dict | None:
-    match = re.search(r'(\D) contributes \$(\d+)', line)
+    match = re.search(r'(\w+) contributes \$(\d+)', line)
     if match:
         return dict(
             action='TrainBuyContributed',

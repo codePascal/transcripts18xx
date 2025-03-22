@@ -20,12 +20,15 @@ class TestGameTranscriptProcessor1817(unittest.TestCase):
 class TestGameTranscriptProcessor1830(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.gtp = GameTranscriptProcessor(
-            context.transcript_1830(), g1830.Game1830())
+        gtp = GameTranscriptProcessor(
+            context.transcript_1830(), g1830.Game1830()
+        )
+        gtp.parse_transcript()
+        self.df = gtp.save_to_dataframe()
 
     def tearDown(self) -> None:
         pass
 
-    def test_processor(self):
-        self.gtp.parse_transcript()
-        self.gtp.save_to_dataframe()
+    def test_shape(self):
+        self.assertEqual(1346, self.df.shape[0])
+        self.assertEqual(24, self.df.shape[1])
