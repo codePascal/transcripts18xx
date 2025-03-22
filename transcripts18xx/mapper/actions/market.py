@@ -1,6 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import re
+import enum
+
+
+class MarketActions(enum.IntEnum):
+    ReceiveShare = 0
+    ReceiveFunds = 1
+    BuyShare = 2
+    SellShare = 3
+    SkipShare = 4
+    ParCompany = 5
+    PlaceBid = 6
 
 
 def actions(line: str) -> list:
@@ -20,7 +31,7 @@ def receive_share(line: str) -> dict | None:
     match = re.search(r'(.*?) receives a (\d+)% share of (.*)', line)
     if match:
         return dict(
-            action='ShareReceived',
+            action=MarketActions.ReceiveShare.name,
             player=match.group(1),
             percentage=match.group(2),
             company=match.group(3)
@@ -29,10 +40,12 @@ def receive_share(line: str) -> dict | None:
 
 
 def receive_funds(line: str) -> dict | None:
+    if 'share' in line:
+        return None
     match = re.search(r'(.*?) receives \$(\d+)', line)
     if match:
         return dict(
-            action='FundsReceived',
+            action=MarketActions.ReceiveFunds.name,
             company=match.group(1),
             amount=match.group(2)
         )
@@ -45,7 +58,7 @@ def buy_share(line: str) -> dict | None:
     )
     if match:
         return dict(
-            action='ShareBought',
+            action=MarketActions.BuyShare.name,
             player=match.group(1),
             percentage=match.group(2),
             company=match.group(3),
@@ -66,7 +79,7 @@ def sell_share(line: str) -> dict | None:
     if match:
         # Assume 10 shares per company
         return dict(
-            action='ShareSold',
+            action=MarketActions.SellShare.name,
             player=match.group(1),
             percentage='{}{}'.format(match.group(2), '0'),
             company=match.group(3),
@@ -79,7 +92,7 @@ def decline_sell_shares(line: str) -> dict | None:
     match = re.search(r'(.*?) declines to sell shares', line)
     if match:
         return dict(
-            action='ShareSellSkipped',
+            action=MarketActions.SkipShare.name,
             player=match.group(1),
         )
     return None
@@ -89,7 +102,7 @@ def decline_buy_shares(line: str) -> dict | None:
     match = re.search(r'(.*?) declines to buy shares', line)
     if match:
         return dict(
-            action='ShareBuySkipped',
+            action=MarketActions.SkipShare.name,
             player=match.group(1),
         )
     return None
@@ -99,7 +112,7 @@ def par_company(line: str) -> dict | None:
     match = re.search(r'(.*?) pars (.*?) at \$(\d+)', line)
     if match:
         return dict(
-            action='CompanyPared',
+            action=MarketActions.ParCompany.name,
             player=match.group(1),
             company=match.group(2),
             amount=match.group(3)
@@ -111,7 +124,7 @@ def bid(line: str) -> dict | None:
     match = re.search(r'(.*?) bids \$(\d+) for (.*)', line)
     if match:
         return dict(
-            action='BidPlaced',
+            action=MarketActions.PlaceBid.name,
             player=match.group(1),
             amount=match.group(2),
             private=match.group(3),

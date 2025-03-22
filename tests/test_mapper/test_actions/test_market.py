@@ -10,7 +10,7 @@ class TestMarketActions(unittest.TestCase):
     def test_receive_share(self):
         line = 'player1 receives a 10% share of B&O'
         expected = {
-            'action': 'ShareReceived',
+            'action': market.MarketActions.ReceiveShare.name,
             'player': 'player1',
             'percentage': '10',
             'company': 'B&O'
@@ -20,7 +20,7 @@ class TestMarketActions(unittest.TestCase):
     def test_receive_funds(self):
         line = 'C&O receives $670'
         expected = {
-            'action': 'FundsReceived',
+            'action': market.MarketActions.ReceiveFunds.name,
             'company': 'C&O',
             'amount': '670'
         }
@@ -29,7 +29,7 @@ class TestMarketActions(unittest.TestCase):
     def test_buy_share(self):
         line = 'player1 buys a 20% share of ERIE from the IPO for $200'
         expected = {
-            'action': 'ShareBought',
+            'action': market.MarketActions.BuyShare.name,
             'player': 'player1',
             'percentage': '20',
             'company': 'ERIE',
@@ -41,7 +41,7 @@ class TestMarketActions(unittest.TestCase):
     def test_decline_sell_share(self):
         line = 'player1 declines to sell shares'
         expected = {
-            'action': 'ShareSellSkipped',
+            'action': market.MarketActions.SkipShare.name,
             'player': 'player1',
         }
         self.assertEqual(expected, market.decline_sell_shares(line))
@@ -49,7 +49,7 @@ class TestMarketActions(unittest.TestCase):
     def test_decline_buy_share(self):
         line = 'player1 declines to buy shares'
         expected = {
-            'action': 'ShareBuySkipped',
+            'action': market.MarketActions.SkipShare.name,
             'player': 'player1',
         }
         self.assertEqual(expected, market.decline_buy_shares(line))
@@ -57,7 +57,7 @@ class TestMarketActions(unittest.TestCase):
     def test_sell_share(self):
         line = 'player1 sells 4 shares of B&O and receives $284'
         expected = {
-            'action': 'ShareSold',
+            'action': market.MarketActions.SellShare.name,
             'player': 'player1',
             'percentage': '40',
             'company': 'B&O',
@@ -68,7 +68,7 @@ class TestMarketActions(unittest.TestCase):
     def test_bid(self):
         line = 'player1 bids $170 for Camden & Amboy'
         expected = {
-            'action': 'BidPlaced',
+            'action': market.MarketActions.PlaceBid.name,
             'player': 'player1',
             'amount': '170',
             'private': 'Camden & Amboy'
@@ -78,7 +78,7 @@ class TestMarketActions(unittest.TestCase):
     def test_par_company(self):
         line = 'player1 pars B&O at $82'
         expected = {
-            'action': 'CompanyPared',
+            'action': market.MarketActions.ParCompany.name,
             'player': 'player1',
             'amount': '82',
             'company': 'B&O'

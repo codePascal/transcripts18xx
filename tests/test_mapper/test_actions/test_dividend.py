@@ -10,7 +10,7 @@ class TestDividendActions(unittest.TestCase):
     def test_full_pay(self):
         line = 'B&O pays out $50 = $5 per share ($30 to player1, $5 to player2)'
         expected = {
-            'action': 'DividendPayed',
+            'action': dividend.DividedActions.PayDivided.name,
             'company': 'B&O',
             'amount': '50',
             'per_share': '5'
@@ -20,9 +20,8 @@ class TestDividendActions(unittest.TestCase):
     def test_withhold(self):
         line = 'B&O withholds $80'
         expected = {
-            'action': 'DividendWithheld',
+            'action': dividend.DividedActions.WithholdDivided.name,
             'company': 'B&O',
             'amount': '80'
         }
         self.assertEqual(expected, dividend.withhold(line))
-

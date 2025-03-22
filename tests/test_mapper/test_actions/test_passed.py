@@ -10,7 +10,7 @@ class TestPassActions(unittest.TestCase):
     def test_regular_pass(self):
         line = 'player1 passes'
         expected = {
-            'action': 'Passed',
+            'action': passed.PassedActions.Pass.name,
             'player': 'player1'
         }
         self.assertEqual(expected, passed.regular_pass(line))
@@ -18,7 +18,7 @@ class TestPassActions(unittest.TestCase):
     def test_no_valid_actions(self):
         line = 'player1 has no valid actions and passes'
         expected = {
-            'action': 'Passed',
+            'action': passed.PassedActions.Pass.name,
             'player': 'player1'
         }
         self.assertEqual(expected, passed.no_valid_actions(line))

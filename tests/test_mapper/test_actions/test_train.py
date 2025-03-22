@@ -10,7 +10,7 @@ class TestTrainActions(unittest.TestCase):
     def test_run_train(self):
         line = 'B&O runs a 3 train for $90: I15-H12-H10'
         expected = {
-            'action': 'TrainRan',
+            'action': train.TrainActions.RunTrain.name,
             'company': 'B&O',
             'train': '3',
             'amount': '90',
@@ -20,7 +20,7 @@ class TestTrainActions(unittest.TestCase):
 
         line = 'B&O runs a D train for $90: I15-H12-H10'
         expected = {
-            'action': 'TrainRan',
+            'action': train.TrainActions.RunTrain.name,
             'company': 'B&O',
             'train': 'D',
             'amount': '90',
@@ -31,7 +31,7 @@ class TestTrainActions(unittest.TestCase):
     def test_buy_train(self):
         line = 'B&O buys a 3 train for $180 from The Depot'
         expected = {
-            'action': 'TrainBought',
+            'action': train.TrainActions.BuyTrain.name,
             'company': 'B&O',
             'train': '3',
             'amount': '180',
@@ -42,7 +42,7 @@ class TestTrainActions(unittest.TestCase):
     def test_pass_train(self):
         line = 'B&O passes buy trains'
         expected = {
-            'action': 'TrainPassed',
+            'action': train.TrainActions.PassTrain.name,
             'company': 'B&O'
         }
         self.assertEqual(expected, train.pass_train(line))
@@ -50,7 +50,7 @@ class TestTrainActions(unittest.TestCase):
     def test_skip_run_train(self):
         line = 'B&O skips run routes'
         expected = {
-            'action': 'TrainRunSkipped',
+            'action': train.TrainActions.SkipRunTrain.name,
             'company': 'B&O',
         }
         self.assertEqual(expected, train.skip_run_train(line))
@@ -58,7 +58,7 @@ class TestTrainActions(unittest.TestCase):
     def test_skip_buy_train(self):
         line = 'B&O skips buy trains'
         expected = {
-            'action': 'TrainBuySkipped',
+            'action': train.TrainActions.SkipBuyTrain.name,
             'company': 'B&O',
         }
         self.assertEqual(expected, train.skip_buy_train(line))
@@ -66,7 +66,7 @@ class TestTrainActions(unittest.TestCase):
     def test_discard_train(self):
         line = 'B&O discards 3'
         expected = {
-            'action': 'TrainDiscarded',
+            'action': train.TrainActions.DiscardTrain.name,
             'company': 'B&O',
             'train': '3'
         }
@@ -75,7 +75,7 @@ class TestTrainActions(unittest.TestCase):
     def test_exchange_train(self):
         line = 'B&O exchanges a 4 for a D train for $800 from The Depot'
         expected = {
-            'action': 'TrainExchanged',
+            'action': train.TrainActions.ExchangeTrain.name,
             'company': 'B&O',
             'old_train': '4',
             'new_train': 'D',
@@ -87,7 +87,7 @@ class TestTrainActions(unittest.TestCase):
     def test_contribute_for_train(self):
         line = 'player1 contributes $990'
         expected = {
-            'action': 'TrainBuyContributed',
+            'action': train.TrainActions.ContributeTrain.name,
             'player': 'player1',
             'amount': '990'
         }

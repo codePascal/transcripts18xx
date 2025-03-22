@@ -10,7 +10,7 @@ class TestTileActions(unittest.TestCase):
     def test_lay_tile(self):
         line = 'B&O lays tile #7 with rotation 1 on I17'
         expected = {
-            'action': 'TilePlaced',
+            'action': tile.TileActions.LayTile.name,
             'company': 'B&O',
             'tile': '7',
             'rotation': '1',
@@ -21,7 +21,7 @@ class TestTileActions(unittest.TestCase):
         # TODO: what to do with `company (XY) ...`
         line = 'B&O (HO) spends $80 and lays tile #7 with rotation 1 on I17'
         expected = {
-            'action': 'TilePlaced',
+            'action': tile.TileActions.LayTile.name,
             'company': 'B&O (HO)',
             'amount': '80',
             'tile': '7',
@@ -33,7 +33,7 @@ class TestTileActions(unittest.TestCase):
     def test_skip_tile(self):
         line = 'B&O skips lay track'
         expected = {
-            'action': 'TileSkipped',
+            'action': tile.TileActions.SkipTile.name,
             'company': 'B&O'
         }
         self.assertEqual(expected, tile.skip_tile(line))
@@ -41,7 +41,7 @@ class TestTileActions(unittest.TestCase):
     def test_pass_tile(self):
         line = 'B&O passes lay/upgrade track'
         expected = {
-            'action': 'TilePassed',
+            'action': tile.TileActions.PassTile.name,
             'company': 'B&O'
         }
         self.assertEqual(expected, tile.pass_tile(line))

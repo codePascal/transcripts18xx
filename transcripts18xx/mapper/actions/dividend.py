@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import re
+import enum
+
+
+class DividedActions(enum.IntEnum):
+    PayDivided = 0
+    WithholdDivided = 1
 
 
 def actions(line: str) -> list:
@@ -14,7 +20,7 @@ def full_pay(line: str) -> dict | None:
     match = re.search(r'(.*?) pays out \$(\d+) = \$(\d+) per share', line)
     if match:
         return dict(
-            action='DividendPayed',
+            action=DividedActions.PayDivided.name,
             company=match.group(1),
             amount=match.group(2),
             per_share=match.group(3)
@@ -26,7 +32,7 @@ def withhold(line: str) -> dict | None:
     match = re.search(r'(.*?) withholds \$(\d+)', line)
     if match:
         return dict(
-            action='DividendWithheld',
+            action=DividedActions.WithholdDivided.name,
             company=match.group(1),
             amount=match.group(2)
         )

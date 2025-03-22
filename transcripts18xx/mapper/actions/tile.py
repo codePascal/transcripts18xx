@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import re
+import enum
+
+
+class TileActions(enum.IntEnum):
+    SkipTile = 0
+    LayTile = 1
+    PassTile = 2
 
 
 def actions(line: str) -> list:
@@ -21,7 +28,7 @@ def skip_tile(line: str) -> dict | None:
     match = re.search(r'(.*?) skips lay track', line)
     if match:
         return dict(
-            action='TileSkipped',
+            action=TileActions.SkipTile.name,
             company=match.group(1),
         )
     return None
@@ -31,7 +38,7 @@ def pass_tile(line: str) -> dict | None:
     match = re.search(r'(.*?) passes lay/upgrade track', line)
     if match:
         return dict(
-            action='TilePassed',
+            action=TileActions.PassTile.name,
             company=match.group(1)
         )
     return None
@@ -43,7 +50,7 @@ def _place_tile_for_free(line: str) -> dict | None:
     )
     if match:
         return dict(
-            action='TilePlaced',
+            action=TileActions.LayTile.name,
             company=match.group(1),
             tile=match.group(2),
             rotation=match.group(3),
@@ -59,7 +66,7 @@ def _place_tile_for_money(line: str) -> dict | None:
     )
     if match:
         return dict(
-            action='TilePlaced',
+            action=TileActions.LayTile.name,
             company=match.group(1),
             amount=match.group(2),
             tile=match.group(3),

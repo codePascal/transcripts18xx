@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import enum
 
 from . import dividend
 from . import market
@@ -8,6 +9,16 @@ from . import privates
 from . import tile
 from . import token
 from . import train
+
+
+class GameActions(enum.Enum):
+    Dividend = dividend.DividedActions
+    Market = market.MarketActions
+    Passed = passed.PassedActions
+    Privates = privates.PrivatesActions
+    Tile = tile.TileActions
+    Token = token.TokenActions
+    Train = train.TrainActions
 
 
 def actions(line: str) -> list:
