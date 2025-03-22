@@ -47,13 +47,17 @@ class GameTranscriptProcessor(object):
         print('Unprocessed lines:')
         for i, line in enumerate(lines):
             line = self._preprocess_line(line)
-            parsed_data = self._game.extract_pattern(line)
-            if parsed_data:
-                parsed_data['id'] = i
-                parsed_data['line'] = line
-                self._data.append(parsed_data)
-            else:
-                print(line)
+            try:
+                parsed_data = self._game.extract_pattern(line)
+                if parsed_data:
+                    parsed_data['id'] = i
+                    parsed_data['line'] = line
+                    self._data.append(parsed_data)
+                else:
+                    print(line)
+            except IndexError as e:
+                print('Index Error:', e)
+                print('Corresponding line:', line)
 
     def save_to_dataframe(self) -> pd.DataFrame:
         """Saves the extracted data as a structured pandas DataFrame.
