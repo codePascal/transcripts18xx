@@ -326,26 +326,67 @@ class TestCollect(BaseActionTest):
 class TestBuyPrivate(BaseActionTest):
 
     def test_match(self):
+        # Skip abstract class
+        pass
+
+
+class TestBuyPrivateFromPlayer(BaseActionTest):
+
+    def test_match(self):
         line = 'C&O buys Mohawk & Hudson from player1 for $240'
         expected = dict(
             parent='Action',
             type='BuyPrivate',
-            player='player1',
-            company='C&O',
+            source='player1',
+            entity='C&O',
             private='Mohawk & Hudson',
             amount='240'
         )
-        self.assertMatch(actions.BuyPrivate(), line, expected)
+        self.assertMatch(actions.BuyPrivateFromPlayer(), line, expected)
+
+
+class TestBuyPrivateFromAuction(BaseActionTest):
+
+    def test_match(self):
+        line = 'player1 buys Mohawk & Hudson for $240'
+        expected = dict(
+            parent='Action',
+            type='BuyPrivate',
+            source='Auction',
+            entity='player1',
+            private='Mohawk & Hudson',
+            amount='240'
+        )
+        self.assertMatch(actions.BuyPrivateFromAuction(), line, expected)
+
+
+class TestWinAuctionAgainst(BaseActionTest):
+
+    def test_match(self):
+        line = 'player1 wins the auction for Mohawk & Hudson with a bid of $240'
+        expected = dict(
+            parent='Action',
+            type='BuyPrivate',
+            source='Auction',
+            entity='player1',
+            private='Mohawk & Hudson',
+            amount='240'
+        )
+        self.assertMatch(actions.WinAuctionAgainst(), line, expected)
 
 
 class TestWinAuction(BaseActionTest):
 
     def test_match(self):
-        line = ''
+        line = str(
+            'player1 wins the auction for Mohawk & Hudson with the only bid of '
+            '$240'
+        )
         expected = dict(
             parent='Action',
             type='BuyPrivate',
-            player='player1',
+            source='Auction',
+            entity='player1',
             private='Mohawk & Hudson',
             amount='240'
         )

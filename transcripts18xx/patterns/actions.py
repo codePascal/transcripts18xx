@@ -295,50 +295,83 @@ class Collect(ActionHandler):
         )
 
 
-class BuyPrivate(ActionHandler):
+class BuyPrivate(ActionHandler, abc.ABC):
+
+    def __init__(self):
+        super().__init__()
+        self.type = Actions.BuyPrivate
+
+
+class BuyPrivateFromPlayer(BuyPrivate):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) buys (.*?) from (.*?) for \$(\d+)')
-        self.type = Actions.BuyPrivate
 
         self._dismiss = ['share', 'train']
         self._required = ['from']
 
     def _handle(self, line: str, match) -> dict:
         return dict(
-            company=match.group(1),
+            entity=match.group(1),
             private=match.group(2),
-            player=match.group(3),
+            source=match.group(3),
             amount=match.group(4)
         )
 
 
-class WinAuction(ActionHandler):
+class BuyPrivateFromAuction(BuyPrivate):
 
     def __init__(self):
         super().__init__()
-        # Different patterns:
-        # 1. Buys the first time
-        # 2. Others made a bid
-        # 3. No one else made a bid
-        self.pattern = [
-            r'(.*?) buys (.*?) for \$(\d+)',
-            r'(.*?) wins the auction for (.*?) with a bid of \$(\d+)',
-            r'(.*?) wins the auction for (.*?) with the only bid of \$(\d+)'
-        ]
-        self.type = Actions.BuyPrivate
+        self.pattern = re.compile(r'(.*?) buys (.*?) for \$(\d+)')
 
         self._dismiss = ['share', 'train', 'from']
 
-    def search(self, line: str) -> re.Match | None:
-        return self.pattern.search(line)
+    def _handle(self, line: str, match) -> dict:
+        return dict(
+            entity=match.group(1),
+            private=match.group(2),
+            amount=match.group(3),
+            source='Auction',
+        )
+
+
+class WinAuctionAgainst(BuyPrivate):
+
+    def __init__(self):
+        super().__init__()
+        self.pattern = re.compile(
+            r'(.*?) wins the auction for (.*?) with a bid of \$(\d+)'
+        )
+
+        self._dismiss = ['share', 'train', 'from']
 
     def _handle(self, line: str, match) -> dict:
         return dict(
-            player=match.group(1),
+            entity=match.group(1),
             private=match.group(2),
-            amount=match.group(3)
+            amount=match.group(3),
+            source='Auction',
+        )
+
+
+class WinAuction(BuyPrivate):
+
+    def __init__(self):
+        super().__init__()
+        self.pattern = re.compile(
+            r'(.*?) wins the auction for (.*?) with the only bid of \$(\d+)'
+        )
+
+        self._dismiss = ['share', 'train', 'from']
+
+    def _handle(self, line: str, match) -> dict:
+        return dict(
+            entity=match.group(1),
+            private=match.group(2),
+            amount=match.group(3),
+            source='Auction',
         )
 
 
