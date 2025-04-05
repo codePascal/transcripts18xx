@@ -69,11 +69,16 @@ class TestPatternHandler(unittest.TestCase):
         ret = self.cls._contains_required_key('Contains required key')
         self.assertTrue(ret)
 
-        ret = self.cls._contains_required_key('Contains required and wanted key')
+        ret = self.cls._contains_required_key(
+            'Contains required and wanted key')
         self.assertTrue(ret)
 
         ret = self.cls._contains_required_key('Contains requiredkey')
         self.assertFalse(ret)
 
 
+class TestPatternMatcher(unittest.TestCase):
 
+    def test(self):
+        cls = pattern.PatternMatcher(pattern.PatternHandler)
+        cls.run()
