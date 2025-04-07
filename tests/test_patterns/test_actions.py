@@ -4,7 +4,7 @@ import unittest
 
 from transcripts18xx.patterns import actions, pattern
 
-from .test_pattern import BasePatternTest
+from test_pattern import BasePatternTest
 
 
 class TestActionsMatcher(unittest.TestCase):
