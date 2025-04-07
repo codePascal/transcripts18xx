@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""preprocessing.py
+"""Game transcript preprocessing algorithm
 
 Module implements a transcript processor to process and parse game transcripts
 from 18xx.games.
