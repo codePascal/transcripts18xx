@@ -6,16 +6,6 @@ import unittest
 from transcripts18xx.patterns import pattern
 
 
-class PatternEmulator(pattern.PatternHandler):
-
-    def _handle(self, line: str, match) -> dict:
-        return dict(
-            source=match.group(1),
-            num=match.group(2),
-            lib=match.group(3)
-        )
-
-
 class BasePatternTest(unittest.TestCase):
 
     def assertMatch(self, action, line, expected):
@@ -26,8 +16,20 @@ class BasePatternTest(unittest.TestCase):
 class TestPatternHandler(unittest.TestCase):
 
     def setUp(self) -> None:
+        class PatternEmulator(pattern.PatternHandler):
+
+            def _handle(self, line: str, match) -> dict:
+                return dict(
+                    source=match.group(1),
+                    num=match.group(2),
+                    lib=match.group(3)
+                )
+
         self.cls = PatternEmulator()
         self.cls.pattern = re.compile(r'(.*?) runs (\d+) tests using (.*)')
+
+    def tearDown(self) -> None:
+        pass
 
     def test__search(self):
         match = self.cls._search('Carl runs 10 tests using pytest')
