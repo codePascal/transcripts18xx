@@ -16,10 +16,16 @@ class Game18xx(abc.ABC):
     Base class to define game patterns, i.e. how the lines of a transcript shall
     be parsed. By default, checks all available pattern matcher against the
     line.
+
+    Attributes:
+
     """
 
     def __init__(self):
-        pass
+        self.companies = set()
+        self.privates = set()
+        self.trains = set()
+        self.initial_round = str()
 
     @staticmethod
     def extract_pattern(line: str) -> dict | None:
@@ -44,6 +50,16 @@ class Game1830(Game18xx):
 
     def __init__(self):
         super().__init__()
+
+        self.companies = {
+            'B&M', 'B&O', 'C&O', 'CPR', 'ERIE', 'NYC', 'NYNH', 'PRR'
+        }
+        self.privates = {
+            'Baltimore & Ohio', 'Champlain & St.Lawrence', 'Mohawk & Hudson',
+            'Delaware & Hudson', 'Camden & Amboy', 'Schuylkill Valley'
+        }
+        self.trains = {'2', '3', '4', '5', '6', 'D'}
+        self.initial_round = 'ISR 1'
 
 
 class Games(enum.IntEnum):

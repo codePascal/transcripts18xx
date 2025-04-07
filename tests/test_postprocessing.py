@@ -1,23 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import unittest
-
 import pandas as pd
 
 from transcripts18xx.postprocessing import TranscriptPostProcessor
+from transcripts18xx.games import Game1830
 
 from tests import context
 
 
 class TestTranscriptPostProcessor1830(unittest.TestCase):
 
-    def setUp(self) -> None:
+    @classmethod
+    def setUpClass(cls) -> None:
         df = pd.read_csv(context.parsed_transcript_1830())
-        self.tpp = TranscriptPostProcessor(df)
+        tpp = TranscriptPostProcessor(df, Game1830())
+        tpp.process()
+        cls.df = tpp.save_to_dataframe(context.transcript_1830())
 
-    def tearDown(self) -> None:
-        self.tpp.save_to_dataframe(context.transcript_1830())
-
-    def test_postprocessing(self):
-        self.tpp.fill()
-        self.tpp.add_states()
+    def test(self):
+        pass
