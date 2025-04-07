@@ -6,8 +6,8 @@ Module implements caller class to run all pattern handlers on a line.
 """
 from itertools import chain
 
-from transcripts18xx.patterns import pattern
-from transcripts18xx.patterns import actions, events  # noqa
+from . import pattern
+from . import actions, events  # noqa
 
 
 class PatternMatcher(object):

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from transcripts18xx import mapper
+from transcripts18xx.patterns import mapper
 
 
 class TestPatternMatcher(unittest.TestCase):
