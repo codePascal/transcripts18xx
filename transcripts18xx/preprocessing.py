@@ -47,17 +47,13 @@ class GameTranscriptProcessor(object):
         unprocessed = list()
         for i, line in enumerate(lines):
             line = self._preprocess_line(line)
-            try:
-                parsed_data = self._game.extract_pattern(line)
-                if parsed_data:
-                    parsed_data['id'] = i
-                    parsed_data['line'] = line
-                    self._data.append(parsed_data)
-                else:
-                    unprocessed.append(line)
-            except IndexError as e:
-                print('Index Error:', e)
-                print('Corresponding line:', line)
+            parsed_data = self._game.extract_pattern(line)
+            if parsed_data:
+                parsed_data['id'] = i
+                parsed_data['line'] = line
+                self._data.append(parsed_data)
+            else:
+                unprocessed.append(line)
         if unprocessed:
             print('Unprocessed lines:')
             print('\n'.join(unprocessed))
