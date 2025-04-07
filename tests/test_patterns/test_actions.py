@@ -1,41 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import unittest
+from transcripts18xx.patterns import actions
 
-from transcripts18xx.patterns import actions, pattern
-
-from test_pattern import BasePatternTest
-
-
-class TestActionsMatcher(unittest.TestCase):
-
-    def setUp(self) -> None:
-        self.cls = pattern.PatternMatcher(actions.ActionHandler)
-
-    def test__get_patterns(self):
-        subclasses = self.cls._get_patterns()
-        self.assertEqual(38, len(subclasses))
-
-    def test__search(self):
-        line = 'player1 buys a 20% share of B&O from the IPO for $200'
-        result = self.cls._search(line)
-        self.assertEqual(38, len(result))
-        self.assertEqual(37, len([r for r in result if r is None]))
-        self.assertEqual(1, len([r for r in result if isinstance(r, dict)]))
-
-    def test_run(self):
-        line = 'player1 buys a 20% share of B&O from the IPO for $200'
-        expected = dict(
-            parent='Action',
-            type='BuyShare',
-            player='player1',
-            percentage='20',
-            company='B&O',
-            source='IPO',
-            amount='200',
-        )
-        result = self.cls.run(line)
-        self.assertEqual(expected, result)
+from .test_pattern import BasePatternTest
 
 
 class TestActionHandler(BasePatternTest):

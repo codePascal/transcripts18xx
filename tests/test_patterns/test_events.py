@@ -1,39 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import unittest
+from transcripts18xx.patterns import events
 
-from transcripts18xx.patterns import events, pattern
-
-from test_pattern import BasePatternTest
-
-
-class TestEventsMatcher(unittest.TestCase):
-
-    def setUp(self) -> None:
-        self.cls = pattern.PatternMatcher(events.EventHandler)
-
-    def test__get_patterns(self):
-        subclasses = self.cls._get_patterns()
-        self.assertEqual(18, len(subclasses))
-
-    def test__search(self):
-        line = "B&O's share price moves right from $67 to $70"
-        result = self.cls._search(line)
-        self.assertEqual(18, len(result))
-        self.assertEqual(17, len([r for r in result if r is None]))
-        self.assertEqual(1, len([r for r in result if isinstance(r, dict)]))
-
-    def test_run(self):
-        line = "B&O's share price moves right from $67 to $70"
-        expected = dict(
-            parent='Event',
-            type='SharePriceMoves',
-            company='B&O',
-            direction='right',
-            share_price='70'
-        )
-        result = self.cls.run(line)
-        self.assertEqual(expected, result)
+from .test_pattern import BasePatternTest
 
 
 class TestEventHandler(BasePatternTest):

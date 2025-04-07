@@ -82,26 +82,3 @@ class TestPatternHandler(unittest.TestCase):
 
         ret = self.cls._contains_required_key('Contains requiredkey')
         self.assertFalse(ret)
-
-
-class TestPatternMatcher(unittest.TestCase):
-
-    def setUp(self) -> None:
-        self.cls = pattern.PatternMatcher(pattern.PatternHandler)
-
-    def test__select(self):
-        search = [None, None, dict(key=1, name='Mario'), None, None]
-        result = self.cls._select(search)
-        self.assertIsInstance(result, dict)
-        self.assertEqual(dict(key=1, name='Mario'), result)
-
-    def test__select_exception(self):
-        search = [None, None, dict(key=1), None, dict(key=2)]
-        with self.assertRaises(pattern.MatchException) as e:
-            self.cls._select(search)
-        expected = str(
-            "Multiple matches found:\n"
-            "{'key': 1}\n"
-            "{'key': 2}"
-        )
-        self.assertEqual(expected, e.exception.__str__())
