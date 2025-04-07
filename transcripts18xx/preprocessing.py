@@ -9,7 +9,7 @@ import pandas as pd
 
 from pathlib import Path
 
-from transcripts18xx.games.pattern import GamePattern
+from .games import Game18xx
 
 
 class GameTranscriptProcessor(object):
@@ -24,10 +24,10 @@ class GameTranscriptProcessor(object):
 
     Args:
         transcript_file: The transcript file path.
-        game: The pattern to process each line in the file.
+        game: The game type of the transcript.
     """
 
-    def __init__(self, transcript_file: Path, game: GamePattern):
+    def __init__(self, transcript_file: Path, game: Game18xx):
         self._transcript_file = transcript_file
         self._game = game
         self._data = list()
