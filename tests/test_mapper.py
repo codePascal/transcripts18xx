@@ -20,17 +20,6 @@ class TestPatternMatcher(unittest.TestCase):
         self.assertIsInstance(result, dict)
         self.assertEqual(dict(key=1, name='Mario'), result)
 
-    def test__search(self):
-        line = 'player1 buys a 20% share of B&O from the IPO for $200'
-        result = self.cls._search(line)
-        self.assertEqual(55, len([r for r in result if r is None]))
-        self.assertEqual(1, len([r for r in result if isinstance(r, dict)]))
-
-        line = "B&O's share price moves right from $67 to $70"
-        result = self.cls._search(line)
-        self.assertEqual(55, len([r for r in result if r is None]))
-        self.assertEqual(1, len([r for r in result if isinstance(r, dict)]))
-
     def test__select_exception(self):
         search = [None, None, dict(key=1), None, dict(key=2)]
         with self.assertRaises(ValueError) as e:
@@ -42,7 +31,19 @@ class TestPatternMatcher(unittest.TestCase):
         )
         self.assertEqual(expected, e.exception.__str__())
 
-    def test_run(self):
+    def test__search_action(self):
+        line = 'player1 buys a 20% share of B&O from the IPO for $200'
+        result = self.cls._search(line)
+        self.assertEqual(55, len([r for r in result if r is None]))
+        self.assertEqual(1, len([r for r in result if isinstance(r, dict)]))
+
+    def test__search_event(self):
+        line = "B&O's share price moves right from $67 to $70"
+        result = self.cls._search(line)
+        self.assertEqual(55, len([r for r in result if r is None]))
+        self.assertEqual(1, len([r for r in result if isinstance(r, dict)]))
+
+    def test_run_action(self):
         line = 'player1 buys a 20% share of B&O from the IPO for $200'
         expected = dict(
             parent='Action',
@@ -56,6 +57,7 @@ class TestPatternMatcher(unittest.TestCase):
         result = self.cls.run(line)
         self.assertEqual(expected, result)
 
+    def test_run_event(self):
         line = "B&O's share price moves right from $67 to $70"
         expected = dict(
             parent='Event',
@@ -63,6 +65,16 @@ class TestPatternMatcher(unittest.TestCase):
             company='B&O',
             direction='right',
             share_price='70'
+        )
+        result = self.cls.run(line)
+        self.assertEqual(expected, result)
+
+    def test_run_pass(self):
+        line = 'player1 passes on Mohawk & Hudson'
+        expected = dict(
+            parent='Action',
+            type='Pass',
+            entity='player1',
         )
         result = self.cls.run(line)
         self.assertEqual(expected, result)
