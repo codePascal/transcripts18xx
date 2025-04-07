@@ -30,12 +30,13 @@ class PatternMatcher(object):
         return [cls().match(line) for cls in self._get_patterns()]
 
     @staticmethod
-    def _select(result: list) -> dict:
+    def _select(result: list, line: str) -> dict:
         # Retrieves the match from the search result.
         matches = [ret for ret in result if ret is not None]
         if len(matches) > 1:
             raise ValueError(
-                'Multiple matches found:\n{}'.format(
+                'Multiple matches found for line `{}`:\n{}'.format(
+                    line,
                     '\n'.join(m.__str__() for m in matches)
                 )
             )
@@ -81,5 +82,5 @@ class PatternMatcher(object):
             Value: If multiple patterns matched to the line.
         """
         result = self._search(line)
-        match = self._select(result)
+        match = self._select(result, line)
         return match
