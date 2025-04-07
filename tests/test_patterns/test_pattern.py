@@ -71,7 +71,7 @@ class TestPatternHandler(unittest.TestCase):
 
     def test__contains_required_key(self):
         ret = self.cls._contains_required_key('Some line to check')
-        self.assertTrue(ret)
+        self.assertFalse(ret)
 
         self.cls._required = ['required', 'wanted']
 

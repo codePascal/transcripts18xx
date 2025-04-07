@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from transcripts18xx.patterns import events
 
-from .test_pattern import BasePatternTest
+from tests.test_patterns.test_pattern import BasePatternTest
 
 
 class TestEventHandler(BasePatternTest):

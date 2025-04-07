@@ -149,12 +149,12 @@ class RegularPass(Pass):
         self.pattern = re.compile(r'(.*?) passes')  # search is different
 
         self._dismiss = [
-            'has no valid actions and passes',
-            'passes buy companies',
-            'passes on',
-            'passes lay/upgrade track',
-            'passes place a token',
-            'passes buy trains'
+            'actions',  # has no valid actions and passes
+            'buy',  # passes buy companies
+            'on',  # passes on private
+            'track',  # passes lay/upgrade track
+            'token',  # passes place a token
+            'trains'  # passes buy trains
         ]
 
     def _handle(self, line: str, match) -> dict:

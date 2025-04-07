@@ -69,8 +69,6 @@ class PatternHandler(abc.ABC):
 
     def _contains_required_key(self, line: str) -> bool:
         # Checks if required key exists in line as single word.
-        if not self._required:
-            return True
         return any(key in line.split() for key in self._required)
 
     def search(self, line: str) -> re.Match | None:
