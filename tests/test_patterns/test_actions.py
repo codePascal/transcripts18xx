@@ -4,11 +4,13 @@ import unittest
 
 from transcripts18xx.patterns import actions, pattern
 
+from .test_pattern import BasePatternTest
+
 
 class TestActionsMatcher(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.cls = pattern.PatternMatcher(actions.PatternHandler)
+        self.cls = pattern.PatternMatcher(actions.ActionHandler)
 
     def test__get_patterns(self):
         subclasses = self.cls._get_patterns()
@@ -20,23 +22,6 @@ class TestActionsMatcher(unittest.TestCase):
         self.assertEqual(38, len(result))
         self.assertEqual(37, len([r for r in result if r is None]))
         self.assertEqual(1, len([r for r in result if isinstance(r, dict)]))
-
-    def test__select(self):
-        search = [None, None, dict(key=1, name='Mario'), None, None]
-        result = self.cls._select(search)
-        self.assertIsInstance(result, dict)
-        self.assertEqual(dict(key=1, name='Mario'), result)
-
-    def test__select_exception(self):
-        search = [None, None, dict(key=1), None, dict(key=2)]
-        with self.assertRaises(pattern.MatchException) as e:
-            self.cls._select(search)
-        expected = str(
-            "Multiple matches found:\n"
-            "{'key': 1}\n"
-            "{'key': 2}"
-        )
-        self.assertEqual(expected, e.exception.__str__())
 
     def test_run(self):
         line = 'player1 buys a 20% share of B&O from the IPO for $200'
@@ -53,21 +38,14 @@ class TestActionsMatcher(unittest.TestCase):
         self.assertEqual(expected, result)
 
 
-class BaseActionTest(unittest.TestCase):
-
-    def assertMatch(self, action, line, expected):
-        result = action.match(line)
-        self.assertEqual(expected, result)
-
-
-class TestActionHandler(BaseActionTest):
+class TestActionHandler(BasePatternTest):
 
     def test_match(self):
         # Skip abstract class
         pass
 
 
-class TestPayOut(BaseActionTest):
+class TestPayOut(BasePatternTest):
 
     def test_match(self):
         line = 'B&O pays out $50 = $5 per share ($30 to player1, $5 to player2)'
@@ -81,7 +59,7 @@ class TestPayOut(BaseActionTest):
         self.assertMatch(actions.PayOut(), line, expected)
 
 
-class TestWithhold(BaseActionTest):
+class TestWithhold(BasePatternTest):
 
     def test_match(self):
         line = 'B&O withholds $80'
@@ -94,7 +72,7 @@ class TestWithhold(BaseActionTest):
         self.assertMatch(actions.Withhold(), line, expected)
 
 
-class TestBuyShare(BaseActionTest):
+class TestBuyShare(BasePatternTest):
 
     def test_match(self):
         line = 'player1 buys a 20% share of B&O from the IPO for $200'
@@ -110,14 +88,14 @@ class TestBuyShare(BaseActionTest):
         self.assertMatch(actions.BuyShare(), line, expected)
 
 
-class TestSellShare(BaseActionTest):
+class TestSellShare(BasePatternTest):
 
     def test_match(self):
         # Skip abstract class
         pass
 
 
-class TestSellSingleShare(BaseActionTest):
+class TestSellSingleShare(BasePatternTest):
 
     def test_match(self):
         line = 'player1 sells a 10% share of B&O and receives $67'
@@ -132,7 +110,7 @@ class TestSellSingleShare(BaseActionTest):
         self.assertMatch(actions.SellSingleShare(), line, expected)
 
 
-class TestSellMultipleShares(BaseActionTest):
+class TestSellMultipleShares(BasePatternTest):
 
     def test_match(self):
         line = 'player1 sells 3 shares of B&O and receives $234'
@@ -147,14 +125,14 @@ class TestSellMultipleShares(BaseActionTest):
         self.assertMatch(actions.SellMultipleShares(), line, expected)
 
 
-class TestPass(BaseActionTest):
+class TestPass(BasePatternTest):
 
     def test_match(self):
         # Skip abstract class
         pass
 
 
-class TestNoValidActions(BaseActionTest):
+class TestNoValidActions(BasePatternTest):
 
     def test_match(self):
         line = 'player1 has no valid actions and passes'
@@ -166,7 +144,7 @@ class TestNoValidActions(BaseActionTest):
         self.assertMatch(actions.NoValidActions(), line, expected)
 
 
-class TestRegularPass(BaseActionTest):
+class TestRegularPass(BasePatternTest):
 
     def test_match(self):
         line = 'player1 passes'
@@ -178,7 +156,7 @@ class TestRegularPass(BaseActionTest):
         self.assertMatch(actions.RegularPass(), line, expected)
 
 
-class TestPassBuyPrivate(BaseActionTest):
+class TestPassBuyPrivate(BasePatternTest):
 
     def test_match(self):
         line = 'player1 passes buy companies'
@@ -190,7 +168,7 @@ class TestPassBuyPrivate(BaseActionTest):
         self.assertMatch(actions.PassBuyPrivate(), line, expected)
 
 
-class TestPassAuction(BaseActionTest):
+class TestPassAuction(BasePatternTest):
 
     def test_match(self):
         line = 'player1 passes on Camden & Amboy'
@@ -202,7 +180,7 @@ class TestPassAuction(BaseActionTest):
         self.assertMatch(actions.PassAuction(), line, expected)
 
 
-class TestPassTile(BaseActionTest):
+class TestPassTile(BasePatternTest):
 
     def test_match(self):
         line = 'player1 passes lay/upgrade track'
@@ -214,7 +192,7 @@ class TestPassTile(BaseActionTest):
         self.assertMatch(actions.PassTile(), line, expected)
 
 
-class TestPassToken(BaseActionTest):
+class TestPassToken(BasePatternTest):
 
     def test_match(self):
         line = 'player1 passes place a token'
@@ -226,7 +204,7 @@ class TestPassToken(BaseActionTest):
         self.assertMatch(actions.PassToken(), line, expected)
 
 
-class TestPassBuyTrain(BaseActionTest):
+class TestPassBuyTrain(BasePatternTest):
 
     def test_match(self):
         line = 'player1 passes buy trains'
@@ -238,14 +216,14 @@ class TestPassBuyTrain(BaseActionTest):
         self.assertMatch(actions.PassBuyTrain(), line, expected)
 
 
-class TestSkip(BaseActionTest):
+class TestSkip(BasePatternTest):
 
     def test_match(self):
         # Skip abstract class
         pass
 
 
-class TestDeclineSellShare(BaseActionTest):
+class TestDeclineSellShare(BasePatternTest):
 
     def test_match(self):
         line = 'player1 declines to sell shares'
@@ -257,7 +235,7 @@ class TestDeclineSellShare(BaseActionTest):
         self.assertMatch(actions.DeclineSellShare(), line, expected)
 
 
-class TestDeclineBuyShare(BaseActionTest):
+class TestDeclineBuyShare(BasePatternTest):
 
     def test_match(self):
         line = 'player1 declines to buy shares'
@@ -269,7 +247,7 @@ class TestDeclineBuyShare(BaseActionTest):
         self.assertMatch(actions.DeclineBuyShare(), line, expected)
 
 
-class TestSkipBuyPrivate(BaseActionTest):
+class TestSkipBuyPrivate(BasePatternTest):
 
     def test_match(self):
         line = 'player1 skips buy companies'
@@ -281,7 +259,7 @@ class TestSkipBuyPrivate(BaseActionTest):
         self.assertMatch(actions.SkipBuyPrivate(), line, expected)
 
 
-class TestSkipLayTile(BaseActionTest):
+class TestSkipLayTile(BasePatternTest):
 
     def test_match(self):
         line = 'player1 skips lay track'
@@ -293,7 +271,7 @@ class TestSkipLayTile(BaseActionTest):
         self.assertMatch(actions.SkipLayTile(), line, expected)
 
 
-class TestSkipPlaceToken(BaseActionTest):
+class TestSkipPlaceToken(BasePatternTest):
 
     def test_match(self):
         line = 'player1 skips place a token'
@@ -305,7 +283,7 @@ class TestSkipPlaceToken(BaseActionTest):
         self.assertMatch(actions.SkipPlaceToken(), line, expected)
 
 
-class TestSkipBuyTrain(BaseActionTest):
+class TestSkipBuyTrain(BasePatternTest):
 
     def test_match(self):
         line = 'player1 skips buy trains'
@@ -317,7 +295,7 @@ class TestSkipBuyTrain(BaseActionTest):
         self.assertMatch(actions.SkipBuyTrain(), line, expected)
 
 
-class TestSkipRunTrain(BaseActionTest):
+class TestSkipRunTrain(BasePatternTest):
 
     def test_match(self):
         line = 'player1 skips run routes'
@@ -329,7 +307,7 @@ class TestSkipRunTrain(BaseActionTest):
         self.assertMatch(actions.SkipRunTrain(), line, expected)
 
 
-class TestParCompany(BaseActionTest):
+class TestParCompany(BasePatternTest):
 
     def test_match(self):
         line = 'player1 pars C&O at $90'
@@ -343,7 +321,7 @@ class TestParCompany(BaseActionTest):
         self.assertMatch(actions.ParCompany(), line, expected)
 
 
-class TestBid(BaseActionTest):
+class TestBid(BasePatternTest):
 
     def test_match(self):
         line = 'player1 bids $150 for Mohawk & Hudson'
@@ -357,7 +335,7 @@ class TestBid(BaseActionTest):
         self.assertMatch(actions.Bid(), line, expected)
 
 
-class TestCollect(BaseActionTest):
+class TestCollect(BasePatternTest):
 
     def test_match(self):
         line = 'player1 collects $20 from Mohawk & Hudson'
@@ -371,14 +349,14 @@ class TestCollect(BaseActionTest):
         self.assertMatch(actions.Collect(), line, expected)
 
 
-class TestBuyPrivate(BaseActionTest):
+class TestBuyPrivate(BasePatternTest):
 
     def test_match(self):
         # Skip abstract class
         pass
 
 
-class TestBuyPrivateFromPlayer(BaseActionTest):
+class TestBuyPrivateFromPlayer(BasePatternTest):
 
     def test_match(self):
         line = 'C&O buys Mohawk & Hudson from player1 for $240'
@@ -393,7 +371,7 @@ class TestBuyPrivateFromPlayer(BaseActionTest):
         self.assertMatch(actions.BuyPrivateFromPlayer(), line, expected)
 
 
-class TestBuyPrivateFromAuction(BaseActionTest):
+class TestBuyPrivateFromAuction(BasePatternTest):
 
     def test_match(self):
         line = 'player1 buys Mohawk & Hudson for $240'
@@ -408,7 +386,7 @@ class TestBuyPrivateFromAuction(BaseActionTest):
         self.assertMatch(actions.BuyPrivateFromAuction(), line, expected)
 
 
-class TestWinAuctionAgainst(BaseActionTest):
+class TestWinAuctionAgainst(BasePatternTest):
 
     def test_match(self):
         line = 'player1 wins the auction for Mohawk & Hudson with a bid of $240'
@@ -423,7 +401,7 @@ class TestWinAuctionAgainst(BaseActionTest):
         self.assertMatch(actions.WinAuctionAgainst(), line, expected)
 
 
-class TestWinAuction(BaseActionTest):
+class TestWinAuction(BasePatternTest):
 
     def test_match(self):
         line = str(
@@ -441,14 +419,14 @@ class TestWinAuction(BaseActionTest):
         self.assertMatch(actions.WinAuction(), line, expected)
 
 
-class TestLayTile(BaseActionTest):
+class TestLayTile(BasePatternTest):
 
     def test_match(self):
         # Skip abstract class
         pass
 
 
-class TestLayTileForMoney(BaseActionTest):
+class TestLayTileForMoney(BasePatternTest):
 
     def test_match(self):
         line = str(
@@ -466,7 +444,7 @@ class TestLayTileForMoney(BaseActionTest):
         self.assertMatch(actions.LayTileForMoney(), line, expected)
 
 
-class TestLayTileForFree(BaseActionTest):
+class TestLayTileForFree(BasePatternTest):
 
     def test_match(self):
         line = 'C&O lays tile #2 with rotation 0 on H15 (City)'
@@ -482,14 +460,14 @@ class TestLayTileForFree(BaseActionTest):
         self.assertMatch(actions.LayTileForFree(), line, expected)
 
 
-class TestPlaceToken(BaseActionTest):
+class TestPlaceToken(BasePatternTest):
 
     def test_match(self):
         # Skip abstract class
         pass
 
 
-class TestPlaceTokenForMoney(BaseActionTest):
+class TestPlaceTokenForMoney(BasePatternTest):
 
     def test_match(self):
         line = 'C&O places a token on H15 (City) for $30'
@@ -503,7 +481,7 @@ class TestPlaceTokenForMoney(BaseActionTest):
         self.assertMatch(actions.PlaceTokenForMoney(), line, expected)
 
 
-class TestPlaceTokenForFree(BaseActionTest):
+class TestPlaceTokenForFree(BasePatternTest):
 
     def test_match(self):
         line = 'C&O places a token on H15 (City)'
@@ -517,7 +495,7 @@ class TestPlaceTokenForFree(BaseActionTest):
         self.assertMatch(actions.PlaceTokenForFree(), line, expected)
 
 
-class TestBuyTrain(BaseActionTest):
+class TestBuyTrain(BasePatternTest):
 
     def test_match(self):
         line = 'C&O buys a D train for $800 from The Depot'
@@ -532,7 +510,7 @@ class TestBuyTrain(BaseActionTest):
         self.assertMatch(actions.BuyTrain(), line, expected)
 
 
-class TestRunTrain(BaseActionTest):
+class TestRunTrain(BasePatternTest):
 
     def test_match(self):
         line = 'B&O runs a 6 train for $560: H15-H14-B13-E14-C13-B12'
@@ -547,7 +525,7 @@ class TestRunTrain(BaseActionTest):
         self.assertMatch(actions.RunTrain(), line, expected)
 
 
-class TestDiscardTrain(BaseActionTest):
+class TestDiscardTrain(BasePatternTest):
 
     def test_match(self):
         line = 'B&O discards 4'
@@ -560,7 +538,7 @@ class TestDiscardTrain(BaseActionTest):
         self.assertMatch(actions.DiscardTrain(), line, expected)
 
 
-class TestExchangeTrain(BaseActionTest):
+class TestExchangeTrain(BasePatternTest):
 
     def test_match(self):
         line = 'C&O exchanges a 4 for a D train for $600 from The Depot'
@@ -576,7 +554,7 @@ class TestExchangeTrain(BaseActionTest):
         self.assertMatch(actions.ExchangeTrain(), line, expected)
 
 
-class TestContribute(BaseActionTest):
+class TestContribute(BasePatternTest):
 
     def test_match(self):
         line = 'player1 contributes $511'
