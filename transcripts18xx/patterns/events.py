@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Event matching and processing.
+
+Module implements pattern handlers for events appearing during the game. This
+events can be triggered by player or company actions or by another event.
+"""
 import re
 import abc
 
@@ -7,6 +12,10 @@ from .pattern import PatternHandler, PatternType, PatternParent
 
 
 class Events(PatternType):
+    """Events
+
+    Enum class describing the events appearing during the game.
+    """
     ReceiveShare = 0
     ReceiveFunds = 1
     CompanyFloats = 2

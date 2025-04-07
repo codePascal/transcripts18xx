@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Action matching and processing.
+
+Module implements pattern handlers for actions performed by a player of a
+company during the game.
+"""
 import re
 import abc
 
@@ -7,6 +12,10 @@ from .pattern import PatternHandler, PatternType, PatternParent
 
 
 class Actions(PatternType):
+    """Actions
+
+    Enum class describing the actions performed by a player of a company.
+    """
     PayOut = 0
     Withhold = 1
     BuyShare = 2

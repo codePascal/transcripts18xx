@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Basic pattern matching and processing.
+
+Module implements abstract base classes to match patterns to a string and
+run some post-processing on the line if a match was found.
+"""
 import abc
 import enum
 import re
@@ -36,8 +41,9 @@ class PatternHandler(abc.ABC):
         parent: The pattern group the pattern is part of, see `PatternParent`.
         _dismiss: Keywords that result in the line being ignored if they exist
             in the line.
-        _required: Keywords that need to be found in the line. Otherwise the
-            line is ignored.
+        _required: Keywords that need to be found in the line. Otherwise, the
+            line is ignored. If multiple keywords are given, only one must be
+            found for the line to be checked.
     """
 
     def __init__(self):
@@ -115,6 +121,7 @@ class PatternHandler(abc.ABC):
 
 
 class MatchException(Exception):
+    """Exception for the pattern matcher."""
     pass
 
 
@@ -194,5 +201,3 @@ class PatternMatcher(abc.ABC):
         result = self._search(line)
         match = self._select(result)
         return match
-
-        # TODO: map class to action
