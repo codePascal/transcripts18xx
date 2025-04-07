@@ -44,7 +44,7 @@ class GameTranscriptProcessor(object):
         """Reads and extracts actions and events from the game transcript."""
         with open(self._transcript_file, 'r', encoding='utf-8') as file:
             lines = file.readlines()
-        print('Unprocessed lines:')
+        unprocessed = list()
         for i, line in enumerate(lines):
             line = self._preprocess_line(line)
             try:
@@ -54,10 +54,13 @@ class GameTranscriptProcessor(object):
                     parsed_data['line'] = line
                     self._data.append(parsed_data)
                 else:
-                    print(line)
+                    unprocessed.append(line)
             except IndexError as e:
                 print('Index Error:', e)
                 print('Corresponding line:', line)
+        if unprocessed:
+            print('Unprocessed lines:')
+            print('\n'.join(unprocessed))
 
     def save_to_dataframe(self) -> pd.DataFrame:
         """Saves the extracted data as a structured pandas DataFrame.
