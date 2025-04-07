@@ -65,6 +65,8 @@ class ReceiveFunds(EventHandler):
         self.pattern = re.compile(r'(.*?) receives \$(\d+)')
         self.type = Events.ReceiveFunds
 
+        self._dismiss = ['sells']
+
     def _handle(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
