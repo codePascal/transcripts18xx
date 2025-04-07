@@ -270,7 +270,7 @@ class ParCompany(ActionHandler):
         return dict(
             player=match.group(1),
             company=match.group(2),
-            amount=match.group(3)
+            share_price=match.group(3)
         )
 
 

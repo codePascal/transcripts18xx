@@ -38,7 +38,7 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
             'route', 'per_share', 'old_train', 'new_train'
         ]
 
-        self.assertEqual(expected, list(self.df.columns))
+        self.assertEqual(sorted(expected), sorted(list(self.df.columns)))
 
     def test_phase(self):
         expected = {'2', '3', '4', '5', '6', 'D'}

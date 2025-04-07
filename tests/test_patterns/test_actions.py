@@ -283,7 +283,7 @@ class TestParCompany(BasePatternTest):
             type='Par',
             player='player1',
             company='C&O',
-            amount='90'
+            share_price='90'
         )
         self.assertMatch(actions.ParCompany(), line, expected)
 
