@@ -7,8 +7,9 @@ from transcripts18xx import games
 
 class TestG18xx(unittest.TestCase):
 
-    def setUp(self) -> None:
-        self.cls = games.Game18xx()
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.game = games.Game18xx()
 
     def test_extract_pattern_event(self):
         line = 'player1 receives a 20% share of B&O'
@@ -19,7 +20,7 @@ class TestG18xx(unittest.TestCase):
             player='player1',
             percentage='20'
         )
-        self.assertEqual(expected, self.cls.extract_pattern(line))
+        self.assertEqual(expected, self.game.extract_pattern(line))
 
     def test_extract_pattern_action(self):
         line = 'B&O pays out $50 = $5 per share ($30 to player1, $5 to player2)'
@@ -30,7 +31,7 @@ class TestG18xx(unittest.TestCase):
             amount='50',
             per_share='5',
         )
-        self.assertEqual(expected, self.cls.extract_pattern(line))
+        self.assertEqual(expected, self.game.extract_pattern(line))
 
 
 class TestGames(unittest.TestCase):
@@ -44,4 +45,3 @@ class TestGames(unittest.TestCase):
     def test_select(self):
         game = games.Games.G1830
         self.assertIsInstance(game.select(), games.Game1830)
-

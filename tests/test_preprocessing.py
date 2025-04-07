@@ -1,25 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import shutil
 import unittest
 
 import pandas as pd
 
 from transcripts18xx.preprocessing import GameTranscriptProcessor
-from transcripts18xx.games import g1830
+from transcripts18xx.games import Game1830
 
 from tests import context
 
 
-class TestGameTranscriptProcessor1817(unittest.TestCase):
-
-    def setUp(self) -> None:
-        pass
-
-    def tearDown(self) -> None:
-        pass
-
-
 class TestGameTranscriptProcessor1830(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        gtp = GameTranscriptProcessor(context.transcript_1830(), Game1830())
+        gtp.parse_transcript()
+        cls.df = gtp.save_to_dataframe()
 
     @staticmethod
     def _set_not_nan(ser: pd.Series) -> set:
@@ -28,57 +26,43 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
     def _type_int(self, ser: pd.Series) -> bool:
         return any(float(s).is_integer() for s in self._set_not_nan(ser))
 
-    def setUp(self) -> None:
-        gtp = GameTranscriptProcessor(
-            context.transcript_1830(), g1830.Game1830()
-        )
-        gtp.parse_transcript()
-        self.df = gtp.save_to_dataframe()
-
-    def tearDown(self) -> None:
-        pass
-
     def test_shape(self):
         self.assertEqual(1346, self.df.shape[0])
         self.assertEqual(23, self.df.shape[1])
 
     def test_columns(self):
         expected = [
-            'event', 'phase', 'id', 'line', 'action', 'player', 'amount',
-            'private', 'percentage', 'company', 'round', 'source', 'who',
-            'location', 'tile', 'rotation', 'direction', 'share_price',
-            'train', 'route', 'per_share', 'old_train', 'new_train'
+            'phase', 'type', 'parent', 'id', 'line', 'player', 'amount',
+            'private', 'entity', 'source', 'percentage', 'company', 'round',
+            'location', 'tile', 'rotation', 'direction', 'share_price', 'train',
+            'route', 'per_share', 'old_train', 'new_train'
         ]
-        self.assertEqual(expected, list(self.df.columns))
 
-    def test_event(self):
-        expected = {
-            'PrivateAuctioned', 'DoesNotRun', 'TrainRust', 'SelectsHome',
-            'OperatesCompany', 'GameOver', 'OperatingRound',
-            'PresidentNomination', 'NewPhase', 'CompanyFloats', 'BankBroke',
-            'PrivateClosed', 'AllPrivatesClosed', 'PriorityDeal', 'StockRound',
-            'SharePriceMoves'
-        }
-        self.assertEqual(expected, self._set_not_nan(self.df.event))
+        self.assertEqual(expected, list(self.df.columns))
 
     def test_phase(self):
         expected = {'2', '3', '4', '5', '6', 'D'}
         self.assertEqual(expected, self._set_not_nan(self.df.phase))
 
+    def test_type(self):
+        expected = {
+            'AllPrivatesClose', 'BankBroke', 'Bid', 'BuyPrivate', 'BuyShare',
+            'BuyTrain', 'Collect', 'CompanyFloats', 'Contribute',
+            'DiscardTrain', 'DoesNotRun', 'ExchangeTrain', 'GameOver',
+            'LayTile', 'NewPhase', 'OperatesCompany', 'OperatingRound', 'Par',
+            'Pass', 'PayOut', 'PlaceToken', 'PresidentNomination',
+            'PriorityDeal', 'PrivateAuctioned', 'PrivateCloses', 'ReceiveFunds',
+            'ReceiveShare', 'RunTrain', 'SelectsHome', 'SellShares',
+            'SharePriceMoves', 'Skip', 'StockRound', 'TrainsRust', 'Withhold'
+        }
+        self.assertEqual(expected, self._set_not_nan(self.df['type']))
+
+    def test_parent(self):
+        expected = {'Action', 'Event'}
+        self.assertEqual(expected, self._set_not_nan(self.df.parent))
+
     def test_id(self):
         self.assertEqual(self.df.shape[0], len(self._set_not_nan(self.df.id)))
-
-    def test_action(self):
-        expected = {
-            'BuyPrivate', 'BuyShare', 'BuyTrain', 'CollectPrivate',
-            'ContributeTrain', 'DiscardTrain', 'ExchangeTrain', 'LayTile',
-            'ParCompany', 'Pass', 'PassAuction', 'PassPrivate', 'PassTile',
-            'PassToken', 'PassTrain', 'PayDivided', 'PlaceBid', 'PlaceToken',
-            'ReceiveFunds', 'ReceiveShare', 'RunTrain', 'SellShare',
-            'SkipBuyTrain', 'SkipPrivate', 'SkipRunTrain', 'SkipShare',
-            'SkipTile', 'SkipToken', 'WithholdDivided'
-        }
-        self.assertEqual(expected, self._set_not_nan(self.df.action))
 
     def test_player(self):
         expected = {'mpcoyne', 'riverfiend', 'mpakfm', 'leesin'}
@@ -94,11 +78,29 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
         }
         self.assertEqual(expected, self._set_not_nan(self.df.private))
 
+    def test_entity(self):
+        expected = {
+            'B&M', 'B&O', 'C&O', 'CPR', 'ERIE', 'NYC', 'NYNH', 'PRR', 'leesin',
+            'mpakfm', 'mpcoyne', 'riverfiend'
+        }
+        self.assertEqual(expected, self._set_not_nan(self.df.entity))
+
+    def test_source(self):
+        expected = {
+            'Auction', 'B&M', 'Baltimore & Ohio', 'Camden & Amboy',
+            'Champlain & St.Lawrence', 'Delaware & Hudson', 'ERIE', 'IPO',
+            'Mohawk & Hudson', 'NYNH', 'Schuylkill Valley', 'The Depot',
+            'leesin', 'market', 'mpcoyne', 'riverfiend'
+        }
+        self.assertEqual(expected, self._set_not_nan(self.df.source))
+
     def test_percentage(self):
         self.assertTrue(self._type_int(self.df.percentage))
 
     def test_company(self):
-        expected = {'PRR', 'B&O', 'C&O', 'B&M', 'NYC', 'NYNH', 'ERIE', 'CPR'}
+        expected = {
+            'B&M', 'CPR', 'NYC', 'NYNH', 'ERIE', 'C&O', 'B&O', 'C&O (DH)', 'PRR'
+        }
         self.assertEqual(expected, self._set_not_nan(self.df.company))
 
     def test_round(self):
@@ -114,21 +116,6 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
             'SR 1', 'SR 2', 'SR 3', 'SR 4', 'SR 5', 'SR 6', 'SR 7', 'SR 8'
         }
         self.assertEqual(expected, self._set_not_nan(self.df['round']))
-
-    def test_source(self):
-        expected = {
-            'B&M', 'Baltimore & Ohio', 'Camden & Amboy',
-            'Champlain & St.Lawrence', 'Delaware & Hudson', 'ERIE', 'IPO',
-            'Mohawk & Hudson', 'NYNH', 'Schuylkill Valley', 'The Depot',
-            'market'
-        }
-        self.assertEqual(expected, self._set_not_nan(self.df.source))
-
-    def test_who(self):
-        expected = {
-            'B&O', 'leesin', 'riverfiend', 'C&O', 'mpakfm', 'PRR', 'mpcoyne'
-        }
-        self.assertEqual(expected, self._set_not_nan(self.df.who))
 
     def test_location(self):
         expected = {
