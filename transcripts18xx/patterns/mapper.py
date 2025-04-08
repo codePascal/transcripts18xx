@@ -2,12 +2,42 @@
 # -*- coding: utf-8 -*-
 """Pattern mapping algorithm
 
-Module implements caller class to run all pattern handlers on a line.
+Module implements caller classes to run all pattern handlers.
 """
 from itertools import chain
 
 from . import pattern
 from . import actions, events  # noqa
+
+
+class Patterns(object):
+    """Patterns
+
+    """
+
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def _patterns(cls=pattern.PatternHandler):
+        # Searches subclasses iteratively.
+        return list(chain.from_iterable(
+            [list(chain.from_iterable([[x], Patterns._patterns(x)])) for x
+             in cls.__subclasses__()])
+        )
+
+    @staticmethod
+    def _is_abstract(cls):
+        # Verifies if class is abstract.
+        return bool(getattr(cls, '__abstractmethods__', False))
+
+    def patterns(self):
+        """Retrieves pattern handlers.
+
+        Returns:
+            Concrete subclasses of the parent class.
+        """
+        return [cls for cls in self._patterns() if not self._is_abstract(cls)]
 
 
 class PatternMatcher(object):
@@ -17,17 +47,11 @@ class PatternMatcher(object):
     """
 
     def __init__(self):
-        self._cls = pattern.PatternHandler
-
-    def _get_patterns(self):
-        # Returns the concrete pattern subclasses.
-        return [
-            cls for cls in self.patterns(self._cls) if not self.is_abstract(cls)
-        ]
+        self._algo = Patterns()
 
     def _search(self, line: str) -> list:
         # Invokes the pattern matching.
-        return [cls().match(line) for cls in self._get_patterns()]
+        return [cls().match(line) for cls in self._algo.patterns()]
 
     @staticmethod
     def _select(result: list, line: str) -> dict:
@@ -41,33 +65,6 @@ class PatternMatcher(object):
                 )
             )
         return matches[0]
-
-    @staticmethod
-    def patterns(cls):
-        """Retrieves all subclasses of a parent class.
-
-        Args:
-            cls: Parent class.
-
-        Returns:
-            Subclasses of the parent class.
-        """
-        return list(chain.from_iterable(
-            [list(chain.from_iterable([[x], PatternMatcher.patterns(x)])) for x
-             in cls.__subclasses__()])
-        )
-
-    @staticmethod
-    def is_abstract(cls):
-        """Verifies if a class is an abstract class.
-
-        Args:
-            cls: The class to verify.
-
-        Returns:
-            True if class is abstract, False otherwise.
-        """
-        return bool(getattr(cls, '__abstractmethods__', False))
 
     def run(self, line: str) -> dict:
         """Matches and processes a line to child patterns.

@@ -5,15 +5,26 @@ import unittest
 from transcripts18xx.patterns import mapper
 
 
+class TestPatterns(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.pattern = mapper.Patterns()
+
+    def test__patterns(self):
+        subclasses = self.pattern._patterns()
+        self.assertEqual(61, len(subclasses))
+
+    def test_patterns(self):
+        subclasses = self.pattern.patterns()
+        self.assertEqual(56, len(subclasses))
+
+
 class TestPatternMatcher(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
         cls.matcher = mapper.PatternMatcher()
-
-    def test__get_patterns(self):
-        subclasses = self.matcher._get_patterns()
-        self.assertEqual(56, len(subclasses))
 
     def test__select(self):
         search = [None, None, dict(key=1, name='Mario'), None, None]
