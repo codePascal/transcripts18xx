@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
+"""Game transcript post-processing algorithm
+
+Module implements a post-processing algorithm to clean parsed game transcripts.
 """
 import re
 import pandas as pd
@@ -8,10 +10,21 @@ import pandas as pd
 from pathlib import Path
 
 from .games import Game18xx
-from .states.mapper import StatesMapper
 
 
 class TranscriptPostProcessor(object):
+    """TranscriptPostProcessor.
+
+    Class to post-process and clean parsed game transcripts.
+
+    Attributes:
+        _df: The parsed transcript.
+        _game: The underlying 18xx game.
+
+    Args:
+        df: The parsed transcript.
+        game: The underlying 18xx game.
+    """
 
     def __init__(self, df: pd.DataFrame, game: Game18xx):
         self._df = df
@@ -62,17 +75,15 @@ class TranscriptPostProcessor(object):
             lambda x: self.clean_brackets(x)
         )
 
-    def process(self):
+    def process(self) -> None:
+        """Processes and cleans the parsed transcript.
+        """
         self._map_phase()
         self._map_rounds()
         self._remove_transcript_lines()
         self._map_entity()
         self._clean_locations()
         self._clean_companies()
-
-    def add_states(self):
-        mapper = StatesMapper(self._df)
-        mapper.map()
 
     def save_to_dataframe(self, transcript_file: Path) -> pd.DataFrame:
         """Saves the processed data as a structured pandas DataFrame.
@@ -82,7 +93,7 @@ class TranscriptPostProcessor(object):
         colon a separator.
 
         Returns:
-            The parsed data as pandas DataFrame.
+            The processed data as pandas DataFrame.
         """
         filepath = transcript_file.parent.joinpath(
             transcript_file.stem + '_processed.csv'

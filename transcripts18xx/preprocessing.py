@@ -19,12 +19,12 @@ class GameTranscriptProcessor(object):
 
     Attributes:
         _transcript_file: The transcript file path.
-        _game: The pattern to process each line in the file.
+        _game: The underlying 18xx game.
         _data: Data container to save the processed lines as dicts.
 
     Args:
         transcript_file: The transcript file path.
-        game: The game type of the transcript.
+        game: The underlying 18xx game.
     """
 
     def __init__(self, transcript_file: Path, game: Game18xx):

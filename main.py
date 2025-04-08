@@ -7,7 +7,7 @@ from pathlib import Path
 
 from transcripts18xx.preprocessing import GameTranscriptProcessor
 from transcripts18xx.postprocessing import TranscriptPostProcessor
-from transcripts18xx.games import selector
+from transcripts18xx.games import Games
 
 
 def parse_arguments():
@@ -16,8 +16,8 @@ def parse_arguments():
     )
     parser.add_argument(
         'game',
-        type=selector.Games.argparse,
-        choices=list(selector.Games),
+        type=Games.argparse,
+        choices=list(Games),
         help='Game name of transcript, e.g. G1830',
     )
     parser.add_argument(
@@ -29,7 +29,7 @@ def parse_arguments():
 
 
 def main():
-    game = selector.select_game(args.game)
+    game = args.game.select()
     if not args.transcript.exists():
         sys.exit('Transcript does not exist: {}'.format(args.transcript))
 
@@ -37,7 +37,9 @@ def main():
     gtp.parse_transcript()
     df = gtp.save_to_dataframe()
 
-    tpp = TranscriptPostProcessor(df)
+    tpp = TranscriptPostProcessor(df, game)
+    tpp.process()
+    df = gtp.save_to_dataframe()
 
 
 if __name__ == '__main__':
