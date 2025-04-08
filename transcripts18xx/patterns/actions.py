@@ -157,11 +157,6 @@ class RegularPass(Pass):
             'trains'  # passes buy trains
         ]
 
-    def _handle(self, line: str, match) -> dict:
-        return dict(
-            entity=match.group(1)
-        )
-
 
 class PassBuyPrivate(Pass):
 
