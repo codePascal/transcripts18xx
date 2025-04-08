@@ -11,27 +11,12 @@ class TestG18xx(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.game = games.Game18xx()
 
-    def test_extract_pattern_event(self):
-        line = 'player1 receives a 20% share of B&O'
-        expected = dict(
-            parent='Event',
-            type='ReceiveShare',
-            company='B&O',
-            player='player1',
-            percentage='20'
-        )
-        self.assertEqual(expected, self.game.extract_pattern(line))
 
-    def test_extract_pattern_action(self):
-        line = 'B&O pays out $50 = $5 per share ($30 to player1, $5 to player2)'
-        expected = dict(
-            parent='Action',
-            type='PayOut',
-            company='B&O',
-            amount='50',
-            per_share='5',
-        )
-        self.assertEqual(expected, self.game.extract_pattern(line))
+class TestG1830(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.game = games.Game1830()
 
 
 class TestGames(unittest.TestCase):

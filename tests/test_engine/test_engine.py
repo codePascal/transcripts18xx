@@ -20,11 +20,11 @@ class TestEngineSteps(unittest.TestCase):
         self.assertEqual(56, len(subclasses))
 
 
-class TestStepMatcher(unittest.TestCase):
+class TestLineParser(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.matcher = engine.StepMatcher()
+        cls.matcher = engine.LineParser()
 
     def test__select(self):
         search = [None, None, dict(key=1, name='Mario'), None, None]
@@ -92,36 +92,36 @@ class TestStepMatcher(unittest.TestCase):
         self.assertEqual(expected, result)
 
 
-class TestStepProcessor(unittest.TestCase):
+class TestStepMapper(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.processor = engine.StepMapper()
+        cls.mapper = engine.StepMapper()
 
     def test__search(self):
-        step = self.processor._search(engine.actions.Actions.PayOut)
+        step = self.mapper._search(engine.actions.Actions.PayOut)
         self.assertEqual(1, len(step))
 
-        step = self.processor._search(engine.actions.Actions.SellShares)
+        step = self.mapper._search(engine.actions.Actions.SellShares)
         self.assertEqual(3, len(step))
 
-        step = self.processor._search(engine.actions.Actions.Pass)
+        step = self.mapper._search(engine.actions.Actions.Pass)
         self.assertEqual(8, len(step))
 
     def test__select_from_single(self):
-        step = self.processor._search(engine.actions.Actions.PayOut)
-        result = self.processor._select(step)
+        step = self.mapper._search(engine.actions.Actions.PayOut)
+        result = self.mapper._select(step)
         self.assertIsInstance(result(), engine.actions.PayOut)
 
     def test__select_from_inherited(self):
-        step = self.processor._search(engine.actions.Actions.Pass)
-        result = self.processor._select(step)
+        step = self.mapper._search(engine.actions.Actions.Pass)
+        result = self.mapper._select(step)
         self.assertIsInstance(result(), engine.actions.Pass)
 
-        step = self.processor._search(engine.actions.Actions.SellShares)
-        result = self.processor._select(step)
+        step = self.mapper._search(engine.actions.Actions.SellShares)
+        result = self.mapper._select(step)
         self.assertIsInstance(result(), engine.actions.SellShare)
 
-        step = self.processor._search(engine.actions.Actions.Skip)
-        result = self.processor._select(step)
+        step = self.mapper._search(engine.actions.Actions.Skip)
+        result = self.mapper._select(step)
         self.assertIsInstance(result(), engine.actions.Skip)

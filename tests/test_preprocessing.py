@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import shutil
 import unittest
-
 import pandas as pd
 
 from transcripts18xx.preprocessing import GameTranscriptProcessor
-from transcripts18xx.games import Game1830
 
 from tests import context
 
@@ -15,7 +12,7 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        gtp = GameTranscriptProcessor(context.transcript_1830(), Game1830())
+        gtp = GameTranscriptProcessor(context.transcript_1830())
         gtp.parse_transcript()
         cls.df = gtp.save_to_dataframe()
 

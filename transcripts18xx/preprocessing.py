@@ -9,7 +9,7 @@ import pandas as pd
 
 from pathlib import Path
 
-from .games import Game18xx
+from .engine import engine
 
 
 class GameTranscriptProcessor(object):
@@ -19,17 +19,15 @@ class GameTranscriptProcessor(object):
 
     Attributes:
         _transcript_file: The transcript file path.
-        _game: The underlying 18xx game.
         _data: Data container to save the processed lines as dicts.
 
     Args:
         transcript_file: The transcript file path.
-        game: The underlying 18xx game.
     """
 
-    def __init__(self, transcript_file: Path, game: Game18xx):
+    def __init__(self, transcript_file: Path):
         self._transcript_file = transcript_file
-        self._game = game
+        self._engine = engine.LineParser()
         self._data = list()
 
     @staticmethod
@@ -41,13 +39,14 @@ class GameTranscriptProcessor(object):
         return line
 
     def parse_transcript(self) -> None:
-        """Reads and extracts actions and events from the game transcript."""
+        """Reads and extracts actions and events from the game transcript.
+        """
         with open(self._transcript_file, 'r', encoding='utf-8') as file:
             lines = file.readlines()
         unprocessed = list()
         for i, line in enumerate(lines):
             line = self._preprocess_line(line)
-            parsed_data = self._game.extract_pattern(line)
+            parsed_data = self._engine.run(line)
             if parsed_data:
                 parsed_data['id'] = i
                 parsed_data['line'] = line

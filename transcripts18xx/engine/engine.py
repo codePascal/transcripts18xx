@@ -8,8 +8,8 @@ function or retrieve the members.
 from itertools import chain
 from typing import Type
 
-from transcripts18xx.engine.steps import step
-from transcripts18xx.engine.steps import actions, events  # noqa
+from .steps import step
+from .steps import actions, events  # noqa
 
 
 class EngineSteps(object):
@@ -44,8 +44,8 @@ class EngineSteps(object):
         return [cls for cls in self._patterns() if not self._is_abstract(cls)]
 
 
-class StepMatcher(object):
-    """StepMatcher
+class LineParser(object):
+    """LineParser
 
     Class to retrieve and match a line to all engine steps.
 
@@ -91,7 +91,7 @@ class StepMatcher(object):
 
 
 class StepMapper(object):
-    """StepProcessor
+    """StepMapper
 
     Class to match a step name to its engine.
 

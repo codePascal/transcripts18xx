@@ -33,7 +33,7 @@ def main():
     if not args.transcript.exists():
         sys.exit('Transcript does not exist: {}'.format(args.transcript))
 
-    gtp = GameTranscriptProcessor(args.transcript, game)
+    gtp = GameTranscriptProcessor(args.transcript)
     gtp.parse_transcript()
     df = gtp.save_to_dataframe()
 
