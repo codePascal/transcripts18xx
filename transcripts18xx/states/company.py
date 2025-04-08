@@ -13,6 +13,7 @@ class CompanyState(object):
         self.market = 0
         self.trains = None
         self.president = None
+        self.cash = 0
 
     def __str__(self):
         attrs = ', '.join(f'{k}={repr(v)}' for k, v in self.__dict__.items())

@@ -13,6 +13,7 @@ from . import actions, events  # noqa
 class Patterns(object):
     """Patterns
 
+    TODO
     """
 
     def __init__(self):
@@ -81,3 +82,27 @@ class PatternMatcher(object):
         result = self._search(line)
         match = self._select(result, line)
         return match
+
+
+class PatternProcessor(object):
+    """PatternMatcher
+
+    Class to retrieve and match patterns of all pattern handlers.
+    """
+
+    def __init__(self):
+        self._algo = Patterns()
+
+    def _search(self) -> list:
+        # Invokes the pattern types of the subclasses.
+        return [cls().type for cls in self._algo.patterns()]
+
+    @staticmethod
+    def _select(result: list, pattern_type: pattern.PatternType):
+
+    def run(self, pattern_type: pattern.PatternType) -> dict:
+        """
+        """
+        result = self._search()
+        processor = self._select(result, pattern_type)
+        return processor

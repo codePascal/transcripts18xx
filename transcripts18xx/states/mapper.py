@@ -4,6 +4,7 @@
 """
 import pandas as pd
 
+from ..patterns.mapper import PatternProcessor
 from . import player, company
 
 
@@ -25,10 +26,6 @@ class StatesMapper(object):
         return [i for i, c in enumerate(self._companies) if c.name == name][0]
 
     def map(self):
-        pass
-
-    def _new_phase(self, ser: pd.Series) -> None:
-        pass
-
-    def _place_bid(self):
-        pass
+        for _, row in self._df.iterrows():
+            print(row.type)
+            PatternProcessor().run(row.type)

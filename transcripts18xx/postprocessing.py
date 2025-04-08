@@ -8,6 +8,7 @@ import pandas as pd
 from pathlib import Path
 
 from .games import Game18xx
+from .states.mapper import StatesMapper
 
 
 class TranscriptPostProcessor(object):
@@ -21,14 +22,14 @@ class TranscriptPostProcessor(object):
 
     def _map_phase(self):
         # Populates phase with forward propagation.
-        self._df.phase = self._df.phase.fillna(method='ffill')
+        self._df.phase = self._df.phase.ffill()
 
     def _map_rounds(self):
         # Populates rounds with forward propagation.
         if pd.isna(self._df.sequence[0]):
             # Retrieves the initial round identifier from the game.
             self._df.loc[0, 'sequence'] = self._game.initial_round
-        self._df.sequence = self._df.sequence.fillna(method='ffill')
+        self._df.sequence = self._df.sequence.ffill()
 
     def _remove_transcript_lines(self):
         # Removes the lines from the transcript.
@@ -68,6 +69,10 @@ class TranscriptPostProcessor(object):
         self._map_entity()
         self._clean_locations()
         self._clean_companies()
+
+    def add_states(self):
+        mapper = StatesMapper(self._df)
+        mapper.map()
 
     def save_to_dataframe(self, transcript_file: Path) -> pd.DataFrame:
         """Saves the processed data as a structured pandas DataFrame.

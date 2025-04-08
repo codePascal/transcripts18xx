@@ -30,8 +30,12 @@ class PatternParent(enum.IntEnum):
 class PatternHandler(abc.ABC):
     """PatternHandler
 
+    EngineStep
+
     Class to map a line to a pattern. Each subclass implements a pattern, that
     is compared to a line. The pattern is implemented as a regular expression.
+
+    todo Child .. implement one action --> subs but return equal to parent...
 
     Attributes:
         pattern: The expression that shall be matched to the line.
@@ -114,8 +118,3 @@ class PatternHandler(abc.ABC):
         if match:
             return self.handle(line, match)
         return None
-
-
-class MatchException(Exception):
-    """Exception for the pattern matcher."""
-    pass

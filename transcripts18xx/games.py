@@ -7,7 +7,7 @@ Module implements an abstract class to define and search for game patterns.
 import abc
 import enum
 
-from .mapper import PatternMatcher
+from transcripts18xx.patterns.mapper import PatternMatcher
 
 
 class Game18xx(abc.ABC):
@@ -23,9 +23,10 @@ class Game18xx(abc.ABC):
 
     def __init__(self):
         self.companies = set()
-        self.privates = set()
+        self.privates = dict()
         self.trains = set()
         self.initial_round = str()
+        self.start_capital = int()
 
     @staticmethod
     def extract_pattern(line: str) -> dict | None:
@@ -55,11 +56,16 @@ class Game1830(Game18xx):
             'B&M', 'B&O', 'C&O', 'CPR', 'ERIE', 'NYC', 'NYNH', 'PRR'
         }
         self.privates = {
-            'Baltimore & Ohio', 'Champlain & St.Lawrence', 'Mohawk & Hudson',
-            'Delaware & Hudson', 'Camden & Amboy', 'Schuylkill Valley'
+            'Baltimore & Ohio': 220,
+            'Champlain & St.Lawrence': 40,
+            'Mohawk & Hudson': 110,
+            'Delaware & Hudson': 70,
+            'Camden & Amboy': 160,
+            'Schuylkill Valley': 20
         }
         self.trains = {'2', '3', '4', '5', '6', 'D'}
         self.initial_round = 'ISR 1'
+        self.start_capital = 2400
 
 
 class Games(enum.IntEnum):

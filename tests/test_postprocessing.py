@@ -16,7 +16,10 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
         df = pd.read_csv(context.parsed_transcript_1830())
         tpp = TranscriptPostProcessor(df, Game1830())
         tpp.process()
+        tpp.add_states()
         cls.df = tpp.save_to_dataframe(context.transcript_1830())
 
     def test(self):
-        pass
+        data = self.df.loc[:, ['player', 'company']]
+        for _, row in data.iterrows():
+            print(row.tolist())
