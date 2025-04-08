@@ -2,19 +2,19 @@
 # -*- coding: utf-8 -*-
 """Action matching and processing.
 
-Module implements pattern handlers for actions performed by a player of a
+Module implements engine step handlers for actions performed by a player or a
 company during the game.
 """
 import re
 import abc
 
-from .pattern import PatternHandler, PatternType, PatternParent
+from .step import EngineStep, StepType, StepParent
 
 
-class Actions(PatternType):
+class Actions(StepType):
     """Actions
 
-    Enum class describing the actions performed by a player of a company.
+    Enum class describing the actions performed by a player or a company.
     """
     PayOut = 0
     Withhold = 1
@@ -35,21 +35,21 @@ class Actions(PatternType):
     Contribute = 17
 
 
-class ActionHandler(PatternHandler, abc.ABC):
+class ActionStep(EngineStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
-        self.parent = PatternParent.Action
+        self.parent = StepParent.Action
 
 
-class PayOut(ActionHandler):
+class PayOut(ActionStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) pays out \$(\d+) = \$(\d+) per share')
         self.type = Actions.PayOut
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
             amount=match.group(2),
@@ -57,21 +57,21 @@ class PayOut(ActionHandler):
         )
 
 
-class Withhold(ActionHandler):
+class Withhold(ActionStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) withholds \$(\d+)')
         self.type = Actions.Withhold
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
             amount=match.group(2)
         )
 
 
-class BuyShare(ActionHandler):
+class BuyShare(ActionStep):
 
     def __init__(self):
         super().__init__()
@@ -80,7 +80,7 @@ class BuyShare(ActionHandler):
         )
         self.type = Actions.BuyShare
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             player=match.group(1),
             percentage=match.group(2),
@@ -90,13 +90,13 @@ class BuyShare(ActionHandler):
         )
 
 
-class SellShare(ActionHandler, abc.ABC):
+class SellShare(ActionStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
         self.type = Actions.SellShares
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             player=match.group(1),
             percentage='{}{}'.format(match.group(2), '0'),
@@ -123,13 +123,13 @@ class SellMultipleShares(SellShare):
         )
 
 
-class Pass(ActionHandler, abc.ABC):
+class Pass(ActionStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
         self.type = Actions.Pass
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             entity=match.group(1),
         )
@@ -193,13 +193,13 @@ class PassBuyTrain(Pass):
         self.pattern = re.compile(r'(.*?) passes buy trains')
 
 
-class Skip(ActionHandler, abc.ABC):
+class Skip(ActionStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
         self.type = Actions.Skip
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             entity=match.group(1),
         )
@@ -254,14 +254,14 @@ class SkipRunTrain(Skip):
         self.pattern = re.compile(r'(.*?) skips run routes')
 
 
-class ParCompany(ActionHandler):
+class ParCompany(ActionStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) pars (.*?) at \$(\d+)')
         self.type = Actions.Par
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             player=match.group(1),
             company=match.group(2),
@@ -269,14 +269,14 @@ class ParCompany(ActionHandler):
         )
 
 
-class Bid(ActionHandler):
+class Bid(ActionStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) bids \$(\d+) for (.*)')
         self.type = Actions.Bid
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             player=match.group(1),
             amount=match.group(2),
@@ -284,14 +284,14 @@ class Bid(ActionHandler):
         )
 
 
-class Collect(ActionHandler):
+class Collect(ActionStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) collects \$(\d+) from (.*)')
         self.type = Actions.Collect
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             entity=match.group(1),
             amount=match.group(2),
@@ -299,7 +299,7 @@ class Collect(ActionHandler):
         )
 
 
-class BuyPrivate(ActionHandler, abc.ABC):
+class BuyPrivate(ActionStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
@@ -315,7 +315,7 @@ class BuyPrivateFromPlayer(BuyPrivate):
         self._dismiss = ['share', 'train']
         self._required = ['from']
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             entity=match.group(1),
             private=match.group(2),
@@ -332,7 +332,7 @@ class BuyPrivateFromAuction(BuyPrivate):
 
         self._dismiss = ['share', 'train', 'from']
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             entity=match.group(1),
             private=match.group(2),
@@ -351,7 +351,7 @@ class WinAuctionAgainst(BuyPrivate):
 
         self._dismiss = ['share', 'train', 'from']
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             entity=match.group(1),
             private=match.group(2),
@@ -370,7 +370,7 @@ class WinAuction(BuyPrivate):
 
         self._dismiss = ['share', 'train', 'from']
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             entity=match.group(1),
             private=match.group(2),
@@ -379,7 +379,7 @@ class WinAuction(BuyPrivate):
         )
 
 
-class LayTile(ActionHandler, abc.ABC):
+class LayTile(ActionStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
@@ -395,7 +395,7 @@ class LayTileForMoney(LayTile):
             r'(.*)'
         )
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
             amount=match.group(2),
@@ -415,7 +415,7 @@ class LayTileForFree(LayTile):
 
         self._dismiss = ['spends']
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
             tile=match.group(2),
@@ -425,7 +425,7 @@ class LayTileForFree(LayTile):
         )
 
 
-class PlaceToken(ActionHandler, abc.ABC):
+class PlaceToken(ActionStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
@@ -438,7 +438,7 @@ class PlaceTokenForMoney(PlaceToken):
         super().__init__()
         self.pattern = re.compile(r'(.*?) places a token on (.*) for \$(\d+)')
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
             location=match.group(2),
@@ -454,7 +454,7 @@ class PlaceTokenForFree(PlaceToken):
 
         self._dismiss = ['for']
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
             location=match.group(2),
@@ -462,7 +462,7 @@ class PlaceTokenForFree(PlaceToken):
         )
 
 
-class BuyTrain(ActionHandler):
+class BuyTrain(ActionStep):
 
     def __init__(self):
         super().__init__()
@@ -471,7 +471,7 @@ class BuyTrain(ActionHandler):
         )
         self.type = Actions.BuyTrain
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
             train=match.group(2),
@@ -480,14 +480,14 @@ class BuyTrain(ActionHandler):
         )
 
 
-class RunTrain(ActionHandler):
+class RunTrain(ActionStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) runs a (\w) train for \$(\d+): (.*)')
         self.type = Actions.RunTrain
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
             train=match.group(2),
@@ -496,21 +496,21 @@ class RunTrain(ActionHandler):
         )
 
 
-class DiscardTrain(ActionHandler):
+class DiscardTrain(ActionStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) discards (\w+)')
         self.type = Actions.DiscardTrain
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
             train=match.group(2)
         )
 
 
-class ExchangeTrain(ActionHandler):
+class ExchangeTrain(ActionStep):
 
     def __init__(self):
         super().__init__()
@@ -519,7 +519,7 @@ class ExchangeTrain(ActionHandler):
         )
         self.type = Actions.ExchangeTrain
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
             old_train=match.group(2),
@@ -529,14 +529,14 @@ class ExchangeTrain(ActionHandler):
         )
 
 
-class Contribute(ActionHandler):
+class Contribute(ActionStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) contributes \$(\d+)')
         self.type = Actions.Contribute
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             player=match.group(1),
             amount=match.group(2)

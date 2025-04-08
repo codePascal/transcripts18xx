@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from transcripts18xx.patterns import mapper
+from transcripts18xx.engine import engine
 
 
 class TestPatterns(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.pattern = mapper.Patterns()
+        cls.pattern = mapper.EngineSteps()
 
     def test__patterns(self):
         subclasses = self.pattern._patterns()
@@ -24,7 +24,7 @@ class TestPatternMatcher(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.matcher = mapper.PatternMatcher()
+        cls.matcher = mapper.StepMatcher()
 
     def test__select(self):
         search = [None, None, dict(key=1, name='Mario'), None, None]

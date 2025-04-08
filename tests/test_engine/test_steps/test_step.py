@@ -3,55 +3,60 @@
 import re
 import unittest
 
-from transcripts18xx.patterns import pattern
+from transcripts18xx.engine.steps import step
 
 
-class BasePatternTest(unittest.TestCase):
+class BaseStepTest(unittest.TestCase):
 
     def assertMatch(self, action, line, expected):
         result = action.match(line)
         self.assertEqual(expected, result)
 
 
-class TestPatternHandler(unittest.TestCase):
+class TestEngineStep(unittest.TestCase):
 
-    def setUp(self) -> None:
-        class PatternEmulator(pattern.PatternHandler):
+    @classmethod
+    def setUpClass(cls) -> None:
+        class StepEmulator(step.EngineStep):
 
-            def _handle(self, line: str, match) -> dict:
-                return dict(
-                    source=match.group(1),
-                    num=match.group(2),
-                    lib=match.group(3)
-                )
+            def __init__(self):
+                super().__init__()
 
-        self.cls = PatternEmulator()
-        self.cls.pattern = re.compile(r'(.*?) runs (\d+) tests using (.*)')
+                self.pattern = re.compile(r'(.*?) runs (\d+) tests using (.*)')
+
+            def _process_match(self, line: str, match) -> dict:
+                pass
+
+        cls.cls = StepEmulator()
 
     def tearDown(self) -> None:
         pass
 
-    def test__search(self):
-        match = self.cls._search('Carl runs 10 tests using pytest')
+    def test__invoke_search(self):
+        match = self.cls._invoke_search('Carl runs 10 tests using pytest')
         self.assertIsInstance(match, re.Match)
         self.assertEqual('Carl runs 10 tests using pytest', match.group(0))
         self.assertEqual('Carl', match.group(1))
         self.assertEqual('10', match.group(2))
         self.assertEqual('pytest', match.group(3))
 
-        match = self.cls._search('Ryan & Carl runs 10 tests using pytest')
+        match = self.cls._invoke_search(
+            'Ryan & Carl runs 10 tests using pytest'
+        )
         self.assertIsInstance(match, re.Match)
         self.assertEqual('Ryan & Carl', match.group(1))
         self.assertEqual('10', match.group(2))
         self.assertEqual('pytest', match.group(3))
 
-        match = self.cls._search('Carl runs 10 tests using pytest & unittest')
+        match = self.cls._invoke_search(
+            'Carl runs 10 tests using pytest & unittest'
+        )
         self.assertIsInstance(match, re.Match)
         self.assertEqual('Carl', match.group(1))
         self.assertEqual('10', match.group(2))
         self.assertEqual('pytest & unittest', match.group(3))
 
-        match = self.cls._search('Carl runs no tests using pytest')
+        match = self.cls._invoke_search('Carl runs no tests using pytest')
         self.assertIsNone(match)
 
     def test__contains_dismiss_key(self):

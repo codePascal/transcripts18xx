@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*-
 """Event matching and processing.
 
-Module implements pattern handlers for events appearing during the game. This
-events can be triggered by player or company actions or by another event.
+Module implements engine step handlers for events appearing during the game.
+This events can be triggered by player or company actions or by another event.
 """
 import re
 import abc
 
-from .pattern import PatternHandler, PatternType, PatternParent
+from .step import EngineStep, StepType, StepParent
 
 
-class Events(PatternType):
+class Events(StepType):
     """Events
 
     Enum class describing the events appearing during the game.
@@ -36,21 +36,21 @@ class Events(PatternType):
     TrainsRust = 17
 
 
-class EventHandler(PatternHandler, abc.ABC):
+class EventStep(EngineStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
-        self.parent = PatternParent.Event
+        self.parent = StepParent.Event
 
 
-class ReceiveShare(EventHandler):
+class ReceiveShare(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) receives a (\d+)% share of (.*)')
         self.type = Events.ReceiveShare
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             player=match.group(1),
             percentage=match.group(2),
@@ -58,7 +58,7 @@ class ReceiveShare(EventHandler):
         )
 
 
-class ReceiveFunds(EventHandler):
+class ReceiveFunds(EventStep):
 
     def __init__(self):
         super().__init__()
@@ -67,53 +67,53 @@ class ReceiveFunds(EventHandler):
 
         self._dismiss = ['sells']
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
             amount=match.group(2)
         )
 
 
-class CompanyFloats(EventHandler):
+class CompanyFloats(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) floats')
         self.type = Events.CompanyFloats
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1)
         )
 
 
-class SelectsHome(EventHandler):
+class SelectsHome(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) must choose city for token')
         self.type = Events.SelectsHome
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1)
         )
 
 
-class DoesNotRun(EventHandler):
+class DoesNotRun(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) does not run')
         self.type = Events.DoesNotRun
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1)
         )
 
 
-class SharePriceMove(EventHandler):
+class SharePriceMove(EventStep):
 
     def __init__(self):
         super().__init__()
@@ -122,7 +122,7 @@ class SharePriceMove(EventHandler):
         )
         self.type = Events.SharePriceMoves
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             company=match.group(1),
             direction=match.group(2),
@@ -130,153 +130,153 @@ class SharePriceMove(EventHandler):
         )
 
 
-class NewPhase(EventHandler):
+class NewPhase(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- Phase (\w+) \(')
         self.type = Events.NewPhase
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             phase=match.group(1)
         )
 
 
-class BankBroke(EventHandler):
+class BankBroke(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- The bank has broken --')
         self.type = Events.BankBroke
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict()
 
 
-class GameOver(EventHandler):
+class GameOver(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- Game over:')
         self.type = Events.GameOver
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict()
 
 
-class OperatingRound(EventHandler):
+class OperatingRound(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- Operating Round (\d+\.\d+)')
         self.type = Events.OperatingRound
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             round='OR {}'.format(match.group(1))
         )
 
 
-class StockRound(EventHandler):
+class StockRound(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- Stock Round (\d+)')
         self.type = Events.StockRound
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             round='SR {}'.format(match.group(1))
         )
 
 
-class PresidentNomination(EventHandler):
+class PresidentNomination(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) becomes the president of (.*)')
         self.type = Events.PresidentNomination
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             player=match.group(1),
             company=match.group(2)
         )
 
 
-class PriorityDeal(EventHandler):
+class PriorityDeal(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) has priority deal')
         self.type = Events.PriorityDeal
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             player=match.group(1)
         )
 
 
-class OperatesCompany(EventHandler):
+class OperatesCompany(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) operates (.*)')
         self.type = Events.OperatesCompany
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             player=match.group(1),
             company=match.group(2)
         )
 
 
-class AllPrivatesClose(EventHandler):
+class AllPrivatesClose(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- Event: Private companies close')
         self.type = Events.AllPrivatesClose
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict()
 
 
-class PrivateCloses(EventHandler):
+class PrivateCloses(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) closes')
         self.type = Events.PrivateCloses
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             private=match.group(1)
         )
 
 
-class PrivateAuctioned(EventHandler):
+class PrivateAuctioned(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) goes up for auction')
         self.type = Events.PrivateAuctioned
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             private=match.group(1)
         )
 
 
-class TrainsRust(EventHandler):
+class TrainsRust(EventStep):
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- Event: (\d+) trains rust')
         self.type = Events.TrainsRust
 
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         return dict(
             train=match.group(1)
         )

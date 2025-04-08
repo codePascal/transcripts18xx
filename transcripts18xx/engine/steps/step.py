@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Basic pattern matching and processing.
+"""Basic step matching and processing.
 
-Module implements abstract base classes to match patterns to a string and
+Module implements abstract base class to match a pattern to a string and
 run some post-processing on the line if a match was found.
 """
 import abc
@@ -10,37 +10,34 @@ import enum
 import re
 
 
-class PatternType(enum.IntEnum):
-    """PatternType
+class StepType(enum.IntEnum):
+    """StepType
 
-    Enum class to describe a pattern by a type.
+    Enum class to describe a step by a type.
     """
     pass
 
 
-class PatternParent(enum.IntEnum):
-    """PatternParent
+class StepParent(enum.IntEnum):
+    """StepParent
 
-    Enum class to describe a group of patterns.
+    Enum class to describe a group of steps.
     """
     Event = 0
     Action = 1
 
 
-class PatternHandler(abc.ABC):
-    """PatternHandler
-
-    EngineStep
+class EngineStep(abc.ABC):
+    """EngineStep
 
     Class to map a line to a pattern. Each subclass implements a pattern, that
     is compared to a line. The pattern is implemented as a regular expression.
-
-    todo Child .. implement one action --> subs but return equal to parent...
+    Further, the subclasses implement the post-processing of this match.
 
     Attributes:
         pattern: The expression that shall be matched to the line.
-        type: The type of the pattern, see `PatternType`.
-        parent: The pattern group the pattern is part of, see `PatternParent`.
+        type: The type of the pattern, see `StepType`.
+        parent: The pattern group the pattern is part of, see `StepParent`.
         _dismiss: Keywords that result in the line being ignored if they exist
             in the line.
         _required: Keywords that need to be found in the line. Otherwise, the
@@ -50,20 +47,20 @@ class PatternHandler(abc.ABC):
 
     def __init__(self):
         self.pattern = None
-        self.type = PatternType
-        self.parent = PatternParent
+        self.type = StepType
+        self.parent = StepParent
 
         self._dismiss = list()
         self._required = list()
 
-    def _search(self, line: str) -> re.Match | None:
+    def _invoke_search(self, line: str) -> re.Match | None:
         # Invokes the search command.
         if self.pattern is None:
             return None
         return self.pattern.search(line)
 
     @abc.abstractmethod
-    def _handle(self, line: str, match) -> dict:
+    def _process_match(self, line: str, match) -> dict:
         # Processes the match.
         pass
 
@@ -75,32 +72,17 @@ class PatternHandler(abc.ABC):
         # Checks if required key exists in line as single word.
         return any(key in line.split() for key in self._required)
 
-    def search(self, line: str) -> re.Match | None:
-        """Maps the pattern to the line and searches for a match.
-
-        Args:
-            line: The line to compare to the pattern.
-
-        Returns:
-            A match if found or None.
-        """
+    def _search(self, line: str) -> re.Match | None:
+        # Maps the pattern to the line.
         if self._contains_dismiss_key(line):
             return None
         if not self._required or self._contains_required_key(line):
-            return self._search(line)
+            return self._invoke_search(line)
         return None
 
-    def handle(self, line: str, match) -> dict:
-        """Processes the line and its matches.
-
-        Args:
-            line: The line that resulted in a match.
-            match: The matches found by the regex.
-
-        Returns:
-            A dictionary with the matches processed.
-        """
-        ret = self._handle(line, match)
+    def _process(self, line: str, match) -> dict:
+        # Processes the match and adds general information.
+        ret = self._process_match(line, match)
         ret['type'] = self.type.name
         ret['parent'] = self.parent.name
         return ret
@@ -114,7 +96,7 @@ class PatternHandler(abc.ABC):
         Returns:
             A dictionary with the matches processed, or None if no match found.
         """
-        match = self.search(line)
+        match = self._search(line)
         if match:
-            return self.handle(line, match)
+            return self._process(line, match)
         return None

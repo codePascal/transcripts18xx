@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from transcripts18xx.patterns import events
+from transcripts18xx.engine.steps import events
 
-from tests.test_patterns.test_pattern import BasePatternTest
+from tests.test_engine.test_steps.test_step import BaseStepTest
 
 
-class TestEventHandler(BasePatternTest):
+class TestEventStep(BaseStepTest):
 
     def test_match(self):
         # Skip abstract class
         pass
 
 
-class TestReceiveShare(BasePatternTest):
+class TestReceiveShare(BaseStepTest):
 
     def test_match(self):
         line = 'player1 receives a 20% share of B&O'
@@ -26,7 +26,7 @@ class TestReceiveShare(BasePatternTest):
         self.assertMatch(events.ReceiveShare(), line, expected)
 
 
-class TestReceiveFunds(BasePatternTest):
+class TestReceiveFunds(BaseStepTest):
 
     def test_match(self):
         line = 'C&O receives $300'
@@ -39,7 +39,7 @@ class TestReceiveFunds(BasePatternTest):
         self.assertMatch(events.ReceiveFunds(), line, expected)
 
 
-class TestCompanyFloats(BasePatternTest):
+class TestCompanyFloats(BaseStepTest):
 
     def test_match(self):
         line = 'C&O floats'
@@ -51,7 +51,7 @@ class TestCompanyFloats(BasePatternTest):
         self.assertMatch(events.CompanyFloats(), line, expected)
 
 
-class TestSelectsHome(BasePatternTest):
+class TestSelectsHome(BaseStepTest):
 
     def test_match(self):
         line = 'B&O must choose city for token'
@@ -63,7 +63,7 @@ class TestSelectsHome(BasePatternTest):
         self.assertMatch(events.SelectsHome(), line, expected)
 
 
-class TestDoesNotRun(BasePatternTest):
+class TestDoesNotRun(BaseStepTest):
 
     def test_match(self):
         line = 'C&O does not run'
@@ -75,7 +75,7 @@ class TestDoesNotRun(BasePatternTest):
         self.assertMatch(events.DoesNotRun(), line, expected)
 
 
-class TestSharePriceMove(BasePatternTest):
+class TestSharePriceMove(BaseStepTest):
 
     def test_match(self):
         line = "B&O's share price moves right from $67 to $70"
@@ -89,7 +89,7 @@ class TestSharePriceMove(BasePatternTest):
         self.assertMatch(events.SharePriceMove(), line, expected)
 
 
-class TestNewPhase(BasePatternTest):
+class TestNewPhase(BaseStepTest):
 
     def test_match(self):
         line = '-- Phase 3 (blabla) --'
@@ -101,7 +101,7 @@ class TestNewPhase(BasePatternTest):
         self.assertMatch(events.NewPhase(), line, expected)
 
 
-class TestBankBroke(BasePatternTest):
+class TestBankBroke(BaseStepTest):
 
     def test_match(self):
         line = '-- The bank has broken --'
@@ -112,7 +112,7 @@ class TestBankBroke(BasePatternTest):
         self.assertMatch(events.BankBroke(), line, expected)
 
 
-class TestGameOver(BasePatternTest):
+class TestGameOver(BaseStepTest):
 
     def test_match(self):
         line = '-- Game over: (ranking...)'
@@ -123,7 +123,7 @@ class TestGameOver(BasePatternTest):
         self.assertMatch(events.GameOver(), line, expected)
 
 
-class TestOperatingRound(BasePatternTest):
+class TestOperatingRound(BaseStepTest):
 
     def test_match(self):
         line = '-- Operating Round 3.2 (of 2) --'
@@ -135,7 +135,7 @@ class TestOperatingRound(BasePatternTest):
         self.assertMatch(events.OperatingRound(), line, expected)
 
 
-class TestStockRound(BasePatternTest):
+class TestStockRound(BaseStepTest):
 
     def test_match(self):
         line = '-- Stock Round 4 --'
@@ -147,7 +147,7 @@ class TestStockRound(BasePatternTest):
         self.assertMatch(events.StockRound(), line, expected)
 
 
-class TestPresidentNomination(BasePatternTest):
+class TestPresidentNomination(BaseStepTest):
 
     def test_match(self):
         line = 'player1 becomes the president of B&O'
@@ -160,7 +160,7 @@ class TestPresidentNomination(BasePatternTest):
         self.assertMatch(events.PresidentNomination(), line, expected)
 
 
-class TestPriorityDeal(BasePatternTest):
+class TestPriorityDeal(BaseStepTest):
 
     def test_match(self):
         line = 'player1 has priority deal'
@@ -172,7 +172,7 @@ class TestPriorityDeal(BasePatternTest):
         self.assertMatch(events.PriorityDeal(), line, expected)
 
 
-class TestOperatesCompany(BasePatternTest):
+class TestOperatesCompany(BaseStepTest):
 
     def test_match(self):
         line = 'player1 operates B&O'
@@ -185,7 +185,7 @@ class TestOperatesCompany(BasePatternTest):
         self.assertMatch(events.OperatesCompany(), line, expected)
 
 
-class TestAllPrivatesClose(BasePatternTest):
+class TestAllPrivatesClose(BaseStepTest):
 
     def test_match(self):
         line = '-- Event: Private companies close'
@@ -196,7 +196,7 @@ class TestAllPrivatesClose(BasePatternTest):
         self.assertMatch(events.AllPrivatesClose(), line, expected)
 
 
-class TestPrivateCloses(BasePatternTest):
+class TestPrivateCloses(BaseStepTest):
 
     def test_match(self):
         line = 'Mohawk & Hudson closes'
@@ -208,7 +208,7 @@ class TestPrivateCloses(BasePatternTest):
         self.assertMatch(events.PrivateCloses(), line, expected)
 
 
-class TestPrivateAuctioned(BasePatternTest):
+class TestPrivateAuctioned(BaseStepTest):
 
     def test_match(self):
         line = 'Mohawk & Hudson goes up for auction'
@@ -220,7 +220,7 @@ class TestPrivateAuctioned(BasePatternTest):
         self.assertMatch(events.PrivateAuctioned(), line, expected)
 
 
-class TestTrainsRust(BasePatternTest):
+class TestTrainsRust(BaseStepTest):
 
     def test_match(self):
         line = '-- Event: 4 trains rust'
