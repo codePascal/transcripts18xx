@@ -9,7 +9,7 @@ import pandas as pd
 
 from pathlib import Path
 
-from .engine import engine
+from ..engine import engine
 
 
 class GameTranscriptProcessor(object):

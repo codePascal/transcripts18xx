@@ -3,7 +3,7 @@
 import unittest
 import pandas as pd
 
-from transcripts18xx.preprocessing import GameTranscriptProcessor
+from transcripts18xx.processing.preprocessing import GameTranscriptProcessor
 
 from tests import context
 

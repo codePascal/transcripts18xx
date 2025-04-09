@@ -9,7 +9,7 @@ import pandas as pd
 
 from pathlib import Path
 
-from .games import Game18xx
+from ..games import Game18xx
 
 
 class TranscriptPostProcessor(object):
