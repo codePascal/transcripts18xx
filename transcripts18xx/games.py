@@ -2,14 +2,10 @@
 # -*- coding: utf-8 -*-
 """18xx games
 
-Module implements an abstract class to define, search and process game steps.
+Module implements an abstract class and its subclasses to define an 18xx game.
 """
 import abc
 import enum
-
-import pandas as pd
-
-from .engine.engine import LineParser
 
 
 class Game18xx(abc.ABC):
@@ -24,28 +20,11 @@ class Game18xx(abc.ABC):
     """
 
     def __init__(self):
-        self.pre_processor = LineParser()
-
         self.companies = set()
         self.privates = dict()
         self.trains = set()
         self.initial_round = str()
         self.start_capital = int()
-
-    def extract_pattern(self, line: str) -> dict | None:
-        """Parses the line and checks for matches in the given recipes.
-
-        Args:
-            line: A transcript line to parse.
-
-        Returns:
-            If a match is found, returns the result parsed in a dictionary.
-            Otherwise, returns None.
-        """
-        return self.pre_processor.run(line)
-
-    def post_process_step(self, row: pd.DataFrame) -> None:
-        pass
 
 
 class Game1830(Game18xx):
