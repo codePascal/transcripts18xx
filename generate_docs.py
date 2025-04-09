@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import subprocess
+
+
+def main():
+    subprocess.run(
+        ['sphinx-build', '-M', 'html', './docs/source', './docs/build'],
+        check=True
+    )
+
+
+if __name__ == '__main__':
+    main()
