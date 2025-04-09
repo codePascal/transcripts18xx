@@ -18,7 +18,8 @@ author = 'Pascal Müller'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',  # for Google/Numpy-style docstrings
-    'sphinx_autodoc_typehints'
+    'sphinx_autodoc_typehints',
+    'myst_parser'
 ]
 
 templates_path = ['_templates']
