@@ -4,16 +4,15 @@
 
 Module implements engine step handlers for events appearing during the game.
 This events can be triggered by player or company actions or by another event.
-
-TODO:
-    * add player goes bankrupt:
-    `-- (JuicyBerry) goes bankrupt and sells remaining shares --`
 """
 import re
 import abc
 
 from .step import EngineStep, StepType, StepParent
 
+
+# TODO: add player goes bankrupt:
+#  `-- (JuicyBerry) goes bankrupt and sells remaining shares --`
 
 class Events(StepType):
     """Events
