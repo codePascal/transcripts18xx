@@ -19,7 +19,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',  # for Google/Numpy-style docstrings
     'sphinx_autodoc_typehints',
-    'myst_parser'
+    'myst_parser',  # parse Markdown
+    'sphinx_new_tab_link'  # open links in new tab
 ]
 
 templates_path = ['_templates']

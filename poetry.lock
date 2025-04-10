@@ -912,6 +912,27 @@ sphinx = ">=4.0"
 docs = ["furo", "ipython", "myst-parser", "sphinx-copybutton", "sphinx-inline-tabs"]
 
 [[package]]
+name = "sphinx-new-tab-link"
+version = "0.8.0"
+description = "Open external links in new tabs of the browser in Sphinx HTML documents"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "sphinx_new_tab_link-0.8.0-py3-none-any.whl", hash = "sha256:c74b873d6c8a1ec089015dc414a75f6908e87f66ce4ab8d9f2c7268f13afc593"},
+    {file = "sphinx_new_tab_link-0.8.0.tar.gz", hash = "sha256:6c757d99f559224a04142c3971c8baa6ac90aca905f15b129d57eeca0ece9582"},
+]
+
+[package.dependencies]
+Sphinx = ">=7.3"
+sphinxcontrib-extdevhelper-kasane = "*"
+
+[package.extras]
+dev = ["taskipy"]
+lint = ["autoflake", "black", "flake8", "isort", "pyupgrade"]
+testing = ["beautifulsoup4", "defusedxml", "pytest", "pytest-randomly"]
+typecheck = ["mypy", "types-beautifulsoup4", "types-docutils"]
+
+[[package]]
 name = "sphinxcontrib-applehelp"
 version = "2.0.0"
 description = "sphinxcontrib-applehelp is a Sphinx extension which outputs Apple help books"
@@ -942,6 +963,23 @@ files = [
 lint = ["mypy", "ruff (==0.5.5)", "types-docutils"]
 standalone = ["Sphinx (>=5)"]
 test = ["pytest"]
+
+[[package]]
+name = "sphinxcontrib-extdevhelper-kasane"
+version = "0.2.0"
+description = "襲 - Provide dynamic inheritance shortcuts to make Sphinx extension development easier"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "sphinxcontrib-extdevhelper-kasane-0.2.0.tar.gz", hash = "sha256:4dc7b00327f33c7b421c27122b40278eeaca43f24601b572cee5616d31b206a9"},
+    {file = "sphinxcontrib_extdevhelper_kasane-0.2.0-py3-none-any.whl", hash = "sha256:20f94e3b209cddec24596234458ea3887e7a7ad45b54a4d0a5bf169ff45a38f1"},
+]
+
+[package.dependencies]
+Sphinx = "*"
+
+[package.extras]
+dev = ["autoflake", "black", "flake8", "isort", "mypy", "pytest", "pytest-randomly", "pyupgrade", "taskipy"]
 
 [[package]]
 name = "sphinxcontrib-htmlhelp"
@@ -1047,4 +1085,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "4f626e657b05110e7f4aec18b654683c21c44a4af73d5c8156541198ddb7651d"
+content-hash = "57dcae297bb7868d8d9649b49ce0fb4821f518eb2f0541cbb8822192ac676c1d"
