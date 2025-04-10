@@ -52,7 +52,7 @@ class GameTranscriptProcessor(object):
                 parsed_data['line'] = line
                 self._data.append(parsed_data)
             else:
-                unprocessed.append(line)
+                unprocessed.append(line.strip())
         if unprocessed:
             print('Unprocessed lines:')
             print('\n'.join(unprocessed))

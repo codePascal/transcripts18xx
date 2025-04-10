@@ -61,7 +61,7 @@ class LineParser(object):
         return [cls().match(line) for cls in self._steps]
 
     @staticmethod
-    def _select(result: list, line: str) -> dict:
+    def _select(result: list, line: str) -> dict | None:
         # Retrieves the match from the search result.
         matches = [ret for ret in result if ret is not None]
         if len(matches) > 1:
@@ -71,19 +71,22 @@ class LineParser(object):
                     '\n'.join(m.__str__() for m in matches)
                 )
             )
+        if not matches:
+            return None
         return matches[0]
 
-    def run(self, line: str) -> dict:
+    def run(self, line: str) -> dict | None:
         """Matches and processes the line to engine steps.
 
         Args:
             line: The line to compare to the steps.
 
         Returns:
-            A dictionary with the found match processed.
+            A dictionary with the found match processed, or None if no match
+            was found.
 
         Raises:
-            Value: If multiple steps matched to the line.
+            ValueError: If multiple steps matched to the line.
         """
         result = self._search(line)
         match = self._select(result, line)
