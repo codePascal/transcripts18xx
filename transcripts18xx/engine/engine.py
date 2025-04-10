@@ -8,8 +8,11 @@ function or retrieve the members.
 from itertools import chain
 from typing import Type
 
+import pandas as pd
+
 from .steps import step
 from .steps import actions, events  # noqa
+from .states import player, company
 
 
 class EngineSteps(object):
@@ -132,3 +135,34 @@ class StepMapper(object):
         result = self._search(step_type)
         engine = self._select(result)
         return engine
+
+    @staticmethod
+    def map_type(step_name: str) -> step.StepType:
+        """Maps the step name to its enum member.
+
+        Args:
+            step_name: Name of the step.
+
+        Returns:
+            The matching enum member.
+        """
+        try:
+            result = actions.Actions[step_name]
+        except KeyError:
+            try:
+                result = events.Events[step_name]
+            except KeyError:
+                raise KeyError(
+                    'No matching engine step found: {}'.format(step_name)
+                )
+        return result
+
+
+class GameState(object):
+
+    def __init__(self, players: list[str], companies: list[str]):
+        self.players = [player.PlayerState(p) for p in players]
+        self.companies = [company.CompanyState(c) for c in companies]
+
+    def update(self, row: pd.Series, engine: step.EngineStep):
+        engine.process(row, self.players, self.companies)

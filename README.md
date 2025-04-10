@@ -7,11 +7,14 @@ from [18xx.games](https://18xx.games/).
 Installation
 ------------
 
-To install the Python library, run
+Python library can be installed with `poetry`. Run the following command:
 
 ```shell
-pip install transcripts18xx
+poetry add git+ssh://git@github.com:codePascal/transcripts18xx.git
 ```
+
+See the [documentation](https://python-poetry.org/docs/cli/#add) for more
+information.
 
 Library usage
 -------------
@@ -39,10 +42,13 @@ Dataframe which depicts the actions, events and game state:
 1345     D         GameOver   Event  1345  ...   NaN       NaN       NaN       NaN
 
 [1346 rows x 21 columns]
-
 ```
 
 The result is saved as `.csv` file as well: `<path_to_the_transcript.csv>`.
+
+### dddd
+
+Raw -> parsed -> processed -> final
 
 Supported Games
 ---------------

@@ -7,7 +7,10 @@ run some post-processing on the line if a match was found.
 """
 import abc
 import enum
+import pandas as pd
 import re
+
+from ..states import player, company
 
 
 class StepType(enum.IntEnum):
@@ -100,3 +103,18 @@ class EngineStep(abc.ABC):
         if match:
             return self._process(line, match)
         return None
+
+    @abc.abstractmethod
+    def process(self, row: pd.Series, players: list[player.PlayerState],
+                companies: list[company.CompanyState]):
+        """
+
+        Args:
+            row:
+            players:
+            companies:
+
+        Returns:
+
+        """
+        pass

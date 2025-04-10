@@ -17,7 +17,7 @@ class TestEngineSteps(unittest.TestCase):
 
     def test_patterns(self):
         subclasses = self.pattern.patterns()
-        self.assertEqual(56, len(subclasses))
+        self.assertEqual(59, len(subclasses))
 
 
 class TestLineParser(unittest.TestCase):
@@ -46,13 +46,13 @@ class TestLineParser(unittest.TestCase):
     def test__search_action(self):
         line = 'player1 buys a 20% share of B&O from the IPO for $200'
         result = self.matcher._search(line)
-        self.assertEqual(55, len([r for r in result if r is None]))
+        self.assertEqual(58, len([r for r in result if r is None]))
         self.assertEqual(1, len([r for r in result if isinstance(r, dict)]))
 
     def test__search_event(self):
         line = "B&O's share price moves right from $67 to $70"
         result = self.matcher._search(line)
-        self.assertEqual(55, len([r for r in result if r is None]))
+        self.assertEqual(58, len([r for r in result if r is None]))
         self.assertEqual(1, len([r for r in result if isinstance(r, dict)]))
 
     def test_run_action(self):
@@ -108,20 +108,51 @@ class TestStepMapper(unittest.TestCase):
         step = self.mapper._search(engine.actions.Actions.Pass)
         self.assertEqual(8, len(step))
 
+        step = self.mapper._search(engine.actions.Actions.BuyPrivate)
+        self.assertEqual(5, len(step))
+
+        step = self.mapper._search(engine.events.Events.NewPhase)
+        self.assertEqual(1, len(step))
+
     def test__select_from_single(self):
         step = self.mapper._search(engine.actions.Actions.PayOut)
         result = self.mapper._select(step)
-        self.assertIsInstance(result(), engine.actions.PayOut)
+        self.assertEqual(result, engine.actions.PayOut)
 
     def test__select_from_inherited(self):
         step = self.mapper._search(engine.actions.Actions.Pass)
         result = self.mapper._select(step)
-        self.assertIsInstance(result(), engine.actions.Pass)
+        self.assertEqual(result, engine.actions.Pass)
 
         step = self.mapper._search(engine.actions.Actions.SellShares)
         result = self.mapper._select(step)
-        self.assertIsInstance(result(), engine.actions.SellShare)
+        self.assertEqual(result, engine.actions.SellShare)
 
         step = self.mapper._search(engine.actions.Actions.Skip)
         result = self.mapper._select(step)
-        self.assertIsInstance(result(), engine.actions.Skip)
+        self.assertEqual(result, engine.actions.Skip)
+
+        step = self.mapper._search(engine.actions.Actions.BuyPrivate)
+        result = self.mapper._select(step)
+        self.assertEqual(result, engine.actions.BuyPrivate)
+
+    def test_run(self):
+        step = engine.actions.Actions.Withhold
+        result = self.mapper.run(step)
+        self.assertEqual(result, engine.actions.Withhold)
+
+    def test_map_type(self):
+        name = 'Withhold'
+        result = self.mapper.map_type(name)
+        self.assertEqual(engine.actions.Actions.Withhold, result)
+
+        name = 'TrainsRust'
+        result = self.mapper.map_type(name)
+        self.assertEqual(engine.events.Events.TrainsRust, result)
+
+        # This shall throw an error
+        with self.assertRaises(KeyError) as e:
+            self.mapper.map_type('Unknown')
+        self.assertEqual(
+            "'No matching engine step found: Unknown'", str(e.exception)
+        )
