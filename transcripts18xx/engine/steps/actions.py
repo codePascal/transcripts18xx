@@ -305,6 +305,9 @@ class BuyPrivate(ActionStep, abc.ABC):
         super().__init__()
         self.type = Actions.BuyPrivate
 
+    def _process_match(self, line: str, match) -> dict:
+        raise NotImplementedError
+
 
 class BuyPrivateFromPlayer(BuyPrivate):
 
@@ -385,6 +388,9 @@ class LayTile(ActionStep, abc.ABC):
         super().__init__()
         self.type = Actions.LayTile
 
+    def _process_match(self, line: str, match) -> dict:
+        raise NotImplementedError
+
 
 class LayTileForMoney(LayTile):
 
@@ -430,6 +436,9 @@ class PlaceToken(ActionStep, abc.ABC):
     def __init__(self):
         super().__init__()
         self.type = Actions.PlaceToken
+
+    def _process_match(self, line: str, match) -> dict:
+        raise NotImplementedError
 
 
 class PlaceTokenForMoney(PlaceToken):
