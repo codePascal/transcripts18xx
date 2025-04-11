@@ -105,8 +105,8 @@ class EngineStep(abc.ABC):
         return None
 
     @abc.abstractmethod
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         """
 
         Args:

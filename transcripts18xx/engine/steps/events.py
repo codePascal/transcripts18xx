@@ -62,8 +62,8 @@ class ReceiveShare(EventStep):
             company=match.group(3)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -82,8 +82,8 @@ class ReceiveFunds(EventStep):
             amount=match.group(2)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -99,8 +99,8 @@ class CompanyFloats(EventStep):
             company=match.group(1)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -116,8 +116,8 @@ class SelectsHome(EventStep):
             company=match.group(1)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -133,8 +133,8 @@ class DoesNotRun(EventStep):
             company=match.group(1)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -154,8 +154,8 @@ class SharePriceMove(EventStep):
             share_price=match.group(4)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -171,8 +171,8 @@ class NewPhase(EventStep):
             phase=match.group(1)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -186,8 +186,8 @@ class BankBroke(EventStep):
     def _process_match(self, line: str, match) -> dict:
         return dict()
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -201,8 +201,8 @@ class GameOver(EventStep):
     def _process_match(self, line: str, match) -> dict:
         return dict()
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -218,8 +218,8 @@ class OperatingRound(EventStep):
             round='OR {}'.format(match.group(1))
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -235,8 +235,8 @@ class StockRound(EventStep):
             round='SR {}'.format(match.group(1))
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -253,8 +253,8 @@ class PresidentNomination(EventStep):
             company=match.group(2)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -270,8 +270,8 @@ class PriorityDeal(EventStep):
             player=match.group(1)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -288,8 +288,8 @@ class OperatesCompany(EventStep):
             company=match.group(2)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -303,8 +303,8 @@ class AllPrivatesClose(EventStep):
     def _process_match(self, line: str, match) -> dict:
         return dict()
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -320,8 +320,8 @@ class PrivateCloses(EventStep):
             private=match.group(1)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -337,8 +337,8 @@ class PrivateAuctioned(EventStep):
             private=match.group(1)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -354,6 +354,6 @@ class TrainsRust(EventStep):
             train=match.group(1)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)

@@ -29,8 +29,9 @@ class TestEngineStep(unittest.TestCase):
             def _process_match(self, line: str, match) -> dict:
                 pass
 
-            def process(self, row: pd.Series, players: list[player.PlayerState],
-                        companies: list[company.CompanyState]):
+            def state_update(self, row: pd.Series,
+                             players: list[player.PlayerState],
+                             companies: list[company.CompanyState]):
                 pass
 
         cls.cls = StepEmulator()

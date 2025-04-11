@@ -58,8 +58,8 @@ class PayOut(ActionStep):
             per_share=match.group(3)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -76,8 +76,8 @@ class Withhold(ActionStep):
             amount=match.group(2)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -99,8 +99,8 @@ class BuyShare(ActionStep):
             amount=match.group(5)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -118,8 +118,8 @@ class SellShare(ActionStep, abc.ABC):
             amount=match.group(4)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -152,8 +152,8 @@ class Pass(ActionStep, abc.ABC):
             entity=match.group(1),
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -226,8 +226,8 @@ class Skip(ActionStep, abc.ABC):
             entity=match.group(1),
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -294,8 +294,8 @@ class ParCompany(ActionStep):
             share_price=match.group(3)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -313,8 +313,8 @@ class Bid(ActionStep):
             private=match.group(3),
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -332,8 +332,8 @@ class Collect(ActionStep):
             source=match.group(3),
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -346,8 +346,8 @@ class BuyPrivate(ActionStep, abc.ABC):
     def _process_match(self, line: str, match) -> dict:
         raise NotImplementedError
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -433,8 +433,8 @@ class LayTile(ActionStep, abc.ABC):
     def _process_match(self, line: str, match) -> dict:
         raise NotImplementedError
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -486,8 +486,8 @@ class PlaceToken(ActionStep, abc.ABC):
     def _process_match(self, line: str, match) -> dict:
         raise NotImplementedError
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -538,8 +538,8 @@ class BuyTrain(ActionStep):
             source=match.group(4),
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -558,8 +558,8 @@ class RunTrain(ActionStep):
             route=match.group(4)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -576,8 +576,8 @@ class DiscardTrain(ActionStep):
             train=match.group(2)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -599,8 +599,8 @@ class ExchangeTrain(ActionStep):
             source=match.group(5)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)
 
 
@@ -617,6 +617,6 @@ class Contribute(ActionStep):
             amount=match.group(2)
         )
 
-    def process(self, row: pd.Series, players: list[player.PlayerState],
-                companies: list[company.CompanyState]):
+    def state_update(self, row: pd.Series, players: list[player.PlayerState],
+                     companies: list[company.CompanyState]):
         print(row)

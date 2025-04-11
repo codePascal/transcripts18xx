@@ -165,4 +165,4 @@ class GameState(object):
         self.companies = [company.CompanyState(c) for c in companies]
 
     def update(self, row: pd.Series, engine: step.EngineStep):
-        engine.process(row, self.players, self.companies)
+        engine.state_update(row, self.players, self.companies)
