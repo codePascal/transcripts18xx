@@ -2,8 +2,10 @@
 # -*- coding: utf-8 -*-
 import re
 import unittest
+import pandas as pd
 
 from transcripts18xx.engine.steps import step
+from transcripts18xx.engine.states import player, company
 
 
 class BaseStepTest(unittest.TestCase):
@@ -25,6 +27,10 @@ class TestEngineStep(unittest.TestCase):
                 self.pattern = re.compile(r'(.*?) runs (\d+) tests using (.*)')
 
             def _process_match(self, line: str, match) -> dict:
+                pass
+
+            def process(self, row: pd.Series, players: list[player.PlayerState],
+                        companies: list[company.CompanyState]):
                 pass
 
         cls.cls = StepEmulator()
