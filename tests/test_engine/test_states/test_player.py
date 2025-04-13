@@ -81,3 +81,13 @@ class TestPlayers(unittest.TestCase):
             ),
             self.players.__repr__()
         )
+
+    def test_update(self):
+        share_prices = dict(share_prices=(dict(company1=50, company2=40)))
+        self.players.states[0].shares = dict(company1=2, company2=1)
+        self.players.states[1].shares = dict(company1=1, company2=0)
+        self.players.states[2].shares = dict(company1=0, company2=3)
+        self.players.update(share_prices)
+        self.assertEqual(290, self.players.states[0].value)
+        self.assertEqual(200, self.players.states[1].value)
+        self.assertEqual(270, self.players.states[2].value)

@@ -30,7 +30,7 @@ class State(object):
         attrs = ', '.join(f'{k}={repr(v)}' for k, v in self.__dict__.items())
         return f'{self.__class__.__name__}({attrs})'
 
-    def update(self, *args, **kwargs):
+    def update(self, args):
         pass
 
     def receives_dividend(self, company: str, per_share: int) -> None:
@@ -66,9 +66,9 @@ class States(object):
     def __repr__(self):
         return '\n'.join([st.__repr__() for st in self.states]) + '\n'
 
-    def update(self, *args, **kwargs):
+    def update(self, args: dict):
         for st in self.states:
-            st.update(args, kwargs)
+            st.update(**args)
 
     def get(self, name: str) -> State:
         return next((st for st in self.states if st.name == name))
