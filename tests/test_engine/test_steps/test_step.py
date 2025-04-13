@@ -10,6 +10,40 @@ from transcripts18xx.engine.states import player, company
 
 class BaseStepTest(unittest.TestCase):
 
+    @staticmethod
+    def game_state():
+        return (
+            player.Players(['player1', 'player2', 'player3']),
+            company.Companies(['company1', 'company2', 'company3'])
+        )
+
+    @staticmethod
+    def row():
+        return pd.Series(
+            {'phase': None,
+             'type': None,
+             'parent': None,
+             'id': None,
+             'player': None,
+             'amount': None,
+             'private': None,
+             'source': None,
+             'percentage': None,
+             'company': None,
+             'share_price': None,
+             'sequence': None,
+             'location': None,
+             'tile': None,
+             'rotation': None,
+             'direction': None,
+             'train': None,
+             'route': None,
+             'per_share': None,
+             'old_train': None,
+             'new_train': None
+             }
+        )
+
     def assertMatch(self, action, line, expected):
         result = action.match(line)
         self.assertEqual(expected, result)

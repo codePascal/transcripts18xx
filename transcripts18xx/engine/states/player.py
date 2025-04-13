@@ -3,30 +3,57 @@
 """
 """
 
-
-class Players(object):
-
-    def __init__(self, names: list[str]):
-        self.players = [PlayerState(n) for n in names]
+from .state import State, States
 
 
-class PlayerState(object):
+class PlayerState(State):
 
-    def __init__(self, name: str):
-        self.name = name
+    def __init__(self, name: str, initial_cash: int, shares: dict):
+        super().__init__(name)
 
-        self.cash = 0
-        self.value = 0
-        self.liquidity = 0
-        self.certs = 0
-        self.shares = dict()
-        self.privates = list()
+        self.cash = initial_cash
+        self.value = initial_cash
+        self.shares = shares
+        self.priority_deal = False
 
-    def __str__(self):
-        attrs = ', '.join(f'{k}={repr(v)}' for k, v in self.__dict__.items())
-        return f'{self.__class__.__name__}({attrs})'
-
-    def initialize(self, initial_value: int):
-        self.cash = initial_value
+    def update(self, share_prices: dict):
         self.value = self.cash
-        self.liquidity = self.cash
+        self.value += sum(self.shares[c] * v for c, v in share_prices.items())
+        self.value += sum(self.privates.values())
+
+    def receives_dividend(self, company: str, per_share: int) -> None:
+        self.cash += self.shares[company] * per_share
+
+    def buys_shares(self, company: str, num_shares: int,
+                    amount: int) -> None:
+        self.shares[company] += num_shares
+        self.cash -= amount
+
+    def sells_shares(self, company: str, num_shares: int,
+                     amount: int) -> None:
+        self.shares[company] -= num_shares
+        self.cash += amount
+
+    def sells_private(self, private: str, amount: int):
+        self.privates.pop(private)
+        self.cash += amount
+
+    def contributes(self, amount: int):
+        self.cash -= amount
+
+    def receives_share(self, company: str, num_shares: int):
+        self.shares[company] += num_shares
+
+    def has_priority_deal(self):
+        self.priority_deal = True
+
+
+class Players(States):
+
+    def __init__(self, names: list[str], companies: list[str],
+                 initial_cash: int):
+        super().__init__()
+
+        initial_value = int(initial_cash / len(names))
+        shares = {k: 0 for k in companies}
+        self.states = [PlayerState(n, initial_value, shares) for n in names]

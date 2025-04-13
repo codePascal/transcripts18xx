@@ -10,7 +10,8 @@ import enum
 import pandas as pd
 import re
 
-from ..states import player, company
+from ..states.player import Players
+from ..states.company import Companies
 
 
 class StepType(enum.IntEnum):
@@ -90,6 +91,11 @@ class EngineStep(abc.ABC):
         ret['parent'] = self.parent.name
         return ret
 
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        # Invoke the engine step to update game state accordingly.
+        pass
+
     def match(self, line: str) -> dict | None:
         """Matches and processes a line to the pattern.
 
@@ -104,17 +110,17 @@ class EngineStep(abc.ABC):
             return self._process(line, match)
         return None
 
-    @abc.abstractmethod
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        """
+    def state_update(self, row: pd.Series, players: Players,
+                     companies: Companies, privates: dict) -> None:
+        """Updates the state of players and companies based on processed row.
 
         Args:
-            row:
-            players:
-            companies:
+            row: The parsed line in the full game context.
+            players: Player states.
+            companies: Company states.
+            privates: Privates and their values.
 
         Returns:
 
         """
-        pass
+        return self._update(row, players, companies, privates)
