@@ -30,7 +30,7 @@ class State(object):
         attrs = ', '.join(f'{k}={repr(v)}' for k, v in self.__dict__.items())
         return f'{self.__class__.__name__}({attrs})'
 
-    def update(self, args):
+    def update(self, *args):
         pass
 
     def receives_dividend(self, company: str, per_share: int) -> None:
