@@ -10,6 +10,7 @@ from typing import Type
 
 import pandas as pd
 
+from ..games import Game18xx
 from .steps import step
 from .steps import actions, events  # noqa
 from .states import player, company
@@ -160,9 +161,15 @@ class StepMapper(object):
 
 class GameState(object):
 
-    def __init__(self, players: list[str], companies: list[str]):
-        self.players = [player.PlayerState(p) for p in players]
-        self.companies = [company.CompanyState(c) for c in companies]
+    def __init__(self, players: list[str], companies: list[str],
+                 game: Game18xx):
+        self.players = player.Players(
+            players, game.companies, game.start_capital
+        )
+        self.companies = company.Companies(companies, game.trains)
+        self.privates = game.privates
 
     def update(self, row: pd.Series, engine: step.EngineStep):
-        engine.state_update(row, self.players, self.companies)
+        engine.state_update(row, self.players, self.companies, self.privates)
+        self.players.update(dict(share_prices=self.companies.share_prices()))
+        self.companies.update(dict())

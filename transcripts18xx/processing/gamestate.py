@@ -32,7 +32,7 @@ class GameStateProcessor(object):
         self._game = game
 
         self._game_state = engine.GameState(
-            df.player.dropna().unique(), df.company.dropna().unique()
+            df.player.dropna().unique(), df.company.dropna().unique(), game
         )
         self._steps = engine.StepMapper()
 

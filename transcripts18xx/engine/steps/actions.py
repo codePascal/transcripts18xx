@@ -9,7 +9,8 @@ import re
 import abc
 import pandas as pd
 
-from ..states import player, company
+from ..states.player import Players, PlayerState
+from ..states.company import Companies, CompanyState
 from .step import EngineStep, StepType, StepParent
 
 
@@ -38,6 +39,10 @@ class Actions(StepType):
 
 
 class ActionStep(EngineStep, abc.ABC):
+    """ActionStep
+
+    Class implements engine steps that are actions by companies or player.
+    """
 
     def __init__(self):
         super().__init__()
@@ -45,6 +50,12 @@ class ActionStep(EngineStep, abc.ABC):
 
 
 class PayOut(ActionStep):
+    """PayOut
+
+    Class implements the engine for companies paying dividends. Dividends are
+    payed to all players which hold shares of the company and to the company
+    itself.
+    """
 
     def __init__(self):
         super().__init__()
@@ -58,12 +69,19 @@ class PayOut(ActionStep):
             per_share=match.group(3)
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(company=row.company, per_share=row.per_share)
+        players.invoke_all(PlayerState.receives_dividend, args)
+        companies.invoke(CompanyState.receives_dividend, args, row.company)
 
 
 class Withhold(ActionStep):
+    """Withhold
+
+    Class implements the engine for companies withholding dividends. In that
+    case, the money is kept by the company.
+    """
 
     def __init__(self):
         super().__init__()
@@ -76,12 +94,16 @@ class Withhold(ActionStep):
             amount=match.group(2)
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(amount=row.amount)
+        companies.invoke(CompanyState.withholds, args, row.company)
 
 
 class BuyShare(ActionStep):
+    """BuyShare
+
+    """
 
     def __init__(self):
         super().__init__()
@@ -99,9 +121,14 @@ class BuyShare(ActionStep):
             amount=match.group(5)
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(
+            company=row.company,
+            num_shares=int(0.1 * row.percentage),
+            amount=row.amount
+        )
+        players.invoke(PlayerState.buys_shares, args, row.player)
 
 
 class SellShare(ActionStep, abc.ABC):
@@ -118,9 +145,14 @@ class SellShare(ActionStep, abc.ABC):
             amount=match.group(4)
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(
+            company=row.company,
+            num_shares=int(0.1 * row.percentage),
+            amount=row.amount
+        )
+        players.invoke(PlayerState.sells_shares, args, row.player)
 
 
 class SellSingleShare(SellShare):
@@ -151,10 +183,6 @@ class Pass(ActionStep, abc.ABC):
         return dict(
             entity=match.group(1),
         )
-
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
 
 
 class NoValidActions(Pass):
@@ -226,10 +254,6 @@ class Skip(ActionStep, abc.ABC):
             entity=match.group(1),
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
-
 
 class DeclineSellShare(Skip):
 
@@ -294,9 +318,10 @@ class ParCompany(ActionStep):
             share_price=match.group(3)
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(share_price=row.share_price)
+        companies.invoke(CompanyState.is_pared, args, row.company)
 
 
 class Bid(ActionStep):
@@ -313,10 +338,6 @@ class Bid(ActionStep):
             private=match.group(3),
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
-
 
 class Collect(ActionStep):
 
@@ -332,9 +353,15 @@ class Collect(ActionStep):
             source=match.group(3),
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(
+            amount=row.amount
+        )
+        if not pd.isna(row.player):
+            players.invoke(PlayerState.collects, args, row.player)
+        else:
+            companies.invoke(CompanyState.collects, args, row.company)
 
 
 class BuyPrivate(ActionStep, abc.ABC):
@@ -346,9 +373,17 @@ class BuyPrivate(ActionStep, abc.ABC):
     def _process_match(self, line: str, match) -> dict:
         raise NotImplementedError
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(
+            private=row.private, amount=row.amount, value=privates[row.private]
+        )
+        if not pd.isna(row.player):
+            # Player buys from Auction.
+            players.invoke(PlayerState.buys_private, args, row.player)
+        else:
+            # Company buys from player.
+            companies.invoke(CompanyState.buys_private, args, row.company)
 
 
 class BuyPrivateFromPlayer(BuyPrivate):
@@ -433,9 +468,10 @@ class LayTile(ActionStep, abc.ABC):
     def _process_match(self, line: str, match) -> dict:
         raise NotImplementedError
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(amount=row.amount)
+        companies.invoke(CompanyState.lays_tile, args, row.company)
 
 
 class LayTileForMoney(LayTile):
@@ -486,9 +522,10 @@ class PlaceToken(ActionStep, abc.ABC):
     def _process_match(self, line: str, match) -> dict:
         raise NotImplementedError
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(amount=row.amount)
+        companies.invoke(CompanyState.places_token, args, row.company)
 
 
 class PlaceTokenForMoney(PlaceToken):
@@ -538,9 +575,10 @@ class BuyTrain(ActionStep):
             source=match.group(4),
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(train=row.train, amount=row.amount)
+        companies.invoke(CompanyState.buys_train, args, row.company)
 
 
 class RunTrain(ActionStep):
@@ -558,10 +596,6 @@ class RunTrain(ActionStep):
             route=match.group(4)
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
-
 
 class DiscardTrain(ActionStep):
 
@@ -576,9 +610,10 @@ class DiscardTrain(ActionStep):
             train=match.group(2)
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(train=row.train)
+        companies.invoke(CompanyState.discards_train, args, row.company)
 
 
 class ExchangeTrain(ActionStep):
@@ -599,9 +634,12 @@ class ExchangeTrain(ActionStep):
             source=match.group(5)
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(
+            old_train=row.old_train, new_train=row.new_train, amount=row.amount
+        )
+        companies.invoke(CompanyState.exchanges_train, args, row.company)
 
 
 class Contribute(ActionStep):
@@ -617,6 +655,7 @@ class Contribute(ActionStep):
             amount=match.group(2)
         )
 
-    def state_update(self, row: pd.Series, players: list[player.PlayerState],
-                     companies: list[company.CompanyState]):
-        print(row)
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        args = dict(amount=row.amount)
+        players.invoke(PlayerState.contributes, args, row.player)
