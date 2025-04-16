@@ -13,8 +13,15 @@ class BaseStepTest(unittest.TestCase):
     @staticmethod
     def game_state():
         return (
-            player.Players(['player1', 'player2', 'player3']),
-            company.Companies(['company1', 'company2', 'company3'])
+            player.Players(
+                ['player1', 'player2', 'player3'],
+                ['company1', 'company2', 'company3'],
+                3000
+            ),
+            company.Companies(
+                ['company1', 'company2', 'company3'],
+                ['2', '3', '4', '5', '6', 'D']
+            )
         )
 
     @staticmethod
@@ -61,11 +68,6 @@ class TestEngineStep(unittest.TestCase):
                 self.pattern = re.compile(r'(.*?) runs (\d+) tests using (.*)')
 
             def _process_match(self, line: str, match) -> dict:
-                pass
-
-            def state_update(self, row: pd.Series,
-                             players: list[player.PlayerState],
-                             companies: list[company.CompanyState]):
                 pass
 
         cls.cls = StepEmulator()
