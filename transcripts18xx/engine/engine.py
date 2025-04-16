@@ -173,3 +173,6 @@ class GameState(object):
         engine.state_update(row, self.players, self.companies, self.privates)
         self.players.update(dict(share_prices=self.companies.share_prices()))
         self.companies.update(dict())
+
+    def view(self):
+        return {**self.players.as_dict(), **self.companies.as_dict()}
