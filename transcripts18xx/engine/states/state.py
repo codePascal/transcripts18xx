@@ -80,3 +80,6 @@ class States(object):
     def invoke_all(self, func, args):
         for st in self.states:
             self.invoke(func, args, st.name)
+
+    def as_dict(self):
+        return {st.name: st.__repr__() for st in self.states}

@@ -72,3 +72,17 @@ class TestStates(unittest.TestCase):
     def test_invoke_all(self):
         self.states.invoke_all(state.State.collects, dict(amount=20))
         self.assertEqual([20, 20, 20], [st.cash for st in self.states.states])
+
+    def test_as_dict(self):
+        result = self.states.as_dict()
+        self.assertIsInstance(result, dict)
+        self.assertEqual(['state1', 'state2', 'state3'], list(result.keys()))
+        self.assertEqual(
+            "State(name='state1', cash=0, privates={})", result['state1']
+        )
+        self.assertEqual(
+            "State(name='state2', cash=0, privates={})", result['state2']
+        )
+        self.assertEqual(
+            "State(name='state3', cash=0, privates={})", result['state3']
+        )
