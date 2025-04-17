@@ -160,6 +160,20 @@ class StepMapper(object):
 
 
 class GameState(object):
+    """GameState
+
+    Class maintains the game state of the players and companies.
+
+    Args:
+        players: Player names in the game.
+        companies: Company names in the game.
+        game: The underlying 18xx game.
+
+    Attributes:
+        players: The maintainer class for all players.
+        companies: The maintainer class for all companies.
+        privates: The available privates and their values.
+    """
 
     def __init__(self, players: list[str], companies: list[str],
                  game: Game18xx):
@@ -169,10 +183,20 @@ class GameState(object):
         self.companies = company.Companies(companies, game.trains)
         self.privates = game.privates
 
-    def update(self, row: pd.Series, engine: step.EngineStep):
-        engine.state_update(row, self.players, self.companies, self.privates)
-        self.players.update(dict(share_prices=self.companies.share_prices()))
-        self.companies.update(dict())
+    def update(self, row: pd.Series, engine: step.EngineStep) -> None:
+        """Updates the game state using the step engine.
 
-    def view(self):
+        Args:
+            row: The parsed and processed line from the transcript.
+            engine: The step engine to run the state update.
+        """
+        engine.state_update(row, self.players, self.companies, self.privates)
+
+    def view(self) -> dict:
+        """Generates a dictionary of the game state.
+
+        Returns:
+            The game state with names of players and companies as keys and
+            their representation as values.
+        """
         return {**self.players.as_dict(), **self.companies.as_dict()}

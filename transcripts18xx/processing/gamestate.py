@@ -36,11 +36,19 @@ class GameStateProcessor(object):
         )
         self._steps = engine.StepMapper()
 
-    def generate(self):
-        for i, row in self._df.iterrows():
-            step_type = self._steps.map_type(row.type)
-            step_engine = self._steps.run(step_type)
-            self._game_state.update(row, step_engine())
+    def _update(self, row: pd.Series):
+        # Update a row with its step engine and return the game state.
+        step_type = self._steps.map_type(row.type)
+        step_engine = self._steps.run(step_type)
+        self._game_state.update(row, step_engine())
+        return self._game_state.view()
+
+    def generate(self) -> None:
+        """Generate and add the game state for each step."""
+        state = self._df.apply(
+            lambda x: self._update(x), axis=1, result_type='expand'
+        )
+        self._df = pd.concat([self._df, state], axis=1)
 
     def save_to_dataframe(self, transcript_file: Path) -> pd.DataFrame:
         """Saves the final data as a structured pandas DataFrame.
