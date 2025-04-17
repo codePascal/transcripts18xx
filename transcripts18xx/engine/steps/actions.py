@@ -50,12 +50,6 @@ class ActionStep(EngineStep, abc.ABC):
 
 
 class PayOut(ActionStep):
-    """PayOut
-
-    Class implements the engine for companies paying dividends. Dividends are
-    payed to all players which hold shares of the company and to the company
-    itself.
-    """
 
     def __init__(self):
         super().__init__()
@@ -71,17 +65,18 @@ class PayOut(ActionStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(company=row.company, per_share=row.per_share)
-        players.invoke_all(PlayerState.receives_dividend, args)
-        companies.invoke(CompanyState.receives_dividend, args, row.company)
+        players.invoke_all(
+            PlayerState.receives_dividend,
+            dict(company=row.company, per_share=row.per_share)
+        )
+        companies.invoke(
+            CompanyState.receives_dividend,
+            dict(per_share=row.per_share),
+            row.company
+        )
 
 
 class Withhold(ActionStep):
-    """Withhold
-
-    Class implements the engine for companies withholding dividends. In that
-    case, the money is kept by the company.
-    """
 
     def __init__(self):
         super().__init__()
@@ -96,14 +91,14 @@ class Withhold(ActionStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(amount=row.amount)
-        companies.invoke(CompanyState.withholds, args, row.company)
+        companies.invoke(
+            CompanyState.withholds,
+            dict(amount=row.amount),
+            row.company
+        )
 
 
 class BuyShare(ActionStep):
-    """BuyShare
-
-    """
 
     def __init__(self):
         super().__init__()
@@ -123,12 +118,23 @@ class BuyShare(ActionStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(
-            company=row.company,
-            num_shares=int(0.1 * row.percentage),
-            amount=row.amount
+        players.invoke(
+            PlayerState.buys_shares,
+            dict(
+                company=row.company,
+                num_shares=int(0.1 * row.percentage),
+                amount=row.amount,
+            ),
+            row.player
         )
-        players.invoke(PlayerState.buys_shares, args, row.player)
+        companies.invoke(
+            CompanyState.sells_share,
+            dict(
+                num_shares=int(0.1 * row.percentage),
+                source=row.source
+            ),
+            row.company
+        )
 
 
 class SellShare(ActionStep, abc.ABC):
@@ -147,12 +153,20 @@ class SellShare(ActionStep, abc.ABC):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(
-            company=row.company,
-            num_shares=int(0.1 * row.percentage),
-            amount=row.amount
+        players.invoke(
+            PlayerState.sells_shares,
+            dict(
+                company=row.company,
+                num_shares=int(0.1 * row.percentage),
+                amount=row.amount
+            ),
+            row.player
         )
-        players.invoke(PlayerState.sells_shares, args, row.player)
+        companies.invoke(
+            CompanyState.receives_share,
+            dict(num_shares=int(0.1 * row.percentage)),
+            row.company
+        )
 
 
 class SellSingleShare(SellShare):
@@ -320,8 +334,11 @@ class ParCompany(ActionStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(share_price=row.share_price)
-        companies.invoke(CompanyState.is_pared, args, row.company)
+        companies.invoke(
+            CompanyState.is_pared,
+            dict(share_price=row.share_price),
+            row.company
+        )
 
 
 class Bid(ActionStep):
@@ -384,6 +401,7 @@ class BuyPrivate(ActionStep, abc.ABC):
         else:
             # Company buys from player.
             companies.invoke(CompanyState.buys_private, args, row.company)
+            players.invoke(PlayerState.sells_private, args, row.source)
 
 
 class BuyPrivateFromPlayer(BuyPrivate):
@@ -470,8 +488,11 @@ class LayTile(ActionStep, abc.ABC):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(amount=row.amount)
-        companies.invoke(CompanyState.lays_tile, args, row.company)
+        companies.invoke(
+            CompanyState.lays_tile,
+            dict(amount=row.amount),
+            row.company
+        )
 
 
 class LayTileForMoney(LayTile):
@@ -524,8 +545,11 @@ class PlaceToken(ActionStep, abc.ABC):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(amount=row.amount)
-        companies.invoke(CompanyState.places_token, args, row.company)
+        companies.invoke(
+            CompanyState.places_token,
+            dict(amount=row.amount),
+            row.company
+        )
 
 
 class PlaceTokenForMoney(PlaceToken):
@@ -577,8 +601,11 @@ class BuyTrain(ActionStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(train=row.train, amount=row.amount)
-        companies.invoke(CompanyState.buys_train, args, row.company)
+        companies.invoke(
+            CompanyState.buys_train,
+            dict(train=row.train, amount=row.amount),
+            row.company
+        )
 
 
 class RunTrain(ActionStep):
@@ -612,8 +639,11 @@ class DiscardTrain(ActionStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(train=row.train)
-        companies.invoke(CompanyState.discards_train, args, row.company)
+        companies.invoke(
+            CompanyState.discards_train,
+            dict(train=row.train),
+            row.company
+        )
 
 
 class ExchangeTrain(ActionStep):
@@ -636,10 +666,15 @@ class ExchangeTrain(ActionStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(
-            old_train=row.old_train, new_train=row.new_train, amount=row.amount
+        companies.invoke(
+            CompanyState.exchanges_train,
+            dict(
+                old_train=row.old_train,
+                new_train=row.new_train,
+                amount=row.amount
+            ),
+            row.company
         )
-        companies.invoke(CompanyState.exchanges_train, args, row.company)
 
 
 class Contribute(ActionStep):
@@ -657,5 +692,8 @@ class Contribute(ActionStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(amount=row.amount)
-        players.invoke(PlayerState.contributes, args, row.player)
+        players.invoke(
+            PlayerState.contributes,
+            dict(amount=row.amount),
+            row.player
+        )

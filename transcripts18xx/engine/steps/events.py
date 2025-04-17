@@ -65,11 +65,22 @@ class ReceiveShare(EventStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(
-            company=row.company,
-            num_shares=int(0.1 * row.percentage),
+        players.invoke(
+            PlayerState.receives_share,
+            dict(
+                company=row.company,
+                num_shares=int(0.1 * row.percentage),
+            ),
+            row.player
         )
-        players.invoke(PlayerState.receives_share, args, row.player)
+        companies.invoke(
+            CompanyState.sells_share,
+            dict(
+                num_shares=int(0.1 * row.percentage),
+                source='IPO'  # Assume from IPO
+            ),
+            row.company
+        )
 
 
 class ReceiveFunds(EventStep):
@@ -89,8 +100,11 @@ class ReceiveFunds(EventStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(amount=row.amount)
-        companies.invoke(CompanyState.receives_funds, args, row.company)
+        companies.invoke(
+            CompanyState.receives_funds,
+            dict(amount=row.amount),
+            row.company
+        )
 
 
 class CompanyFloats(EventStep):
@@ -150,8 +164,11 @@ class SharePriceMove(EventStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(share_price=row.share_price)
-        companies.invoke(CompanyState.share_price_moves, args, row.company)
+        companies.invoke(
+            CompanyState.share_price_moves,
+            dict(share_price=row.share_price),
+            row.company
+        )
 
 
 class NewPhase(EventStep):
@@ -231,7 +248,11 @@ class PresidentNomination(EventStep):
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         args = dict(player=row.player)
-        companies.invoke(CompanyState.president_assignment, args, row.company)
+        companies.invoke(
+            CompanyState.president_assignment,
+            dict(player=row.player),
+            row.company
+        )
 
 
 class PriorityDeal(EventStep):
@@ -248,8 +269,7 @@ class PriorityDeal(EventStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict()
-        players.invoke(PlayerState.has_priority_deal, args, row.player)
+        players.invoke(PlayerState.has_priority_deal, dict(), row.player)
 
 
 class OperatesCompany(EventStep):
@@ -278,9 +298,8 @@ class AllPrivatesClose(EventStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict()
-        players.invoke_all(PlayerState.private_closes, args)
-        companies.invoke_all(CompanyState.private_closes, args)
+        players.invoke_all(PlayerState.private_closes, dict())
+        companies.invoke_all(CompanyState.private_closes, dict())
 
 
 class PrivateCloses(EventStep):
@@ -329,5 +348,4 @@ class TrainsRust(EventStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(train=row.train)
-        companies.invoke_all(CompanyState.trains_rust, args)
+        companies.invoke_all(CompanyState.trains_rust, dict(train=row.train))

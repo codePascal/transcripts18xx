@@ -119,8 +119,7 @@ class EngineStep(abc.ABC):
             players: Player states.
             companies: Company states.
             privates: Privates and their values.
-
-        Returns:
-
         """
-        return self._update(row, players, companies, privates)
+        self._update(row, players, companies, privates)
+        players.update(dict(share_prices=companies.share_prices()))
+        companies.update(dict())
