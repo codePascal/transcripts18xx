@@ -25,6 +25,10 @@ class BaseStepTest(unittest.TestCase):
         )
 
     @staticmethod
+    def privates():
+        return dict(private1=120, private2=40, private3=70)
+
+    @staticmethod
     def row():
         return pd.Series(
             {'phase': None,
@@ -54,6 +58,17 @@ class BaseStepTest(unittest.TestCase):
     def assertMatch(self, action, line, expected):
         result = action.match(line)
         self.assertEqual(expected, result)
+
+    def assertDefaultPlayer(self, players: player.Players, name: str):
+        defaults, _ = self.game_state()
+        self.assertEqual(defaults.get(name), players.get(name))
+
+    def assertDefaultCompany(self, companies: company.Companies, name: str):
+        _, defaults = self.game_state()
+        self.assertEqual(defaults.get(name), companies.get(name))
+
+    def invoke_state_update(self, action, row, players, companies):
+        action.state_update(row, players, companies, self.privates())
 
 
 class TestEngineStep(unittest.TestCase):

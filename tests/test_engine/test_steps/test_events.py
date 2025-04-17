@@ -25,6 +25,37 @@ class TestReceiveShare(BaseStepTest):
         )
         self.assertMatch(events.ReceiveShare(), line, expected)
 
+    def test_state_update_from_private(self):
+        players, companies = self.game_state()
+        row = self.row()
+        row.company = 'company2'
+        row.player = 'player1'
+        row.percentage = 10
+        self.invoke_state_update(events.ReceiveShare(), row, players, companies)
+
+        p = players.get('player1')
+        self.assertEqual(1000, p.cash)
+        self.assertEqual(dict(), p.privates)
+        self.assertEqual(1000, p.value)  # value not updated yet in pipeline
+        self.assertEqual(dict(company1=0, company2=1, company3=0), p.shares)
+        self.assertFalse(p.priority_deal)
+
+        c = companies.get('company2')
+        self.assertEqual(0, c.cash)
+        self.assertEqual(dict(), c.privates)
+        self.assertEqual(
+            {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 0}, c.trains
+        )
+        self.assertEqual(9, c.ipo)
+        self.assertEqual(0, c.market)
+        self.assertEqual(None, c.president)
+        self.assertEqual(0, c.share_price)
+
+        self.assertDefaultPlayer(players, 'player2')
+        self.assertDefaultPlayer(players, 'player3')
+        self.assertDefaultCompany(companies, 'company1')
+        self.assertDefaultCompany(companies, 'company3')
+
 
 class TestReceiveFunds(BaseStepTest):
 
@@ -38,6 +69,10 @@ class TestReceiveFunds(BaseStepTest):
         )
         self.assertMatch(events.ReceiveFunds(), line, expected)
 
+    def test_state_update(self):
+        # TODO
+        pass
+
 
 class TestCompanyFloats(BaseStepTest):
 
@@ -49,6 +84,10 @@ class TestCompanyFloats(BaseStepTest):
             company='C&O',
         )
         self.assertMatch(events.CompanyFloats(), line, expected)
+
+    def test_state_update(self):
+        # TODO
+        pass
 
 
 class TestSelectsHome(BaseStepTest):
@@ -87,6 +126,10 @@ class TestSharePriceMove(BaseStepTest):
             share_price='70'
         )
         self.assertMatch(events.SharePriceMove(), line, expected)
+
+    def test_state_update(self):
+        # TODO
+        pass
 
 
 class TestNewPhase(BaseStepTest):
@@ -159,6 +202,10 @@ class TestPresidentNomination(BaseStepTest):
         )
         self.assertMatch(events.PresidentNomination(), line, expected)
 
+    def test_state_update(self):
+        # TODO
+        pass
+
 
 class TestPriorityDeal(BaseStepTest):
 
@@ -170,6 +217,10 @@ class TestPriorityDeal(BaseStepTest):
             player='player1',
         )
         self.assertMatch(events.PriorityDeal(), line, expected)
+
+    def test_state_update(self):
+        # TODO
+        pass
 
 
 class TestOperatesCompany(BaseStepTest):
@@ -195,6 +246,10 @@ class TestAllPrivatesClose(BaseStepTest):
         )
         self.assertMatch(events.AllPrivatesClose(), line, expected)
 
+    def test_state_update(self):
+        # TODO
+        pass
+
 
 class TestPrivateCloses(BaseStepTest):
 
@@ -206,6 +261,10 @@ class TestPrivateCloses(BaseStepTest):
             private='Mohawk & Hudson'
         )
         self.assertMatch(events.PrivateCloses(), line, expected)
+
+    def test_state_update(self):
+        # TODO
+        pass
 
 
 class TestPrivateAuctioned(BaseStepTest):
@@ -230,3 +289,7 @@ class TestTrainsRust(BaseStepTest):
             train='4'
         )
         self.assertMatch(events.TrainsRust(), line, expected)
+
+    def test_state_update(self):
+        # TODO
+        pass

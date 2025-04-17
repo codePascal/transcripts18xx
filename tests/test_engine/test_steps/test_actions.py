@@ -25,6 +25,54 @@ class TestPayOut(BaseStepTest):
         )
         self.assertMatch(actions.PayOut(), line, expected)
 
+    def test_state_update(self):
+        players, companies = self.game_state()
+        players.states[0].shares['company1'] = 2
+        players.states[1].shares['company1'] = 1
+        players.states[2].shares['company1'] = 4
+        companies.states[0].market = 2
+
+        row = self.row()
+        row.company = 'company1'
+        row.amount = 50
+        row.per_share = 5
+        self.invoke_state_update(actions.PayOut(), row, players, companies)
+
+        p1 = players.get('player1')
+        self.assertEqual(1010, p1.cash)
+        self.assertEqual(dict(), p1.privates)
+        self.assertEqual(1010, p1.value)
+        self.assertEqual(dict(company1=2, company2=0, company3=0), p1.shares)
+        self.assertFalse(p1.priority_deal)
+
+        p2 = players.get('player2')
+        self.assertEqual(1005, p2.cash)
+        self.assertEqual(dict(), p2.privates)
+        self.assertEqual(1005, p2.value)
+        self.assertEqual(dict(company1=1, company2=0, company3=0), p2.shares)
+        self.assertFalse(p2.priority_deal)
+
+        p3 = players.get('player3')
+        self.assertEqual(1020, p3.cash)
+        self.assertEqual(dict(), p3.privates)
+        self.assertEqual(1020, p3.value)
+        self.assertEqual(dict(company1=4, company2=0, company3=0), p3.shares)
+        self.assertFalse(p3.priority_deal)
+
+        c = companies.get('company1')
+        self.assertEqual(10, c.cash)
+        self.assertEqual(dict(), c.privates)
+        self.assertEqual(
+            {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 0}, c.trains
+        )
+        self.assertEqual(10, c.ipo)
+        self.assertEqual(2, c.market)
+        self.assertEqual(None, c.president)
+        self.assertEqual(0, c.share_price)
+
+        self.assertDefaultCompany(companies, 'company2')
+        self.assertDefaultCompany(companies, 'company3')
+
 
 class TestWithhold(BaseStepTest):
 
@@ -37,6 +85,10 @@ class TestWithhold(BaseStepTest):
             amount='80',
         )
         self.assertMatch(actions.Withhold(), line, expected)
+
+    def test_state_update(self):
+        # TODO
+        pass
 
 
 class TestBuyShare(BaseStepTest):
@@ -54,11 +106,19 @@ class TestBuyShare(BaseStepTest):
         )
         self.assertMatch(actions.BuyShare(), line, expected)
 
+    def test_state_update(self):
+        # TODO
+        pass
+
 
 class TestSellShare(BaseStepTest):
 
     def test_match(self):
         # Skip abstract class
+        pass
+
+    def test_state_update(self):
+        # TODO
         pass
 
 
@@ -287,6 +347,10 @@ class TestParCompany(BaseStepTest):
         )
         self.assertMatch(actions.ParCompany(), line, expected)
 
+    def test_state_update(self):
+        # TODO
+        pass
+
 
 class TestBid(BaseStepTest):
 
@@ -315,12 +379,108 @@ class TestCollect(BaseStepTest):
         )
         self.assertMatch(actions.Collect(), line, expected)
 
+    def test_state_update(self):
+        # TODO
+        pass
+
 
 class TestBuyPrivate(BaseStepTest):
 
-    def test_match(self):
-        # Skip abstract class
-        pass
+    def test_state_update_from_auction_at_face_value(self):
+        players, companies = self.game_state()
+        row = self.row()
+        row.player = 'player1'
+        row.amount = 40
+        row.private = 'private2'
+        self.invoke_state_update(actions.BuyPrivate(), row, players, companies)
+
+        p = players.get('player1')
+        self.assertEqual(960, p.cash)
+        self.assertEqual(dict(private2=40), p.privates)
+        self.assertEqual(1000, p.value)
+        self.assertEqual(dict(company1=0, company2=0, company3=0), p.shares)
+        self.assertFalse(p.priority_deal)
+
+        self.assertDefaultPlayer(players, 'player2')
+        self.assertDefaultPlayer(players, 'player3')
+        self.assertDefaultCompany(companies, 'company1')
+        self.assertDefaultCompany(companies, 'company2')
+        self.assertDefaultCompany(companies, 'company3')
+
+    def test_state_update_from_auction_more_than_face_value(self):
+        players, companies = self.game_state()
+        row = self.row()
+        row.player = 'player1'
+        row.amount = 60
+        row.private = 'private2'
+        self.invoke_state_update(actions.BuyPrivate(), row, players, companies)
+
+        p = players.get('player1')
+        self.assertEqual(940, p.cash)
+        self.assertEqual(dict(private2=40), p.privates)
+        self.assertEqual(1000, p.value)  # value not updated yet in pipeline
+        self.assertEqual(dict(company1=0, company2=0, company3=0), p.shares)
+        self.assertFalse(p.priority_deal)
+
+        self.assertDefaultPlayer(players, 'player2')
+        self.assertDefaultPlayer(players, 'player3')
+        self.assertDefaultCompany(companies, 'company1')
+        self.assertDefaultCompany(companies, 'company2')
+        self.assertDefaultCompany(companies, 'company3')
+
+    def test_state_update_from_auction_less_than_face_value(self):
+        players, companies = self.game_state()
+        row = self.row()
+        row.player = 'player1'
+        row.amount = 30
+        row.private = 'private2'
+        self.invoke_state_update(actions.BuyPrivate(), row, players, companies)
+
+        p = players.get('player1')
+        self.assertEqual(970, p.cash)
+        self.assertEqual(dict(private2=40), p.privates)
+        self.assertEqual(1000, p.value)  # value not updated yet in pipeline
+        self.assertEqual(dict(company1=0, company2=0, company3=0), p.shares)
+        self.assertFalse(p.priority_deal)
+
+        self.assertDefaultPlayer(players, 'player2')
+        self.assertDefaultPlayer(players, 'player3')
+        self.assertDefaultCompany(companies, 'company1')
+        self.assertDefaultCompany(companies, 'company2')
+        self.assertDefaultCompany(companies, 'company3')
+
+    def test_state_update_from_player(self):
+        players, companies = self.game_state()
+        row = self.row()
+        row.company = 'company1'
+        row.amount = 240
+        row.source = 'player2'
+        row.private = 'private3'
+        players.states[1].privates['private3'] = 70
+        self.invoke_state_update(actions.BuyPrivate(), row, players, companies)
+
+        p = players.get('player2')
+        self.assertEqual(1240, p.cash)
+        self.assertEqual(dict(), p.privates)
+        self.assertEqual(1000, p.value)  # value not updated yet in pipeline
+        self.assertEqual(dict(company1=0, company2=0, company3=0), p.shares)
+        self.assertFalse(p.priority_deal)
+
+        c = companies.get('company1')
+        self.assertEqual(-240, c.cash)
+        self.assertEqual(dict(private3=70), c.privates)
+        self.assertEqual(
+            {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 0}, c.trains
+        )
+        self.assertEqual(10, c.ipo)
+        self.assertEqual(0, c.market)
+        self.assertEqual(None, c.president)
+        self.assertEqual(0, c.share_price)
+
+        self.assertDefaultPlayer(players, 'player1')
+        self.assertDefaultPlayer(players, 'player3')
+        self.assertDefaultCompany(companies, 'company2')
+        self.assertDefaultCompany(companies, 'company3')
 
 
 class TestBuyPrivateFromPlayer(BaseStepTest):
@@ -392,6 +552,10 @@ class TestLayTile(BaseStepTest):
         # Skip abstract class
         pass
 
+    def test_state_update(self):
+        # TODO
+        pass
+
 
 class TestLayTileForMoney(BaseStepTest):
 
@@ -431,6 +595,10 @@ class TestPlaceToken(BaseStepTest):
 
     def test_match(self):
         # Skip abstract class
+        pass
+
+    def test_state_update(self):
+        # TODO
         pass
 
 
@@ -476,6 +644,10 @@ class TestBuyTrain(BaseStepTest):
         )
         self.assertMatch(actions.BuyTrain(), line, expected)
 
+    def test_state_update(self):
+        # TODO
+        pass
+
 
 class TestRunTrain(BaseStepTest):
 
@@ -504,6 +676,10 @@ class TestDiscardTrain(BaseStepTest):
         )
         self.assertMatch(actions.DiscardTrain(), line, expected)
 
+    def test_state_update(self):
+        # TODO
+        pass
+
 
 class TestExchangeTrain(BaseStepTest):
 
@@ -520,6 +696,10 @@ class TestExchangeTrain(BaseStepTest):
         )
         self.assertMatch(actions.ExchangeTrain(), line, expected)
 
+    def test_state_update(self):
+        # TODO
+        pass
+
 
 class TestContribute(BaseStepTest):
 
@@ -532,3 +712,7 @@ class TestContribute(BaseStepTest):
             amount='511'
         )
         self.assertMatch(actions.Contribute(), line, expected)
+
+    def test_state_update(self):
+        # TODO
+        pass

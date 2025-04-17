@@ -270,6 +270,7 @@ class PriorityDeal(EventStep):
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         players.invoke(PlayerState.has_priority_deal, dict(), row.player)
+        # TODO: other players are set to False
 
 
 class OperatesCompany(EventStep):
