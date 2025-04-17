@@ -12,10 +12,10 @@ transcripts18xx.engine.states.company module
    :show-inheritance:
    :undoc-members:
 
-transcripts18xx.engine.states.game module
------------------------------------------
+transcripts18xx.engine.states.state module
+------------------------------------------
 
-.. automodule:: transcripts18xx.engine.states.game
+.. automodule:: transcripts18xx.engine.states.state
    :members:
    :show-inheritance:
    :undoc-members:
