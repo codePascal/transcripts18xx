@@ -12,11 +12,23 @@ class CompanyState(State):
     def __init__(self, name: str, trains: dict):
         super().__init__(name)
 
-        self.trains = trains
+        self.trains = trains.copy()
         self.ipo = 10  # assume IPO and market game style
         self.market = 0
         self.president = None
         self.share_price = 0
+
+    def __eq__(self, other):
+        return (
+                self.name == other.name and
+                self.cash == other.cash and
+                self.privates == other.privates and
+                self.trains == other.trains and
+                self.ipo == other.ipo and
+                self.market == other.market and
+                self.president == other.president and
+                self.share_price == other.share_price
+        )
 
     @staticmethod
     def eval(rep: str):
@@ -31,7 +43,7 @@ class CompanyState(State):
         else:
             return str(int(train))
 
-    def receives_dividend(self, company: str, per_share: int) -> None:
+    def receives_dividend(self, per_share: int) -> None:
         self.cash += self.market * per_share
 
     def withholds(self, amount: int):
@@ -68,6 +80,17 @@ class CompanyState(State):
 
     def trains_rust(self, train: str):
         self.trains[self._proc_train(train)] = 0
+
+    def sells_share(self, num_shares: int, source: str):
+        if source == 'market':
+            self.market -= num_shares
+        elif source == 'IPO':
+            self.ipo -= num_shares
+        else:
+            raise ValueError('Source not available: {}'.format(source))
+
+    def receives_share(self, num_shares: int):
+        self.market += num_shares
 
 
 class Companies(States):

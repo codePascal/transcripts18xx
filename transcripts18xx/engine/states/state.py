@@ -29,8 +29,23 @@ class State(object):
     def __repr__(self):
         return self.__dict__.__str__()
 
+    def __eq__(self, other):
+        return (
+                self.name == other.name and
+                self.cash == other.cash and
+                self.privates == other.privates
+        )
+
     @staticmethod
     def eval(rep: str):
+        """Construct a State object from its string representation.
+
+        Args:
+            rep: The output from __repr__().
+
+        Returns:
+            State object.
+        """
         st = State(name=str())
         st.__dict__ = eval(rep)
         return st
@@ -38,17 +53,14 @@ class State(object):
     def update(self, *args):
         pass
 
-    def receives_dividend(self, company: str, per_share: int) -> None:
-        raise NotImplementedError
-
     def collects(self, amount: int) -> None:
         self.cash += amount
 
-    def buys_private(self, private: str, amount: int, value: int):
+    def buys_private(self, private: str, amount: int, value: int) -> None:
         self.privates[private] = value
         self.cash -= amount
 
-    def private_closes(self, private: str = None):
+    def private_closes(self, private: str = None) -> None:
         if private is None:
             self.privates = dict()
         elif private in self.privates:
@@ -71,20 +83,42 @@ class States(object):
     def __repr__(self):
         return '\n'.join([st.__repr__() for st in self.states]) + '\n'
 
-    def update(self, args: dict):
+    def update(self, args: dict) -> None:
         for st in self.states:
             st.update(**args)
 
     def get(self, name: str) -> State:
+        """Get a state by its name.
+
+        Args:
+            name: The name of the state.
+
+        Returns:
+            The state object.
+        """
         return next((st for st in self.states if st.name == name))
 
-    def invoke(self, func, args, name):
+    def invoke(self, func, args, name) -> None:
+        """Invoke a function of a state.
+
+        Args:
+            func: The function to invoke.
+            args: The arguments for the function call as dict.
+            name: The name of the state to invoke.
+        """
         if name in [st.name for st in self.states]:
             func(self.get(name), **args)
 
-    def invoke_all(self, func, args):
+    def invoke_all(self, func, args) -> None:
+        """Invoke a function on all states.
+
+        Args:
+            func: The function to invoke.
+            args: The arguments of the function call as dict.
+        """
         for st in self.states:
             self.invoke(func, args, st.name)
 
     def as_dict(self):
+        """Represents the states as dict, with names as keys."""
         return {st.name: st.__repr__() for st in self.states}

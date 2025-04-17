@@ -16,6 +16,9 @@ class TestState(unittest.TestCase):
             self.state.__repr__()
         )
 
+    def test_eq(self):
+        self.assertEqual(self.state, self.state)
+
     def test_eval(self):
         rep = "{'name': 'state1', 'cash': 100, 'privates': {'private1': '20'}}"
         st = state.State.eval(rep)

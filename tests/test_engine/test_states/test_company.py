@@ -46,7 +46,7 @@ class TestCompanyState(unittest.TestCase):
 
     def test_receives_dividend(self):
         self.company.market = 3
-        self.company.receives_dividend('company1', 10)
+        self.company.receives_dividend(10)
         self.assertEqual(30, self.company.cash)
 
     def test_withholds(self):
@@ -103,6 +103,23 @@ class TestCompanyState(unittest.TestCase):
         self.company.trains['4'] = 3
         self.company.trains_rust('4')
         self.assertEqual(0, self.company.trains['4'])
+
+    def test_sells_share(self):
+        self.company.sells_share(2, 'IPO')
+        self.assertEqual(8, self.company.ipo)
+
+        self.company.sells_share(1, 'market')
+        self.assertEqual(-1, self.company.market)
+
+        with self.assertRaises(ValueError) as e:
+            self.company.sells_share(2, 'ipo')
+        self.assertEqual(
+            'Source not available: ipo', e.exception.__str__()
+        )
+
+    def test_receives_share(self):
+        self.company.receives_share(2)
+        self.assertEqual(2, self.company.market)
 
 
 class TestCompanies(unittest.TestCase):

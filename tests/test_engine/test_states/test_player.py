@@ -60,7 +60,7 @@ class TestPlayerState(unittest.TestCase):
 
     def test_sells_private(self):
         self.player.privates['private1'] = 200
-        self.player.sells_private('private1', 150)
+        self.player.sells_private('private1', 150, 60)
         self.assertEqual(dict(), self.player.privates)
         self.assertEqual(250, self.player.cash)
 
