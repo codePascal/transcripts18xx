@@ -15,12 +15,28 @@ class TestCompanyState(unittest.TestCase):
     def test_repr(self):
         self.assertEqual(
             str(
-                "CompanyState(name='company1', cash=0, privates={}, "
-                "trains={'2': 0, '4': 0, 'D': 0}, ipo=10, market=0, "
-                "president=None, share_price=0)"
+                "{'name': 'company1', 'cash': 0, 'privates': {}, "
+                "'trains': {'2': 0, '4': 0, 'D': 0}, 'ipo': 10, 'market': 0, "
+                "'president': None, 'share_price': 0}"
             ),
             self.company.__repr__()
         )
+
+    def test_eval(self):
+        rep = str(
+            "{'name': 'company1', 'cash': 200, 'privates': {}, "
+            "'trains': {'2': 1, '4': 3, 'D': 0}, 'ipo': 5, 'market': 2, "
+            "'president': 'player1', 'share_price': 75}"
+        )
+        st = company.CompanyState.eval(rep)
+        self.assertEqual('company1', st.name)
+        self.assertEqual(200, st.cash)
+        self.assertEqual(dict(), st.privates)
+        self.assertEqual({'2': 1, '4': 3, 'D': 0}, st.trains)
+        self.assertEqual(5, st.ipo)
+        self.assertEqual(2, st.market)
+        self.assertEqual('player1', st.president)
+        self.assertEqual(75, st.share_price)
 
     def test__proc_train(self):
         self.assertEqual('4', company.CompanyState._proc_train(4.0))
@@ -99,12 +115,12 @@ class TestCompanies(unittest.TestCase):
     def test_repr(self):
         self.assertEqual(
             str(
-                "CompanyState(name='company1', cash=0, privates={}, "
-                "trains={'2': 0, '3': 0, 'D': 0}, ipo=10, market=0, "
-                "president=None, share_price=0)\n"
-                "CompanyState(name='company2', cash=0, privates={}, "
-                "trains={'2': 0, '3': 0, 'D': 0}, ipo=10, market=0, "
-                "president=None, share_price=0)\n"
+                "{'name': 'company1', 'cash': 0, 'privates': {}, "
+                "'trains': {'2': 0, '3': 0, 'D': 0}, 'ipo': 10, 'market': 0, "
+                "'president': None, 'share_price': 0}\n"
+                "{'name': 'company2', 'cash': 0, 'privates': {}, "
+                "'trains': {'2': 0, '3': 0, 'D': 0}, 'ipo': 10, 'market': 0, "
+                "'president': None, 'share_price': 0}\n"
             ),
             self.companies.__repr__()
         )

@@ -16,6 +16,12 @@ class PlayerState(State):
         self.shares = shares
         self.priority_deal = False
 
+    @staticmethod
+    def eval(rep: str):
+        st = PlayerState(name=str(), initial_cash=int(), shares=dict())
+        st.__dict__ = eval(rep)
+        return st
+
     def update(self, share_prices: dict):
         self.value = self.cash
         self.value += sum(self.shares[c] * v for c, v in share_prices.items())

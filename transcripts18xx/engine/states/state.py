@@ -27,8 +27,13 @@ class State(object):
         self.privates = dict()
 
     def __repr__(self):
-        attrs = ', '.join(f'{k}={repr(v)}' for k, v in self.__dict__.items())
-        return f'{self.__class__.__name__}({attrs})'
+        return self.__dict__.__str__()
+
+    @staticmethod
+    def eval(rep: str):
+        st = State(name=str())
+        st.__dict__ = eval(rep)
+        return st
 
     def update(self, *args):
         pass

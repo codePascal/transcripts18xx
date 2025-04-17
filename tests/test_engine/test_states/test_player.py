@@ -15,11 +15,26 @@ class TestPlayerState(unittest.TestCase):
     def test_repr(self):
         self.assertEqual(
             str(
-                "PlayerState(name='player1', cash=100, privates={}, value=100, "
-                "shares={'company1': 0, 'company2': 0}, priority_deal=False)"
+                "{'name': 'player1', 'cash': 100, 'privates': {}, "
+                "'value': 100, 'shares': {'company1': 0, 'company2': 0}, "
+                "'priority_deal': False}"
             ),
             self.player.__repr__()
         )
+
+    def test_eval(self):
+        rep = str(
+            "{'name': 'player1', 'cash': 150, 'privates': {}, "
+            "'value': 200, 'shares': {'company1': 2, 'company2': 0}, "
+            "'priority_deal': True}"
+        )
+        st = player.PlayerState.eval(rep)
+        self.assertEqual('player1', st.name)
+        self.assertEqual(150, st.cash)
+        self.assertEqual(dict(), st.privates)
+        self.assertEqual(200, st.value)
+        self.assertEqual(dict(company1=2, company2=0), st.shares)
+        self.assertTrue(st.priority_deal)
 
     def test_update(self):
         self.player.shares['company1'] = 2
@@ -72,12 +87,15 @@ class TestPlayers(unittest.TestCase):
     def test_repr(self):
         self.assertEqual(
             str(
-                "PlayerState(name='player1', cash=150, privates={}, value=150, "
-                "shares={'company1': 0, 'company2': 0}, priority_deal=False)\n"
-                "PlayerState(name='player2', cash=150, privates={}, value=150, "
-                "shares={'company1': 0, 'company2': 0}, priority_deal=False)\n"
-                "PlayerState(name='player3', cash=150, privates={}, value=150, "
-                "shares={'company1': 0, 'company2': 0}, priority_deal=False)\n"
+                "{'name': 'player1', 'cash': 150, 'privates': {}, "
+                "'value': 150, 'shares': {'company1': 0, 'company2': 0}, "
+                "'priority_deal': False}\n"
+                "{'name': 'player2', 'cash': 150, 'privates': {}, "
+                "'value': 150, 'shares': {'company1': 0, 'company2': 0}, "
+                "'priority_deal': False}\n"
+                "{'name': 'player3', 'cash': 150, 'privates': {}, "
+                "'value': 150, 'shares': {'company1': 0, 'company2': 0}, "
+                "'priority_deal': False}\n"
             ),
             self.players.__repr__()
         )

@@ -19,6 +19,12 @@ class CompanyState(State):
         self.share_price = 0
 
     @staticmethod
+    def eval(rep: str):
+        st = CompanyState(name=str(), trains=dict())
+        st.__dict__ = eval(rep)
+        return st
+
+    @staticmethod
     def _proc_train(train):
         if train == 'D':
             return train

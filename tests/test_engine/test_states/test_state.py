@@ -12,8 +12,16 @@ class TestState(unittest.TestCase):
 
     def test_repr(self):
         self.assertEqual(
-            "State(name='state1', cash=0, privates={})", self.state.__repr__()
+            "{'name': 'state1', 'cash': 0, 'privates': {}}",
+            self.state.__repr__()
         )
+
+    def test_eval(self):
+        rep = "{'name': 'state1', 'cash': 100, 'privates': {'private1': '20'}}"
+        st = state.State.eval(rep)
+        self.assertEqual('state1', st.name)
+        self.assertEqual(100, st.cash)
+        self.assertEqual(dict(private1='20'), st.privates)
 
     def test_collects(self):
         self.state.collects(40)
@@ -52,9 +60,9 @@ class TestStates(unittest.TestCase):
     def test_repr(self):
         self.assertEqual(
             str(
-                "State(name='state1', cash=0, privates={})\n"
-                "State(name='state2', cash=0, privates={})\n"
-                "State(name='state3', cash=0, privates={})\n"
+                "{'name': 'state1', 'cash': 0, 'privates': {}}\n"
+                "{'name': 'state2', 'cash': 0, 'privates': {}}\n"
+                "{'name': 'state3', 'cash': 0, 'privates': {}}\n"
             ),
             self.states.__repr__()
         )
@@ -78,11 +86,11 @@ class TestStates(unittest.TestCase):
         self.assertIsInstance(result, dict)
         self.assertEqual(['state1', 'state2', 'state3'], list(result.keys()))
         self.assertEqual(
-            "State(name='state1', cash=0, privates={})", result['state1']
+            "{'name': 'state1', 'cash': 0, 'privates': {}}", result['state1']
         )
         self.assertEqual(
-            "State(name='state2', cash=0, privates={})", result['state2']
+            "{'name': 'state2', 'cash': 0, 'privates': {}}", result['state2']
         )
         self.assertEqual(
-            "State(name='state3', cash=0, privates={})", result['state3']
+            "{'name': 'state3', 'cash': 0, 'privates': {}}", result['state3']
         )
