@@ -73,8 +73,11 @@ class TestPlayerState(unittest.TestCase):
         self.assertEqual(2, self.player.shares['company1'])
 
     def test_has_priority_deal(self):
-        self.player.has_priority_deal()
+        self.player.has_priority_deal(True)
         self.assertTrue(self.player.priority_deal)
+
+        self.player.has_priority_deal(False)
+        self.assertFalse(self.player.priority_deal)
 
 
 class TestPlayers(unittest.TestCase):

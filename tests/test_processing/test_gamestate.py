@@ -94,7 +94,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         self.assertEqual(1, mpcoyne.shares['C&O'])
         self.assertEqual(0, mpcoyne.shares['NYNH'])
         self.assertEqual(0, mpcoyne.shares['CPR'])
-        # self.assertFalse(mpcoyne.priority_deal)
+        self.assertFalse(mpcoyne.priority_deal)
         self.assertEqual(dict(), mpcoyne.privates)
 
         riverfiend = PlayerState.eval(final_states.riverfiend)
@@ -109,7 +109,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         self.assertEqual(6, riverfiend.shares['C&O'])
         self.assertEqual(2, riverfiend.shares['NYNH'])
         self.assertEqual(0, riverfiend.shares['CPR'])
-        # self.assertFalse(riverfiend.priority_deal)
+        self.assertFalse(riverfiend.priority_deal)
         self.assertEqual(dict(), riverfiend.privates)
 
         leesin = PlayerState.eval(final_states.leesin)
@@ -124,5 +124,5 @@ class TestGameStateProcessor1830(unittest.TestCase):
         self.assertEqual(1, leesin.shares['C&O'])
         self.assertEqual(6, leesin.shares['NYNH'])
         self.assertEqual(6, leesin.shares['CPR'])
-        # self.assertFalse(leesin.priority_deal)
+        self.assertFalse(leesin.priority_deal)
         self.assertEqual(dict(), leesin.privates)

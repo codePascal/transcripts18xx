@@ -79,8 +79,8 @@ class PlayerState(State):
     def receives_share(self, company: str, num_shares: int):
         self.shares[company] += num_shares
 
-    def has_priority_deal(self):
-        self.priority_deal = True
+    def has_priority_deal(self, priority_deal: bool):
+        self.priority_deal = priority_deal
 
 
 class Players(States):
