@@ -102,7 +102,7 @@ class Companies(States):
     def __init__(self, names: list[str], trains: list[str]):
         super().__init__()
 
-        trains = {k: 0 for k in trains}
+        trains = {k: 0 for k in sorted(trains)}
         self.states = [CompanyState(n, trains) for n in names]
 
     def share_prices(self) -> dict:
