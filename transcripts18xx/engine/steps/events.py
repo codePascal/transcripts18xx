@@ -247,7 +247,6 @@ class PresidentNomination(EventStep):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(player=row.player)
         companies.invoke(
             CompanyState.president_assignment,
             dict(player=row.player),
