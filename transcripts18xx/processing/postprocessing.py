@@ -75,6 +75,14 @@ class TranscriptPostProcessor(object):
             lambda x: self.clean_brackets(x)
         )
 
+    def _anonymize(self):
+        # Replace player names with normalized names.
+        mapping = {
+            p: 'player{}'.format(i + 1) for i, p in
+            enumerate(self._df.player.dropna().unique()) if not pd.isna(p)
+        }
+        self._df.replace(mapping.keys(), mapping.values(), inplace=True)
+
     def process(self) -> None:
         """Processes and cleans the parsed transcript.
         """
@@ -84,6 +92,7 @@ class TranscriptPostProcessor(object):
         self._map_entity()
         self._clean_locations()
         self._clean_companies()
+        self._anonymize()
 
     def save_to_dataframe(self, transcript_file: Path) -> pd.DataFrame:
         """Saves the processed data as a structured pandas DataFrame.

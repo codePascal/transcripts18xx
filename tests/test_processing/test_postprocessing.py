@@ -49,7 +49,7 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
         self.assertEqual(expected, self._set_not_nan(self.df.company))
 
     def test_player(self):
-        expected = {'mpcoyne', 'riverfiend', 'mpakfm', 'leesin'}
+        expected = {'player1', 'player2', 'player3', 'player4'}
         self.assertEqual(expected, self._set_not_nan(self.df.player))
 
     def test_sequence(self):
@@ -77,3 +77,18 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
             'I17'
         }
         self.assertEqual(expected, self._set_not_nan(self.df.location))
+
+    def test_source(self):
+        expected = {
+            'Auction', 'B&M', 'Baltimore & Ohio', 'Camden & Amboy',
+            'Champlain & St.Lawrence', 'Delaware & Hudson', 'ERIE', 'IPO',
+            'Mohawk & Hudson', 'NYNH', 'Schuylkill Valley', 'The Depot',
+            'market', 'player1', 'player2', 'player3'
+        }
+        self.assertEqual(expected, self._set_not_nan(self.df.source))
+
+    def test_anonymization(self):
+        df = self.df.astype(str)
+        for col in df.columns:
+            for p in ['leesin', 'mpakfm', 'riverfiend', 'mpcoyne']:
+                self.assertFalse(df[col].str.contains(p).any())
