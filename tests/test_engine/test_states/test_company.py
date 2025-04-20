@@ -121,6 +121,11 @@ class TestCompanyState(unittest.TestCase):
         self.company.receives_share(2)
         self.assertEqual(2, self.company.market)
 
+    def test_sells_train(self):
+        self.company.sells_train('4', 100)
+        self.assertEqual(100, self.company.cash)
+        self.assertEqual(-1, self.company.trains['4'])
+
 
 class TestCompanies(unittest.TestCase):
 

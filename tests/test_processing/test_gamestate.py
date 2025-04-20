@@ -11,9 +11,6 @@ from transcripts18xx.engine.states.company import CompanyState
 from tests import context
 
 
-# TODO: add company states for ISR 1 and game over
-
-
 class TestGameStateProcessor1830(unittest.TestCase):
 
     @classmethod
@@ -23,106 +20,280 @@ class TestGameStateProcessor1830(unittest.TestCase):
         gsp.generate()
         cls.df = gsp.save_to_dataframe(context.transcript_1830())
 
-    def test_isr_1(self):
-        isr1 = self.df[self.df.sequence == 'ISR 1']
-        final_states = isr1.iloc[-1, :]
+    def isr_1(self):
+        return self.df[self.df.sequence == 'ISR 1'].iloc[-1, :]
 
-        mpakfm = PlayerState.eval(final_states.mpakfm)
-        self.assertEqual(560, mpakfm.cash)
-        self.assertEqual(600, mpakfm.value)
-        self.assertEqual(0, sum(mpakfm.shares.values()))
-        self.assertFalse(mpakfm.priority_deal)
-        self.assertEqual({'Champlain & St.Lawrence': 40}, mpakfm.privates)
+    def game_over(self):
+        return self.df[self.df.sequence == 'OR 8.3'].iloc[-1, :]
 
-        mpcoyne = PlayerState.eval(final_states.mpcoyne)
-        self.assertEqual(360, mpcoyne.cash)
-        self.assertEqual(780, mpcoyne.value)
-        self.assertEqual(2, sum(mpcoyne.shares.values()))
-        self.assertEqual(2, mpcoyne.shares['B&O'])
-        self.assertFalse(mpcoyne.priority_deal)
-        self.assertEqual(
-            {'Schuylkill Valley': 20, 'Baltimore & Ohio': 220}, mpcoyne.privates
-        )
+    def test_isr_1_player1(self):
+        player = PlayerState('player1', int(), dict())
+        player.cash = 360
+        player.value = 780
+        player.shares = {
+            'B&M': 0, 'B&O': 2, 'C&O': 0, 'CPR': 0,
+            'ERIE': 0, 'NYC': 0, 'NYNH': 0, 'PRR': 0
+        }
+        player.priority_deal = False
+        player.privates = {'Schuylkill Valley': 20, 'Baltimore & Ohio': 220}
+        self.assertEqual(player, PlayerState.eval(self.isr_1().player1))
 
-        riverfiend = PlayerState.eval(final_states.riverfiend)
-        self.assertEqual(525, riverfiend.cash)
-        self.assertEqual(595, riverfiend.value)
-        self.assertEqual(0, sum(riverfiend.shares.values()))
-        self.assertTrue(riverfiend.priority_deal)
-        self.assertEqual({'Delaware & Hudson': 70}, riverfiend.privates)
+    def test_isr_1_player2(self):
+        player = PlayerState('player2', int(), dict())
+        player.cash = 525
+        player.value = 595
+        player.shares = {
+            'B&M': 0, 'B&O': 0, 'C&O': 0, 'CPR': 0,
+            'ERIE': 0, 'NYC': 0, 'NYNH': 0, 'PRR': 0
+        }
+        player.priority_deal = True
+        player.privates = {'Delaware & Hudson': 70}
+        self.assertEqual(player, PlayerState.eval(self.isr_1().player2))
 
-        leesin = PlayerState.eval(final_states.leesin)
-        self.assertEqual(250, leesin.cash)
-        self.assertEqual(520, leesin.value)
-        self.assertEqual(1, sum(leesin.shares.values()))
-        self.assertEqual(1, leesin.shares['PRR'])
-        self.assertFalse(leesin.priority_deal)
-        self.assertEqual(
-            {'Mohawk & Hudson': 110, 'Camden & Amboy': 160}, leesin.privates
-        )
+    def test_isr_1_player3(self):
+        player = PlayerState('player3', int(), dict())
+        player.cash = 250
+        player.value = 520
+        player.shares = {
+            'B&M': 0, 'B&O': 0, 'C&O': 0, 'CPR': 0,
+            'ERIE': 0, 'NYC': 0, 'NYNH': 0, 'PRR': 1
+        }
+        player.priority_deal = False
+        player.privates = {'Mohawk & Hudson': 110, 'Camden & Amboy': 160}
+        self.assertEqual(player, PlayerState.eval(self.isr_1().player3))
 
-    def test_game_over(self):
-        last_round = self.df[self.df.sequence == 'OR 8.3']
-        final_states = last_round.iloc[-1, :]
+    def test_isr_1_player4(self):
+        player = PlayerState('player4', int(), dict())
+        player.cash = 560
+        player.value = 600
+        player.shares = {
+            'B&M': 0, 'B&O': 0, 'C&O': 0, 'CPR': 0,
+            'ERIE': 0, 'NYC': 0, 'NYNH': 0, 'PRR': 0
+        }
+        player.priority_deal = False
+        player.privates = {'Champlain & St.Lawrence': 40}
+        self.assertEqual(player, PlayerState.eval(self.isr_1().player4))
 
-        # TODO: enable priority deal when fixed
+    def test_isr_1_Boston_and_Maine_Railroad(self):
+        company = CompanyState('B&M', dict())
+        company.cash = 0
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 0}
+        company.ipo = 10
+        company.market = 0
+        company.president = None
+        company.share_price = 0
+        self.assertEqual(company, CompanyState.eval(self.isr_1()['B&M']))
 
-        mpakfm = PlayerState.eval(final_states.mpakfm)
-        self.assertEqual(1260, mpakfm.cash)
-        self.assertEqual(2740, mpakfm.value)
-        self.assertEqual(8, sum(mpakfm.shares.values()))
-        self.assertEqual(2, mpakfm.shares['B&O'])
-        self.assertEqual(0, mpakfm.shares['B&M'])
-        self.assertEqual(0, mpakfm.shares['ERIE'])
-        self.assertEqual(0, mpakfm.shares['PRR'])
-        self.assertEqual(6, mpakfm.shares['NYC'])
-        self.assertEqual(0, mpakfm.shares['C&O'])
-        self.assertEqual(0, mpakfm.shares['NYNH'])
-        self.assertEqual(0, mpakfm.shares['CPR'])
-        self.assertTrue(mpakfm.priority_deal)
-        self.assertEqual(dict(), mpakfm.privates)
+    def test_isr_1_Baltimore_and_Ohio(self):
+        company = CompanyState('B&O', dict())
+        company.cash = 0
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 0}
+        company.ipo = 8
+        company.market = 0
+        company.president = 'player1'
+        company.share_price = 90
+        self.assertEqual(company, CompanyState.eval(self.isr_1()['B&O']))
 
-        mpcoyne = PlayerState.eval(final_states.mpcoyne)
-        self.assertEqual(3304, mpcoyne.cash)
-        self.assertEqual(6735, mpcoyne.value)
-        self.assertEqual(19, sum(mpcoyne.shares.values()))
-        self.assertEqual(6, mpcoyne.shares['B&O'])
-        self.assertEqual(6, mpcoyne.shares['B&M'])
-        self.assertEqual(4, mpcoyne.shares['ERIE'])
-        self.assertEqual(1, mpcoyne.shares['PRR'])
-        self.assertEqual(1, mpcoyne.shares['NYC'])
-        self.assertEqual(1, mpcoyne.shares['C&O'])
-        self.assertEqual(0, mpcoyne.shares['NYNH'])
-        self.assertEqual(0, mpcoyne.shares['CPR'])
-        self.assertFalse(mpcoyne.priority_deal)
-        self.assertEqual(dict(), mpcoyne.privates)
+    def test_isr_1_Chesapeake_and_Ohio_Railroad(self):
+        company = CompanyState('C&O', dict())
+        company.cash = 0
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 0}
+        company.ipo = 10
+        company.market = 0
+        company.president = None
+        company.share_price = 0
+        self.assertEqual(company, CompanyState.eval(self.isr_1()['C&O']))
 
-        riverfiend = PlayerState.eval(final_states.riverfiend)
-        self.assertEqual(3560, riverfiend.cash)
-        self.assertEqual(5523, riverfiend.value)
-        self.assertEqual(19, sum(riverfiend.shares.values()))
-        self.assertEqual(0, riverfiend.shares['B&O'])
-        self.assertEqual(3, riverfiend.shares['B&M'])
-        self.assertEqual(6, riverfiend.shares['ERIE'])
-        self.assertEqual(1, riverfiend.shares['PRR'])
-        self.assertEqual(1, riverfiend.shares['NYC'])
-        self.assertEqual(6, riverfiend.shares['C&O'])
-        self.assertEqual(2, riverfiend.shares['NYNH'])
-        self.assertEqual(0, riverfiend.shares['CPR'])
-        self.assertFalse(riverfiend.priority_deal)
-        self.assertEqual(dict(), riverfiend.privates)
+    def test_isr_1_Canadian_Pacific_Railroad(self):
+        company = CompanyState('CPR', dict())
+        company.cash = 0
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 0}
+        company.ipo = 10
+        company.market = 0
+        company.president = None
+        company.share_price = 0
+        self.assertEqual(company, CompanyState.eval(self.isr_1()['CPR']))
 
-        leesin = PlayerState.eval(final_states.leesin)
-        self.assertEqual(3432, leesin.cash)
-        self.assertEqual(6648, leesin.value)
-        self.assertEqual(26, sum(leesin.shares.values()))
-        self.assertEqual(2, leesin.shares['B&O'])
-        self.assertEqual(1, leesin.shares['B&M'])
-        self.assertEqual(0, leesin.shares['ERIE'])
-        self.assertEqual(8, leesin.shares['PRR'])
-        self.assertEqual(2, leesin.shares['NYC'])
-        self.assertEqual(1, leesin.shares['C&O'])
-        self.assertEqual(6, leesin.shares['NYNH'])
-        self.assertEqual(6, leesin.shares['CPR'])
-        self.assertFalse(leesin.priority_deal)
-        self.assertEqual(dict(), leesin.privates)
+    def test_isr_1_Erie_Railroad(self):
+        company = CompanyState('ERIE', dict())
+        company.cash = 0
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 0}
+        company.ipo = 10
+        company.market = 0
+        company.president = None
+        company.share_price = 0
+        self.assertEqual(company, CompanyState.eval(self.isr_1()['ERIE']))
+
+    def test_isr_1_New_York_Central_Railroad(self):
+        company = CompanyState('NYC', dict())
+        company.cash = 0
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 0}
+        company.ipo = 10
+        company.market = 0
+        company.president = None
+        company.share_price = 0
+        self.assertEqual(company, CompanyState.eval(self.isr_1()['NYC']))
+
+    def test_isr_1_New_York_New_Haven_and_Hartford_Railroad(self):
+        company = CompanyState('NYNH', dict())
+        company.cash = 0
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 0}
+        company.ipo = 10
+        company.market = 0
+        company.president = None
+        company.share_price = 0
+        self.assertEqual(company, CompanyState.eval(self.isr_1()['NYNH']))
+
+    def test_isr_1_Pennsylvania_Railroad(self):
+        company = CompanyState('PRR', dict())
+        company.cash = 0
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 0}
+        company.ipo = 9
+        company.market = 0
+        company.president = None
+        company.share_price = 0
+        self.assertEqual(company, CompanyState.eval(self.isr_1()['PRR']))
+
+    def test_game_over_player1(self):
+        player = PlayerState('player1', int(), dict())
+        player.cash = 3304
+        player.value = 6735
+        player.shares = {
+            'B&M': 6, 'B&O': 6, 'C&O': 1, 'CPR': 0,
+            'ERIE': 4, 'NYC': 1, 'NYNH': 0, 'PRR': 1
+        }
+        player.priority_deal = False
+        player.privates = dict()
+        self.assertEqual(player, PlayerState.eval(self.game_over().player1))
+
+    def test_game_over_player2(self):
+        player = PlayerState('player2', int(), dict())
+        player.cash = 3560
+        player.value = 5523
+        player.shares = {
+            'B&M': 3, 'B&O': 0, 'C&O': 6, 'CPR': 0,
+            'ERIE': 6, 'NYC': 1, 'NYNH': 2, 'PRR': 1
+        }
+        player.priority_deal = False
+        player.privates = dict()
+        self.assertEqual(player, PlayerState.eval(self.game_over().player2))
+
+    def test_game_over_player3(self):
+        player = PlayerState('player3', int(), dict())
+        player.cash = 3432
+        player.value = 6648
+        player.shares = {
+            'B&M': 1, 'B&O': 2, 'C&O': 1, 'CPR': 6,
+            'ERIE': 0, 'NYC': 2, 'NYNH': 6, 'PRR': 8
+        }
+        player.priority_deal = False
+        player.privates = dict()
+        self.assertEqual(player, PlayerState.eval(self.game_over().player3))
+
+    def test_game_over_player4(self):
+        player = PlayerState('player4', int(), dict())
+        player.cash = 1260
+        player.value = 2740
+        player.shares = {
+            'B&M': 0, 'B&O': 2, 'C&O': 0, 'CPR': 0,
+            'ERIE': 0, 'NYC': 6, 'NYNH': 0, 'PRR': 0
+        }
+        player.priority_deal = True
+        player.privates = dict()
+        self.assertEqual(player, PlayerState.eval(self.game_over().player4))
+
+    def test_game_over_Boston_and_Maine_Railroad(self):
+        company = CompanyState('B&M', dict())
+        company.cash = 0
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 1}
+        company.ipo = 0
+        company.market = 0
+        company.president = 'player1'
+        company.share_price = 100
+        self.assertEqual(company, CompanyState.eval(self.game_over()['B&M']))
+
+    def test_game_over_Baltimore_and_Ohio(self):
+        company = CompanyState('B&O', dict())
+        company.cash = 0
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 1, '6': 1, 'D': 0}
+        company.ipo = 0
+        company.market = 0
+        company.president = 'player1'
+        company.share_price = 350
+        self.assertEqual(company, CompanyState.eval(self.game_over()['B&O']))
+
+    def test_game_over_Chesapeake_and_Ohio_Railroad(self):
+        company = CompanyState('C&O', dict())
+        company.cash = 140
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 1, '6': 0, 'D': 0}
+        company.ipo = 0
+        company.market = 2
+        company.president = 'player2'
+        company.share_price = 90
+        self.assertEqual(company, CompanyState.eval(self.game_over()['C&O']))
+
+    def test_game_over_Canadian_Pacific_Railroad(self):
+        company = CompanyState('CPR', dict())
+        company.cash = 40
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 1}
+        company.ipo = 3
+        company.market = 1
+        company.president = 'player3'
+        company.share_price = 125
+        self.assertEqual(company, CompanyState.eval(self.game_over()['CPR']))
+
+    def test_game_over_Erie_Railroad(self):
+        company = CompanyState('ERIE', dict())
+        company.cash = 2
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 1, 'D': 0}
+        company.ipo = 0
+        company.market = 0
+        company.president = 'player2'
+        company.share_price = 111
+        self.assertEqual(company, CompanyState.eval(self.game_over()['ERIE']))
+
+    def test_game_over_New_York_Central_Railroad(self):
+        company = CompanyState('NYC', dict())
+        company.cash = 56
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 1}
+        company.ipo = 0
+        company.market = 0
+        company.president = 'player4'
+        company.share_price = 130
+        self.assertEqual(company, CompanyState.eval(self.game_over()['NYC']))
+
+    def test_game_over_New_York_New_Haven_and_Hartford_Railroad(self):
+        company = CompanyState('NYNH', dict())
+        company.cash = 170
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 1, '6': 0, 'D': 0}
+        company.ipo = 0
+        company.market = 2
+        company.president = 'player3'
+        company.share_price = 130
+        self.assertEqual(company, CompanyState.eval(self.game_over()['NYNH']))
+
+    def test_game_over_Pennsylvania_Railroad(self):
+        company = CompanyState('PRR', dict())
+        company.cash = 40
+        company.privates = dict()
+        company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 1}
+        company.ipo = 0
+        company.market = 0
+        company.president = 'player3'
+        company.share_price = 67
+        self.assertEqual(company, CompanyState.eval(self.game_over()['PRR']))

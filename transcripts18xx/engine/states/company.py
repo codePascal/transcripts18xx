@@ -92,6 +92,10 @@ class CompanyState(State):
     def receives_share(self, num_shares: int):
         self.market += num_shares
 
+    def sells_train(self, train: str, amount: int):
+        self.discards_train(train)
+        self.cash += amount
+
 
 class Companies(States):
 

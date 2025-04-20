@@ -102,5 +102,5 @@ class Players(States):
         super().__init__()
 
         initial_value = int(initial_cash / len(names))
-        shares = {k: 0 for k in companies}
+        shares = {k: 0 for k in sorted(companies)}
         self.states = [PlayerState(n, initial_value, shares) for n in names]
