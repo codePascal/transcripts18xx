@@ -12,9 +12,14 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        gtp = GameTranscriptProcessor(context.transcript_1830())
-        gtp.parse_transcript()
-        cls.df = gtp.save_to_dataframe()
+        raw_transcript = context.transcript_1830()
+        gtp = GameTranscriptProcessor()
+        df = gtp.parse_transcript(raw_transcript)
+        filepath = raw_transcript.parent.joinpath(
+            raw_transcript.stem + '_parsed.csv'
+        )
+        df.to_csv(filepath, index=False, sep=',')
+        cls.df = df
 
     @staticmethod
     def _set_not_nan(ser: pd.Series) -> set:

@@ -15,8 +15,12 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
     def setUpClass(cls) -> None:
         df = pd.read_csv(context.parsed_transcript_1830())
         tpp = TranscriptPostProcessor(df, Game1830())
-        tpp.process()
-        cls.df = tpp.save_to_dataframe(context.transcript_1830())
+        df = tpp.process()
+        filepath = context.transcript_1830().parent.joinpath(
+            context.transcript_1830().stem + '_processed.csv'
+        )
+        df.to_csv(filepath, index=False, sep=',')
+        cls.df = df
 
     @staticmethod
     def _set_not_nan(ser: pd.Series) -> set:

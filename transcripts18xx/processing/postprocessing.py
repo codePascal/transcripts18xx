@@ -7,8 +7,6 @@ Module implements a post-processing algorithm to clean parsed game transcripts.
 import re
 import pandas as pd
 
-from pathlib import Path
-
 from ..games import Game18xx
 
 
@@ -83,8 +81,11 @@ class TranscriptPostProcessor(object):
         }
         self._df.replace(mapping.keys(), mapping.values(), inplace=True)
 
-    def process(self) -> None:
+    def process(self) -> pd.DataFrame:
         """Processes and cleans the parsed transcript.
+
+        Returns:
+            The processed transcript data.
         """
         self._map_phase()
         self._map_rounds()
@@ -93,23 +94,7 @@ class TranscriptPostProcessor(object):
         self._clean_locations()
         self._clean_companies()
         self._anonymize()
-
-    def save_to_dataframe(self, transcript_file: Path) -> pd.DataFrame:
-        """Saves the processed data as a structured pandas DataFrame.
-
-        The file is saved in the same directory as the transcript and the
-        name has `_processed` added in the end. Format is set to .csv with a
-        colon a separator.
-
-        Returns:
-            The processed data as pandas DataFrame.
-        """
-        filepath = transcript_file.parent.joinpath(
-            transcript_file.stem + '_processed.csv'
-        )
-        df = pd.DataFrame(self._df)
-        df.to_csv(filepath, index=False, sep=',')
-        return df
+        return self._df
 
     @staticmethod
     def clean_brackets(bracket_string: str) -> str:

@@ -3,10 +3,10 @@
 import unittest
 import pandas as pd
 
-from transcripts18xx.processing.gamestate import GameStateProcessor
-from transcripts18xx.games import Game1830
-from transcripts18xx.engine.states.player import PlayerState
 from transcripts18xx.engine.states.company import CompanyState
+from transcripts18xx.engine.states.player import PlayerState
+from transcripts18xx.processing.game_state import GameStateProcessor
+from transcripts18xx.games import Game1830
 
 from tests import context
 
@@ -17,8 +17,12 @@ class TestGameStateProcessor1830(unittest.TestCase):
     def setUpClass(cls) -> None:
         df = pd.read_csv(context.processed_transcript_1830())
         gsp = GameStateProcessor(df, Game1830())
-        gsp.generate()
-        cls.df = gsp.save_to_dataframe(context.transcript_1830())
+        df = gsp.generate()
+        filepath = context.transcript_1830().parent.joinpath(
+            context.transcript_1830().stem + '_game_state.csv'
+        )
+        df.to_csv(filepath, index=False, sep=',')
+        cls.df = df
 
     def isr_1(self):
         return self.df[self.df.sequence == 'ISR 1'].iloc[-1, :]

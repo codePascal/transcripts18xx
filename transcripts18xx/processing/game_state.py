@@ -7,8 +7,6 @@ transcript.
 """
 import pandas as pd
 
-from pathlib import Path
-
 from ..games import Game18xx
 from ..engine import engine
 
@@ -43,26 +41,14 @@ class GameStateProcessor(object):
         self._game_state.update(row, step_engine())
         return self._game_state.view()
 
-    def generate(self) -> None:
-        """Generate and add the game state for each step."""
+    def generate(self) -> pd.DataFrame:
+        """Generate and add the game state for each step.
+
+        Returns:
+            Final transcript with game state added.
+        """
         state = self._df.apply(
             lambda x: self._update(x), axis=1, result_type='expand'
         )
         self._df = pd.concat([self._df, state], axis=1)
-
-    def save_to_dataframe(self, transcript_file: Path) -> pd.DataFrame:
-        """Saves the final data as a structured pandas DataFrame.
-
-        The file is saved in the same directory as the transcript and the
-        name has `_final` added in the end. Format is set to .csv with a
-        colon a separator.
-
-        Returns:
-            The final data as pandas DataFrame.
-        """
-        filepath = transcript_file.parent.joinpath(
-            transcript_file.stem + '_final.csv'
-        )
-        df = pd.DataFrame(self._df)
-        df.to_csv(filepath, index=False, sep=',')
-        return df
+        return self._df

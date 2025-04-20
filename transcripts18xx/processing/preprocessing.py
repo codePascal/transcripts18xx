@@ -18,17 +18,11 @@ class GameTranscriptProcessor(object):
     Class to process and parse game transcripts.
 
     Attributes:
-        _transcript_file: The transcript file path.
-        _data: Data container to save the processed lines as dicts.
-
-    Args:
-        transcript_file: The transcript file path.
+        _engine: The line parser engine.
     """
 
-    def __init__(self, transcript_file: Path):
-        self._transcript_file = transcript_file
+    def __init__(self):
         self._engine = engine.LineParser()
-        self._data = list()
 
     @staticmethod
     def _preprocess_line(line: str) -> str:
@@ -38,10 +32,17 @@ class GameTranscriptProcessor(object):
         line = line.lstrip()
         return line
 
-    def parse_transcript(self) -> None:
+    def parse_transcript(self, transcript_file: Path) -> pd.DataFrame:
         """Reads and extracts actions and events from the game transcript.
+
+        Args:
+            transcript_file: The filepath to the transcript.
+
+        Returns:
+            The parsed transcript.
         """
-        with open(self._transcript_file, 'r', encoding='utf-8') as file:
+        data = list()
+        with open(transcript_file, 'r', encoding='utf-8') as file:
             lines = file.readlines()
         unprocessed = list()
         for i, line in enumerate(lines):
@@ -50,26 +51,10 @@ class GameTranscriptProcessor(object):
             if parsed_data:
                 parsed_data['id'] = i
                 parsed_data['line'] = line
-                self._data.append(parsed_data)
+                data.append(parsed_data)
             else:
                 unprocessed.append(line.strip())
         if unprocessed:
             print('Unprocessed lines:')
             print('\n'.join(unprocessed))
-
-    def save_to_dataframe(self) -> pd.DataFrame:
-        """Saves the extracted data as a structured pandas DataFrame.
-
-        The file is saved in the same directory as the transcript and the
-        name has `_parsed` added in the end. Format is set to .csv with a
-        colon a separator.
-
-        Returns:
-            The parsed data as pandas DataFrame.
-        """
-        filepath = self._transcript_file.parent.joinpath(
-            self._transcript_file.stem + '_parsed.csv'
-        )
-        df = pd.DataFrame(self._data)
-        df.to_csv(filepath, index=False, sep=',')
-        return df
+        return pd.DataFrame(data)
