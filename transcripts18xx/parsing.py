@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Game transcript preprocessing algorithm
+"""Game transcript parser algorithm
 
-Module implements a transcript processor to process and parse game transcripts
-from 18xx.games.
+Module implements classes to parse a transcript from 18xx.games and map the
+current game state to each event or action.
 """
 import pandas as pd
 import re
@@ -28,23 +28,23 @@ class GameTranscriptProcessor(object):
 
     @staticmethod
     def _preprocess_line(line: str) -> str:
-        # Sometimes there is a timestamp [hh:mm], cut it
+        # Sometimes there is a timestamp [hh:mm], cut it.
         if line.startswith('['):
             line = line[8:]
         line = line.lstrip()
         return line
 
-    def parse_transcript(self, transcript_file: Path) -> pd.DataFrame:
+    def parse_transcript(self, transcript: Path) -> pd.DataFrame:
         """Reads and extracts actions and events from the game transcript.
 
         Args:
-            transcript_file: The filepath to the transcript.
+            transcript: The filepath to the transcript.
 
         Returns:
             The parsed transcript.
         """
         data = list()
-        with open(transcript_file, 'r', encoding='utf-8') as file:
+        with open(transcript, 'r', encoding='utf-8') as file:
             lines = file.readlines()
         unprocessed = list()
         for i, line in enumerate(lines):
@@ -63,7 +63,7 @@ class GameTranscriptProcessor(object):
 
 
 class TranscriptPostProcessor(object):
-    """TranscriptPostProcessor.
+    """TranscriptPostProcessor
 
     Class to post-process and clean parsed game transcripts.
 
@@ -125,6 +125,12 @@ class TranscriptPostProcessor(object):
             lambda x: self.clean_brackets(x)
         )
 
+    def _map_dtypes(self) -> None:
+        self._df.amount = self._df.amount.astype(float)
+        self._df.percentage = self._df.percentage.astype(float)
+        self._df.share_price = self._df.share_price.astype(float)
+        self._df.per_share = self._df.per_share.astype(float)
+
     def _anonymize(self) -> dict:
         # Replace player names with normalized names.
         mapping = {
@@ -146,6 +152,7 @@ class TranscriptPostProcessor(object):
         self._map_entity()
         self._clean_locations()
         self._clean_companies()
+        self._map_dtypes()
         mapping = self._anonymize()
         return self._df, mapping
 
@@ -172,7 +179,7 @@ class TranscriptPostProcessor(object):
 
 
 class GameStateProcessor(object):
-    """GameStateProcessor.
+    """GameStateProcessor
 
     Class to map the game state to the cleaned and processed transcript.
 

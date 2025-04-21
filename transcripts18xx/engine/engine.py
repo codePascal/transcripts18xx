@@ -12,7 +12,6 @@ import pandas as pd
 
 from ..games import Game18xx
 from .steps import step
-from .steps import actions, events  # noqa
 from .states import player, company
 
 
@@ -111,9 +110,12 @@ class StepMapper(object):
 
     def _search(self, step_type: step.StepType) -> list:
         # Invokes the step type name of the subclasses.
-        return [
-            cls for cls in self._steps if cls().type.name == step_type.name
-        ]
+        try:
+            return [
+                cls for cls in self._steps if cls().type.name == step_type.name
+            ]
+        except AttributeError:
+            print(step_type)
 
     @staticmethod
     def _select(result: list) -> Type[step.EngineStep]:
@@ -134,6 +136,8 @@ class StepMapper(object):
             The engine for the step.
         """
         result = self._search(step_type)
+        if not result:
+            raise AttributeError('Could not match step: {}'.format(step_type))
         engine = self._select(result)
         return engine
 
@@ -148,14 +152,11 @@ class StepMapper(object):
             The matching enum member.
         """
         try:
-            result = actions.Actions[step_name]
+            result = step.StepType[step_name]
         except KeyError:
-            try:
-                result = events.Events[step_name]
-            except KeyError:
-                raise KeyError(
-                    'No matching engine step found: {}'.format(step_name)
-                )
+            raise KeyError(
+                'No matching engine step found: {}'.format(step_name)
+            )
         return result
 
 

@@ -87,10 +87,6 @@ class TestEngineStep(unittest.TestCase):
 
         cls.cls = StepEmulator()
 
-    @classmethod
-    def tearDownClass(cls) -> None:
-        del cls.cls  # remove StepEmulator
-
     def test__invoke_search(self):
         match = self.cls._invoke_search('Carl runs 10 tests using pytest')
         self.assertIsInstance(match, re.Match)

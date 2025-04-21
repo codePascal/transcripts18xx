@@ -17,30 +17,6 @@ from .step import EngineStep, StepType, StepParent
 # TODO: add player goes bankrupt:
 #  `-- (JuicyBerry) goes bankrupt and sells remaining shares --`
 
-class Events(StepType):
-    """Events
-
-    Enum class describing the events appearing during the game.
-    """
-    ReceiveShare = 0
-    ReceiveFunds = 1
-    CompanyFloats = 2
-    SelectsHome = 3
-    DoesNotRun = 4
-    SharePriceMoves = 5
-    NewPhase = 6
-    BankBroke = 7
-    GameOver = 8
-    OperatingRound = 9
-    StockRound = 10
-    PresidentNomination = 11
-    PriorityDeal = 12
-    OperatesCompany = 13
-    AllPrivatesClose = 14
-    PrivateCloses = 15
-    PrivateAuctioned = 16
-    TrainsRust = 17
-
 
 class EventStep(EngineStep, abc.ABC):
 
@@ -54,7 +30,7 @@ class ReceiveShare(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) receives a (\d+)% share of (.*)')
-        self.type = Events.ReceiveShare
+        self.type = StepType.ReceiveShare
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -88,7 +64,7 @@ class ReceiveFunds(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) receives \$(\d+)')
-        self.type = Events.ReceiveFunds
+        self.type = StepType.ReceiveFunds
 
         self._dismiss = ['sells']
 
@@ -112,7 +88,7 @@ class CompanyFloats(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) floats')
-        self.type = Events.CompanyFloats
+        self.type = StepType.CompanyFloats
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -125,7 +101,7 @@ class SelectsHome(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) must choose city for token')
-        self.type = Events.SelectsHome
+        self.type = StepType.SelectsHome
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -138,7 +114,7 @@ class DoesNotRun(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) does not run')
-        self.type = Events.DoesNotRun
+        self.type = StepType.DoesNotRun
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -153,7 +129,7 @@ class SharePriceMove(EventStep):
         self.pattern = re.compile(
             r"(.*?)'s share price moves (.*?) from \$(\d+) to \$(\d+)"
         )
-        self.type = Events.SharePriceMoves
+        self.type = StepType.SharePriceMoves
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -176,7 +152,7 @@ class NewPhase(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- Phase (\w+) \(')
-        self.type = Events.NewPhase
+        self.type = StepType.NewPhase
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -189,7 +165,7 @@ class BankBroke(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- The bank has broken --')
-        self.type = Events.BankBroke
+        self.type = StepType.BankBroke
 
     def _process_match(self, line: str, match) -> dict:
         return dict()
@@ -200,7 +176,7 @@ class GameOver(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- Game over:')
-        self.type = Events.GameOver
+        self.type = StepType.GameOver
 
     def _process_match(self, line: str, match) -> dict:
         return dict()
@@ -211,7 +187,7 @@ class OperatingRound(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- Operating Round (\d+\.\d+)')
-        self.type = Events.OperatingRound
+        self.type = StepType.OperatingRound
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -224,7 +200,7 @@ class StockRound(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- Stock Round (\d+)')
-        self.type = Events.StockRound
+        self.type = StepType.StockRound
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -237,7 +213,7 @@ class PresidentNomination(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) becomes the president of (.*)')
-        self.type = Events.PresidentNomination
+        self.type = StepType.PresidentNomination
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -259,7 +235,7 @@ class PriorityDeal(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) has priority deal')
-        self.type = Events.PriorityDeal
+        self.type = StepType.PriorityDeal
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -282,7 +258,7 @@ class OperatesCompany(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) operates (.*)')
-        self.type = Events.OperatesCompany
+        self.type = StepType.OperatesCompany
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -296,7 +272,7 @@ class AllPrivatesClose(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- Event: Private companies close')
-        self.type = Events.AllPrivatesClose
+        self.type = StepType.AllPrivatesClose
 
     def _process_match(self, line: str, match) -> dict:
         return dict()
@@ -312,7 +288,7 @@ class PrivateCloses(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) closes')
-        self.type = Events.PrivateCloses
+        self.type = StepType.PrivateCloses
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -331,7 +307,7 @@ class PrivateAuctioned(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) goes up for auction')
-        self.type = Events.PrivateAuctioned
+        self.type = StepType.PrivateAuctioned
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -344,7 +320,7 @@ class TrainsRust(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'-- Event: (\d+) trains rust')
-        self.type = Events.TrainsRust
+        self.type = StepType.TrainsRust
 
     def _process_match(self, line: str, match) -> dict:
         return dict(

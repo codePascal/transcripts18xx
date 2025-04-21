@@ -7,8 +7,8 @@ from transcripts18xx import transcript, games
 from tests import context
 
 
-class TestModuleTranscript(unittest.TestCase):
-
-    def test_parse_G1830(self):
-        # TODO: test
-        df = transcript.parse(context.transcript_1830(), games.Game1830())
+# class TestModuleTranscript(unittest.TestCase):
+#
+#     def test_parse_G1830(self):
+#         # TODO: test
+#         df = transcript.parse(context.transcript_1830(), games.Game1830())

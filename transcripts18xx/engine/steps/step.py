@@ -19,7 +19,41 @@ class StepType(enum.IntEnum):
 
     Enum class to describe a step by a type.
     """
-    pass
+    PayOut = 0
+    Withhold = 1
+    BuyShare = 2
+    SellShares = 3
+    Par = 5
+    Bid = 6
+    Pass = 7
+    Skip = 8
+    Collect = 9
+    BuyPrivate = 10
+    LayTile = 11
+    PlaceToken = 12
+    BuyTrain = 13
+    RunTrain = 14
+    DiscardTrain = 15
+    ExchangeTrain = 16
+    Contribute = 17
+    ReceiveShare = 18
+    ReceiveFunds = 19
+    CompanyFloats = 20
+    SelectsHome = 21
+    DoesNotRun = 22
+    SharePriceMoves = 23
+    NewPhase = 24
+    BankBroke = 25
+    GameOver = 26
+    OperatingRound = 27
+    StockRound = 28
+    PresidentNomination = 29
+    PriorityDeal = 30
+    OperatesCompany = 31
+    AllPrivatesClose = 32
+    PrivateCloses = 33
+    PrivateAuctioned = 34
+    TrainsRust = 35
 
 
 class StepParent(enum.IntEnum):

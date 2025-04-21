@@ -13,8 +13,7 @@ import pandas as pd
 
 from pathlib import Path
 
-from . import parsing
-from .games import Game18xx
+from . import parsing, games
 
 # TODO:
 #   * parse
@@ -80,7 +79,7 @@ from game data output
 
 class TranscriptParser(object):
 
-    def __init__(self, transcript: Path, game: Game18xx):
+    def __init__(self, transcript: Path, game: games.Game18xx):
         self._transcript = transcript
         self._game = game
 

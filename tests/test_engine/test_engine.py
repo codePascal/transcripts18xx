@@ -99,56 +99,56 @@ class TestStepMapper(unittest.TestCase):
         cls.mapper = engine.StepMapper()
 
     def test__search(self):
-        step = self.mapper._search(engine.actions.Actions.PayOut)
+        step = self.mapper._search(engine.step.StepType.PayOut)
         self.assertEqual(1, len(step))
 
-        step = self.mapper._search(engine.actions.Actions.SellShares)
+        step = self.mapper._search(engine.step.StepType.SellShares)
         self.assertEqual(3, len(step))
 
-        step = self.mapper._search(engine.actions.Actions.Pass)
+        step = self.mapper._search(engine.step.StepType.Pass)
         self.assertEqual(8, len(step))
 
-        step = self.mapper._search(engine.actions.Actions.BuyPrivate)
+        step = self.mapper._search(engine.step.StepType.BuyPrivate)
         self.assertEqual(5, len(step))
 
-        step = self.mapper._search(engine.events.Events.NewPhase)
+        step = self.mapper._search(engine.step.StepType.NewPhase)
         self.assertEqual(1, len(step))
 
     def test__select_from_single(self):
-        step = self.mapper._search(engine.actions.Actions.PayOut)
+        step = self.mapper._search(engine.step.StepType.PayOut)
         result = self.mapper._select(step)
         self.assertEqual(result, engine.actions.PayOut)
 
     def test__select_from_inherited(self):
-        step = self.mapper._search(engine.actions.Actions.Pass)
+        step = self.mapper._search(engine.step.StepType.Pass)
         result = self.mapper._select(step)
         self.assertEqual(result, engine.actions.Pass)
 
-        step = self.mapper._search(engine.actions.Actions.SellShares)
+        step = self.mapper._search(engine.step.StepType.SellShares)
         result = self.mapper._select(step)
         self.assertEqual(result, engine.actions.SellShare)
 
-        step = self.mapper._search(engine.actions.Actions.Skip)
+        step = self.mapper._search(engine.step.StepType.Skip)
         result = self.mapper._select(step)
         self.assertEqual(result, engine.actions.Skip)
 
-        step = self.mapper._search(engine.actions.Actions.BuyPrivate)
+        step = self.mapper._search(engine.step.StepType.BuyPrivate)
         result = self.mapper._select(step)
         self.assertEqual(result, engine.actions.BuyPrivate)
 
     def test_run(self):
-        step = engine.actions.Actions.Withhold
+        step = engine.step.StepType.Withhold
         result = self.mapper.run(step)
         self.assertEqual(result, engine.actions.Withhold)
 
     def test_map_type(self):
         name = 'Withhold'
         result = self.mapper.map_type(name)
-        self.assertEqual(engine.actions.Actions.Withhold, result)
+        self.assertEqual(engine.step.StepType.Withhold, result)
 
         name = 'TrainsRust'
         result = self.mapper.map_type(name)
-        self.assertEqual(engine.events.Events.TrainsRust, result)
+        self.assertEqual(engine.step.StepType.TrainsRust, result)
 
         # This shall throw an error
         with self.assertRaises(KeyError) as e:

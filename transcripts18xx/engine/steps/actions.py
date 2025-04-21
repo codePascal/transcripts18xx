@@ -14,30 +14,6 @@ from ..states.company import Companies, CompanyState
 from .step import EngineStep, StepType, StepParent
 
 
-class Actions(StepType):
-    """Actions
-
-    Enum class describing the actions performed by a player or a company.
-    """
-    PayOut = 0
-    Withhold = 1
-    BuyShare = 2
-    SellShares = 3
-    Par = 5
-    Bid = 6
-    Pass = 7
-    Skip = 8
-    Collect = 9
-    BuyPrivate = 10
-    LayTile = 11
-    PlaceToken = 12
-    BuyTrain = 13
-    RunTrain = 14
-    DiscardTrain = 15
-    ExchangeTrain = 16
-    Contribute = 17
-
-
 class ActionStep(EngineStep, abc.ABC):
     """ActionStep
 
@@ -54,7 +30,7 @@ class PayOut(ActionStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) pays out \$(\d+) = \$(\d+) per share')
-        self.type = Actions.PayOut
+        self.type = StepType.PayOut
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -81,7 +57,7 @@ class Withhold(ActionStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) withholds \$(\d+)')
-        self.type = Actions.Withhold
+        self.type = StepType.Withhold
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -105,7 +81,7 @@ class BuyShare(ActionStep):
         self.pattern = re.compile(
             r'(.*?) buys a (\d+)% share of (.*?) from the (.*?) for \$(\d+)'
         )
-        self.type = Actions.BuyShare
+        self.type = StepType.BuyShare
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -141,7 +117,7 @@ class SellShare(ActionStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
-        self.type = Actions.SellShares
+        self.type = StepType.SellShares
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -191,7 +167,7 @@ class Pass(ActionStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
-        self.type = Actions.Pass
+        self.type = StepType.Pass
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -261,7 +237,7 @@ class Skip(ActionStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
-        self.type = Actions.Skip
+        self.type = StepType.Skip
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -323,7 +299,7 @@ class ParCompany(ActionStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) pars (.*?) at \$(\d+)')
-        self.type = Actions.Par
+        self.type = StepType.Par
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -346,7 +322,7 @@ class Bid(ActionStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) bids \$(\d+) for (.*)')
-        self.type = Actions.Bid
+        self.type = StepType.Bid
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -361,7 +337,7 @@ class Collect(ActionStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) collects \$(\d+) from (.*)')
-        self.type = Actions.Collect
+        self.type = StepType.Collect
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -385,7 +361,7 @@ class BuyPrivate(ActionStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
-        self.type = Actions.BuyPrivate
+        self.type = StepType.BuyPrivate
 
     def _process_match(self, line: str, match) -> dict:
         raise NotImplementedError
@@ -481,7 +457,7 @@ class LayTile(ActionStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
-        self.type = Actions.LayTile
+        self.type = StepType.LayTile
 
     def _process_match(self, line: str, match) -> dict:
         raise NotImplementedError
@@ -538,7 +514,7 @@ class PlaceToken(ActionStep, abc.ABC):
 
     def __init__(self):
         super().__init__()
-        self.type = Actions.PlaceToken
+        self.type = StepType.PlaceToken
 
     def _process_match(self, line: str, match) -> dict:
         raise NotImplementedError
@@ -589,7 +565,7 @@ class BuyTrain(ActionStep):
         self.pattern = re.compile(
             r'(.*?) buys a (\w+) train for \$(\d+) from (.*)'
         )
-        self.type = Actions.BuyTrain
+        self.type = StepType.BuyTrain
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -619,7 +595,7 @@ class RunTrain(ActionStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) runs a (\w) train for \$(\d+): (.*)')
-        self.type = Actions.RunTrain
+        self.type = StepType.RunTrain
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -635,7 +611,7 @@ class DiscardTrain(ActionStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) discards (\w+)')
-        self.type = Actions.DiscardTrain
+        self.type = StepType.DiscardTrain
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -659,7 +635,7 @@ class ExchangeTrain(ActionStep):
         self.pattern = re.compile(
             r'(.*?) exchanges a (\d+) for a (\D) train for \$(\d+) from (.*)'
         )
-        self.type = Actions.ExchangeTrain
+        self.type = StepType.ExchangeTrain
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
@@ -688,7 +664,7 @@ class Contribute(ActionStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) contributes \$(\d+)')
-        self.type = Actions.Contribute
+        self.type = StepType.Contribute
 
     def _process_match(self, line: str, match) -> dict:
         return dict(

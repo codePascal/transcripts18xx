@@ -4,7 +4,7 @@ import argparse
 
 from pathlib import Path
 
-from transcripts18xx import transcript, games
+from transcripts18xx import transcript
 
 
 def parse_arguments():
@@ -13,8 +13,8 @@ def parse_arguments():
     )
     parser.add_argument(
         'game',
-        type=games.Games.argparse,
-        choices=list(games.Games),
+        type=transcript.games.Games.argparse,
+        choices=list(transcript.games.Games),
         help='Game type of transcript, e.g. G1830',
     )
     parser.add_argument(
@@ -30,7 +30,8 @@ def main():
     if not args.transcript.exists():
         print('Transcript does not exist: {}'.format(args.transcript))
         return
-    df = transcript.parse(args.transcript, game)
+    parser = transcript.TranscriptParser(args.transcript, game)
+    df = parser.parse()
     print(df)
 
 

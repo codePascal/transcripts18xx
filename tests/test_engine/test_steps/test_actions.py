@@ -418,7 +418,7 @@ class TestBuyPrivate(BaseStepTest):
         p = players.get('player1')
         self.assertEqual(940, p.cash)
         self.assertEqual(dict(private2=40), p.privates)
-        self.assertEqual(1000, p.value)  # value not updated yet in pipeline
+        self.assertEqual(980, p.value)
         self.assertEqual(dict(company1=0, company2=0, company3=0), p.shares)
         self.assertFalse(p.priority_deal)
 
@@ -439,7 +439,7 @@ class TestBuyPrivate(BaseStepTest):
         p = players.get('player1')
         self.assertEqual(970, p.cash)
         self.assertEqual(dict(private2=40), p.privates)
-        self.assertEqual(1000, p.value)  # value not updated yet in pipeline
+        self.assertEqual(1010, p.value)
         self.assertEqual(dict(company1=0, company2=0, company3=0), p.shares)
         self.assertFalse(p.priority_deal)
 
@@ -462,7 +462,7 @@ class TestBuyPrivate(BaseStepTest):
         p = players.get('player2')
         self.assertEqual(1240, p.cash)
         self.assertEqual(dict(), p.privates)
-        self.assertEqual(1000, p.value)  # value not updated yet in pipeline
+        self.assertEqual(1240, p.value)
         self.assertEqual(dict(company1=0, company2=0, company3=0), p.shares)
         self.assertFalse(p.priority_deal)
 

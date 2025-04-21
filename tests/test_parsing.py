@@ -274,8 +274,9 @@ class TestGameStateProcessor1830(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        df = pd.read_csv(context.processed_transcript_1830())
-        gsp = parsing.GameStateProcessor(df, Game1830())
+        gsp = parsing.GameStateProcessor(
+            pd.read_csv(context.processed_transcript_1830()), Game1830()
+        )
         df = gsp.generate()
         filepath = context.transcript_1830().parent.joinpath(
             context.transcript_1830().stem + '_game_state.csv'
