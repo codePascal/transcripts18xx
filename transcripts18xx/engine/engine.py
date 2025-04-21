@@ -12,6 +12,7 @@ import pandas as pd
 
 from ..games import Game18xx
 from .steps import step
+from .steps import actions, events  # noqa, to find subclasses of EngineStep
 from .states import player, company
 
 

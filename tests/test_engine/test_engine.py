@@ -3,7 +3,6 @@
 import unittest
 
 from transcripts18xx.engine import engine
-from transcripts18xx.engine.steps import actions
 
 
 class TestEngineSteps(unittest.TestCase):
@@ -118,29 +117,29 @@ class TestStepMapper(unittest.TestCase):
     def test__select_from_single(self):
         step = self.mapper._search(engine.step.StepType.PayOut)
         result = self.mapper._select(step)
-        self.assertEqual(result, actions.PayOut)
+        self.assertEqual(result, engine.actions.PayOut)
 
     def test__select_from_inherited(self):
         step = self.mapper._search(engine.step.StepType.Pass)
         result = self.mapper._select(step)
-        self.assertEqual(result, actions.Pass)
+        self.assertEqual(result, engine.actions.Pass)
 
         step = self.mapper._search(engine.step.StepType.SellShares)
         result = self.mapper._select(step)
-        self.assertEqual(result, actions.SellShare)
+        self.assertEqual(result, engine.actions.SellShare)
 
         step = self.mapper._search(engine.step.StepType.Skip)
         result = self.mapper._select(step)
-        self.assertEqual(result, actions.Skip)
+        self.assertEqual(result, engine.actions.Skip)
 
         step = self.mapper._search(engine.step.StepType.BuyPrivate)
         result = self.mapper._select(step)
-        self.assertEqual(result, actions.BuyPrivate)
+        self.assertEqual(result, engine.actions.BuyPrivate)
 
     def test_run(self):
         step = engine.step.StepType.Withhold
         result = self.mapper.run(step)
-        self.assertEqual(result, actions.Withhold)
+        self.assertEqual(result, engine.actions.Withhold)
 
     def test_map_type(self):
         name = 'Withhold'
