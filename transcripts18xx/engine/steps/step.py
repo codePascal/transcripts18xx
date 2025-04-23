@@ -10,6 +10,8 @@ import enum
 import pandas as pd
 import re
 
+from typing import Type
+
 from ..states.player import Players
 from ..states.company import Companies
 
@@ -85,8 +87,8 @@ class EngineStep(abc.ABC):
 
     def __init__(self):
         self.pattern = None
-        self.type = StepType
-        self.parent = StepParent
+        self.type = Type[StepType]
+        self.parent = Type[StepParent]
 
         self._dismiss = list()
         self._required = list()

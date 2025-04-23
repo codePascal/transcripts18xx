@@ -242,3 +242,14 @@ class GameStateProcessor(object):
         )
         self._df = pd.concat([self._df, state], axis=1)
         return self._df
+
+    def final_state(self) -> dict:
+        """Extracts the final state of players and companies.
+
+        Returns:
+            The dictionary representing states of players and companies.
+        """
+        return {
+            **self._game_state.player_states(),
+            **self._game_state.company_states()
+        }

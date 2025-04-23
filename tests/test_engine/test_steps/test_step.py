@@ -73,8 +73,7 @@ class BaseStepTest(unittest.TestCase):
 
 class TestEngineStep(unittest.TestCase):
 
-    @classmethod
-    def setUpClass(cls) -> None:
+    def setUp(self) -> None:
         class StepEmulator(step.EngineStep):
 
             def __init__(self):
@@ -83,9 +82,13 @@ class TestEngineStep(unittest.TestCase):
                 self.pattern = re.compile(r'(.*?) runs (\d+) tests using (.*)')
 
             def _process_match(self, line: str, match) -> dict:
-                pass
+                return dict(
+                    who=match.group(1),
+                    num_tests=match.group(2),
+                    library=match.group(3)
+                )
 
-        cls.cls = StepEmulator()
+        self.cls = StepEmulator()
 
     def test__invoke_search(self):
         match = self.cls._invoke_search('Carl runs 10 tests using pytest')
@@ -113,6 +116,12 @@ class TestEngineStep(unittest.TestCase):
 
         match = self.cls._invoke_search('Carl runs no tests using pytest')
         self.assertIsNone(match)
+
+    def test__process_match(self):
+        match = self.cls._search('Carl runs 10 tests using pytest')
+        ret = self.cls._process_match('Carl runs 10 tests using pytest', match)
+        expected = {'who': 'Carl', 'num_tests': '10', 'library': 'pytest'}
+        self.assertEqual(expected, ret)
 
     def test__contains_dismiss_key(self):
         ret = self.cls._contains_dismiss_key('Some line to check')
@@ -144,3 +153,46 @@ class TestEngineStep(unittest.TestCase):
 
         ret = self.cls._contains_required_key('Contains requiredkey')
         self.assertFalse(ret)
+
+    def test__search(self):
+        ret = self.cls._search('Carl runs 10 tests using pytest')
+        self.assertTrue(isinstance(ret, re.Match))
+
+        self.cls._dismiss = ['unittest']
+        ret = self.cls._search('Carl runs 10 tests using pytest')
+        self.assertTrue(isinstance(ret, re.Match))
+        ret = self.cls._search('Carl runs 10 tests using unittest')
+        self.assertIsNone(ret)
+
+        self.cls._required = ['Carl']
+        ret = self.cls._search('Carl runs 10 tests using pytest')
+        self.assertTrue(isinstance(ret, re.Match))
+        ret = self.cls._search('Ryan runs 10 tests using pytest')
+        self.assertIsNone(ret)
+
+    def test__process(self):
+        self.cls.type = step.StepType.Pass
+        self.cls.parent = step.StepParent.Action
+
+        match = self.cls._search('Carl runs 10 tests using pytest')
+        ret = self.cls._process('Carl runs 10 tests using pytest', match)
+        expected = {
+            'who': 'Carl', 'num_tests': '10', 'library': 'pytest',
+            'type': 'Pass', 'parent': 'Action'
+        }
+        self.assertEqual(expected, ret)
+
+    def test_match(self):
+        self.cls.type = step.StepType.Pass
+        self.cls.parent = step.StepParent.Action
+
+        ret = self.cls.match('Carl runs 10 tests using pytest')
+        expected = {
+            'who': 'Carl', 'num_tests': '10', 'library': 'pytest',
+            'type': 'Pass', 'parent': 'Action'
+        }
+        self.assertEqual(expected, ret)
+
+        ret = self.cls.match('Carl runs no tests using pytest')
+        self.assertIsNone(ret)
+

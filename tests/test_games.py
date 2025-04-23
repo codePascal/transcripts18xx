@@ -21,6 +21,10 @@ class TestG1830(unittest.TestCase):
 
 class TestGames(unittest.TestCase):
 
+    def test___str__(self):
+        game = games.Games.G1830
+        self.assertEqual('G1830', game.__str__())
+
     def test_argparse(self):
         self.assertEqual(games.Games.G1830, games.Games.argparse('G1830'))
 

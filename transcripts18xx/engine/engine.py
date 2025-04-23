@@ -111,12 +111,9 @@ class StepMapper(object):
 
     def _search(self, step_type: step.StepType) -> list:
         # Invokes the step type name of the subclasses.
-        try:
-            return [
-                cls for cls in self._steps if cls().type.name == step_type.name
-            ]
-        except AttributeError:
-            print(step_type)
+        return [
+            cls for cls in self._steps if cls().type.name == step_type.name
+        ]
 
     @staticmethod
     def _select(result: list) -> Type[step.EngineStep]:
@@ -203,24 +200,38 @@ class GameState(object):
         """
         return {**self.players.as_dict(), **self.companies.as_dict()}
 
-    def players(self) -> dict:
+    def player_states(self) -> dict:
         """Generates a dictionary of the game state for the players.
 
         Returns:
             The player game states.
         """
-        return dict(players=self.players.as_dict())
+        return dict(
+            players={
+                k: player.PlayerState.eval(v).__dict__ for k, v in
+                self.players.as_dict().items()
+            }
+        )
 
-    def companies(self) -> dict:
+    def company_states(self) -> dict:
         """Generates a dictionary of the game state for the companies.
 
         Returns:
             The company game states.
         """
-        return dict(companies=self.companies.as_dict())
+        return dict(
+            companies={
+                k: company.CompanyState.eval(v).__dict__ for k, v in
+                self.companies.as_dict().items()
+            }
+        )
 
 
 class StateVerification(object):
 
     def __init__(self, parsed: dict, ground_truth: dict):
+        # TODO
+        pass
+
+    def run(self):
         pass
