@@ -2,8 +2,10 @@
 # -*- coding: utf-8 -*-
 """Game transcript parser algorithm
 
-Module implements classes to parse a transcript from 18xx.games and map the
-current game state to each event or action.
+Module implements classes that build the algorithm to parse a transcript from
+18xx.games and map the current game state to each line. The algorithm consist
+of a parser to handle the raw transcript, a processor that cleans and
+post-processes the transcript and a mapper for the game state.
 """
 import pandas as pd
 import re
@@ -17,7 +19,10 @@ from .engine import engine
 class GameTranscriptProcessor(object):
     """GameTranscriptProcessor
 
-    Class to process and parse game transcripts.
+    Class to process and parse game transcripts. The class invokes a line parser
+    that checks the lines against all step engines and finds the hopefully
+    unique match. Lines that were not matched are printed to the console.
+    The parsed lines are combined in a pandas Dataframe.
 
     Attributes:
         _engine: The line parser engine.
@@ -25,6 +30,16 @@ class GameTranscriptProcessor(object):
 
     def __init__(self):
         self._engine = engine.LineParser()
+
+    def _process_line(self, idx: int, line: str, data: list, unprocessed: list):
+        line = self._preprocess_line(line)
+        parsed_data = self._engine.run(line)
+        if parsed_data:
+            parsed_data['id'] = idx
+            parsed_data['line'] = line
+            data.append(parsed_data)
+        else:
+            unprocessed.append(line.strip())
 
     @staticmethod
     def _preprocess_line(line: str) -> str:
@@ -34,6 +49,17 @@ class GameTranscriptProcessor(object):
         line = line.lstrip()
         return line
 
+    @staticmethod
+    def _read_transcript(transcript: Path) -> list[str]:
+        with open(transcript, 'r', encoding='utf-8') as file:
+            lines = file.readlines()
+        return lines
+
+    @staticmethod
+    def _handle_unprocessed_lines(unprocessed: list):
+        print('Unprocessed lines:')
+        print('\n'.join(unprocessed))
+
     def parse_transcript(self, transcript: Path) -> pd.DataFrame:
         """Reads and extracts actions and events from the game transcript.
 
@@ -41,31 +67,25 @@ class GameTranscriptProcessor(object):
             transcript: The filepath to the transcript.
 
         Returns:
-            The parsed transcript.
+            The parsed transcript as pandas Dataframe.
         """
         data = list()
-        with open(transcript, 'r', encoding='utf-8') as file:
-            lines = file.readlines()
         unprocessed = list()
-        for i, line in enumerate(lines):
-            line = self._preprocess_line(line)
-            parsed_data = self._engine.run(line)
-            if parsed_data:
-                parsed_data['id'] = i
-                parsed_data['line'] = line
-                data.append(parsed_data)
-            else:
-                unprocessed.append(line.strip())
+        for i, line in enumerate(self._read_transcript(transcript)):
+            self._process_line(i, line, data, unprocessed)
         if unprocessed:
-            print('Unprocessed lines:')
-            print('\n'.join(unprocessed))
+            self._handle_unprocessed_lines(unprocessed)
         return pd.DataFrame(data)
 
 
 class TranscriptPostProcessor(object):
     """TranscriptPostProcessor
 
-    Class to post-process and clean parsed game transcripts.
+    Class to post-process and clean parsed game transcripts. The class fills up
+    the phase and round keys which are valid until the next key arrives. It
+    further maps and renders columns which require the game context, given by
+    the type of game and the whole parsed transcript. To this end, the player
+    names are anonymized for better generalization.
 
     Attributes:
         _df: The parsed transcript.
@@ -181,7 +201,10 @@ class TranscriptPostProcessor(object):
 class GameStateProcessor(object):
     """GameStateProcessor
 
-    Class to map the game state to the cleaned and processed transcript.
+    Class to map the game state to the cleaned and processed transcript. The
+    game state consist of the player and company states at each entry of the
+    transcript. Some columns in the processed transcript could become obsolete,
+    but for completeness, these will not be removed.
 
     Attributes:
         _df: The cleaned and processed transcript.

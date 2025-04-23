@@ -202,3 +202,25 @@ class GameState(object):
             their representation as values.
         """
         return {**self.players.as_dict(), **self.companies.as_dict()}
+
+    def players(self) -> dict:
+        """Generates a dictionary of the game state for the players.
+
+        Returns:
+            The player game states.
+        """
+        return dict(players=self.players.as_dict())
+
+    def companies(self) -> dict:
+        """Generates a dictionary of the game state for the companies.
+
+        Returns:
+            The company game states.
+        """
+        return dict(companies=self.companies.as_dict())
+
+
+class StateVerification(object):
+
+    def __init__(self, parsed: dict, ground_truth: dict):
+        pass

@@ -32,6 +32,8 @@ def main():
         return
     parser = transcript.TranscriptParser(args.transcript, game)
     df = parser.parse()
+    parser.save()
+    parser.serialize()
     print(df)
 
 

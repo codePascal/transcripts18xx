@@ -9,72 +9,12 @@ The transcript name must follow this rule: `<title>_<id>.txt`.
 E.g.: `1830_201210.txt`, where `1830` is the title or the game and `201210` is
 the ID of the game.
 """
+import json
 import pandas as pd
 
 from pathlib import Path
 
 from . import parsing, games
-
-# TODO:
-#   * parse
-#   * save as df or json (argument)
-#   * add game data (id, type, num players, etc.)
-
-"""
-from game data output
-{
-  "id": 201210,
-  "description": "",
-  "user": {
-    "id": 15781,
-    "name": "leesin"
-  },
-  "players": [
-    {
-      "id": 19333,
-      "name": "mpcoyne"
-    },
-    {
-      "id": 18933,
-      "name": "riverfiend"
-    },
-    {
-      "id": 15781,
-      "name": "leesin"
-    },
-    {
-      "id": 18620,
-      "name": "mpakfm"
-    }
-  ],
-  "min_players": 4,
-  "max_players": 6,
-  "title": "1830",
-  "settings": {
-    "seed": 752300876,
-    "is_async": false,
-    "unlisted": false,
-    "auto_routing": true,
-    "player_order": null,
-    "optional_rules": []
-  },
-  "user_settings": null,
-  "status": "finished",
-  "turn": 8,
-  "round": "Operating Round",
-  "acting": [
-    19333,
-    18933,
-    15781,
-    18620
-  ],
-  "result": {
-    "15781": 6648,
-    "18620": 2740,
-    "18933": 5523,
-    "19333": 6735
-  },
-"""
 
 
 class TranscriptParser(object):
@@ -85,6 +25,34 @@ class TranscriptParser(object):
 
         self._mapping = dict()
         self._df = pd.DataFrame()
+
+    def _game_info(self):
+        # Builds the game info.
+        info = dict()
+        game_type, game_id = self._transcript.stem.split('_')
+        info['game'] = game_type
+        info['id'] = game_id
+        info['num_players'] = len(self._mapping.keys())
+        info['players'] = {v: k for k, v in self._mapping.items()}
+        return info
+
+    def _write_result(self):
+        # Writes the results to .csv file.
+        self._df.to_csv(
+            self._transcript.parent.joinpath(
+                self._transcript.stem + '_final.csv'
+            ),
+            index=False,
+            sep=','
+        )
+
+    def _write_metadata(self):
+        # Writes the game info to .json file.
+        file = self._transcript.parent.joinpath(
+            self._transcript.stem + '_metadata.json'
+        )
+        with open(file, 'w') as f:
+            f.write(json.dumps(self._game_info(), indent=2))
 
     def parse(self) -> pd.DataFrame:
         """Parses the transcript to a pandas Dataframe.
@@ -101,20 +69,41 @@ class TranscriptParser(object):
 
         gsp = parsing.GameStateProcessor(df_processed, self._game)
         df_final = gsp.generate()
+        self._df = df_final
         return df_final
 
-    def verify_result(self, df: pd.DataFrame, minimal: bool = False) -> bool:
+    def verify_result(self, minimal: bool = False) -> bool:
+        """Verifies the result
+
+        Args:
+            minimal:
+
+        Returns:
+
+        """
         verification_file = Path(self._transcript.stem + '.json')
         if not verification_file.exists():
             raise ValueError('...')
         pass
 
-    def save(self, df: pd.DataFrame):
-        filename = Path(self._transcript.stem + '_final.csv')
-        print(filename)
+    def save(self):
+        """Saves the game data and its metadata.
 
-    def serialize(self, df: pd.DataFrame):
-        # Json encoded
-        filename = Path(self._transcript.stem + '_final.json')
-        print(filename)
-        pass
+        The game data is saved as .csv file: `_final.csv`. The metadata is saved
+        as .json file: `_metadata.json`.
+        """
+        self._write_result()
+        self._write_metadata()
+
+    def serialize(self):
+        """Saves the game data including metadata.
+
+        Both are incorporated into a .json file: `_serialized.json`.
+        """
+        result = self._game_info()
+        result['actions'] = self._df.to_dict(orient='index')
+        file = self._transcript.parent.joinpath(
+            self._transcript.stem + '_serialized.json'
+        )
+        with open(file, 'w') as f:
+            f.write(json.dumps(result, indent=2))
