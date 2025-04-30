@@ -101,6 +101,7 @@ class TranscriptPostProcessor(object):
         self._game = game
 
         # `round` is not really applicable...
+        # TODO: replace round in parser
         self._df.rename(columns={'round': 'sequence'}, inplace=True)
 
     def _map_phase(self):

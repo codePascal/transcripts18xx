@@ -225,13 +225,3 @@ class GameState(object):
                 self.companies.as_dict().items()
             }
         )
-
-
-class StateVerification(object):
-
-    def __init__(self, parsed: dict, ground_truth: dict):
-        # TODO
-        pass
-
-    def run(self):
-        pass
