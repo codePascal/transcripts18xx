@@ -47,6 +47,8 @@ class StateVerification(object):
 
     def _evaluate_differences(self, diffs: dict) -> bool:
         # If left side is `<missing>`, that is fine.
+        if not diffs:
+            return True
         left_side = set([v1 for (v1, v2) in diffs.values()])
         if len(left_side) == 1 and list(left_side)[0] == self._missing:
             return True
