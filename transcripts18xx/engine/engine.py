@@ -110,9 +110,11 @@ class StepMapper(object):
         self._steps = EngineSteps().patterns()
 
     def _search(self, step_type: step.StepType) -> list:
-        # Invokes the step type name of the subclasses.
+        # Invokes the step type name of the subclasses if StepType is available.
         return [
-            cls for cls in self._steps if cls().type.name == step_type.name
+            cls for cls in self._steps if
+            isinstance(cls().type, step.StepType) and
+            cls().type.name == step_type.name
         ]
 
     @staticmethod

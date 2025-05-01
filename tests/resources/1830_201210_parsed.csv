@@ -1,4 +1,4 @@
-phase,type,parent,id,line,player,amount,private,entity,source,percentage,company,share_price,round,location,tile,rotation,direction,train,route,per_share,old_train,new_train
+phase,type,parent,id,line,player,amount,private,entity,source,percentage,company,share_price,sequence,location,tile,rotation,direction,train,route,per_share,old_train,new_train
 2,NewPhase,Event,0,"-- Phase 2 (Operating Rounds: 1 | Train Limit: 4 | Available Tiles: Yellow) --
 ",,,,,,,,,,,,,,,,,,
 ,Bid,Action,1,"mpcoyne bids $165 for Camden & Amboy

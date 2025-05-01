@@ -173,7 +173,7 @@ class TestOperatingRound(BaseStepTest):
         expected = dict(
             parent='Event',
             type='OperatingRound',
-            round='OR 3.2'
+            sequence='OR 3.2'
         )
         self.assertMatch(events.OperatingRound(), line, expected)
 
@@ -185,7 +185,7 @@ class TestStockRound(BaseStepTest):
         expected = dict(
             parent='Event',
             type='StockRound',
-            round='SR 4'
+            sequence='SR 4'
         )
         self.assertMatch(events.StockRound(), line, expected)
 

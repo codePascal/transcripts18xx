@@ -175,6 +175,7 @@ class GameOver(EventStep):
         self.type = StepType.GameOver
 
     def _process_match(self, line: str, match) -> dict:
+        # TODO: process rankings, and add ranking to separate column key
         return dict()
 
 
@@ -187,7 +188,7 @@ class OperatingRound(EventStep):
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
-            round='OR {}'.format(match.group(1))
+            sequence='OR {}'.format(match.group(1))
         )
 
 
@@ -200,7 +201,7 @@ class StockRound(EventStep):
 
     def _process_match(self, line: str, match) -> dict:
         return dict(
-            round='SR {}'.format(match.group(1))
+            sequence='SR {}'.format(match.group(1))
         )
 
 

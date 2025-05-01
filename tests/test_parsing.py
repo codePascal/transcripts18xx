@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 import unittest
 import pandas as pd
-import pytest
 
 from transcripts18xx import parsing
 from transcripts18xx.games import Game1830
@@ -13,24 +12,21 @@ from tests import context
 
 
 class TestGameTranscriptProcessor1830(unittest.TestCase):
+    df = None
 
     @classmethod
     def setUpClass(cls) -> None:
         raw_transcript = context.transcript_1830()
         gtp = parsing.GameTranscriptProcessor()
         df = gtp.parse_transcript(raw_transcript)
-        filepath = raw_transcript.parent.joinpath(
-            raw_transcript.stem + '_parsed.csv'
-        )
-        df.to_csv(filepath, index=False, sep=',')
         cls.df = df
 
-    @staticmethod
-    def _set_not_nan(ser: pd.Series) -> set:
-        return set([s for s in ser if pd.notna(s)])
-
-    def _type_int(self, ser: pd.Series) -> bool:
-        return any(float(s).is_integer() for s in self._set_not_nan(ser))
+    @classmethod
+    def tearDownClass(cls) -> None:
+        filepath = context.transcript_1830().parent.joinpath(
+            context.transcript_1830().stem + '_parsed.csv'
+        )
+        cls.df.to_csv(filepath, index=False, sep=',')
 
     def test_shape(self):
         self.assertEqual(1346, self.df.shape[0])
@@ -39,16 +35,15 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
     def test_columns(self):
         expected = [
             'phase', 'type', 'parent', 'id', 'line', 'player', 'amount',
-            'private', 'entity', 'source', 'percentage', 'company', 'round',
+            'private', 'entity', 'source', 'percentage', 'company', 'sequence',
             'location', 'tile', 'rotation', 'direction', 'share_price', 'train',
             'route', 'per_share', 'old_train', 'new_train'
         ]
-
         self.assertEqual(sorted(expected), sorted(list(self.df.columns)))
 
     def test_phase(self):
         expected = {'2', '3', '4', '5', '6', 'D'}
-        self.assertEqual(expected, self._set_not_nan(self.df.phase))
+        self.assertEqual(expected, set(self.df.phase.dropna().unique()))
 
     def test_type(self):
         expected = {
@@ -61,35 +56,37 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
             'ReceiveShare', 'RunTrain', 'SelectsHome', 'SellShares',
             'SharePriceMoves', 'Skip', 'StockRound', 'TrainsRust', 'Withhold'
         }
-        self.assertEqual(expected, self._set_not_nan(self.df['type']))
+        self.assertEqual(expected, set(self.df['type'].dropna().unique()))
 
     def test_parent(self):
         expected = {'Action', 'Event'}
-        self.assertEqual(expected, self._set_not_nan(self.df.parent))
+        self.assertEqual(expected, set(self.df.parent.dropna().unique()))
 
     def test_id(self):
-        self.assertEqual(self.df.shape[0], len(self._set_not_nan(self.df.id)))
+        self.assertEqual(self.df.shape[0], len(self.df.id.dropna().unique()))
 
     def test_player(self):
         expected = {'mpcoyne', 'riverfiend', 'mpakfm', 'leesin'}
-        self.assertEqual(expected, self._set_not_nan(self.df.player))
+        self.assertEqual(expected, set(self.df.player.dropna().unique()))
 
     def test_amount(self):
-        self.assertTrue(self._type_int(self.df.amount))
+        self.assertTrue(any(
+            float(s).is_integer() for s in self.df.amount.dropna().unique())
+        )
 
     def test_private(self):
         expected = {
             'Baltimore & Ohio', 'Champlain & St.Lawrence', 'Mohawk & Hudson',
             'Delaware & Hudson', 'Camden & Amboy', 'Schuylkill Valley'
         }
-        self.assertEqual(expected, self._set_not_nan(self.df.private))
+        self.assertEqual(expected, set(self.df.private.dropna().unique()))
 
     def test_entity(self):
         expected = {
             'B&M', 'B&O', 'C&O', 'CPR', 'ERIE', 'NYC', 'NYNH', 'PRR', 'leesin',
             'mpakfm', 'mpcoyne', 'riverfiend'
         }
-        self.assertEqual(expected, self._set_not_nan(self.df.entity))
+        self.assertEqual(expected, set(self.df.entity.dropna().unique()))
 
     def test_source(self):
         expected = {
@@ -98,18 +95,20 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
             'Mohawk & Hudson', 'NYNH', 'Schuylkill Valley', 'The Depot',
             'leesin', 'market', 'mpcoyne', 'riverfiend'
         }
-        self.assertEqual(expected, self._set_not_nan(self.df.source))
+        self.assertEqual(expected, set(self.df.source.dropna().unique()))
 
     def test_percentage(self):
-        self.assertTrue(self._type_int(self.df.percentage))
+        self.assertTrue(any(
+            float(s).is_integer() for s in self.df.percentage.dropna().unique())
+        )
 
     def test_company(self):
         expected = {
             'B&M', 'CPR', 'NYC', 'NYNH', 'ERIE', 'C&O', 'B&O', 'C&O (DH)', 'PRR'
         }
-        self.assertEqual(expected, self._set_not_nan(self.df.company))
+        self.assertEqual(expected, set(self.df.company.dropna().unique()))
 
-    def test_round(self):
+    def test_sequence(self):
         expected = {
             'OR 1.1',
             'OR 2.1',
@@ -121,7 +120,7 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
             'OR 8.1', 'OR 8.2', 'OR 8.3',
             'SR 1', 'SR 2', 'SR 3', 'SR 4', 'SR 5', 'SR 6', 'SR 7', 'SR 8'
         }
-        self.assertEqual(expected, self._set_not_nan(self.df['round']))
+        self.assertEqual(expected, set(self.df.sequence.dropna().unique()))
 
     def test_location(self):
         expected = {
@@ -140,7 +139,7 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
             'H18 (Philadelphia & Trenton) ', 'H4 (Columbus)', 'H6', 'H8', 'I15',
             'I15 (Baltimore)', 'I17'
         }
-        self.assertEqual(expected, self._set_not_nan(self.df.location))
+        self.assertEqual(expected, set(self.df.location.dropna().unique()))
 
     def test_tile(self):
         expected = {
@@ -149,51 +148,62 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
             '58', '59', '61', '62', '63', '65', '66', '67', '69', '7', '70',
             '8', '9'
         }
-        self.assertEqual(expected, self._set_not_nan(self.df.tile))
+        self.assertEqual(expected, set(self.df.tile.dropna().unique()))
 
     def test_rotation(self):
         expected = {'0', '1', '2', '3', '4', '5'}
-        self.assertEqual(expected, self._set_not_nan(self.df.rotation))
+        self.assertEqual(expected, set(self.df.rotation.dropna().unique()))
 
     def test_direction(self):
         expected = {'down', 'right', 'up', 'left'}
-        self.assertEqual(expected, self._set_not_nan(self.df.direction))
+        self.assertEqual(expected, set(self.df.direction.dropna().unique()))
 
     def test_share_price(self):
-        self.assertTrue(self._type_int(self.df.share_price))
+        self.assertTrue(any(
+            float(s).is_integer() for s in
+            self.df.share_price.dropna().unique())
+        )
 
     def test_train(self):
         expected = {'2', '3', '4', '5', '6', 'D'}
-        self.assertEqual(expected, self._set_not_nan(self.df.train))
+        self.assertEqual(expected, set(self.df.train.dropna().unique()))
 
     def test_route(self):
         # Follows: `tile-tile-tile-...` scheme
         pass
 
     def test_per_share(self):
-        self.assertTrue(self._type_int(self.df.per_share))
+        self.assertTrue(any(
+            float(s).is_integer() for s in self.df.per_share.dropna().unique())
+        )
 
     def test_old_train(self):
         expected = {'4'}
-        self.assertEqual(expected, self._set_not_nan(self.df.old_train))
+        self.assertEqual(expected, set(self.df.old_train.dropna().unique()))
 
     def test_new_train(self):
         expected = {'D'}
-        self.assertEqual(expected, self._set_not_nan(self.df.new_train))
+        self.assertEqual(expected, set(self.df.new_train.dropna().unique()))
 
 
 class TestTranscriptPostProcessor1830(unittest.TestCase):
+    df = None
 
     @classmethod
     def setUpClass(cls) -> None:
-        df = pd.read_csv(context.parsed_transcript_1830())
+        raw_transcript = context.transcript_1830()
+        gtp = parsing.GameTranscriptProcessor()
+        df = gtp.parse_transcript(raw_transcript)
         tpp = parsing.TranscriptPostProcessor(df, Game1830())
-        df, mapping = tpp.process()
+        df, _ = tpp.process()
+        cls.df = df
+
+    @classmethod
+    def tearDownClass(cls) -> None:
         filepath = context.transcript_1830().parent.joinpath(
             context.transcript_1830().stem + '_processed.csv'
         )
-        df.to_csv(filepath, index=False, sep=',')
-        cls.df = df
+        cls.df.to_csv(filepath, index=False, sep=',')
 
     @staticmethod
     def _set_not_nan(ser: pd.Series) -> set:
@@ -223,11 +233,11 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
         expected = {
             'B&M', 'CPR', 'NYC', 'NYNH', 'ERIE', 'C&O', 'B&O', 'PRR'
         }
-        self.assertEqual(expected, self._set_not_nan(self.df.company))
+        self.assertEqual(expected, set(self.df.company.dropna().unique()))
 
     def test_player(self):
         expected = {'player1', 'player2', 'player3', 'player4'}
-        self.assertEqual(expected, self._set_not_nan(self.df.player))
+        self.assertEqual(expected, set(self.df.player.dropna().unique()))
 
     def test_sequence(self):
         expected = {
@@ -253,7 +263,7 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
             'G9', 'H10', 'H12', 'H14', 'H16', 'H18', 'H4', 'H6', 'H8', 'I15',
             'I17'
         }
-        self.assertEqual(expected, self._set_not_nan(self.df.location))
+        self.assertEqual(expected, set(self.df.location.dropna().unique()))
 
     def test_source(self):
         expected = {
@@ -262,7 +272,7 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
             'Mohawk & Hudson', 'NYNH', 'Schuylkill Valley', 'The Depot',
             'market', 'player1', 'player2', 'player3'
         }
-        self.assertEqual(expected, self._set_not_nan(self.df.source))
+        self.assertEqual(expected, set(self.df.source.dropna().unique()))
 
     def test_anonymization(self):
         df = self.df.astype(str)
@@ -276,23 +286,27 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
         self.assertEqual('B&M', self.df.iloc[1089, :].company)
 
 
-@pytest.mark.xfail(
-    reason='This suite fails when running all tests together...'
-)
 class TestGameStateProcessor1830(unittest.TestCase):
+    df = None
 
     @classmethod
     def setUpClass(cls) -> None:
-        gsp = parsing.GameStateProcessor(
-            pd.read_csv(context.processed_transcript_1830()), Game1830()
-        )
+        raw_transcript = context.transcript_1830()
+        gtp = parsing.GameTranscriptProcessor()
+        parsed = gtp.parse_transcript(raw_transcript)
+        tpp = parsing.TranscriptPostProcessor(parsed, Game1830())
+        processed, _ = tpp.process()
+        gsp = parsing.GameStateProcessor(processed, Game1830())
         df = gsp.generate()
+        cls.df = df
+        cls.final_state = gsp.final_state()
+
+    @classmethod
+    def tearDownClass(cls) -> None:
         filepath = context.transcript_1830().parent.joinpath(
             context.transcript_1830().stem + '_game_state.csv'
         )
-        df.to_csv(filepath, index=False, sep=',')
-        cls.df = df
-        cls.final_state = gsp.final_state()
+        cls.df.to_csv(filepath, index=False, sep=',')
 
     def isr_1(self):
         return self.df[self.df.sequence == 'ISR 1'].iloc[-1, :]
