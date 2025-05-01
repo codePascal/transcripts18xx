@@ -14,10 +14,6 @@ from ..states.company import Companies, CompanyState
 from .step import EngineStep, StepType, StepParent
 
 
-# TODO: add player goes bankrupt:
-#  `-- (JuicyBerry) goes bankrupt and sells remaining shares --`
-
-
 class EventStep(EngineStep, abc.ABC):
 
     def __init__(self):
@@ -330,3 +326,22 @@ class TrainsRust(EventStep):
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         companies.invoke_all(CompanyState.trains_rust, dict(train=row.train))
+
+
+class PlayerGoesBankrupt(EventStep):
+
+    def __init__(self):
+        super().__init__()
+        self.pattern = re.compile(
+            r'-- (\w+) goes bankrupt and sells remaining shares --'
+        )
+        self.type = StepType.PlayerGoesBankrupt
+
+    def _process_match(self, line: str, match) -> dict:
+        return dict(
+            player=match.group(1)
+        )
+
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        players.invoke(PlayerState.goes_bankrupt, dict(), row.player)

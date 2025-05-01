@@ -293,3 +293,19 @@ class TestTrainsRust(BaseStepTest):
     def test_state_update(self):
         # TODO
         pass
+
+
+class TestPlayerGoesBankrupt(BaseStepTest):
+
+    def test_match(self):
+        line = '-- player1 goes bankrupt and sells remaining shares --'
+        expected = dict(
+            parent='Event',
+            type='PlayerGoesBankrupt',
+            player='player1'
+        )
+        self.assertMatch(events.PlayerGoesBankrupt(), line, expected)
+
+    def test_state_update(self):
+        # TODO
+        pass

@@ -82,6 +82,9 @@ class PlayerState(State):
     def has_priority_deal(self, priority_deal: bool):
         self.priority_deal = priority_deal
 
+    def goes_bankrupt(self):
+        self.cash = 0
+
 
 class Players(States):
     """Players

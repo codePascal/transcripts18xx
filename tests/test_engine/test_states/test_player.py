@@ -79,6 +79,11 @@ class TestPlayerState(unittest.TestCase):
         self.player.has_priority_deal(False)
         self.assertFalse(self.player.priority_deal)
 
+    def test_goes_bankrupt(self):
+        self.player.cash = 100
+        self.player.goes_bankrupt()
+        self.assertEqual(0, self.player.cash)
+
 
 class TestPlayers(unittest.TestCase):
 

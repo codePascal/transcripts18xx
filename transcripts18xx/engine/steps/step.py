@@ -56,6 +56,7 @@ class StepType(enum.IntEnum):
     PrivateCloses = 33
     PrivateAuctioned = 34
     TrainsRust = 35
+    PlayerGoesBankrupt = 36
 
 
 class StepParent(enum.IntEnum):
