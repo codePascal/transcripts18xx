@@ -10,7 +10,6 @@ from typing import Type
 
 import pandas as pd
 
-from ..games import Game18xx
 from .steps import step
 from .steps import actions, events  # noqa, to find subclasses of EngineStep
 from .states import player, company
@@ -168,7 +167,9 @@ class GameState(object):
     Args:
         players: Player names in the game.
         companies: Company names in the game.
-        game: The underlying 18xx game.
+        start_capital: The total initial capital divided by players.
+        trains: The available trains.
+        privates: The privates and their values.
 
     Attributes:
         players: The maintainer class for all players.
@@ -181,12 +182,10 @@ class GameState(object):
     """
 
     def __init__(self, players: list[str], companies: list[str],
-                 game: Game18xx):
-        self.players = player.Players(
-            players, game.companies, game.start_capital
-        )
-        self.companies = company.Companies(companies, game.trains)
-        self.privates = game.privates
+                 start_capital: int, trains: list[str], privates: dict):
+        self.players = player.Players(players, companies, start_capital)
+        self.companies = company.Companies(companies, trains)
+        self.privates = privates
 
     def update(self, row: pd.Series, engine: step.EngineStep) -> None:
         """Updates the game state using the step engine.
