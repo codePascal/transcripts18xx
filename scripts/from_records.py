@@ -4,7 +4,7 @@ import argparse
 
 from pathlib import Path
 
-from transcripts18xx import transcript, games
+from transcripts18xx import transcript
 
 
 def parse_arguments():
@@ -13,8 +13,8 @@ def parse_arguments():
     )
     parser.add_argument(
         'game',
-        type=games.Games.argparse,
-        choices=list(games.Games),
+        type=transcript.games.Games.argparse,
+        choices=transcript.games.Games,
         help='Game type of transcripts, e.g. G1830',
     )
     return parser.parse_args()
@@ -22,7 +22,7 @@ def parse_arguments():
 
 def main():
     game = args.game.select()
-    if isinstance(game, games.Game1830):
+    if isinstance(game, transcript.games.Game1830):
         transcripts = Path(
             'C:/Users/mup01/git/18xx/records18xx/transcripts/1830'
         )
@@ -34,7 +34,10 @@ def main():
     ]
     for file in transcripts:
         print('### Parsing {} ###'.format(file))
-        transcript.parse(file, game)
+        parser = transcript.TranscriptParser(file, game)
+        parser.parse()
+        parser.save()
+        parser.serialize()
 
 
 if __name__ == '__main__':

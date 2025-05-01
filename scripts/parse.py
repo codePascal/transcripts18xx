@@ -14,7 +14,7 @@ def parse_arguments():
     parser.add_argument(
         'game',
         type=transcript.games.Games.argparse,
-        choices=list(transcript.games.Games),
+        choices=transcript.games.Games,
         help='Game type of transcript, e.g. G1830',
     )
     parser.add_argument(
@@ -34,7 +34,6 @@ def main():
     parser.parse()
     parser.save()
     parser.serialize()
-    print(parser.final_state(anonym=False))
     parser.verify_result()
 
 
