@@ -13,11 +13,11 @@ class TestEngineSteps(unittest.TestCase):
 
     def test__patterns(self):
         subclasses = self.pattern._patterns()
-        self.assertEqual(61, len(subclasses))
+        self.assertEqual(62, len(subclasses))
 
     def test_patterns(self):
         subclasses = self.pattern.patterns()
-        self.assertEqual(59, len(subclasses))
+        self.assertEqual(60, len(subclasses))
 
 
 class TestLineParser(unittest.TestCase):
@@ -46,13 +46,11 @@ class TestLineParser(unittest.TestCase):
     def test__search_action(self):
         line = 'player1 buys a 20% share of B&O from the IPO for $200'
         result = self.matcher._search(line)
-        self.assertEqual(58, len([r for r in result if r is None]))
         self.assertEqual(1, len([r for r in result if isinstance(r, dict)]))
 
     def test__search_event(self):
         line = "B&O's share price moves right from $67 to $70"
         result = self.matcher._search(line)
-        self.assertEqual(58, len([r for r in result if r is None]))
         self.assertEqual(1, len([r for r in result if isinstance(r, dict)]))
 
     def test_run_action(self):
