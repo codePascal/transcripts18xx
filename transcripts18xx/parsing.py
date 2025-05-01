@@ -161,6 +161,25 @@ class TranscriptPostProcessor(object):
         self._df.replace(mapping.keys(), mapping.values(), inplace=True)
         return mapping
 
+    def _set_contribute_target(self) -> None:
+        contributions = self._df[
+            self._df['type'] == engine.step.StepType.Contribute.name
+            ].index.tolist()
+        for cont in contributions:
+            # Next action after contribution is buy a train
+            next_action = self._df.iloc[cont + 1, :]
+            if not next_action['type'] == engine.step.StepType.BuyTrain.name:
+                raise ValueError(
+                    'Can not set target for contribution: {}'.format(
+                        next_action.to_string()
+                    )
+                )
+
+            # Map the company that receives the contribution
+            this_action = self._df.iloc[cont, :].copy()
+            this_action.company = next_action.company
+            self._df.iloc[cont, :] = this_action
+
     def process(self) -> tuple[pd.DataFrame, dict]:
         """Processes and cleans the parsed transcript.
 
@@ -174,6 +193,7 @@ class TranscriptPostProcessor(object):
         self._clean_locations()
         self._clean_companies()
         self._map_dtypes()
+        self._set_contribute_target()
         mapping = self._anonymize()
         return self._df, mapping
 

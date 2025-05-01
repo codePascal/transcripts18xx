@@ -270,6 +270,11 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
             for p in ['leesin', 'mpakfm', 'riverfiend', 'mpcoyne']:
                 self.assertFalse(df[col].str.contains(p).any())
 
+    def test_contributions(self):
+        self.assertEqual('CPR', self.df.iloc[933, :].company)
+        self.assertEqual('NYC', self.df.iloc[950, :].company)
+        self.assertEqual('B&M', self.df.iloc[1089, :].company)
+
 
 @pytest.mark.xfail(
     reason='This suite fails when running all tests together...'

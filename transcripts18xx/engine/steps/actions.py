@@ -679,17 +679,8 @@ class Contribute(ActionStep):
             dict(amount=row.amount),
             row.player
         )
-        # Select the company that has not much money and requires a train
-        companies_require_train = [
-            c.name for c in companies.states
-            if c.president == row.player and sum(c.trains.values()) == 0
-        ]
-        if len(companies_require_train) != 1:
-            raise AttributeError(
-                'Target for contribution unknown:\n{}'.format(row.to_string())
-            )
         companies.invoke(
             CompanyState.collects,
             dict(amount=row.amount),
-            companies_require_train[0]
+            row.company
         )
