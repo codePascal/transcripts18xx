@@ -8,6 +8,28 @@ from .state import State, States
 
 
 class CompanyState(State):
+    """CompanyState
+
+    Class implements a company state object.
+
+    The company is set up as IPO game style. That means if the company floats,
+    it receives the full funds and shares can be brought from the IPO initially.
+    There are other game styles, e.g. shares are in the company treasury. This
+    class however, does not implement that! Further, it is assumed that the
+    company is a 10-share company.
+
+    Args:
+        name: The name of the company.
+        trains: The available trains and amount of each train.
+
+    Attributes:
+        trains: The available trains and amount of each train.
+        ipo: Number of shares available in the IPO.
+        market: Number of shares available on the market.
+        president: The name of the player which is president of that company.
+        share_price: The market share price.
+
+    """
 
     def __init__(self, name: str, trains: dict):
         super().__init__(name)
@@ -98,6 +120,17 @@ class CompanyState(State):
 
 
 class Companies(States):
+    """Companies
+
+    Class implements a maintainer class for all companies in the game.
+
+    Args:
+        names: The names of the companies.
+        trains: The available trains in the game.
+
+    Attributes:
+        states: The states of type `CompanyState`.
+    """
 
     def __init__(self, names: list[str], trains: list[str]):
         super().__init__()

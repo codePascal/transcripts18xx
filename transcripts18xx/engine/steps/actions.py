@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Action matching and processing.
+"""Action matching and processing
 
 Module implements engine step handlers for actions performed by a player or a
 company during the game.
@@ -15,10 +15,6 @@ from .step import EngineStep, StepType, StepParent
 
 
 class ActionStep(EngineStep, abc.ABC):
-    """ActionStep
-
-    Class implements engine steps that are actions by companies or player.
-    """
 
     def __init__(self):
         super().__init__()

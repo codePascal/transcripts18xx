@@ -97,7 +97,7 @@ class Players(States):
         initial_cash: The initial cash that is divided by the players.
 
     Attributes:
-        states: The states of type `Player`.
+        states: The states of type `PlayerState`.
     """
 
     def __init__(self, names: list[str], companies: list[str],

@@ -177,8 +177,8 @@ class GameState(object):
         privates: The available privates and their values.
 
     TODO:
-        if player goes bankrupt and sells remaining shares, these to not
-        add up to its cash!
+        if player goes bankrupt and sells remaining shares, these do not
+        add up to its cash and value!
     """
 
     def __init__(self, players: list[str], companies: list[str],

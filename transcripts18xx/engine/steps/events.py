@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Event matching and processing.
+"""Event matching and processing
 
 Module implements engine step handlers for events appearing during the game.
 This events can be triggered by player or company actions or by another event.

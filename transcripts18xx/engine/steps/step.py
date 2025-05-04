@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Basic step matching and processing.
+"""Basic step matching and processing
 
 Module implements abstract base class to match a pattern to a string and
 run some post-processing on the line if a match was found.
