@@ -21,8 +21,8 @@ class GameTranscriptProcessor(object):
 
     Class to process and parse game transcripts. The class invokes a line parser
     that checks the lines against all step engines and finds the hopefully
-    unique match. Lines that were not matched are printed to the console.
-    The parsed lines are combined in a pandas Dataframe.
+    unique match. Lines that were not matched are printed to the console. The
+    parsed lines are combined in a pandas Dataframe.
 
     Attributes:
         _engine: The line parser engine.

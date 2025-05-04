@@ -20,21 +20,6 @@ class StateVerification(object):
     def __init__(self):
         self._missing = '<missing>'
 
-    def run(self, parsed: dict, ground_truth: dict) -> bool:
-        """Runs the comparison of the two state dicts.
-
-        Args:
-            parsed: The parsed state of the pipeline.
-            ground_truth: The ground truth.
-
-        Returns:
-            True if the two dicts are identical, False otherwise.
-        """
-        diffs = self._compare_nested_dicts(parsed, ground_truth)
-        self._display_differences(diffs)
-        success = self._evaluate_differences(diffs)
-        return success
-
     @staticmethod
     def _display_differences(diffs: dict) -> None:
         # Print differences of the two dicts.
@@ -74,3 +59,18 @@ class StateVerification(object):
                 elif val1 != val2:
                     diffs[full_path] = (val1, val2)
         return diffs
+
+    def run(self, parsed: dict, ground_truth: dict) -> bool:
+        """Runs the comparison of the two state dicts.
+
+        Args:
+            parsed: The parsed state of the pipeline.
+            ground_truth: The ground truth.
+
+        Returns:
+            True if the two dicts are identical, False otherwise.
+        """
+        diffs = self._compare_nested_dicts(parsed, ground_truth)
+        self._display_differences(diffs)
+        success = self._evaluate_differences(diffs)
+        return success

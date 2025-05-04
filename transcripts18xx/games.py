@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 """18xx games
 
-Module implements an abstract class and its subclasses to define an 18xx game.
+Module implements an abstract class and its subclasses to define a 18xx game.
+In a 18xx game there are usually companies that can be started by a player
+and privates that can be brought by a player and subsequently sold to a company.
 """
 import abc
 import enum
@@ -16,7 +18,13 @@ class Game18xx(abc.ABC):
     line.
 
     Attributes:
-
+        companies: The companies available in the game.
+        privates: The privates and their values.
+        trains: The available trains.
+        initial_round: The name of the initial round. Most games start with an
+            auction round named ISR 1.
+        start_capital: The start capital that is initially divided by the
+            number of players.
     """
 
     def __init__(self):
@@ -56,7 +64,7 @@ class Game1830(Game18xx):
 class Games(enum.IntEnum):
     """Games
 
-    Class to describe the implemented games.
+    Enum class to describe the implemented games.
     """
     G1830 = 0
 

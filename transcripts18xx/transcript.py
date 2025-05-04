@@ -6,7 +6,7 @@ Module implements the transcript processing pipeline with parsing the
 transcript, processing the result and mapping player and company states.
 
 The transcript name must follow this rule: `<title>_<id>.txt`.
-E.g.: `1830_201210.txt`, where `1830` is the title or the game and `201210` is
+E.g.: `1830_201210.txt`, where `1830` is the title of the game and `201210` is
 the ID of the game.
 """
 import json
@@ -21,11 +21,12 @@ class TranscriptParser(object):
     """TranscriptParser
 
     Class to run the parsing pipeline. The result can be verified with a
-    file representing the truth of the final states. Parsed results. game
-    metadata and final states can be written to files.
+    file representing the truth of the final states (full) or using the final
+    value of each player (minimal). Parsed results, game metadata and final
+    states can be written to files for later usage.
 
     Attributes:
-        _transcript:
+        _transcript: The path to the game transcript.
         _game: The underlying 18xx game.
         _name: The name of the transcript file, excluding suffix.
         _dir: The parent directory of the transcript.
