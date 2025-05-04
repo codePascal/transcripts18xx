@@ -30,14 +30,14 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
 
     def test_shape(self):
         self.assertEqual(1346, self.df.shape[0])
-        self.assertEqual(23, self.df.shape[1])
+        self.assertEqual(24, self.df.shape[1])
 
     def test_columns(self):
         expected = [
             'phase', 'type', 'parent', 'id', 'line', 'player', 'amount',
             'private', 'entity', 'source', 'percentage', 'company', 'sequence',
             'location', 'tile', 'rotation', 'direction', 'share_price', 'train',
-            'route', 'per_share', 'old_train', 'new_train'
+            'route', 'per_share', 'old_train', 'new_train', 'result'
         ]
         self.assertEqual(sorted(expected), sorted(list(self.df.columns)))
 
@@ -185,6 +185,12 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
         expected = {'D'}
         self.assertEqual(expected, set(self.df.new_train.dropna().unique()))
 
+    def test_result(self):
+        expected = {
+            'mpcoyne': 6735, 'leesin': 6648, 'riverfiend': 5523, 'mpakfm': 2740
+        }
+        self.assertEqual(expected, eval(self.df.iloc[-1, :].result))
+
 
 class TestTranscriptPostProcessor1830(unittest.TestCase):
     df = None
@@ -214,14 +220,14 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
 
     def test_shape(self):
         self.assertEqual(1346, self.df.shape[0])
-        self.assertEqual(21, self.df.shape[1])
+        self.assertEqual(22, self.df.shape[1])
 
     def test_columns(self):
         expected = [
             'amount', 'company', 'direction', 'id', 'location', 'new_train',
             'old_train', 'parent', 'per_share', 'percentage', 'phase', 'player',
             'private', 'rotation', 'route', 'sequence', 'share_price', 'source',
-            'tile', 'train', 'type'
+            'tile', 'train', 'type', 'result'
         ]
         self.assertEqual(sorted(expected), sorted(list(self.df.columns)))
 
@@ -285,6 +291,12 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
         self.assertEqual('NYC', self.df.iloc[950, :].company)
         self.assertEqual('B&M', self.df.iloc[1089, :].company)
 
+    def test_result(self):
+        expected = {
+            'player1': 6735, 'player3': 6648, 'player2': 5523, 'player4': 2740
+        }
+        self.assertEqual(expected, eval(self.df.iloc[-1, :].result))
+
 
 class TestGameStateProcessor1830(unittest.TestCase):
     df = None
@@ -316,7 +328,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
 
     def test_shape(self):
         self.assertEqual(1346, self.df.shape[0])
-        self.assertEqual(33, self.df.shape[1])
+        self.assertEqual(34, self.df.shape[1])
 
     def test_final_state(self):
         self.assertIsInstance(self.final_state, dict)

@@ -171,12 +171,14 @@ class GameOver(EventStep):
 
     def __init__(self):
         super().__init__()
-        self.pattern = re.compile(r'-- Game over:')
+        self.pattern = re.compile(r'-- Game over: (.*) --')
         self.type = StepType.GameOver
 
     def _process_match(self, line: str, match) -> dict:
-        # TODO: process rankings, and add ranking to separate column key
-        return dict()
+        pattern = re.compile(r'(\w+)\s+\(\$(\d+)\)')
+        matches = re.findall(pattern, match.group(1))
+        result = {p: int(v) for p, v in matches}
+        return dict(result=result.__str__())
 
 
 class OperatingRound(EventStep):

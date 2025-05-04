@@ -158,10 +158,11 @@ class TestBankBroke(BaseStepTest):
 class TestGameOver(BaseStepTest):
 
     def test_match(self):
-        line = '-- Game over: (ranking...)'
+        line = '-- Game over: player1 ($200), player3 ($100), player2 ($50) --'
         expected = dict(
             parent='Event',
             type='GameOver',
+            result="{'player1': 200, 'player3': 100, 'player2': 50}"
         )
         self.assertMatch(events.GameOver(), line, expected)
 

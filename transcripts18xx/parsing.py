@@ -155,6 +155,12 @@ class TranscriptPostProcessor(object):
             enumerate(self._df.player.dropna().unique()) if not pd.isna(p)
         }
         self._df.replace(mapping.keys(), mapping.values(), inplace=True)
+
+        # Replace the keys of the result when game over was reached
+        result = eval(self._df.iloc[-1].result)
+        renamed = {mapping[k]: v for k, v in result.items()}
+        self._df.at[self._df.shape[0] - 1, 'result'] = renamed.__str__()
+
         return mapping
 
     def _set_contribute_target(self) -> None:
