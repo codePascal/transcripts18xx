@@ -91,6 +91,31 @@ class TranscriptParser(object):
         else:
             return obj
 
+    def _run_full_verification(self) -> bool:
+        # Run the full verification based on a ground truth file.
+        verification_file = self._dir.joinpath(self._name + '_truth.json')
+        if not verification_file.exists():
+            raise ValueError(
+                'No verification file with ground truth exist: {}'.format(
+                    verification_file
+                )
+            )
+        with open(verification_file, 'r') as f:
+            truth = json.load(f)
+        checker = verification.StateVerification()
+        ret = checker.run(self.final_state(anonym=False), truth)
+        return ret
+
+    def _run_minimal_verification(self) -> bool:
+        # Run the minimal verification comparing final value of the players.
+        transcript_result = eval(self._df.iloc[-1].result)
+        game_state_result = dict()
+        for k, v in self._final_state['players'].items():
+            game_state_result[k] = int(v['value'])
+        checker = verification.StateVerification()
+        ret = checker.run(game_state_result, transcript_result)
+        return ret
+
     def parse(self) -> pd.DataFrame:
         """Parses the transcript to a pandas Dataframe.
 
@@ -124,34 +149,38 @@ class TranscriptParser(object):
                 final = self._replace(final, abbrev, name)
         return final
 
-    def verify_result(self) -> bool:
+    def verify_result(self, minimal: bool = False) -> bool:
         """Verifies the result with the final state.
 
-        Requires a .json file `_truth.json` in the transcript directory that
-        shows the final states of players and companies. Prints the differences
-        of both dictionaries to the console.
+        If option minimal is selected, compares the final value of the players
+        parsed from the transcript to the one retrieved from the game state.
+        Otherwise, compares the player and company states to a ground truth
+        file `_truth.json`, saved in the transcript directory. If the file is
+        not found, the minimal verification is invoked automatically.
+
+        Args:
+            minimal: Run only minimal verification.
 
         Returns:
-            True if final state matches the truth, False otherwise.
-
-        Raises:
-            ValueError: If the truth file was not found.
+            True if final states are equal, False otherwise.
         """
-        verification_file = self._dir.joinpath(self._name + '_truth.json')
-        if not verification_file.exists():
-            raise ValueError(
-                'No verification file with ground truth exist: {}'.format(
-                    verification_file
-                )
-            )
-        with open(verification_file, 'r') as f:
-            truth = json.load(f)
-        checker = verification.StateVerification()
-        ret = checker.run(self.final_state(anonym=False), truth)
-        if ret:
-            print('Verification successful')
+        if minimal:
+            ret = self._run_minimal_verification()
+            out = 'Minimal verification {}'
         else:
-            print('Verification failed')
+            try:
+                ret = self._run_full_verification()
+                out = 'Full verification {}'
+            except ValueError:
+                print(
+                    'Ground truth file not found, running minimal verification'
+                )
+                ret = self._run_minimal_verification()
+                out = 'Minimal verification {}'
+        if ret:
+            print(out.format('successful') + '\n')
+        else:
+            print(out.format('failed') + '\n')
         return ret
 
     def save(self):

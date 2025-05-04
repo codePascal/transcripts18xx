@@ -17,6 +17,11 @@ def parse_arguments():
         choices=transcript.games.Games,
         help='Game type of transcripts, e.g. G1830',
     )
+    parser.add_argument(
+        '--skip-verify',
+        action='store_true',
+        help='Skip the verification of the final states'
+    )
     return parser.parse_args()
 
 
@@ -38,6 +43,8 @@ def main():
         parser.parse()
         parser.save()
         parser.serialize()
+        if not args.skip_verify:
+            parser.verify_result()
 
 
 if __name__ == '__main__':

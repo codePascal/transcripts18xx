@@ -22,6 +22,11 @@ def parse_arguments():
         type=Path,
         help='Path to the game transcript'
     )
+    parser.add_argument(
+        '--skip-verify',
+        action='store_true',
+        help='Skip the verification of the final state'
+    )
     return parser.parse_args()
 
 
@@ -34,7 +39,8 @@ def main():
     parser.parse()
     parser.save()
     parser.serialize()
-    parser.verify_result()
+    if not args.skip_verify:
+        parser.verify_result(minimal=False)
 
 
 if __name__ == '__main__':
