@@ -4,6 +4,7 @@
 
 Module implements abstract base class process and maintain states of the game.
 """
+import ast
 
 
 class State(object):
@@ -37,17 +38,19 @@ class State(object):
         )
 
     @staticmethod
-    def eval(rep: str):
+    def eval(rep: str | dict):
         """Construct a State object from its string representation.
 
         Args:
-            rep: The output from __repr__().
+            rep: The output from __repr__() as string or evaluated as dict.
 
         Returns:
             State object.
         """
         st = State(name=str())
-        st.__dict__ = eval(rep)
+        if isinstance(rep, str):
+            rep = ast.literal_eval(rep)
+        st.__dict__ = rep
         return st
 
     def update(self, *args):
@@ -119,6 +122,6 @@ class States(object):
         for st in self.states:
             self.invoke(func, args, st.name)
 
-    def as_dict(self):
+    def as_dict(self) -> dict:
         """Represents the states as dict, with names as keys."""
-        return {st.name: st.__repr__() for st in self.states}
+        return {st.name: ast.literal_eval(st.__repr__()) for st in self.states}

@@ -89,11 +89,11 @@ class TestStates(unittest.TestCase):
         self.assertIsInstance(result, dict)
         self.assertEqual(['state1', 'state2', 'state3'], list(result.keys()))
         self.assertEqual(
-            "{'name': 'state1', 'cash': 0, 'privates': {}}", result['state1']
+            {'name': 'state1', 'cash': 0, 'privates': {}}, result['state1']
         )
         self.assertEqual(
-            "{'name': 'state2', 'cash': 0, 'privates': {}}", result['state2']
+            {'name': 'state2', 'cash': 0, 'privates': {}}, result['state2']
         )
         self.assertEqual(
-            "{'name': 'state3', 'cash': 0, 'privates': {}}", result['state3']
+            {'name': 'state3', 'cash': 0, 'privates': {}}, result['state3']
         )

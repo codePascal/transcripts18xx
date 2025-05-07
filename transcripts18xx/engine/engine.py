@@ -204,29 +204,3 @@ class GameState(object):
             their representation as values.
         """
         return {**self.players.as_dict(), **self.companies.as_dict()}
-
-    def player_states(self) -> dict:
-        """Generates a dictionary of the game state for the players.
-
-        Returns:
-            The player game states.
-        """
-        return dict(
-            players={
-                k: player.PlayerState.eval(v).__dict__ for k, v in
-                self.players.as_dict().items()
-            }
-        )
-
-    def company_states(self) -> dict:
-        """Generates a dictionary of the game state for the companies.
-
-        Returns:
-            The company game states.
-        """
-        return dict(
-            companies={
-                k: company.CompanyState.eval(v).__dict__ for k, v in
-                self.companies.as_dict().items()
-            }
-        )

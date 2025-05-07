@@ -4,6 +4,8 @@
 
 Module implements the company state and its maintainer.
 """
+import ast
+
 from .state import State, States
 
 
@@ -55,7 +57,9 @@ class CompanyState(State):
     @staticmethod
     def eval(rep: str):
         st = CompanyState(name=str(), trains=dict())
-        st.__dict__ = eval(rep)
+        if isinstance(rep, str):
+            rep = ast.literal_eval(rep)
+        st.__dict__ = rep
         return st
 
     @staticmethod

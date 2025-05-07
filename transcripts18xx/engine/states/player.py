@@ -4,6 +4,7 @@
 
 Module implements a player state and maintainer class.
 """
+import ast
 
 from .state import State, States
 
@@ -49,7 +50,9 @@ class PlayerState(State):
     @staticmethod
     def eval(rep: str):
         st = PlayerState(name=str(), initial_cash=int(), shares=dict())
-        st.__dict__ = eval(rep)
+        if isinstance(rep, str):
+            rep = ast.literal_eval(rep)
+        st.__dict__ = rep
         return st
 
     def update(self, share_prices: dict):

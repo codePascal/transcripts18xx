@@ -12,13 +12,5 @@ def transcript_1830() -> Path:
     return _resources().joinpath('1830_201210.txt')
 
 
-def parsed_transcript_1830() -> Path:
-    return _resources().joinpath('1830_201210_parsed.csv')
-
-
-def processed_transcript_1830() -> Path:
-    return _resources().joinpath('1830_201210_processed.csv')
-
-
 def _resources() -> Path:
     return Path(__file__).parent.joinpath('resources')

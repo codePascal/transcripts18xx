@@ -175,48 +175,17 @@ class TestGameState(unittest.TestCase):
             ['p1', 'p2', 'p3', 'c1', 'c2', 'c3'], list(view.keys())
         )
 
-        self.assertIsInstance(view['p1'], str)
-        self.assertEqual(
-            "{'name': 'p1', 'cash': 300, 'privates': {}, 'value': 300, "
-            "'shares': {'c1': 0, 'c2': 0, 'c3': 0}, 'priority_deal': False}",
-            view['p1']
-        )
-
-        self.assertIsInstance(view['c1'], str)
-        self.assertEqual(
-            "{'name': 'c1', 'cash': 0, 'privates': {}, "
-            "'trains': {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0}, 'ipo': 10, "
-            "'market': 0, 'president': None, 'share_price': 0}",
-            view['c1']
-        )
-
-    def test_player_states(self):
-        states = self.gs.player_states()
-        self.assertIsInstance(states, dict)
-        self.assertEqual(['players'], list(states.keys()))
-
-        self.assertIsInstance(states['players'], dict)
-        self.assertEqual(['p1', 'p2', 'p3'], list(states['players'].keys()))
-
-        self.assertIsInstance(states['players']['p1'], dict)
+        self.assertIsInstance(view['p1'], dict)
         self.assertEqual(
             {'name': 'p1', 'cash': 300, 'privates': {}, 'value': 300,
              'shares': {'c1': 0, 'c2': 0, 'c3': 0}, 'priority_deal': False},
-            states['players']['p1']
+            view['p1']
         )
 
-    def test_company_states(self):
-        states = self.gs.company_states()
-        self.assertIsInstance(states, dict)
-        self.assertEqual(['companies'], list(states.keys()))
-
-        self.assertIsInstance(states['companies'], dict)
-        self.assertEqual(['c1', 'c2', 'c3'], list(states['companies'].keys()))
-
-        self.assertIsInstance(states['companies']['c1'], dict)
+        self.assertIsInstance(view['c1'], dict)
         self.assertEqual(
-            {'cash': 0, 'ipo': 10, 'market': 0, 'name': 'c1', 'president': None,
-             'privates': {}, 'share_price': 0,
-             'trains': {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0}},
-            states['companies']['c1']
+            {'name': 'c1', 'cash': 0, 'privates': {},
+             'trains': {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0}, 'ipo': 10,
+             'market': 0, 'president': None, 'share_price': 0},
+            view['c1']
         )

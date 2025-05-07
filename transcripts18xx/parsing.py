@@ -277,6 +277,6 @@ class GameStateProcessor(object):
             The dictionary representing states of players and companies.
         """
         return {
-            **self._game_state.player_states(),
-            **self._game_state.company_states()
+            'players': self._game_state.players.as_dict(),
+            'companies': self._game_state.companies.as_dict()
         }
