@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import unittest
+import pandas as pd
 
 from transcripts18xx.engine.states import company
 
@@ -37,6 +38,17 @@ class TestCompanyState(unittest.TestCase):
         self.assertEqual(2, st.market)
         self.assertEqual('player1', st.president)
         self.assertEqual(75, st.share_price)
+
+    def test_flatten(self):
+        flatten = self.company.flatten()
+        self.assertIsInstance(flatten, pd.Series)
+        self.assertEqual(0, flatten['company1_cash'])
+        self.assertEqual({}, flatten['company1_privates'])
+        self.assertEqual({'2': 0, '4': 0, 'D': 0}, flatten['company1_trains'])
+        self.assertEqual(10, flatten['company1_ipo'])
+        self.assertEqual(0, flatten['company1_market'])
+        self.assertEqual(None, flatten['company1_president'])
+        self.assertEqual(0, flatten['company1_share_price'])
 
     def test__proc_train(self):
         self.assertEqual('4', company.CompanyState._proc_train(4.0))

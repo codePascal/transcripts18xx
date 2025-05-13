@@ -5,6 +5,7 @@
 Module implements a player state and maintainer class.
 """
 import ast
+import pandas as pd
 
 from .state import State, States
 
@@ -54,6 +55,17 @@ class PlayerState(State):
             rep = ast.literal_eval(rep)
         st.__dict__ = rep
         return st
+
+    def flatten(self) -> pd.Series:
+        key = '{}_%s'.format(self.name)
+        data = {
+            key % 'cash': self.cash,
+            key % 'privates': self.privates,
+            key % 'value': self.value,
+            key % 'shares': self.shares,
+            key % 'priority_deal': self.priority_deal
+        }
+        return pd.Series(data)
 
     def update(self, share_prices: dict):
         self.value = self.cash

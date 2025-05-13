@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import unittest
+import pandas as pd
 
 from transcripts18xx.engine.states import player
 
@@ -35,6 +36,17 @@ class TestPlayerState(unittest.TestCase):
         self.assertEqual(200, st.value)
         self.assertEqual(dict(company1=2, company2=0), st.shares)
         self.assertTrue(st.priority_deal)
+
+    def test_flatten(self):
+        flatten = self.player.flatten()
+        self.assertIsInstance(flatten, pd.Series)
+        self.assertEqual(100, flatten['player1_cash'])
+        self.assertEqual({}, flatten['player1_privates'])
+        self.assertEqual(100, flatten['player1_value'])
+        self.assertEqual(
+            {'company1': 0, 'company2': 0}, flatten['player1_shares']
+        )
+        self.assertFalse(flatten['player1_priority_deal'])
 
     def test_update(self):
         self.player.shares['company1'] = 2

@@ -6,6 +6,8 @@ Module implements abstract base class process and maintain states of the game.
 """
 import ast
 
+import pandas as pd
+
 
 class State(object):
     """State
@@ -52,6 +54,14 @@ class State(object):
             rep = ast.literal_eval(rep)
         st.__dict__ = rep
         return st
+
+    def flatten(self) -> pd.Series:
+        key = '{}_%s'.format(self.name)
+        data = {
+            key % 'cash': self.cash,
+            key % 'privates': self.privates
+        }
+        return pd.Series(data)
 
     def update(self, *args):
         pass

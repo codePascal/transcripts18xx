@@ -5,6 +5,7 @@
 Module implements the company state and its maintainer.
 """
 import ast
+import pandas as pd
 
 from .state import State, States
 
@@ -61,6 +62,19 @@ class CompanyState(State):
             rep = ast.literal_eval(rep)
         st.__dict__ = rep
         return st
+
+    def flatten(self) -> pd.Series:
+        key = '{}_%s'.format(self.name)
+        data = {
+            key % 'cash': self.cash,
+            key % 'privates': self.privates,
+            key % 'trains': self.trains,
+            key % 'ipo': self.ipo,
+            key % 'market': self.market,
+            key % 'president': self.president,
+            key % 'share_price': self.share_price
+        }
+        return pd.Series(data)
 
     @staticmethod
     def _proc_train(train):

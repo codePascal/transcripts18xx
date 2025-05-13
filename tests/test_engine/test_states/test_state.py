@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 import unittest
 
+import pandas as pd
+
 from transcripts18xx.engine.states import state
 
 
@@ -25,6 +27,14 @@ class TestState(unittest.TestCase):
         self.assertEqual('state1', st.name)
         self.assertEqual(100, st.cash)
         self.assertEqual(dict(private1='20'), st.privates)
+
+    def test_flatten(self):
+        self.state.cash = 100
+        self.state.privates['private1'] = 50
+        flatten = self.state.flatten()
+        self.assertIsInstance(flatten, pd.Series)
+        self.assertEqual(100, flatten['state1_cash'])
+        self.assertEqual({'private1': 50}, flatten['state1_privates'])
 
     def test_collects(self):
         self.state.collects(40)
