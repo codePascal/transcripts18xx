@@ -71,6 +71,7 @@ class StateVerification(object):
             True if the two dicts are identical, False otherwise.
         """
         diffs = self._compare_nested_dicts(parsed, ground_truth)
+        diffs = dict(sorted(diffs.items()))
         self._display_differences(diffs)
         success = self._evaluate_differences(diffs)
         return success
