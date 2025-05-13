@@ -60,24 +60,6 @@ class TranscriptParser(object):
         info['players'] = {v: k for k, v in self._mapping.items()}
         return info
 
-    def _write_result(self):
-        # Writes the results to .csv file.
-        self._df.to_csv(
-            self._dir.joinpath(self._name + '_final.csv'),
-            index=False,
-            sep=','
-        )
-
-    def _write_metadata(self):
-        # Writes the game info to .json file.
-        with open(self._dir.joinpath(self._name + '_metadata.json'), 'w') as f:
-            f.write(json.dumps(self._game_info(), indent=2))
-
-    def _write_states(self):
-        # Writes the final states to .json file.
-        with open(self._dir.joinpath(self._name + '_states.json'), 'w') as f:
-            f.write(json.dumps(self.final_state(anonym=False), indent=2))
-
     def _replace(self, obj, old, new):
         # Replaces the old with the new value in object.
         if isinstance(obj, dict):
@@ -117,12 +99,8 @@ class TranscriptParser(object):
         ret = checker.run(game_state_result, transcript_result)
         return ret
 
-    def parse(self) -> pd.DataFrame:
-        """Parses the transcript to a pandas Dataframe.
-
-        Returns:
-            The parsed data in a pandas Dataframe.
-        """
+    def parse(self) -> None:
+        """Parses the transcript to a pandas Dataframe."""
         gtp = parsing.GameTranscriptProcessor()
         df_parsed = gtp.parse_transcript(self._transcript)
 
@@ -132,6 +110,13 @@ class TranscriptParser(object):
         gsp = parsing.GameStateProcessor(df_processed, self._game)
         self._df = gsp.generate()
         self._final_state = gsp.final_state()
+
+    def result(self) -> pd.DataFrame:
+        """Retrieves the parsed transcript.
+
+        Returns:
+            The parsed transcript as pandas Dataframe.
+        """
         return self._df
 
     def final_state(self, anonym: bool = False) -> dict:
@@ -142,7 +127,8 @@ class TranscriptParser(object):
                 players will be identified by their names.
 
         Returns:
-            The final states as dictionaries.
+            The final states as dictionaries with keys `players` and
+            `companies`.
         """
         final = self._final_state
         if not anonym:
@@ -184,30 +170,196 @@ class TranscriptParser(object):
             print(out.format('failed') + '\n')
         return ret
 
-    def save(self):
+    def save(self) -> None:
         """Saves the game data, its metadata and the final states.
 
         The files are saved in the transcript directory:
             - game data: `_final.csv`
             - metadata: `_metadata.json`
-            - final states: `_states.json`
-
-        The final states are not anonymized.
+            - final states (anonymized): `_states.json`
         """
-        self._write_result()
-        self._write_metadata()
-        self._write_states()
+        _write_dataframe(dataframe(self._transcript), self._df)
+        _write_json(metadata(self._transcript), self._game_info())
+        _write_json(states(self._transcript), self.final_state(anonym=True))
 
-    def serialize(self):
-        """Saves the game data including metadata and final states.
 
-        The file is saved in the transcript directory with `_serialized.json`
-        appended. The final states are anonymized.
-        """
-        result = self._game_info()
-        result['actions'] = self._df.to_dict(orient='index')
-        result['results'] = self.final_state(anonym=True)
-        with open(
-                self._dir.joinpath(self._name + '_serialized.json'), 'w'
-        ) as f:
-            f.write(json.dumps(result, indent=2))
+def dataframe(transcript: Path) -> Path:
+    """Build the path to the parsed transcript.
+
+    Args:
+        transcript: The game transcript path.
+
+    Returns:
+        Path to the parsed transcript file.
+
+    Examples:
+        >>> dataframe(Path('1830_123456.txt'))
+        Path('1830_123456_final.csv')
+    """
+    return _build_path(transcript, '_final.csv')
+
+
+def metadata(transcript: Path) -> Path:
+    """Build the path to the game metadata.
+
+    Args:
+        transcript: The game transcript path.
+
+    Returns:
+        Path to the game metadata file.
+
+    Examples:
+        >>> metadata(Path('1830_123456.txt'))
+        Path('1830_123456_metadata.json')
+    """
+    return _build_path(transcript, '_metadata.json')
+
+
+def states(transcript: Path) -> Path:
+    """Build the path to the final states.
+
+    Args:
+        transcript: The game transcript path.
+
+    Returns:
+        Path to the final states file.
+
+    Examples:
+        >>> states(Path('1830_123456.txt'))
+        Path('1830_123456_states.json')
+    """
+    return _build_path(transcript, '_states.json')
+
+
+def serialized(transcript: Path) -> Path:
+    """Build the path to the serialized data.
+
+    Args:
+        transcript: The game transcript path.
+
+    Returns:
+        Path to the serialized data file.
+
+    Examples:
+        >>> serialized(Path('1830_123456.txt'))
+        Path('1830_123456_serialized.json')
+    """
+    return _build_path(transcript, '_serialized.json')
+
+
+def flattened(transcript: Path) -> Path:
+    """Build the path to the flattened data.
+
+    Args:
+        transcript: The game transcript path.
+
+    Returns:
+        Path to the flattened data file.
+
+    Examples:
+        >>> dataframe(Path('1830_123456.txt'))
+        Path('1830_123456_flattened.csv')
+    """
+    return _build_path(transcript, '_flattened.csv')
+
+
+def serialize(transcript: Path) -> dict:
+    """Serialize the game data to a json file.
+
+    Each entry is represented by its index as the key and the row data as a
+    dictionary to the index as value.
+
+    Args:
+        transcript: The path to the original transcript file.
+
+    Returns:
+        The serialized game data in a dictionary.
+    """
+    try:
+        df = _read_dataframe(dataframe(transcript))
+        result = df.to_dict(orient='index')
+    except FileNotFoundError as e:
+        print(e)
+        return dict()
+    _write_json(serialized(transcript), result)
+    return result
+
+
+def flatten(transcript: Path) -> pd.DataFrame:
+    """Saves the game data as flatten structure.
+
+    Opens up the states to represent each entry of the player and company states
+    as a single column, e.g., "player1_cash". The columns representing the
+    player and company states as dicts are dropped.
+
+    Args:
+        transcript: The path to the original transcript file.
+
+    Returns:
+        The flatten game data in a pandas Dataframe.
+    """
+    try:
+        info = _read_json(metadata(transcript))
+        players = list(info['players'].keys())
+        game = games.Games.argparse('G{}'.format(info['game'])).select()
+        df = _read_dataframe(dataframe(transcript))
+        flat = df.apply(
+            lambda x: _flatten_states(x, players, game.companies),
+            axis=1,
+            result_type='expand'
+        )
+        result = pd.concat([df, flat], axis=1)
+        result.drop(players + list(game.companies), axis=1, inplace=True)
+    except FileNotFoundError as e:
+        print(e)
+        return pd.DataFrame()
+    except ValueError as e:
+        print(e)
+        return pd.DataFrame()
+    _write_dataframe(flattened(transcript), result)
+    return result
+
+
+def _build_path(transcript: Path, suffix: str) -> Path:
+    # Builds the transcript path with its new suffix.
+    return transcript.parent.joinpath(transcript.stem + suffix)
+
+
+def _read_json(file: Path) -> dict:
+    # Read a json file as dict.
+    if not file.exists():
+        raise FileNotFoundError(file)
+    with open(file, 'r') as f:
+        content = json.load(f)
+    return content
+
+
+def _read_dataframe(file: Path) -> pd.DataFrame:
+    # Read the dataframe.
+    if not file.exists():
+        raise FileNotFoundError(file)
+    return pd.read_csv(file, header=0, sep=',')
+
+
+def _write_json(file: Path, content: dict) -> None:
+    # Write a json file with indent of 2.
+    with open(file, 'w') as f:
+        f.write(json.dumps(content, indent=2))
+
+
+def _write_dataframe(file: Path, df: pd.DataFrame) -> None:
+    # Write dataframe to be opened by Excel (colon separator).
+    df.to_csv(file, index=False, sep=',')
+
+
+def _flatten_states(
+        row: pd.Series, players: list[str], companies: list[str]) -> pd.Series:
+    # Flatten the player and company states to a pandas Series.
+    result = pd.Series()
+    for p in sorted(players):
+        player_state = parsing.engine.player.PlayerState.eval(row[p])
+        result = pd.concat([result, player_state.flatten()])
+    for c in sorted(companies):
+        company_state = parsing.engine.company.CompanyState.eval(row[c])
+        result = pd.concat([result, company_state.flatten()])
+    return result

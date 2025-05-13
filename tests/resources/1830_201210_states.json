@@ -1,7 +1,7 @@
 {
   "players": {
-    "mpcoyne": {
-      "name": "mpcoyne",
+    "player1": {
+      "name": "player1",
       "cash": 3304.0,
       "privates": {},
       "value": 6735.0,
@@ -17,8 +17,8 @@
       },
       "priority_deal": false
     },
-    "riverfiend": {
-      "name": "riverfiend",
+    "player2": {
+      "name": "player2",
       "cash": 3560.0,
       "privates": {},
       "value": 5523.0,
@@ -34,8 +34,8 @@
       },
       "priority_deal": false
     },
-    "leesin": {
-      "name": "leesin",
+    "player3": {
+      "name": "player3",
       "cash": 3432.0,
       "privates": {},
       "value": 6648.0,
@@ -51,8 +51,8 @@
       },
       "priority_deal": false
     },
-    "mpakfm": {
-      "name": "mpakfm",
+    "player4": {
+      "name": "player4",
       "cash": 1260.0,
       "privates": {},
       "value": 2740.0,
@@ -84,7 +84,7 @@
       },
       "ipo": 0,
       "market": 0,
-      "president": "leesin",
+      "president": "player3",
       "share_price": 67.0
     },
     "B&O": {
@@ -101,7 +101,7 @@
       },
       "ipo": 0,
       "market": 0,
-      "president": "mpcoyne",
+      "president": "player1",
       "share_price": 350.0
     },
     "C&O": {
@@ -118,7 +118,7 @@
       },
       "ipo": 0,
       "market": 2,
-      "president": "riverfiend",
+      "president": "player2",
       "share_price": 90.0
     },
     "NYC": {
@@ -135,7 +135,7 @@
       },
       "ipo": 0,
       "market": 0,
-      "president": "mpakfm",
+      "president": "player4",
       "share_price": 130.0
     },
     "NYNH": {
@@ -152,7 +152,7 @@
       },
       "ipo": 0,
       "market": 2,
-      "president": "leesin",
+      "president": "player3",
       "share_price": 130.0
     },
     "ERIE": {
@@ -169,7 +169,7 @@
       },
       "ipo": 0,
       "market": 0,
-      "president": "riverfiend",
+      "president": "player2",
       "share_price": 111.0
     },
     "B&M": {
@@ -186,7 +186,7 @@
       },
       "ipo": 0,
       "market": 0,
-      "president": "mpcoyne",
+      "president": "player1",
       "share_price": 100.0
     },
     "CPR": {
@@ -203,7 +203,7 @@
       },
       "ipo": 3,
       "market": 1,
-      "president": "leesin",
+      "president": "player3",
       "share_price": 125.0
     }
   }
