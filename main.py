@@ -27,6 +27,16 @@ def parse_arguments():
         action='store_true',
         help='Skip the verification of the final state'
     )
+    parser.add_argument(
+        '--do-serialize',
+        action='store_true',
+        help='Serialize the game data into a json dict'
+    )
+    parser.add_argument(
+        '--do-flatten',
+        action='store_true',
+        help='Flatten the game data into a pandas Dataframe'
+    )
     return parser.parse_args()
 
 
@@ -38,9 +48,12 @@ def main():
     parser = transcript.TranscriptParser(args.transcript, game)
     parser.parse()
     parser.save()
-    parser.serialize()
     if not args.skip_verify:
         parser.verify_result(minimal=False)
+    if args.do_flatten:
+        transcript.flatten(args.transcript)
+    if args.do_serialize:
+        transcript.serialize(args.transcript)
 
 
 if __name__ == '__main__':
