@@ -99,7 +99,7 @@ class TranscriptParser(object):
         ret = checker.run(game_state_result, transcript_result)
         return ret
 
-    def parse(self) -> None:
+    def parse(self) -> pd.DataFrame:
         """Parses the transcript to a pandas Dataframe."""
         gtp = parsing.GameTranscriptProcessor()
         df_parsed = gtp.parse_transcript(self._transcript)
@@ -110,13 +110,6 @@ class TranscriptParser(object):
         gsp = parsing.GameStateProcessor(df_processed, self._game)
         self._df = gsp.generate()
         self._final_state = gsp.final_state()
-
-    def result(self) -> pd.DataFrame:
-        """Retrieves the parsed transcript.
-
-        Returns:
-            The parsed transcript as pandas Dataframe.
-        """
         return self._df
 
     def final_state(self, anonym: bool = False) -> dict:
