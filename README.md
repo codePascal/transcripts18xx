@@ -68,20 +68,20 @@ This will create three files within the transcript directory:
 
 #### Parsed transcript
 
-The [parsing output](tests/resources/1830_201210_final.csv) is saved as pandas
-Dataframe.
+The [parsing output](docs/source/_static/1830_201210_final.csv) is saved as
+pandas Dataframe.
 
 #### Game metadata
 
-The [game metadata](tests/resources/1830_201210_metadata.json) saves the game
-type, game id, number of players and the player mapping.
+The [game metadata](docs/source/_static/1830_201210_metadata.json) saves the 
+game type, game id, number of players and the player mapping.
 The player mapping depicts the anonymization that is performed in order to
 generalize the result.
 
 #### Final states
 
-The [final states](tests/resources/1830_201210_states.json) represent the player
-and company states after the game ended.
+The [final states](docs/source/_static/1830_201210_states.json) represent the
+player and company states after the game ended.
 As noted above, the player names are anonymized and can be replicated using
 the game metadata.
 
@@ -97,14 +97,12 @@ row indexes and the values representing the row data as dictionary.
 The function requires the original raw transcript path as argument.
 
 ```pycon
->>> from transcripts18xx import transcript
-
 >>> transcript_path = Path('1830_123456.txt')
 >>> transcript.serialize(transcript_path)
 ```
 
-The [serialized data](tests/resources/1830_201210_serialized.json) will be saved
-in the transcript directory as well:
+The [serialized data](docs/source/_static/1830_201210_serialized.json) will be
+saved in the transcript directory as well:
 
 ```
 /
@@ -123,14 +121,12 @@ columns in the dataframe, e.g. `player1_cash`.
 The function requires the original raw transcript path as argument.
 
 ```pycon
->>> from transcripts18xx import transcript
-
 >>> transcript_path = Path('1830_123456.txt')
 >>> transcript.flatten(transcript_path)
 ```
 
-The [flattened data](tests/resources/1830_201210_flattened.csv) will be saved
-in the transcript directory as well:
+The [flattened data](docs/source/_static/1830_201210_flattened.csv) will be
+saved in the transcript directory as well:
 
 ```
 /
