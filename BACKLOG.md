@@ -1,5 +1,4 @@
 # Backlog
 
-* Use __repr__() ...
-* Function to be able to write object to dataframe and json
-* Update docs and README
+* Add identifier how game ended (bank broke, bankruptcy, not finished)
+* Make docs pretty
