@@ -244,7 +244,7 @@ class GameStateProcessor(object):
 
         self._game_state = engine.GameState(
             df.player.dropna().unique(),
-            df.company.dropna().unique(),
+            sorted(game.companies),
             game.start_capital,
             game.trains,
             game.privates
