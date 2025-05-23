@@ -16,6 +16,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- Initialization of the company game states: Takes the listed companies of the
+  base game instead of companies from the transcript. This way, companies not
+  floated during the game will show up as well.
+
 ## [1.0.0] - 2025-05-21
 
 ### Added
