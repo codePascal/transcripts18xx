@@ -70,9 +70,9 @@
     }
   },
   "companies": {
-    "PRR": {
-      "name": "PRR",
-      "cash": 40.0,
+    "B&M": {
+      "name": "B&M",
+      "cash": 0.0,
       "privates": {},
       "trains": {
         "2": 0,
@@ -84,8 +84,8 @@
       },
       "ipo": 0,
       "market": 0,
-      "president": "player3",
-      "share_price": 67.0
+      "president": "player1",
+      "share_price": 100.0
     },
     "B&O": {
       "name": "B&O",
@@ -121,6 +121,40 @@
       "president": "player2",
       "share_price": 90.0
     },
+    "CPR": {
+      "name": "CPR",
+      "cash": 40.0,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "D": 1
+      },
+      "ipo": 3,
+      "market": 1,
+      "president": "player3",
+      "share_price": 125.0
+    },
+    "ERIE": {
+      "name": "ERIE",
+      "cash": 2.0,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 1,
+        "D": 0
+      },
+      "ipo": 0,
+      "market": 0,
+      "president": "player2",
+      "share_price": 111.0
+    },
     "NYC": {
       "name": "NYC",
       "cash": 56.0,
@@ -155,42 +189,8 @@
       "president": "player3",
       "share_price": 130.0
     },
-    "ERIE": {
-      "name": "ERIE",
-      "cash": 2.0,
-      "privates": {},
-      "trains": {
-        "2": 0,
-        "3": 0,
-        "4": 0,
-        "5": 0,
-        "6": 1,
-        "D": 0
-      },
-      "ipo": 0,
-      "market": 0,
-      "president": "player2",
-      "share_price": 111.0
-    },
-    "B&M": {
-      "name": "B&M",
-      "cash": 0.0,
-      "privates": {},
-      "trains": {
-        "2": 0,
-        "3": 0,
-        "4": 0,
-        "5": 0,
-        "6": 0,
-        "D": 1
-      },
-      "ipo": 0,
-      "market": 0,
-      "president": "player1",
-      "share_price": 100.0
-    },
-    "CPR": {
-      "name": "CPR",
+    "PRR": {
+      "name": "PRR",
       "cash": 40.0,
       "privates": {},
       "trains": {
@@ -201,10 +201,10 @@
         "6": 0,
         "D": 1
       },
-      "ipo": 3,
-      "market": 1,
+      "ipo": 0,
+      "market": 0,
       "president": "player3",
-      "share_price": 125.0
+      "share_price": 67.0
     }
   }
 }
