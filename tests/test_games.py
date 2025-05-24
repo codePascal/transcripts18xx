@@ -34,3 +34,7 @@ class TestGames(unittest.TestCase):
     def test_select(self):
         game = games.Games.G1830
         self.assertIsInstance(game.select(), games.Game1830)
+
+    def test_game(self):
+        game = games.Games.G1830
+        self.assertEqual('1830', game.game())

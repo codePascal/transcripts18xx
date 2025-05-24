@@ -64,7 +64,8 @@ class Game1830(Game18xx):
 class Games(enum.IntEnum):
     """Games
 
-    Enum class to describe the implemented games.
+    Enum class to describe the implemented games. Naming convention is an
+    uppercase `G` prepended before the actual game name, e.g., `G1830`, `G1882`.
     """
     G1830 = 0
 
@@ -103,3 +104,11 @@ class Games(enum.IntEnum):
             return Game1830()
         else:
             raise ValueError('Unknown game: {}'.format(self.name))
+
+    def game(self):
+        """Retrieves the game name of the game.
+
+        Returns:
+            Stripped `G` from game.
+        """
+        return self.name[1:]
