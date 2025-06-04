@@ -170,3 +170,11 @@ class TestTranscriptRendering(unittest.TestCase):
         flattened_data = transcript.flatten(context.transcript_1830())
         self.assertEqual(1346, flattened_data.shape[0])
         # TODO test
+
+    def test_transcript_name(self):
+        # TODO test
+        pass
+
+    def test_transcript_id(self):
+        # TODO test
+        pass

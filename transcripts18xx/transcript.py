@@ -313,6 +313,32 @@ def flatten(transcript: Path) -> pd.DataFrame:
     return result
 
 
+def transcript_name(name: str) -> str:
+    """Extracts the transcript name from a filename.
+
+    The transcript name consists of <game>_<id>.
+
+    Args:
+        name: The filename of the transcript.
+
+    Returns:
+        The identifier game name and id, separated by an underscore.
+    """
+    return '_'.join(name.split('_')[:2])
+
+
+def transcript_id(name: str) -> str:
+    """Extracts the transcript ID from a filename.
+
+    Args:
+        name: The filename of the transcript.
+
+    Returns:
+        The transcript id as string.
+    """
+    return name.split('_')[1]
+
+
 def _build_path(transcript: Path, suffix: str) -> Path:
     # Builds the transcript path with its new suffix.
     return transcript.parent.joinpath(transcript.stem + suffix)
