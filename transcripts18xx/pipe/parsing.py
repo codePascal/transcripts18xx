@@ -12,8 +12,8 @@ import re
 
 from pathlib import Path
 
-from .games import Game18xx
-from .engine import engine
+from ..games import Game18xx
+from ..engine import engine
 
 
 class GameTranscriptProcessor(object):

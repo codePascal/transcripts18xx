@@ -3,7 +3,7 @@
 import unittest
 import pandas as pd
 
-from transcripts18xx import parsing
+from transcripts18xx.pipe import parsing
 from transcripts18xx.games import Game1830
 from transcripts18xx.engine.states.player import PlayerState
 from transcripts18xx.engine.states.company import CompanyState

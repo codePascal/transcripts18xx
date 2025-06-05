@@ -3,7 +3,7 @@
 import io
 import unittest.mock
 
-from transcripts18xx import verification
+from transcripts18xx.pipe import verification
 
 
 class TestStateVerification(unittest.TestCase):
