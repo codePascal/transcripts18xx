@@ -196,11 +196,16 @@ class GameState(object):
         """
         engine.state_update(row, self.players, self.companies, self.privates)
 
-    def view(self) -> dict:
-        """Generates a dictionary of the game state.
+    def view(self) -> pd.Series:
+        """Generates a series of the expanded game state.
 
         Returns:
             The game state with names of players and companies as keys and
             their representation as values.
         """
-        return {**self.players.as_dict(), **self.companies.as_dict()}
+        ret = pd.Series()
+        for p in self.players.states:
+            ret = pd.concat([ret, p.flatten()])
+        for c in self.companies.states:
+            ret = pd.concat([ret, c.flatten()])
+        return ret

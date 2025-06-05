@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 import unittest
 
+import pandas as pd
+
 from transcripts18xx.engine import engine
 
 
@@ -170,22 +172,25 @@ class TestGameState(unittest.TestCase):
 
     def test_view(self):
         view = self.gs.view()
-        self.assertIsInstance(view, dict)
-        self.assertEqual(
-            ['p1', 'p2', 'p3', 'c1', 'c2', 'c3'], list(view.keys())
-        )
+        self.assertIsInstance(view, pd.Series)
+        self.assertEqual(7 * 3 + 11 * 3, view.shape[0])
 
-        self.assertIsInstance(view['p1'], dict)
-        self.assertEqual(
-            {'name': 'p1', 'cash': 300, 'privates': {}, 'value': 300,
-             'shares': {'c1': 0, 'c2': 0, 'c3': 0}, 'priority_deal': False},
-            view['p1']
-        )
+        self.assertEqual(300, view.p1_cash)
+        self.assertEqual({}, view.p1_privates)
+        self.assertEqual(300, view.p1_value)
+        self.assertEqual(0, view.p1_shares_c1)
+        self.assertEqual(0, view.p1_shares_c2)
+        self.assertEqual(0, view.p1_shares_c3)
+        self.assertFalse(view.p1_priority_deal)
 
-        self.assertIsInstance(view['c1'], dict)
-        self.assertEqual(
-            {'name': 'c1', 'cash': 0, 'privates': {},
-             'trains': {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0}, 'ipo': 10,
-             'market': 0, 'president': None, 'share_price': 0},
-            view['c1']
-        )
+        self.assertEqual(0, view.c1_cash)
+        self.assertEqual({}, view.c1_privates)
+        self.assertEqual(0, view.c1_trains_2)
+        self.assertEqual(0, view.c1_trains_3)
+        self.assertEqual(0, view.c1_trains_4)
+        self.assertEqual(0, view.c1_trains_5)
+        self.assertEqual(0, view.c1_trains_6)
+        self.assertEqual(10, view.c1_ipo)
+        self.assertEqual(0, view.c1_market)
+        self.assertIsNone(view.c1_president)
+        self.assertEqual(0, view.c1_share_price)

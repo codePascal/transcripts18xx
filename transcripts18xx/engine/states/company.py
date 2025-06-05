@@ -68,12 +68,13 @@ class CompanyState(State):
         data = {
             key % 'cash': self.cash,
             key % 'privates': self.privates,
-            key % 'trains': self.trains,
             key % 'ipo': self.ipo,
             key % 'market': self.market,
             key % 'president': self.president,
             key % 'share_price': self.share_price
         }
+        for k, v in self.trains.items():
+            data[key % 'trains_' + k] = v
         return pd.Series(data)
 
     @staticmethod

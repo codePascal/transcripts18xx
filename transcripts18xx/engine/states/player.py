@@ -62,9 +62,10 @@ class PlayerState(State):
             key % 'cash': self.cash,
             key % 'privates': self.privates,
             key % 'value': self.value,
-            key % 'shares': self.shares,
             key % 'priority_deal': self.priority_deal
         }
+        for k, v in self.shares.items():
+            data[key % 'shares_' + k] = v
         return pd.Series(data)
 
     def update(self, share_prices: dict):

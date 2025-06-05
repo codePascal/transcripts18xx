@@ -43,9 +43,8 @@ class TestPlayerState(unittest.TestCase):
         self.assertEqual(100, flatten['player1_cash'])
         self.assertEqual({}, flatten['player1_privates'])
         self.assertEqual(100, flatten['player1_value'])
-        self.assertEqual(
-            {'company1': 0, 'company2': 0}, flatten['player1_shares']
-        )
+        self.assertEqual(0, flatten['player1_shares_company1'])
+        self.assertEqual(0, flatten['player1_shares_company2'])
         self.assertFalse(flatten['player1_priority_deal'])
 
     def test_update(self):
