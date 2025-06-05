@@ -12,8 +12,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Function to retrieve game name from game enum, e.g., `G1830` -> `1830`.
 - Functions to retrieve transcript identifier and ID from filename.
+- Functions to expand dicts containing player shares and company trains.
 
 ### Changed
+
+- Made package `pipe` consisting of parsing and verification module.
 
 ### Removed
 

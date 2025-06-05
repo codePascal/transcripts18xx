@@ -178,3 +178,11 @@ class TestTranscriptRendering(unittest.TestCase):
     def test_transcript_id(self):
         # TODO test
         pass
+
+    def test_expand_player_shares(self):
+        # TODO test
+        pass
+
+    def test_expand_company_trains(self):
+        # TODO test
+        pass

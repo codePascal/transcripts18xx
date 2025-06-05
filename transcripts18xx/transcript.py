@@ -11,10 +11,12 @@ the ID of the game.
 """
 import json
 import pandas as pd
+import ast
 
 from pathlib import Path
 
-from . import parsing, games, verification
+from . import games
+from .pipe import parsing, verification
 
 
 class TranscriptParser(object):
@@ -337,6 +339,57 @@ def transcript_id(name: str) -> str:
         The transcript id as string.
     """
     return name.split('_')[1]
+
+
+def expand_player_shares(df: pd.DataFrame, players: list[str]) -> pd.DataFrame:
+    """Expand the dicts containing player shares to columns.
+
+    Creates new columns for each player depicting the shares of one company,
+    e.g. `player1_shares_company1`. Column containing the player shares as dict
+    are dropped.
+
+    Args:
+        df: The flattened transcript.
+        players: The list of players.
+
+    Returns:
+        The flattened transcript with expanded shares.
+    """
+    for p in players:
+        shares = pd.DataFrame(
+            [ast.literal_eval(d) for d in df['{}_shares'.format(p)].tolist()]
+        )
+        shares.columns = [
+            '{}_shares_{}'.format(p, col) for col in shares.columns
+        ]
+        df = pd.concat([df, shares], axis=1)
+        df.drop('{}_shares'.format(p), inplace=True, axis=1)
+    return df
+
+
+def expand_company_trains(df: pd.DataFrame, game: games.Games) -> pd.DataFrame:
+    """Expand the dicts containing trains of companies to columns.
+
+    Creates new columns for each train a company could have, e.g.
+    `company1_trains_D`.
+
+    Args:
+        df: The flattened transcript.
+        game: The underlying 18xx game to extract companies and trains.
+
+    Returns:
+        The flattened transcript with expanded trains.
+    """
+    for c in game.select().companies:
+        trains = pd.DataFrame(
+            [ast.literal_eval(d) for d in df['{}_trains'.format(c)].tolist()]
+        )
+        trains.columns = [
+            '{}_trains_{}'.format(c, col) for col in trains.columns
+        ]
+        df = pd.concat([df, trains], axis=1)
+        df.drop('{}_trains'.format(c), inplace=True, axis=1)
+    return df
 
 
 def _build_path(transcript: Path, suffix: str) -> Path:
