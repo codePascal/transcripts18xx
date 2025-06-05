@@ -26,12 +26,14 @@ class GameTranscriptProcessor(object):
 
     Attributes:
         _engine: The line parser engine.
+        _unprocessed_lines: The lines that could not be matched.
     """
 
     def __init__(self):
         self._engine = engine.LineParser()
+        self._unprocessed_lines = list()
 
-    def _process_line(self, idx: int, line: str, data: list, unprocessed: list):
+    def _process_line(self, idx: int, line: str, data: list):
         line = self._preprocess_line(line)
         parsed_data = self._engine.run(line)
         if parsed_data:
@@ -39,7 +41,7 @@ class GameTranscriptProcessor(object):
             parsed_data['line'] = line
             data.append(parsed_data)
         else:
-            unprocessed.append(line.strip())
+            self._unprocessed_lines.append(line.strip())
 
     @staticmethod
     def _preprocess_line(line: str) -> str:
@@ -55,11 +57,6 @@ class GameTranscriptProcessor(object):
             lines = file.readlines()
         return lines
 
-    @staticmethod
-    def _handle_unprocessed_lines(unprocessed: list):
-        print('Unprocessed lines:')
-        print('\n'.join(unprocessed))
-
     def parse_transcript(self, transcript: Path) -> pd.DataFrame:
         """Reads and extracts actions and events from the game transcript.
 
@@ -70,12 +67,18 @@ class GameTranscriptProcessor(object):
             The parsed transcript as pandas Dataframe.
         """
         data = list()
-        unprocessed = list()
+        self._unprocessed_lines = list()
         for i, line in enumerate(self._read_transcript(transcript)):
-            self._process_line(i, line, data, unprocessed)
-        if unprocessed:
-            self._handle_unprocessed_lines(unprocessed)
+            self._process_line(i, line, data)
         return pd.DataFrame(data)
+
+    def unprocessed_lines(self) -> list[str]:
+        """Makes the unprocessed lines available.
+
+        Returns:
+            The lines that could not be matched as list.
+        """
+        return self._unprocessed_lines
 
 
 class TranscriptPostProcessor(object):
@@ -84,8 +87,7 @@ class TranscriptPostProcessor(object):
     Class to post-process and clean parsed game transcripts. The class fills up
     the phase and round keys which are valid until the next key arrives. It
     further maps and renders columns which require the game context, given by
-    the type of game and the whole parsed transcript. To this end, the player
-    names are anonymized for better generalization.
+    the type of game and the whole parsed transcript.
 
     Attributes:
         _df: The parsed transcript.
@@ -148,21 +150,6 @@ class TranscriptPostProcessor(object):
         self._df.share_price = self._df.share_price.astype(float)
         self._df.per_share = self._df.per_share.astype(float)
 
-    def _anonymize(self) -> dict:
-        # Replace player names with normalized names.
-        mapping = {
-            p: 'player{}'.format(i + 1) for i, p in
-            enumerate(self._df.player.dropna().unique()) if not pd.isna(p)
-        }
-        self._df.replace(mapping.keys(), mapping.values(), inplace=True)
-
-        # Replace the keys of the result when game over was reached
-        result = eval(self._df.iloc[-1].result)
-        renamed = {mapping[k]: v for k, v in result.items()}
-        self._df.at[self._df.shape[0] - 1, 'result'] = renamed.__str__()
-
-        return mapping
-
     def _set_contribute_target(self) -> None:
         contributions = self._df[
             self._df['type'] == engine.step.StepType.Contribute.name
@@ -182,7 +169,7 @@ class TranscriptPostProcessor(object):
             this_action.company = next_action.company
             self._df.iloc[cont, :] = this_action
 
-    def process(self) -> tuple[pd.DataFrame, dict]:
+    def process(self) -> pd.DataFrame:
         """Processes and cleans the parsed transcript.
 
         Returns:
@@ -196,8 +183,7 @@ class TranscriptPostProcessor(object):
         self._clean_companies()
         self._map_dtypes()
         self._set_contribute_target()
-        mapping = self._anonymize()
-        return self._df, mapping
+        return self._df
 
     @staticmethod
     def clean_brackets(bracket_string: str) -> str:

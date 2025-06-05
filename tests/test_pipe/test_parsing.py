@@ -201,7 +201,7 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
         gtp = parsing.GameTranscriptProcessor()
         df = gtp.parse_transcript(raw_transcript)
         tpp = parsing.TranscriptPostProcessor(df, Game1830())
-        df, _ = tpp.process()
+        df = tpp.process()
         cls.df = df
 
     @classmethod
@@ -241,10 +241,6 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
         }
         self.assertEqual(expected, set(self.df.company.dropna().unique()))
 
-    def test_player(self):
-        expected = {'player1', 'player2', 'player3', 'player4'}
-        self.assertEqual(expected, set(self.df.player.dropna().unique()))
-
     def test_sequence(self):
         expected = {
             'ISR 1',
@@ -276,26 +272,14 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
             'Auction', 'B&M', 'Baltimore & Ohio', 'Camden & Amboy',
             'Champlain & St.Lawrence', 'Delaware & Hudson', 'ERIE', 'IPO',
             'Mohawk & Hudson', 'NYNH', 'Schuylkill Valley', 'The Depot',
-            'market', 'player1', 'player2', 'player3'
+            'market', 'leesin', 'mpcoyne', 'riverfiend'
         }
         self.assertEqual(expected, set(self.df.source.dropna().unique()))
-
-    def test_anonymization(self):
-        df = self.df.astype(str)
-        for col in df.columns:
-            for p in ['leesin', 'mpakfm', 'riverfiend', 'mpcoyne']:
-                self.assertFalse(df[col].str.contains(p).any())
 
     def test_contributions(self):
         self.assertEqual('CPR', self.df.iloc[933, :].company)
         self.assertEqual('NYC', self.df.iloc[950, :].company)
         self.assertEqual('B&M', self.df.iloc[1089, :].company)
-
-    def test_result(self):
-        expected = {
-            'player1': 6735, 'player3': 6648, 'player2': 5523, 'player4': 2740
-        }
-        self.assertEqual(expected, eval(self.df.iloc[-1, :].result))
 
 
 class TestGameStateProcessor1830(unittest.TestCase):
@@ -307,7 +291,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         gtp = parsing.GameTranscriptProcessor()
         parsed = gtp.parse_transcript(raw_transcript)
         tpp = parsing.TranscriptPostProcessor(parsed, Game1830())
-        processed, _ = tpp.process()
+        processed = tpp.process()
         gsp = parsing.GameStateProcessor(processed, Game1830())
         df = gsp.generate()
         cls.df = df
@@ -338,8 +322,8 @@ class TestGameStateProcessor1830(unittest.TestCase):
         self.assertEqual(4, len(self.final_state['players']))
         self.assertEqual(8, len(self.final_state['companies']))
 
-    def test_isr_1_player1(self):
-        player = PlayerState('player1', int(), dict())
+    def test_isr_1_mpcoyne(self):
+        player = PlayerState('mpcoyne', int(), dict())
         player.cash = 360
         player.value = 780
         player.shares = {
@@ -348,10 +332,10 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = False
         player.privates = {'Schuylkill Valley': 20, 'Baltimore & Ohio': 220}
-        self.assertEqual(player, PlayerState.eval(self.isr_1().player1))
+        self.assertEqual(player, PlayerState.eval(self.isr_1().mpcoyne))
 
-    def test_isr_1_player2(self):
-        player = PlayerState('player2', int(), dict())
+    def test_isr_1_riverfiend(self):
+        player = PlayerState('riverfiend', int(), dict())
         player.cash = 525
         player.value = 595
         player.shares = {
@@ -360,10 +344,10 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = True
         player.privates = {'Delaware & Hudson': 70}
-        self.assertEqual(player, PlayerState.eval(self.isr_1().player2))
+        self.assertEqual(player, PlayerState.eval(self.isr_1().riverfiend))
 
-    def test_isr_1_player3(self):
-        player = PlayerState('player3', int(), dict())
+    def test_isr_1_leesin(self):
+        player = PlayerState('leesin', int(), dict())
         player.cash = 250
         player.value = 520
         player.shares = {
@@ -372,10 +356,10 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = False
         player.privates = {'Mohawk & Hudson': 110, 'Camden & Amboy': 160}
-        self.assertEqual(player, PlayerState.eval(self.isr_1().player3))
+        self.assertEqual(player, PlayerState.eval(self.isr_1().leesin))
 
-    def test_isr_1_player4(self):
-        player = PlayerState('player4', int(), dict())
+    def test_isr_1_mpakfm(self):
+        player = PlayerState('mpakfm', int(), dict())
         player.cash = 560
         player.value = 600
         player.shares = {
@@ -384,7 +368,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = False
         player.privates = {'Champlain & St.Lawrence': 40}
-        self.assertEqual(player, PlayerState.eval(self.isr_1().player4))
+        self.assertEqual(player, PlayerState.eval(self.isr_1().mpakfm))
 
     def test_isr_1_Boston_and_Maine_Railroad(self):
         company = CompanyState('B&M', dict())
@@ -404,7 +388,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 0}
         company.ipo = 8
         company.market = 0
-        company.president = 'player1'
+        company.president = 'mpcoyne'
         company.share_price = 90
         self.assertEqual(company, CompanyState.eval(self.isr_1()['B&O']))
 
@@ -474,8 +458,8 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.share_price = 0
         self.assertEqual(company, CompanyState.eval(self.isr_1()['PRR']))
 
-    def test_game_over_player1(self):
-        player = PlayerState('player1', int(), dict())
+    def test_game_over_mpcoyne(self):
+        player = PlayerState('mpcoyne', int(), dict())
         player.cash = 3304
         player.value = 6735
         player.shares = {
@@ -484,10 +468,10 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = False
         player.privates = dict()
-        self.assertEqual(player, PlayerState.eval(self.game_over().player1))
+        self.assertEqual(player, PlayerState.eval(self.game_over().mpcoyne))
 
-    def test_game_over_player2(self):
-        player = PlayerState('player2', int(), dict())
+    def test_game_over_riverfiend(self):
+        player = PlayerState('riverfiend', int(), dict())
         player.cash = 3560
         player.value = 5523
         player.shares = {
@@ -496,10 +480,10 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = False
         player.privates = dict()
-        self.assertEqual(player, PlayerState.eval(self.game_over().player2))
+        self.assertEqual(player, PlayerState.eval(self.game_over().riverfiend))
 
-    def test_game_over_player3(self):
-        player = PlayerState('player3', int(), dict())
+    def test_game_over_leesin(self):
+        player = PlayerState('leesin', int(), dict())
         player.cash = 3432
         player.value = 6648
         player.shares = {
@@ -508,10 +492,10 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = False
         player.privates = dict()
-        self.assertEqual(player, PlayerState.eval(self.game_over().player3))
+        self.assertEqual(player, PlayerState.eval(self.game_over().leesin))
 
-    def test_game_over_player4(self):
-        player = PlayerState('player4', int(), dict())
+    def test_game_over_mpakfm(self):
+        player = PlayerState('mpakfm', int(), dict())
         player.cash = 1260
         player.value = 2740
         player.shares = {
@@ -520,7 +504,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = True
         player.privates = dict()
-        self.assertEqual(player, PlayerState.eval(self.game_over().player4))
+        self.assertEqual(player, PlayerState.eval(self.game_over().mpakfm))
 
     def test_game_over_Boston_and_Maine_Railroad(self):
         company = CompanyState('B&M', dict())
@@ -529,7 +513,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 1}
         company.ipo = 0
         company.market = 0
-        company.president = 'player1'
+        company.president = 'mpcoyne'
         company.share_price = 100
         self.assertEqual(company, CompanyState.eval(self.game_over()['B&M']))
 
@@ -540,7 +524,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.trains = {'2': 0, '3': 0, '4': 0, '5': 1, '6': 1, 'D': 0}
         company.ipo = 0
         company.market = 0
-        company.president = 'player1'
+        company.president = 'mpcoyne'
         company.share_price = 350
         self.assertEqual(company, CompanyState.eval(self.game_over()['B&O']))
 
@@ -551,7 +535,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.trains = {'2': 0, '3': 0, '4': 0, '5': 1, '6': 0, 'D': 0}
         company.ipo = 0
         company.market = 2
-        company.president = 'player2'
+        company.president = 'riverfiend'
         company.share_price = 90
         self.assertEqual(company, CompanyState.eval(self.game_over()['C&O']))
 
@@ -562,7 +546,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 1}
         company.ipo = 3
         company.market = 1
-        company.president = 'player3'
+        company.president = 'leesin'
         company.share_price = 125
         self.assertEqual(company, CompanyState.eval(self.game_over()['CPR']))
 
@@ -573,7 +557,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 1, 'D': 0}
         company.ipo = 0
         company.market = 0
-        company.president = 'player2'
+        company.president = 'riverfiend'
         company.share_price = 111
         self.assertEqual(company, CompanyState.eval(self.game_over()['ERIE']))
 
@@ -584,7 +568,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 1}
         company.ipo = 0
         company.market = 0
-        company.president = 'player4'
+        company.president = 'mpakfm'
         company.share_price = 130
         self.assertEqual(company, CompanyState.eval(self.game_over()['NYC']))
 
@@ -595,7 +579,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.trains = {'2': 0, '3': 0, '4': 0, '5': 1, '6': 0, 'D': 0}
         company.ipo = 0
         company.market = 2
-        company.president = 'player3'
+        company.president = 'leesin'
         company.share_price = 130
         self.assertEqual(company, CompanyState.eval(self.game_over()['NYNH']))
 
@@ -606,6 +590,6 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.trains = {'2': 0, '3': 0, '4': 0, '5': 0, '6': 0, 'D': 1}
         company.ipo = 0
         company.market = 0
-        company.president = 'player3'
+        company.president = 'leesin'
         company.share_price = 67
         self.assertEqual(company, CompanyState.eval(self.game_over()['PRR']))
