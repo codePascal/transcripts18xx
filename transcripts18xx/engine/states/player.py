@@ -6,6 +6,7 @@ Module implements a player state and maintainer class.
 """
 import ast
 import pandas as pd
+import json
 
 from .state import State, States
 
@@ -60,7 +61,7 @@ class PlayerState(State):
         key = '{}_%s'.format(self.name)
         data = {
             key % 'cash': self.cash,
-            key % 'privates': self.privates,
+            key % 'privates': json.dumps(self.privates),
             key % 'value': self.value,
             key % 'priority_deal': self.priority_deal
         }

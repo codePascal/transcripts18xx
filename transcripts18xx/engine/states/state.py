@@ -5,6 +5,7 @@
 Module implements abstract base class process and maintain states of the game.
 """
 import ast
+import json
 
 import pandas as pd
 
@@ -59,7 +60,7 @@ class State(object):
         key = '{}_%s'.format(self.name)
         data = {
             key % 'cash': self.cash,
-            key % 'privates': self.privates
+            key % 'privates': json.dumps(self.privates)
         }
         return pd.Series(data)
 

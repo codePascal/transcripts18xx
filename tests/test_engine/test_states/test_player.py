@@ -41,7 +41,7 @@ class TestPlayerState(unittest.TestCase):
         flatten = self.player.flatten()
         self.assertIsInstance(flatten, pd.Series)
         self.assertEqual(100, flatten['player1_cash'])
-        self.assertEqual({}, flatten['player1_privates'])
+        self.assertEqual('{}', flatten['player1_privates'])
         self.assertEqual(100, flatten['player1_value'])
         self.assertEqual(0, flatten['player1_shares_company1'])
         self.assertEqual(0, flatten['player1_shares_company2'])

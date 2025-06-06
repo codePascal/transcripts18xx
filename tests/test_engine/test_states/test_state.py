@@ -34,7 +34,7 @@ class TestState(unittest.TestCase):
         flatten = self.state.flatten()
         self.assertIsInstance(flatten, pd.Series)
         self.assertEqual(100, flatten['state1_cash'])
-        self.assertEqual({'private1': 50}, flatten['state1_privates'])
+        self.assertEqual('{"private1": 50}', flatten['state1_privates'])
 
     def test_collects(self):
         self.state.collects(40)

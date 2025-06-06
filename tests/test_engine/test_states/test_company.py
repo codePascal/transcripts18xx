@@ -43,7 +43,7 @@ class TestCompanyState(unittest.TestCase):
         flatten = self.company.flatten()
         self.assertIsInstance(flatten, pd.Series)
         self.assertEqual(0, flatten['company1_cash'])
-        self.assertEqual({}, flatten['company1_privates'])
+        self.assertEqual('{}', flatten['company1_privates'])
         self.assertEqual(0, flatten['company1_trains_2'])
         self.assertEqual(0, flatten['company1_trains_4'])
         self.assertEqual(0, flatten['company1_trains_D'])

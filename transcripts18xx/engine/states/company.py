@@ -6,6 +6,7 @@ Module implements the company state and its maintainer.
 """
 import ast
 import pandas as pd
+import json
 
 from .state import State, States
 
@@ -67,7 +68,7 @@ class CompanyState(State):
         key = '{}_%s'.format(self.name)
         data = {
             key % 'cash': self.cash,
-            key % 'privates': self.privates,
+            key % 'privates': json.dumps(self.privates),
             key % 'ipo': self.ipo,
             key % 'market': self.market,
             key % 'president': self.president,
