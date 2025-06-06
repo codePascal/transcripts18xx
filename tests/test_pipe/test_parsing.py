@@ -312,7 +312,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
 
     def test_shape(self):
         self.assertEqual(1346, self.df.shape[0])
-        self.assertEqual(34, self.df.shape[1])
+        self.assertEqual(166, self.df.shape[1])
 
     def test_final_state(self):
         self.assertIsInstance(self.final_state, dict)
@@ -332,7 +332,11 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = False
         player.privates = {'Schuylkill Valley': 20, 'Baltimore & Ohio': 220}
-        self.assertEqual(player, PlayerState.eval(self.isr_1().mpcoyne))
+        expected = player.flatten().to_dict()
+        result = self.isr_1().loc[
+            [col for col in self.isr_1().index if col.startswith(player.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_isr_1_riverfiend(self):
         player = PlayerState('riverfiend', int(), dict())
@@ -344,7 +348,11 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = True
         player.privates = {'Delaware & Hudson': 70}
-        self.assertEqual(player, PlayerState.eval(self.isr_1().riverfiend))
+        expected = player.flatten().to_dict()
+        result = self.isr_1().loc[
+            [col for col in self.isr_1().index if col.startswith(player.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_isr_1_leesin(self):
         player = PlayerState('leesin', int(), dict())
@@ -356,7 +364,11 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = False
         player.privates = {'Mohawk & Hudson': 110, 'Camden & Amboy': 160}
-        self.assertEqual(player, PlayerState.eval(self.isr_1().leesin))
+        expected = player.flatten().to_dict()
+        result = self.isr_1().loc[
+            [col for col in self.isr_1().index if col.startswith(player.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_isr_1_mpakfm(self):
         player = PlayerState('mpakfm', int(), dict())
@@ -368,7 +380,11 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = False
         player.privates = {'Champlain & St.Lawrence': 40}
-        self.assertEqual(player, PlayerState.eval(self.isr_1().mpakfm))
+        expected = player.flatten().to_dict()
+        result = self.isr_1().loc[
+            [col for col in self.isr_1().index if col.startswith(player.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_isr_1_Boston_and_Maine_Railroad(self):
         company = CompanyState('B&M', dict())
@@ -379,7 +395,11 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = None
         company.share_price = 0
-        self.assertEqual(company, CompanyState.eval(self.isr_1()['B&M']))
+        expected = company.flatten().to_dict()
+        result = self.isr_1().loc[
+            [col for col in self.isr_1().index if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_isr_1_Baltimore_and_Ohio(self):
         company = CompanyState('B&O', dict())
@@ -390,7 +410,11 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = 'mpcoyne'
         company.share_price = 90
-        self.assertEqual(company, CompanyState.eval(self.isr_1()['B&O']))
+        expected = company.flatten().to_dict()
+        result = self.isr_1().loc[
+            [col for col in self.isr_1().index if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_isr_1_Chesapeake_and_Ohio_Railroad(self):
         company = CompanyState('C&O', dict())
@@ -401,7 +425,11 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = None
         company.share_price = 0
-        self.assertEqual(company, CompanyState.eval(self.isr_1()['C&O']))
+        expected = company.flatten().to_dict()
+        result = self.isr_1().loc[
+            [col for col in self.isr_1().index if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_isr_1_Canadian_Pacific_Railroad(self):
         company = CompanyState('CPR', dict())
@@ -412,7 +440,11 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = None
         company.share_price = 0
-        self.assertEqual(company, CompanyState.eval(self.isr_1()['CPR']))
+        expected = company.flatten().to_dict()
+        result = self.isr_1().loc[
+            [col for col in self.isr_1().index if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_isr_1_Erie_Railroad(self):
         company = CompanyState('ERIE', dict())
@@ -423,7 +455,11 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = None
         company.share_price = 0
-        self.assertEqual(company, CompanyState.eval(self.isr_1()['ERIE']))
+        expected = company.flatten().to_dict()
+        result = self.isr_1().loc[
+            [col for col in self.isr_1().index if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_isr_1_New_York_Central_Railroad(self):
         company = CompanyState('NYC', dict())
@@ -434,7 +470,11 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = None
         company.share_price = 0
-        self.assertEqual(company, CompanyState.eval(self.isr_1()['NYC']))
+        expected = company.flatten().to_dict()
+        result = self.isr_1().loc[
+            [col for col in self.isr_1().index if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_isr_1_New_York_New_Haven_and_Hartford_Railroad(self):
         company = CompanyState('NYNH', dict())
@@ -445,7 +485,11 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = None
         company.share_price = 0
-        self.assertEqual(company, CompanyState.eval(self.isr_1()['NYNH']))
+        expected = company.flatten().to_dict()
+        result = self.isr_1().loc[
+            [col for col in self.isr_1().index if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_isr_1_Pennsylvania_Railroad(self):
         company = CompanyState('PRR', dict())
@@ -456,7 +500,11 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = None
         company.share_price = 0
-        self.assertEqual(company, CompanyState.eval(self.isr_1()['PRR']))
+        expected = company.flatten().to_dict()
+        result = self.isr_1().loc[
+            [col for col in self.isr_1().index if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_game_over_mpcoyne(self):
         player = PlayerState('mpcoyne', int(), dict())
@@ -468,7 +516,12 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = False
         player.privates = dict()
-        self.assertEqual(player, PlayerState.eval(self.game_over().mpcoyne))
+        expected = player.flatten().to_dict()
+        result = self.game_over().loc[
+            [col for col in self.game_over().index
+             if col.startswith(player.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_game_over_riverfiend(self):
         player = PlayerState('riverfiend', int(), dict())
@@ -480,7 +533,12 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = False
         player.privates = dict()
-        self.assertEqual(player, PlayerState.eval(self.game_over().riverfiend))
+        expected = player.flatten().to_dict()
+        result = self.game_over().loc[
+            [col for col in self.game_over().index
+             if col.startswith(player.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_game_over_leesin(self):
         player = PlayerState('leesin', int(), dict())
@@ -492,7 +550,12 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = False
         player.privates = dict()
-        self.assertEqual(player, PlayerState.eval(self.game_over().leesin))
+        expected = player.flatten().to_dict()
+        result = self.game_over().loc[
+            [col for col in self.game_over().index
+             if col.startswith(player.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_game_over_mpakfm(self):
         player = PlayerState('mpakfm', int(), dict())
@@ -504,7 +567,12 @@ class TestGameStateProcessor1830(unittest.TestCase):
         }
         player.priority_deal = True
         player.privates = dict()
-        self.assertEqual(player, PlayerState.eval(self.game_over().mpakfm))
+        expected = player.flatten().to_dict()
+        result = self.game_over().loc[
+            [col for col in self.game_over().index
+             if col.startswith(player.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_game_over_Boston_and_Maine_Railroad(self):
         company = CompanyState('B&M', dict())
@@ -515,7 +583,12 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = 'mpcoyne'
         company.share_price = 100
-        self.assertEqual(company, CompanyState.eval(self.game_over()['B&M']))
+        expected = company.flatten().to_dict()
+        result = self.game_over().loc[
+            [col for col in self.game_over().index
+             if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_game_over_Baltimore_and_Ohio(self):
         company = CompanyState('B&O', dict())
@@ -526,7 +599,12 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = 'mpcoyne'
         company.share_price = 350
-        self.assertEqual(company, CompanyState.eval(self.game_over()['B&O']))
+        expected = company.flatten().to_dict()
+        result = self.game_over().loc[
+            [col for col in self.game_over().index
+             if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_game_over_Chesapeake_and_Ohio_Railroad(self):
         company = CompanyState('C&O', dict())
@@ -537,7 +615,12 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 2
         company.president = 'riverfiend'
         company.share_price = 90
-        self.assertEqual(company, CompanyState.eval(self.game_over()['C&O']))
+        expected = company.flatten().to_dict()
+        result = self.game_over().loc[
+            [col for col in self.game_over().index
+             if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_game_over_Canadian_Pacific_Railroad(self):
         company = CompanyState('CPR', dict())
@@ -548,7 +631,12 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 1
         company.president = 'leesin'
         company.share_price = 125
-        self.assertEqual(company, CompanyState.eval(self.game_over()['CPR']))
+        expected = company.flatten().to_dict()
+        result = self.game_over().loc[
+            [col for col in self.game_over().index
+             if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_game_over_Erie_Railroad(self):
         company = CompanyState('ERIE', dict())
@@ -559,7 +647,12 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = 'riverfiend'
         company.share_price = 111
-        self.assertEqual(company, CompanyState.eval(self.game_over()['ERIE']))
+        expected = company.flatten().to_dict()
+        result = self.game_over().loc[
+            [col for col in self.game_over().index
+             if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_game_over_New_York_Central_Railroad(self):
         company = CompanyState('NYC', dict())
@@ -570,7 +663,12 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = 'mpakfm'
         company.share_price = 130
-        self.assertEqual(company, CompanyState.eval(self.game_over()['NYC']))
+        expected = company.flatten().to_dict()
+        result = self.game_over().loc[
+            [col for col in self.game_over().index
+             if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_game_over_New_York_New_Haven_and_Hartford_Railroad(self):
         company = CompanyState('NYNH', dict())
@@ -581,7 +679,12 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 2
         company.president = 'leesin'
         company.share_price = 130
-        self.assertEqual(company, CompanyState.eval(self.game_over()['NYNH']))
+        expected = company.flatten().to_dict()
+        result = self.game_over().loc[
+            [col for col in self.game_over().index
+             if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)
 
     def test_game_over_Pennsylvania_Railroad(self):
         company = CompanyState('PRR', dict())
@@ -592,4 +695,9 @@ class TestGameStateProcessor1830(unittest.TestCase):
         company.market = 0
         company.president = 'leesin'
         company.share_price = 67
-        self.assertEqual(company, CompanyState.eval(self.game_over()['PRR']))
+        expected = company.flatten().to_dict()
+        result = self.game_over().loc[
+            [col for col in self.game_over().index
+             if col.startswith(company.name)]
+        ].to_dict()
+        self.assertEqual(expected, result)

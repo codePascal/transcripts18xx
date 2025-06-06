@@ -237,7 +237,7 @@ class GameStateProcessor(object):
         )
         self._steps = engine.StepMapper()
 
-    def _update(self, row: pd.Series):
+    def _update(self, row: pd.Series) -> pd.Series:
         # Update a row with its step engine and return the game state.
         step_type = self._steps.map_type(row.type)
         step_engine = self._steps.run(step_type)

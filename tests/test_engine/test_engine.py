@@ -176,7 +176,7 @@ class TestGameState(unittest.TestCase):
         self.assertEqual(7 * 3 + 11 * 3, view.shape[0])
 
         self.assertEqual(300, view.p1_cash)
-        self.assertEqual({}, view.p1_privates)
+        self.assertEqual('{}', view.p1_privates)
         self.assertEqual(300, view.p1_value)
         self.assertEqual(0, view.p1_shares_c1)
         self.assertEqual(0, view.p1_shares_c2)
@@ -184,7 +184,7 @@ class TestGameState(unittest.TestCase):
         self.assertFalse(view.p1_priority_deal)
 
         self.assertEqual(0, view.c1_cash)
-        self.assertEqual({}, view.c1_privates)
+        self.assertEqual('{}', view.c1_privates)
         self.assertEqual(0, view.c1_trains_2)
         self.assertEqual(0, view.c1_trains_3)
         self.assertEqual(0, view.c1_trains_4)
