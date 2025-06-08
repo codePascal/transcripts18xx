@@ -14,7 +14,10 @@ from .state import State, States
 class PlayerState(State):
     """PlayerState
 
-    Class implements a player state object.
+    Class implements a player state object. In 18xx games, a player has its
+    cash to spend, can hold shares of different companies, can have priority
+    deal in the next stock round and has an associated value based on its cash,
+    public company shares and private companies.
 
     Args:
         name: The name of the player.
@@ -58,6 +61,14 @@ class PlayerState(State):
         return st
 
     def flatten(self) -> pd.Series:
+        """Creates a series from the state representation.
+
+        The shares dictionary is expanded to single indexes with the company
+        name appended, e.g. `player1_shares_company1`.
+
+        Returns:
+            A pandas Series with the members of the state and their values.
+        """
         key = '{}_%s'.format(self.name)
         data = {
             key % 'cash': self.cash,
@@ -69,7 +80,15 @@ class PlayerState(State):
             data[key % 'shares_' + k] = v
         return pd.Series(data)
 
-    def update(self, share_prices: dict):
+    def update(self, share_prices: dict) -> None:
+        """Update the player value.
+
+        The player values consists of the cash, the number of shares a player
+        holds with their share price and the values of the privates.
+
+        Args:
+            share_prices: The share price of each company.
+        """
         self.value = self.cash
         self.value += sum(self.shares[c] * v for c, v in share_prices.items())
         self.value += sum(self.privates.values())

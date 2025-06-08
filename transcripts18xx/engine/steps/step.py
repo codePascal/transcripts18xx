@@ -19,7 +19,8 @@ from ..states.company import Companies
 class StepType(enum.IntEnum):
     """StepType
 
-    Enum class to describe a step by a type.
+    Enum class to describe a step by a type. The members below depict the
+    different actions that are available and events that occur during the game.
     """
     PayOut = 0
     Withhold = 1
@@ -62,7 +63,9 @@ class StepType(enum.IntEnum):
 class StepParent(enum.IntEnum):
     """StepParent
 
-    Enum class to describe a group of steps.
+    Enum class to describe a group of steps. 18xx games have actions a player or
+    a company can take and events that are a result from actions taken or timing
+    related.
     """
     Event = 0
     Action = 1
@@ -74,6 +77,8 @@ class EngineStep(abc.ABC):
     Class to map a line to a pattern. Each subclass implements a pattern, that
     is compared to a line. The pattern is implemented as a regular expression.
     Further, the subclasses implement the post-processing of this match.
+    Each step implements a rule on how to update the game state w.r.t. the
+    whole game environment.
 
     Attributes:
         pattern: The expression that shall be matched to the line.

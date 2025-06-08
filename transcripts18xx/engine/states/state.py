@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 """Basic state implementation.
 
-Module implements abstract base class process and maintain states of the game.
+Module implements an abstract base class to process and maintain states of the
+game.
 """
 import ast
 import json
@@ -13,10 +14,12 @@ import pandas as pd
 class State(object):
     """State
 
-    Class implements a state of a game object, e.g., player or company.
+    Class implements a state of a game object, e.g., player or company. In 18xx
+    games a company or a player have cash available and can hold private
+    companies.
 
     Args:
-        name: The name of the state object.
+        name: The name of the state object, i.e. player or company name.
 
     Attributes:
         name: The name of the state object.
@@ -57,6 +60,11 @@ class State(object):
         return st
 
     def flatten(self) -> pd.Series:
+        """Creates a series from the state representation.
+
+        Returns:
+            A pandas Series with the members of the state and their values.
+        """
         key = '{}_%s'.format(self.name)
         data = {
             key % 'cash': self.cash,
@@ -64,7 +72,12 @@ class State(object):
         }
         return pd.Series(data)
 
-    def update(self, *args):
+    def update(self, *args) -> None:
+        """Update the current state.
+
+        Args:
+            *args: The arguments required for the update.
+        """
         pass
 
     def collects(self, amount: int) -> None:
@@ -98,6 +111,11 @@ class States(object):
         return '\n'.join([st.__repr__() for st in self.states]) + '\n'
 
     def update(self, args: dict) -> None:
+        """Invoke updating of individual states.
+
+        Args:
+            args: The arguments required for the update.
+        """
         for st in self.states:
             st.update(**args)
 

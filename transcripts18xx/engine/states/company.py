@@ -14,13 +14,14 @@ from .state import State, States
 class CompanyState(State):
     """CompanyState
 
-    Class implements a company state object.
-
-    The company is set up as IPO game style. That means if the company floats,
-    it receives the full funds and shares can be brought from the IPO initially.
-    There are other game styles, e.g. shares are in the company treasury. This
-    class however, does not implement that! Further, it is assumed that the
-    company is a 10-share company.
+    Class implements a company state object. The company is set up as IPO game
+    style. That means if the company floats, it receives the full funds and
+    shares can be brought from the IPO initially. There are other game styles,
+    e.g. shares are in the company treasury. This class however, does not
+    implement that! Further, it is assumed that the company is a 10-share
+    company. A company has cash to fund its tile placements and trains, holds
+    trains to generate revenue and has a president that holds the majority
+    of the shares. A company has a share price as well.
 
     Args:
         name: The name of the company.
@@ -32,7 +33,6 @@ class CompanyState(State):
         market: Number of shares available on the market.
         president: The name of the player which is president of that company.
         share_price: The market share price.
-
     """
 
     def __init__(self, name: str, trains: dict):
@@ -65,6 +65,14 @@ class CompanyState(State):
         return st
 
     def flatten(self) -> pd.Series:
+        """Creates a series from the state representation.
+
+        The trains dictionary is expanded to single indexes with the train type
+        appended, e.g. `company1_trains_2`.
+
+        Returns:
+            A pandas Series with the members of the state and their values.
+        """
         key = '{}_%s'.format(self.name)
         data = {
             key % 'cash': self.cash,
@@ -159,4 +167,9 @@ class Companies(States):
         self.states = [CompanyState(n, trains) for n in names]
 
     def share_prices(self) -> dict:
+        """Creates view of the share prices of all companies.
+
+        Returns:
+            Dict containing the company names and their share prices.
+        """
         return {st.name: st.share_price for st in self.states}
