@@ -17,24 +17,22 @@ from pathlib import Path
 
 from . import games
 from .pipe import parsing, verification
+from .engine.steps.step import StepType
 
 
 class TranscriptParser(object):
     """TranscriptParser
 
-    Class to run the parsing pipeline. The result can be verified with a
-    file representing the truth of the final states (full) or using the final
-    value of each player (minimal). Parsed results, game metadata and final
-    states can be written to files for later usage.
+    Class to run the parsing pipeline. Verifies the final values of the players
+    with the result in the game log in case the game was finished. Parsed
+    transcript and its metadata are saved in the raw transcript folder.
 
     Attributes:
         _transcript: The path to the game transcript.
         _game: The underlying 18xx game.
         _name: The name of the transcript file, excluding suffix.
         _dir: The parent directory of the transcript.
-        _mapping: The player name mapping.
         _df: The parsed transcript data.
-        _final_state: The final states of players and companies.
 
     Args:
         transcript: The filepath to the transcript.
@@ -48,153 +46,135 @@ class TranscriptParser(object):
         self._name = transcript.stem
         self._dir = transcript.parent
 
-        self._mapping = dict()
-        self._df = pd.DataFrame()
-        self._final_state = dict()
-
-    def _game_info(self):
-        # Builds the game info.
-        info = dict()
+        self._metadata = dict()
         game_type, game_id = self._name.split('_')
-        info['game'] = game_type
-        info['id'] = game_id
-        info['num_players'] = len(self._mapping.keys())
-        info['players'] = {v: k for k, v in self._mapping.items()}
-        return info
+        self._metadata['game'] = game_type
+        self._metadata['id'] = game_id
 
-    def _replace(self, obj, old, new):
-        # Replaces the old with the new value in object.
-        if isinstance(obj, dict):
-            return {
-                k.replace(old, new): self._replace(v, old, new) for k, v in
-                obj.items()
-            }
-        elif isinstance(obj, list):
-            return [self._replace(item, old, new) for item in obj]
-        elif isinstance(obj, str):
-            return obj.replace(old, new)
+        self._df = pd.DataFrame()
+
+    def _anonymize_players(self) -> dict:
+        # Map the player names to general format `playerx`.
+        players = self._df.player.dropna().unique()
+        mapping = {p: 'player{}'.format(i + 1) for i, p in enumerate(players)}
+        return mapping
+
+    def _anonymize(self, obj):
+        # Anonymize a data container with the general mapping format.
+        for old, new in self._metadata['mapping'].items():
+            obj = _replace(obj, old, new)
+        return obj
+
+    def _evaluate_last_state(self) -> dict:
+        # Evaluate the last state if finished and the results.
+        last_state = dict(
+            finished=str(),
+            result=dict(),
+            winner=str()
+        )
+        if self._df.type.iloc[-1] != StepType.GameOver.name:
+            last_state['finished'] = 'NotFinished'
         else:
-            return obj
+            if StepType.BankBroke.name in self._df.type.tolist():
+                last_state['finished'] = 'BankBroke'
+            elif StepType.PlayerGoesBankrupt.name in self._df.type.tolist():
+                last_state['finished'] = 'PlayerGoesBankrupt'
+            result = ast.literal_eval(self._df.result.iloc[-1])
+            winner = max(result, key=result.get)
+            last_state['result'] = result
+            last_state['winner'] = winner
+        self._df.drop('result', axis=1, inplace=True)
+        return last_state
 
-    def _run_full_verification(self) -> bool:
-        # Run the full verification based on a ground truth file.
-        verification_file = self._dir.joinpath(self._name + '_truth.json')
-        if not verification_file.exists():
-            raise ValueError(
-                'No verification file with ground truth exist: {}'.format(
-                    verification_file
-                )
-            )
-        with open(verification_file, 'r') as f:
-            truth = json.load(f)
-        checker = verification.StateVerification()
-        ret = checker.run(self.final_state(anonym=False), truth)
-        return ret
-
-    def _run_minimal_verification(self) -> bool:
+    def _run_minimal_verification(self) -> dict:
         # Run the minimal verification comparing final value of the players.
-        transcript_result = eval(self._df.iloc[-1].result)
-        game_state_result = dict()
-        for k, v in self._final_state['players'].items():
-            game_state_result[k] = int(v['value'])
-        checker = verification.StateVerification()
-        ret = checker.run(game_state_result, transcript_result)
-        return ret
+        result = dict(
+            success=bool(),
+            diffs=dict()
+        )
+        transcript_result = self._metadata['result']
+        if not transcript_result:
+            print('Game not finished, cannot verify the results')
+            result['success'] = False
+            return result
+        game_state_result = {
+            k: int(self._df['{}_value'.format(k)].iloc[-1]) for k in
+            transcript_result.keys()
+        }
+        result['diffs'] = {
+            k: (transcript_result[k], game_state_result[k]) for k in
+            transcript_result.keys() & game_state_result.keys() if
+            transcript_result[k] != game_state_result[k]
+        }
+        result['success'] = not result['diffs']
+        return result
 
-    def parse(self) -> pd.DataFrame:
-        """Parses the transcript to a pandas Dataframe."""
+    def parse(self) -> dict:
+        """Parses the transcript to a pandas Dataframe.
+
+        During the parsing, the metadata will be written and saved together
+        with the parsed transcript in the root folder of the raw transcript.
+        Further, the game state results will be verified to the result of the
+        transcript.
+
+        Returns:
+            The metadata of the parse result.
+        """
         gtp = parsing.GameTranscriptProcessor()
         df_parsed = gtp.parse_transcript(self._transcript)
-
         tpp = parsing.TranscriptPostProcessor(df_parsed, self._game)
-        df_processed, self._mapping = tpp.process()
-
+        df_processed = tpp.process()
         gsp = parsing.GameStateProcessor(df_processed, self._game)
         self._df = gsp.generate()
-        self._final_state = gsp.final_state()
-        return self._df
 
-    def final_state(self, anonym: bool = False) -> dict:
-        """Extracts the final state of the players and companies.
+        mapping = self._anonymize_players()
+        self._metadata['num_players'] = len(mapping.keys())
+        self._metadata['mapping'] = mapping
 
-        Args:
-            anonym: Set to True to anonymize the player names. Otherwise,
-                players will be identified by their names.
+        self._anonymize(self._df)
+        self._metadata.update(self._anonymize(self._evaluate_last_state()))
+        self._metadata['final_state'] = self._anonymize(gsp.final_state())
 
-        Returns:
-            The final states as dictionaries with keys `players` and
-            `companies`.
-        """
-        final = self._final_state
-        if not anonym:
-            for name, abbrev in self._mapping.items():
-                final = self._replace(final, abbrev, name)
-        return final
+        self._metadata['verification'] = self._run_minimal_verification()
 
-    def verify_result(self, minimal: bool = False) -> bool:
-        """Verifies the result with the final state.
+        self._metadata['unprocessed_lines'] = gtp.unprocessed_lines()
 
-        If option minimal is selected, compares the final value of the players
-        parsed from the transcript to the one retrieved from the game state.
-        Otherwise, compares the player and company states to a ground truth
-        file `_truth.json`, saved in the transcript directory. If the file is
-        not found, the minimal verification is invoked automatically.
+        _write_dataframe(dataframe_path(self._transcript), self._df)
+        _write_json(metadata_path(self._transcript), self._metadata)
 
-        Args:
-            minimal: Run only minimal verification.
-
-        Returns:
-            True if final states are equal, False otherwise.
-        """
-        if minimal:
-            ret = self._run_minimal_verification()
-            out = 'Minimal verification {}'
-        else:
-            try:
-                ret = self._run_full_verification()
-                out = 'Full verification {}'
-            except ValueError:
-                print(
-                    'Ground truth file not found, running minimal verification'
-                )
-                ret = self._run_minimal_verification()
-                out = 'Minimal verification {}'
-        if ret:
-            print(out.format('successful') + '\n')
-        else:
-            print(out.format('failed') + '\n')
-        return ret
-
-    def save(self) -> None:
-        """Saves the game data, its metadata and the final states.
-
-        The files are saved in the transcript directory:
-            - game data: `_final.csv`
-            - metadata: `_metadata.json`
-            - final states (anonymized): `_states.json`
-        """
-        _write_dataframe(dataframe(self._transcript), self._df)
-        _write_json(metadata(self._transcript), self._game_info())
-        _write_json(states(self._transcript), self.final_state(anonym=True))
+        return self._metadata
 
 
-def dataframe(transcript: Path) -> Path:
+def dataframe_path(transcript: Path) -> Path:
     """Build the path to the parsed transcript.
 
     Args:
-        transcript: The game transcript path.
+        transcript: The raw game transcript path.
 
     Returns:
         Path to the parsed transcript file.
-
-    Examples:
-        >>> dataframe(Path('1830_123456.txt'))
-        Path('1830_123456_final.csv')
     """
     return _build_path(transcript, '_final.csv')
 
 
-def metadata(transcript: Path) -> Path:
+def dataframe(transcript: Path) -> pd.DataFrame:
+    """Loads the parsed transcript.
+
+    Args:
+        transcript: The raw game transcript path.
+
+    Returns:
+        The parsed transcript as pandas Dataframe.
+    """
+    file = dataframe_path(transcript)
+    try:
+        return _read_dataframe(file)
+    except FileNotFoundError:
+        print('Parsed transcript not found: {}'.format(file))
+        return pd.DataFrame()
+
+
+def metadata_path(transcript: Path) -> Path:
     """Build the path to the game metadata.
 
     Args:
@@ -202,117 +182,25 @@ def metadata(transcript: Path) -> Path:
 
     Returns:
         Path to the game metadata file.
-
-    Examples:
-        >>> metadata(Path('1830_123456.txt'))
-        Path('1830_123456_metadata.json')
     """
     return _build_path(transcript, '_metadata.json')
 
 
-def states(transcript: Path) -> Path:
-    """Build the path to the final states.
+def metadata(transcript: Path) -> dict:
+    """Loads the metadata of the parsed transcript.
 
     Args:
-        transcript: The game transcript path.
+        transcript: The raw game transcript path.
 
     Returns:
-        Path to the final states file.
-
-    Examples:
-        >>> states(Path('1830_123456.txt'))
-        Path('1830_123456_states.json')
+        The metadata of the parsed transcript as dict.
     """
-    return _build_path(transcript, '_states.json')
-
-
-def serialized(transcript: Path) -> Path:
-    """Build the path to the serialized data.
-
-    Args:
-        transcript: The game transcript path.
-
-    Returns:
-        Path to the serialized data file.
-
-    Examples:
-        >>> serialized(Path('1830_123456.txt'))
-        Path('1830_123456_serialized.json')
-    """
-    return _build_path(transcript, '_serialized.json')
-
-
-def flattened(transcript: Path) -> Path:
-    """Build the path to the flattened data.
-
-    Args:
-        transcript: The game transcript path.
-
-    Returns:
-        Path to the flattened data file.
-
-    Examples:
-        >>> dataframe(Path('1830_123456.txt'))
-        Path('1830_123456_flattened.csv')
-    """
-    return _build_path(transcript, '_flattened.csv')
-
-
-def serialize(transcript: Path) -> dict:
-    """Serialize the game data to a json file.
-
-    Each entry is represented by its index as the key and the row data as a
-    dictionary to the index as value.
-
-    Args:
-        transcript: The path to the original transcript file.
-
-    Returns:
-        The serialized game data in a dictionary.
-    """
+    file = metadata_path(transcript)
     try:
-        df = _read_dataframe(dataframe(transcript))
-        result = df.to_dict(orient='index')
-    except FileNotFoundError as e:
-        print(e)
+        return _read_json(file)
+    except FileNotFoundError:
+        print('Metadata not found: {}'.format(file))
         return dict()
-    _write_json(serialized(transcript), result)
-    return result
-
-
-def flatten(transcript: Path) -> pd.DataFrame:
-    """Saves the game data as flatten structure.
-
-    Opens up the states to represent each entry of the player and company states
-    as a single column, e.g., "player1_cash". The columns representing the
-    player and company states as dicts are dropped.
-
-    Args:
-        transcript: The path to the original transcript file.
-
-    Returns:
-        The flatten game data in a pandas Dataframe.
-    """
-    try:
-        info = _read_json(metadata(transcript))
-        players = list(info['players'].keys())
-        game = games.Games.argparse('G{}'.format(info['game'])).select()
-        df = _read_dataframe(dataframe(transcript))
-        flat = df.apply(
-            lambda x: _flatten_states(x, players, game.companies),
-            axis=1,
-            result_type='expand'
-        )
-        result = pd.concat([df, flat], axis=1)
-        result.drop(players + list(game.companies), axis=1, inplace=True)
-    except FileNotFoundError as e:
-        print(e)
-        return pd.DataFrame()
-    except ValueError as e:
-        print(e)
-        return pd.DataFrame()
-    _write_dataframe(flattened(transcript), result)
-    return result
 
 
 def transcript_name(name: str) -> str:
@@ -341,55 +229,22 @@ def transcript_id(name: str) -> str:
     return name.split('_')[1]
 
 
-def expand_player_shares(df: pd.DataFrame, players: list[str]) -> pd.DataFrame:
-    """Expand the dicts containing player shares to columns.
-
-    Creates new columns for each player depicting the shares of one company,
-    e.g. `player1_shares_company1`. Column containing the player shares as dict
-    are dropped.
-
-    Args:
-        df: The flattened transcript.
-        players: The list of players.
-
-    Returns:
-        The flattened transcript with expanded shares.
-    """
-    for p in players:
-        shares = pd.DataFrame(
-            [ast.literal_eval(d) for d in df['{}_shares'.format(p)].tolist()]
+def full_verification(transcript: Path):
+    ground_truth = transcript.parent.joinpath(transcript.stem + '_truth.json')
+    if not ground_truth.exists():
+        raise FileNotFoundError(
+            'Verification file not found: {}'.format(ground_truth)
         )
-        shares.columns = [
-            '{}_shares_{}'.format(p, col) for col in shares.columns
-        ]
-        df = pd.concat([df, shares], axis=1)
-        df.drop('{}_shares'.format(p), inplace=True, axis=1)
-    return df
 
+    transcript_metadata = metadata(transcript)
+    final_state = transcript_metadata['final_state']
+    mapping = transcript_metadata['mapping']
+    for name, abbrev in mapping.items():
+        final_state = _replace(final_state, abbrev, name)
 
-def expand_company_trains(df: pd.DataFrame, game: games.Games) -> pd.DataFrame:
-    """Expand the dicts containing trains of companies to columns.
-
-    Creates new columns for each train a company could have, e.g.
-    `company1_trains_D`.
-
-    Args:
-        df: The flattened transcript.
-        game: The underlying 18xx game to extract companies and trains.
-
-    Returns:
-        The flattened transcript with expanded trains.
-    """
-    for c in game.select().companies:
-        trains = pd.DataFrame(
-            [ast.literal_eval(d) for d in df['{}_trains'.format(c)].tolist()]
-        )
-        trains.columns = [
-            '{}_trains_{}'.format(c, col) for col in trains.columns
-        ]
-        df = pd.concat([df, trains], axis=1)
-        df.drop('{}_trains'.format(c), inplace=True, axis=1)
-    return df
+    checker = verification.StateVerification()
+    ret = checker.run(final_state, _read_json(ground_truth), out=True)
+    return ret
 
 
 def _build_path(transcript: Path, suffix: str) -> Path:
@@ -424,14 +279,20 @@ def _write_dataframe(file: Path, df: pd.DataFrame) -> None:
     df.to_csv(file, index=False, sep=',')
 
 
-def _flatten_states(
-        row: pd.Series, players: list[str], companies: list[str]) -> pd.Series:
-    # Flatten the player and company states to a pandas Series.
-    result = pd.Series()
-    for p in sorted(players):
-        player_state = parsing.engine.player.PlayerState.eval(row[p])
-        result = pd.concat([result, player_state.flatten()])
-    for c in sorted(companies):
-        company_state = parsing.engine.company.CompanyState.eval(row[c])
-        result = pd.concat([result, company_state.flatten()])
-    return result
+def _replace(obj, old, new):
+    # Replaces the old with the new value in object.
+    if isinstance(obj, dict):
+        return {
+            k.replace(old, new): _replace(v, old, new) for k, v in
+            obj.items()
+        }
+    elif isinstance(obj, list):
+        return [_replace(item, old, new) for item in obj]
+    elif isinstance(obj, str):
+        return obj.replace(old, new)
+    elif isinstance(obj, pd.DataFrame):
+        obj.replace(old, new, regex=False, inplace=True)  # full strings
+        obj.columns = obj.columns.str.replace(old, new, regex=False)
+        return obj
+    else:
+        return obj

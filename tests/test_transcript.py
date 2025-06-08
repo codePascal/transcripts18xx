@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import io
-import json
-import os
 import unittest.mock
-
-import pandas as pd
 
 from transcripts18xx import transcript
 
@@ -21,38 +17,88 @@ class TestTranscriptParser(unittest.TestCase):
             raw_transcript, transcript.games.Game1830()
         )
         tp.parse()
-        os.remove(transcript.dataframe(raw_transcript))
-        os.remove(transcript.metadata(raw_transcript))
-        os.remove(transcript.states(raw_transcript))
-        tp.save()
-        cls.tp = tp
+        cls.df = tp._df
+        cls.metadata = tp._metadata
 
-    def test_final_state_anonym(self):
-        final_state = self.tp.final_state(anonym=True)
-        self.assertIsInstance(final_state, dict)
-        self.assertEqual(['players', 'companies'], list(final_state.keys()))
-        self.assertEqual(
-            {'player1', 'player2', 'player3', 'player4'},
-            set(final_state['players'].keys())
+    def test_player_mapping(self):
+        expected = {
+            'mpcoyne': 'player1',
+            'riverfiend': 'player2',
+            'leesin': 'player3',
+            'mpakfm': 'player4'
+        }
+        self.assertEqual(expected, self.metadata['mapping'])
+
+    def test_anonymization_final_data(self):
+        df = self.df.astype(str)
+        self.assertFalse(
+            df.apply(lambda x: x.str.contains('leesin')).any().any()
         )
-        self.assertEqual(
-            self.tp._game.companies, set(final_state['companies'].keys())
+        self.assertFalse(
+            df.apply(lambda x: x.str.contains('mpcoyne')).any().any()
+        )
+        self.assertFalse(
+            df.apply(lambda x: x.str.contains('mpakfm')).any().any()
+        )
+        self.assertFalse(
+            df.apply(lambda x: x.str.contains('riverfiend')).any().any()
         )
 
-    def test_final_state_not_anonym(self):
-        final_state = self.tp.final_state(anonym=False)
-        self.assertIsInstance(final_state, dict)
-        self.assertEqual(['players', 'companies'], list(final_state.keys()))
+    def test_last_state_evaluation(self):
+        expected_finish = 'BankBroke'
+        self.assertEqual(expected_finish, self.metadata['finished'])
+
+        expected_result = {
+            'player1': 6735,
+            'player3': 6648,
+            'player2': 5523,
+            'player4': 2740
+        }
+        self.assertEqual(expected_result, self.metadata['result'])
+
+        self.assertEqual('player1', self.metadata['winner'])
+
+    def test_metadata(self):
+        self.assertEqual('1830', self.metadata['game'])
+        self.assertEqual('201210', self.metadata['id'])
+        self.assertEqual(4, self.metadata['num_players'])
+
+
+class TestTranscriptRendering(unittest.TestCase):
+
+    def test_dataframe_path(self):
         self.assertEqual(
-            {'mpcoyne', 'mpakfm', 'leesin', 'riverfiend'},
-            set(final_state['players'].keys())
+            '1830_201210_final.csv',
+            transcript.dataframe_path(
+                context.transcript_1830()).relative_to(
+                context._resources()).__str__()
         )
+
+    def test_dataframe(self):
+        # TODO test
+        pass
+
+    def test_metadata_path(self):
         self.assertEqual(
-            self.tp._game.companies, set(final_state['companies'].keys())
+            '1830_201210_metadata.json',
+            transcript.metadata_path(context.transcript_1830()).relative_to(
+                context._resources()).__str__()
         )
+
+    def test_metadata(self):
+        # TODO test
+        pass
+
+    def test_transcript_name(self):
+        # TODO test
+        pass
+
+    def test_transcript_id(self):
+        # TODO test
+        pass
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
-    def test_verify_result_full(self, mock_stdout):
+    def test_full_verification(self, mock_stdout):
         expected = str(
             "===================================\n"
             "State Differences: Parsed vs. Truth\n"
@@ -74,115 +120,7 @@ class TestTranscriptParser(unittest.TestCase):
             "players.riverfiend.certs: '<missing>' != 17\n"
             "players.riverfiend.liquidity: '<missing>' != 5142\n"
             "-----------------------------------\n"
-            "Full verification successful\n"
-            "\n"
         )
-        self.tp.verify_result(minimal=False)
+        ret = transcript.full_verification(context.transcript_1830())
         self.assertEqual(expected, mock_stdout.getvalue())
-
-    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
-    def test_verify_result_minimal(self, mock_stdout):
-        expected = str(
-            "===================================\n"
-            "State Differences: Parsed vs. Truth\n"
-            "-----------------------------------\n"
-            "-----------------------------------\n"
-            "Minimal verification successful\n"
-            "\n"
-        )
-        self.tp.verify_result(minimal=True)
-        self.assertEqual(expected, mock_stdout.getvalue())
-
-    def test_result(self):
-        df = pd.read_csv(transcript.dataframe(context.transcript_1830()))
-        # FIXME: results are not equal
-        # self.assertTrue(df.equals(self.tp.result()))
-
-    def test_metadata(self):
-        with open(transcript.metadata(context.transcript_1830()), 'r') as f:
-            metadata = json.load(f)
-        self.assertEqual(
-            {'game', 'id', 'num_players', 'players'}, set(metadata.keys())
-        )
-        self.assertEqual('1830', metadata['game'])
-        self.assertEqual('201210', metadata['id'])
-        self.assertEqual(4, metadata['num_players'])
-        self.assertEqual(
-            {
-                'player1': 'mpcoyne',
-                'player2': 'riverfiend',
-                'player3': 'leesin',
-                'player4': 'mpakfm'
-            },
-            metadata['players']
-        )
-
-    def test_final_states(self):
-        with open(transcript.states(context.transcript_1830()), 'r') as f:
-            states = json.load(f)
-        self.assertEqual(states, self.tp.final_state(anonym=True))
-
-
-class TestTranscriptRendering(unittest.TestCase):
-
-    def test_dataframe_path(self):
-        self.assertEqual(
-            '1830_201210_final.csv',
-            transcript.dataframe(context.transcript_1830()).relative_to(
-                context._resources()).__str__()
-        )
-
-    def test_metadata_path(self):
-        self.assertEqual(
-            '1830_201210_metadata.json',
-            transcript.metadata(context.transcript_1830()).relative_to(
-                context._resources()).__str__()
-        )
-
-    def test_states_path(self):
-        self.assertEqual(
-            '1830_201210_states.json',
-            transcript.states(context.transcript_1830()).relative_to(
-                context._resources()).__str__()
-        )
-
-    def test_serialized_path(self):
-        self.assertEqual(
-            '1830_201210_serialized.json',
-            transcript.serialized(context.transcript_1830()).relative_to(
-                context._resources()).__str__()
-        )
-
-    def test_flattened_path(self):
-        self.assertEqual(
-            '1830_201210_flattened.csv',
-            transcript.flattened(context.transcript_1830()).relative_to(
-                context._resources()).__str__()
-        )
-
-    def test_serializing(self):
-        serialized_data = transcript.serialize(context.transcript_1830())
-        self.assertEqual(1346, len(serialized_data))
-        self.assertIsInstance(serialized_data[0], dict)
-        # TODO test
-
-    def test_flatten(self):
-        flattened_data = transcript.flatten(context.transcript_1830())
-        self.assertEqual(1346, flattened_data.shape[0])
-        # TODO test
-
-    def test_transcript_name(self):
-        # TODO test
-        pass
-
-    def test_transcript_id(self):
-        # TODO test
-        pass
-
-    def test_expand_player_shares(self):
-        # TODO test
-        pass
-
-    def test_expand_company_trains(self):
-        # TODO test
-        pass
+        self.assertTrue(ret)

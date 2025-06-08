@@ -60,18 +60,20 @@ class StateVerification(object):
                     diffs[full_path] = (val1, val2)
         return diffs
 
-    def run(self, parsed: dict, ground_truth: dict) -> bool:
+    def run(self, parsed: dict, ground_truth: dict, out: bool = False) -> bool:
         """Runs the comparison of the two state dicts.
 
         Args:
             parsed: The parsed state of the pipeline.
             ground_truth: The ground truth.
+            out: Print results to console if True.
 
         Returns:
             True if the two dicts are identical, False otherwise.
         """
         diffs = self._compare_nested_dicts(parsed, ground_truth)
         diffs = dict(sorted(diffs.items()))
-        self._display_differences(diffs)
+        if out:
+            self._display_differences(diffs)
         success = self._evaluate_differences(diffs)
         return success
