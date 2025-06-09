@@ -11,6 +11,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 
 - Detection of games manually ended by player.
+- Post-processing of transcript adds expected columns before running pipe.
 
 ### Changed
 
