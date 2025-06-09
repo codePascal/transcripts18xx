@@ -166,6 +166,15 @@ class TestGameOver(BaseStepTest):
         )
         self.assertMatch(events.GameOver(), line, expected)
 
+    # def test_match_whitespace_name(self):
+    #     line = '-- Game over: player1 ($200), player 3 ($100), player2 ($50) --'
+    #     expected = dict(
+    #         parent='Event',
+    #         type='GameOver',
+    #         result="{'player1': 200, 'player 3': 100, 'player2': 50}"
+    #     )
+    #     self.assertMatch(events.GameOver(), line, expected)
+
 
 class TestOperatingRound(BaseStepTest):
 
