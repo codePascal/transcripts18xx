@@ -86,20 +86,27 @@ class TranscriptParser(object):
             success=bool(),
             diffs=dict()
         )
+
         transcript_result = self._metadata['result']
         if not transcript_result:
             print('Game not finished, cannot verify the results')
             result['success'] = False
             return result
-        game_state_result = {
-            k: int(self._df['{}_value'.format(k)].iloc[-1]) for k in
-            transcript_result.keys()
-        }
+
+        game_state_result = dict()
+        for k, v in self._metadata['mapping'].items():
+            try:
+                value = self._df['{}_value'.format(v)].iloc[-1]
+                game_state_result[k] = int(value)
+            except KeyError as e:
+                raise KeyError('KeyError in game state: {}'.format(e))
+
         result['diffs'] = {
             k: (transcript_result[k], game_state_result[k]) for k in
             transcript_result.keys() & game_state_result.keys() if
             transcript_result[k] != game_state_result[k]
         }
+
         result['success'] = not result['diffs']
         return result
 

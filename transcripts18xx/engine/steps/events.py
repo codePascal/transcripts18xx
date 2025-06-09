@@ -175,13 +175,10 @@ class GameOver(EventStep):
         self.type = StepType.GameOver
 
     def _process_match(self, line: str, match) -> dict:
-        # FIXME: player names with white spaces
-        #   1830_189902.txt:
-        #   [00:23] -- Game over: Lpix ($7092), kirdape ($6629), hysbe ($6116),
-        #   Sandoid ($5933), Bart Kuiper ($5473), SwanofTrumpeter ($2020) --
-        pattern = re.compile(r'(\w+)\s+\(\$(\d+)\)')
+        # Match everything up to the next comma
+        pattern = re.compile(r'([^,]+?)\s+\(\$(\d+)\)')
         matches = re.findall(pattern, match.group(1))
-        result = {p: int(v) for p, v in matches}
+        result = {p.strip(): int(v) for p, v in matches}
         return dict(result=result.__str__())
 
 
