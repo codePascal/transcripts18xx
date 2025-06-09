@@ -1,7 +1,7 @@
 Examples
 ========
 
-Example script to parse and process a transcript from 18xx.games into a pandas
-Dataframe.
+Example script to parse and process a raw transcript into a structured Pandas
+DataFrame.
 
 .. literalinclude:: ../../main.py

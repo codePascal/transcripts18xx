@@ -1,53 +1,36 @@
 transcripts18xx package
 =======================
 
+Overview
+--------
+
+Package implements the entry point and core modules of the library.
+
 Subpackages
 -----------
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
    transcripts18xx.engine
+   transcripts18xx.pipe
 
 Submodules
 ----------
 
-transcripts18xx.games module
-----------------------------
+transcripts18xx.games
+^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: transcripts18xx.games
    :members:
    :show-inheritance:
    :undoc-members:
 
-transcripts18xx.parsing module
-------------------------------
-
-.. automodule:: transcripts18xx.parsing
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-transcripts18xx.transcript module
----------------------------------
+transcripts18xx.transcript
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: transcripts18xx.transcript
    :members:
    :show-inheritance:
    :undoc-members:
 
-transcripts18xx.verification module
------------------------------------
-
-.. automodule:: transcripts18xx.verification
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-Module contents
----------------
-
-.. automodule:: transcripts18xx
-   :members:
-   :show-inheritance:
-   :undoc-members:

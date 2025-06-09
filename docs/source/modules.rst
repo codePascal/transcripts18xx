@@ -2,6 +2,6 @@ transcripts18xx
 ===============
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
    transcripts18xx
