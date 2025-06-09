@@ -81,7 +81,7 @@ class TranscriptParser(object):
             winner = max(result, key=result.get)
             last_state['result'] = result
             last_state['winner'] = winner
-        self._df.drop('result', axis=1, inplace=True)
+            self._df.drop('result', axis=1, inplace=True)
         return last_state
 
     def _run_minimal_verification(self) -> dict:
