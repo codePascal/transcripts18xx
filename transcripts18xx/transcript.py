@@ -4,10 +4,8 @@
 
 Module implements the transcript processing pipeline with parsing the
 transcript, processing the result and mapping player and company states.
-
-The transcript name must follow this rule: `<title>_<id>.txt`.
-E.g.: `1830_201210.txt`, where `1830` is the title of the game and `201210` is
-the ID of the game.
+Further, implements functions to access results based on the raw
+transcript name and run full verification on these.
 """
 import json
 import pandas as pd
@@ -225,7 +223,26 @@ def transcript_id(name: str) -> str:
     return name.split('_')[1]
 
 
-def full_verification(transcript: Path):
+def full_verification(transcript: Path) -> bool:
+    """Run verification of the final state based on a ground truth file.
+
+    It assumes that the ground truth file is saved in the same directory as
+    the raw transcript, with `_truth.json` appended to the filename. E.g
+    `1830_123456_truth.json`.
+
+    Requires the raw transcript to be parsed and the metadata to be written.
+    Extracts the final state from the metadata and prints the differences
+    to the console.
+
+    Args:
+        transcript: The raw game transcript path.
+
+    Returns:
+        Success of the full verification.
+
+    Raises:
+        FileNotFoundError: If ground truth file was not found.
+    """
     ground_truth = transcript.parent.joinpath(transcript.stem + '_truth.json')
     if not ground_truth.exists():
         raise FileNotFoundError(
