@@ -7,25 +7,8 @@ from pathlib import Path
 
 
 def main():
-    # FIXME: update resources to display in docs and README.md
-    # update_resources()
     update()
     build()
-
-
-def update_resources():
-    # Update the resources linked in the README.md in the documentation folder.
-    source = Path('tests/resources')
-    target = Path('docs/source/_static')
-    files = [
-        '1830_201210_final.csv',
-        '1830_201210_metadata.json',
-        '1830_201210_states.json',
-        '1830_201210_serialized.json',
-        '1830_201210_flattened.csv'
-    ]
-    for file in files:
-        shutil.copy(source.joinpath(file), target.joinpath(file))
 
 
 def update():
