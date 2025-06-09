@@ -30,8 +30,7 @@ class TranscriptParser(object):
     Attributes:
         _transcript: The path to the game transcript.
         _game: The underlying 18xx game.
-        _name: The name of the transcript file, excluding suffix.
-        _dir: The parent directory of the transcript.
+        _metadata: The metadata to the parsing result.
         _df: The parsed transcript data.
 
     Args:
@@ -43,11 +42,8 @@ class TranscriptParser(object):
         self._transcript = transcript
         self._game = game
 
-        self._name = transcript.stem
-        self._dir = transcript.parent
-
         self._metadata = dict()
-        game_type, game_id = self._name.split('_')
+        game_type, game_id = transcript.stem.split('_')
         self._metadata['game'] = game_type
         self._metadata['id'] = game_id
 
