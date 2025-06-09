@@ -337,3 +337,14 @@ class TestPlayerGoesBankrupt(BaseStepTest):
     def test_state_update(self):
         # TODO
         pass
+
+
+class TestGameEndedManually(BaseStepTest):
+
+    def test_match(self):
+        line = 'Game ended manually by player1'
+        expected = dict(
+            parent='Event',
+            type='GameEndedManually',
+        )
+        self.assertMatch(events.GameEndedManually(), line, expected)

@@ -349,3 +349,14 @@ class PlayerGoesBankrupt(EventStep):
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         players.invoke(PlayerState.goes_bankrupt, dict(), row.player)
+
+
+class GameEndedManually(EventStep):
+
+    def __init__(self):
+        super().__init__()
+        self.pattern = re.compile(r'Game ended manually by (.*?)')
+        self.type = StepType.GameEndedManually
+
+    def _process_match(self, line: str, match) -> dict:
+        return dict()

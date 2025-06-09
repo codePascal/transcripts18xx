@@ -69,10 +69,14 @@ class TranscriptParser(object):
         if self._df.type.iloc[-1] != StepType.GameOver.name:
             last_state['finished'] = 'NotFinished'
         else:
-            if StepType.BankBroke.name in self._df.type.tolist():
-                last_state['finished'] = 'BankBroke'
-            elif StepType.PlayerGoesBankrupt.name in self._df.type.tolist():
-                last_state['finished'] = 'PlayerGoesBankrupt'
+            possible_endings = [
+                StepType.BankBroke,
+                StepType.PlayerGoesBankrupt,
+                StepType.GameEndedManually
+            ]
+            for possible_ending in possible_endings:
+                if possible_ending.name in self._df.type.tolist():
+                    last_state['finished'] = possible_ending.name
             result = ast.literal_eval(self._df.result.iloc[-1])
             winner = max(result, key=result.get)
             last_state['result'] = result
