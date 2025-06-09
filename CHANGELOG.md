@@ -12,13 +12,23 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Function to retrieve game name from game enum, e.g., `G1830` -> `1830`.
 - Functions to retrieve transcript identifier and ID from filename.
-- Functions to expand dicts containing player shares and company trains.
 
 ### Changed
 
 - Made package `pipe` consisting of parsing and verification module.
+- Parsed result expands the player and company states, including shares and
+  train dictionaries
+- Private dicts in parsed result are dumped to a json string.
+- Invoking parse function will save the results and run minimal verification in
+  any case.
+- Full verification can be invoked as standalone.
+- Metadata includes now final state, game ending, result and winner, unprocessed
+  lines during parsing, and verification result of player values.
 
 ### Removed
+
+- Option to flatten the result: Parsed result flattens the states now.
+- Option to serialize the result.
 
 ### Fixed
 
