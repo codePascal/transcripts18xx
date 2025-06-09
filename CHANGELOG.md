@@ -10,6 +10,16 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+### Changed
+
+### Removed
+
+### Fixed
+
+## [2.0.0] - 2025-06-09
+
+### Added
+
 - Function to retrieve game name from game enum, e.g., `G1830` -> `1830`.
 - Functions to retrieve transcript identifier and ID from filename.
 
