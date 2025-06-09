@@ -25,9 +25,14 @@ information.
 Library usage
 -------------
 
+### Transcript parser
+
 The core of the library is the `transcript` module.
 It implements a transcript parser than takes the path to the transcript and the
 game type as argument.
+The parser parses the raw transcript into a Pandas DataFrame.
+Actions and events of the game are represented as rows depicting the phase,
+round, player and company states.
 
 ```pycon
 >>> from transcripts18xx import transcript
@@ -35,107 +40,30 @@ game type as argument.
 >>> transcript_path = Path('1830_123456.txt')
 >>> game_type = transcript.games.Game1830()
 >>> parser = transcript.TranscriptParser(transcript_path, game_type)
-```
-
-### Parsing the transcript
-
-The transcript parser parses the raw transcript into a pandas Dataframe.
-Actions and events of the game are represented as rows depicting the phase,
-round, player and company states.
-
-```pycon
 >>> parser.parse()
 ```
 
-### Saving the results
-
-The full data consisting of the dataframe, metadata and final state can then
-be saved.
-
-```pycon
->>> parser.save()
-```
-
-This will create three files within the transcript directory:
+This will create two new files within the transcript directory:
 
 ```
 /
-├── 1830_123456.txt             --> The original raw transcript
+├── 1830_123456.txt
 ├── 1830_123456_final.csv       --> The parsed final transcript data
-├── 1830_123456_metadata.json   --> The metadata of the game
-└── 1830_123456_states.json     --> The final states of player and companies
+└── 1830_123456_metadata.json   --> The metadata of the game
 ```
 
 #### Parsed transcript
 
 The [parsing output](docs/source/_static/1830_201210_final.csv) is saved as
-pandas Dataframe.
+Pandas DataFrame.
 
 #### Game metadata
 
-The [game metadata](docs/source/_static/1830_201210_metadata.json) saves the 
+The [game metadata](docs/source/_static/1830_201210_metadata.json) saves the
 game type, game id, number of players and the player mapping.
 The player mapping depicts the anonymization that is performed in order to
 generalize the result.
 
-#### Final states
-
-The [final states](docs/source/_static/1830_201210_states.json) represent the
-player and company states after the game ended.
-As noted above, the player names are anonymized and can be replicated using
-the game metadata.
-
-### Modifying the results
-
-The library implements two functions to modify the resulting data into other
-structures than a pandas Dataframe.
-
-#### Serializing the data
-
-The data can be serialized into a dictionary with the keys representing the
-row indexes and the values representing the row data as dictionary.
-The function requires the original raw transcript path as argument.
-
-```pycon
->>> transcript_path = Path('1830_123456.txt')
->>> transcript.serialize(transcript_path)
-```
-
-The [serialized data](docs/source/_static/1830_201210_serialized.json) will be
-saved in the transcript directory as well:
-
-```
-/
-├── 1830_123456.txt
-├── 1830_123456_final.csv
-├── 1830_123456_metadata.json
-├── 1830_123456_states.json
-└── 1830_123456_serialized.json --> The serialized data
-```
-
-#### Flattening the data
-
-The data can be flattened into a pandas Dataframe.
-The dictionaries representing the player and company states are expanded to
-columns in the dataframe, e.g. `player1_cash`.
-The function requires the original raw transcript path as argument.
-
-```pycon
->>> transcript_path = Path('1830_123456.txt')
->>> transcript.flatten(transcript_path)
-```
-
-The [flattened data](docs/source/_static/1830_201210_flattened.csv) will be
-saved in the transcript directory as well:
-
-```
-/
-├── 1830_123456.txt
-├── 1830_123456_final.csv
-├── 1830_123456_metadata.json
-├── 1830_123456_states.json
-└── 1830_123456_flattened.csv   --> The flattened data
-```
 
 Supported Games
 ---------------
