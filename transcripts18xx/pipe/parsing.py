@@ -7,6 +7,7 @@ Module implements classes that build the algorithm to parse a transcript from
 of a parser to handle the raw transcript, a processor that cleans and
 post-processes the transcript and a mapper for the game state.
 """
+import numpy as np
 import pandas as pd
 import re
 
@@ -92,6 +93,7 @@ class TranscriptPostProcessor(object):
     Attributes:
         _df: The parsed transcript.
         _game: The underlying 18xx game.
+        _required_columns: Required columns for post-processing.
 
     Args:
         df: The parsed transcript.
@@ -102,12 +104,26 @@ class TranscriptPostProcessor(object):
         self._df = df
         self._game = game
 
+        self._required_columns = [
+            'phase', 'type', 'parent', 'id', 'player', 'amount', 'private',
+            'entity', 'source', 'percentage', 'company', 'share_price',
+            'sequence', 'location', 'tile', 'rotation', 'direction', 'train',
+            'route', 'per_share', 'old_train', 'new_train'
+        ]
+
+    def _add_missing_columns(self):
+        self._df = self._df.reindex(
+            columns=self._df.columns.union(self._required_columns),
+            fill_value=np.nan
+        )
+
     def _map_phase(self):
         # Populates phase with forward propagation.
         self._df.phase = self._df.phase.ffill()
 
     def _map_rounds(self):
         # Populates rounds with forward propagation.
+        self._df.sequence = self._df.sequence.astype(str)
         if pd.isna(self._df.sequence[0]):
             # Retrieves the initial round identifier from the game.
             self._df.loc[0, 'sequence'] = self._game.initial_round
@@ -175,6 +191,7 @@ class TranscriptPostProcessor(object):
         Returns:
             The processed transcript data and the player mapping.
         """
+        self._add_missing_columns()
         self._map_phase()
         self._map_rounds()
         self._remove_transcript_lines()
@@ -222,14 +239,20 @@ class GameStateProcessor(object):
     Args:
         df: The cleaned and processed transcript.
         game: The underlying 18xx game.
+
+    Raises:
+        AttributeError: If there are no players to initiate the game state.
     """
 
     def __init__(self, df: pd.DataFrame, game: Game18xx):
         self._df = df
         self._game = game
 
+        players = list(df.player.dropna().unique())
+        if not players:
+            raise AttributeError('No players found in transcript')
         self._game_state = engine.GameState(
-            df.player.dropna().unique(),
+            players,
             sorted(game.companies),
             game.start_capital,
             game.trains,
