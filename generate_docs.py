@@ -7,7 +7,8 @@ from pathlib import Path
 
 
 def main():
-    update_resources()
+    # FIXME: update resources to display in docs and README.md
+    # update_resources()
     update()
     build()
 
