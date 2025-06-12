@@ -17,8 +17,10 @@ Args
 * game              The game identifier used to select game rules.
 * transcript        Path to the text file containing the transcript.
 * --skip-verify     Skips final game state verification.
+* --debug           Enable debug output in logger.
 """
 import argparse
+import logging
 
 from pathlib import Path
 
@@ -45,14 +47,28 @@ def parse_arguments():
         action='store_true',
         help='Skip the verification of the final state'
     )
+    parser.add_argument(
+        '--debug',
+        action='store_true',
+        help='Enable debug output of logger'
+    )
     return parser.parse_args()
 
 
 def main(args):
+    level = logging.INFO
+    if args.debug:
+        level = logging.DEBUG
+    logging.basicConfig(
+        level=level,
+        format='%(asctime)s [%(threadName)s] %(levelname)s: %(message)s',
+        handlers=[
+            logging.FileHandler('main.log', mode='w'),
+            logging.StreamHandler()
+        ]
+    )
+
     game = args.game.select()
-    if not args.transcript.exists():
-        print('Transcript does not exist: {}'.format(args.transcript))
-        return
     parser = transcript.TranscriptParser(args.transcript, game)
     parser.parse()
     if not args.skip_verify:

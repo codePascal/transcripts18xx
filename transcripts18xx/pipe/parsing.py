@@ -250,7 +250,7 @@ class GameStateProcessor(object):
 
         players = list(df.player.dropna().unique())
         if not players:
-            raise AttributeError('No players found in transcript')
+            raise AttributeError('No players found')
         self._game_state = engine.GameState(
             players,
             sorted(game.companies),

@@ -10,12 +10,15 @@ transcript name and run full verification on these.
 import json
 import pandas as pd
 import ast
+import logging
 
 from pathlib import Path
 
 from . import games
 from .pipe import parsing, verification
 from .engine.steps.step import StepType
+
+logger = logging.getLogger(__name__)
 
 
 class TranscriptParser(object):
@@ -93,7 +96,7 @@ class TranscriptParser(object):
 
         transcript_result = self._metadata['result']
         if not transcript_result:
-            print('Game not finished, cannot verify the results')
+            logger.info('Game not finished, cannot verify the results')
             result['success'] = False
             return result
 
@@ -103,9 +106,7 @@ class TranscriptParser(object):
                 value = self._df['{}_value'.format(v)].iloc[-1]
                 game_state_result[k] = int(value)
             except KeyError:
-                raise KeyError(
-                    'Player value not found in game state: {}_value'.format(v)
-                )
+                raise AttributeError('Player not found: {}'.format(v))
 
         result['diffs'] = {
             k: (transcript_result[k], game_state_result[k]) for k in
@@ -126,7 +127,15 @@ class TranscriptParser(object):
 
         Returns:
             The metadata of the parse result.
+
+        Raises:
+            FileNotFoundError: If transcript does not exist.
         """
+        if not self._transcript:
+            raise FileNotFoundError(
+                'Transcript does not exist: {}'.format(self._transcript)
+            )
+
         gtp = parsing.GameTranscriptProcessor()
         df_parsed = gtp.parse_transcript(self._transcript)
         tpp = parsing.TranscriptPostProcessor(df_parsed, self._game)
@@ -177,7 +186,7 @@ def dataframe(transcript: Path) -> pd.DataFrame:
     try:
         return _read_dataframe(file)
     except FileNotFoundError:
-        print('Parsed transcript not found: {}'.format(file))
+        logger.error('Parsed transcript not found: {}'.format(file))
         return pd.DataFrame()
 
 
@@ -206,7 +215,7 @@ def metadata(transcript: Path) -> dict:
     try:
         return _read_json(file)
     except FileNotFoundError:
-        print('Metadata not found: {}'.format(file))
+        logger.error('Metadata not found: {}'.format(file))
         return dict()
 
 
