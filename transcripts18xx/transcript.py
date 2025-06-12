@@ -102,8 +102,10 @@ class TranscriptParser(object):
             try:
                 value = self._df['{}_value'.format(v)].iloc[-1]
                 game_state_result[k] = int(value)
-            except KeyError as e:
-                raise KeyError('KeyError in game state: {}'.format(e))
+            except KeyError:
+                raise KeyError(
+                    'Player value not found in game state: {}_value'.format(v)
+                )
 
         result['diffs'] = {
             k: (transcript_result[k], game_state_result[k]) for k in
