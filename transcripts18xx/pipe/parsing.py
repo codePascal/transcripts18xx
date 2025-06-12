@@ -145,7 +145,7 @@ class TranscriptPostProcessor(object):
                 row.player = row.entity
             return row
 
-        self._df = self._df.apply(lambda x: _entity(x), axis=1)
+        self._df = self._df.apply(lambda x: _entity(x.copy()), axis=1)
         self._df.drop('entity', axis=1, inplace=True)
 
     def _clean_locations(self):
