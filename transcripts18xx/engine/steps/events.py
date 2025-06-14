@@ -337,7 +337,7 @@ class PlayerGoesBankrupt(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(
-            r'-- (\w+) goes bankrupt and sells remaining shares --'
+            r'-- (.*?) goes bankrupt and sells remaining shares --'
         )
         self.type = StepType.PlayerGoesBankrupt
 
