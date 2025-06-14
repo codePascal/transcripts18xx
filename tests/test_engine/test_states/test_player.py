@@ -18,7 +18,7 @@ class TestPlayerState(unittest.TestCase):
             str(
                 "{'name': 'player1', 'cash': 100, 'privates': {}, "
                 "'value': 100, 'shares': {'company1': 0, 'company2': 0}, "
-                "'priority_deal': False}"
+                "'priority_deal': False, 'is_bankrupt': False}"
             ),
             self.player.__repr__()
         )
@@ -27,7 +27,7 @@ class TestPlayerState(unittest.TestCase):
         rep = str(
             "{'name': 'player1', 'cash': 150, 'privates': {}, "
             "'value': 200, 'shares': {'company1': 2, 'company2': 0}, "
-            "'priority_deal': True}"
+            "'priority_deal': True, 'is_bankrupt': False}"
         )
         st = player.PlayerState.eval(rep)
         self.assertEqual('player1', st.name)
@@ -114,13 +114,13 @@ class TestPlayers(unittest.TestCase):
             str(
                 "{'name': 'player1', 'cash': 150, 'privates': {}, "
                 "'value': 150, 'shares': {'company1': 0, 'company2': 0}, "
-                "'priority_deal': False}\n"
+                "'priority_deal': False, 'is_bankrupt': False}\n"
                 "{'name': 'player2', 'cash': 150, 'privates': {}, "
                 "'value': 150, 'shares': {'company1': 0, 'company2': 0}, "
-                "'priority_deal': False}\n"
+                "'priority_deal': False, 'is_bankrupt': False}\n"
                 "{'name': 'player3', 'cash': 150, 'privates': {}, "
                 "'value': 150, 'shares': {'company1': 0, 'company2': 0}, "
-                "'priority_deal': False}\n"
+                "'priority_deal': False, 'is_bankrupt': False}\n"
             ),
             self.players.__repr__()
         )

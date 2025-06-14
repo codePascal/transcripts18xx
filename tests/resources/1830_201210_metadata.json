@@ -33,7 +33,8 @@
           "NYNH": 0,
           "PRR": 1
         },
-        "priority_deal": false
+        "priority_deal": false,
+        "is_bankrupt": false
       },
       "player2": {
         "name": "player2",
@@ -50,7 +51,8 @@
           "NYNH": 2,
           "PRR": 1
         },
-        "priority_deal": false
+        "priority_deal": false,
+        "is_bankrupt": false
       },
       "player3": {
         "name": "player3",
@@ -67,7 +69,8 @@
           "NYNH": 6,
           "PRR": 8
         },
-        "priority_deal": false
+        "priority_deal": false,
+        "is_bankrupt": false
       },
       "player4": {
         "name": "player4",
@@ -84,7 +87,8 @@
           "NYNH": 0,
           "PRR": 0
         },
-        "priority_deal": true
+        "priority_deal": true,
+        "is_bankrupt": false
       }
     },
     "companies": {

@@ -175,10 +175,6 @@ class GameState(object):
         players: The maintainer class for all players.
         companies: The maintainer class for all companies.
         privates: The available privates and their values.
-
-    TODO:
-        if player goes bankrupt and sells remaining shares, these do not
-        add up to its cash and value!
     """
 
     def __init__(self, players: list[str], companies: list[str],

@@ -32,6 +32,7 @@ class PlayerState(State):
         value: The value of the player, i.e., the cash, the shares and privates.
         shares: The company shares the player holds.
         priority_deal: Whether the player has priority in the next SR.
+        is_bankrupt: Flag to denote that player is bankrupt.
     """
 
     def __init__(self, name: str, initial_cash: int, shares: dict):
@@ -41,6 +42,8 @@ class PlayerState(State):
         self.value = initial_cash
         self.shares = shares.copy()
         self.priority_deal = False
+
+        self.is_bankrupt = False
 
     def __eq__(self, other):
         return (
@@ -103,7 +106,8 @@ class PlayerState(State):
     def sells_shares(self, company: str, num_shares: int,
                      amount: int) -> None:
         self.shares[company] -= num_shares
-        self.cash += amount
+        if not self.is_bankrupt:
+            self.cash += amount
 
     def sells_private(self, private: str, amount: int, value: int):
         self.privates.pop(private)
@@ -120,6 +124,7 @@ class PlayerState(State):
 
     def goes_bankrupt(self):
         self.cash = 0
+        self.is_bankrupt = True
 
     def exchanges_private_for_share(self, private: str, num_shares: int,
                                     company: str) -> None:

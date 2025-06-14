@@ -272,6 +272,7 @@ def full_verification(transcript: Path) -> bool:
     mapping = transcript_metadata['mapping']
     for name, abbrev in mapping.items():
         final_state = _replace(final_state, abbrev, name)
+        final_state.get('players')[name].pop('is_bankrupt')
 
     checker = verification.StateVerification()
     ret = checker.run(final_state, _read_json(ground_truth), out=True)
