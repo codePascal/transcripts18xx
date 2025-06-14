@@ -112,8 +112,9 @@ class TranscriptPostProcessor(object):
         ]
 
     def _add_missing_columns(self):
+        missing_columns = set(self._required_columns) - (set(self._df.columns))
         self._df = self._df.reindex(
-            columns=self._df.columns.union(self._required_columns),
+            columns=self._df.columns.union(missing_columns),
             fill_value=np.nan
         )
 
@@ -123,7 +124,6 @@ class TranscriptPostProcessor(object):
 
     def _map_rounds(self):
         # Populates rounds with forward propagation.
-        self._df.sequence = self._df.sequence.astype(str)
         if pd.isna(self._df.sequence[0]):
             # Retrieves the initial round identifier from the game.
             self._df.loc[0, 'sequence'] = self._game.initial_round
@@ -192,6 +192,7 @@ class TranscriptPostProcessor(object):
             The processed transcript data and the player mapping.
         """
         self._add_missing_columns()
+        # TODO: parse the GameOver step for players
         self._map_phase()
         self._map_rounds()
         self._remove_transcript_lines()
