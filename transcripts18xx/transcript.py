@@ -104,17 +104,13 @@ class TranscriptParser(object):
         for k, v in self._metadata['mapping'].items():
             try:
                 value = self._df['{}_value'.format(v)].iloc[-1]
-                game_state_result[k] = int(value)
+                game_state_result[v] = int(value)
             except KeyError:
                 raise AttributeError('Player not found: {}'.format(v))
 
-        result['diffs'] = {
-            k: (transcript_result[k], game_state_result[k]) for k in
-            transcript_result.keys() & game_state_result.keys() if
-            transcript_result[k] != game_state_result[k]
-        }
-
-        result['success'] = not result['diffs']
+        checker = verification.StateVerification()
+        result['success'] = checker.run(game_state_result, transcript_result)
+        result['diffs'] = checker.diffs()
         return result
 
     def parse(self) -> dict:

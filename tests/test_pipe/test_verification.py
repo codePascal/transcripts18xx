@@ -107,3 +107,11 @@ class TestStateVerification(unittest.TestCase):
         st = verification.StateVerification()
         ret = st.run(d1, d2)
         self.assertTrue(ret)
+
+    def test_diffs(self):
+        d1 = dict(x=10, y='some string', z=dict(a=1, b=3, c=['abc']))
+        d2 = dict(x=10, z=dict(a=1, b=3, c=['abc']))
+
+        st = verification.StateVerification()
+        st.run(d1, d2)
+        self.assertEqual({'y': ('some string', '<missing>')}, st.diffs())

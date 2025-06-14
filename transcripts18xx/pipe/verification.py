@@ -15,10 +15,12 @@ class StateVerification(object):
 
     Attributes:
         _missing: Key to indicate that value or key is missing in either dict.
+        _diffs: The differences detected.
     """
 
     def __init__(self):
         self._missing = '<missing>'
+        self._diffs = dict()
 
     @staticmethod
     def _display_differences(diffs: dict) -> None:
@@ -71,9 +73,19 @@ class StateVerification(object):
         Returns:
             True if the two dicts are identical, False otherwise.
         """
+        self._diffs = dict()
         diffs = self._compare_nested_dicts(parsed, ground_truth)
         diffs = dict(sorted(diffs.items()))
         if out:
             self._display_differences(diffs)
         success = self._evaluate_differences(diffs)
+        self._diffs = diffs
         return success
+
+    def diffs(self) -> dict:
+        """Retrieve the detected differences.
+
+        Returns:
+            The detected differences, if any.
+        """
+        return self._diffs
