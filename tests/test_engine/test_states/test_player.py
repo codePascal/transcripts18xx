@@ -95,6 +95,12 @@ class TestPlayerState(unittest.TestCase):
         self.player.goes_bankrupt()
         self.assertEqual(0, self.player.cash)
 
+    def test_exchanges_private_for_share(self):
+        self.player.privates['private1'] = 20
+        self.player.exchanges_private_for_share('private1', 2, 'company2')
+        self.assertFalse(self.player.privates)
+        self.assertEqual(2, self.player.shares['company2'])
+
 
 class TestPlayers(unittest.TestCase):
 

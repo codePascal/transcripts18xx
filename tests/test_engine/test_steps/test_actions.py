@@ -716,3 +716,25 @@ class TestContribute(BaseStepTest):
     def test_state_update(self):
         # TODO
         pass
+
+
+class TestExchangePrivate(BaseStepTest):
+
+    def test_match(self):
+        line = str(
+            'p4 exchanges Mohawk & Hudson from the IPO for a 10% share of NYC'
+        )
+        expected = dict(
+            parent='Action',
+            type='ExchangePrivate',
+            player='p4',
+            private='Mohawk & Hudson',
+            source='IPO',
+            percentage='10',
+            company='NYC'
+        )
+        self.assertMatch(actions.ExchangePrivate(), line, expected)
+
+    def test_state_update(self):
+        # TODO
+        pass

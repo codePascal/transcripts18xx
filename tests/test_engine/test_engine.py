@@ -15,11 +15,11 @@ class TestEngineSteps(unittest.TestCase):
 
     def test__patterns(self):
         subclasses = self.pattern._patterns()
-        self.assertEqual(63, len(subclasses))
+        self.assertEqual(64, len(subclasses))
 
     def test_patterns(self):
         subclasses = self.pattern.patterns()
-        self.assertEqual(61, len(subclasses))
+        self.assertEqual(62, len(subclasses))
 
 
 class TestLineParser(unittest.TestCase):

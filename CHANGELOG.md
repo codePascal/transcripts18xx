@@ -12,6 +12,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Detection of games manually ended by player.
 - Post-processing of transcript adds expected columns before running pipe.
+- Detection of private exchange of player for shares from company.
 
 ### Changed
 

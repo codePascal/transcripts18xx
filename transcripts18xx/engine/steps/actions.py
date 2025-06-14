@@ -680,3 +680,39 @@ class Contribute(ActionStep):
             dict(amount=row.amount),
             row.company
         )
+
+
+class ExchangePrivate(ActionStep):
+
+    def __init__(self):
+        super().__init__()
+        self.pattern = re.compile(
+            r'(.*?) exchanges (.*?) from the (\w+) for a (\d+)0% share of (.*)'
+        )
+        self.type = StepType.ExchangePrivate
+
+    def _process_match(self, line: str, match) -> dict:
+        return dict(
+            player=match.group(1),
+            private=match.group(2),
+            source=match.group(3),
+            percentage='{}{}'.format(match.group(4), '0'),
+            company=match.group(5)
+        )
+
+    def _update(self, row: pd.Series, players: Players, companies: Companies,
+                privates: dict) -> None:
+        players.invoke(
+            PlayerState.exchanges_private_for_share,
+            dict(
+                private=row.private,
+                num_shares=int(0.1 * row.percentage),
+                company=row.company
+            ),
+            row.player
+        )
+        companies.invoke(
+            CompanyState.sells_share,
+            dict(num_shares=int(0.1 * row.percentage), source=row.source),
+            row.company
+        )

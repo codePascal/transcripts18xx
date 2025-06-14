@@ -121,6 +121,11 @@ class PlayerState(State):
     def goes_bankrupt(self):
         self.cash = 0
 
+    def exchanges_private_for_share(self, private: str, num_shares: int,
+                                    company: str) -> None:
+        self.privates.pop(private)
+        self.shares[company] += num_shares
+
 
 class Players(States):
     """Players
