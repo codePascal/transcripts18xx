@@ -25,6 +25,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Missing columns are added in post-processing step.
 - State verification of player values in game state and transcript result.
 - Regex pattern for PlayerGoesBankrupt: Detect special characters as well.
+- Sold shares when bankrupt do not add up to a players cash.
 
 ## [2.0.0] - 2025-06-09
 
