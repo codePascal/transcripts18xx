@@ -126,7 +126,7 @@ class TranscriptPostProcessor(object):
         # Populates rounds with forward propagation.
         if pd.isna(self._df.sequence[0]):
             # Retrieves the initial round identifier from the game.
-            self._df.sequence = self._df.sequence.astype(str)
+            self._df.sequence = self._df.sequence.astype(object)
             self._df.loc[0, 'sequence'] = self._game.initial_round
         self._df.sequence = self._df.sequence.ffill()
 
