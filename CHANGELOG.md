@@ -21,6 +21,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Regex pattern for GameOver: Detects everything up to the next comma (including
   spaces, hyphens, special letters, etc.)
+- State verification of player values in game state and transcript result.
 
 ## [2.0.0] - 2025-06-09
 
