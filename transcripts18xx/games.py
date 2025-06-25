@@ -61,6 +61,32 @@ class Game1830(Game18xx):
         self.start_capital = 2400
 
 
+class Game1889(Game18xx):
+    """Game1889
+
+    See Also:
+        https://github.com/tobymao/18xx/wiki/1889
+    """
+
+    def __init__(self):
+        super().__init__()
+
+        self.companies = {
+            'AR', 'IR', 'KO', 'KU', 'SR', 'TR', 'UR'
+        }
+        self.privates = {
+            'Takamatsu E-Railroad': 20,
+            'Mitsubishi Ferry': 30,
+            'Ehime Railway': 40,
+            'Sumitomo Mines Railway': 50,
+            'Dougo Railway': 60,
+            'South Iyo Railway': 80
+        }
+        self.trains = {'2', '3', '4', '5', '6', 'D'}
+        self.initial_round = 'ISR 1'
+        self.start_capital = 0  # TODO: depends on number of players
+
+
 class Games(enum.IntEnum):
     """Games
 
@@ -68,6 +94,7 @@ class Games(enum.IntEnum):
     uppercase `G` prepended before the actual game name, e.g., `G1830`, `G1882`.
     """
     G1830 = 0
+    G1889 = 1
 
     def __str__(self) -> str:
         # Return name for usage in argparse
