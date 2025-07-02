@@ -1,0 +1,240 @@
+{
+  "players": {
+    "mindbomb(UTC+9)": {
+      "name": "mindbomb(UTC+9)",
+      "cash": 1577,
+      "value": 2807,
+      "liquidity": 2627,
+      "certs": 10,
+      "privates": {},
+      "shares": {
+        "AR": 1,
+        "IR": 0,
+        "KO": 2,
+        "KU": 2,
+        "SR": 6,
+        "TR": 0,
+        "UR": 0
+      },
+      "priority_deal": true
+    },
+    "istarlan": {
+      "name": "istarlan",
+      "cash": 1835,
+      "value": 3775,
+      "liquidity": 3425,
+      "certs": 11,
+      "privates": {},
+      "shares": {
+        "AR": 3,
+        "IR": 0,
+        "KO": 1,
+        "KU": 0,
+        "SR": 1,
+        "TR": 1,
+        "UR": 6
+      },
+      "priority_deal": false
+    },
+    "Sprint": {
+      "name": "Sprint",
+      "cash": 2223,
+      "value": 3968,
+      "liquidity": 3813,
+      "certs": 11,
+      "privates": {},
+      "shares": {
+        "AR": 0,
+        "IR": 0,
+        "KO": 1,
+        "KU": 6,
+        "SR": 0,
+        "TR": 5,
+        "UR": 1
+      },
+      "priority_deal": false
+    },
+    "Millie": {
+      "name": "Millie",
+      "cash": 1538,
+      "value": 2468,
+      "liquidity": 2468,
+      "certs": 8,
+      "privates": {},
+      "shares": {
+        "AR": 0,
+        "IR": 1,
+        "KO": 1,
+        "KU": 1,
+        "SR": 1,
+        "TR": 3,
+        "UR": 1
+      },
+      "priority_deal": false
+    },
+    "zorbak": {
+      "name": "zorbak",
+      "cash": 1529,
+      "value": 2804,
+      "liquidity": 2534,
+      "certs": 11,
+      "privates": {},
+      "shares": {
+        "AR": 0,
+        "IR": 6,
+        "KO": 4,
+        "KU": 0,
+        "SR": 1,
+        "TR": 1,
+        "UR": 1
+      },
+      "priority_deal": false
+    },
+    "tado": {
+      "name": "tado",
+      "cash": 2299,
+      "value": 4249,
+      "liquidity": 3899,
+      "certs": 11,
+      "privates": {},
+      "shares": {
+        "AR": 6,
+        "IR": 1,
+        "KO": 1,
+        "KU": 1,
+        "SR": 1,
+        "TR": 0,
+        "UR": 1
+      },
+      "priority_deal": false
+    }
+  },
+  "companies": {
+    "AR": {
+      "name": "AR",
+      "cash": 60,
+      "ipo": 0,
+      "market": 0,
+      "president": "tado",
+      "tokens": 0,
+      "share_price": 200,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 2,
+        "6": 0,
+        "D": 0
+      }
+    },
+    "IR": {
+      "name": "IR",
+      "cash": 284,
+      "ipo": 0,
+      "market": 2,
+      "president": "zorbak",
+      "tokens": 0,
+      "share_price": 90,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "D": 1
+      }
+    },
+    "KO": {
+      "name": "KO",
+      "cash": 82,
+      "ipo": 0,
+      "market": 0,
+      "president": "zorbak",
+      "tokens": 0,
+      "share_price": 90,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 1,
+        "D": 0
+      }
+    },
+    "KU": {
+      "name": "KU",
+      "cash": 20,
+      "ipo": 0,
+      "market": 0,
+      "president": "Sprint",
+      "tokens": 0,
+      "share_price": 155,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "D": 1
+      }
+    },
+    "SR": {
+      "name": "SR",
+      "cash": 0,
+      "ipo": 0,
+      "market": 0,
+      "president": "mindbomb(UTC+9)",
+      "tokens": 0,
+      "share_price": 90,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "D": 1
+      }
+    },
+    "TR": {
+      "name": "TR",
+      "cash": 9,
+      "ipo": 0,
+      "market": 0,
+      "president": "Sprint",
+      "tokens": 0,
+      "share_price": 110,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "D": 0
+      }
+    },
+    "UR": {
+      "name": "UR",
+      "cash": 0,
+      "ipo": 0,
+      "market": 0,
+      "president": "istarlan",
+      "tokens": 1,
+      "share_price": 175,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 1,
+        "D": 0
+      }
+    }
+  }
+}

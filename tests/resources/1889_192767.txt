@@ -1,0 +1,1074 @@
+-- 2025-01-07 --
+[05:49] -- Phase 2 (Operating Rounds: 1 | Train Limit: 4 | Available Tiles: Yellow) --
+[05:49] Sprint bids ¥35 for Mitsubishi Ferry
+[14:12] Millie bids ¥45 for Ehime Railway
+[15:16] zorbak bids ¥55 for Sumitomo Mines Railway
+[16:16] tado bids ¥155 for Uno-Takamatsu Ferry
+[16:41] mindbomb(UTC+9) bids ¥85 for South Iyo Railway
+[17:50] camping no reception bids ¥65 for Dougo Railway
+[17:54] Sprint passes bidding
+[17:58] Millie buys Takamatsu E-Railroad for ¥20
+[17:58] Sprint wins the auction for Mitsubishi Ferry with the only bid of ¥35
+[17:58] Millie wins the auction for Ehime Railway with the only bid of ¥45
+[17:58] zorbak wins the auction for Sumitomo Mines Railway with the only bid of ¥55
+[17:58] camping no reception wins the auction for Dougo Railway with the only bid of ¥65
+[17:58] mindbomb(UTC+9) wins the auction for South Iyo Railway with the only bid of ¥85
+[17:58] tado wins the auction for Uno-Takamatsu Ferry with the only bid of ¥155
+[17:58] zorbak has priority deal
+[17:58] -- Stock Round 1 --
+[20:11] zorbak pars IR at ¥65
+[20:11] zorbak buys a 20% share of IR from the IPO for ¥130
+[20:11] zorbak becomes the president of IR
+[20:38] tado buys a 10% share of IR from the IPO for ¥65
+-- 2025-01-08 --
+[00:12] mindbomb(UTC+9) buys a 10% share of IR from the IPO for ¥65
+[00:59] camping no reception pars UR at ¥65
+[00:59] camping no reception buys a 20% share of UR from the IPO for ¥130
+[00:59] camping no reception becomes the president of UR
+[03:20] Sprint pars TR at ¥65
+[03:20] Sprint buys a 20% share of TR from the IPO for ¥130
+[03:20] Sprint becomes the president of TR
+[05:07] Millie pars KO at ¥65
+[05:07] Millie buys a 20% share of KO from the IPO for ¥130
+[05:07] Millie becomes the president of KO
+[05:07] zorbak buys a 10% share of IR from the IPO for ¥65
+[05:07] IR floats
+[05:07] IR receives ¥650
+[06:05] tado buys a 10% share of IR from the IPO for ¥65
+[07:11] mindbomb(UTC+9) pars SR at ¥65
+[07:11] mindbomb(UTC+9) buys a 20% share of SR from the IPO for ¥130
+[07:11] mindbomb(UTC+9) becomes the president of SR
+[07:11] camping no reception buys a 10% share of UR from the IPO for ¥65
+[08:05] Sprint buys a 10% share of TR from the IPO for ¥65
+[08:05] Millie buys a 10% share of KO from the IPO for ¥65
+[08:05] zorbak buys a 10% share of IR from the IPO for ¥65
+[10:42] tado buys a 10% share of UR from the IPO for ¥65
+[11:33] mindbomb(UTC+9) buys a 10% share of SR from the IPO for ¥65
+[11:33] camping no reception buys a 10% share of UR from the IPO for ¥65
+[11:33] UR floats
+[11:33] UR receives ¥650
+[11:33] Sprint buys a 10% share of TR from the IPO for ¥65
+[11:33] Millie buys a 10% share of KO from the IPO for ¥65
+[11:33] zorbak buys a 10% share of IR from the IPO for ¥65
+[11:33] tado has no valid actions and passes
+[11:33] mindbomb(UTC+9) has no valid actions and passes
+[15:40] camping no reception buys a 10% share of UR from the IPO for ¥65
+[15:40] Sprint buys a 10% share of TR from the IPO for ¥65
+[15:40] TR floats
+[15:40] TR receives ¥650
+[15:40] Millie buys a 10% share of KO from the IPO for ¥65
+[15:40] KO floats
+[15:40] KO receives ¥650
+[15:40] zorbak has no valid actions and passes
+[15:40] tado has no valid actions and passes
+[15:40] mindbomb(UTC+9) has no valid actions and passes
+[15:40] camping no reception has no valid actions and passes
+[15:40] Sprint has no valid actions and passes
+[15:40] Millie has no valid actions and passes
+[15:40] zorbak has priority deal
+[15:40] -- Operating Round 1.1 (of 1) --
+[15:40] zorbak collects ¥15 from Sumitomo Mines Railway
+[15:40] tado collects ¥30 from Uno-Takamatsu Ferry
+[15:40] mindbomb(UTC+9) collects ¥20 from South Iyo Railway
+[15:40] camping no reception collects ¥15 from Dougo Railway
+[15:40] Sprint collects ¥5 from Mitsubishi Ferry
+[15:40] Millie collects ¥5 from Takamatsu E-Railroad
+[15:40] Millie collects ¥10 from Ehime Railway
+[15:40] IR places a token on E2
+[15:40] UR places a token on B7
+[15:40] TR places a token on F9
+[15:40] KO places a token on K4
+[15:40] zorbak operates IR
+[16:43] IR lays tile #5 with rotation 4 on E2 (Matsuyama)
+[16:43] IR skips place a token
+[16:43] IR skips run routes
+[16:43] IR does not run
+[16:43] IR's share price moves left from ¥65 to ¥60
+[16:43] IR buys a 2 train for ¥80 from The Depot
+[16:43] IR buys a 2 train for ¥80 from The Depot
+[16:43] IR buys a 2 train for ¥80 from The Depot
+[16:43] IR passes buy trains
+[16:43] IR skips buy companies
+[16:43] camping no reception operates UR
+[22:12] UR lays tile #9 with rotation 0 on B5
+[22:12] UR places a token on C4 (Ohzu) for ¥40
+[22:12] UR skips run routes
+[22:12] UR does not run
+[22:12] UR's share price moves left from ¥65 to ¥60
+[22:12] UR buys a 2 train for ¥80 from The Depot
+[22:12] UR buys a 2 train for ¥80 from The Depot
+[22:12] UR passes buy trains
+[22:12] UR skips buy companies
+[22:12] Sprint operates TR
+-- 2025-01-09 --
+[02:10] TR (MF) lays tile #437 with rotation 0 on G10 (Nangoku)
+[02:10] TR lays tile #57 with rotation 0 on G12 (Nahari)
+[02:10] TR places a token on G12 (Nahari) for ¥40
+[02:10] TR skips run routes
+[02:10] TR does not run
+[02:10] TR's share price moves left from ¥65 to ¥60
+[02:10] TR buys a 2 train for ¥80 from The Depot
+[02:10] TR buys a 3 train for ¥180 from The Depot
+[02:10] -- Phase 3 (Operating Rounds: 2 | Train Limit: 4 | Available Tiles: Yellow, Green) --
+[02:10] TR buys Mitsubishi Ferry from Sprint for ¥60
+[02:10] TR buys a 3 train for ¥180 from The Depot
+[02:10] TR passes buy trains
+[02:10] TR passes buy companies
+[02:10] Millie operates KO
+[02:18] KO lays tile #8 with rotation 3 on J3
+[02:18] KO skips place a token
+[02:18] KO skips run routes
+[02:18] KO does not run
+[02:18] KO's share price moves left from ¥65 to ¥60
+[02:18] KO buys a 3 train for ¥180 from The Depot
+[02:18] KO passes buy trains
+[02:18] KO passes buy companies
+[02:18] -- Stock Round 2 --
+[08:38] zorbak passes
+[09:21] tado buys a 10% share of KO from the IPO for ¥65
+[09:22] tado declines to sell shares
+[11:06] mindbomb(UTC+9) buys a 10% share of SR from the IPO for ¥65
+[11:06] mindbomb(UTC+9) declines to sell shares
+[15:23] camping no reception passes
+[16:14] Sprint buys a 10% share of IR from the IPO for ¥65
+[16:14] Sprint declines to sell shares
+[16:28] Millie passes
+[16:28] zorbak passes
+[16:28] tado passes
+[23:53] mindbomb(UTC+9) passes
+[23:53] camping no reception passes
+-- 2025-01-10 --
+[03:38] Sprint passes
+[03:38] Millie has priority deal
+[03:38] -- Operating Round 2.1 (of 2) --
+[03:38] Millie collects ¥5 from Takamatsu E-Railroad
+[03:38] Millie collects ¥10 from Ehime Railway
+[03:38] zorbak collects ¥15 from Sumitomo Mines Railway
+[03:38] tado collects ¥30 from Uno-Takamatsu Ferry
+[03:38] mindbomb(UTC+9) collects ¥20 from South Iyo Railway
+[03:38] camping no reception collects ¥15 from Dougo Railway
+[03:38] TR collects ¥5 from Mitsubishi Ferry
+[03:38] zorbak operates IR
+[07:39] IR lays tile #5 with rotation 2 on F3 (Saijou)
+[07:39] IR places a token on F3 (Saijou) for ¥40
+[07:39] IR runs a 2 train for ¥40: F3-E2
+[07:39] IR runs a 2 train for ¥50: F3-F1
+[07:39] IR runs a 2 train for ¥50: E2-F1
+[07:39] IR pays out ¥140 = ¥14 per share (¥70 to zorbak, ¥28 to tado, ¥14 to mindbomb(UTC+9), ¥14 to Sprint)
+[07:39] IR's share price moves right from ¥60 to ¥65
+[07:39] IR passes buy trains
+[07:39] IR buys Sumitomo Mines Railway from zorbak for ¥100
+[07:39] IR passes buy companies
+[07:39] camping no reception operates UR
+[15:19] UR lays tile #9 with rotation 2 on C8
+[15:19] UR skips place a token
+[15:19] UR runs a 2 train for ¥40: C4-B3
+[15:19] UR runs a 2 train for ¥60: B7-B3
+[15:19] UR pays out ¥100 = ¥10 per share (¥50 to camping no reception , ¥10 to tado)
+[15:19] UR's share price moves right from ¥60 to ¥65
+[15:19] UR buys a 3 train for ¥180 from The Depot
+[15:19] UR passes buy trains
+[15:19] UR buys Dougo Railway from camping no reception for ¥120
+[15:19] UR passes buy companies
+[15:19] Sprint operates TR
+[15:26] TR lays tile #8 with rotation 5 on E8
+[15:26] TR skips place a token
+[15:26] TR runs a 3 train for ¥40: G12-G14
+[15:26] TR runs a 3 train for ¥50: G12-G10
+[15:26] TR runs a 2 train for ¥60: F9-G10
+[15:26] TR pays out ¥150 = ¥15 per share (¥75 to Sprint)
+[15:26] TR's share price moves right from ¥60 to ¥65
+[15:26] TR passes buy trains
+[15:26] TR passes buy companies
+[15:26] Millie operates KO
+[16:13] KO lays tile #58 with rotation 2 on J5 (Ritsurin Kouen)
+[16:13] KO skips place a token
+[16:13] KO runs a 3 train for ¥60: J1-K4-J5
+[16:14] KO pays out ¥60 = ¥6 per share (¥30 to Millie, ¥6 to tado)
+[16:14] KO's share price moves right from ¥60 to ¥65
+[16:14] KO passes buy trains
+[16:14] KO passes buy companies
+[16:14] -- Operating Round 2.2 (of 2) --
+[16:14] Millie collects ¥5 from Takamatsu E-Railroad
+[16:14] Millie collects ¥10 from Ehime Railway
+[16:14] tado collects ¥30 from Uno-Takamatsu Ferry
+[16:14] mindbomb(UTC+9) collects ¥20 from South Iyo Railway
+[16:14] IR collects ¥15 from Sumitomo Mines Railway
+[16:14] UR collects ¥15 from Dougo Railway
+[16:14] TR collects ¥5 from Mitsubishi Ferry
+[16:14] zorbak operates IR
+[22:41] IR lays tile #205 with rotation 2 on F3 (Saijou)
+[22:41] IR skips place a token
+[22:41] IR runs a 2 train for ¥50: F3-E2
+[22:41] IR runs a 2 train for ¥60: F3-F1
+[22:41] IR runs a 2 train for ¥50: E2-F1
+[22:41] IR pays out ¥160 = ¥16 per share (¥80 to zorbak, ¥32 to tado, ¥16 to mindbomb(UTC+9), ¥16 to Sprint)
+[22:41] IR's share price moves right from ¥65 to ¥70
+[22:46] IR passes buy trains
+[22:46] IR passes buy companies
+[22:46] camping no reception operates UR
+-- 2025-01-11 --
+[05:10] UR lays tile #8 with rotation 2 on D9
+[05:10] UR passes place a token
+[05:10] UR runs a 3 train for ¥100: B7-F9-G10
+[05:10] UR runs a 2 train for ¥40: C4-B3
+[05:10] UR runs a 2 train for ¥60: B7-B3
+[05:10] UR pays out ¥200 = ¥20 per share (¥100 to camping no reception , ¥20 to tado)
+[05:10] UR's share price moves right from ¥65 to ¥70
+[05:10] UR passes buy trains
+[05:11] UR passes buy companies
+[05:11] Sprint operates TR
+[05:41] TR lays tile #15 with rotation 3 on G12 (Nahari)
+[05:41] TR passes place a token
+[05:41] TR runs a 3 train for ¥80: G10-G12-G14
+[05:41] TR runs a 3 train for ¥90: F9-B7-B3
+[05:41] TR runs a 2 train for ¥60: F9-G10
+[05:41] TR pays out ¥230 = ¥23 per share (¥115 to Sprint)
+[05:41] TR's share price moves right from ¥65 to ¥70
+[05:41] TR passes buy trains
+[05:41] TR passes buy companies
+[05:41] Millie operates KO
+[17:07] KO spends ¥80 and lays tile #438 with rotation 5 on I4 (Kotohira)
+[17:07] KO passes place a token
+[17:07] KO runs a 3 train for ¥80: K4-J5-I4
+[17:07] KO pays out ¥80 = ¥8 per share (¥40 to Millie, ¥8 to tado)
+[17:07] KO's share price moves right from ¥65 to ¥70
+[17:07] KO passes buy trains
+[17:08] KO buys Takamatsu E-Railroad from Millie for ¥40
+[17:08] KO passes buy companies
+[17:08] -- Stock Round 3 --
+[17:08] Millie buys a 10% share of TR from the IPO for ¥65
+[17:08] Millie declines to sell shares
+[19:40] zorbak buys a 10% share of TR from the IPO for ¥65
+[19:40] zorbak declines to sell shares
+[21:44] tado buys a 10% share of TR from the IPO for ¥65
+[21:44] tado declines to sell shares
+-- 2025-01-12 --
+[01:07] mindbomb(UTC+9) buys a 10% share of SR from the IPO for ¥65
+[01:07] SR floats
+[01:07] SR receives ¥650
+[01:08] mindbomb(UTC+9) declines to sell shares
+[06:29] camping no reception buys a 10% share of IR from the IPO for ¥65
+[06:29] camping no reception declines to sell shares
+[07:02] Sprint buys a 10% share of TR from the IPO for ¥65
+[07:02] Sprint declines to sell shares
+[15:41] Millie buys a 10% share of UR from the IPO for ¥65
+[15:41] Millie declines to sell shares
+[17:04] zorbak buys a 10% share of UR from the IPO for ¥65
+[17:04] zorbak declines to sell shares
+[17:30] tado buys a 10% share of KO from the IPO for ¥65
+[17:31] tado declines to sell shares
+[22:17] mindbomb(UTC+9) passes
+[23:39] camping no reception buys a 10% share of TR from the IPO for ¥65
+[23:39] camping no reception declines to sell shares
+-- 2025-01-13 --
+[05:03] Sprint buys a 10% share of UR from the IPO for ¥65
+[05:03] Sprint declines to sell shares
+[05:03] Millie passes
+[08:52] zorbak buys a 10% share of KO from the IPO for ¥65
+[08:53] zorbak declines to sell shares
+[08:53] tado passes
+[10:01] mindbomb(UTC+9) passes
+[15:21] camping no reception buys a 10% share of UR from the IPO for ¥65
+[15:22] camping no reception declines to sell shares
+[17:53] Sprint buys a 10% share of KO from the IPO for ¥65
+[17:53] Sprint declines to sell shares
+[17:53] Millie passes
+[23:59] zorbak buys a 10% share of KO from the IPO for ¥65
+[23:59] zorbak declines to sell shares
+[23:59] tado passes
+-- 2025-01-14 --
+[07:36] mindbomb(UTC+9) passes
+[15:13] camping no reception buys a 10% share of SR from the IPO for ¥65
+[15:13] camping no reception declines to sell shares
+[17:09] Sprint passes
+[17:09] Millie passes
+[20:33] zorbak passes
+[20:33] tado passes
+[22:15] mindbomb(UTC+9) passes
+[22:15] camping no reception passes
+[22:15] IR's share price moves up from ¥70 to ¥75
+[22:15] UR's share price moves up from ¥70 to ¥75
+[22:15] TR's share price moves up from ¥70 to ¥75
+[22:15] KO's share price moves up from ¥70 to ¥75
+[22:15] Sprint has priority deal
+[22:15] -- Operating Round 3.1 (of 2) --
+[22:15] Millie collects ¥10 from Ehime Railway
+[22:15] tado collects ¥30 from Uno-Takamatsu Ferry
+[22:15] mindbomb(UTC+9) collects ¥20 from South Iyo Railway
+[22:15] IR collects ¥15 from Sumitomo Mines Railway
+[22:15] UR collects ¥15 from Dougo Railway
+[22:15] TR collects ¥5 from Mitsubishi Ferry
+[22:15] KO collects ¥5 from Takamatsu E-Railroad
+[22:15] SR places a token on I2
+[22:15] zorbak operates IR
+-- 2025-01-15 --
+[00:20] IR lays tile #6 with rotation 2 on G4 (Niihama)
+[00:20] IR skips place a token
+[00:20] IR runs a 2 train for ¥50: F3-E2
+[00:20] IR runs a 2 train for ¥60: F3-F1
+[00:20] IR runs a 2 train for ¥50: E2-F1
+[00:20] IR pays out ¥160 = ¥16 per share (¥80 to zorbak, ¥32 to tado, ¥16 to Sprint, ¥16 to mindbomb(UTC+9), ¥16 to camping no reception )
+[00:20] IR's share price moves right from ¥75 to ¥80
+[00:20] IR passes buy trains
+[00:20] IR passes buy companies
+[00:20] camping no reception operates UR
+[00:43] UR passes lay/upgrade track
+[00:43] UR passes place a token
+[00:43] UR runs a 3 train for ¥100: B7-F9-G10
+[00:43] UR runs a 2 train for ¥40: C4-B3
+[00:43] UR runs a 2 train for ¥60: B7-B3
+[00:43] UR pays out ¥200 = ¥20 per share (¥120 to camping no reception , ¥20 to Sprint, ¥20 to Millie, ¥20 to zorbak, ¥20 to tado)
+[00:43] UR's share price moves right from ¥75 to ¥80
+[00:43] UR passes buy trains
+[00:43] UR passes buy companies
+[00:43] Sprint operates TR
+[03:08] TR lays tile #23 with rotation 0 on B5
+[03:09] TR passes place a token
+[03:09] TR runs a 3 train for ¥80: G10-G12-G14
+[03:09] TR runs a 3 train for ¥90: F9-B7-B3
+[03:09] TR runs a 2 train for ¥60: F9-G10
+[03:09] TR pays out ¥230 = ¥23 per share (¥138 to Sprint, ¥23 to Millie, ¥23 to zorbak, ¥23 to tado, ¥23 to camping no reception )
+[03:09] TR's share price moves right from ¥75 to ¥80
+[03:09] TR passes buy trains
+[03:09] TR passes buy companies
+[03:09] Millie operates KO
+[03:19] KO spends ¥80 and lays tile #439 with rotation 1 on I4 (Kotohira)
+[03:19] KO passes place a token
+[03:19] KO runs a 3 train for ¥100: K4-J5-I4
+[03:19] KO pays out ¥100 = ¥10 per share (¥50 to Millie, ¥20 to zorbak, ¥20 to tado, ¥10 to Sprint)
+[03:19] KO's share price moves right from ¥75 to ¥80
+[03:20] KO buys a 3 train for ¥180 from The Depot
+[03:20] KO passes buy trains
+[03:20] KO passes buy companies
+[03:20] mindbomb(UTC+9) operates SR
+[04:29] SR lays tile #6 with rotation 4 on I2 (Marugame)
+[04:29] SR places a token on I4 (Kotohira) for ¥40
+[04:29] SR skips run routes
+[04:29] SR does not run
+[04:29] SR's share price moves left from ¥65 to ¥60
+[04:29] SR buys a 4 train for ¥300 from The Depot
+[04:29] -- Phase 4 (Operating Rounds: 2 | Train Limit: 3 | Available Tiles: Yellow, Green) --
+[04:29] -- Event: 2 trains rust ( IR x3, UR x2, TR x1) --
+[04:31] SR buys a 4 train for ¥300 from The Depot
+[04:31] SR passes buy trains
+[04:31] SR skips buy companies
+[04:31] -- Operating Round 3.2 (of 2) --
+[04:31] Millie collects ¥10 from Ehime Railway
+[04:31] tado collects ¥30 from Uno-Takamatsu Ferry
+[04:31] mindbomb(UTC+9) collects ¥20 from South Iyo Railway
+[04:31] IR collects ¥15 from Sumitomo Mines Railway
+[04:31] UR collects ¥15 from Dougo Railway
+[04:31] TR collects ¥5 from Mitsubishi Ferry
+[04:31] KO collects ¥5 from Takamatsu E-Railroad
+[04:31] zorbak operates IR
+[07:08] IR lays tile #9 with rotation 1 on H3
+[07:08] IR skips place a token
+[07:08] IR skips run routes
+[07:08] IR does not run
+[07:08] IR's share price moves left from ¥80 to ¥75
+[07:08] IR buys a 4 train for ¥300 from The Depot
+[07:08] IR passes buy trains
+[07:08] IR skips buy companies
+[07:08] camping no reception operates UR
+[15:20] UR passes lay/upgrade track
+[15:20] UR passes place a token
+[15:20] UR runs a 3 train for ¥100: B7-F9-G10
+[15:20] UR pays out ¥100 = ¥10 per share (¥60 to camping no reception , ¥10 to Sprint, ¥10 to Millie, ¥10 to zorbak, ¥10 to tado)
+[15:20] UR's share price moves right from ¥80 to ¥90
+[15:20] UR passes buy trains
+[15:20] UR passes buy companies
+[15:20] Sprint operates TR
+[18:35] TR lays tile #25 with rotation 5 on E8
+[18:35] TR passes place a token
+[18:35] TR runs a 3 train for ¥80: G10-G12-G14
+[18:35] TR runs a 3 train for ¥100: B7-F9-G10
+[18:36] TR pays out ¥180 = ¥18 per share (¥108 to Sprint, ¥18 to Millie, ¥18 to zorbak, ¥18 to tado, ¥18 to camping no reception )
+[18:36] TR's share price moves right from ¥80 to ¥90
+[18:36] TR passes buy trains
+[18:36] TR passes buy companies
+[18:36] Millie operates KO
+[19:05] KO lays tile #15 with rotation 4 on I2 (Marugame)
+[19:05] KO places a token on I2 (Marugame) for ¥40
+[19:05] KO runs a 3 train for ¥100: K4-J5-I4
+[19:05] KO runs a 3 train for ¥110: I4-I2-G4
+[19:06] KO withholds ¥210
+[19:06] KO's share price moves left from ¥80 to ¥75
+[19:06] KO passes buy trains
+[19:06] KO passes buy companies
+[19:06] mindbomb(UTC+9) operates SR
+[21:48] SR passes lay/upgrade track
+[21:48] SR skips place a token
+[21:49] SR runs a 4 train for ¥100: I4-J5-K4
+[21:49] SR runs a 4 train for ¥140: I4-I2-G4-F3
+[21:49] SR pays out ¥240 = ¥24 per share (¥120 to mindbomb(UTC+9), ¥24 to camping no reception )
+[21:49] SR's share price moves right from ¥60 to ¥65
+[21:49] SR passes buy trains
+[21:49] SR skips buy companies
+[21:49] -- Stock Round 4 --
+-- 2025-01-16 --
+[02:24] Sprint sells a 10% share of UR and receives ¥90
+[02:24] UR's share price moves down from ¥90 to ¥80
+[02:24] Sprint sells a 10% share of KO and receives ¥75
+[02:24] KO's share price moves down from ¥75 to ¥70
+[02:24] Sprint pars KU at ¥100
+[02:24] Sprint buys a 20% share of KU from the IPO for ¥200
+[02:24] Sprint becomes the president of KU
+[13:23] Millie buys a 10% share of SR from the IPO for ¥65
+[13:23] Millie declines to sell shares
+[14:19] zorbak buys a 10% share of SR from the IPO for ¥65
+[14:19] zorbak declines to sell shares
+[15:34] tado sells 2 shares of IR and receives ¥150
+[15:34] IR's share price moves down from ¥75 to ¥65
+[15:35] tado sells 2 shares of KO and receives ¥140
+[15:35] KO's share price moves down from ¥70 to ¥60
+[15:35] tado sells a 10% share of TR and receives ¥90
+[15:35] TR's share price moves down from ¥90 to ¥80
+[15:36] tado sells a 10% share of UR and receives ¥80
+[15:36] tado pars AR at ¥100
+[15:36] tado buys a 20% share of AR from the IPO for ¥200
+[15:36] tado becomes the president of AR
+[15:53] mindbomb(UTC+9) buys a 10% share of SR from the IPO for ¥65
+[15:54] mindbomb(UTC+9) declines to sell shares
+[16:10] camping no reception buys a 10% share of KO from the market for ¥60
+[16:10] camping no reception declines to sell shares
+[16:13] Sprint sells a 10% share of TR and receives ¥80
+[16:13] Sprint buys a 10% share of SR from the IPO for ¥65
+[16:22] Millie buys a 10% share of IR from the market for ¥65
+[16:22] Millie declines to sell shares
+[21:59] zorbak buys a 10% share of KO from the market for ¥60
+[21:59] zorbak declines to sell shares
+[22:24] tado buys a 10% share of AR from the IPO for ¥100
+[22:24] tado declines to sell shares
+[23:00] mindbomb(UTC+9) buys a 10% share of AR from the IPO for ¥100
+[23:00] mindbomb(UTC+9) declines to sell shares
+[23:10] camping no reception passes
+-- 2025-01-17 --
+[04:30] Sprint buys a 10% share of KU from the IPO for ¥100
+[04:30] Sprint declines to sell shares
+[04:30] Millie passes
+[09:59] zorbak buys a 10% share of IR from the market for ¥65
+[09:59] zorbak declines to sell shares
+[10:11] tado buys a 10% share of AR from the IPO for ¥100
+[10:11] AR floats
+[10:11] AR receives ¥1000
+[10:13] tado declines to sell shares
+[10:26] mindbomb(UTC+9) passes
+[21:22] camping no reception buys a 10% share of AR from the IPO for ¥100
+[21:22] camping no reception declines to sell shares
+-- 2025-01-18 --
+[03:32] Sprint buys a 10% share of KU from the IPO for ¥100
+[03:32] Sprint declines to sell shares
+[03:32] Millie passes
+[03:32] zorbak passes
+[03:32] tado buys a 10% share of AR from the IPO for ¥100
+[03:32] tado declines to sell shares
+[03:47] mindbomb(UTC+9) passes
+[04:40] camping no reception buys a 10% share of AR from the IPO for ¥100
+[04:41] camping no reception declines to sell shares
+[04:41] Sprint buys a 10% share of KU from the IPO for ¥100
+[04:41] KU floats
+[04:41] KU receives ¥1000
+[05:31] Sprint declines to sell shares
+[05:31] Millie passes
+[05:31] zorbak passes
+[05:31] tado buys a 10% share of AR from the IPO for ¥100
+[10:10] tado declines to sell shares
+[10:51] mindbomb(UTC+9) passes
+[10:51] camping no reception passes
+[12:29] Sprint passes
+[12:29] Millie passes
+[12:29] zorbak passes
+[14:05] tado passes
+[14:05] IR's share price moves up from ¥65 to ¥70
+[14:05] SR's share price moves up from ¥65 to ¥70
+[14:05] mindbomb(UTC+9) has priority deal
+[14:05] -- Operating Round 4.1 (of 2) --
+[14:05] mindbomb(UTC+9) collects ¥20 from South Iyo Railway
+[14:05] Millie collects ¥10 from Ehime Railway
+[14:05] tado collects ¥30 from Uno-Takamatsu Ferry
+[14:05] UR collects ¥15 from Dougo Railway
+[14:05] TR collects ¥5 from Mitsubishi Ferry
+[14:05] IR collects ¥15 from Sumitomo Mines Railway
+[14:05] KO collects ¥5 from Takamatsu E-Railroad
+[14:05] KU places a token on C10
+[14:05] AR places a token on K8
+[14:05] Sprint operates KU
+[14:54] KU lays tile #5 with rotation 3 on C10 (Kubokawa)
+[14:54] KU skips place a token
+[14:54] KU skips run routes
+[14:54] KU does not run
+[14:54] KU's share price moves left from ¥100 to ¥90
+[14:54] KU buys a 4 train for ¥300 from The Depot
+[14:54] KU buys a 5 train for ¥450 from The Depot
+[14:54] -- Phase 5 (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+[14:54] -- Event: Private companies close --
+[14:54] KU skips buy companies
+[14:54] tado operates AR
+[15:24] AR lays tile #57 with rotation 1 on K8 (Tokushima)
+[15:24] AR skips place a token
+[15:24] AR skips run routes
+[15:24] AR does not run
+[15:24] AR's share price moves left from ¥100 to ¥90
+[15:25] AR buys a 5 train for ¥450 from The Depot
+[15:25] AR passes buy trains
+[15:25] AR skips buy companies
+[15:25] camping no reception operates UR
+[22:20] UR lays tile #14 with rotation 1 on C4 (Ohzu)
+[22:20] UR passes place a token
+[22:20] UR runs a 3 train for ¥100: C4-B7-F9
+[22:20] UR pays out ¥100 = ¥10 per share (¥60 to camping no reception , ¥20 to UR, ¥10 to Millie, ¥10 to zorbak)
+[22:20] UR's share price moves up from ¥80 to ¥90
+[22:20] UR passes buy trains
+[22:20] UR skips buy companies
+[22:20] Sprint operates TR
+-- 2025-01-19 --
+[03:56] TR lays tile #23 with rotation 4 on D9
+[03:56] TR passes place a token
+[03:56] TR runs a 3 train for ¥90: G12-G10-F9
+[03:56] TR runs a 3 train for ¥100: F9-B7-C4
+[03:56] TR withholds ¥190
+[03:56] TR's share price moves left from ¥80 to ¥75
+[03:56] TR skips buy trains
+[03:56] TR skips buy companies
+[03:56] zorbak operates IR
+[11:17] IR lays tile #12 with rotation 4 on E2 (Matsuyama)
+[11:17] IR skips place a token
+[11:17] IR runs a 4 train for ¥140: F1-E2-F3-G4
+[11:17] IR pays out ¥140 = ¥14 per share (¥84 to zorbak, ¥14 to mindbomb(UTC+9), ¥14 to camping no reception , ¥14 to Sprint, ¥14 to Millie)
+[11:17] IR's share price moves right from ¥70 to ¥75
+[11:17] IR passes buy trains
+[11:17] IR skips buy companies
+[11:17] mindbomb(UTC+9) operates SR
+[11:53] SR passes lay/upgrade track
+[11:53] SR skips place a token
+[11:53] SR runs a 4 train for ¥120: J1-I2-G4-F3
+[11:53] SR runs a 4 train for ¥130: I2-I4-J5-K4
+[12:24] SR withholds ¥250
+[12:24] SR's share price moves left from ¥70 to ¥65
+[12:24] SR skips buy trains
+[12:24] SR skips buy companies
+[12:24] Millie operates KO
+[20:00] KO lays tile #440 with rotation 0 on K4 (Takamatsu)
+[20:00] KO skips place a token
+[20:01] KO runs a 3 train for ¥110: K4-J5-I4
+[20:01] KO runs a 3 train for ¥130: J1-I2-I4
+[20:01] KO pays out ¥240 = ¥24 per share (¥120 to Millie, ¥72 to zorbak, ¥24 to camping no reception , ¥24 to KO)
+[20:01] KO's share price moves up from ¥60 to ¥65
+[20:01] KO skips buy trains
+[20:01] KO skips buy companies
+[20:01] -- Operating Round 4.2 (of 2) --
+[20:01] tado collects ¥50 from Uno-Takamatsu Ferry
+[20:01] camping no reception operates UR
+[21:29] UR lays tile #9 with rotation 1 on D3
+[21:29] UR passes place a token
+[21:29] UR runs a 3 train for ¥100: C4-B7-F9
+[21:29] UR pays out ¥100 = ¥10 per share (¥60 to camping no reception , ¥20 to UR, ¥10 to Millie, ¥10 to zorbak)
+[21:29] UR's share price moves right from ¥90 to ¥100
+[21:29] UR passes buy trains
+[21:29] UR skips buy companies
+[21:29] Sprint operates KU
+-- 2025-01-20 --
+[02:56] KU lays tile #41 with rotation 1 on D9
+[02:56] KU skips place a token
+[02:56] KU runs a 5 train for ¥130: C10-F9-G10-G12-G14
+[02:56] KU pays out ¥130 = ¥13 per share (¥65 to Sprint)
+[02:56] KU's share price moves right from ¥90 to ¥100
+[02:56] KU skips buy trains
+[02:56] KU skips buy companies
+[02:56] tado operates AR
+[06:15] AR lays tile #15 with rotation 1 on K8 (Tokushima)
+[06:15] AR skips place a token
+[06:15] AR runs a 5 train for ¥70: K8-L7
+[06:18] AR pays out ¥70 = ¥7 per share (¥42 to tado, ¥14 to camping no reception , ¥7 to mindbomb(UTC+9))
+[06:18] AR's share price moves right from ¥90 to ¥100
+[06:22] AR passes buy trains
+[06:22] AR skips buy companies
+[06:22] Sprint operates TR
+[06:47] TR lays tile #448 with rotation 4 on E2 (Matsuyama)
+[06:47] TR places a token on E2 (Matsuyama) for ¥40
+[06:48] TR runs a 3 train for ¥90: G12-G10-F9
+[06:48] TR runs a 3 train for ¥100: F9-B7-C4
+[06:49] TR pays out ¥190 = ¥19 per share (¥95 to Sprint, ¥38 to TR, ¥19 to camping no reception , ¥19 to Millie, ¥19 to zorbak)
+[06:49] TR's share price moves right from ¥75 to ¥80
+[06:49] TR skips buy trains
+[06:49] TR skips buy companies
+[06:49] zorbak operates IR
+[09:18] IR lays tile #611 with rotation 4 on C4 (Ohzu)
+[09:18] IR skips place a token
+[09:18] IR runs a 4 train for ¥180: F1-E2-C4-B7
+[09:18] IR pays out ¥180 = ¥18 per share (¥108 to zorbak, ¥18 to mindbomb(UTC+9), ¥18 to camping no reception , ¥18 to Sprint, ¥18 to Millie)
+[09:18] IR's share price moves right from ¥75 to ¥80
+[09:18] IR passes buy trains
+[09:18] IR skips buy companies
+[09:18] Millie operates KO
+[15:57] KO spends ¥80 and lays tile #492 with rotation 0 on I4 (Kotohira)
+[15:57] KO skips place a token
+[15:57] KO runs a 3 train for ¥130: K4-J5-I4
+[15:57] KO runs a 3 train for ¥150: J1-I2-I4
+[15:57] KO pays out ¥280 = ¥28 per share (¥140 to Millie, ¥84 to zorbak, ¥28 to camping no reception , ¥28 to KO)
+[15:57] KO's share price moves right from ¥65 to ¥70
+[15:57] KO skips buy trains
+[15:57] KO skips buy companies
+[15:57] mindbomb(UTC+9) operates SR
+[16:06] SR spends ¥80 and lays tile #9 with rotation 0 on K6
+[16:06] SR skips place a token
+[16:07] SR runs a 4 train for ¥160: I4-I2-G4-F3
+[16:07] SR runs a 4 train for ¥170: I4-J5-K4-J1
+[16:07] SR pays out ¥330 = ¥33 per share (¥198 to mindbomb(UTC+9), ¥33 to camping no reception , ¥33 to Sprint, ¥33 to Millie, ¥33 to zorbak)
+[16:07] SR's share price moves right from ¥65 to ¥70
+[16:07] SR skips buy trains
+[16:07] SR skips buy companies
+[16:07] -- Stock Round 5 --
+[16:08] mindbomb(UTC+9) buys a 10% share of KU from the IPO for ¥100
+[16:08] mindbomb(UTC+9) declines to sell shares
+[18:03] camping no reception sells a 10% share of UR and receives ¥100
+[18:03] camping no reception buys a 10% share of AR from the IPO for ¥100
+[18:09] Sprint sells a 10% share of IR and receives ¥80
+[18:10] Sprint buys a 10% share of KU from the IPO for ¥100
+[18:14] Millie sells 4 shares of KO and receives ¥280
+[18:14] zorbak becomes the president of KO
+[18:14] Millie buys a 10% share of KU from the IPO for ¥100
+-- 2025-01-21 --
+[09:06] zorbak buys a 10% share of KO from the market for ¥70
+[09:06] zorbak declines to sell shares
+[17:06] tado buys a 10% share of KU from the IPO for ¥100
+[17:06] tado declines to sell shares
+[23:01] mindbomb(UTC+9) buys a 10% share of KU from the IPO for ¥100
+[23:01] mindbomb(UTC+9) declines to sell shares
+[23:36] camping no reception passes
+-- 2025-01-22 --
+[03:28] Sprint buys a 10% share of KO from the market for ¥70
+[03:28] Sprint declines to sell shares
+[03:38] Millie passes
+[03:38] zorbak passes
+[03:38] tado buys a 10% share of KO from the market for ¥70
+[06:49] tado declines to sell shares
+[08:59] mindbomb(UTC+9) passes
+[08:59] camping no reception passes
+[08:59] Sprint passes
+[08:59] Millie passes
+[08:59] zorbak passes
+[08:59] tado passes
+[08:59] SR's share price moves up from ¥70 to ¥75
+[08:59] mindbomb(UTC+9) has priority deal
+[08:59] -- Operating Round 5.1 (of 3) --
+[08:59] tado collects ¥50 from Uno-Takamatsu Ferry
+[08:59] camping no reception operates UR
+[15:23] UR passes lay/upgrade track
+[15:23] UR passes place a token
+[15:23] UR runs a 3 train for ¥120: B7-C4-E2
+[15:23] UR pays out ¥120 = ¥12 per share (¥60 to camping no reception , ¥36 to UR, ¥12 to Millie, ¥12 to zorbak)
+[15:23] UR's share price moves up from ¥100 to ¥110
+[15:23] UR passes buy trains
+[15:23] UR skips buy companies
+[15:23] Sprint operates KU
+[16:29] KU lays tile #23 with rotation 2 on C8
+[16:29] KU skips place a token
+[16:29] KU runs a 5 train for ¥130: C10-F9-G10-G12-G14
+[16:29] KU runs a 4 train for ¥140: C10-B7-C4-E2
+[16:29] KU pays out ¥270 = ¥27 per share (¥162 to Sprint, ¥54 to mindbomb(UTC+9), ¥27 to Millie, ¥27 to tado)
+[16:29] KU's share price moves right from ¥100 to ¥110
+[16:29] KU skips buy trains
+[16:29] KU skips buy companies
+[16:29] tado operates AR
+[22:27] AR lays tile #58 with rotation 4 on J9 (Komatsujima)
+[22:28] AR places a token on K4 (Takamatsu) for ¥40
+[22:29] AR runs a 5 train for ¥200: I4-J5-K4-K8-L7
+[22:30] AR pays out ¥200 = ¥20 per share (¥120 to tado, ¥60 to camping no reception , ¥20 to mindbomb(UTC+9))
+[22:30] AR's share price moves right from ¥100 to ¥110
+[22:30] AR buys a 5 train for ¥450 from The Depot
+[22:30] AR skips buy companies
+[22:30] Sprint operates TR
+-- 2025-01-23 --
+[01:52] TR lays tile #206 with rotation 4 on C10 (Kubokawa)
+[01:52] TR skips place a token
+[01:52] TR runs a 3 train for ¥110: F9-B7-C4
+[01:52] TR runs a 3 train for ¥140: F1-E2-C4
+[01:52] TR withholds ¥250
+[01:52] TR's share price moves left from ¥80 to ¥75
+[01:52] TR skips buy trains
+[01:52] TR skips buy companies
+[01:52] zorbak operates IR
+[08:53] IR lays tile #14 with rotation 1 on G4 (Niihama)
+[08:53] IR skips place a token
+[08:53] IR runs a 4 train for ¥180: F1-E2-C4-B7
+[08:53] IR pays out ¥180 = ¥18 per share (¥108 to zorbak, ¥18 to mindbomb(UTC+9), ¥18 to camping no reception , ¥18 to Millie, ¥18 to IR)
+[08:53] IR's share price moves up from ¥80 to ¥90
+[08:53] IR passes buy trains
+[08:53] IR skips buy companies
+[08:53] mindbomb(UTC+9) operates SR
+[09:33] SR lays tile #466 with rotation 0 on K4 (Takamatsu)
+[09:33] SR skips place a token
+[09:33] SR runs a 4 train for ¥150: I4-J5-K4
+[09:33] SR runs a 4 train for ¥170: I4-I2-G4-F3
+[09:33] SR pays out ¥320 = ¥32 per share (¥192 to mindbomb(UTC+9), ¥32 to camping no reception , ¥32 to Sprint, ¥32 to Millie, ¥32 to zorbak)
+[09:33] SR's share price moves right from ¥75 to ¥80
+[09:33] SR skips buy trains
+[09:33] SR skips buy companies
+[09:33] zorbak operates KO
+[10:00] KO spends ¥80 and lays tile #8 with rotation 2 on H5
+[10:00] KO skips place a token
+[10:01] KO runs a 3 train for ¥150: K4-J5-I4
+[10:01] KO runs a 3 train for ¥150: J1-I2-I4
+[10:01] KO withholds ¥300
+[10:01] KO's share price moves left from ¥70 to ¥65
+[10:01] KO skips buy trains
+[10:01] KO skips buy companies
+[10:01] -- Operating Round 5.2 (of 3) --
+[10:01] tado collects ¥50 from Uno-Takamatsu Ferry
+[10:01] camping no reception operates UR
+[14:12] UR lays tile #448 with rotation 1 on C10 (Kubokawa)
+[14:12] UR passes place a token
+[14:12] UR runs a 3 train for ¥120: B7-C4-E2
+[14:12] UR pays out ¥120 = ¥12 per share (¥60 to camping no reception , ¥36 to UR, ¥12 to Millie, ¥12 to zorbak)
+[14:12] UR's share price moves right from ¥110 to ¥125
+[14:13] UR passes buy trains
+[14:13] UR skips buy companies
+[14:13] Sprint operates KU
+[14:30] KU spends ¥80 and lays tile #465 with rotation 2 on F9 (Kouchi)
+[14:30] KU skips place a token
+[14:30] KU runs a 5 train for ¥180: C10-F9-G10-G12-G14
+[14:30] KU runs a 4 train for ¥160: C10-B7-C4-E2
+[14:30] KU pays out ¥340 = ¥34 per share (¥204 to Sprint, ¥68 to mindbomb(UTC+9), ¥34 to Millie, ¥34 to tado)
+[14:30] KU's share price moves right from ¥110 to ¥125
+[14:30] KU skips buy trains
+[14:30] KU skips buy companies
+[14:30] tado operates AR
+[15:03] AR lays tile #6 with rotation 1 on J11 (Anan)
+[15:03] AR skips place a token
+[15:04] AR runs a 5 train for ¥170: L7-K8-K4-J1
+[15:04] AR runs a 5 train for ¥210: K4-J5-I4-G4-I2
+[15:04] AR pays out ¥380 = ¥38 per share (¥228 to tado, ¥114 to camping no reception , ¥38 to mindbomb(UTC+9))
+[15:04] AR's share price moves right from ¥110 to ¥125
+[15:04] AR skips buy trains
+[15:04] AR skips buy companies
+[15:04] zorbak operates IR
+[15:28] IR lays tile #45 with rotation 1 on E8
+[15:28] IR skips place a token
+[15:29] IR runs a 4 train for ¥200: F1-F3-G4-I4
+[15:33] IR pays out ¥200 = ¥20 per share (¥120 to zorbak, ¥20 to mindbomb(UTC+9), ¥20 to camping no reception , ¥20 to Millie, ¥20 to IR)
+[15:33] IR's share price moves right from ¥90 to ¥100
+[15:33] IR buys a 3 train for ¥13 from KO
+[15:33] IR skips buy companies
+[15:33] mindbomb(UTC+9) operates SR
+[15:39] SR lays tile #611 with rotation 5 on F3 (Saijou)
+[15:39] SR skips place a token
+[15:40] SR runs a 4 train for ¥180: I2-I4-J5-K4
+[15:40] SR runs a 4 train for ¥210: I4-G4-F3-F1
+[15:41] SR pays out ¥390 = ¥39 per share (¥234 to mindbomb(UTC+9), ¥39 to camping no reception , ¥39 to Sprint, ¥39 to Millie, ¥39 to zorbak)
+[15:41] SR's share price moves right from ¥80 to ¥90
+[15:41] SR skips buy trains
+[15:41] SR skips buy companies
+[15:41] Sprint operates TR
+[16:03] TR lays tile #448 with rotation 3 on G12 (Nahari)
+[16:03] TR skips place a token
+[16:03] TR runs a 3 train for ¥140: E2-F3-F1
+[16:03] TR runs a 3 train for ¥140: F1-E2-C4
+[16:03] TR pays out ¥280 = ¥28 per share (¥140 to Sprint, ¥56 to TR, ¥28 to camping no reception , ¥28 to Millie, ¥28 to zorbak)
+[16:03] TR's share price moves right from ¥75 to ¥80
+[16:03] TR skips buy trains
+[16:03] TR skips buy companies
+[16:03] zorbak operates KO
+[16:35] KO lays tile #25 with rotation 5 on J3
+[16:35] KO skips place a token
+[16:35] KO runs a 3 train for ¥170: I4-K4-K8
+[16:35] KO withholds ¥170
+[16:35] KO's share price moves left from ¥65 to ¥60
+[16:35] KO buys a 6 train for ¥630 from The Depot
+[16:35] -- Phase 6 (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+[16:35] -- Event: 3 trains rust ( TR x2, IR x1, UR x1, KO x1) --
+[16:37] KO passes buy trains
+[16:37] KO skips buy companies
+[16:37] -- Operating Round 5.3 (of 3) --
+[16:37] tado collects ¥50 from Uno-Takamatsu Ferry
+[16:37] camping no reception operates UR
+[17:26] UR passes lay/upgrade track
+[17:26] UR passes place a token
+[17:26] UR skips run routes
+[17:26] UR does not run
+[17:26] UR's share price moves left from ¥125 to ¥110
+[17:26] camping no reception contributes ¥308
+[17:26] UR buys a 6 train for ¥630 from The Depot
+[17:26] UR skips buy companies
+[17:26] Sprint operates KU
+[18:02] KU lays tile #47 with rotation 2 on C8
+[18:02] KU skips place a token
+[18:02] KU runs a 5 train for ¥180: C10-B7-B3-C4-E2
+[18:02] KU runs a 4 train for ¥170: C10-F9-G10-G12
+[18:02] KU withholds ¥350
+[18:02] KU's share price moves left from ¥125 to ¥110
+[18:02] KU skips buy trains
+[18:02] KU skips buy companies
+[18:02] tado operates AR
+[21:05] AR lays tile #448 with rotation 1 on K8 (Tokushima)
+[21:05] AR skips place a token
+[21:06] AR runs a 5 train for ¥250: L7-K8-K4-I4-I2
+[21:06] AR runs a 5 train for ¥210: K4-J5-I4-G4-I2
+[21:06] AR pays out ¥460 = ¥46 per share (¥276 to tado, ¥138 to camping no reception , ¥46 to mindbomb(UTC+9))
+[21:06] AR's share price moves right from ¥125 to ¥140
+[21:06] AR skips buy trains
+[21:06] AR skips buy companies
+[21:06] zorbak operates IR
+-- 2025-01-24 --
+[06:49] IR passes lay/upgrade track
+[06:49] IR skips place a token
+[06:49] IR runs a 4 train for ¥210: F1-F3-G4-I4
+[06:49] IR withholds ¥210
+[06:49] IR's share price moves left from ¥100 to ¥90
+[06:49] IR passes buy trains
+[06:49] IR skips buy companies
+[06:49] mindbomb(UTC+9) operates SR
+[07:03] SR lays tile #40 with rotation 1 on J3
+[07:03] SR skips place a token
+[07:04] SR runs a 4 train for ¥160: F1-F3-G4-I2
+[07:04] SR runs a 4 train for ¥190: K4-J5-I4-J1
+[07:06] SR withholds ¥350
+[07:06] SR's share price moves left from ¥90 to ¥80
+[07:06] SR skips buy trains
+[07:06] SR skips buy companies
+[07:06] Sprint operates TR
+[07:21] TR lays tile #23 with rotation 1 on D3
+[07:21] TR skips place a token
+[07:21] TR skips run routes
+[07:21] TR does not run
+[07:21] TR's share price moves left from ¥80 to ¥75
+[07:23] TR buys a 5 train for ¥460 from KU
+[07:23] TR passes buy trains
+[07:23] TR skips buy companies
+[07:23] zorbak operates KO
+[07:58] KO passes lay/upgrade track
+[07:58] KO skips place a token
+[07:59] KO runs a 6 train for ¥310: F1-F3-G4-I4-K4-K8
+[07:59] KO pays out ¥310 = ¥31 per share (¥124 to zorbak, ¥62 to KO, ¥31 to camping no reception , ¥31 to Sprint, ¥31 to Millie, ¥31 to tado)
+[07:59] KO's share price moves right from ¥60 to ¥65
+[07:59] KO passes buy trains
+[07:59] KO skips buy companies
+[07:59] -- Stock Round 6 --
+[08:21] mindbomb(UTC+9) buys a 10% share of KO from the market for ¥65
+[08:22] mindbomb(UTC+9) sells a 10% share of IR and receives ¥90
+[08:22] IR's share price moves down from ¥90 to ¥80
+[15:24] camping no reception sells a 10% share of IR and receives ¥80
+[15:24] camping no reception buys a 10% share of UR from the market for ¥110
+[16:00] Sprint sells a 10% share of SR and receives ¥80
+[16:00] SR's share price moves down from ¥80 to ¥75
+[16:00] Sprint buys a 10% share of UR from the market for ¥110
+[16:01] Millie buys a 10% share of TR from the market for ¥75
+[16:01] Millie declines to sell shares
+[21:10] zorbak passes
+[21:13] tado buys a 10% share of UR from the market for ¥110
+[21:13] tado declines to sell shares
+[22:37] mindbomb(UTC+9) buys a 10% share of KO from the market for ¥65
+[22:37] mindbomb(UTC+9) declines to sell shares
+-- 2025-01-25 --
+[01:04] camping no reception passes
+[03:17] Sprint passes
+[04:35] Millie buys a 10% share of TR from the market for ¥75
+[04:35] Millie declines to sell shares
+[07:40] zorbak passes
+[09:00] tado buys a 10% share of SR from the market for ¥75
+[09:01] tado declines to sell shares
+[09:27] mindbomb(UTC+9) passes
+[09:27] camping no reception passes
+[09:37] Sprint passes
+[14:51] Millie passes
+[14:51] zorbak passes
+[15:12] tado buys a 10% share of IR from the market for ¥80
+[15:12] tado declines to sell shares
+[15:12] mindbomb(UTC+9) passes
+[15:12] camping no reception passes
+[15:12] Sprint passes
+[15:12] Millie passes
+[15:12] zorbak passes
+[15:14] tado passes
+[15:14] UR's share price moves up from ¥110 to ¥125
+[15:14] TR's share price moves up from ¥75 to ¥80
+[15:14] SR's share price moves up from ¥75 to ¥80
+[15:14] KO's share price moves up from ¥65 to ¥70
+[15:14] mindbomb(UTC+9) has priority deal
+[15:14] -- Operating Round 6.1 (of 3) --
+[15:14] tado collects ¥50 from Uno-Takamatsu Ferry
+[15:14] tado operates AR
+[15:15] AR lays tile #24 with rotation 3 on K6
+[15:15] AR skips place a token
+[15:18] AR runs a 5 train for ¥230: L7-K8-K4-J5-I4
+[15:18] AR runs a 5 train for ¥270: K4-I4-G4-F3-F1
+[15:18] AR pays out ¥500 = ¥50 per share (¥300 to tado, ¥150 to camping no reception , ¥50 to mindbomb(UTC+9))
+[15:18] AR's share price moves right from ¥140 to ¥155
+[15:18] AR skips buy trains
+[15:18] AR skips buy companies
+[15:18] camping no reception operates UR
+[16:26] UR passes lay/upgrade track
+[16:26] UR skips place a token
+[16:26] UR runs a 6 train for ¥250: E2-C4-B7-C10-F9-G10
+[16:26] -- The bank has broken --
+[16:26] UR pays out ¥250 = ¥25 per share (¥150 to camping no reception , ¥25 to Sprint, ¥25 to Millie, ¥25 to zorbak, ¥25 to tado)
+[16:26] UR's share price moves right from ¥125 to ¥140
+[16:26] UR skips buy trains
+[16:26] UR skips buy companies
+[16:26] Sprint operates KU
+-- 2025-01-26 --
+[02:13] KU spends ¥80 and lays tile #8 with rotation 2 on E4
+[02:13] KU skips place a token
+[02:13] KU runs a 4 train for ¥180: F9-C10-B7-C4
+[02:13] KU pays out ¥180 = ¥18 per share (¥108 to Sprint, ¥36 to mindbomb(UTC+9), ¥18 to Millie, ¥18 to tado)
+[02:13] KU's share price moves right from ¥110 to ¥125
+[02:13] KU exchanges a 4 for a D train for ¥800 from The Depot
+[02:13] -- Phase D (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+[02:13] -- Event: 4 trains rust ( SR x2, IR x1, The Depot x1) --
+[02:13] KU passes buy trains
+[02:13] KU skips buy companies
+[02:13] zorbak operates IR
+[09:14] IR passes lay/upgrade track
+[09:14] IR skips place a token
+[09:14] IR skips run routes
+[09:14] IR does not run
+[09:14] IR's share price moves left from ¥80 to ¥75
+[09:14] zorbak contributes ¥835
+[09:14] IR buys a D train for ¥1100 from The Depot
+[09:14] IR skips buy companies
+[09:14] Sprint operates TR
+[09:32] TR spends ¥80 and lays tile #8 with rotation 5 on H11
+[09:32] TR skips place a token
+[09:32] TR runs a 5 train for ¥250: F1-E2-F3-G4-I4
+[09:32] TR pays out ¥250 = ¥25 per share (¥125 to Sprint, ¥75 to Millie, ¥25 to camping no reception , ¥25 to zorbak)
+[09:32] TR's share price moves right from ¥80 to ¥90
+[09:32] TR passes buy trains
+[09:32] TR skips buy companies
+[09:32] mindbomb(UTC+9) operates SR
+[09:47] SR spends ¥80 and lays tile #9 with rotation 0 on I6
+[09:47] SR skips place a token
+[09:47] SR skips run routes
+[09:47] SR does not run
+[09:47] SR's share price moves left from ¥80 to ¥75
+[09:47] mindbomb(UTC+9) contributes ¥650
+[09:47] SR buys a D train for ¥1100 from The Depot
+[09:47] SR skips buy companies
+[09:47] zorbak operates KO
+[11:14] KO lays tile #58 with rotation 2 on I12 (Muki)
+[11:14] KO skips place a token
+[11:14] KO runs a 6 train for ¥310: F1-F3-G4-I4-K4-L7
+[11:14] KO pays out ¥310 = ¥31 per share (¥124 to zorbak, ¥62 to mindbomb(UTC+9), ¥31 to camping no reception , ¥31 to Sprint, ¥31 to Millie, ¥31 to tado)
+[11:14] KO's share price moves right from ¥70 to ¥75
+[11:14] KO passes buy trains
+[11:14] KO skips buy companies
+[11:14] -- Operating Round 6.2 (of 3) --
+[11:14] tado collects ¥50 from Uno-Takamatsu Ferry
+[11:14] tado operates AR
+[11:28] AR lays tile #8 with rotation 3 on I8
+[11:28] AR skips place a token
+[11:28] AR runs a 5 train for ¥230: L7-K8-K4-J5-I4
+[11:28] AR runs a 5 train for ¥270: K4-I4-G4-F3-F1
+[11:28] AR pays out ¥500 = ¥50 per share (¥300 to tado, ¥150 to camping no reception , ¥50 to mindbomb(UTC+9))
+[11:28] AR's share price moves right from ¥155 to ¥175
+[11:28] AR skips buy trains
+[11:28] AR skips buy companies
+[11:28] camping no reception operates UR
+[16:12] UR lays tile #29 with rotation 3 on I8
+[16:12] UR skips place a token
+[16:12] UR runs a 6 train for ¥290: I4-G4-F3-C4-B7-F9
+[16:12] UR pays out ¥290 = ¥29 per share (¥174 to camping no reception , ¥29 to Sprint, ¥29 to Millie, ¥29 to zorbak, ¥29 to tado)
+[16:12] UR's share price moves right from ¥140 to ¥155
+[16:12] UR skips buy trains
+[16:12] UR skips buy companies
+[16:12] Sprint operates KU
+-- 2025-01-27 --
+[01:40] KU lays tile #12 with rotation 1 on J11 (Anan)
+[01:40] KU skips place a token
+[01:40] KU runs a D train for ¥670: L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-F3-G4-I4-J1
+[01:40] KU pays out ¥670 = ¥67 per share (¥402 to Sprint, ¥134 to mindbomb(UTC+9), ¥67 to Millie, ¥67 to tado)
+[01:40] KU's share price moves right from ¥125 to ¥140
+[01:40] KU passes buy trains
+[01:40] KU skips buy companies
+[01:40] Sprint operates TR
+[01:41] TR spends ¥80 and lays tile #9 with rotation 0 on F7
+[01:41] TR skips place a token
+[01:41] TR runs a 5 train for ¥250: F1-E2-F3-G4-I4
+[01:41] TR pays out ¥250 = ¥25 per share (¥125 to Sprint, ¥75 to Millie, ¥25 to camping no reception , ¥25 to zorbak)
+[01:41] TR's share price moves right from ¥90 to ¥100
+[01:41] TR passes buy trains
+[01:41] TR skips buy companies
+[01:41] zorbak operates IR
+[11:10] IR passes lay/upgrade track
+[11:10] IR skips place a token
+[11:10] IR runs a D train for ¥710: L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-E2-F3-G4-I4-J1
+[11:10] IR pays out ¥710 = ¥71 per share (¥426 to zorbak, ¥142 to IR, ¥71 to Millie, ¥71 to tado)
+[11:10] IR's share price moves right from ¥75 to ¥80
+[11:10] IR passes buy trains
+[11:10] IR skips buy companies
+[11:10] zorbak operates KO
+[11:10] KO passes lay/upgrade track
+[11:10] KO skips place a token
+[11:11] KO runs a 6 train for ¥310: F1-F3-G4-I4-K4-L7
+[11:11] KO pays out ¥310 = ¥31 per share (¥124 to zorbak, ¥62 to mindbomb(UTC+9), ¥31 to camping no reception , ¥31 to Sprint, ¥31 to Millie, ¥31 to tado)
+[11:11] KO's share price moves right from ¥75 to ¥80
+[11:11] KO passes buy trains
+[11:11] KO skips buy companies
+[11:11] mindbomb(UTC+9) operates SR
+[11:37] SR lays tile #27 with rotation 0 on I6
+[11:37] SR skips place a token
+[11:37] SR runs a D train for ¥720: F1-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-I4-G4-I2-J1
+[11:38] SR pays out ¥720 = ¥72 per share (¥432 to mindbomb(UTC+9), ¥72 to camping no reception , ¥72 to Millie, ¥72 to zorbak, ¥72 to tado)
+[11:38] SR's share price moves right from ¥75 to ¥80
+[11:38] SR skips buy trains
+[11:38] SR skips buy companies
+[11:38] -- Operating Round 6.3 (of 3) --
+[11:38] tado collects ¥50 from Uno-Takamatsu Ferry
+[11:38] tado operates AR
+[11:38] AR lays tile #57 with rotation 1 on H7 (Ikeda)
+[11:38] AR skips place a token
+[11:40] AR runs a 5 train for ¥230: L7-K8-K4-J5-I4
+[11:40] AR runs a 5 train for ¥270: K4-I4-G4-F3-F1
+[11:40] AR pays out ¥500 = ¥50 per share (¥300 to tado, ¥150 to camping no reception , ¥50 to mindbomb(UTC+9))
+[11:40] AR's share price moves right from ¥175 to ¥200
+[11:40] AR skips buy trains
+[11:40] AR skips buy companies
+[11:40] camping no reception operates UR
+[15:17] UR passes lay/upgrade track
+[15:17] UR skips place a token
+[15:17] UR runs a 6 train for ¥290: I4-G4-F3-C4-B7-F9
+[15:17] UR pays out ¥290 = ¥29 per share (¥174 to camping no reception , ¥29 to Sprint, ¥29 to Millie, ¥29 to zorbak, ¥29 to tado)
+[15:17] UR's share price moves right from ¥155 to ¥175
+[15:17] UR skips buy trains
+[15:17] UR skips buy companies
+[15:17] Sprint operates KU
+[15:44] KU spends ¥80 and lays tile #8 with rotation 4 on F5
+[15:44] KU skips place a token
+[15:44] KU runs a D train for ¥670: J1-I4-G4-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-L7
+[15:44] KU pays out ¥670 = ¥67 per share (¥402 to Sprint, ¥134 to mindbomb(UTC+9), ¥67 to Millie, ¥67 to tado)
+[15:44] KU's share price moves right from ¥140 to ¥155
+[15:44] KU passes buy trains
+[15:44] KU skips buy companies
+[15:44] Sprint operates TR
+[15:45] TR passes lay/upgrade track
+[15:45] TR skips place a token
+[15:45] TR runs a 5 train for ¥270: K4-I4-G4-F9-B7
+[15:45] TR pays out ¥270 = ¥27 per share (¥135 to Sprint, ¥81 to Millie, ¥27 to camping no reception , ¥27 to zorbak)
+[15:45] TR's share price moves up from ¥100 to ¥110
+[15:45] TR passes buy trains
+[15:45] TR skips buy companies
+[15:45] zorbak operates IR
+[21:14] IR passes lay/upgrade track
+[21:14] IR skips place a token
+[21:14] IR runs a D train for ¥710: L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-E2-F3-G4-I4-J1
+[21:14] IR pays out ¥710 = ¥71 per share (¥426 to zorbak, ¥142 to IR, ¥71 to Millie, ¥71 to tado)
+[21:14] IR's share price moves up from ¥80 to ¥90
+[21:14] IR passes buy trains
+[21:14] IR skips buy companies
+[21:14] zorbak operates KO
+[21:14] KO passes lay/upgrade track
+[21:14] KO skips place a token
+[21:14] KO runs a 6 train for ¥310: F1-F3-G4-I4-K4-L7
+[21:14] KO pays out ¥310 = ¥31 per share (¥124 to zorbak, ¥62 to mindbomb(UTC+9), ¥31 to camping no reception , ¥31 to Sprint, ¥31 to Millie, ¥31 to tado)
+[21:14] KO's share price moves up from ¥80 to ¥90
+[21:14] KO passes buy trains
+[21:14] KO skips buy companies
+[21:14] mindbomb(UTC+9) operates SR
+[23:50] SR lays tile #15 with rotation 1 on H7 (Ikeda)
+[23:50] SR skips place a token
+[23:50] SR runs a D train for ¥720: F1-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-I4-G4-I2-J1
+[23:50] SR pays out ¥720 = ¥72 per share (¥432 to mindbomb(UTC+9), ¥72 to camping no reception , ¥72 to Millie, ¥72 to zorbak, ¥72 to tado)
+[23:50] SR's share price moves right from ¥80 to ¥90
+[23:50] SR skips buy trains
+[23:50] SR skips buy companies
+[23:50] -- Game over: tado (¥4249), Sprint (¥3968), camping no reception (¥3775), mindbomb(UTC+9) (¥2807), zorbak (¥2804), Millie (¥2468) --
