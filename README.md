@@ -250,4 +250,6 @@ The following games are supported:
 
 * [1830: Railroads & Robber Barons](https://en.wikipedia.org/wiki/1830:_The_Game_of_Railroads_and_Robber_Barons)
 
+Games soon to be supported:
 
+* [1889: The History of Railroading in Shikoku](https://boardgamegeek.com/boardgame/23540/shikoku-1889)
