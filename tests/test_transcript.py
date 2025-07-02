@@ -3,6 +3,8 @@
 import io
 import unittest.mock
 
+import pandas as pd
+
 from transcripts18xx import transcript
 
 from tests import context
@@ -75,8 +77,10 @@ class TestTranscriptRendering(unittest.TestCase):
         )
 
     def test_dataframe(self):
-        # TODO test
-        pass
+        df = transcript.dataframe(context.transcript_1830())
+        self.assertIsInstance(df, pd.DataFrame)
+        self.assertEqual(1346, df.shape[0])
+        self.assertEqual(165, df.shape[1])
 
     def test_metadata_path(self):
         self.assertEqual(
@@ -86,16 +90,25 @@ class TestTranscriptRendering(unittest.TestCase):
         )
 
     def test_metadata(self):
-        # TODO test
-        pass
+        metadata = transcript.metadata(context.transcript_1830())
+        self.assertIsInstance(metadata, dict)
+        self.assertEqual(10, len(metadata.keys()))
 
     def test_transcript_name(self):
-        # TODO test
-        pass
+        self.assertEqual(
+            '1830_123456', transcript.transcript_name('1830_123456_final.csv')
+        )
+        self.assertEqual(
+            '1830_12345', transcript.transcript_name('1830_12345_metadata.json')
+        )
 
     def test_transcript_id(self):
-        # TODO test
-        pass
+        self.assertEqual(
+            '123456', transcript.transcript_id('1830_123456_final.csv')
+        )
+        self.assertEqual(
+            '12345', transcript.transcript_id('1830_12345_metadata.json')
+        )
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_full_verification(self, mock_stdout):
