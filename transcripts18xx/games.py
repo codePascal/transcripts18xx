@@ -23,8 +23,8 @@ class Game18xx(abc.ABC):
         trains: The available trains.
         initial_round: The name of the initial round. Most games start with an
             auction round named ISR 1.
-        start_capital: The start capital that is initially divided by the
-            number of players.
+        start_capital: The start capital depending on the number of players.
+        currency: The currency used in the 18xx game variant.
     """
 
     def __init__(self):
@@ -32,7 +32,8 @@ class Game18xx(abc.ABC):
         self.privates = dict()
         self.trains = set()
         self.initial_round = str()
-        self.start_capital = int()
+        self.start_capital = dict()
+        self.currency = str()
 
         # TODO: currency: 1830 is $ and 1889 is ¥
 
@@ -60,7 +61,14 @@ class Game1830(Game18xx):
         }
         self.trains = {'2', '3', '4', '5', '6', 'D'}
         self.initial_round = 'ISR 1'
-        self.start_capital = 2400
+        self.start_capital = {
+            2: 1200,
+            3: 800,
+            4: 600,
+            5: 480,
+            6: 400
+        }
+        self.currency = '$'
 
 
 class Game1889(Game18xx):
@@ -82,11 +90,19 @@ class Game1889(Game18xx):
             'Ehime Railway': 40,
             'Sumitomo Mines Railway': 50,
             'Dougo Railway': 60,
-            'South Iyo Railway': 80
+            'South Iyo Railway': 80,
+            'Uno-Takamatsu Ferry': 150
         }
         self.trains = {'2', '3', '4', '5', '6', 'D'}
         self.initial_round = 'ISR 1'
-        self.start_capital = 0  # TODO: depends on number of players
+        self.start_capital = {
+            2: 420,
+            3: 420,
+            4: 420,
+            5: 390,
+            6: 390
+        }
+        self.currency = '¥'
 
 
 class Games(enum.IntEnum):

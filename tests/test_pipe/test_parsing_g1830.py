@@ -17,7 +17,7 @@ class TestGameTranscriptProcessor1830(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         raw_transcript = context.transcript_1830()
-        gtp = parsing.GameTranscriptProcessor()
+        gtp = parsing.GameTranscriptProcessor(Game1830())
         df = gtp.parse_transcript(raw_transcript)
         cls.df = df
 
@@ -198,7 +198,7 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         raw_transcript = context.transcript_1830()
-        gtp = parsing.GameTranscriptProcessor()
+        gtp = parsing.GameTranscriptProcessor(Game1830())
         df = gtp.parse_transcript(raw_transcript)
         tpp = parsing.TranscriptPostProcessor(df, Game1830())
         df = tpp.process()
@@ -210,13 +210,6 @@ class TestTranscriptPostProcessor1830(unittest.TestCase):
             context.transcript_1830().stem + '_processed.csv'
         )
         cls.df.to_csv(filepath, index=False, sep=',')
-
-    @staticmethod
-    def _set_not_nan(ser: pd.Series) -> set:
-        return set(ser.dropna().unique())
-
-    def _type_int(self, ser: pd.Series) -> bool:
-        return any(float(s).is_integer() for s in self._set_not_nan(ser))
 
     def test_shape(self):
         self.assertEqual(1346, self.df.shape[0])
@@ -288,7 +281,7 @@ class TestGameStateProcessor1830(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         raw_transcript = context.transcript_1830()
-        gtp = parsing.GameTranscriptProcessor()
+        gtp = parsing.GameTranscriptProcessor(Game1830())
         parsed = gtp.parse_transcript(raw_transcript)
         tpp = parsing.TranscriptPostProcessor(parsed, Game1830())
         processed = tpp.process()

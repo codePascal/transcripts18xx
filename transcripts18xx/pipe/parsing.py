@@ -28,11 +28,21 @@ class GameTranscriptProcessor(object):
     Attributes:
         _engine: The line parser engine.
         _unprocessed_lines: The lines that could not be matched.
+        _default_currency: The currency on which the parsing is set up with.
+            If the currency differs, the currency sign will be replaced in the
+            transcript lines.
+        _game_currency: The currency used in the 18xx game variant.
+
+    Args:
+        game: The 18xx game variant to parse.
     """
 
-    def __init__(self):
+    def __init__(self, game: Game18xx):
         self._engine = engine.LineParser()
         self._unprocessed_lines = list()
+
+        self._default_currency = '$'
+        self._game_currency = game.currency
 
     def _process_line(self, idx: int, line: str, data: list):
         line = self._preprocess_line(line)
@@ -44,12 +54,16 @@ class GameTranscriptProcessor(object):
         else:
             self._unprocessed_lines.append(line.strip())
 
-    @staticmethod
-    def _preprocess_line(line: str) -> str:
+    def _preprocess_line(self, line: str) -> str:
         # Sometimes there is a timestamp [hh:mm], cut it.
         if line.startswith('['):
             line = line[8:]
         line = line.lstrip()
+
+        # Replace the currency to default
+        if self._game_currency != self._default_currency:
+            line = line.replace(self._game_currency, self._default_currency)
+
         return line
 
     @staticmethod
@@ -256,7 +270,7 @@ class GameStateProcessor(object):
         self._game_state = engine.GameState(
             players,
             sorted(game.companies),
-            game.start_capital,
+            game.start_capital[len(players)],
             game.trains,
             game.privates
         )

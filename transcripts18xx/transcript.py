@@ -132,7 +132,7 @@ class TranscriptParser(object):
                 'Transcript does not exist: {}'.format(self._transcript)
             )
 
-        gtp = parsing.GameTranscriptProcessor()
+        gtp = parsing.GameTranscriptProcessor(self._game)
         df_parsed = gtp.parse_transcript(self._transcript)
         tpp = parsing.TranscriptPostProcessor(df_parsed, self._game)
         df_processed = tpp.process()

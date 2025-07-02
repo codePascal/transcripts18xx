@@ -140,7 +140,7 @@ class Players(States):
     Args:
         names: The names of the players.
         companies: The available companies in the game.
-        initial_cash: The initial cash that is divided by the players.
+        initial_cash: The initial cash per player.
 
     Attributes:
         states: The states of type `PlayerState`.
@@ -150,6 +150,5 @@ class Players(States):
                  initial_cash: int):
         super().__init__()
 
-        initial_value = int(initial_cash / len(names))
         shares = {k: 0 for k in sorted(companies)}
-        self.states = [PlayerState(n, initial_value, shares) for n in names]
+        self.states = [PlayerState(n, initial_cash, shares) for n in names]

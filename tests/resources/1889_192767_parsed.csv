@@ -1,0 +1,2106 @@
+phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,share_price,percentage,location,tile,rotation,direction,train,route,per_share,old_train,new_train,result
+2,NewPhase,Event,1,"-- Phase 2 (Operating Rounds: 1 | Train Limit: 4 | Available Tiles: Yellow) --
+",,,,,,,,,,,,,,,,,,,
+,Bid,Action,2,"Sprint bids $35 for Mitsubishi Ferry
+",Sprint,35,Mitsubishi Ferry,,,,,,,,,,,,,,,,
+,Bid,Action,3,"Millie bids $45 for Ehime Railway
+",Millie,45,Ehime Railway,,,,,,,,,,,,,,,,
+,Bid,Action,4,"zorbak bids $55 for Sumitomo Mines Railway
+",zorbak,55,Sumitomo Mines Railway,,,,,,,,,,,,,,,,
+,Bid,Action,5,"tado bids $155 for Uno-Takamatsu Ferry
+",tado,155,Uno-Takamatsu Ferry,,,,,,,,,,,,,,,,
+,Bid,Action,6,"mindbomb(UTC+9) bids $85 for South Iyo Railway
+",mindbomb(UTC+9),85,South Iyo Railway,,,,,,,,,,,,,,,,
+,Bid,Action,7,"camping no reception bids $65 for Dougo Railway
+",camping no reception,65,Dougo Railway,,,,,,,,,,,,,,,,
+,Pass,Action,8,"Sprint passes bidding
+",,,,Sprint,,,,,,,,,,,,,,,
+,BuyPrivate,Action,9,"Millie buys Takamatsu E-Railroad for $20
+",,20,Takamatsu E-Railroad,Millie,Auction,,,,,,,,,,,,,,
+,BuyPrivate,Action,10,"Sprint wins the auction for Mitsubishi Ferry with the only bid of $35
+",,35,Mitsubishi Ferry,Sprint,Auction,,,,,,,,,,,,,,
+,BuyPrivate,Action,11,"Millie wins the auction for Ehime Railway with the only bid of $45
+",,45,Ehime Railway,Millie,Auction,,,,,,,,,,,,,,
+,BuyPrivate,Action,12,"zorbak wins the auction for Sumitomo Mines Railway with the only bid of $55
+",,55,Sumitomo Mines Railway,zorbak,Auction,,,,,,,,,,,,,,
+,BuyPrivate,Action,13,"camping no reception wins the auction for Dougo Railway with the only bid of $65
+",,65,Dougo Railway,camping no reception,Auction,,,,,,,,,,,,,,
+,BuyPrivate,Action,14,"mindbomb(UTC+9) wins the auction for South Iyo Railway with the only bid of $85
+",,85,South Iyo Railway,mindbomb(UTC+9),Auction,,,,,,,,,,,,,,
+,BuyPrivate,Action,15,"tado wins the auction for Uno-Takamatsu Ferry with the only bid of $155
+",,155,Uno-Takamatsu Ferry,tado,Auction,,,,,,,,,,,,,,
+,PriorityDeal,Event,16,"zorbak has priority deal
+",zorbak,,,,,,,,,,,,,,,,,,
+,StockRound,Event,17,"-- Stock Round 1 --
+",,,,,,SR 1,,,,,,,,,,,,,
+,Par,Action,18,"zorbak pars IR at $65
+",zorbak,,,,,,IR,65,,,,,,,,,,,
+,BuyShare,Action,19,"zorbak buys a 20% share of IR from the IPO for $130
+",zorbak,130,,,IPO,,IR,,20,,,,,,,,,,
+,PresidentNomination,Event,20,"zorbak becomes the president of IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,BuyShare,Action,21,"tado buys a 10% share of IR from the IPO for $65
+",tado,65,,,IPO,,IR,,10,,,,,,,,,,
+,BuyShare,Action,23,"mindbomb(UTC+9) buys a 10% share of IR from the IPO for $65
+",mindbomb(UTC+9),65,,,IPO,,IR,,10,,,,,,,,,,
+,Par,Action,24,"camping no reception pars UR at $65
+",camping no reception,,,,,,UR,65,,,,,,,,,,,
+,BuyShare,Action,25,"camping no reception buys a 20% share of UR from the IPO for $130
+",camping no reception,130,,,IPO,,UR,,20,,,,,,,,,,
+,PresidentNomination,Event,26,"camping no reception becomes the president of UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,Par,Action,27,"Sprint pars TR at $65
+",Sprint,,,,,,TR,65,,,,,,,,,,,
+,BuyShare,Action,28,"Sprint buys a 20% share of TR from the IPO for $130
+",Sprint,130,,,IPO,,TR,,20,,,,,,,,,,
+,PresidentNomination,Event,29,"Sprint becomes the president of TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,Par,Action,30,"Millie pars KO at $65
+",Millie,,,,,,KO,65,,,,,,,,,,,
+,BuyShare,Action,31,"Millie buys a 20% share of KO from the IPO for $130
+",Millie,130,,,IPO,,KO,,20,,,,,,,,,,
+,PresidentNomination,Event,32,"Millie becomes the president of KO
+",Millie,,,,,,KO,,,,,,,,,,,,
+,BuyShare,Action,33,"zorbak buys a 10% share of IR from the IPO for $65
+",zorbak,65,,,IPO,,IR,,10,,,,,,,,,,
+,CompanyFloats,Event,34,"IR floats
+",,,,,,,IR,,,,,,,,,,,,
+,ReceiveFunds,Event,35,"IR receives $650
+",,650,,,,,IR,,,,,,,,,,,,
+,BuyShare,Action,36,"tado buys a 10% share of IR from the IPO for $65
+",tado,65,,,IPO,,IR,,10,,,,,,,,,,
+,Par,Action,37,"mindbomb(UTC+9) pars SR at $65
+",mindbomb(UTC+9),,,,,,SR,65,,,,,,,,,,,
+,BuyShare,Action,38,"mindbomb(UTC+9) buys a 20% share of SR from the IPO for $130
+",mindbomb(UTC+9),130,,,IPO,,SR,,20,,,,,,,,,,
+,PresidentNomination,Event,39,"mindbomb(UTC+9) becomes the president of SR
+",mindbomb(UTC+9),,,,,,SR,,,,,,,,,,,,
+,BuyShare,Action,40,"camping no reception buys a 10% share of UR from the IPO for $65
+",camping no reception,65,,,IPO,,UR,,10,,,,,,,,,,
+,BuyShare,Action,41,"Sprint buys a 10% share of TR from the IPO for $65
+",Sprint,65,,,IPO,,TR,,10,,,,,,,,,,
+,BuyShare,Action,42,"Millie buys a 10% share of KO from the IPO for $65
+",Millie,65,,,IPO,,KO,,10,,,,,,,,,,
+,BuyShare,Action,43,"zorbak buys a 10% share of IR from the IPO for $65
+",zorbak,65,,,IPO,,IR,,10,,,,,,,,,,
+,BuyShare,Action,44,"tado buys a 10% share of UR from the IPO for $65
+",tado,65,,,IPO,,UR,,10,,,,,,,,,,
+,BuyShare,Action,45,"mindbomb(UTC+9) buys a 10% share of SR from the IPO for $65
+",mindbomb(UTC+9),65,,,IPO,,SR,,10,,,,,,,,,,
+,BuyShare,Action,46,"camping no reception buys a 10% share of UR from the IPO for $65
+",camping no reception,65,,,IPO,,UR,,10,,,,,,,,,,
+,CompanyFloats,Event,47,"UR floats
+",,,,,,,UR,,,,,,,,,,,,
+,ReceiveFunds,Event,48,"UR receives $650
+",,650,,,,,UR,,,,,,,,,,,,
+,BuyShare,Action,49,"Sprint buys a 10% share of TR from the IPO for $65
+",Sprint,65,,,IPO,,TR,,10,,,,,,,,,,
+,BuyShare,Action,50,"Millie buys a 10% share of KO from the IPO for $65
+",Millie,65,,,IPO,,KO,,10,,,,,,,,,,
+,BuyShare,Action,51,"zorbak buys a 10% share of IR from the IPO for $65
+",zorbak,65,,,IPO,,IR,,10,,,,,,,,,,
+,Pass,Action,52,"tado has no valid actions and passes
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,53,"mindbomb(UTC+9) has no valid actions and passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,BuyShare,Action,54,"camping no reception buys a 10% share of UR from the IPO for $65
+",camping no reception,65,,,IPO,,UR,,10,,,,,,,,,,
+,BuyShare,Action,55,"Sprint buys a 10% share of TR from the IPO for $65
+",Sprint,65,,,IPO,,TR,,10,,,,,,,,,,
+,CompanyFloats,Event,56,"TR floats
+",,,,,,,TR,,,,,,,,,,,,
+,ReceiveFunds,Event,57,"TR receives $650
+",,650,,,,,TR,,,,,,,,,,,,
+,BuyShare,Action,58,"Millie buys a 10% share of KO from the IPO for $65
+",Millie,65,,,IPO,,KO,,10,,,,,,,,,,
+,CompanyFloats,Event,59,"KO floats
+",,,,,,,KO,,,,,,,,,,,,
+,ReceiveFunds,Event,60,"KO receives $650
+",,650,,,,,KO,,,,,,,,,,,,
+,Pass,Action,61,"zorbak has no valid actions and passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,Pass,Action,62,"tado has no valid actions and passes
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,63,"mindbomb(UTC+9) has no valid actions and passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,Pass,Action,64,"camping no reception has no valid actions and passes
+",,,,camping no reception,,,,,,,,,,,,,,,
+,Pass,Action,65,"Sprint has no valid actions and passes
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,66,"Millie has no valid actions and passes
+",,,,Millie,,,,,,,,,,,,,,,
+,PriorityDeal,Event,67,"zorbak has priority deal
+",zorbak,,,,,,,,,,,,,,,,,,
+,OperatingRound,Event,68,"-- Operating Round 1.1 (of 1) --
+",,,,,,OR 1.1,,,,,,,,,,,,,
+,Collect,Action,69,"zorbak collects $15 from Sumitomo Mines Railway
+",,15,,zorbak,Sumitomo Mines Railway,,,,,,,,,,,,,,
+,Collect,Action,70,"tado collects $30 from Uno-Takamatsu Ferry
+",,30,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,Collect,Action,71,"mindbomb(UTC+9) collects $20 from South Iyo Railway
+",,20,,mindbomb(UTC+9),South Iyo Railway,,,,,,,,,,,,,,
+,Collect,Action,72,"camping no reception collects $15 from Dougo Railway
+",,15,,camping no reception,Dougo Railway,,,,,,,,,,,,,,
+,Collect,Action,73,"Sprint collects $5 from Mitsubishi Ferry
+",,5,,Sprint,Mitsubishi Ferry,,,,,,,,,,,,,,
+,Collect,Action,74,"Millie collects $5 from Takamatsu E-Railroad
+",,5,,Millie,Takamatsu E-Railroad,,,,,,,,,,,,,,
+,Collect,Action,75,"Millie collects $10 from Ehime Railway
+",,10,,Millie,Ehime Railway,,,,,,,,,,,,,,
+,PlaceToken,Action,76,"IR places a token on E2
+",,0,,,,,IR,,,E2,,,,,,,,,
+,PlaceToken,Action,77,"UR places a token on B7
+",,0,,,,,UR,,,B7,,,,,,,,,
+,PlaceToken,Action,78,"TR places a token on F9
+",,0,,,,,TR,,,F9,,,,,,,,,
+,PlaceToken,Action,79,"KO places a token on K4
+",,0,,,,,KO,,,K4,,,,,,,,,
+,OperatesCompany,Event,80,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,LayTile,Action,81,"IR lays tile #5 with rotation 4 on E2 (Matsuyama)
+",,0,,,,,IR,,,E2 (Matsuyama),5,4,,,,,,,
+,Skip,Action,82,"IR skips place a token
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,83,"IR skips run routes
+",,,,IR,,,,,,,,,,,,,,,
+,DoesNotRun,Event,84,"IR does not run
+",,,,,,,IR,,,,,,,,,,,,
+,SharePriceMoves,Event,85,"IR's share price moves left from $65 to $60
+",,,,,,,IR,60,,,,,left,,,,,,
+,BuyTrain,Action,86,"IR buys a 2 train for $80 from The Depot
+",,80,,,The Depot,,IR,,,,,,,2,,,,,
+,BuyTrain,Action,87,"IR buys a 2 train for $80 from The Depot
+",,80,,,The Depot,,IR,,,,,,,2,,,,,
+,BuyTrain,Action,88,"IR buys a 2 train for $80 from The Depot
+",,80,,,The Depot,,IR,,,,,,,2,,,,,
+,Pass,Action,89,"IR passes buy trains
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,90,"IR skips buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,91,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,LayTile,Action,92,"UR lays tile #9 with rotation 0 on B5
+",,0,,,,,UR,,,B5,9,0,,,,,,,
+,PlaceToken,Action,93,"UR places a token on C4 (Ohzu) for $40
+",,40,,,,,UR,,,C4 (Ohzu),,,,,,,,,
+,Skip,Action,94,"UR skips run routes
+",,,,UR,,,,,,,,,,,,,,,
+,DoesNotRun,Event,95,"UR does not run
+",,,,,,,UR,,,,,,,,,,,,
+,SharePriceMoves,Event,96,"UR's share price moves left from $65 to $60
+",,,,,,,UR,60,,,,,left,,,,,,
+,BuyTrain,Action,97,"UR buys a 2 train for $80 from The Depot
+",,80,,,The Depot,,UR,,,,,,,2,,,,,
+,BuyTrain,Action,98,"UR buys a 2 train for $80 from The Depot
+",,80,,,The Depot,,UR,,,,,,,2,,,,,
+,Pass,Action,99,"UR passes buy trains
+",,,,UR,,,,,,,,,,,,,,,
+,Skip,Action,100,"UR skips buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,101,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,LayTile,Action,103,"TR (MF) lays tile #437 with rotation 0 on G10 (Nangoku)
+",,0,,,,,TR (MF),,,G10 (Nangoku),437,0,,,,,,,
+,LayTile,Action,104,"TR lays tile #57 with rotation 0 on G12 (Nahari)
+",,0,,,,,TR,,,G12 (Nahari),57,0,,,,,,,
+,PlaceToken,Action,105,"TR places a token on G12 (Nahari) for $40
+",,40,,,,,TR,,,G12 (Nahari),,,,,,,,,
+,Skip,Action,106,"TR skips run routes
+",,,,TR,,,,,,,,,,,,,,,
+,DoesNotRun,Event,107,"TR does not run
+",,,,,,,TR,,,,,,,,,,,,
+,SharePriceMoves,Event,108,"TR's share price moves left from $65 to $60
+",,,,,,,TR,60,,,,,left,,,,,,
+,BuyTrain,Action,109,"TR buys a 2 train for $80 from The Depot
+",,80,,,The Depot,,TR,,,,,,,2,,,,,
+,BuyTrain,Action,110,"TR buys a 3 train for $180 from The Depot
+",,180,,,The Depot,,TR,,,,,,,3,,,,,
+3,NewPhase,Event,111,"-- Phase 3 (Operating Rounds: 2 | Train Limit: 4 | Available Tiles: Yellow, Green) --
+",,,,,,,,,,,,,,,,,,,
+,BuyPrivate,Action,112,"TR buys Mitsubishi Ferry from Sprint for $60
+",,60,Mitsubishi Ferry,TR,Sprint,,,,,,,,,,,,,,
+,BuyTrain,Action,113,"TR buys a 3 train for $180 from The Depot
+",,180,,,The Depot,,TR,,,,,,,3,,,,,
+,Pass,Action,114,"TR passes buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Pass,Action,115,"TR passes buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,116,"Millie operates KO
+",Millie,,,,,,KO,,,,,,,,,,,,
+,LayTile,Action,117,"KO lays tile #8 with rotation 3 on J3
+",,0,,,,,KO,,,J3,8,3,,,,,,,
+,Skip,Action,118,"KO skips place a token
+",,,,KO,,,,,,,,,,,,,,,
+,Skip,Action,119,"KO skips run routes
+",,,,KO,,,,,,,,,,,,,,,
+,DoesNotRun,Event,120,"KO does not run
+",,,,,,,KO,,,,,,,,,,,,
+,SharePriceMoves,Event,121,"KO's share price moves left from $65 to $60
+",,,,,,,KO,60,,,,,left,,,,,,
+,BuyTrain,Action,122,"KO buys a 3 train for $180 from The Depot
+",,180,,,The Depot,,KO,,,,,,,3,,,,,
+,Pass,Action,123,"KO passes buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,Pass,Action,124,"KO passes buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,StockRound,Event,125,"-- Stock Round 2 --
+",,,,,,SR 2,,,,,,,,,,,,,
+,Pass,Action,126,"zorbak passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,BuyShare,Action,127,"tado buys a 10% share of KO from the IPO for $65
+",tado,65,,,IPO,,KO,,10,,,,,,,,,,
+,Skip,Action,128,"tado declines to sell shares
+",,,,tado,,,,,,,,,,,,,,,
+,BuyShare,Action,129,"mindbomb(UTC+9) buys a 10% share of SR from the IPO for $65
+",mindbomb(UTC+9),65,,,IPO,,SR,,10,,,,,,,,,,
+,Skip,Action,130,"mindbomb(UTC+9) declines to sell shares
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,Pass,Action,131,"camping no reception passes
+",,,,camping no reception,,,,,,,,,,,,,,,
+,BuyShare,Action,132,"Sprint buys a 10% share of IR from the IPO for $65
+",Sprint,65,,,IPO,,IR,,10,,,,,,,,,,
+,Skip,Action,133,"Sprint declines to sell shares
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,134,"Millie passes
+",,,,Millie,,,,,,,,,,,,,,,
+,Pass,Action,135,"zorbak passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,Pass,Action,136,"tado passes
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,137,"mindbomb(UTC+9) passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,Pass,Action,138,"camping no reception passes
+",,,,camping no reception,,,,,,,,,,,,,,,
+,Pass,Action,140,"Sprint passes
+",,,,Sprint,,,,,,,,,,,,,,,
+,PriorityDeal,Event,141,"Millie has priority deal
+",Millie,,,,,,,,,,,,,,,,,,
+,OperatingRound,Event,142,"-- Operating Round 2.1 (of 2) --
+",,,,,,OR 2.1,,,,,,,,,,,,,
+,Collect,Action,143,"Millie collects $5 from Takamatsu E-Railroad
+",,5,,Millie,Takamatsu E-Railroad,,,,,,,,,,,,,,
+,Collect,Action,144,"Millie collects $10 from Ehime Railway
+",,10,,Millie,Ehime Railway,,,,,,,,,,,,,,
+,Collect,Action,145,"zorbak collects $15 from Sumitomo Mines Railway
+",,15,,zorbak,Sumitomo Mines Railway,,,,,,,,,,,,,,
+,Collect,Action,146,"tado collects $30 from Uno-Takamatsu Ferry
+",,30,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,Collect,Action,147,"mindbomb(UTC+9) collects $20 from South Iyo Railway
+",,20,,mindbomb(UTC+9),South Iyo Railway,,,,,,,,,,,,,,
+,Collect,Action,148,"camping no reception collects $15 from Dougo Railway
+",,15,,camping no reception,Dougo Railway,,,,,,,,,,,,,,
+,Collect,Action,149,"TR collects $5 from Mitsubishi Ferry
+",,5,,TR,Mitsubishi Ferry,,,,,,,,,,,,,,
+,OperatesCompany,Event,150,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,LayTile,Action,151,"IR lays tile #5 with rotation 2 on F3 (Saijou)
+",,0,,,,,IR,,,F3 (Saijou),5,2,,,,,,,
+,PlaceToken,Action,152,"IR places a token on F3 (Saijou) for $40
+",,40,,,,,IR,,,F3 (Saijou),,,,,,,,,
+,RunTrain,Action,153,"IR runs a 2 train for $40: F3-E2
+",,40,,,,,IR,,,,,,,2,F3-E2,,,,
+,RunTrain,Action,154,"IR runs a 2 train for $50: F3-F1
+",,50,,,,,IR,,,,,,,2,F3-F1,,,,
+,RunTrain,Action,155,"IR runs a 2 train for $50: E2-F1
+",,50,,,,,IR,,,,,,,2,E2-F1,,,,
+,PayOut,Action,156,"IR pays out $140 = $14 per share ($70 to zorbak, $28 to tado, $14 to mindbomb(UTC+9), $14 to Sprint)
+",,140,,,,,IR,,,,,,,,,14,,,
+,SharePriceMoves,Event,157,"IR's share price moves right from $60 to $65
+",,,,,,,IR,65,,,,,right,,,,,,
+,Pass,Action,158,"IR passes buy trains
+",,,,IR,,,,,,,,,,,,,,,
+,BuyPrivate,Action,159,"IR buys Sumitomo Mines Railway from zorbak for $100
+",,100,Sumitomo Mines Railway,IR,zorbak,,,,,,,,,,,,,,
+,Pass,Action,160,"IR passes buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,161,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,LayTile,Action,162,"UR lays tile #9 with rotation 2 on C8
+",,0,,,,,UR,,,C8,9,2,,,,,,,
+,Skip,Action,163,"UR skips place a token
+",,,,UR,,,,,,,,,,,,,,,
+,RunTrain,Action,164,"UR runs a 2 train for $40: C4-B3
+",,40,,,,,UR,,,,,,,2,C4-B3,,,,
+,RunTrain,Action,165,"UR runs a 2 train for $60: B7-B3
+",,60,,,,,UR,,,,,,,2,B7-B3,,,,
+,PayOut,Action,166,"UR pays out $100 = $10 per share ($50 to camping no reception , $10 to tado)
+",,100,,,,,UR,,,,,,,,,10,,,
+,SharePriceMoves,Event,167,"UR's share price moves right from $60 to $65
+",,,,,,,UR,65,,,,,right,,,,,,
+,BuyTrain,Action,168,"UR buys a 3 train for $180 from The Depot
+",,180,,,The Depot,,UR,,,,,,,3,,,,,
+,Pass,Action,169,"UR passes buy trains
+",,,,UR,,,,,,,,,,,,,,,
+,BuyPrivate,Action,170,"UR buys Dougo Railway from camping no reception for $120
+",,120,Dougo Railway,UR,camping no reception,,,,,,,,,,,,,,
+,Pass,Action,171,"UR passes buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,172,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,LayTile,Action,173,"TR lays tile #8 with rotation 5 on E8
+",,0,,,,,TR,,,E8,8,5,,,,,,,
+,Skip,Action,174,"TR skips place a token
+",,,,TR,,,,,,,,,,,,,,,
+,RunTrain,Action,175,"TR runs a 3 train for $40: G12-G14
+",,40,,,,,TR,,,,,,,3,G12-G14,,,,
+,RunTrain,Action,176,"TR runs a 3 train for $50: G12-G10
+",,50,,,,,TR,,,,,,,3,G12-G10,,,,
+,RunTrain,Action,177,"TR runs a 2 train for $60: F9-G10
+",,60,,,,,TR,,,,,,,2,F9-G10,,,,
+,PayOut,Action,178,"TR pays out $150 = $15 per share ($75 to Sprint)
+",,150,,,,,TR,,,,,,,,,15,,,
+,SharePriceMoves,Event,179,"TR's share price moves right from $60 to $65
+",,,,,,,TR,65,,,,,right,,,,,,
+,Pass,Action,180,"TR passes buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Pass,Action,181,"TR passes buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,182,"Millie operates KO
+",Millie,,,,,,KO,,,,,,,,,,,,
+,LayTile,Action,183,"KO lays tile #58 with rotation 2 on J5 (Ritsurin Kouen)
+",,0,,,,,KO,,,J5 (Ritsurin Kouen),58,2,,,,,,,
+,Skip,Action,184,"KO skips place a token
+",,,,KO,,,,,,,,,,,,,,,
+,RunTrain,Action,185,"KO runs a 3 train for $60: J1-K4-J5
+",,60,,,,,KO,,,,,,,3,J1-K4-J5,,,,
+,PayOut,Action,186,"KO pays out $60 = $6 per share ($30 to Millie, $6 to tado)
+",,60,,,,,KO,,,,,,,,,6,,,
+,SharePriceMoves,Event,187,"KO's share price moves right from $60 to $65
+",,,,,,,KO,65,,,,,right,,,,,,
+,Pass,Action,188,"KO passes buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,Pass,Action,189,"KO passes buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,OperatingRound,Event,190,"-- Operating Round 2.2 (of 2) --
+",,,,,,OR 2.2,,,,,,,,,,,,,
+,Collect,Action,191,"Millie collects $5 from Takamatsu E-Railroad
+",,5,,Millie,Takamatsu E-Railroad,,,,,,,,,,,,,,
+,Collect,Action,192,"Millie collects $10 from Ehime Railway
+",,10,,Millie,Ehime Railway,,,,,,,,,,,,,,
+,Collect,Action,193,"tado collects $30 from Uno-Takamatsu Ferry
+",,30,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,Collect,Action,194,"mindbomb(UTC+9) collects $20 from South Iyo Railway
+",,20,,mindbomb(UTC+9),South Iyo Railway,,,,,,,,,,,,,,
+,Collect,Action,195,"IR collects $15 from Sumitomo Mines Railway
+",,15,,IR,Sumitomo Mines Railway,,,,,,,,,,,,,,
+,Collect,Action,196,"UR collects $15 from Dougo Railway
+",,15,,UR,Dougo Railway,,,,,,,,,,,,,,
+,Collect,Action,197,"TR collects $5 from Mitsubishi Ferry
+",,5,,TR,Mitsubishi Ferry,,,,,,,,,,,,,,
+,OperatesCompany,Event,198,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,LayTile,Action,199,"IR lays tile #205 with rotation 2 on F3 (Saijou)
+",,0,,,,,IR,,,F3 (Saijou),205,2,,,,,,,
+,Skip,Action,200,"IR skips place a token
+",,,,IR,,,,,,,,,,,,,,,
+,RunTrain,Action,201,"IR runs a 2 train for $50: F3-E2
+",,50,,,,,IR,,,,,,,2,F3-E2,,,,
+,RunTrain,Action,202,"IR runs a 2 train for $60: F3-F1
+",,60,,,,,IR,,,,,,,2,F3-F1,,,,
+,RunTrain,Action,203,"IR runs a 2 train for $50: E2-F1
+",,50,,,,,IR,,,,,,,2,E2-F1,,,,
+,PayOut,Action,204,"IR pays out $160 = $16 per share ($80 to zorbak, $32 to tado, $16 to mindbomb(UTC+9), $16 to Sprint)
+",,160,,,,,IR,,,,,,,,,16,,,
+,SharePriceMoves,Event,205,"IR's share price moves right from $65 to $70
+",,,,,,,IR,70,,,,,right,,,,,,
+,Pass,Action,206,"IR passes buy trains
+",,,,IR,,,,,,,,,,,,,,,
+,Pass,Action,207,"IR passes buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,208,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,LayTile,Action,210,"UR lays tile #8 with rotation 2 on D9
+",,0,,,,,UR,,,D9,8,2,,,,,,,
+,Pass,Action,211,"UR passes place a token
+",,,,UR,,,,,,,,,,,,,,,
+,RunTrain,Action,212,"UR runs a 3 train for $100: B7-F9-G10
+",,100,,,,,UR,,,,,,,3,B7-F9-G10,,,,
+,RunTrain,Action,213,"UR runs a 2 train for $40: C4-B3
+",,40,,,,,UR,,,,,,,2,C4-B3,,,,
+,RunTrain,Action,214,"UR runs a 2 train for $60: B7-B3
+",,60,,,,,UR,,,,,,,2,B7-B3,,,,
+,PayOut,Action,215,"UR pays out $200 = $20 per share ($100 to camping no reception , $20 to tado)
+",,200,,,,,UR,,,,,,,,,20,,,
+,SharePriceMoves,Event,216,"UR's share price moves right from $65 to $70
+",,,,,,,UR,70,,,,,right,,,,,,
+,Pass,Action,217,"UR passes buy trains
+",,,,UR,,,,,,,,,,,,,,,
+,Pass,Action,218,"UR passes buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,219,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,LayTile,Action,220,"TR lays tile #15 with rotation 3 on G12 (Nahari)
+",,0,,,,,TR,,,G12 (Nahari),15,3,,,,,,,
+,Pass,Action,221,"TR passes place a token
+",,,,TR,,,,,,,,,,,,,,,
+,RunTrain,Action,222,"TR runs a 3 train for $80: G10-G12-G14
+",,80,,,,,TR,,,,,,,3,G10-G12-G14,,,,
+,RunTrain,Action,223,"TR runs a 3 train for $90: F9-B7-B3
+",,90,,,,,TR,,,,,,,3,F9-B7-B3,,,,
+,RunTrain,Action,224,"TR runs a 2 train for $60: F9-G10
+",,60,,,,,TR,,,,,,,2,F9-G10,,,,
+,PayOut,Action,225,"TR pays out $230 = $23 per share ($115 to Sprint)
+",,230,,,,,TR,,,,,,,,,23,,,
+,SharePriceMoves,Event,226,"TR's share price moves right from $65 to $70
+",,,,,,,TR,70,,,,,right,,,,,,
+,Pass,Action,227,"TR passes buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Pass,Action,228,"TR passes buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,229,"Millie operates KO
+",Millie,,,,,,KO,,,,,,,,,,,,
+,LayTile,Action,230,"KO spends $80 and lays tile #438 with rotation 5 on I4 (Kotohira)
+",,80,,,,,KO,,,I4 (Kotohira),438,5,,,,,,,
+,Pass,Action,231,"KO passes place a token
+",,,,KO,,,,,,,,,,,,,,,
+,RunTrain,Action,232,"KO runs a 3 train for $80: K4-J5-I4
+",,80,,,,,KO,,,,,,,3,K4-J5-I4,,,,
+,PayOut,Action,233,"KO pays out $80 = $8 per share ($40 to Millie, $8 to tado)
+",,80,,,,,KO,,,,,,,,,8,,,
+,SharePriceMoves,Event,234,"KO's share price moves right from $65 to $70
+",,,,,,,KO,70,,,,,right,,,,,,
+,Pass,Action,235,"KO passes buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,BuyPrivate,Action,236,"KO buys Takamatsu E-Railroad from Millie for $40
+",,40,Takamatsu E-Railroad,KO,Millie,,,,,,,,,,,,,,
+,Pass,Action,237,"KO passes buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,StockRound,Event,238,"-- Stock Round 3 --
+",,,,,,SR 3,,,,,,,,,,,,,
+,BuyShare,Action,239,"Millie buys a 10% share of TR from the IPO for $65
+",Millie,65,,,IPO,,TR,,10,,,,,,,,,,
+,Skip,Action,240,"Millie declines to sell shares
+",,,,Millie,,,,,,,,,,,,,,,
+,BuyShare,Action,241,"zorbak buys a 10% share of TR from the IPO for $65
+",zorbak,65,,,IPO,,TR,,10,,,,,,,,,,
+,Skip,Action,242,"zorbak declines to sell shares
+",,,,zorbak,,,,,,,,,,,,,,,
+,BuyShare,Action,243,"tado buys a 10% share of TR from the IPO for $65
+",tado,65,,,IPO,,TR,,10,,,,,,,,,,
+,Skip,Action,244,"tado declines to sell shares
+",,,,tado,,,,,,,,,,,,,,,
+,BuyShare,Action,246,"mindbomb(UTC+9) buys a 10% share of SR from the IPO for $65
+",mindbomb(UTC+9),65,,,IPO,,SR,,10,,,,,,,,,,
+,CompanyFloats,Event,247,"SR floats
+",,,,,,,SR,,,,,,,,,,,,
+,ReceiveFunds,Event,248,"SR receives $650
+",,650,,,,,SR,,,,,,,,,,,,
+,Skip,Action,249,"mindbomb(UTC+9) declines to sell shares
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,BuyShare,Action,250,"camping no reception buys a 10% share of IR from the IPO for $65
+",camping no reception,65,,,IPO,,IR,,10,,,,,,,,,,
+,Skip,Action,251,"camping no reception declines to sell shares
+",,,,camping no reception,,,,,,,,,,,,,,,
+,BuyShare,Action,252,"Sprint buys a 10% share of TR from the IPO for $65
+",Sprint,65,,,IPO,,TR,,10,,,,,,,,,,
+,Skip,Action,253,"Sprint declines to sell shares
+",,,,Sprint,,,,,,,,,,,,,,,
+,BuyShare,Action,254,"Millie buys a 10% share of UR from the IPO for $65
+",Millie,65,,,IPO,,UR,,10,,,,,,,,,,
+,Skip,Action,255,"Millie declines to sell shares
+",,,,Millie,,,,,,,,,,,,,,,
+,BuyShare,Action,256,"zorbak buys a 10% share of UR from the IPO for $65
+",zorbak,65,,,IPO,,UR,,10,,,,,,,,,,
+,Skip,Action,257,"zorbak declines to sell shares
+",,,,zorbak,,,,,,,,,,,,,,,
+,BuyShare,Action,258,"tado buys a 10% share of KO from the IPO for $65
+",tado,65,,,IPO,,KO,,10,,,,,,,,,,
+,Skip,Action,259,"tado declines to sell shares
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,260,"mindbomb(UTC+9) passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,BuyShare,Action,261,"camping no reception buys a 10% share of TR from the IPO for $65
+",camping no reception,65,,,IPO,,TR,,10,,,,,,,,,,
+,Skip,Action,262,"camping no reception declines to sell shares
+",,,,camping no reception,,,,,,,,,,,,,,,
+,BuyShare,Action,264,"Sprint buys a 10% share of UR from the IPO for $65
+",Sprint,65,,,IPO,,UR,,10,,,,,,,,,,
+,Skip,Action,265,"Sprint declines to sell shares
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,266,"Millie passes
+",,,,Millie,,,,,,,,,,,,,,,
+,BuyShare,Action,267,"zorbak buys a 10% share of KO from the IPO for $65
+",zorbak,65,,,IPO,,KO,,10,,,,,,,,,,
+,Skip,Action,268,"zorbak declines to sell shares
+",,,,zorbak,,,,,,,,,,,,,,,
+,Pass,Action,269,"tado passes
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,270,"mindbomb(UTC+9) passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,BuyShare,Action,271,"camping no reception buys a 10% share of UR from the IPO for $65
+",camping no reception,65,,,IPO,,UR,,10,,,,,,,,,,
+,Skip,Action,272,"camping no reception declines to sell shares
+",,,,camping no reception,,,,,,,,,,,,,,,
+,BuyShare,Action,273,"Sprint buys a 10% share of KO from the IPO for $65
+",Sprint,65,,,IPO,,KO,,10,,,,,,,,,,
+,Skip,Action,274,"Sprint declines to sell shares
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,275,"Millie passes
+",,,,Millie,,,,,,,,,,,,,,,
+,BuyShare,Action,276,"zorbak buys a 10% share of KO from the IPO for $65
+",zorbak,65,,,IPO,,KO,,10,,,,,,,,,,
+,Skip,Action,277,"zorbak declines to sell shares
+",,,,zorbak,,,,,,,,,,,,,,,
+,Pass,Action,278,"tado passes
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,280,"mindbomb(UTC+9) passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,BuyShare,Action,281,"camping no reception buys a 10% share of SR from the IPO for $65
+",camping no reception,65,,,IPO,,SR,,10,,,,,,,,,,
+,Skip,Action,282,"camping no reception declines to sell shares
+",,,,camping no reception,,,,,,,,,,,,,,,
+,Pass,Action,283,"Sprint passes
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,284,"Millie passes
+",,,,Millie,,,,,,,,,,,,,,,
+,Pass,Action,285,"zorbak passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,Pass,Action,286,"tado passes
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,287,"mindbomb(UTC+9) passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,Pass,Action,288,"camping no reception passes
+",,,,camping no reception,,,,,,,,,,,,,,,
+,SharePriceMoves,Event,289,"IR's share price moves up from $70 to $75
+",,,,,,,IR,75,,,,,up,,,,,,
+,SharePriceMoves,Event,290,"UR's share price moves up from $70 to $75
+",,,,,,,UR,75,,,,,up,,,,,,
+,SharePriceMoves,Event,291,"TR's share price moves up from $70 to $75
+",,,,,,,TR,75,,,,,up,,,,,,
+,SharePriceMoves,Event,292,"KO's share price moves up from $70 to $75
+",,,,,,,KO,75,,,,,up,,,,,,
+,PriorityDeal,Event,293,"Sprint has priority deal
+",Sprint,,,,,,,,,,,,,,,,,,
+,OperatingRound,Event,294,"-- Operating Round 3.1 (of 2) --
+",,,,,,OR 3.1,,,,,,,,,,,,,
+,Collect,Action,295,"Millie collects $10 from Ehime Railway
+",,10,,Millie,Ehime Railway,,,,,,,,,,,,,,
+,Collect,Action,296,"tado collects $30 from Uno-Takamatsu Ferry
+",,30,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,Collect,Action,297,"mindbomb(UTC+9) collects $20 from South Iyo Railway
+",,20,,mindbomb(UTC+9),South Iyo Railway,,,,,,,,,,,,,,
+,Collect,Action,298,"IR collects $15 from Sumitomo Mines Railway
+",,15,,IR,Sumitomo Mines Railway,,,,,,,,,,,,,,
+,Collect,Action,299,"UR collects $15 from Dougo Railway
+",,15,,UR,Dougo Railway,,,,,,,,,,,,,,
+,Collect,Action,300,"TR collects $5 from Mitsubishi Ferry
+",,5,,TR,Mitsubishi Ferry,,,,,,,,,,,,,,
+,Collect,Action,301,"KO collects $5 from Takamatsu E-Railroad
+",,5,,KO,Takamatsu E-Railroad,,,,,,,,,,,,,,
+,PlaceToken,Action,302,"SR places a token on I2
+",,0,,,,,SR,,,I2,,,,,,,,,
+,OperatesCompany,Event,303,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,LayTile,Action,305,"IR lays tile #6 with rotation 2 on G4 (Niihama)
+",,0,,,,,IR,,,G4 (Niihama),6,2,,,,,,,
+,Skip,Action,306,"IR skips place a token
+",,,,IR,,,,,,,,,,,,,,,
+,RunTrain,Action,307,"IR runs a 2 train for $50: F3-E2
+",,50,,,,,IR,,,,,,,2,F3-E2,,,,
+,RunTrain,Action,308,"IR runs a 2 train for $60: F3-F1
+",,60,,,,,IR,,,,,,,2,F3-F1,,,,
+,RunTrain,Action,309,"IR runs a 2 train for $50: E2-F1
+",,50,,,,,IR,,,,,,,2,E2-F1,,,,
+,PayOut,Action,310,"IR pays out $160 = $16 per share ($80 to zorbak, $32 to tado, $16 to Sprint, $16 to mindbomb(UTC+9), $16 to camping no reception )
+",,160,,,,,IR,,,,,,,,,16,,,
+,SharePriceMoves,Event,311,"IR's share price moves right from $75 to $80
+",,,,,,,IR,80,,,,,right,,,,,,
+,Pass,Action,312,"IR passes buy trains
+",,,,IR,,,,,,,,,,,,,,,
+,Pass,Action,313,"IR passes buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,314,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,Pass,Action,315,"UR passes lay/upgrade track
+",,,,UR,,,,,,,,,,,,,,,
+,Pass,Action,316,"UR passes place a token
+",,,,UR,,,,,,,,,,,,,,,
+,RunTrain,Action,317,"UR runs a 3 train for $100: B7-F9-G10
+",,100,,,,,UR,,,,,,,3,B7-F9-G10,,,,
+,RunTrain,Action,318,"UR runs a 2 train for $40: C4-B3
+",,40,,,,,UR,,,,,,,2,C4-B3,,,,
+,RunTrain,Action,319,"UR runs a 2 train for $60: B7-B3
+",,60,,,,,UR,,,,,,,2,B7-B3,,,,
+,PayOut,Action,320,"UR pays out $200 = $20 per share ($120 to camping no reception , $20 to Sprint, $20 to Millie, $20 to zorbak, $20 to tado)
+",,200,,,,,UR,,,,,,,,,20,,,
+,SharePriceMoves,Event,321,"UR's share price moves right from $75 to $80
+",,,,,,,UR,80,,,,,right,,,,,,
+,Pass,Action,322,"UR passes buy trains
+",,,,UR,,,,,,,,,,,,,,,
+,Pass,Action,323,"UR passes buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,324,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,LayTile,Action,325,"TR lays tile #23 with rotation 0 on B5
+",,0,,,,,TR,,,B5,23,0,,,,,,,
+,Pass,Action,326,"TR passes place a token
+",,,,TR,,,,,,,,,,,,,,,
+,RunTrain,Action,327,"TR runs a 3 train for $80: G10-G12-G14
+",,80,,,,,TR,,,,,,,3,G10-G12-G14,,,,
+,RunTrain,Action,328,"TR runs a 3 train for $90: F9-B7-B3
+",,90,,,,,TR,,,,,,,3,F9-B7-B3,,,,
+,RunTrain,Action,329,"TR runs a 2 train for $60: F9-G10
+",,60,,,,,TR,,,,,,,2,F9-G10,,,,
+,PayOut,Action,330,"TR pays out $230 = $23 per share ($138 to Sprint, $23 to Millie, $23 to zorbak, $23 to tado, $23 to camping no reception )
+",,230,,,,,TR,,,,,,,,,23,,,
+,SharePriceMoves,Event,331,"TR's share price moves right from $75 to $80
+",,,,,,,TR,80,,,,,right,,,,,,
+,Pass,Action,332,"TR passes buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Pass,Action,333,"TR passes buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,334,"Millie operates KO
+",Millie,,,,,,KO,,,,,,,,,,,,
+,LayTile,Action,335,"KO spends $80 and lays tile #439 with rotation 1 on I4 (Kotohira)
+",,80,,,,,KO,,,I4 (Kotohira),439,1,,,,,,,
+,Pass,Action,336,"KO passes place a token
+",,,,KO,,,,,,,,,,,,,,,
+,RunTrain,Action,337,"KO runs a 3 train for $100: K4-J5-I4
+",,100,,,,,KO,,,,,,,3,K4-J5-I4,,,,
+,PayOut,Action,338,"KO pays out $100 = $10 per share ($50 to Millie, $20 to zorbak, $20 to tado, $10 to Sprint)
+",,100,,,,,KO,,,,,,,,,10,,,
+,SharePriceMoves,Event,339,"KO's share price moves right from $75 to $80
+",,,,,,,KO,80,,,,,right,,,,,,
+,BuyTrain,Action,340,"KO buys a 3 train for $180 from The Depot
+",,180,,,The Depot,,KO,,,,,,,3,,,,,
+,Pass,Action,341,"KO passes buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,Pass,Action,342,"KO passes buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,OperatesCompany,Event,343,"mindbomb(UTC+9) operates SR
+",mindbomb(UTC+9),,,,,,SR,,,,,,,,,,,,
+,LayTile,Action,344,"SR lays tile #6 with rotation 4 on I2 (Marugame)
+",,0,,,,,SR,,,I2 (Marugame),6,4,,,,,,,
+,PlaceToken,Action,345,"SR places a token on I4 (Kotohira) for $40
+",,40,,,,,SR,,,I4 (Kotohira),,,,,,,,,
+,Skip,Action,346,"SR skips run routes
+",,,,SR,,,,,,,,,,,,,,,
+,DoesNotRun,Event,347,"SR does not run
+",,,,,,,SR,,,,,,,,,,,,
+,SharePriceMoves,Event,348,"SR's share price moves left from $65 to $60
+",,,,,,,SR,60,,,,,left,,,,,,
+,BuyTrain,Action,349,"SR buys a 4 train for $300 from The Depot
+",,300,,,The Depot,,SR,,,,,,,4,,,,,
+4,NewPhase,Event,350,"-- Phase 4 (Operating Rounds: 2 | Train Limit: 3 | Available Tiles: Yellow, Green) --
+",,,,,,,,,,,,,,,,,,,
+,TrainsRust,Event,351,"-- Event: 2 trains rust ( IR x3, UR x2, TR x1) --
+",,,,,,,,,,,,,,2,,,,,
+,BuyTrain,Action,352,"SR buys a 4 train for $300 from The Depot
+",,300,,,The Depot,,SR,,,,,,,4,,,,,
+,Pass,Action,353,"SR passes buy trains
+",,,,SR,,,,,,,,,,,,,,,
+,Skip,Action,354,"SR skips buy companies
+",,,,SR,,,,,,,,,,,,,,,
+,OperatingRound,Event,355,"-- Operating Round 3.2 (of 2) --
+",,,,,,OR 3.2,,,,,,,,,,,,,
+,Collect,Action,356,"Millie collects $10 from Ehime Railway
+",,10,,Millie,Ehime Railway,,,,,,,,,,,,,,
+,Collect,Action,357,"tado collects $30 from Uno-Takamatsu Ferry
+",,30,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,Collect,Action,358,"mindbomb(UTC+9) collects $20 from South Iyo Railway
+",,20,,mindbomb(UTC+9),South Iyo Railway,,,,,,,,,,,,,,
+,Collect,Action,359,"IR collects $15 from Sumitomo Mines Railway
+",,15,,IR,Sumitomo Mines Railway,,,,,,,,,,,,,,
+,Collect,Action,360,"UR collects $15 from Dougo Railway
+",,15,,UR,Dougo Railway,,,,,,,,,,,,,,
+,Collect,Action,361,"TR collects $5 from Mitsubishi Ferry
+",,5,,TR,Mitsubishi Ferry,,,,,,,,,,,,,,
+,Collect,Action,362,"KO collects $5 from Takamatsu E-Railroad
+",,5,,KO,Takamatsu E-Railroad,,,,,,,,,,,,,,
+,OperatesCompany,Event,363,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,LayTile,Action,364,"IR lays tile #9 with rotation 1 on H3
+",,0,,,,,IR,,,H3,9,1,,,,,,,
+,Skip,Action,365,"IR skips place a token
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,366,"IR skips run routes
+",,,,IR,,,,,,,,,,,,,,,
+,DoesNotRun,Event,367,"IR does not run
+",,,,,,,IR,,,,,,,,,,,,
+,SharePriceMoves,Event,368,"IR's share price moves left from $80 to $75
+",,,,,,,IR,75,,,,,left,,,,,,
+,BuyTrain,Action,369,"IR buys a 4 train for $300 from The Depot
+",,300,,,The Depot,,IR,,,,,,,4,,,,,
+,Pass,Action,370,"IR passes buy trains
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,371,"IR skips buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,372,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,Pass,Action,373,"UR passes lay/upgrade track
+",,,,UR,,,,,,,,,,,,,,,
+,Pass,Action,374,"UR passes place a token
+",,,,UR,,,,,,,,,,,,,,,
+,RunTrain,Action,375,"UR runs a 3 train for $100: B7-F9-G10
+",,100,,,,,UR,,,,,,,3,B7-F9-G10,,,,
+,PayOut,Action,376,"UR pays out $100 = $10 per share ($60 to camping no reception , $10 to Sprint, $10 to Millie, $10 to zorbak, $10 to tado)
+",,100,,,,,UR,,,,,,,,,10,,,
+,SharePriceMoves,Event,377,"UR's share price moves right from $80 to $90
+",,,,,,,UR,90,,,,,right,,,,,,
+,Pass,Action,378,"UR passes buy trains
+",,,,UR,,,,,,,,,,,,,,,
+,Pass,Action,379,"UR passes buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,380,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,LayTile,Action,381,"TR lays tile #25 with rotation 5 on E8
+",,0,,,,,TR,,,E8,25,5,,,,,,,
+,Pass,Action,382,"TR passes place a token
+",,,,TR,,,,,,,,,,,,,,,
+,RunTrain,Action,383,"TR runs a 3 train for $80: G10-G12-G14
+",,80,,,,,TR,,,,,,,3,G10-G12-G14,,,,
+,RunTrain,Action,384,"TR runs a 3 train for $100: B7-F9-G10
+",,100,,,,,TR,,,,,,,3,B7-F9-G10,,,,
+,PayOut,Action,385,"TR pays out $180 = $18 per share ($108 to Sprint, $18 to Millie, $18 to zorbak, $18 to tado, $18 to camping no reception )
+",,180,,,,,TR,,,,,,,,,18,,,
+,SharePriceMoves,Event,386,"TR's share price moves right from $80 to $90
+",,,,,,,TR,90,,,,,right,,,,,,
+,Pass,Action,387,"TR passes buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Pass,Action,388,"TR passes buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,389,"Millie operates KO
+",Millie,,,,,,KO,,,,,,,,,,,,
+,LayTile,Action,390,"KO lays tile #15 with rotation 4 on I2 (Marugame)
+",,0,,,,,KO,,,I2 (Marugame),15,4,,,,,,,
+,PlaceToken,Action,391,"KO places a token on I2 (Marugame) for $40
+",,40,,,,,KO,,,I2 (Marugame),,,,,,,,,
+,RunTrain,Action,392,"KO runs a 3 train for $100: K4-J5-I4
+",,100,,,,,KO,,,,,,,3,K4-J5-I4,,,,
+,RunTrain,Action,393,"KO runs a 3 train for $110: I4-I2-G4
+",,110,,,,,KO,,,,,,,3,I4-I2-G4,,,,
+,Withhold,Action,394,"KO withholds $210
+",,210,,,,,KO,,,,,,,,,,,,
+,SharePriceMoves,Event,395,"KO's share price moves left from $80 to $75
+",,,,,,,KO,75,,,,,left,,,,,,
+,Pass,Action,396,"KO passes buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,Pass,Action,397,"KO passes buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,OperatesCompany,Event,398,"mindbomb(UTC+9) operates SR
+",mindbomb(UTC+9),,,,,,SR,,,,,,,,,,,,
+,Pass,Action,399,"SR passes lay/upgrade track
+",,,,SR,,,,,,,,,,,,,,,
+,Skip,Action,400,"SR skips place a token
+",,,,SR,,,,,,,,,,,,,,,
+,RunTrain,Action,401,"SR runs a 4 train for $100: I4-J5-K4
+",,100,,,,,SR,,,,,,,4,I4-J5-K4,,,,
+,RunTrain,Action,402,"SR runs a 4 train for $140: I4-I2-G4-F3
+",,140,,,,,SR,,,,,,,4,I4-I2-G4-F3,,,,
+,PayOut,Action,403,"SR pays out $240 = $24 per share ($120 to mindbomb(UTC+9), $24 to camping no reception )
+",,240,,,,,SR,,,,,,,,,24,,,
+,SharePriceMoves,Event,404,"SR's share price moves right from $60 to $65
+",,,,,,,SR,65,,,,,right,,,,,,
+,Pass,Action,405,"SR passes buy trains
+",,,,SR,,,,,,,,,,,,,,,
+,Skip,Action,406,"SR skips buy companies
+",,,,SR,,,,,,,,,,,,,,,
+,StockRound,Event,407,"-- Stock Round 4 --
+",,,,,,SR 4,,,,,,,,,,,,,
+,SellShares,Action,409,"Sprint sells a 10% share of UR and receives $90
+",Sprint,90,,,,,UR,,10,,,,,,,,,,
+,SharePriceMoves,Event,410,"UR's share price moves down from $90 to $80
+",,,,,,,UR,80,,,,,down,,,,,,
+,SellShares,Action,411,"Sprint sells a 10% share of KO and receives $75
+",Sprint,75,,,,,KO,,10,,,,,,,,,,
+,SharePriceMoves,Event,412,"KO's share price moves down from $75 to $70
+",,,,,,,KO,70,,,,,down,,,,,,
+,Par,Action,413,"Sprint pars KU at $100
+",Sprint,,,,,,KU,100,,,,,,,,,,,
+,BuyShare,Action,414,"Sprint buys a 20% share of KU from the IPO for $200
+",Sprint,200,,,IPO,,KU,,20,,,,,,,,,,
+,PresidentNomination,Event,415,"Sprint becomes the president of KU
+",Sprint,,,,,,KU,,,,,,,,,,,,
+,BuyShare,Action,416,"Millie buys a 10% share of SR from the IPO for $65
+",Millie,65,,,IPO,,SR,,10,,,,,,,,,,
+,Skip,Action,417,"Millie declines to sell shares
+",,,,Millie,,,,,,,,,,,,,,,
+,BuyShare,Action,418,"zorbak buys a 10% share of SR from the IPO for $65
+",zorbak,65,,,IPO,,SR,,10,,,,,,,,,,
+,Skip,Action,419,"zorbak declines to sell shares
+",,,,zorbak,,,,,,,,,,,,,,,
+,SellShares,Action,420,"tado sells 2 shares of IR and receives $150
+",tado,150,,,,,IR,,20,,,,,,,,,,
+,SharePriceMoves,Event,421,"IR's share price moves down from $75 to $65
+",,,,,,,IR,65,,,,,down,,,,,,
+,SellShares,Action,422,"tado sells 2 shares of KO and receives $140
+",tado,140,,,,,KO,,20,,,,,,,,,,
+,SharePriceMoves,Event,423,"KO's share price moves down from $70 to $60
+",,,,,,,KO,60,,,,,down,,,,,,
+,SellShares,Action,424,"tado sells a 10% share of TR and receives $90
+",tado,90,,,,,TR,,10,,,,,,,,,,
+,SharePriceMoves,Event,425,"TR's share price moves down from $90 to $80
+",,,,,,,TR,80,,,,,down,,,,,,
+,SellShares,Action,426,"tado sells a 10% share of UR and receives $80
+",tado,80,,,,,UR,,10,,,,,,,,,,
+,Par,Action,427,"tado pars AR at $100
+",tado,,,,,,AR,100,,,,,,,,,,,
+,BuyShare,Action,428,"tado buys a 20% share of AR from the IPO for $200
+",tado,200,,,IPO,,AR,,20,,,,,,,,,,
+,PresidentNomination,Event,429,"tado becomes the president of AR
+",tado,,,,,,AR,,,,,,,,,,,,
+,BuyShare,Action,430,"mindbomb(UTC+9) buys a 10% share of SR from the IPO for $65
+",mindbomb(UTC+9),65,,,IPO,,SR,,10,,,,,,,,,,
+,Skip,Action,431,"mindbomb(UTC+9) declines to sell shares
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,BuyShare,Action,432,"camping no reception buys a 10% share of KO from the market for $60
+",camping no reception,60,,,market,,KO,,10,,,,,,,,,,
+,Skip,Action,433,"camping no reception declines to sell shares
+",,,,camping no reception,,,,,,,,,,,,,,,
+,SellShares,Action,434,"Sprint sells a 10% share of TR and receives $80
+",Sprint,80,,,,,TR,,10,,,,,,,,,,
+,BuyShare,Action,435,"Sprint buys a 10% share of SR from the IPO for $65
+",Sprint,65,,,IPO,,SR,,10,,,,,,,,,,
+,BuyShare,Action,436,"Millie buys a 10% share of IR from the market for $65
+",Millie,65,,,market,,IR,,10,,,,,,,,,,
+,Skip,Action,437,"Millie declines to sell shares
+",,,,Millie,,,,,,,,,,,,,,,
+,BuyShare,Action,438,"zorbak buys a 10% share of KO from the market for $60
+",zorbak,60,,,market,,KO,,10,,,,,,,,,,
+,Skip,Action,439,"zorbak declines to sell shares
+",,,,zorbak,,,,,,,,,,,,,,,
+,BuyShare,Action,440,"tado buys a 10% share of AR from the IPO for $100
+",tado,100,,,IPO,,AR,,10,,,,,,,,,,
+,Skip,Action,441,"tado declines to sell shares
+",,,,tado,,,,,,,,,,,,,,,
+,BuyShare,Action,442,"mindbomb(UTC+9) buys a 10% share of AR from the IPO for $100
+",mindbomb(UTC+9),100,,,IPO,,AR,,10,,,,,,,,,,
+,Skip,Action,443,"mindbomb(UTC+9) declines to sell shares
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,Pass,Action,444,"camping no reception passes
+",,,,camping no reception,,,,,,,,,,,,,,,
+,BuyShare,Action,446,"Sprint buys a 10% share of KU from the IPO for $100
+",Sprint,100,,,IPO,,KU,,10,,,,,,,,,,
+,Skip,Action,447,"Sprint declines to sell shares
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,448,"Millie passes
+",,,,Millie,,,,,,,,,,,,,,,
+,BuyShare,Action,449,"zorbak buys a 10% share of IR from the market for $65
+",zorbak,65,,,market,,IR,,10,,,,,,,,,,
+,Skip,Action,450,"zorbak declines to sell shares
+",,,,zorbak,,,,,,,,,,,,,,,
+,BuyShare,Action,451,"tado buys a 10% share of AR from the IPO for $100
+",tado,100,,,IPO,,AR,,10,,,,,,,,,,
+,CompanyFloats,Event,452,"AR floats
+",,,,,,,AR,,,,,,,,,,,,
+,ReceiveFunds,Event,453,"AR receives $1000
+",,1000,,,,,AR,,,,,,,,,,,,
+,Skip,Action,454,"tado declines to sell shares
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,455,"mindbomb(UTC+9) passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,BuyShare,Action,456,"camping no reception buys a 10% share of AR from the IPO for $100
+",camping no reception,100,,,IPO,,AR,,10,,,,,,,,,,
+,Skip,Action,457,"camping no reception declines to sell shares
+",,,,camping no reception,,,,,,,,,,,,,,,
+,BuyShare,Action,459,"Sprint buys a 10% share of KU from the IPO for $100
+",Sprint,100,,,IPO,,KU,,10,,,,,,,,,,
+,Skip,Action,460,"Sprint declines to sell shares
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,461,"Millie passes
+",,,,Millie,,,,,,,,,,,,,,,
+,Pass,Action,462,"zorbak passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,BuyShare,Action,463,"tado buys a 10% share of AR from the IPO for $100
+",tado,100,,,IPO,,AR,,10,,,,,,,,,,
+,Skip,Action,464,"tado declines to sell shares
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,465,"mindbomb(UTC+9) passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,BuyShare,Action,466,"camping no reception buys a 10% share of AR from the IPO for $100
+",camping no reception,100,,,IPO,,AR,,10,,,,,,,,,,
+,Skip,Action,467,"camping no reception declines to sell shares
+",,,,camping no reception,,,,,,,,,,,,,,,
+,BuyShare,Action,468,"Sprint buys a 10% share of KU from the IPO for $100
+",Sprint,100,,,IPO,,KU,,10,,,,,,,,,,
+,CompanyFloats,Event,469,"KU floats
+",,,,,,,KU,,,,,,,,,,,,
+,ReceiveFunds,Event,470,"KU receives $1000
+",,1000,,,,,KU,,,,,,,,,,,,
+,Skip,Action,471,"Sprint declines to sell shares
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,472,"Millie passes
+",,,,Millie,,,,,,,,,,,,,,,
+,Pass,Action,473,"zorbak passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,BuyShare,Action,474,"tado buys a 10% share of AR from the IPO for $100
+",tado,100,,,IPO,,AR,,10,,,,,,,,,,
+,Skip,Action,475,"tado declines to sell shares
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,476,"mindbomb(UTC+9) passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,Pass,Action,477,"camping no reception passes
+",,,,camping no reception,,,,,,,,,,,,,,,
+,Pass,Action,478,"Sprint passes
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,479,"Millie passes
+",,,,Millie,,,,,,,,,,,,,,,
+,Pass,Action,480,"zorbak passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,Pass,Action,481,"tado passes
+",,,,tado,,,,,,,,,,,,,,,
+,SharePriceMoves,Event,482,"IR's share price moves up from $65 to $70
+",,,,,,,IR,70,,,,,up,,,,,,
+,SharePriceMoves,Event,483,"SR's share price moves up from $65 to $70
+",,,,,,,SR,70,,,,,up,,,,,,
+,PriorityDeal,Event,484,"mindbomb(UTC+9) has priority deal
+",mindbomb(UTC+9),,,,,,,,,,,,,,,,,,
+,OperatingRound,Event,485,"-- Operating Round 4.1 (of 2) --
+",,,,,,OR 4.1,,,,,,,,,,,,,
+,Collect,Action,486,"mindbomb(UTC+9) collects $20 from South Iyo Railway
+",,20,,mindbomb(UTC+9),South Iyo Railway,,,,,,,,,,,,,,
+,Collect,Action,487,"Millie collects $10 from Ehime Railway
+",,10,,Millie,Ehime Railway,,,,,,,,,,,,,,
+,Collect,Action,488,"tado collects $30 from Uno-Takamatsu Ferry
+",,30,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,Collect,Action,489,"UR collects $15 from Dougo Railway
+",,15,,UR,Dougo Railway,,,,,,,,,,,,,,
+,Collect,Action,490,"TR collects $5 from Mitsubishi Ferry
+",,5,,TR,Mitsubishi Ferry,,,,,,,,,,,,,,
+,Collect,Action,491,"IR collects $15 from Sumitomo Mines Railway
+",,15,,IR,Sumitomo Mines Railway,,,,,,,,,,,,,,
+,Collect,Action,492,"KO collects $5 from Takamatsu E-Railroad
+",,5,,KO,Takamatsu E-Railroad,,,,,,,,,,,,,,
+,PlaceToken,Action,493,"KU places a token on C10
+",,0,,,,,KU,,,C10,,,,,,,,,
+,PlaceToken,Action,494,"AR places a token on K8
+",,0,,,,,AR,,,K8,,,,,,,,,
+,OperatesCompany,Event,495,"Sprint operates KU
+",Sprint,,,,,,KU,,,,,,,,,,,,
+,LayTile,Action,496,"KU lays tile #5 with rotation 3 on C10 (Kubokawa)
+",,0,,,,,KU,,,C10 (Kubokawa),5,3,,,,,,,
+,Skip,Action,497,"KU skips place a token
+",,,,KU,,,,,,,,,,,,,,,
+,Skip,Action,498,"KU skips run routes
+",,,,KU,,,,,,,,,,,,,,,
+,DoesNotRun,Event,499,"KU does not run
+",,,,,,,KU,,,,,,,,,,,,
+,SharePriceMoves,Event,500,"KU's share price moves left from $100 to $90
+",,,,,,,KU,90,,,,,left,,,,,,
+,BuyTrain,Action,501,"KU buys a 4 train for $300 from The Depot
+",,300,,,The Depot,,KU,,,,,,,4,,,,,
+,BuyTrain,Action,502,"KU buys a 5 train for $450 from The Depot
+",,450,,,The Depot,,KU,,,,,,,5,,,,,
+5,NewPhase,Event,503,"-- Phase 5 (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+",,,,,,,,,,,,,,,,,,,
+,AllPrivatesClose,Event,504,"-- Event: Private companies close --
+",,,,,,,,,,,,,,,,,,,
+,Skip,Action,505,"KU skips buy companies
+",,,,KU,,,,,,,,,,,,,,,
+,OperatesCompany,Event,506,"tado operates AR
+",tado,,,,,,AR,,,,,,,,,,,,
+,LayTile,Action,507,"AR lays tile #57 with rotation 1 on K8 (Tokushima)
+",,0,,,,,AR,,,K8 (Tokushima),57,1,,,,,,,
+,Skip,Action,508,"AR skips place a token
+",,,,AR,,,,,,,,,,,,,,,
+,Skip,Action,509,"AR skips run routes
+",,,,AR,,,,,,,,,,,,,,,
+,DoesNotRun,Event,510,"AR does not run
+",,,,,,,AR,,,,,,,,,,,,
+,SharePriceMoves,Event,511,"AR's share price moves left from $100 to $90
+",,,,,,,AR,90,,,,,left,,,,,,
+,BuyTrain,Action,512,"AR buys a 5 train for $450 from The Depot
+",,450,,,The Depot,,AR,,,,,,,5,,,,,
+,Pass,Action,513,"AR passes buy trains
+",,,,AR,,,,,,,,,,,,,,,
+,Skip,Action,514,"AR skips buy companies
+",,,,AR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,515,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,LayTile,Action,516,"UR lays tile #14 with rotation 1 on C4 (Ohzu)
+",,0,,,,,UR,,,C4 (Ohzu),14,1,,,,,,,
+,Pass,Action,517,"UR passes place a token
+",,,,UR,,,,,,,,,,,,,,,
+,RunTrain,Action,518,"UR runs a 3 train for $100: C4-B7-F9
+",,100,,,,,UR,,,,,,,3,C4-B7-F9,,,,
+,PayOut,Action,519,"UR pays out $100 = $10 per share ($60 to camping no reception , $20 to UR, $10 to Millie, $10 to zorbak)
+",,100,,,,,UR,,,,,,,,,10,,,
+,SharePriceMoves,Event,520,"UR's share price moves up from $80 to $90
+",,,,,,,UR,90,,,,,up,,,,,,
+,Pass,Action,521,"UR passes buy trains
+",,,,UR,,,,,,,,,,,,,,,
+,Skip,Action,522,"UR skips buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,523,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,LayTile,Action,525,"TR lays tile #23 with rotation 4 on D9
+",,0,,,,,TR,,,D9,23,4,,,,,,,
+,Pass,Action,526,"TR passes place a token
+",,,,TR,,,,,,,,,,,,,,,
+,RunTrain,Action,527,"TR runs a 3 train for $90: G12-G10-F9
+",,90,,,,,TR,,,,,,,3,G12-G10-F9,,,,
+,RunTrain,Action,528,"TR runs a 3 train for $100: F9-B7-C4
+",,100,,,,,TR,,,,,,,3,F9-B7-C4,,,,
+,Withhold,Action,529,"TR withholds $190
+",,190,,,,,TR,,,,,,,,,,,,
+,SharePriceMoves,Event,530,"TR's share price moves left from $80 to $75
+",,,,,,,TR,75,,,,,left,,,,,,
+,Skip,Action,531,"TR skips buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Skip,Action,532,"TR skips buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,533,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,LayTile,Action,534,"IR lays tile #12 with rotation 4 on E2 (Matsuyama)
+",,0,,,,,IR,,,E2 (Matsuyama),12,4,,,,,,,
+,Skip,Action,535,"IR skips place a token
+",,,,IR,,,,,,,,,,,,,,,
+,RunTrain,Action,536,"IR runs a 4 train for $140: F1-E2-F3-G4
+",,140,,,,,IR,,,,,,,4,F1-E2-F3-G4,,,,
+,PayOut,Action,537,"IR pays out $140 = $14 per share ($84 to zorbak, $14 to mindbomb(UTC+9), $14 to camping no reception , $14 to Sprint, $14 to Millie)
+",,140,,,,,IR,,,,,,,,,14,,,
+,SharePriceMoves,Event,538,"IR's share price moves right from $70 to $75
+",,,,,,,IR,75,,,,,right,,,,,,
+,Pass,Action,539,"IR passes buy trains
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,540,"IR skips buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,541,"mindbomb(UTC+9) operates SR
+",mindbomb(UTC+9),,,,,,SR,,,,,,,,,,,,
+,Pass,Action,542,"SR passes lay/upgrade track
+",,,,SR,,,,,,,,,,,,,,,
+,Skip,Action,543,"SR skips place a token
+",,,,SR,,,,,,,,,,,,,,,
+,RunTrain,Action,544,"SR runs a 4 train for $120: J1-I2-G4-F3
+",,120,,,,,SR,,,,,,,4,J1-I2-G4-F3,,,,
+,RunTrain,Action,545,"SR runs a 4 train for $130: I2-I4-J5-K4
+",,130,,,,,SR,,,,,,,4,I2-I4-J5-K4,,,,
+,Withhold,Action,546,"SR withholds $250
+",,250,,,,,SR,,,,,,,,,,,,
+,SharePriceMoves,Event,547,"SR's share price moves left from $70 to $65
+",,,,,,,SR,65,,,,,left,,,,,,
+,Skip,Action,548,"SR skips buy trains
+",,,,SR,,,,,,,,,,,,,,,
+,Skip,Action,549,"SR skips buy companies
+",,,,SR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,550,"Millie operates KO
+",Millie,,,,,,KO,,,,,,,,,,,,
+,LayTile,Action,551,"KO lays tile #440 with rotation 0 on K4 (Takamatsu)
+",,0,,,,,KO,,,K4 (Takamatsu),440,0,,,,,,,
+,Skip,Action,552,"KO skips place a token
+",,,,KO,,,,,,,,,,,,,,,
+,RunTrain,Action,553,"KO runs a 3 train for $110: K4-J5-I4
+",,110,,,,,KO,,,,,,,3,K4-J5-I4,,,,
+,RunTrain,Action,554,"KO runs a 3 train for $130: J1-I2-I4
+",,130,,,,,KO,,,,,,,3,J1-I2-I4,,,,
+,PayOut,Action,555,"KO pays out $240 = $24 per share ($120 to Millie, $72 to zorbak, $24 to camping no reception , $24 to KO)
+",,240,,,,,KO,,,,,,,,,24,,,
+,SharePriceMoves,Event,556,"KO's share price moves up from $60 to $65
+",,,,,,,KO,65,,,,,up,,,,,,
+,Skip,Action,557,"KO skips buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,Skip,Action,558,"KO skips buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,OperatingRound,Event,559,"-- Operating Round 4.2 (of 2) --
+",,,,,,OR 4.2,,,,,,,,,,,,,
+,Collect,Action,560,"tado collects $50 from Uno-Takamatsu Ferry
+",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,OperatesCompany,Event,561,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,LayTile,Action,562,"UR lays tile #9 with rotation 1 on D3
+",,0,,,,,UR,,,D3,9,1,,,,,,,
+,Pass,Action,563,"UR passes place a token
+",,,,UR,,,,,,,,,,,,,,,
+,RunTrain,Action,564,"UR runs a 3 train for $100: C4-B7-F9
+",,100,,,,,UR,,,,,,,3,C4-B7-F9,,,,
+,PayOut,Action,565,"UR pays out $100 = $10 per share ($60 to camping no reception , $20 to UR, $10 to Millie, $10 to zorbak)
+",,100,,,,,UR,,,,,,,,,10,,,
+,SharePriceMoves,Event,566,"UR's share price moves right from $90 to $100
+",,,,,,,UR,100,,,,,right,,,,,,
+,Pass,Action,567,"UR passes buy trains
+",,,,UR,,,,,,,,,,,,,,,
+,Skip,Action,568,"UR skips buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,569,"Sprint operates KU
+",Sprint,,,,,,KU,,,,,,,,,,,,
+,LayTile,Action,571,"KU lays tile #41 with rotation 1 on D9
+",,0,,,,,KU,,,D9,41,1,,,,,,,
+,Skip,Action,572,"KU skips place a token
+",,,,KU,,,,,,,,,,,,,,,
+,RunTrain,Action,573,"KU runs a 5 train for $130: C10-F9-G10-G12-G14
+",,130,,,,,KU,,,,,,,5,C10-F9-G10-G12-G14,,,,
+,PayOut,Action,574,"KU pays out $130 = $13 per share ($65 to Sprint)
+",,130,,,,,KU,,,,,,,,,13,,,
+,SharePriceMoves,Event,575,"KU's share price moves right from $90 to $100
+",,,,,,,KU,100,,,,,right,,,,,,
+,Skip,Action,576,"KU skips buy trains
+",,,,KU,,,,,,,,,,,,,,,
+,Skip,Action,577,"KU skips buy companies
+",,,,KU,,,,,,,,,,,,,,,
+,OperatesCompany,Event,578,"tado operates AR
+",tado,,,,,,AR,,,,,,,,,,,,
+,LayTile,Action,579,"AR lays tile #15 with rotation 1 on K8 (Tokushima)
+",,0,,,,,AR,,,K8 (Tokushima),15,1,,,,,,,
+,Skip,Action,580,"AR skips place a token
+",,,,AR,,,,,,,,,,,,,,,
+,RunTrain,Action,581,"AR runs a 5 train for $70: K8-L7
+",,70,,,,,AR,,,,,,,5,K8-L7,,,,
+,PayOut,Action,582,"AR pays out $70 = $7 per share ($42 to tado, $14 to camping no reception , $7 to mindbomb(UTC+9))
+",,70,,,,,AR,,,,,,,,,7,,,
+,SharePriceMoves,Event,583,"AR's share price moves right from $90 to $100
+",,,,,,,AR,100,,,,,right,,,,,,
+,Pass,Action,584,"AR passes buy trains
+",,,,AR,,,,,,,,,,,,,,,
+,Skip,Action,585,"AR skips buy companies
+",,,,AR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,586,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,LayTile,Action,587,"TR lays tile #448 with rotation 4 on E2 (Matsuyama)
+",,0,,,,,TR,,,E2 (Matsuyama),448,4,,,,,,,
+,PlaceToken,Action,588,"TR places a token on E2 (Matsuyama) for $40
+",,40,,,,,TR,,,E2 (Matsuyama),,,,,,,,,
+,RunTrain,Action,589,"TR runs a 3 train for $90: G12-G10-F9
+",,90,,,,,TR,,,,,,,3,G12-G10-F9,,,,
+,RunTrain,Action,590,"TR runs a 3 train for $100: F9-B7-C4
+",,100,,,,,TR,,,,,,,3,F9-B7-C4,,,,
+,PayOut,Action,591,"TR pays out $190 = $19 per share ($95 to Sprint, $38 to TR, $19 to camping no reception , $19 to Millie, $19 to zorbak)
+",,190,,,,,TR,,,,,,,,,19,,,
+,SharePriceMoves,Event,592,"TR's share price moves right from $75 to $80
+",,,,,,,TR,80,,,,,right,,,,,,
+,Skip,Action,593,"TR skips buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Skip,Action,594,"TR skips buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,595,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,LayTile,Action,596,"IR lays tile #611 with rotation 4 on C4 (Ohzu)
+",,0,,,,,IR,,,C4 (Ohzu),611,4,,,,,,,
+,Skip,Action,597,"IR skips place a token
+",,,,IR,,,,,,,,,,,,,,,
+,RunTrain,Action,598,"IR runs a 4 train for $180: F1-E2-C4-B7
+",,180,,,,,IR,,,,,,,4,F1-E2-C4-B7,,,,
+,PayOut,Action,599,"IR pays out $180 = $18 per share ($108 to zorbak, $18 to mindbomb(UTC+9), $18 to camping no reception , $18 to Sprint, $18 to Millie)
+",,180,,,,,IR,,,,,,,,,18,,,
+,SharePriceMoves,Event,600,"IR's share price moves right from $75 to $80
+",,,,,,,IR,80,,,,,right,,,,,,
+,Pass,Action,601,"IR passes buy trains
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,602,"IR skips buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,603,"Millie operates KO
+",Millie,,,,,,KO,,,,,,,,,,,,
+,LayTile,Action,604,"KO spends $80 and lays tile #492 with rotation 0 on I4 (Kotohira)
+",,80,,,,,KO,,,I4 (Kotohira),492,0,,,,,,,
+,Skip,Action,605,"KO skips place a token
+",,,,KO,,,,,,,,,,,,,,,
+,RunTrain,Action,606,"KO runs a 3 train for $130: K4-J5-I4
+",,130,,,,,KO,,,,,,,3,K4-J5-I4,,,,
+,RunTrain,Action,607,"KO runs a 3 train for $150: J1-I2-I4
+",,150,,,,,KO,,,,,,,3,J1-I2-I4,,,,
+,PayOut,Action,608,"KO pays out $280 = $28 per share ($140 to Millie, $84 to zorbak, $28 to camping no reception , $28 to KO)
+",,280,,,,,KO,,,,,,,,,28,,,
+,SharePriceMoves,Event,609,"KO's share price moves right from $65 to $70
+",,,,,,,KO,70,,,,,right,,,,,,
+,Skip,Action,610,"KO skips buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,Skip,Action,611,"KO skips buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,OperatesCompany,Event,612,"mindbomb(UTC+9) operates SR
+",mindbomb(UTC+9),,,,,,SR,,,,,,,,,,,,
+,LayTile,Action,613,"SR spends $80 and lays tile #9 with rotation 0 on K6
+",,80,,,,,SR,,,K6,9,0,,,,,,,
+,Skip,Action,614,"SR skips place a token
+",,,,SR,,,,,,,,,,,,,,,
+,RunTrain,Action,615,"SR runs a 4 train for $160: I4-I2-G4-F3
+",,160,,,,,SR,,,,,,,4,I4-I2-G4-F3,,,,
+,RunTrain,Action,616,"SR runs a 4 train for $170: I4-J5-K4-J1
+",,170,,,,,SR,,,,,,,4,I4-J5-K4-J1,,,,
+,PayOut,Action,617,"SR pays out $330 = $33 per share ($198 to mindbomb(UTC+9), $33 to camping no reception , $33 to Sprint, $33 to Millie, $33 to zorbak)
+",,330,,,,,SR,,,,,,,,,33,,,
+,SharePriceMoves,Event,618,"SR's share price moves right from $65 to $70
+",,,,,,,SR,70,,,,,right,,,,,,
+,Skip,Action,619,"SR skips buy trains
+",,,,SR,,,,,,,,,,,,,,,
+,Skip,Action,620,"SR skips buy companies
+",,,,SR,,,,,,,,,,,,,,,
+,StockRound,Event,621,"-- Stock Round 5 --
+",,,,,,SR 5,,,,,,,,,,,,,
+,BuyShare,Action,622,"mindbomb(UTC+9) buys a 10% share of KU from the IPO for $100
+",mindbomb(UTC+9),100,,,IPO,,KU,,10,,,,,,,,,,
+,Skip,Action,623,"mindbomb(UTC+9) declines to sell shares
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,SellShares,Action,624,"camping no reception sells a 10% share of UR and receives $100
+",camping no reception,100,,,,,UR,,10,,,,,,,,,,
+,BuyShare,Action,625,"camping no reception buys a 10% share of AR from the IPO for $100
+",camping no reception,100,,,IPO,,AR,,10,,,,,,,,,,
+,SellShares,Action,626,"Sprint sells a 10% share of IR and receives $80
+",Sprint,80,,,,,IR,,10,,,,,,,,,,
+,BuyShare,Action,627,"Sprint buys a 10% share of KU from the IPO for $100
+",Sprint,100,,,IPO,,KU,,10,,,,,,,,,,
+,SellShares,Action,628,"Millie sells 4 shares of KO and receives $280
+",Millie,280,,,,,KO,,40,,,,,,,,,,
+,PresidentNomination,Event,629,"zorbak becomes the president of KO
+",zorbak,,,,,,KO,,,,,,,,,,,,
+,BuyShare,Action,630,"Millie buys a 10% share of KU from the IPO for $100
+",Millie,100,,,IPO,,KU,,10,,,,,,,,,,
+,BuyShare,Action,632,"zorbak buys a 10% share of KO from the market for $70
+",zorbak,70,,,market,,KO,,10,,,,,,,,,,
+,Skip,Action,633,"zorbak declines to sell shares
+",,,,zorbak,,,,,,,,,,,,,,,
+,BuyShare,Action,634,"tado buys a 10% share of KU from the IPO for $100
+",tado,100,,,IPO,,KU,,10,,,,,,,,,,
+,Skip,Action,635,"tado declines to sell shares
+",,,,tado,,,,,,,,,,,,,,,
+,BuyShare,Action,636,"mindbomb(UTC+9) buys a 10% share of KU from the IPO for $100
+",mindbomb(UTC+9),100,,,IPO,,KU,,10,,,,,,,,,,
+,Skip,Action,637,"mindbomb(UTC+9) declines to sell shares
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,Pass,Action,638,"camping no reception passes
+",,,,camping no reception,,,,,,,,,,,,,,,
+,BuyShare,Action,640,"Sprint buys a 10% share of KO from the market for $70
+",Sprint,70,,,market,,KO,,10,,,,,,,,,,
+,Skip,Action,641,"Sprint declines to sell shares
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,642,"Millie passes
+",,,,Millie,,,,,,,,,,,,,,,
+,Pass,Action,643,"zorbak passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,BuyShare,Action,644,"tado buys a 10% share of KO from the market for $70
+",tado,70,,,market,,KO,,10,,,,,,,,,,
+,Skip,Action,645,"tado declines to sell shares
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,646,"mindbomb(UTC+9) passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,Pass,Action,647,"camping no reception passes
+",,,,camping no reception,,,,,,,,,,,,,,,
+,Pass,Action,648,"Sprint passes
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,649,"Millie passes
+",,,,Millie,,,,,,,,,,,,,,,
+,Pass,Action,650,"zorbak passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,Pass,Action,651,"tado passes
+",,,,tado,,,,,,,,,,,,,,,
+,SharePriceMoves,Event,652,"SR's share price moves up from $70 to $75
+",,,,,,,SR,75,,,,,up,,,,,,
+,PriorityDeal,Event,653,"mindbomb(UTC+9) has priority deal
+",mindbomb(UTC+9),,,,,,,,,,,,,,,,,,
+,OperatingRound,Event,654,"-- Operating Round 5.1 (of 3) --
+",,,,,,OR 5.1,,,,,,,,,,,,,
+,Collect,Action,655,"tado collects $50 from Uno-Takamatsu Ferry
+",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,OperatesCompany,Event,656,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,Pass,Action,657,"UR passes lay/upgrade track
+",,,,UR,,,,,,,,,,,,,,,
+,Pass,Action,658,"UR passes place a token
+",,,,UR,,,,,,,,,,,,,,,
+,RunTrain,Action,659,"UR runs a 3 train for $120: B7-C4-E2
+",,120,,,,,UR,,,,,,,3,B7-C4-E2,,,,
+,PayOut,Action,660,"UR pays out $120 = $12 per share ($60 to camping no reception , $36 to UR, $12 to Millie, $12 to zorbak)
+",,120,,,,,UR,,,,,,,,,12,,,
+,SharePriceMoves,Event,661,"UR's share price moves up from $100 to $110
+",,,,,,,UR,110,,,,,up,,,,,,
+,Pass,Action,662,"UR passes buy trains
+",,,,UR,,,,,,,,,,,,,,,
+,Skip,Action,663,"UR skips buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,664,"Sprint operates KU
+",Sprint,,,,,,KU,,,,,,,,,,,,
+,LayTile,Action,665,"KU lays tile #23 with rotation 2 on C8
+",,0,,,,,KU,,,C8,23,2,,,,,,,
+,Skip,Action,666,"KU skips place a token
+",,,,KU,,,,,,,,,,,,,,,
+,RunTrain,Action,667,"KU runs a 5 train for $130: C10-F9-G10-G12-G14
+",,130,,,,,KU,,,,,,,5,C10-F9-G10-G12-G14,,,,
+,RunTrain,Action,668,"KU runs a 4 train for $140: C10-B7-C4-E2
+",,140,,,,,KU,,,,,,,4,C10-B7-C4-E2,,,,
+,PayOut,Action,669,"KU pays out $270 = $27 per share ($162 to Sprint, $54 to mindbomb(UTC+9), $27 to Millie, $27 to tado)
+",,270,,,,,KU,,,,,,,,,27,,,
+,SharePriceMoves,Event,670,"KU's share price moves right from $100 to $110
+",,,,,,,KU,110,,,,,right,,,,,,
+,Skip,Action,671,"KU skips buy trains
+",,,,KU,,,,,,,,,,,,,,,
+,Skip,Action,672,"KU skips buy companies
+",,,,KU,,,,,,,,,,,,,,,
+,OperatesCompany,Event,673,"tado operates AR
+",tado,,,,,,AR,,,,,,,,,,,,
+,LayTile,Action,674,"AR lays tile #58 with rotation 4 on J9 (Komatsujima)
+",,0,,,,,AR,,,J9 (Komatsujima),58,4,,,,,,,
+,PlaceToken,Action,675,"AR places a token on K4 (Takamatsu) for $40
+",,40,,,,,AR,,,K4 (Takamatsu),,,,,,,,,
+,RunTrain,Action,676,"AR runs a 5 train for $200: I4-J5-K4-K8-L7
+",,200,,,,,AR,,,,,,,5,I4-J5-K4-K8-L7,,,,
+,PayOut,Action,677,"AR pays out $200 = $20 per share ($120 to tado, $60 to camping no reception , $20 to mindbomb(UTC+9))
+",,200,,,,,AR,,,,,,,,,20,,,
+,SharePriceMoves,Event,678,"AR's share price moves right from $100 to $110
+",,,,,,,AR,110,,,,,right,,,,,,
+,BuyTrain,Action,679,"AR buys a 5 train for $450 from The Depot
+",,450,,,The Depot,,AR,,,,,,,5,,,,,
+,Skip,Action,680,"AR skips buy companies
+",,,,AR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,681,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,LayTile,Action,683,"TR lays tile #206 with rotation 4 on C10 (Kubokawa)
+",,0,,,,,TR,,,C10 (Kubokawa),206,4,,,,,,,
+,Skip,Action,684,"TR skips place a token
+",,,,TR,,,,,,,,,,,,,,,
+,RunTrain,Action,685,"TR runs a 3 train for $110: F9-B7-C4
+",,110,,,,,TR,,,,,,,3,F9-B7-C4,,,,
+,RunTrain,Action,686,"TR runs a 3 train for $140: F1-E2-C4
+",,140,,,,,TR,,,,,,,3,F1-E2-C4,,,,
+,Withhold,Action,687,"TR withholds $250
+",,250,,,,,TR,,,,,,,,,,,,
+,SharePriceMoves,Event,688,"TR's share price moves left from $80 to $75
+",,,,,,,TR,75,,,,,left,,,,,,
+,Skip,Action,689,"TR skips buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Skip,Action,690,"TR skips buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,691,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,LayTile,Action,692,"IR lays tile #14 with rotation 1 on G4 (Niihama)
+",,0,,,,,IR,,,G4 (Niihama),14,1,,,,,,,
+,Skip,Action,693,"IR skips place a token
+",,,,IR,,,,,,,,,,,,,,,
+,RunTrain,Action,694,"IR runs a 4 train for $180: F1-E2-C4-B7
+",,180,,,,,IR,,,,,,,4,F1-E2-C4-B7,,,,
+,PayOut,Action,695,"IR pays out $180 = $18 per share ($108 to zorbak, $18 to mindbomb(UTC+9), $18 to camping no reception , $18 to Millie, $18 to IR)
+",,180,,,,,IR,,,,,,,,,18,,,
+,SharePriceMoves,Event,696,"IR's share price moves up from $80 to $90
+",,,,,,,IR,90,,,,,up,,,,,,
+,Pass,Action,697,"IR passes buy trains
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,698,"IR skips buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,699,"mindbomb(UTC+9) operates SR
+",mindbomb(UTC+9),,,,,,SR,,,,,,,,,,,,
+,LayTile,Action,700,"SR lays tile #466 with rotation 0 on K4 (Takamatsu)
+",,0,,,,,SR,,,K4 (Takamatsu),466,0,,,,,,,
+,Skip,Action,701,"SR skips place a token
+",,,,SR,,,,,,,,,,,,,,,
+,RunTrain,Action,702,"SR runs a 4 train for $150: I4-J5-K4
+",,150,,,,,SR,,,,,,,4,I4-J5-K4,,,,
+,RunTrain,Action,703,"SR runs a 4 train for $170: I4-I2-G4-F3
+",,170,,,,,SR,,,,,,,4,I4-I2-G4-F3,,,,
+,PayOut,Action,704,"SR pays out $320 = $32 per share ($192 to mindbomb(UTC+9), $32 to camping no reception , $32 to Sprint, $32 to Millie, $32 to zorbak)
+",,320,,,,,SR,,,,,,,,,32,,,
+,SharePriceMoves,Event,705,"SR's share price moves right from $75 to $80
+",,,,,,,SR,80,,,,,right,,,,,,
+,Skip,Action,706,"SR skips buy trains
+",,,,SR,,,,,,,,,,,,,,,
+,Skip,Action,707,"SR skips buy companies
+",,,,SR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,708,"zorbak operates KO
+",zorbak,,,,,,KO,,,,,,,,,,,,
+,LayTile,Action,709,"KO spends $80 and lays tile #8 with rotation 2 on H5
+",,80,,,,,KO,,,H5,8,2,,,,,,,
+,Skip,Action,710,"KO skips place a token
+",,,,KO,,,,,,,,,,,,,,,
+,RunTrain,Action,711,"KO runs a 3 train for $150: K4-J5-I4
+",,150,,,,,KO,,,,,,,3,K4-J5-I4,,,,
+,RunTrain,Action,712,"KO runs a 3 train for $150: J1-I2-I4
+",,150,,,,,KO,,,,,,,3,J1-I2-I4,,,,
+,Withhold,Action,713,"KO withholds $300
+",,300,,,,,KO,,,,,,,,,,,,
+,SharePriceMoves,Event,714,"KO's share price moves left from $70 to $65
+",,,,,,,KO,65,,,,,left,,,,,,
+,Skip,Action,715,"KO skips buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,Skip,Action,716,"KO skips buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,OperatingRound,Event,717,"-- Operating Round 5.2 (of 3) --
+",,,,,,OR 5.2,,,,,,,,,,,,,
+,Collect,Action,718,"tado collects $50 from Uno-Takamatsu Ferry
+",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,OperatesCompany,Event,719,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,LayTile,Action,720,"UR lays tile #448 with rotation 1 on C10 (Kubokawa)
+",,0,,,,,UR,,,C10 (Kubokawa),448,1,,,,,,,
+,Pass,Action,721,"UR passes place a token
+",,,,UR,,,,,,,,,,,,,,,
+,RunTrain,Action,722,"UR runs a 3 train for $120: B7-C4-E2
+",,120,,,,,UR,,,,,,,3,B7-C4-E2,,,,
+,PayOut,Action,723,"UR pays out $120 = $12 per share ($60 to camping no reception , $36 to UR, $12 to Millie, $12 to zorbak)
+",,120,,,,,UR,,,,,,,,,12,,,
+,SharePriceMoves,Event,724,"UR's share price moves right from $110 to $125
+",,,,,,,UR,125,,,,,right,,,,,,
+,Pass,Action,725,"UR passes buy trains
+",,,,UR,,,,,,,,,,,,,,,
+,Skip,Action,726,"UR skips buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,727,"Sprint operates KU
+",Sprint,,,,,,KU,,,,,,,,,,,,
+,LayTile,Action,728,"KU spends $80 and lays tile #465 with rotation 2 on F9 (Kouchi)
+",,80,,,,,KU,,,F9 (Kouchi),465,2,,,,,,,
+,Skip,Action,729,"KU skips place a token
+",,,,KU,,,,,,,,,,,,,,,
+,RunTrain,Action,730,"KU runs a 5 train for $180: C10-F9-G10-G12-G14
+",,180,,,,,KU,,,,,,,5,C10-F9-G10-G12-G14,,,,
+,RunTrain,Action,731,"KU runs a 4 train for $160: C10-B7-C4-E2
+",,160,,,,,KU,,,,,,,4,C10-B7-C4-E2,,,,
+,PayOut,Action,732,"KU pays out $340 = $34 per share ($204 to Sprint, $68 to mindbomb(UTC+9), $34 to Millie, $34 to tado)
+",,340,,,,,KU,,,,,,,,,34,,,
+,SharePriceMoves,Event,733,"KU's share price moves right from $110 to $125
+",,,,,,,KU,125,,,,,right,,,,,,
+,Skip,Action,734,"KU skips buy trains
+",,,,KU,,,,,,,,,,,,,,,
+,Skip,Action,735,"KU skips buy companies
+",,,,KU,,,,,,,,,,,,,,,
+,OperatesCompany,Event,736,"tado operates AR
+",tado,,,,,,AR,,,,,,,,,,,,
+,LayTile,Action,737,"AR lays tile #6 with rotation 1 on J11 (Anan)
+",,0,,,,,AR,,,J11 (Anan),6,1,,,,,,,
+,Skip,Action,738,"AR skips place a token
+",,,,AR,,,,,,,,,,,,,,,
+,RunTrain,Action,739,"AR runs a 5 train for $170: L7-K8-K4-J1
+",,170,,,,,AR,,,,,,,5,L7-K8-K4-J1,,,,
+,RunTrain,Action,740,"AR runs a 5 train for $210: K4-J5-I4-G4-I2
+",,210,,,,,AR,,,,,,,5,K4-J5-I4-G4-I2,,,,
+,PayOut,Action,741,"AR pays out $380 = $38 per share ($228 to tado, $114 to camping no reception , $38 to mindbomb(UTC+9))
+",,380,,,,,AR,,,,,,,,,38,,,
+,SharePriceMoves,Event,742,"AR's share price moves right from $110 to $125
+",,,,,,,AR,125,,,,,right,,,,,,
+,Skip,Action,743,"AR skips buy trains
+",,,,AR,,,,,,,,,,,,,,,
+,Skip,Action,744,"AR skips buy companies
+",,,,AR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,745,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,LayTile,Action,746,"IR lays tile #45 with rotation 1 on E8
+",,0,,,,,IR,,,E8,45,1,,,,,,,
+,Skip,Action,747,"IR skips place a token
+",,,,IR,,,,,,,,,,,,,,,
+,RunTrain,Action,748,"IR runs a 4 train for $200: F1-F3-G4-I4
+",,200,,,,,IR,,,,,,,4,F1-F3-G4-I4,,,,
+,PayOut,Action,749,"IR pays out $200 = $20 per share ($120 to zorbak, $20 to mindbomb(UTC+9), $20 to camping no reception , $20 to Millie, $20 to IR)
+",,200,,,,,IR,,,,,,,,,20,,,
+,SharePriceMoves,Event,750,"IR's share price moves right from $90 to $100
+",,,,,,,IR,100,,,,,right,,,,,,
+,BuyTrain,Action,751,"IR buys a 3 train for $13 from KO
+",,13,,,KO,,IR,,,,,,,3,,,,,
+,Skip,Action,752,"IR skips buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,753,"mindbomb(UTC+9) operates SR
+",mindbomb(UTC+9),,,,,,SR,,,,,,,,,,,,
+,LayTile,Action,754,"SR lays tile #611 with rotation 5 on F3 (Saijou)
+",,0,,,,,SR,,,F3 (Saijou),611,5,,,,,,,
+,Skip,Action,755,"SR skips place a token
+",,,,SR,,,,,,,,,,,,,,,
+,RunTrain,Action,756,"SR runs a 4 train for $180: I2-I4-J5-K4
+",,180,,,,,SR,,,,,,,4,I2-I4-J5-K4,,,,
+,RunTrain,Action,757,"SR runs a 4 train for $210: I4-G4-F3-F1
+",,210,,,,,SR,,,,,,,4,I4-G4-F3-F1,,,,
+,PayOut,Action,758,"SR pays out $390 = $39 per share ($234 to mindbomb(UTC+9), $39 to camping no reception , $39 to Sprint, $39 to Millie, $39 to zorbak)
+",,390,,,,,SR,,,,,,,,,39,,,
+,SharePriceMoves,Event,759,"SR's share price moves right from $80 to $90
+",,,,,,,SR,90,,,,,right,,,,,,
+,Skip,Action,760,"SR skips buy trains
+",,,,SR,,,,,,,,,,,,,,,
+,Skip,Action,761,"SR skips buy companies
+",,,,SR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,762,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,LayTile,Action,763,"TR lays tile #448 with rotation 3 on G12 (Nahari)
+",,0,,,,,TR,,,G12 (Nahari),448,3,,,,,,,
+,Skip,Action,764,"TR skips place a token
+",,,,TR,,,,,,,,,,,,,,,
+,RunTrain,Action,765,"TR runs a 3 train for $140: E2-F3-F1
+",,140,,,,,TR,,,,,,,3,E2-F3-F1,,,,
+,RunTrain,Action,766,"TR runs a 3 train for $140: F1-E2-C4
+",,140,,,,,TR,,,,,,,3,F1-E2-C4,,,,
+,PayOut,Action,767,"TR pays out $280 = $28 per share ($140 to Sprint, $56 to TR, $28 to camping no reception , $28 to Millie, $28 to zorbak)
+",,280,,,,,TR,,,,,,,,,28,,,
+,SharePriceMoves,Event,768,"TR's share price moves right from $75 to $80
+",,,,,,,TR,80,,,,,right,,,,,,
+,Skip,Action,769,"TR skips buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Skip,Action,770,"TR skips buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,771,"zorbak operates KO
+",zorbak,,,,,,KO,,,,,,,,,,,,
+,LayTile,Action,772,"KO lays tile #25 with rotation 5 on J3
+",,0,,,,,KO,,,J3,25,5,,,,,,,
+,Skip,Action,773,"KO skips place a token
+",,,,KO,,,,,,,,,,,,,,,
+,RunTrain,Action,774,"KO runs a 3 train for $170: I4-K4-K8
+",,170,,,,,KO,,,,,,,3,I4-K4-K8,,,,
+,Withhold,Action,775,"KO withholds $170
+",,170,,,,,KO,,,,,,,,,,,,
+,SharePriceMoves,Event,776,"KO's share price moves left from $65 to $60
+",,,,,,,KO,60,,,,,left,,,,,,
+,BuyTrain,Action,777,"KO buys a 6 train for $630 from The Depot
+",,630,,,The Depot,,KO,,,,,,,6,,,,,
+6,NewPhase,Event,778,"-- Phase 6 (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+",,,,,,,,,,,,,,,,,,,
+,TrainsRust,Event,779,"-- Event: 3 trains rust ( TR x2, IR x1, UR x1, KO x1) --
+",,,,,,,,,,,,,,3,,,,,
+,Pass,Action,780,"KO passes buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,Skip,Action,781,"KO skips buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,OperatingRound,Event,782,"-- Operating Round 5.3 (of 3) --
+",,,,,,OR 5.3,,,,,,,,,,,,,
+,Collect,Action,783,"tado collects $50 from Uno-Takamatsu Ferry
+",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,OperatesCompany,Event,784,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,Pass,Action,785,"UR passes lay/upgrade track
+",,,,UR,,,,,,,,,,,,,,,
+,Pass,Action,786,"UR passes place a token
+",,,,UR,,,,,,,,,,,,,,,
+,Skip,Action,787,"UR skips run routes
+",,,,UR,,,,,,,,,,,,,,,
+,DoesNotRun,Event,788,"UR does not run
+",,,,,,,UR,,,,,,,,,,,,
+,SharePriceMoves,Event,789,"UR's share price moves left from $125 to $110
+",,,,,,,UR,110,,,,,left,,,,,,
+,Contribute,Action,790,"camping no reception contributes $308
+",camping no reception,308,,,,,,,,,,,,,,,,,
+,BuyTrain,Action,791,"UR buys a 6 train for $630 from The Depot
+",,630,,,The Depot,,UR,,,,,,,6,,,,,
+,Skip,Action,792,"UR skips buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,793,"Sprint operates KU
+",Sprint,,,,,,KU,,,,,,,,,,,,
+,LayTile,Action,794,"KU lays tile #47 with rotation 2 on C8
+",,0,,,,,KU,,,C8,47,2,,,,,,,
+,Skip,Action,795,"KU skips place a token
+",,,,KU,,,,,,,,,,,,,,,
+,RunTrain,Action,796,"KU runs a 5 train for $180: C10-B7-B3-C4-E2
+",,180,,,,,KU,,,,,,,5,C10-B7-B3-C4-E2,,,,
+,RunTrain,Action,797,"KU runs a 4 train for $170: C10-F9-G10-G12
+",,170,,,,,KU,,,,,,,4,C10-F9-G10-G12,,,,
+,Withhold,Action,798,"KU withholds $350
+",,350,,,,,KU,,,,,,,,,,,,
+,SharePriceMoves,Event,799,"KU's share price moves left from $125 to $110
+",,,,,,,KU,110,,,,,left,,,,,,
+,Skip,Action,800,"KU skips buy trains
+",,,,KU,,,,,,,,,,,,,,,
+,Skip,Action,801,"KU skips buy companies
+",,,,KU,,,,,,,,,,,,,,,
+,OperatesCompany,Event,802,"tado operates AR
+",tado,,,,,,AR,,,,,,,,,,,,
+,LayTile,Action,803,"AR lays tile #448 with rotation 1 on K8 (Tokushima)
+",,0,,,,,AR,,,K8 (Tokushima),448,1,,,,,,,
+,Skip,Action,804,"AR skips place a token
+",,,,AR,,,,,,,,,,,,,,,
+,RunTrain,Action,805,"AR runs a 5 train for $250: L7-K8-K4-I4-I2
+",,250,,,,,AR,,,,,,,5,L7-K8-K4-I4-I2,,,,
+,RunTrain,Action,806,"AR runs a 5 train for $210: K4-J5-I4-G4-I2
+",,210,,,,,AR,,,,,,,5,K4-J5-I4-G4-I2,,,,
+,PayOut,Action,807,"AR pays out $460 = $46 per share ($276 to tado, $138 to camping no reception , $46 to mindbomb(UTC+9))
+",,460,,,,,AR,,,,,,,,,46,,,
+,SharePriceMoves,Event,808,"AR's share price moves right from $125 to $140
+",,,,,,,AR,140,,,,,right,,,,,,
+,Skip,Action,809,"AR skips buy trains
+",,,,AR,,,,,,,,,,,,,,,
+,Skip,Action,810,"AR skips buy companies
+",,,,AR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,811,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,Pass,Action,813,"IR passes lay/upgrade track
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,814,"IR skips place a token
+",,,,IR,,,,,,,,,,,,,,,
+,RunTrain,Action,815,"IR runs a 4 train for $210: F1-F3-G4-I4
+",,210,,,,,IR,,,,,,,4,F1-F3-G4-I4,,,,
+,Withhold,Action,816,"IR withholds $210
+",,210,,,,,IR,,,,,,,,,,,,
+,SharePriceMoves,Event,817,"IR's share price moves left from $100 to $90
+",,,,,,,IR,90,,,,,left,,,,,,
+,Pass,Action,818,"IR passes buy trains
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,819,"IR skips buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,820,"mindbomb(UTC+9) operates SR
+",mindbomb(UTC+9),,,,,,SR,,,,,,,,,,,,
+,LayTile,Action,821,"SR lays tile #40 with rotation 1 on J3
+",,0,,,,,SR,,,J3,40,1,,,,,,,
+,Skip,Action,822,"SR skips place a token
+",,,,SR,,,,,,,,,,,,,,,
+,RunTrain,Action,823,"SR runs a 4 train for $160: F1-F3-G4-I2
+",,160,,,,,SR,,,,,,,4,F1-F3-G4-I2,,,,
+,RunTrain,Action,824,"SR runs a 4 train for $190: K4-J5-I4-J1
+",,190,,,,,SR,,,,,,,4,K4-J5-I4-J1,,,,
+,Withhold,Action,825,"SR withholds $350
+",,350,,,,,SR,,,,,,,,,,,,
+,SharePriceMoves,Event,826,"SR's share price moves left from $90 to $80
+",,,,,,,SR,80,,,,,left,,,,,,
+,Skip,Action,827,"SR skips buy trains
+",,,,SR,,,,,,,,,,,,,,,
+,Skip,Action,828,"SR skips buy companies
+",,,,SR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,829,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,LayTile,Action,830,"TR lays tile #23 with rotation 1 on D3
+",,0,,,,,TR,,,D3,23,1,,,,,,,
+,Skip,Action,831,"TR skips place a token
+",,,,TR,,,,,,,,,,,,,,,
+,Skip,Action,832,"TR skips run routes
+",,,,TR,,,,,,,,,,,,,,,
+,DoesNotRun,Event,833,"TR does not run
+",,,,,,,TR,,,,,,,,,,,,
+,SharePriceMoves,Event,834,"TR's share price moves left from $80 to $75
+",,,,,,,TR,75,,,,,left,,,,,,
+,BuyTrain,Action,835,"TR buys a 5 train for $460 from KU
+",,460,,,KU,,TR,,,,,,,5,,,,,
+,Pass,Action,836,"TR passes buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Skip,Action,837,"TR skips buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,838,"zorbak operates KO
+",zorbak,,,,,,KO,,,,,,,,,,,,
+,Pass,Action,839,"KO passes lay/upgrade track
+",,,,KO,,,,,,,,,,,,,,,
+,Skip,Action,840,"KO skips place a token
+",,,,KO,,,,,,,,,,,,,,,
+,RunTrain,Action,841,"KO runs a 6 train for $310: F1-F3-G4-I4-K4-K8
+",,310,,,,,KO,,,,,,,6,F1-F3-G4-I4-K4-K8,,,,
+,PayOut,Action,842,"KO pays out $310 = $31 per share ($124 to zorbak, $62 to KO, $31 to camping no reception , $31 to Sprint, $31 to Millie, $31 to tado)
+",,310,,,,,KO,,,,,,,,,31,,,
+,SharePriceMoves,Event,843,"KO's share price moves right from $60 to $65
+",,,,,,,KO,65,,,,,right,,,,,,
+,Pass,Action,844,"KO passes buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,Skip,Action,845,"KO skips buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,StockRound,Event,846,"-- Stock Round 6 --
+",,,,,,SR 6,,,,,,,,,,,,,
+,BuyShare,Action,847,"mindbomb(UTC+9) buys a 10% share of KO from the market for $65
+",mindbomb(UTC+9),65,,,market,,KO,,10,,,,,,,,,,
+,SellShares,Action,848,"mindbomb(UTC+9) sells a 10% share of IR and receives $90
+",mindbomb(UTC+9),90,,,,,IR,,10,,,,,,,,,,
+,SharePriceMoves,Event,849,"IR's share price moves down from $90 to $80
+",,,,,,,IR,80,,,,,down,,,,,,
+,SellShares,Action,850,"camping no reception sells a 10% share of IR and receives $80
+",camping no reception,80,,,,,IR,,10,,,,,,,,,,
+,BuyShare,Action,851,"camping no reception buys a 10% share of UR from the market for $110
+",camping no reception,110,,,market,,UR,,10,,,,,,,,,,
+,SellShares,Action,852,"Sprint sells a 10% share of SR and receives $80
+",Sprint,80,,,,,SR,,10,,,,,,,,,,
+,SharePriceMoves,Event,853,"SR's share price moves down from $80 to $75
+",,,,,,,SR,75,,,,,down,,,,,,
+,BuyShare,Action,854,"Sprint buys a 10% share of UR from the market for $110
+",Sprint,110,,,market,,UR,,10,,,,,,,,,,
+,BuyShare,Action,855,"Millie buys a 10% share of TR from the market for $75
+",Millie,75,,,market,,TR,,10,,,,,,,,,,
+,Skip,Action,856,"Millie declines to sell shares
+",,,,Millie,,,,,,,,,,,,,,,
+,Pass,Action,857,"zorbak passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,BuyShare,Action,858,"tado buys a 10% share of UR from the market for $110
+",tado,110,,,market,,UR,,10,,,,,,,,,,
+,Skip,Action,859,"tado declines to sell shares
+",,,,tado,,,,,,,,,,,,,,,
+,BuyShare,Action,860,"mindbomb(UTC+9) buys a 10% share of KO from the market for $65
+",mindbomb(UTC+9),65,,,market,,KO,,10,,,,,,,,,,
+,Skip,Action,861,"mindbomb(UTC+9) declines to sell shares
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,Pass,Action,863,"camping no reception passes
+",,,,camping no reception,,,,,,,,,,,,,,,
+,Pass,Action,864,"Sprint passes
+",,,,Sprint,,,,,,,,,,,,,,,
+,BuyShare,Action,865,"Millie buys a 10% share of TR from the market for $75
+",Millie,75,,,market,,TR,,10,,,,,,,,,,
+,Skip,Action,866,"Millie declines to sell shares
+",,,,Millie,,,,,,,,,,,,,,,
+,Pass,Action,867,"zorbak passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,BuyShare,Action,868,"tado buys a 10% share of SR from the market for $75
+",tado,75,,,market,,SR,,10,,,,,,,,,,
+,Skip,Action,869,"tado declines to sell shares
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,870,"mindbomb(UTC+9) passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,Pass,Action,871,"camping no reception passes
+",,,,camping no reception,,,,,,,,,,,,,,,
+,Pass,Action,872,"Sprint passes
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,873,"Millie passes
+",,,,Millie,,,,,,,,,,,,,,,
+,Pass,Action,874,"zorbak passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,BuyShare,Action,875,"tado buys a 10% share of IR from the market for $80
+",tado,80,,,market,,IR,,10,,,,,,,,,,
+,Skip,Action,876,"tado declines to sell shares
+",,,,tado,,,,,,,,,,,,,,,
+,Pass,Action,877,"mindbomb(UTC+9) passes
+",,,,mindbomb(UTC+9),,,,,,,,,,,,,,,
+,Pass,Action,878,"camping no reception passes
+",,,,camping no reception,,,,,,,,,,,,,,,
+,Pass,Action,879,"Sprint passes
+",,,,Sprint,,,,,,,,,,,,,,,
+,Pass,Action,880,"Millie passes
+",,,,Millie,,,,,,,,,,,,,,,
+,Pass,Action,881,"zorbak passes
+",,,,zorbak,,,,,,,,,,,,,,,
+,Pass,Action,882,"tado passes
+",,,,tado,,,,,,,,,,,,,,,
+,SharePriceMoves,Event,883,"UR's share price moves up from $110 to $125
+",,,,,,,UR,125,,,,,up,,,,,,
+,SharePriceMoves,Event,884,"TR's share price moves up from $75 to $80
+",,,,,,,TR,80,,,,,up,,,,,,
+,SharePriceMoves,Event,885,"SR's share price moves up from $75 to $80
+",,,,,,,SR,80,,,,,up,,,,,,
+,SharePriceMoves,Event,886,"KO's share price moves up from $65 to $70
+",,,,,,,KO,70,,,,,up,,,,,,
+,PriorityDeal,Event,887,"mindbomb(UTC+9) has priority deal
+",mindbomb(UTC+9),,,,,,,,,,,,,,,,,,
+,OperatingRound,Event,888,"-- Operating Round 6.1 (of 3) --
+",,,,,,OR 6.1,,,,,,,,,,,,,
+,Collect,Action,889,"tado collects $50 from Uno-Takamatsu Ferry
+",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,OperatesCompany,Event,890,"tado operates AR
+",tado,,,,,,AR,,,,,,,,,,,,
+,LayTile,Action,891,"AR lays tile #24 with rotation 3 on K6
+",,0,,,,,AR,,,K6,24,3,,,,,,,
+,Skip,Action,892,"AR skips place a token
+",,,,AR,,,,,,,,,,,,,,,
+,RunTrain,Action,893,"AR runs a 5 train for $230: L7-K8-K4-J5-I4
+",,230,,,,,AR,,,,,,,5,L7-K8-K4-J5-I4,,,,
+,RunTrain,Action,894,"AR runs a 5 train for $270: K4-I4-G4-F3-F1
+",,270,,,,,AR,,,,,,,5,K4-I4-G4-F3-F1,,,,
+,PayOut,Action,895,"AR pays out $500 = $50 per share ($300 to tado, $150 to camping no reception , $50 to mindbomb(UTC+9))
+",,500,,,,,AR,,,,,,,,,50,,,
+,SharePriceMoves,Event,896,"AR's share price moves right from $140 to $155
+",,,,,,,AR,155,,,,,right,,,,,,
+,Skip,Action,897,"AR skips buy trains
+",,,,AR,,,,,,,,,,,,,,,
+,Skip,Action,898,"AR skips buy companies
+",,,,AR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,899,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,Pass,Action,900,"UR passes lay/upgrade track
+",,,,UR,,,,,,,,,,,,,,,
+,Skip,Action,901,"UR skips place a token
+",,,,UR,,,,,,,,,,,,,,,
+,RunTrain,Action,902,"UR runs a 6 train for $250: E2-C4-B7-C10-F9-G10
+",,250,,,,,UR,,,,,,,6,E2-C4-B7-C10-F9-G10,,,,
+,BankBroke,Event,903,"-- The bank has broken --
+",,,,,,,,,,,,,,,,,,,
+,PayOut,Action,904,"UR pays out $250 = $25 per share ($150 to camping no reception , $25 to Sprint, $25 to Millie, $25 to zorbak, $25 to tado)
+",,250,,,,,UR,,,,,,,,,25,,,
+,SharePriceMoves,Event,905,"UR's share price moves right from $125 to $140
+",,,,,,,UR,140,,,,,right,,,,,,
+,Skip,Action,906,"UR skips buy trains
+",,,,UR,,,,,,,,,,,,,,,
+,Skip,Action,907,"UR skips buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,908,"Sprint operates KU
+",Sprint,,,,,,KU,,,,,,,,,,,,
+,LayTile,Action,910,"KU spends $80 and lays tile #8 with rotation 2 on E4
+",,80,,,,,KU,,,E4,8,2,,,,,,,
+,Skip,Action,911,"KU skips place a token
+",,,,KU,,,,,,,,,,,,,,,
+,RunTrain,Action,912,"KU runs a 4 train for $180: F9-C10-B7-C4
+",,180,,,,,KU,,,,,,,4,F9-C10-B7-C4,,,,
+,PayOut,Action,913,"KU pays out $180 = $18 per share ($108 to Sprint, $36 to mindbomb(UTC+9), $18 to Millie, $18 to tado)
+",,180,,,,,KU,,,,,,,,,18,,,
+,SharePriceMoves,Event,914,"KU's share price moves right from $110 to $125
+",,,,,,,KU,125,,,,,right,,,,,,
+,ExchangeTrain,Action,915,"KU exchanges a 4 for a D train for $800 from The Depot
+",,800,,,The Depot,,KU,,,,,,,,,,4,D,
+D,NewPhase,Event,916,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+",,,,,,,,,,,,,,,,,,,
+,TrainsRust,Event,917,"-- Event: 4 trains rust ( SR x2, IR x1, The Depot x1) --
+",,,,,,,,,,,,,,4,,,,,
+,Pass,Action,918,"KU passes buy trains
+",,,,KU,,,,,,,,,,,,,,,
+,Skip,Action,919,"KU skips buy companies
+",,,,KU,,,,,,,,,,,,,,,
+,OperatesCompany,Event,920,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,Pass,Action,921,"IR passes lay/upgrade track
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,922,"IR skips place a token
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,923,"IR skips run routes
+",,,,IR,,,,,,,,,,,,,,,
+,DoesNotRun,Event,924,"IR does not run
+",,,,,,,IR,,,,,,,,,,,,
+,SharePriceMoves,Event,925,"IR's share price moves left from $80 to $75
+",,,,,,,IR,75,,,,,left,,,,,,
+,Contribute,Action,926,"zorbak contributes $835
+",zorbak,835,,,,,,,,,,,,,,,,,
+,BuyTrain,Action,927,"IR buys a D train for $1100 from The Depot
+",,1100,,,The Depot,,IR,,,,,,,D,,,,,
+,Skip,Action,928,"IR skips buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,929,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,LayTile,Action,930,"TR spends $80 and lays tile #8 with rotation 5 on H11
+",,80,,,,,TR,,,H11,8,5,,,,,,,
+,Skip,Action,931,"TR skips place a token
+",,,,TR,,,,,,,,,,,,,,,
+,RunTrain,Action,932,"TR runs a 5 train for $250: F1-E2-F3-G4-I4
+",,250,,,,,TR,,,,,,,5,F1-E2-F3-G4-I4,,,,
+,PayOut,Action,933,"TR pays out $250 = $25 per share ($125 to Sprint, $75 to Millie, $25 to camping no reception , $25 to zorbak)
+",,250,,,,,TR,,,,,,,,,25,,,
+,SharePriceMoves,Event,934,"TR's share price moves right from $80 to $90
+",,,,,,,TR,90,,,,,right,,,,,,
+,Pass,Action,935,"TR passes buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Skip,Action,936,"TR skips buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,937,"mindbomb(UTC+9) operates SR
+",mindbomb(UTC+9),,,,,,SR,,,,,,,,,,,,
+,LayTile,Action,938,"SR spends $80 and lays tile #9 with rotation 0 on I6
+",,80,,,,,SR,,,I6,9,0,,,,,,,
+,Skip,Action,939,"SR skips place a token
+",,,,SR,,,,,,,,,,,,,,,
+,Skip,Action,940,"SR skips run routes
+",,,,SR,,,,,,,,,,,,,,,
+,DoesNotRun,Event,941,"SR does not run
+",,,,,,,SR,,,,,,,,,,,,
+,SharePriceMoves,Event,942,"SR's share price moves left from $80 to $75
+",,,,,,,SR,75,,,,,left,,,,,,
+,Contribute,Action,943,"mindbomb(UTC+9) contributes $650
+",mindbomb(UTC+9),650,,,,,,,,,,,,,,,,,
+,BuyTrain,Action,944,"SR buys a D train for $1100 from The Depot
+",,1100,,,The Depot,,SR,,,,,,,D,,,,,
+,Skip,Action,945,"SR skips buy companies
+",,,,SR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,946,"zorbak operates KO
+",zorbak,,,,,,KO,,,,,,,,,,,,
+,LayTile,Action,947,"KO lays tile #58 with rotation 2 on I12 (Muki)
+",,0,,,,,KO,,,I12 (Muki),58,2,,,,,,,
+,Skip,Action,948,"KO skips place a token
+",,,,KO,,,,,,,,,,,,,,,
+,RunTrain,Action,949,"KO runs a 6 train for $310: F1-F3-G4-I4-K4-L7
+",,310,,,,,KO,,,,,,,6,F1-F3-G4-I4-K4-L7,,,,
+,PayOut,Action,950,"KO pays out $310 = $31 per share ($124 to zorbak, $62 to mindbomb(UTC+9), $31 to camping no reception , $31 to Sprint, $31 to Millie, $31 to tado)
+",,310,,,,,KO,,,,,,,,,31,,,
+,SharePriceMoves,Event,951,"KO's share price moves right from $70 to $75
+",,,,,,,KO,75,,,,,right,,,,,,
+,Pass,Action,952,"KO passes buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,Skip,Action,953,"KO skips buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,OperatingRound,Event,954,"-- Operating Round 6.2 (of 3) --
+",,,,,,OR 6.2,,,,,,,,,,,,,
+,Collect,Action,955,"tado collects $50 from Uno-Takamatsu Ferry
+",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,OperatesCompany,Event,956,"tado operates AR
+",tado,,,,,,AR,,,,,,,,,,,,
+,LayTile,Action,957,"AR lays tile #8 with rotation 3 on I8
+",,0,,,,,AR,,,I8,8,3,,,,,,,
+,Skip,Action,958,"AR skips place a token
+",,,,AR,,,,,,,,,,,,,,,
+,RunTrain,Action,959,"AR runs a 5 train for $230: L7-K8-K4-J5-I4
+",,230,,,,,AR,,,,,,,5,L7-K8-K4-J5-I4,,,,
+,RunTrain,Action,960,"AR runs a 5 train for $270: K4-I4-G4-F3-F1
+",,270,,,,,AR,,,,,,,5,K4-I4-G4-F3-F1,,,,
+,PayOut,Action,961,"AR pays out $500 = $50 per share ($300 to tado, $150 to camping no reception , $50 to mindbomb(UTC+9))
+",,500,,,,,AR,,,,,,,,,50,,,
+,SharePriceMoves,Event,962,"AR's share price moves right from $155 to $175
+",,,,,,,AR,175,,,,,right,,,,,,
+,Skip,Action,963,"AR skips buy trains
+",,,,AR,,,,,,,,,,,,,,,
+,Skip,Action,964,"AR skips buy companies
+",,,,AR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,965,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,LayTile,Action,966,"UR lays tile #29 with rotation 3 on I8
+",,0,,,,,UR,,,I8,29,3,,,,,,,
+,Skip,Action,967,"UR skips place a token
+",,,,UR,,,,,,,,,,,,,,,
+,RunTrain,Action,968,"UR runs a 6 train for $290: I4-G4-F3-C4-B7-F9
+",,290,,,,,UR,,,,,,,6,I4-G4-F3-C4-B7-F9,,,,
+,PayOut,Action,969,"UR pays out $290 = $29 per share ($174 to camping no reception , $29 to Sprint, $29 to Millie, $29 to zorbak, $29 to tado)
+",,290,,,,,UR,,,,,,,,,29,,,
+,SharePriceMoves,Event,970,"UR's share price moves right from $140 to $155
+",,,,,,,UR,155,,,,,right,,,,,,
+,Skip,Action,971,"UR skips buy trains
+",,,,UR,,,,,,,,,,,,,,,
+,Skip,Action,972,"UR skips buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,973,"Sprint operates KU
+",Sprint,,,,,,KU,,,,,,,,,,,,
+,LayTile,Action,975,"KU lays tile #12 with rotation 1 on J11 (Anan)
+",,0,,,,,KU,,,J11 (Anan),12,1,,,,,,,
+,Skip,Action,976,"KU skips place a token
+",,,,KU,,,,,,,,,,,,,,,
+,RunTrain,Action,977,"KU runs a D train for $670: L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-F3-G4-I4-J1
+",,670,,,,,KU,,,,,,,D,L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-F3-G4-I4-J1,,,,
+,PayOut,Action,978,"KU pays out $670 = $67 per share ($402 to Sprint, $134 to mindbomb(UTC+9), $67 to Millie, $67 to tado)
+",,670,,,,,KU,,,,,,,,,67,,,
+,SharePriceMoves,Event,979,"KU's share price moves right from $125 to $140
+",,,,,,,KU,140,,,,,right,,,,,,
+,Pass,Action,980,"KU passes buy trains
+",,,,KU,,,,,,,,,,,,,,,
+,Skip,Action,981,"KU skips buy companies
+",,,,KU,,,,,,,,,,,,,,,
+,OperatesCompany,Event,982,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,LayTile,Action,983,"TR spends $80 and lays tile #9 with rotation 0 on F7
+",,80,,,,,TR,,,F7,9,0,,,,,,,
+,Skip,Action,984,"TR skips place a token
+",,,,TR,,,,,,,,,,,,,,,
+,RunTrain,Action,985,"TR runs a 5 train for $250: F1-E2-F3-G4-I4
+",,250,,,,,TR,,,,,,,5,F1-E2-F3-G4-I4,,,,
+,PayOut,Action,986,"TR pays out $250 = $25 per share ($125 to Sprint, $75 to Millie, $25 to camping no reception , $25 to zorbak)
+",,250,,,,,TR,,,,,,,,,25,,,
+,SharePriceMoves,Event,987,"TR's share price moves right from $90 to $100
+",,,,,,,TR,100,,,,,right,,,,,,
+,Pass,Action,988,"TR passes buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Skip,Action,989,"TR skips buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,990,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,Pass,Action,991,"IR passes lay/upgrade track
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,992,"IR skips place a token
+",,,,IR,,,,,,,,,,,,,,,
+,RunTrain,Action,993,"IR runs a D train for $710: L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-E2-F3-G4-I4-J1
+",,710,,,,,IR,,,,,,,D,L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-E2-F3-G4-I4-J1,,,,
+,PayOut,Action,994,"IR pays out $710 = $71 per share ($426 to zorbak, $142 to IR, $71 to Millie, $71 to tado)
+",,710,,,,,IR,,,,,,,,,71,,,
+,SharePriceMoves,Event,995,"IR's share price moves right from $75 to $80
+",,,,,,,IR,80,,,,,right,,,,,,
+,Pass,Action,996,"IR passes buy trains
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,997,"IR skips buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,998,"zorbak operates KO
+",zorbak,,,,,,KO,,,,,,,,,,,,
+,Pass,Action,999,"KO passes lay/upgrade track
+",,,,KO,,,,,,,,,,,,,,,
+,Skip,Action,1000,"KO skips place a token
+",,,,KO,,,,,,,,,,,,,,,
+,RunTrain,Action,1001,"KO runs a 6 train for $310: F1-F3-G4-I4-K4-L7
+",,310,,,,,KO,,,,,,,6,F1-F3-G4-I4-K4-L7,,,,
+,PayOut,Action,1002,"KO pays out $310 = $31 per share ($124 to zorbak, $62 to mindbomb(UTC+9), $31 to camping no reception , $31 to Sprint, $31 to Millie, $31 to tado)
+",,310,,,,,KO,,,,,,,,,31,,,
+,SharePriceMoves,Event,1003,"KO's share price moves right from $75 to $80
+",,,,,,,KO,80,,,,,right,,,,,,
+,Pass,Action,1004,"KO passes buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,Skip,Action,1005,"KO skips buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,OperatesCompany,Event,1006,"mindbomb(UTC+9) operates SR
+",mindbomb(UTC+9),,,,,,SR,,,,,,,,,,,,
+,LayTile,Action,1007,"SR lays tile #27 with rotation 0 on I6
+",,0,,,,,SR,,,I6,27,0,,,,,,,
+,Skip,Action,1008,"SR skips place a token
+",,,,SR,,,,,,,,,,,,,,,
+,RunTrain,Action,1009,"SR runs a D train for $720: F1-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-I4-G4-I2-J1
+",,720,,,,,SR,,,,,,,D,F1-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-I4-G4-I2-J1,,,,
+,PayOut,Action,1010,"SR pays out $720 = $72 per share ($432 to mindbomb(UTC+9), $72 to camping no reception , $72 to Millie, $72 to zorbak, $72 to tado)
+",,720,,,,,SR,,,,,,,,,72,,,
+,SharePriceMoves,Event,1011,"SR's share price moves right from $75 to $80
+",,,,,,,SR,80,,,,,right,,,,,,
+,Skip,Action,1012,"SR skips buy trains
+",,,,SR,,,,,,,,,,,,,,,
+,Skip,Action,1013,"SR skips buy companies
+",,,,SR,,,,,,,,,,,,,,,
+,OperatingRound,Event,1014,"-- Operating Round 6.3 (of 3) --
+",,,,,,OR 6.3,,,,,,,,,,,,,
+,Collect,Action,1015,"tado collects $50 from Uno-Takamatsu Ferry
+",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
+,OperatesCompany,Event,1016,"tado operates AR
+",tado,,,,,,AR,,,,,,,,,,,,
+,LayTile,Action,1017,"AR lays tile #57 with rotation 1 on H7 (Ikeda)
+",,0,,,,,AR,,,H7 (Ikeda),57,1,,,,,,,
+,Skip,Action,1018,"AR skips place a token
+",,,,AR,,,,,,,,,,,,,,,
+,RunTrain,Action,1019,"AR runs a 5 train for $230: L7-K8-K4-J5-I4
+",,230,,,,,AR,,,,,,,5,L7-K8-K4-J5-I4,,,,
+,RunTrain,Action,1020,"AR runs a 5 train for $270: K4-I4-G4-F3-F1
+",,270,,,,,AR,,,,,,,5,K4-I4-G4-F3-F1,,,,
+,PayOut,Action,1021,"AR pays out $500 = $50 per share ($300 to tado, $150 to camping no reception , $50 to mindbomb(UTC+9))
+",,500,,,,,AR,,,,,,,,,50,,,
+,SharePriceMoves,Event,1022,"AR's share price moves right from $175 to $200
+",,,,,,,AR,200,,,,,right,,,,,,
+,Skip,Action,1023,"AR skips buy trains
+",,,,AR,,,,,,,,,,,,,,,
+,Skip,Action,1024,"AR skips buy companies
+",,,,AR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,1025,"camping no reception operates UR
+",camping no reception,,,,,,UR,,,,,,,,,,,,
+,Pass,Action,1026,"UR passes lay/upgrade track
+",,,,UR,,,,,,,,,,,,,,,
+,Skip,Action,1027,"UR skips place a token
+",,,,UR,,,,,,,,,,,,,,,
+,RunTrain,Action,1028,"UR runs a 6 train for $290: I4-G4-F3-C4-B7-F9
+",,290,,,,,UR,,,,,,,6,I4-G4-F3-C4-B7-F9,,,,
+,PayOut,Action,1029,"UR pays out $290 = $29 per share ($174 to camping no reception , $29 to Sprint, $29 to Millie, $29 to zorbak, $29 to tado)
+",,290,,,,,UR,,,,,,,,,29,,,
+,SharePriceMoves,Event,1030,"UR's share price moves right from $155 to $175
+",,,,,,,UR,175,,,,,right,,,,,,
+,Skip,Action,1031,"UR skips buy trains
+",,,,UR,,,,,,,,,,,,,,,
+,Skip,Action,1032,"UR skips buy companies
+",,,,UR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,1033,"Sprint operates KU
+",Sprint,,,,,,KU,,,,,,,,,,,,
+,LayTile,Action,1034,"KU spends $80 and lays tile #8 with rotation 4 on F5
+",,80,,,,,KU,,,F5,8,4,,,,,,,
+,Skip,Action,1035,"KU skips place a token
+",,,,KU,,,,,,,,,,,,,,,
+,RunTrain,Action,1036,"KU runs a D train for $670: J1-I4-G4-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-L7
+",,670,,,,,KU,,,,,,,D,J1-I4-G4-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-L7,,,,
+,PayOut,Action,1037,"KU pays out $670 = $67 per share ($402 to Sprint, $134 to mindbomb(UTC+9), $67 to Millie, $67 to tado)
+",,670,,,,,KU,,,,,,,,,67,,,
+,SharePriceMoves,Event,1038,"KU's share price moves right from $140 to $155
+",,,,,,,KU,155,,,,,right,,,,,,
+,Pass,Action,1039,"KU passes buy trains
+",,,,KU,,,,,,,,,,,,,,,
+,Skip,Action,1040,"KU skips buy companies
+",,,,KU,,,,,,,,,,,,,,,
+,OperatesCompany,Event,1041,"Sprint operates TR
+",Sprint,,,,,,TR,,,,,,,,,,,,
+,Pass,Action,1042,"TR passes lay/upgrade track
+",,,,TR,,,,,,,,,,,,,,,
+,Skip,Action,1043,"TR skips place a token
+",,,,TR,,,,,,,,,,,,,,,
+,RunTrain,Action,1044,"TR runs a 5 train for $270: K4-I4-G4-F9-B7
+",,270,,,,,TR,,,,,,,5,K4-I4-G4-F9-B7,,,,
+,PayOut,Action,1045,"TR pays out $270 = $27 per share ($135 to Sprint, $81 to Millie, $27 to camping no reception , $27 to zorbak)
+",,270,,,,,TR,,,,,,,,,27,,,
+,SharePriceMoves,Event,1046,"TR's share price moves up from $100 to $110
+",,,,,,,TR,110,,,,,up,,,,,,
+,Pass,Action,1047,"TR passes buy trains
+",,,,TR,,,,,,,,,,,,,,,
+,Skip,Action,1048,"TR skips buy companies
+",,,,TR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,1049,"zorbak operates IR
+",zorbak,,,,,,IR,,,,,,,,,,,,
+,Pass,Action,1050,"IR passes lay/upgrade track
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,1051,"IR skips place a token
+",,,,IR,,,,,,,,,,,,,,,
+,RunTrain,Action,1052,"IR runs a D train for $710: L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-E2-F3-G4-I4-J1
+",,710,,,,,IR,,,,,,,D,L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-E2-F3-G4-I4-J1,,,,
+,PayOut,Action,1053,"IR pays out $710 = $71 per share ($426 to zorbak, $142 to IR, $71 to Millie, $71 to tado)
+",,710,,,,,IR,,,,,,,,,71,,,
+,SharePriceMoves,Event,1054,"IR's share price moves up from $80 to $90
+",,,,,,,IR,90,,,,,up,,,,,,
+,Pass,Action,1055,"IR passes buy trains
+",,,,IR,,,,,,,,,,,,,,,
+,Skip,Action,1056,"IR skips buy companies
+",,,,IR,,,,,,,,,,,,,,,
+,OperatesCompany,Event,1057,"zorbak operates KO
+",zorbak,,,,,,KO,,,,,,,,,,,,
+,Pass,Action,1058,"KO passes lay/upgrade track
+",,,,KO,,,,,,,,,,,,,,,
+,Skip,Action,1059,"KO skips place a token
+",,,,KO,,,,,,,,,,,,,,,
+,RunTrain,Action,1060,"KO runs a 6 train for $310: F1-F3-G4-I4-K4-L7
+",,310,,,,,KO,,,,,,,6,F1-F3-G4-I4-K4-L7,,,,
+,PayOut,Action,1061,"KO pays out $310 = $31 per share ($124 to zorbak, $62 to mindbomb(UTC+9), $31 to camping no reception , $31 to Sprint, $31 to Millie, $31 to tado)
+",,310,,,,,KO,,,,,,,,,31,,,
+,SharePriceMoves,Event,1062,"KO's share price moves up from $80 to $90
+",,,,,,,KO,90,,,,,up,,,,,,
+,Pass,Action,1063,"KO passes buy trains
+",,,,KO,,,,,,,,,,,,,,,
+,Skip,Action,1064,"KO skips buy companies
+",,,,KO,,,,,,,,,,,,,,,
+,OperatesCompany,Event,1065,"mindbomb(UTC+9) operates SR
+",mindbomb(UTC+9),,,,,,SR,,,,,,,,,,,,
+,LayTile,Action,1066,"SR lays tile #15 with rotation 1 on H7 (Ikeda)
+",,0,,,,,SR,,,H7 (Ikeda),15,1,,,,,,,
+,Skip,Action,1067,"SR skips place a token
+",,,,SR,,,,,,,,,,,,,,,
+,RunTrain,Action,1068,"SR runs a D train for $720: F1-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-I4-G4-I2-J1
+",,720,,,,,SR,,,,,,,D,F1-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-I4-G4-I2-J1,,,,
+,PayOut,Action,1069,"SR pays out $720 = $72 per share ($432 to mindbomb(UTC+9), $72 to camping no reception , $72 to Millie, $72 to zorbak, $72 to tado)
+",,720,,,,,SR,,,,,,,,,72,,,
+,SharePriceMoves,Event,1070,"SR's share price moves right from $80 to $90
+",,,,,,,SR,90,,,,,right,,,,,,
+,Skip,Action,1071,"SR skips buy trains
+",,,,SR,,,,,,,,,,,,,,,
+,Skip,Action,1072,"SR skips buy companies
+",,,,SR,,,,,,,,,,,,,,,
+,GameOver,Event,1073,"-- Game over: tado ($4249), Sprint ($3968), camping no reception ($3775), mindbomb(UTC+9) ($2807), zorbak ($2804), Millie ($2468) --",,,,,,,,,,,,,,,,,,,"{'tado': 4249, 'Sprint': 3968, 'camping no reception': 3775, 'mindbomb(UTC+9)': 2807, 'zorbak': 2804, 'Millie': 2468}"

@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 import io
 import unittest.mock
-
 import pandas as pd
 
 from transcripts18xx import transcript
@@ -10,7 +9,7 @@ from transcripts18xx import transcript
 from tests import context
 
 
-class TestTranscriptParser(unittest.TestCase):
+class TestTranscriptParserG1830(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -64,6 +63,86 @@ class TestTranscriptParser(unittest.TestCase):
         self.assertEqual('1830', self.metadata['game'])
         self.assertEqual('201210', self.metadata['id'])
         self.assertEqual(4, self.metadata['num_players'])
+
+
+class TestTranscriptParserG1889(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        raw_transcript = context.transcript_1889()
+        tp = transcript.TranscriptParser(
+            raw_transcript, transcript.games.Game1889()
+        )
+        tp.parse()
+        cls.df = tp._df
+        cls.metadata = tp._metadata
+
+    def test_player_mapping(self):
+        expected = {
+            'Sprint': 'player1',
+            'Millie': 'player2',
+            'zorbak': 'player3',
+            'tado': 'player4',
+            'mindbomb(UTC+9)': 'player5',
+            'camping no reception': 'player6',
+        }
+        self.assertEqual(expected, self.metadata['mapping'])
+
+    def test_anonymization_final_data(self):
+        df = self.df.astype(str)
+        self.assertFalse(
+            df.apply(lambda x: x.str.contains('Sprint')).any().any()
+        )
+        self.assertFalse(
+            df.apply(lambda x: x.str.contains('Millie')).any().any()
+        )
+        self.assertFalse(
+            df.apply(lambda x: x.str.contains('zorbak')).any().any()
+        )
+        self.assertFalse(
+            df.apply(lambda x: x.str.contains('tado')).any().any()
+        )
+        self.assertFalse(
+            df.apply(lambda x: x.str.contains('mindbomb(UTC+9)')).any().any()
+        )
+        self.assertFalse(
+            df.apply(
+                lambda x: x.str.contains('camping no reception')
+            ).any().any()
+        )
+
+    def test_last_state_evaluation(self):
+        expected_finish = 'BankBroke'
+        self.assertEqual(expected_finish, self.metadata['finished'])
+
+        expected_result = {
+            'player1': 3968,
+            'player2': 2468,
+            'player3': 2804,
+            'player4': 4249,
+            'player5': 2807,
+            'player6': 3775,
+        }
+        self.assertEqual(expected_result, self.metadata['result'])
+
+        self.assertEqual('player4', self.metadata['winner'])
+
+    def test_metadata(self):
+        self.assertEqual('1889', self.metadata['game'])
+        self.assertEqual('192767', self.metadata['id'])
+        self.assertEqual(6, self.metadata['num_players'])
+
+    # @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    # def test_full_verification(self, mock_stdout):
+    #     expected = str(
+    #
+    #     )
+    #     ret = transcript.full_verification(context.transcript_1889())
+    #     self.assertEqual(expected, mock_stdout.getvalue())
+    #     self.assertTrue(ret)
+
+    def test_full_verification(self):
+        self.assertTrue(transcript.full_verification(context.transcript_1889()))
 
 
 class TestTranscriptRendering(unittest.TestCase):

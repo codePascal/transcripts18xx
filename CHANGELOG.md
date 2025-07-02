@@ -13,9 +13,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Detection of games manually ended by player.
 - Post-processing of transcript adds expected columns before running pipe.
 - Detection of private exchange of player for shares from company.
-- Game description for Shikoku 1889.
+- Support for game Shikoku 1889.
+- Games with different currency now supported: Game currency is replaced in
+  transcript lines with default currency ($).
 
 ### Changed
+
+- Start capital of Games18xx denote starting capital of each player and not the
+  sum that is divided.
 
 ### Removed
 

@@ -1,15 +1,14 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 from pathlib import Path
 
 
-def transcript_1817() -> Path:
-    return _resources().joinpath('1817_200348.txt')
-
-
 def transcript_1830() -> Path:
     return _resources().joinpath('1830_201210.txt')
+
+
+def transcript_1889() -> Path:
+    return _resources().joinpath('1889_192767.txt')
 
 
 def _resources() -> Path:

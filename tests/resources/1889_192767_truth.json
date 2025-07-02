@@ -18,8 +18,8 @@
       },
       "priority_deal": true
     },
-    "istarlan": {
-      "name": "istarlan",
+    "camping no reception": {
+      "name": "camping no reception",
       "cash": 1835,
       "value": 3775,
       "liquidity": 3425,
@@ -223,7 +223,7 @@
       "cash": 0,
       "ipo": 0,
       "market": 0,
-      "president": "istarlan",
+      "president": "camping no reception",
       "tokens": 1,
       "share_price": 175,
       "privates": {},
