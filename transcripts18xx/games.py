@@ -34,6 +34,8 @@ class Game18xx(abc.ABC):
         self.initial_round = str()
         self.start_capital = int()
 
+        # TODO: currency: 1830 is $ and 1889 is ¥
+
 
 class Game1830(Game18xx):
     """Game1830
