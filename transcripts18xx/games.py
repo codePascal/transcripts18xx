@@ -35,8 +35,6 @@ class Game18xx(abc.ABC):
         self.start_capital = dict()
         self.currency = str()
 
-        # TODO: currency: 1830 is $ and 1889 is ¥
-
 
 class Game1830(Game18xx):
     """Game1830
