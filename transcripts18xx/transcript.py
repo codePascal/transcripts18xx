@@ -69,7 +69,7 @@ class TranscriptParser(object):
             result=dict(),
             winner=str()
         )
-        if self._df.type.iloc[-1] != StepType.GameOver.name:
+        if StepType.GameOver.name not in self._df.type.tolist():
             last_state['finished'] = 'NotFinished'
         else:
             possible_endings = [
@@ -80,7 +80,8 @@ class TranscriptParser(object):
             for possible_ending in possible_endings:
                 if possible_ending.name in self._df.type.tolist():
                     last_state['finished'] = possible_ending.name
-            result = ast.literal_eval(self._df.result.iloc[-1])
+            game_over_entry = self._df[self._df.type == StepType.GameOver.name]
+            result = ast.literal_eval(game_over_entry.iloc[0].result)
             winner = max(result, key=result.get)
             last_state['result'] = result
             last_state['winner'] = winner
