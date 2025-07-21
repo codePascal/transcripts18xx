@@ -145,6 +145,8 @@ class Games(enum.IntEnum):
         """
         if self == Games.G1830:
             return Game1830()
+        elif self == Games.G1889:
+            return Game1889()
         else:
             raise ValueError('Unknown game: {}'.format(self.name))
 
