@@ -32,6 +32,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - State verification of player values in game state and transcript result.
 - Regex pattern for PlayerGoesBankrupt: Detect special characters as well.
 - Sold shares when bankrupt do not add up to a players cash.
+- If game over was found, game ending must be from a known list.
 
 ## [2.0.0] - 2025-06-09
 
