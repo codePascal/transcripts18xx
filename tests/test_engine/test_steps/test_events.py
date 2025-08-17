@@ -101,6 +101,14 @@ class TestSelectsHome(BaseStepTest):
         )
         self.assertMatch(events.SelectsHome(), line, expected)
 
+        line = 'ERIE must choose city for home token'
+        expected = dict(
+            parent='Event',
+            type='SelectsHome',
+            company='ERIE',
+        )
+        self.assertMatch(events.SelectsHome(), line, expected)
+
 
 class TestDoesNotRun(BaseStepTest):
 

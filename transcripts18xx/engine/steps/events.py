@@ -96,7 +96,7 @@ class SelectsHome(EventStep):
 
     def __init__(self):
         super().__init__()
-        self.pattern = re.compile(r'(.*?) must choose city for token')
+        self.pattern = re.compile(r'(.*?) must choose city for (home )?token')
         self.type = StepType.SelectsHome
 
     def _process_match(self, line: str, match) -> dict:
