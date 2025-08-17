@@ -20,6 +20,7 @@ Args
 * --debug           Enable debug output in logger.
 """
 import argparse
+import json
 import logging
 
 from pathlib import Path
@@ -70,7 +71,8 @@ def main(args):
 
     game = args.game.select()
     parser = transcript.TranscriptParser(args.transcript, game)
-    parser.parse()
+    result = parser.parse()
+    print(json.dumps(result, indent=2))
     if not args.skip_verify:
         transcript.full_verification(args.transcript)
 
