@@ -32,15 +32,15 @@ Game transcripts should be in plain text format as shown below:
 
 ```text
  -- Phase 2 (Operating Rounds: 1 | Train Limit: 4 | Available Tiles: Yellow) --
-[23:29] mpcoyne bids $165 for Camden & Amboy
-[23:30] riverfiend bids $75 for Delaware & Hudson
-[23:30] leesin bids $115 for Mohawk & Hudson
-[23:31] mpakfm bids $120 for Mohawk & Hudson
-[23:32] mpcoyne buys Schuylkill Valley for $20
-[23:32] riverfiend bids $170 for Camden & Amboy
-[23:32] leesin bids $175 for Camden & Amboy
-[23:33] mpakfm buys Champlain & St.Lawrence for $40
-[23:33] riverfiend wins the auction for Delaware & Hudson with the only bid of $75
+[23:29] player1 bids $165 for Camden & Amboy
+[23:30] player2 bids $75 for Delaware & Hudson
+[23:30] player3 bids $115 for Mohawk & Hudson
+[23:31] player4 bids $120 for Mohawk & Hudson
+[23:32] player1 buys Schuylkill Valley for $20
+[23:32] player2 bids $170 for Camden & Amboy
+[23:32] player3 bids $175 for Camden & Amboy
+[23:33] player4 buys Champlain & St.Lawrence for $40
+[23:33] player2 wins the auction for Delaware & Hudson with the only bid of $75
 ```
 
 These raw transcripts must follow a consistent naming convention:
@@ -121,11 +121,11 @@ be used most often for a specific event or action only.
 Each player has a dedicated block of columns which represents its state at
 any point in time.
 
-- `playerX_cash` — Cash on hand
-- `playerX_privates` — Private companies owned, including their values
-- `playerX_value` — Net worth at this point
-- `playerX_priority_deal` — Whether the player has the priority deal token
-- `playerX_shares_<company>` — Shareholding in each company (
+- `<player>_cash` — Cash on hand
+- `<player>_privates` — Private companies owned, including their values
+- `<player>_value` — Net worth at this point
+- `<player>_priority_deal` — Whether the player has the priority deal token
+- `<player>_shares_<company>` — Shareholding in each company (
   e.g. `player1_shares_B&O`)
 
 #### Company state columns
@@ -158,7 +158,7 @@ verification result and unprocessed lines during parsing.
 
 #### Player mapping
 
-The `mapping` field records how usernames were anonymized to `playerX`.
+The `mapping` field records how usernames were anonymized to `<player>`.
 This is useful for identifying which real player corresponds to which parsed
 record.
 
