@@ -274,7 +274,8 @@ class GameStateProcessor(object):
         game: The underlying 18xx game.
 
     Raises:
-        AttributeError: If there are no players to initiate the game state.
+        AttributeError: If there are no players to initiate the game state or
+            the start capital for found players is not set.
     """
 
     def __init__(self, df: pd.DataFrame, game: Game18xx):
@@ -284,10 +285,15 @@ class GameStateProcessor(object):
         players = list(df.player.dropna().unique())
         if not players:
             raise AttributeError('No players found')
+        num_players = len(players)
+        if num_players not in game.start_capital.keys():
+            raise AttributeError(
+                'Start capital for `{}` players not set'.format(num_players)
+            )
         self._game_state = engine.GameState(
             players,
             sorted(game.companies),
-            game.start_capital[len(players)],
+            game.start_capital[num_players],
             game.trains,
             game.privates
         )
