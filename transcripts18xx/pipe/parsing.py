@@ -49,8 +49,9 @@ class GameTranscriptProcessor(object):
         # Process the line with the engine.
         line = self._preprocess_line(line)
         parsed_data = self._engine.run(line)
-        if self._process_match(idx, line, parsed_data):
-            data.append(parsed_data)
+        if parsed_data:
+            if self._process_match(idx, line, parsed_data):
+                data.append(parsed_data)
         else:
             # For debug purpose: store the unprocessed line.
             self._unprocessed_lines.append(line.strip())
@@ -58,17 +59,14 @@ class GameTranscriptProcessor(object):
     @staticmethod
     def _process_match(idx: int, line: str, match: dict) -> bool:
         # Process the match of the engine.
-        if match:
-            match['id'] = idx
-            match['line'] = line
-            skip_types = [
-                StepType.ConfirmedConsent.name,
-                StepType.MasterMode.name,
-                StepType.DateEntry.name
-            ]
-            return match['type'] not in skip_types
-        else:
-            return False
+        match['id'] = idx
+        match['line'] = line
+        skip_types = [
+            StepType.ConfirmedConsent.name,
+            StepType.MasterMode.name,
+            StepType.DateEntry.name
+        ]
+        return match['type'] not in skip_types
 
     def _preprocess_line(self, line: str) -> str:
         # Sometimes there is a timestamp [hh:mm], cut it.
