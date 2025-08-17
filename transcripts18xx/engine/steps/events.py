@@ -360,3 +360,29 @@ class GameEndedManually(EventStep):
 
     def _process_match(self, line: str, match) -> dict:
         return dict()
+
+
+class ConfirmedConsent(EventStep):
+
+    def __init__(self):
+        super().__init__()
+        self.pattern = re.compile(
+            r'^(.*?): \u2022 confirmed receiving consent from (.*)'
+        )
+        self.type = StepType.ConfirmedConsent
+
+    def _process_match(self, line: str, match) -> dict:
+        return dict()
+
+
+class MasterMode(EventStep):
+
+    def __init__(self):
+        super().__init__()
+        self.pattern = re.compile(
+            r'\u2022 Action\((.*?)\) via Master Mode by: (.*)'
+        )
+        self.type = StepType.MasterMode
+
+    def _process_match(self, line: str, match) -> dict:
+        return dict()

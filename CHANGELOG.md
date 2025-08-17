@@ -16,6 +16,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Support for game Shikoku 1889.
 - Games with different currency now supported: Game currency is replaced in
   transcript lines with default currency ($).
+- Detection of master modes and consent confirmations, these will be detected
+  but not added to the final result.
 
 ### Changed
 

@@ -15,6 +15,7 @@ from pathlib import Path
 
 from ..games import Game18xx
 from ..engine import engine
+from ..engine.steps.step import StepType
 
 
 class GameTranscriptProcessor(object):
@@ -44,15 +45,28 @@ class GameTranscriptProcessor(object):
         self._default_currency = '$'
         self._game_currency = game.currency
 
-    def _process_line(self, idx: int, line: str, data: list):
+    def _process_line(self, idx: int, line: str, data: list) -> None:
+        # Process the line with the engine.
         line = self._preprocess_line(line)
         parsed_data = self._engine.run(line)
-        if parsed_data:
-            parsed_data['id'] = idx
-            parsed_data['line'] = line
+        if self._process_match(idx, line, parsed_data):
             data.append(parsed_data)
         else:
+            # For debug purpose: store the unprocessed line.
             self._unprocessed_lines.append(line.strip())
+
+    @staticmethod
+    def _process_match(idx: int, line: str, match: dict) -> bool:
+        # Process the match of the engine.
+        if match:
+            match['id'] = idx
+            match['line'] = line
+            skip_types = [
+                StepType.ConfirmedConsent.name, StepType.MasterMode.name
+            ]
+            return match['type'] not in skip_types
+        else:
+            return False
 
     def _preprocess_line(self, line: str) -> str:
         # Sometimes there is a timestamp [hh:mm], cut it.
@@ -68,6 +82,7 @@ class GameTranscriptProcessor(object):
 
     @staticmethod
     def _read_transcript(transcript: Path) -> list[str]:
+        # Read the raw game transcript.
         with open(transcript, 'r', encoding='utf-8') as file:
             lines = file.readlines()
         return lines

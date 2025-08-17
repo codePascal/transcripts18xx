@@ -60,6 +60,8 @@ class StepType(enum.IntEnum):
     PlayerGoesBankrupt = 36
     GameEndedManually = 37
     ExchangePrivate = 38
+    ConfirmedConsent = 39
+    MasterMode = 40
 
 
 class StepParent(enum.IntEnum):

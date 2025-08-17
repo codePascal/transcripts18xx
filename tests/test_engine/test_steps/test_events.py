@@ -348,3 +348,25 @@ class TestGameEndedManually(BaseStepTest):
             type='GameEndedManually',
         )
         self.assertMatch(events.GameEndedManually(), line, expected)
+
+
+class TestConfirmedConsent(BaseStepTest):
+
+    def test_match(self):
+        line = 'player1: • confirmed receiving consent from player2'
+        expected = dict(
+            parent='Event',
+            type='ConfirmedConsent',
+        )
+        self.assertMatch(events.ConfirmedConsent(), line, expected)
+
+
+class TestMasterMode(BaseStepTest):
+
+    def test_match(self):
+        line = '• Action(action_xyz) via Master Mode by: player1'
+        expected = dict(
+            parent='Event',
+            type='MasterMode',
+        )
+        self.assertMatch(events.MasterMode(), line, expected)
