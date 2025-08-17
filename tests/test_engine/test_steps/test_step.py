@@ -16,7 +16,7 @@ class BaseStepTest(unittest.TestCase):
             player.Players(
                 ['player1', 'player2', 'player3'],
                 ['company1', 'company2', 'company3'],
-                3000
+                1000
             ),
             company.Companies(
                 ['company1', 'company2', 'company3'],

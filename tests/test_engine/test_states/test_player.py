@@ -106,7 +106,7 @@ class TestPlayers(unittest.TestCase):
 
     def setUp(self) -> None:
         self.players = player.Players(
-            ['player1', 'player2', 'player3'], ['company1', 'company2'], 450
+            ['player1', 'player2', 'player3'], ['company1', 'company2'], 150
         )
 
     def test_repr(self):

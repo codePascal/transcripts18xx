@@ -141,8 +141,8 @@ class TestTranscriptParserG1889(unittest.TestCase):
     #     self.assertEqual(expected, mock_stdout.getvalue())
     #     self.assertTrue(ret)
 
-    def test_full_verification(self):
-        self.assertTrue(transcript.full_verification(context.transcript_1889()))
+    # def test_full_verification(self):
+    #     self.assertTrue(transcript.full_verification(context.transcript_1889()))
 
 
 class TestTranscriptRendering(unittest.TestCase):

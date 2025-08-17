@@ -165,7 +165,7 @@ class TestGameState(unittest.TestCase):
         cls.gs = engine.GameState(
             ['p1', 'p2', 'p3'],
             ['c1', 'c2', 'c3'],
-            900,
+            300,
             ['2', '3', '4', '5', '6'],
             dict(pr=100, pr2=150, pr3=400, pr4=80)
         )
