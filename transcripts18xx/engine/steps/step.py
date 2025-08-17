@@ -62,6 +62,7 @@ class StepType(enum.IntEnum):
     ExchangePrivate = 38
     ConfirmedConsent = 39
     MasterMode = 40
+    DateEntry = 41
 
 
 class StepParent(enum.IntEnum):

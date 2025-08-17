@@ -62,7 +62,9 @@ class GameTranscriptProcessor(object):
             match['id'] = idx
             match['line'] = line
             skip_types = [
-                StepType.ConfirmedConsent.name, StepType.MasterMode.name
+                StepType.ConfirmedConsent.name,
+                StepType.MasterMode.name,
+                StepType.DateEntry.name
             ]
             return match['type'] not in skip_types
         else:

@@ -386,3 +386,14 @@ class MasterMode(EventStep):
 
     def _process_match(self, line: str, match) -> dict:
         return dict()
+
+
+class DateEntry(EventStep):
+
+    def __init__(self):
+        super().__init__()
+        self.pattern = re.compile(r'-- \b\d{4}-\d{2}-\d{2}\b --')
+        self.type = StepType.DateEntry
+
+    def _process_match(self, line: str, match) -> dict:
+        return dict()

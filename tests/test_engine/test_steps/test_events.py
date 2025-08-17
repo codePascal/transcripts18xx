@@ -370,3 +370,14 @@ class TestMasterMode(BaseStepTest):
             type='MasterMode',
         )
         self.assertMatch(events.MasterMode(), line, expected)
+
+
+class TestDateEntry(BaseStepTest):
+
+    def test_match(self):
+        line = '-- 2025-08-17 --'
+        expected = dict(
+            parent='Event',
+            type='DateEntry',
+        )
+        self.assertMatch(events.DateEntry(), line, expected)
