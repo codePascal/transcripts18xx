@@ -8,6 +8,7 @@ of a parser to handle the raw transcript, a processor that cleans and
 post-processes the transcript and a mapper for the game state.
 """
 import re
+import logging
 
 from pathlib import Path
 
@@ -17,6 +18,8 @@ import pandas as pd
 from ..games import Game18xx
 from ..engine import engine
 from ..engine.steps.step import StepType
+
+logger = logging.getLogger(__name__)
 
 
 class GameTranscriptProcessor:
@@ -30,6 +33,7 @@ class GameTranscriptProcessor:
     Attributes:
         _engine: The line parser engine.
         _unprocessed_lines: The lines that could not be matched.
+        _skipped_lines: The lines that were skipped by rules.
         _default_currency: The currency on which the parsing is set up with.
             If the currency differs, the currency sign will be replaced in the
             transcript lines.
@@ -42,6 +46,7 @@ class GameTranscriptProcessor:
     def __init__(self, game: Game18xx):
         self._engine = engine.LineParser()
         self._unprocessed_lines = []
+        self._skipped_lines = []
 
         self._default_currency = '$'
         self._game_currency = game.currency
@@ -53,8 +58,11 @@ class GameTranscriptProcessor:
         if parsed_data:
             if self._process_match(idx, line, parsed_data):
                 data.append(parsed_data)
+            else:
+                logger.debug(f'Skipped by rule: {line.strip()}')
+                self._skipped_lines.append(line.strip())
         else:
-            # For debug purpose: store the unprocessed line.
+            logger.debug(f'Unprocessed: {line.strip()}')
             self._unprocessed_lines.append(line.strip())
 
     @staticmethod
@@ -73,6 +81,12 @@ class GameTranscriptProcessor:
         # Sometimes there is a timestamp [hh:mm], cut it.
         if line.startswith('['):
             line = line[8:]
+        line = line.lstrip()
+
+        # Sometime two leading hyphen exist, cut it.
+        # Why hyphens are added is up to now unknown...
+        if line.startswith('--'):
+            line = line[2:]
         line = line.lstrip()
 
         # Replace the currency to default
@@ -110,6 +124,14 @@ class GameTranscriptProcessor:
             The lines that could not be matched as list.
         """
         return self._unprocessed_lines
+
+    def skipped_lines(self) -> list[str]:
+        """Makes the skipped lines available.
+
+        Returns:
+            The lines that were skipped by rules.
+        """
+        return self._skipped_lines
 
 
 class TranscriptPostProcessor:
@@ -284,6 +306,8 @@ class GameStateProcessor:
             raise AttributeError(
                 f'Start capital for `{num_players}` players not set'
             )
+        logger.debug(f'Found players: {players}')
+
         self._game_state = engine.GameState(players, game)
         self._steps = engine.StepMapper()
 

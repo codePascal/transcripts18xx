@@ -1,5 +1,5 @@
 phase,type,parent,id,line,player,amount,private,entity,source,percentage,company,share_price,sequence,location,tile,rotation,direction,train,route,per_share,old_train,new_train,result
-2,NewPhase,Event,0,"-- Phase 2 (Operating Rounds: 1 | Train Limit: 4 | Available Tiles: Yellow) --
+2,NewPhase,Event,0,"Phase 2 (Operating Rounds: 1 | Train Limit: 4 | Available Tiles: Yellow) --
 ",,,,,,,,,,,,,,,,,,,
 ,Bid,Action,1,"mpcoyne bids $165 for Camden & Amboy
 ",mpcoyne,165,Camden & Amboy,,,,,,,,,,,,,,,,
@@ -67,7 +67,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",mpcoyne,,,,,,B&O,,,,,,,,,,,,
 ,PriorityDeal,Event,33,"riverfiend has priority deal
 ",riverfiend,,,,,,,,,,,,,,,,,,
-,StockRound,Event,34,"-- Stock Round 1 --
+,StockRound,Event,34,"Stock Round 1 --
 ",,,,,,,,,SR 1,,,,,,,,,,
 ,Par,Action,35,"riverfiend pars C&O at $67
 ",riverfiend,,,,,,C&O,67,,,,,,,,,,,
@@ -137,7 +137,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,mpakfm,,,,,,,,,,,,,,,
 ,PriorityDeal,Event,68,"mpcoyne has priority deal
 ",mpcoyne,,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,69,"-- Operating Round 1.1 (of 1) --
+,OperatingRound,Event,69,"Operating Round 1.1 (of 1) --
 ",,,,,,,,,OR 1.1,,,,,,,,,,
 ,Collect,Action,70,"mpcoyne collects $5 from Schuylkill Valley
 ",,5,,mpcoyne,Schuylkill Valley,,,,,,,,,,,,,,
@@ -213,7 +213,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,C&O,,,,,,,,,,,,,,,
 ,Skip,Action,106,"C&O skips buy companies
 ",,,,C&O,,,,,,,,,,,,,,,
-,StockRound,Event,107,"-- Stock Round 2 --
+,StockRound,Event,107,"Stock Round 2 --
 ",,,,,,,,,SR 2,,,,,,,,,,
 ,Pass,Action,108,"mpcoyne passes
 ",,,,mpcoyne,,,,,,,,,,,,,,,
@@ -245,7 +245,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,,,,C&O,67,,,,,up,,,,,,
 ,PriorityDeal,Event,122,"leesin has priority deal
 ",leesin,,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,123,"-- Operating Round 2.1 (of 1) --
+,OperatingRound,Event,123,"Operating Round 2.1 (of 1) --
 ",,,,,,,,,OR 2.1,,,,,,,,,,
 ,Collect,Action,124,"leesin collects $20 from Mohawk & Hudson
 ",,20,,leesin,Mohawk & Hudson,,,,,,,,,,,,,,
@@ -307,7 +307,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,C&O,,,,,,,,,,,,,,,
 ,Skip,Action,153,"C&O skips buy companies
 ",,,,C&O,,,,,,,,,,,,,,,
-,StockRound,Event,154,"-- Stock Round 3 --
+,StockRound,Event,154,"Stock Round 3 --
 ",,,,,,,,,SR 3,,,,,,,,,,
 ,SellShares,Action,155,"leesin sells 4 shares of C&O and receives $284
 ",leesin,284,,,,40,C&O,,,,,,,,,,,,
@@ -371,7 +371,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,leesin,,,,,,,,,,,,,,,
 ,PriorityDeal,Event,185,"mpakfm has priority deal
 ",mpakfm,,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,186,"-- Operating Round 3.1 (of 1) --
+,OperatingRound,Event,186,"Operating Round 3.1 (of 1) --
 ",,,,,,,,,OR 3.1,,,,,,,,,,
 ,Collect,Action,187,"mpakfm collects $10 from Champlain & St.Lawrence
 ",,10,,mpakfm,Champlain & St.Lawrence,,,,,,,,,,,,,,
@@ -419,7 +419,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,80,,,The Depot,,PRR,,,,,,,2,,,,,
 ,BuyTrain,Action,209,"PRR buys a 3 train for $180 from The Depot
 ",,180,,,The Depot,,PRR,,,,,,,3,,,,,
-3,NewPhase,Event,210,"-- Phase 3 (Operating Rounds: 2 | Train Limit: 4 | Available Tiles: Yellow, Green) --
+3,NewPhase,Event,210,"Phase 3 (Operating Rounds: 2 | Train Limit: 4 | Available Tiles: Yellow, Green) --
 ",,,,,,,,,,,,,,,,,,,
 ,BuyPrivate,Action,211,"PRR buys Mohawk & Hudson from leesin for $220
 ",,220,Mohawk & Hudson,PRR,leesin,,,,,,,,,,,,,,
@@ -469,7 +469,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,C&O,,,,,,,,,,,,,,,
 ,Pass,Action,234,"C&O passes buy companies
 ",,,,C&O,,,,,,,,,,,,,,,
-,StockRound,Event,235,"-- Stock Round 4 --
+,StockRound,Event,235,"Stock Round 4 --
 ",,,,,,,,,SR 4,,,,,,,,,,
 ,BuyShare,Action,236,"mpakfm buys a 10% share of C&O from the market for $67
 ",mpakfm,67,,,market,10,C&O,,,,,,,,,,,,
@@ -601,7 +601,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,,,,B&O,100,,,,,up,,,,,,
 ,PriorityDeal,Event,300,"mpakfm has priority deal
 ",mpakfm,,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,301,"-- Operating Round 4.1 (of 2) --
+,OperatingRound,Event,301,"Operating Round 4.1 (of 2) --
 ",,,,,,,,,OR 4.1,,,,,,,,,,
 ,Collect,Action,302,"mpakfm collects $10 from Champlain & St.Lawrence
 ",,10,,mpakfm,Champlain & St.Lawrence,,,,,,,,,,,,,,
@@ -651,9 +651,9 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,180,,,The Depot,,NYNH,,,,,,,3,,,,,
 ,BuyTrain,Action,325,"NYNH buys a 4 train for $300 from The Depot
 ",,300,,,The Depot,,NYNH,,,,,,,4,,,,,
-4,NewPhase,Event,326,"-- Phase 4 (Operating Rounds: 2 | Train Limit: 3 | Available Tiles: Yellow, Green) --
+4,NewPhase,Event,326,"Phase 4 (Operating Rounds: 2 | Train Limit: 3 | Available Tiles: Yellow, Green) --
 ",,,,,,,,,,,,,,,,,,,
-,TrainsRust,Event,327,"-- Event: 2 trains rust ( B&O x1, NYC x1, C&O x2, PRR x2) --
+,TrainsRust,Event,327,"Event: 2 trains rust ( B&O x1, NYC x1, C&O x2, PRR x2) --
 ",,,,,,,,,,,,,,2,,,,,
 ,Pass,Action,328,"NYNH passes buy trains
 ",,,,NYNH,,,,,,,,,,,,,,,
@@ -709,7 +709,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,PRR,,,,,,,,,,,,,,,
 ,Pass,Action,354,"PRR passes buy companies
 ",,,,PRR,,,,,,,,,,,,,,,
-,OperatingRound,Event,355,"-- Operating Round 4.2 (of 2) --
+,OperatingRound,Event,355,"Operating Round 4.2 (of 2) --
 ",,,,,,,,,OR 4.2,,,,,,,,,,
 ,Collect,Action,356,"mpakfm collects $10 from Champlain & St.Lawrence
 ",,10,,mpakfm,Champlain & St.Lawrence,,,,,,,,,,,,,,
@@ -805,7 +805,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,PRR,,,,,,,,,,,,,,,
 ,Pass,Action,402,"PRR passes buy companies
 ",,,,PRR,,,,,,,,,,,,,,,
-,StockRound,Event,403,"-- Stock Round 5 --
+,StockRound,Event,403,"Stock Round 5 --
 ",,,,,,,,,SR 5,,,,,,,,,,
 ,BuyShare,Action,404,"mpakfm buys a 10% share of NYNH from the IPO for $82
 ",mpakfm,82,,,IPO,10,NYNH,,,,,,,,,,,,
@@ -907,7 +907,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,,,,NYNH,90,,,,,up,,,,,,
 ,PriorityDeal,Event,453,"leesin has priority deal
 ",leesin,,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,454,"-- Operating Round 5.1 (of 2) --
+,OperatingRound,Event,454,"Operating Round 5.1 (of 2) --
 ",,,,,,,,,OR 5.1,,,,,,,,,,
 ,Collect,Action,455,"mpakfm collects $10 from Champlain & St.Lawrence
 ",,10,,mpakfm,Champlain & St.Lawrence,,,,,,,,,,,,,,
@@ -1027,7 +1027,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,C&O,,,,,,,,,,,,,,,
 ,Pass,Action,513,"C&O passes buy companies
 ",,,,C&O,,,,,,,,,,,,,,,
-,OperatingRound,Event,514,"-- Operating Round 5.2 (of 2) --
+,OperatingRound,Event,514,"Operating Round 5.2 (of 2) --
 ",,,,,,,,,OR 5.2,,,,,,,,,,
 ,Collect,Action,515,"mpakfm collects $10 from Champlain & St.Lawrence
 ",,10,,mpakfm,Champlain & St.Lawrence,,,,,,,,,,,,,,
@@ -1105,9 +1105,9 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,,,,ERIE,76,,,,,left,,,,,,
 ,BuyTrain,Action,552,"ERIE buys a 5 train for $450 from The Depot
 ",,450,,,The Depot,,ERIE,,,,,,,5,,,,,
-5,NewPhase,Event,553,"-- Phase 5 (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+5,NewPhase,Event,553,"Phase 5 (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
 ",,,,,,,,,,,,,,,,,,,
-,AllPrivatesClose,Event,554,"-- Event: Private companies close --
+,AllPrivatesClose,Event,554,"Event: Private companies close --
 ",,,,,,,,,,,,,,,,,,,
 ,DiscardTrain,Action,555,"NYC discards 3
 ",,,,,,,NYC,,,,,,,3,,,,,
@@ -1145,7 +1145,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,10,,,NYNH,,PRR,,,,,,,4,,,,,
 ,Skip,Action,572,"PRR skips buy companies
 ",,,,PRR,,,,,,,,,,,,,,,
-,StockRound,Event,573,"-- Stock Round 6 --
+,StockRound,Event,573,"Stock Round 6 --
 ",,,,,,,,,SR 6,,,,,,,,,,
 ,SellShares,Action,574,"leesin sells 2 shares of NYC and receives $180
 ",leesin,180,,,,20,NYC,,,,,,,,,,,,
@@ -1317,7 +1317,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,,,,C&O,50,,,,,up,,,,,,
 ,PriorityDeal,Event,658,"leesin has priority deal
 ",leesin,,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,659,"-- Operating Round 6.1 (of 3) --
+,OperatingRound,Event,659,"Operating Round 6.1 (of 3) --
 ",,,,,,,,,OR 6.1,,,,,,,,,,
 ,OperatesCompany,Event,660,"mpcoyne operates B&O
 ",mpcoyne,,,,,,B&O,,,,,,,,,,,,
@@ -1385,9 +1385,9 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,,,,B&M,60,,,,,left,,,,,,
 ,BuyTrain,Action,692,"B&M buys a 6 train for $630 from The Depot
 ",,630,,,The Depot,,B&M,,,,,,,6,,,,,
-6,NewPhase,Event,693,"-- Phase 6 (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+6,NewPhase,Event,693,"Phase 6 (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
 ",,,,,,,,,,,,,,,,,,,
-,TrainsRust,Event,694,"-- Event: 3 trains rust ( PRR x1, The Depot x1, C&O x1, B&O x1, NYNH x1) --
+,TrainsRust,Event,694,"Event: 3 trains rust ( PRR x1, The Depot x1, C&O x1, B&O x1, NYNH x1) --
 ",,,,,,,,,,,,,,3,,,,,
 ,Pass,Action,695,"B&M passes buy trains
 ",,,,B&M,,,,,,,,,,,,,,,
@@ -1441,7 +1441,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,PRR,,,,,,,,,,,,,,,
 ,Skip,Action,720,"PRR skips buy companies
 ",,,,PRR,,,,,,,,,,,,,,,
-,OperatingRound,Event,721,"-- Operating Round 6.2 (of 3) --
+,OperatingRound,Event,721,"Operating Round 6.2 (of 3) --
 ",,,,,,,,,OR 6.2,,,,,,,,,,
 ,OperatesCompany,Event,722,"mpcoyne operates B&O
 ",mpcoyne,,,,,,B&O,,,,,,,,,,,,
@@ -1555,7 +1555,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,,,PRR,,,,,,,,,,,,,,,
 ,Skip,Action,777,"PRR skips buy companies
 ",,,,PRR,,,,,,,,,,,,,,,
-,OperatingRound,Event,778,"-- Operating Round 6.3 (of 3) --
+,OperatingRound,Event,778,"Operating Round 6.3 (of 3) --
 ",,,,,,,,,OR 6.3,,,,,,,,,,
 ,OperatesCompany,Event,779,"mpcoyne operates B&O
 ",mpcoyne,,,,,,B&O,,,,,,,,,,,,
@@ -1669,15 +1669,15 @@ phase,type,parent,id,line,player,amount,private,entity,source,percentage,company
 ",,200,,,,,PRR,,,,,,,,,,,,
 ,ExchangeTrain,Action,834,"PRR exchanges a 4 for a D train for $800 from The Depot
 ",,800,,,The Depot,,PRR,,,,,,,,,,4,D,
-D,NewPhase,Event,835,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+D,NewPhase,Event,835,"Phase D (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
 ",,,,,,,,,,,,,,,,,,,
-,TrainsRust,Event,836,"-- Event: 4 trains rust ( The Depot x1, NYC x2, ERIE x1) --
+,TrainsRust,Event,836,"Event: 4 trains rust ( The Depot x1, NYC x2, ERIE x1) --
 ",,,,,,,,,,,,,,4,,,,,
 ,Pass,Action,837,"PRR passes buy trains
 ",,,,PRR,,,,,,,,,,,,,,,
 ,Skip,Action,838,"PRR skips buy companies
 ",,,,PRR,,,,,,,,,,,,,,,
-,StockRound,Event,839,"-- Stock Round 7 --
+,StockRound,Event,839,"Stock Round 7 --
 ",,,,,,,,,SR 7,,,,,,,,,,
 ,BuyShare,Action,840,"leesin buys a 10% share of B&M from the market for $68
 ",leesin,68,,,market,10,B&M,,,,,,,,,,,,
@@ -1829,7 +1829,7 @@ D,NewPhase,Event,835,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Availab
 ",,,,,,,PRR,20,,,,,up,,,,,,
 ,PriorityDeal,Event,914,"riverfiend has priority deal
 ",riverfiend,,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,915,"-- Operating Round 7.1 (of 3) --
+,OperatingRound,Event,915,"Operating Round 7.1 (of 3) --
 ",,,,,,,,,OR 7.1,,,,,,,,,,
 ,OperatesCompany,Event,916,"mpcoyne operates B&O
 ",mpcoyne,,,,,,B&O,,,,,,,,,,,,
@@ -1969,7 +1969,7 @@ D,NewPhase,Event,835,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Availab
 ",,,,PRR,,,,,,,,,,,,,,,
 ,Skip,Action,984,"PRR skips buy companies
 ",,,,PRR,,,,,,,,,,,,,,,
-,OperatingRound,Event,985,"-- Operating Round 7.2 (of 3) --
+,OperatingRound,Event,985,"Operating Round 7.2 (of 3) --
 ",,,,,,,,,OR 7.2,,,,,,,,,,
 ,OperatesCompany,Event,986,"mpcoyne operates B&O
 ",mpcoyne,,,,,,B&O,,,,,,,,,,,,
@@ -2099,7 +2099,7 @@ D,NewPhase,Event,835,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Availab
 ",,,,PRR,,,,,,,,,,,,,,,
 ,Skip,Action,1049,"PRR skips buy companies
 ",,,,PRR,,,,,,,,,,,,,,,
-,OperatingRound,Event,1050,"-- Operating Round 7.3 (of 3) --
+,OperatingRound,Event,1050,"Operating Round 7.3 (of 3) --
 ",,,,,,,,,OR 7.3,,,,,,,,,,
 ,OperatesCompany,Event,1051,"mpcoyne operates B&O
 ",mpcoyne,,,,,,B&O,,,,,,,,,,,,
@@ -2231,7 +2231,7 @@ D,NewPhase,Event,835,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Availab
 ",,,,PRR,,,,,,,,,,,,,,,
 ,Skip,Action,1115,"PRR skips buy companies
 ",,,,PRR,,,,,,,,,,,,,,,
-,StockRound,Event,1116,"-- Stock Round 8 --
+,StockRound,Event,1116,"Stock Round 8 --
 ",,,,,,,,,SR 8,,,,,,,,,,
 ,SellShares,Action,1117,"riverfiend sells a 10% share of CPR and receives $112
 ",riverfiend,112,,,,10,CPR,,,,,,,,,,,,
@@ -2295,7 +2295,7 @@ D,NewPhase,Event,835,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Availab
 ",,,,,,,PRR,40,,,,,up,,,,,,
 ,PriorityDeal,Event,1147,"mpakfm has priority deal
 ",mpakfm,,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,1148,"-- Operating Round 8.1 (of 3) --
+,OperatingRound,Event,1148,"Operating Round 8.1 (of 3) --
 ",,,,,,,,,OR 8.1,,,,,,,,,,
 ,OperatesCompany,Event,1149,"mpcoyne operates B&O
 ",mpcoyne,,,,,,B&O,,,,,,,,,,,,
@@ -2427,7 +2427,7 @@ D,NewPhase,Event,835,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Availab
 ",,,,PRR,,,,,,,,,,,,,,,
 ,Skip,Action,1213,"PRR skips buy companies
 ",,,,PRR,,,,,,,,,,,,,,,
-,OperatingRound,Event,1214,"-- Operating Round 8.2 (of 3) --
+,OperatingRound,Event,1214,"Operating Round 8.2 (of 3) --
 ",,,,,,,,,OR 8.2,,,,,,,,,,
 ,OperatesCompany,Event,1215,"mpcoyne operates B&O
 ",mpcoyne,,,,,,B&O,,,,,,,,,,,,
@@ -2557,7 +2557,7 @@ D,NewPhase,Event,835,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Availab
 ",,,,PRR,,,,,,,,,,,,,,,
 ,Skip,Action,1278,"PRR skips buy companies
 ",,,,PRR,,,,,,,,,,,,,,,
-,OperatingRound,Event,1279,"-- Operating Round 8.3 (of 3) --
+,OperatingRound,Event,1279,"Operating Round 8.3 (of 3) --
 ",,,,,,,,,OR 8.3,,,,,,,,,,
 ,OperatesCompany,Event,1280,"mpcoyne operates B&O
 ",mpcoyne,,,,,,B&O,,,,,,,,,,,,
@@ -2679,7 +2679,7 @@ D,NewPhase,Event,835,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Availab
 ",,,,PRR,,,,,,,,,,,,,,,
 ,RunTrain,Action,1339,"PRR runs a D train for $420: A11-B10-D10-D10-E11-F10-H10-H12-H16-H18-G17-F16
 ",,420,,,,,PRR,,,,,,,D,A11-B10-D10-D10-E11-F10-H10-H12-H16-H18-G17-F16,,,,
-,BankBroke,Event,1340,"-- The bank has broken --
+,BankBroke,Event,1340,"The bank has broken --
 ",,,,,,,,,,,,,,,,,,,
 ,PayOut,Action,1341,"PRR pays out $420 = $42 per share ($336 to leesin, $42 to mpcoyne, $42 to riverfiend)
 ",,420,,,,,PRR,,,,,,,,,42,,,
@@ -2689,4 +2689,4 @@ D,NewPhase,Event,835,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Availab
 ",,,,PRR,,,,,,,,,,,,,,,
 ,Skip,Action,1344,"PRR skips buy companies
 ",,,,PRR,,,,,,,,,,,,,,,
-,GameOver,Event,1345,"-- Game over: mpcoyne ($6735), leesin ($6648), riverfiend ($5523), mpakfm ($2740) --",,,,,,,,,,,,,,,,,,,"{'mpcoyne': 6735, 'leesin': 6648, 'riverfiend': 5523, 'mpakfm': 2740}"
+,GameOver,Event,1345,"Game over: mpcoyne ($6735), leesin ($6648), riverfiend ($5523), mpakfm ($2740) --",,,,,,,,,,,,,,,,,,,"{'mpcoyne': 6735, 'leesin': 6648, 'riverfiend': 5523, 'mpakfm': 2740}"

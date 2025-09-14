@@ -1,5 +1,5 @@
 phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,share_price,percentage,location,tile,rotation,direction,train,route,per_share,old_train,new_train,result
-2,NewPhase,Event,1,"-- Phase 2 (Operating Rounds: 1 | Train Limit: 4 | Available Tiles: Yellow) --
+2,NewPhase,Event,1,"Phase 2 (Operating Rounds: 1 | Train Limit: 4 | Available Tiles: Yellow) --
 ",,,,,,,,,,,,,,,,,,,
 ,Bid,Action,2,"Sprint bids $35 for Mitsubishi Ferry
 ",Sprint,35,Mitsubishi Ferry,,,,,,,,,,,,,,,,
@@ -31,7 +31,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,155,Uno-Takamatsu Ferry,tado,Auction,,,,,,,,,,,,,,
 ,PriorityDeal,Event,16,"zorbak has priority deal
 ",zorbak,,,,,,,,,,,,,,,,,,
-,StockRound,Event,17,"-- Stock Round 1 --
+,StockRound,Event,17,"Stock Round 1 --
 ",,,,,,SR 1,,,,,,,,,,,,,
 ,Par,Action,18,"zorbak pars IR at $65
 ",zorbak,,,,,,IR,65,,,,,,,,,,,
@@ -131,7 +131,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,Millie,,,,,,,,,,,,,,,
 ,PriorityDeal,Event,67,"zorbak has priority deal
 ",zorbak,,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,68,"-- Operating Round 1.1 (of 1) --
+,OperatingRound,Event,68,"Operating Round 1.1 (of 1) --
 ",,,,,,OR 1.1,,,,,,,,,,,,,
 ,Collect,Action,69,"zorbak collects $15 from Sumitomo Mines Railway
 ",,15,,zorbak,Sumitomo Mines Railway,,,,,,,,,,,,,,
@@ -215,7 +215,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,80,,,The Depot,,TR,,,,,,,2,,,,,
 ,BuyTrain,Action,110,"TR buys a 3 train for $180 from The Depot
 ",,180,,,The Depot,,TR,,,,,,,3,,,,,
-3,NewPhase,Event,111,"-- Phase 3 (Operating Rounds: 2 | Train Limit: 4 | Available Tiles: Yellow, Green) --
+3,NewPhase,Event,111,"Phase 3 (Operating Rounds: 2 | Train Limit: 4 | Available Tiles: Yellow, Green) --
 ",,,,,,,,,,,,,,,,,,,
 ,BuyPrivate,Action,112,"TR buys Mitsubishi Ferry from Sprint for $60
 ",,60,Mitsubishi Ferry,TR,Sprint,,,,,,,,,,,,,,
@@ -243,7 +243,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,KO,,,,,,,,,,,,,,,
 ,Pass,Action,124,"KO passes buy companies
 ",,,,KO,,,,,,,,,,,,,,,
-,StockRound,Event,125,"-- Stock Round 2 --
+,StockRound,Event,125,"Stock Round 2 --
 ",,,,,,SR 2,,,,,,,,,,,,,
 ,Pass,Action,126,"zorbak passes
 ",,,,zorbak,,,,,,,,,,,,,,,
@@ -275,7 +275,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,Sprint,,,,,,,,,,,,,,,
 ,PriorityDeal,Event,141,"Millie has priority deal
 ",Millie,,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,142,"-- Operating Round 2.1 (of 2) --
+,OperatingRound,Event,142,"Operating Round 2.1 (of 2) --
 ",,,,,,OR 2.1,,,,,,,,,,,,,
 ,Collect,Action,143,"Millie collects $5 from Takamatsu E-Railroad
 ",,5,,Millie,Takamatsu E-Railroad,,,,,,,,,,,,,,
@@ -371,7 +371,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,KO,,,,,,,,,,,,,,,
 ,Pass,Action,189,"KO passes buy companies
 ",,,,KO,,,,,,,,,,,,,,,
-,OperatingRound,Event,190,"-- Operating Round 2.2 (of 2) --
+,OperatingRound,Event,190,"Operating Round 2.2 (of 2) --
 ",,,,,,OR 2.2,,,,,,,,,,,,,
 ,Collect,Action,191,"Millie collects $5 from Takamatsu E-Railroad
 ",,5,,Millie,Takamatsu E-Railroad,,,,,,,,,,,,,,
@@ -465,7 +465,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,40,Takamatsu E-Railroad,KO,Millie,,,,,,,,,,,,,,
 ,Pass,Action,237,"KO passes buy companies
 ",,,,KO,,,,,,,,,,,,,,,
-,StockRound,Event,238,"-- Stock Round 3 --
+,StockRound,Event,238,"Stock Round 3 --
 ",,,,,,SR 3,,,,,,,,,,,,,
 ,BuyShare,Action,239,"Millie buys a 10% share of TR from the IPO for $65
 ",Millie,65,,,IPO,,TR,,10,,,,,,,,,,
@@ -571,7 +571,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,,,,KO,75,,,,,up,,,,,,
 ,PriorityDeal,Event,293,"Sprint has priority deal
 ",Sprint,,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,294,"-- Operating Round 3.1 (of 2) --
+,OperatingRound,Event,294,"Operating Round 3.1 (of 2) --
 ",,,,,,OR 3.1,,,,,,,,,,,,,
 ,Collect,Action,295,"Millie collects $10 from Ehime Railway
 ",,10,,Millie,Ehime Railway,,,,,,,,,,,,,,
@@ -681,9 +681,9 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,,,,SR,60,,,,,left,,,,,,
 ,BuyTrain,Action,349,"SR buys a 4 train for $300 from The Depot
 ",,300,,,The Depot,,SR,,,,,,,4,,,,,
-4,NewPhase,Event,350,"-- Phase 4 (Operating Rounds: 2 | Train Limit: 3 | Available Tiles: Yellow, Green) --
+4,NewPhase,Event,350,"Phase 4 (Operating Rounds: 2 | Train Limit: 3 | Available Tiles: Yellow, Green) --
 ",,,,,,,,,,,,,,,,,,,
-,TrainsRust,Event,351,"-- Event: 2 trains rust ( IR x3, UR x2, TR x1) --
+,TrainsRust,Event,351,"Event: 2 trains rust ( IR x3, UR x2, TR x1) --
 ",,,,,,,,,,,,,,2,,,,,
 ,BuyTrain,Action,352,"SR buys a 4 train for $300 from The Depot
 ",,300,,,The Depot,,SR,,,,,,,4,,,,,
@@ -691,7 +691,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,SR,,,,,,,,,,,,,,,
 ,Skip,Action,354,"SR skips buy companies
 ",,,,SR,,,,,,,,,,,,,,,
-,OperatingRound,Event,355,"-- Operating Round 3.2 (of 2) --
+,OperatingRound,Event,355,"Operating Round 3.2 (of 2) --
 ",,,,,,OR 3.2,,,,,,,,,,,,,
 ,Collect,Action,356,"Millie collects $10 from Ehime Railway
 ",,10,,Millie,Ehime Railway,,,,,,,,,,,,,,
@@ -795,7 +795,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,SR,,,,,,,,,,,,,,,
 ,Skip,Action,406,"SR skips buy companies
 ",,,,SR,,,,,,,,,,,,,,,
-,StockRound,Event,407,"-- Stock Round 4 --
+,StockRound,Event,407,"Stock Round 4 --
 ",,,,,,SR 4,,,,,,,,,,,,,
 ,SellShares,Action,409,"Sprint sells a 10% share of UR and receives $90
 ",Sprint,90,,,,,UR,,10,,,,,,,,,,
@@ -945,7 +945,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,,,,SR,70,,,,,up,,,,,,
 ,PriorityDeal,Event,484,"mindbomb(UTC+9) has priority deal
 ",mindbomb(UTC+9),,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,485,"-- Operating Round 4.1 (of 2) --
+,OperatingRound,Event,485,"Operating Round 4.1 (of 2) --
 ",,,,,,OR 4.1,,,,,,,,,,,,,
 ,Collect,Action,486,"mindbomb(UTC+9) collects $20 from South Iyo Railway
 ",,20,,mindbomb(UTC+9),South Iyo Railway,,,,,,,,,,,,,,
@@ -981,9 +981,9 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,300,,,The Depot,,KU,,,,,,,4,,,,,
 ,BuyTrain,Action,502,"KU buys a 5 train for $450 from The Depot
 ",,450,,,The Depot,,KU,,,,,,,5,,,,,
-5,NewPhase,Event,503,"-- Phase 5 (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+5,NewPhase,Event,503,"Phase 5 (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
 ",,,,,,,,,,,,,,,,,,,
-,AllPrivatesClose,Event,504,"-- Event: Private companies close --
+,AllPrivatesClose,Event,504,"Event: Private companies close --
 ",,,,,,,,,,,,,,,,,,,
 ,Skip,Action,505,"KU skips buy companies
 ",,,,KU,,,,,,,,,,,,,,,
@@ -1091,7 +1091,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,KO,,,,,,,,,,,,,,,
 ,Skip,Action,558,"KO skips buy companies
 ",,,,KO,,,,,,,,,,,,,,,
-,OperatingRound,Event,559,"-- Operating Round 4.2 (of 2) --
+,OperatingRound,Event,559,"Operating Round 4.2 (of 2) --
 ",,,,,,OR 4.2,,,,,,,,,,,,,
 ,Collect,Action,560,"tado collects $50 from Uno-Takamatsu Ferry
 ",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
@@ -1213,7 +1213,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,SR,,,,,,,,,,,,,,,
 ,Skip,Action,620,"SR skips buy companies
 ",,,,SR,,,,,,,,,,,,,,,
-,StockRound,Event,621,"-- Stock Round 5 --
+,StockRound,Event,621,"Stock Round 5 --
 ",,,,,,SR 5,,,,,,,,,,,,,
 ,BuyShare,Action,622,"mindbomb(UTC+9) buys a 10% share of KU from the IPO for $100
 ",mindbomb(UTC+9),100,,,IPO,,KU,,10,,,,,,,,,,
@@ -1275,7 +1275,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,,,,SR,75,,,,,up,,,,,,
 ,PriorityDeal,Event,653,"mindbomb(UTC+9) has priority deal
 ",mindbomb(UTC+9),,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,654,"-- Operating Round 5.1 (of 3) --
+,OperatingRound,Event,654,"Operating Round 5.1 (of 3) --
 ",,,,,,OR 5.1,,,,,,,,,,,,,
 ,Collect,Action,655,"tado collects $50 from Uno-Takamatsu Ferry
 ",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
@@ -1399,7 +1399,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,KO,,,,,,,,,,,,,,,
 ,Skip,Action,716,"KO skips buy companies
 ",,,,KO,,,,,,,,,,,,,,,
-,OperatingRound,Event,717,"-- Operating Round 5.2 (of 3) --
+,OperatingRound,Event,717,"Operating Round 5.2 (of 3) --
 ",,,,,,OR 5.2,,,,,,,,,,,,,
 ,Collect,Action,718,"tado collects $50 from Uno-Takamatsu Ferry
 ",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
@@ -1521,15 +1521,15 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,,,,KO,60,,,,,left,,,,,,
 ,BuyTrain,Action,777,"KO buys a 6 train for $630 from The Depot
 ",,630,,,The Depot,,KO,,,,,,,6,,,,,
-6,NewPhase,Event,778,"-- Phase 6 (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+6,NewPhase,Event,778,"Phase 6 (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
 ",,,,,,,,,,,,,,,,,,,
-,TrainsRust,Event,779,"-- Event: 3 trains rust ( TR x2, IR x1, UR x1, KO x1) --
+,TrainsRust,Event,779,"Event: 3 trains rust ( TR x2, IR x1, UR x1, KO x1) --
 ",,,,,,,,,,,,,,3,,,,,
 ,Pass,Action,780,"KO passes buy trains
 ",,,,KO,,,,,,,,,,,,,,,
 ,Skip,Action,781,"KO skips buy companies
 ",,,,KO,,,,,,,,,,,,,,,
-,OperatingRound,Event,782,"-- Operating Round 5.3 (of 3) --
+,OperatingRound,Event,782,"Operating Round 5.3 (of 3) --
 ",,,,,,OR 5.3,,,,,,,,,,,,,
 ,Collect,Action,783,"tado collects $50 from Uno-Takamatsu Ferry
 ",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
@@ -1655,7 +1655,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,KO,,,,,,,,,,,,,,,
 ,Skip,Action,845,"KO skips buy companies
 ",,,,KO,,,,,,,,,,,,,,,
-,StockRound,Event,846,"-- Stock Round 6 --
+,StockRound,Event,846,"Stock Round 6 --
 ",,,,,,SR 6,,,,,,,,,,,,,
 ,BuyShare,Action,847,"mindbomb(UTC+9) buys a 10% share of KO from the market for $65
 ",mindbomb(UTC+9),65,,,market,,KO,,10,,,,,,,,,,
@@ -1737,7 +1737,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,,,,KO,70,,,,,up,,,,,,
 ,PriorityDeal,Event,887,"mindbomb(UTC+9) has priority deal
 ",mindbomb(UTC+9),,,,,,,,,,,,,,,,,,
-,OperatingRound,Event,888,"-- Operating Round 6.1 (of 3) --
+,OperatingRound,Event,888,"Operating Round 6.1 (of 3) --
 ",,,,,,OR 6.1,,,,,,,,,,,,,
 ,Collect,Action,889,"tado collects $50 from Uno-Takamatsu Ferry
 ",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
@@ -1767,7 +1767,7 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,UR,,,,,,,,,,,,,,,
 ,RunTrain,Action,902,"UR runs a 6 train for $250: E2-C4-B7-C10-F9-G10
 ",,250,,,,,UR,,,,,,,6,E2-C4-B7-C10-F9-G10,,,,
-,BankBroke,Event,903,"-- The bank has broken --
+,BankBroke,Event,903,"The bank has broken --
 ",,,,,,,,,,,,,,,,,,,
 ,PayOut,Action,904,"UR pays out $250 = $25 per share ($150 to camping no reception , $25 to Sprint, $25 to Millie, $25 to zorbak, $25 to tado)
 ",,250,,,,,UR,,,,,,,,,25,,,
@@ -1791,9 +1791,9 @@ phase,type,parent,id,line,player,amount,private,entity,source,sequence,company,s
 ",,,,,,,KU,125,,,,,right,,,,,,
 ,ExchangeTrain,Action,915,"KU exchanges a 4 for a D train for $800 from The Depot
 ",,800,,,The Depot,,KU,,,,,,,,,,4,D,
-D,NewPhase,Event,916,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
+D,NewPhase,Event,916,"Phase D (Operating Rounds: 3 | Train Limit: 2 | Available Tiles: Yellow, Green, Brown) --
 ",,,,,,,,,,,,,,,,,,,
-,TrainsRust,Event,917,"-- Event: 4 trains rust ( SR x2, IR x1, The Depot x1) --
+,TrainsRust,Event,917,"Event: 4 trains rust ( SR x2, IR x1, The Depot x1) --
 ",,,,,,,,,,,,,,4,,,,,
 ,Pass,Action,918,"KU passes buy trains
 ",,,,KU,,,,,,,,,,,,,,,
@@ -1867,7 +1867,7 @@ D,NewPhase,Event,916,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Availab
 ",,,,KO,,,,,,,,,,,,,,,
 ,Skip,Action,953,"KO skips buy companies
 ",,,,KO,,,,,,,,,,,,,,,
-,OperatingRound,Event,954,"-- Operating Round 6.2 (of 3) --
+,OperatingRound,Event,954,"Operating Round 6.2 (of 3) --
 ",,,,,,OR 6.2,,,,,,,,,,,,,
 ,Collect,Action,955,"tado collects $50 from Uno-Takamatsu Ferry
 ",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
@@ -1985,7 +1985,7 @@ D,NewPhase,Event,916,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Availab
 ",,,,SR,,,,,,,,,,,,,,,
 ,Skip,Action,1013,"SR skips buy companies
 ",,,,SR,,,,,,,,,,,,,,,
-,OperatingRound,Event,1014,"-- Operating Round 6.3 (of 3) --
+,OperatingRound,Event,1014,"Operating Round 6.3 (of 3) --
 ",,,,,,OR 6.3,,,,,,,,,,,,,
 ,Collect,Action,1015,"tado collects $50 from Uno-Takamatsu Ferry
 ",,50,,tado,Uno-Takamatsu Ferry,,,,,,,,,,,,,,
@@ -2103,4 +2103,4 @@ D,NewPhase,Event,916,"-- Phase D (Operating Rounds: 3 | Train Limit: 2 | Availab
 ",,,,SR,,,,,,,,,,,,,,,
 ,Skip,Action,1072,"SR skips buy companies
 ",,,,SR,,,,,,,,,,,,,,,
-,GameOver,Event,1073,"-- Game over: tado ($4249), Sprint ($3968), camping no reception ($3775), mindbomb(UTC+9) ($2807), zorbak ($2804), Millie ($2468) --",,,,,,,,,,,,,,,,,,,"{'tado': 4249, 'Sprint': 3968, 'camping no reception': 3775, 'mindbomb(UTC+9)': 2807, 'zorbak': 2804, 'Millie': 2468}"
+,GameOver,Event,1073,"Game over: tado ($4249), Sprint ($3968), camping no reception ($3775), mindbomb(UTC+9) ($2807), zorbak ($2804), Millie ($2468) --",,,,,,,,,,,,,,,,,,,"{'tado': 4249, 'Sprint': 3968, 'camping no reception': 3775, 'mindbomb(UTC+9)': 2807, 'zorbak': 2804, 'Millie': 2468}"

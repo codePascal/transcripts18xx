@@ -143,7 +143,7 @@ class TestSharePriceMove(BaseStepTest):
 class TestNewPhase(BaseStepTest):
 
     def test_match(self):
-        line = '-- Phase 3 (blabla) --'
+        line = 'Phase 3 (blabla) --'
         expected = dict(
             parent='Event',
             type='NewPhase',
@@ -155,7 +155,7 @@ class TestNewPhase(BaseStepTest):
 class TestBankBroke(BaseStepTest):
 
     def test_match(self):
-        line = '-- The bank has broken --'
+        line = 'The bank has broken --'
         expected = dict(
             parent='Event',
             type='BankBroke'
@@ -166,7 +166,7 @@ class TestBankBroke(BaseStepTest):
 class TestGameOver(BaseStepTest):
 
     def test_match(self):
-        line = '-- Game over: player1 ($200), player3 ($100), player2 ($50) --'
+        line = 'Game over: player1 ($200), player3 ($100), player2 ($50) --'
         expected = dict(
             parent='Event',
             type='GameOver',
@@ -175,7 +175,7 @@ class TestGameOver(BaseStepTest):
         self.assertMatch(events.GameOver(), line, expected)
 
     def test_match_whitespace_name(self):
-        line = '-- Game over: player1 ($200), player 3 ($100), player2 ($50) --'
+        line = 'Game over: player1 ($200), player 3 ($100), player2 ($50) --'
         expected = dict(
             parent='Event',
             type='GameOver',
@@ -184,7 +184,7 @@ class TestGameOver(BaseStepTest):
         self.assertMatch(events.GameOver(), line, expected)
 
     def test_match_underscore_name(self):
-        line = '-- Game over: player1 ($200), player_3 ($100), player2 ($50) --'
+        line = 'Game over: player1 ($200), player_3 ($100), player2 ($50) --'
         expected = dict(
             parent='Event',
             type='GameOver',
@@ -193,7 +193,7 @@ class TestGameOver(BaseStepTest):
         self.assertMatch(events.GameOver(), line, expected)
 
     def test_match_special_letters_name(self):
-        line = '-- Game over: player1 ($200), 可昂 ($100), player2 ($50) --'
+        line = 'Game over: player1 ($200), 可昂 ($100), player2 ($50) --'
         expected = dict(
             parent='Event',
             type='GameOver',
@@ -205,7 +205,7 @@ class TestGameOver(BaseStepTest):
 class TestOperatingRound(BaseStepTest):
 
     def test_match(self):
-        line = '-- Operating Round 3.2 (of 2) --'
+        line = 'Operating Round 3.2 (of 2) --'
         expected = dict(
             parent='Event',
             type='OperatingRound',
@@ -217,7 +217,7 @@ class TestOperatingRound(BaseStepTest):
 class TestStockRound(BaseStepTest):
 
     def test_match(self):
-        line = '-- Stock Round 4 --'
+        line = 'Stock Round 4 --'
         expected = dict(
             parent='Event',
             type='StockRound',
@@ -275,7 +275,7 @@ class TestOperatesCompany(BaseStepTest):
 class TestAllPrivatesClose(BaseStepTest):
 
     def test_match(self):
-        line = '-- Event: Private companies close'
+        line = 'Event: Private companies close'
         expected = dict(
             parent='Event',
             type='AllPrivatesClose',
@@ -318,7 +318,7 @@ class TestPrivateAuctioned(BaseStepTest):
 class TestTrainsRust(BaseStepTest):
 
     def test_match(self):
-        line = '-- Event: 4 trains rust'
+        line = 'Event: 4 trains rust'
         expected = dict(
             parent='Event',
             type='TrainsRust',
@@ -334,7 +334,7 @@ class TestTrainsRust(BaseStepTest):
 class TestPlayerGoesBankrupt(BaseStepTest):
 
     def test_match(self):
-        line = '-- player1 goes bankrupt and sells remaining shares --'
+        line = 'player1 goes bankrupt and sells remaining shares --'
         expected = dict(
             parent='Event',
             type='PlayerGoesBankrupt',
@@ -395,7 +395,7 @@ class TestMasterMode(BaseStepTest):
 class TestDateEntry(BaseStepTest):
 
     def test_match(self):
-        line = '-- 2025-08-17 --'
+        line = '2025-08-17 --'
         expected = dict(
             parent='Event',
             type='DateEntry',

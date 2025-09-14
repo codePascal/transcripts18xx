@@ -149,7 +149,7 @@ class NewPhase(EventStep):
 
     def __init__(self):
         super().__init__()
-        self.pattern = re.compile(r'-- Phase (\w+) \(')
+        self.pattern = re.compile(r'Phase (\w+) \(')
         self.type = StepType.NewPhase
 
     def _process_match(self, line: str, match) -> dict:
@@ -162,7 +162,7 @@ class BankBroke(EventStep):
 
     def __init__(self):
         super().__init__()
-        self.pattern = re.compile(r'-- The bank has broken --')
+        self.pattern = re.compile(r'The bank has broken --')
         self.type = StepType.BankBroke
 
     def _process_match(self, line: str, match) -> dict:
@@ -175,7 +175,7 @@ class GameOver(EventStep):
 
     def __init__(self):
         super().__init__()
-        self.pattern = re.compile(r'-- Game over: (.*) --')
+        self.pattern = re.compile(r'Game over: (.*) --')
         self.type = StepType.GameOver
 
     def _process_match(self, line: str, match) -> dict:
@@ -192,7 +192,7 @@ class OperatingRound(EventStep):
 
     def __init__(self):
         super().__init__()
-        self.pattern = re.compile(r'-- Operating Round (\d+\.\d+)')
+        self.pattern = re.compile(r'Operating Round (\d+\.\d+)')
         self.type = StepType.OperatingRound
 
     def _process_match(self, line: str, match) -> dict:
@@ -205,7 +205,7 @@ class StockRound(EventStep):
 
     def __init__(self):
         super().__init__()
-        self.pattern = re.compile(r'-- Stock Round (\d+)')
+        self.pattern = re.compile(r'Stock Round (\d+)')
         self.type = StepType.StockRound
 
     def _process_match(self, line: str, match) -> dict:
@@ -278,7 +278,7 @@ class AllPrivatesClose(EventStep):
 
     def __init__(self):
         super().__init__()
-        self.pattern = re.compile(r'-- Event: Private companies close')
+        self.pattern = re.compile(r'Event: Private companies close')
         self.type = StepType.AllPrivatesClose
 
     def _process_match(self, line: str, match) -> dict:
@@ -330,7 +330,7 @@ class TrainsRust(EventStep):
 
     def __init__(self):
         super().__init__()
-        self.pattern = re.compile(r'-- Event: (\d+) trains rust')
+        self.pattern = re.compile(r'Event: (\d+) trains rust')
         self.type = StepType.TrainsRust
 
     def _process_match(self, line: str, match) -> dict:
@@ -349,7 +349,7 @@ class PlayerGoesBankrupt(EventStep):
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(
-            r'-- (.*?) goes bankrupt and sells remaining shares --'
+            r'(.*?) goes bankrupt and sells remaining shares --'
         )
         self.type = StepType.PlayerGoesBankrupt
 
@@ -426,7 +426,7 @@ class DateEntry(EventStep):
 
     def __init__(self):
         super().__init__()
-        self.pattern = re.compile(r'-- \b\d{4}-\d{2}-\d{2}\b --')
+        self.pattern = re.compile(r'\b\d{4}-\d{2}-\d{2}\b --')
         self.type = StepType.DateEntry
 
     def _process_match(self, line: str, match) -> dict:
