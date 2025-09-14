@@ -29,10 +29,10 @@ class Game18xx(abc.ABC):
 
     def __init__(self):
         self.companies = set()
-        self.privates = dict()
+        self.privates = {}
         self.trains = set()
         self.initial_round = str()
-        self.start_capital = dict()
+        self.start_capital = {}
         self.currency = str()
 
 
@@ -131,8 +131,8 @@ class Games(enum.IntEnum):
         """
         try:
             return Games[game]
-        except KeyError:
-            raise ValueError()
+        except KeyError as e:
+            raise ValueError() from e
 
     def select(self) -> Game18xx:
         """Matches the game to its struct.
@@ -145,10 +145,9 @@ class Games(enum.IntEnum):
         """
         if self == Games.G1830:
             return Game1830()
-        elif self == Games.G1889:
+        if self == Games.G1889:
             return Game1889()
-        else:
-            raise ValueError('Unknown game: {}'.format(self.name))
+        raise ValueError(f'Unknown game: {self.name}')
 
     def game(self):
         """Retrieves the game name of the game.
