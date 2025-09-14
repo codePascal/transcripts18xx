@@ -81,13 +81,31 @@ class State:
         return
 
     def collects(self, amount: int) -> None:
+        """Collects money from e.g. a private.
+
+        Args:
+            amount: Amount collected.
+        """
         self.cash += amount
 
     def buys_private(self, private: str, amount: int, value: int) -> None:
+        """Buys private from auction, other player or company.
+
+        Args:
+            private: The private which is bought.
+            amount: The amount payed for the private.
+            value: The value of the private.
+        """
         self.privates[private] = value
         self.cash -= amount
 
     def private_closes(self, private: str = None) -> None:
+        """All or one private close.
+
+        Args:
+            private: The name of the private that closes. If None, all privates
+                will be closed, i.e., removed from the state.
+        """
         if private is None:
             self.privates = {}
         elif private in self.privates:

@@ -93,44 +93,113 @@ class CompanyState(State):
         return str(int(train))
 
     def receives_dividend(self, per_share: int) -> None:
+        """Company received divided from shares on the market.
+
+        Args:
+            per_share: The amount received per share.
+        """
         self.cash += self.market * per_share
 
     def withholds(self, amount: int):
+        """Company withholds and does not pay any divided.
+
+        Args:
+            amount: Amount withheld and remaining in company.
+        """
         self.cash += amount
 
     def is_pared(self, share_price: int):
+        """Company is pared on the market.
+
+        Args:
+            share_price: Share price pared at.
+        """
         self.share_price = share_price
 
     def lays_tile(self, amount: int):
+        """Company lays tile and possibly pays extra.
+
+        Args:
+            amount: Amount payed to lay the tile.
+        """
         self.cash -= amount
 
     def places_token(self, amount: int):
+        """Company places token and possibly pays extra.
+
+        Args:
+            amount: Amount payed to place the token.
+        """
         self.cash -= amount
 
     def buys_train(self, train: str, amount: int):
+        """Company buys a train from another company, or market.
+
+        Args:
+            train: Train level bought.
+            amount: Amount payed for it.
+        """
         self.trains[self._proc_train(train)] += 1
         self.cash -= amount
 
     def discards_train(self, train: str):
+        """Company discards a train.
+
+        Args:
+            train: Train level discarded.
+        """
         self.trains[self._proc_train(train)] -= 1
 
     def exchanges_train(self, old_train: str, new_train: str, amount: int):
+        """Company exchanges a old for a new train.
+
+        Args:
+            old_train: Old train level.
+            new_train: New train level.
+            amount: Additional money payed for the exchange.
+        """
         self.discards_train(old_train)
         self.buys_train(new_train, amount)
 
     def receives_funds(self, amount: int):
+        """Company receives funding after floating.
+
+        Args:
+            amount: Amount received to the treasury.
+        """
         self.cash += amount
 
     def share_price_moves(self, share_price: int):
+        """Callback to share price movement.
+
+        Args:
+            share_price: New share price.
+        """
         self.share_price = share_price
 
     def president_assignment(self, player: str):
+        """A (new) president is assigned to the company.
+
+        Args:
+            player: Player name of the president.
+        """
         self.president = player
 
     def trains_rust(self, train: str):
+        """Callback to trains rusting.
+
+        Args:
+            train: Train level that rusts.
+        """
         self.trains[self._proc_train(train)] = 0
 
     def sells_share(self, num_shares: int, source: str):
+        """Company sells share from IPO or market.
+
+        Args:
+            num_shares: Number of shares sold.
+            source: From where shares were sold.
+        """
         if source == 'market':
             self.market -= num_shares
         elif source == 'IPO':
@@ -139,9 +208,20 @@ class CompanyState(State):
             raise ValueError(f'Source not available: {source}')
 
     def receives_share(self, num_shares: int):
+        """Company receives share that was previously bought.
+
+        Args:
+            num_shares: Number of shares into the market.
+        """
         self.market += num_shares
 
     def sells_train(self, train: str, amount: int):
+        """Company sells train to another company.
+
+        Args:
+            train: Train level sold.
+            amount: Amount received.
+        """
         self.discards_train(train)
         self.cash += amount
 

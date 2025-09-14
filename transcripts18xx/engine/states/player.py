@@ -97,37 +97,95 @@ class PlayerState(State):
         self.value += sum(self.privates.values())
 
     def receives_dividend(self, company: str, per_share: int) -> None:
+        """Player receives divided from company.
+
+        Args:
+            company: The company paying out divided.
+            per_share: The amount received per share.
+        """
         self.cash += self.shares[company] * per_share
 
     def buys_shares(self, company: str, num_shares: int, amount: int) -> None:
+        """Player buys shares from the market or company treasury.
+
+        Args:
+            company: The company from which shares are bought.
+            num_shares: Number of shares involved.
+            amount: Amount payed for all shares.
+        """
         self.shares[company] += num_shares
         self.cash -= amount
 
     def sells_shares(self, company: str, num_shares: int,
                      amount: int) -> None:
+        """Player sells shares to the market.
+
+        Note that if a player is bankrupt, the amount received will not be
+        added to its cash.
+
+        Args:
+            company: The company from which shares are sold.
+            num_shares: Number of shares involved.
+            amount: Amount received for all shares.
+        """
         self.shares[company] -= num_shares
         if not self.is_bankrupt:
             self.cash += amount
 
     def sells_private(self, private: str, amount: int, value: int):
+        """Player sells a private to a company or another player.
+
+        Args:
+            private: The private which is sold.
+            amount: The amount for which it is sold.
+            value: The value of the private.
+        """
         self.privates.pop(private)
         self.cash += amount
 
     def contributes(self, amount: int):
+        """Player contributes to fund/support a company.
+
+        Args:
+            amount: Amount contributed.
+        """
         self.cash -= amount
 
     def receives_share(self, company: str, num_shares: int):
+        """Player receives shares, no money involved.
+
+        Args:
+            company: The company from which shares are received.
+            num_shares: Number of shares involved.
+        """
         self.shares[company] += num_shares
 
     def has_priority_deal(self, priority_deal: bool):
+        """Map priority deal to the state.
+
+        Args:
+            priority_deal: True if player will have priority deal, False
+                otherwise.
+        """
         self.priority_deal = priority_deal
 
     def goes_bankrupt(self):
+        """Player goes bankrupt.
+
+        Might involve selling shares, but the player's cash will remain 0.
+        """
         self.cash = 0
         self.is_bankrupt = True
 
     def exchanges_private_for_share(self, private: str, num_shares: int,
                                     company: str) -> None:
+        """Player exchanges a private for number of shares.
+
+        Args:
+            private: Private used to exchange shares.
+            num_shares: Number of shares received.
+            company: Company from which shares are received.
+        """
         self.privates.pop(private)
         self.shares[company] += num_shares
 
