@@ -7,18 +7,19 @@ Module implements classes that build the algorithm to parse a transcript from
 of a parser to handle the raw transcript, a processor that cleans and
 post-processes the transcript and a mapper for the game state.
 """
-import numpy as np
-import pandas as pd
 import re
 
 from pathlib import Path
+
+import numpy as np
+import pandas as pd
 
 from ..games import Game18xx
 from ..engine import engine
 from ..engine.steps.step import StepType
 
 
-class GameTranscriptProcessor(object):
+class GameTranscriptProcessor:
     """GameTranscriptProcessor
 
     Class to process and parse game transcripts. The class invokes a line parser
@@ -40,7 +41,7 @@ class GameTranscriptProcessor(object):
 
     def __init__(self, game: Game18xx):
         self._engine = engine.LineParser()
-        self._unprocessed_lines = list()
+        self._unprocessed_lines = []
 
         self._default_currency = '$'
         self._game_currency = game.currency
@@ -96,8 +97,8 @@ class GameTranscriptProcessor(object):
         Returns:
             The parsed transcript as pandas Dataframe.
         """
-        data = list()
-        self._unprocessed_lines = list()
+        data = []
+        self._unprocessed_lines = []
         for i, line in enumerate(self._read_transcript(transcript)):
             self._process_line(i, line, data)
         return pd.DataFrame(data)
@@ -111,7 +112,7 @@ class GameTranscriptProcessor(object):
         return self._unprocessed_lines
 
 
-class TranscriptPostProcessor(object):
+class TranscriptPostProcessor:
     """TranscriptPostProcessor
 
     Class to post-process and clean parsed game transcripts. The class fills up
@@ -180,15 +181,11 @@ class TranscriptPostProcessor(object):
 
     def _clean_locations(self):
         # Removes the location name from the location identifier.
-        self._df.location = self._df.location.apply(
-            lambda x: self.clean_brackets(x)
-        )
+        self._df.location = self._df.location.apply(self.clean_brackets)
 
     def _clean_companies(self):
         # Removes the location name from the location identifier.
-        self._df.company = self._df.company.apply(
-            lambda x: self.clean_brackets(x)
-        )
+        self._df.company = self._df.company.apply(self.clean_brackets)
 
     def _map_dtypes(self) -> None:
         self._df.amount = self._df.amount.astype(float)
@@ -205,9 +202,8 @@ class TranscriptPostProcessor(object):
             next_action = self._df.iloc[cont + 1, :]
             if not next_action['type'] == engine.step.StepType.BuyTrain.name:
                 raise ValueError(
-                    'Can not set target for contribution: {}'.format(
-                        next_action.to_string()
-                    )
+                    f'Can not set target for contribution: '
+                    f'{next_action.to_string()}'
                 )
 
             # Map the company that receives the contribution
@@ -255,7 +251,7 @@ class TranscriptPostProcessor(object):
         return bracket_string
 
 
-class GameStateProcessor(object):
+class GameStateProcessor:
     """GameStateProcessor
 
     Class to map the game state to the cleaned and processed transcript. The
@@ -286,7 +282,7 @@ class GameStateProcessor(object):
         num_players = len(players)
         if num_players not in game.start_capital.keys():
             raise AttributeError(
-                'Start capital for `{}` players not set'.format(num_players)
+                f'Start capital for `{num_players}` players not set'
             )
         self._game_state = engine.GameState(
             players,
@@ -310,9 +306,7 @@ class GameStateProcessor(object):
         Returns:
             Final transcript with game state added.
         """
-        state = self._df.apply(
-            lambda x: self._update(x), axis=1, result_type='expand'
-        )
+        state = self._df.apply(self._update, axis=1, result_type='expand')
         self._df = pd.concat([self._df, state], axis=1)
         return self._df
 
