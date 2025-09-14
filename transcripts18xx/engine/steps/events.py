@@ -363,7 +363,7 @@ class PlayerGoesBankrupt(EventStep):
 
 
 class GameEndedManually(EventStep):
-    """"GameEndedManually
+    """GameEndedManually
     """
 
     def __init__(self):
@@ -373,6 +373,21 @@ class GameEndedManually(EventStep):
 
     def _process_match(self, line: str, match) -> dict:
         return {}
+
+
+class MinimumBidDecreased(EventStep):
+    """MinimumBidDecreased
+    """
+
+    def __init__(self):
+        super().__init__()
+        self.pattern = re.compile(
+            r'(.*?) minimum bid decreases from \$(\d+) to \$(\d+)'
+        )
+        self.type = StepType.MinimumBidDecreased
+
+    def _process_match(self, line: str, match) -> dict:
+        return {'private': match.group(1)}
 
 
 class ConfirmedConsent(EventStep):

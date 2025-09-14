@@ -358,6 +358,18 @@ class TestGameEndedManually(BaseStepTest):
         self.assertMatch(events.GameEndedManually(), line, expected)
 
 
+class TestMinimumBidDecreased(BaseStepTest):
+
+    def test_match(self):
+        line = 'Schuylkill Valley minimum bid decreases from $15 to $10'
+        expected = dict(
+            parent='Event',
+            type='MinimumBidDecreased',
+            private='Schuylkill Valley'
+        )
+        self.assertMatch(events.MinimumBidDecreased(), line, expected)
+
+
 class TestConfirmedConsent(BaseStepTest):
 
     def test_match(self):
