@@ -7,10 +7,11 @@ run some post-processing on the line if a match was found.
 """
 import abc
 import enum
-import pandas as pd
 import re
 
 from typing import Type
+
+import pandas as pd
 
 from ..states.player import Players
 from ..states.company import Companies
@@ -101,8 +102,8 @@ class EngineStep(abc.ABC):
         self.type = Type[StepType]
         self.parent = Type[StepParent]
 
-        self._dismiss = list()
-        self._required = list()
+        self._dismiss = []
+        self._required = []
 
     def _invoke_search(self, line: str) -> re.Match | None:
         # Invokes the search command.
@@ -168,5 +169,5 @@ class EngineStep(abc.ABC):
             privates: Privates and their values.
         """
         self._update(row, players, companies, privates)
-        players.update(dict(share_prices=companies.share_prices()))
-        companies.update(dict())
+        players.update({'share_prices': companies.share_prices()})
+        companies.update({})
