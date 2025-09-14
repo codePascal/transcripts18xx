@@ -15,6 +15,8 @@ from .step import EngineStep, StepType, StepParent
 
 
 class EventStep(EngineStep, abc.ABC):
+    """EventStep
+    """
 
     def __init__(self):
         super().__init__()
@@ -22,6 +24,8 @@ class EventStep(EngineStep, abc.ABC):
 
 
 class ReceiveShare(EventStep):
+    """ReceiveShare
+    """
 
     def __init__(self):
         super().__init__()
@@ -29,33 +33,30 @@ class ReceiveShare(EventStep):
         self.type = StepType.ReceiveShare
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            player=match.group(1),
-            percentage=match.group(2),
-            company=match.group(3)
-        )
+        return {
+            'player': match.group(1),
+            'percentage': match.group(2),
+            'company': match.group(3)
+        }
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
+        num_shares = int(0.1 * row.percentage)
         players.invoke(
             PlayerState.receives_share,
-            dict(
-                company=row.company,
-                num_shares=int(0.1 * row.percentage),
-            ),
+            {'company': row.company, 'num_shares': num_shares},
             row.player
         )
         companies.invoke(
             CompanyState.sells_share,
-            dict(
-                num_shares=int(0.1 * row.percentage),
-                source='IPO'  # Assume from IPO
-            ),
+            {'num_shares': num_shares, 'source': 'IPO'},
             row.company
         )
 
 
 class ReceiveFunds(EventStep):
+    """ReceiveFunds
+    """
 
     def __init__(self):
         super().__init__()
@@ -65,21 +66,20 @@ class ReceiveFunds(EventStep):
         self._dismiss = ['sells']
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1),
-            amount=match.group(2)
-        )
+        return {'company': match.group(1), 'amount': match.group(2)}
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         companies.invoke(
             CompanyState.receives_funds,
-            dict(amount=row.amount),
+            {'amount': row.amount},
             row.company
         )
 
 
 class CompanyFloats(EventStep):
+    """CompanyFloats
+    """
 
     def __init__(self):
         super().__init__()
@@ -87,12 +87,12 @@ class CompanyFloats(EventStep):
         self.type = StepType.CompanyFloats
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1)
-        )
+        return {'company': match.group(1)}
 
 
 class SelectsHome(EventStep):
+    """SelectsHome
+    """
 
     def __init__(self):
         super().__init__()
@@ -100,12 +100,12 @@ class SelectsHome(EventStep):
         self.type = StepType.SelectsHome
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1)
-        )
+        return {'company': match.group(1)}
 
 
 class DoesNotRun(EventStep):
+    """DoesNotRun
+    """
 
     def __init__(self):
         super().__init__()
@@ -113,12 +113,12 @@ class DoesNotRun(EventStep):
         self.type = StepType.DoesNotRun
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1)
-        )
+        return {'company': match.group(1)}
 
 
 class SharePriceMove(EventStep):
+    """SharePriceMove
+    """
 
     def __init__(self):
         super().__init__()
@@ -128,22 +128,24 @@ class SharePriceMove(EventStep):
         self.type = StepType.SharePriceMoves
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1),
-            direction=match.group(2),
-            share_price=match.group(4)
-        )
+        return {
+            'company': match.group(1),
+            'direction': match.group(2),
+            'share_price': match.group(4)
+        }
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         companies.invoke(
             CompanyState.share_price_moves,
-            dict(share_price=row.share_price),
+            {'share_price': row.share_price},
             row.company
         )
 
 
 class NewPhase(EventStep):
+    """NewPhase
+    """
 
     def __init__(self):
         super().__init__()
@@ -151,12 +153,12 @@ class NewPhase(EventStep):
         self.type = StepType.NewPhase
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            phase=match.group(1)
-        )
+        return {'phase': match.group(1)}
 
 
 class BankBroke(EventStep):
+    """BankBroke
+    """
 
     def __init__(self):
         super().__init__()
@@ -164,10 +166,12 @@ class BankBroke(EventStep):
         self.type = StepType.BankBroke
 
     def _process_match(self, line: str, match) -> dict:
-        return dict()
+        return {}
 
 
 class GameOver(EventStep):
+    """GameOver
+    """
 
     def __init__(self):
         super().__init__()
@@ -179,10 +183,12 @@ class GameOver(EventStep):
         pattern = re.compile(r'([^,]+?)\s+\(\$(\d+)\)')
         matches = re.findall(pattern, match.group(1))
         result = {p.strip(): int(v) for p, v in matches}
-        return dict(result=result.__str__())
+        return {'result': str(result)}
 
 
 class OperatingRound(EventStep):
+    """OperatingRound
+    """
 
     def __init__(self):
         super().__init__()
@@ -190,12 +196,12 @@ class OperatingRound(EventStep):
         self.type = StepType.OperatingRound
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            sequence='OR {}'.format(match.group(1))
-        )
+        return {'sequence': f'OR {match.group(1)}'}
 
 
 class StockRound(EventStep):
+    """StockRound
+    """
 
     def __init__(self):
         super().__init__()
@@ -203,12 +209,12 @@ class StockRound(EventStep):
         self.type = StepType.StockRound
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            sequence='SR {}'.format(match.group(1))
-        )
+        return {'sequence': f'SR {match.group(1)}'}
 
 
 class PresidentNomination(EventStep):
+    """PresidentNomination
+    """
 
     def __init__(self):
         super().__init__()
@@ -216,21 +222,21 @@ class PresidentNomination(EventStep):
         self.type = StepType.PresidentNomination
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            player=match.group(1),
-            company=match.group(2)
-        )
+        return {'player': match.group(1), 'company': match.group(2)}
 
-    def _update(self, row: pd.Series, players: Players, companies: Companies,
+    def _update(self, row: pd.Series, players: Players,
+                companies: Companies,
                 privates: dict) -> None:
         companies.invoke(
             CompanyState.president_assignment,
-            dict(player=row.player),
+            {'player': row.player},
             row.company
         )
 
 
 class PriorityDeal(EventStep):
+    """PriorityDeal
+    """
 
     def __init__(self):
         super().__init__()
@@ -238,22 +244,24 @@ class PriorityDeal(EventStep):
         self.type = StepType.PriorityDeal
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            player=match.group(1)
-        )
+        return {'player': match.group(1)}
 
-    def _update(self, row: pd.Series, players: Players, companies: Companies,
+    def _update(self, row: pd.Series, players: Players,
+                companies: Companies,
                 privates: dict) -> None:
         # First set all to False, the invoke specific player.
         players.invoke_all(
-            PlayerState.has_priority_deal, dict(priority_deal=False),
+            PlayerState.has_priority_deal, {'priority_deal': False},
         )
         players.invoke(
-            PlayerState.has_priority_deal, dict(priority_deal=True), row.player
+            PlayerState.has_priority_deal, {'priority_deal': True},
+            row.player
         )
 
 
 class OperatesCompany(EventStep):
+    """OperatesCompany
+    """
 
     def __init__(self):
         super().__init__()
@@ -261,13 +269,12 @@ class OperatesCompany(EventStep):
         self.type = StepType.OperatesCompany
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            player=match.group(1),
-            company=match.group(2)
-        )
+        return {'player': match.group(1), 'company': match.group(2)}
 
 
 class AllPrivatesClose(EventStep):
+    """AllPrivatesClose
+    """
 
     def __init__(self):
         super().__init__()
@@ -275,15 +282,18 @@ class AllPrivatesClose(EventStep):
         self.type = StepType.AllPrivatesClose
 
     def _process_match(self, line: str, match) -> dict:
-        return dict()
+        return {}
 
-    def _update(self, row: pd.Series, players: Players, companies: Companies,
+    def _update(self, row: pd.Series, players: Players,
+                companies: Companies,
                 privates: dict) -> None:
-        players.invoke_all(PlayerState.private_closes, dict())
-        companies.invoke_all(CompanyState.private_closes, dict())
+        players.invoke_all(PlayerState.private_closes, {})
+        companies.invoke_all(CompanyState.private_closes, {})
 
 
 class PrivateCloses(EventStep):
+    """PrivateCloses
+    """
 
     def __init__(self):
         super().__init__()
@@ -291,18 +301,19 @@ class PrivateCloses(EventStep):
         self.type = StepType.PrivateCloses
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            private=match.group(1)
-        )
+        return {'private': match.group(1)}
 
-    def _update(self, row: pd.Series, players: Players, companies: Companies,
+    def _update(self, row: pd.Series, players: Players,
+                companies: Companies,
                 privates: dict) -> None:
-        args = dict(private=row.private)
+        args = {'private': row.private}
         players.invoke_all(PlayerState.private_closes, args)
         companies.invoke_all(CompanyState.private_closes, args)
 
 
 class PrivateAuctioned(EventStep):
+    """PrivateAuctioned
+    """
 
     def __init__(self):
         super().__init__()
@@ -310,12 +321,12 @@ class PrivateAuctioned(EventStep):
         self.type = StepType.PrivateAuctioned
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            private=match.group(1)
-        )
+        return {'private': match.group(1)}
 
 
 class TrainsRust(EventStep):
+    """TrainsRust
+    """
 
     def __init__(self):
         super().__init__()
@@ -323,16 +334,17 @@ class TrainsRust(EventStep):
         self.type = StepType.TrainsRust
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            train=match.group(1)
-        )
+        return {'train': match.group(1)}
 
-    def _update(self, row: pd.Series, players: Players, companies: Companies,
+    def _update(self, row: pd.Series, players: Players,
+                companies: Companies,
                 privates: dict) -> None:
-        companies.invoke_all(CompanyState.trains_rust, dict(train=row.train))
+        companies.invoke_all(CompanyState.trains_rust, {'train': row.train})
 
 
 class PlayerGoesBankrupt(EventStep):
+    """PlayerGoesBankrupt
+    """
 
     def __init__(self):
         super().__init__()
@@ -342,16 +354,17 @@ class PlayerGoesBankrupt(EventStep):
         self.type = StepType.PlayerGoesBankrupt
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            player=match.group(1)
-        )
+        return {'player': match.group(1)}
 
-    def _update(self, row: pd.Series, players: Players, companies: Companies,
+    def _update(self, row: pd.Series, players: Players,
+                companies: Companies,
                 privates: dict) -> None:
-        players.invoke(PlayerState.goes_bankrupt, dict(), row.player)
+        players.invoke(PlayerState.goes_bankrupt, {}, row.player)
 
 
 class GameEndedManually(EventStep):
+    """"GameEndedManually
+    """
 
     def __init__(self):
         super().__init__()
@@ -359,10 +372,12 @@ class GameEndedManually(EventStep):
         self.type = StepType.GameEndedManually
 
     def _process_match(self, line: str, match) -> dict:
-        return dict()
+        return {}
 
 
 class ConfirmedConsent(EventStep):
+    """ConfirmedConsent
+    """
 
     def __init__(self):
         super().__init__()
@@ -372,10 +387,12 @@ class ConfirmedConsent(EventStep):
         self.type = StepType.ConfirmedConsent
 
     def _process_match(self, line: str, match) -> dict:
-        return dict()
+        return {}
 
 
 class MasterMode(EventStep):
+    """MasterMode
+    """
 
     def __init__(self):
         super().__init__()
@@ -385,10 +402,12 @@ class MasterMode(EventStep):
         self.type = StepType.MasterMode
 
     def _process_match(self, line: str, match) -> dict:
-        return dict()
+        return {}
 
 
 class DateEntry(EventStep):
+    """DateEntry
+    """
 
     def __init__(self):
         super().__init__()
@@ -396,4 +415,4 @@ class DateEntry(EventStep):
         self.type = StepType.DateEntry
 
     def _process_match(self, line: str, match) -> dict:
-        return dict()
+        return {}

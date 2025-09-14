@@ -15,6 +15,8 @@ from .step import EngineStep, StepType, StepParent
 
 
 class ActionStep(EngineStep, abc.ABC):
+    """ActionStep
+    """
 
     def __init__(self):
         super().__init__()
@@ -22,6 +24,8 @@ class ActionStep(EngineStep, abc.ABC):
 
 
 class PayOut(ActionStep):
+    """PayOut
+    """
 
     def __init__(self):
         super().__init__()
@@ -29,26 +33,28 @@ class PayOut(ActionStep):
         self.type = StepType.PayOut
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1),
-            amount=match.group(2),
-            per_share=match.group(3)
-        )
+        return {
+            'company': match.group(1),
+            'amount': match.group(2),
+            'per_share': match.group(3)
+        }
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         players.invoke_all(
             PlayerState.receives_dividend,
-            dict(company=row.company, per_share=row.per_share)
+            {'company': row.company, 'per_share': row.per_share}
         )
         companies.invoke(
             CompanyState.receives_dividend,
-            dict(per_share=row.per_share),
+            {'per_share': row.per_share},
             row.company
         )
 
 
 class Withhold(ActionStep):
+    """Withhold
+    """
 
     def __init__(self):
         super().__init__()
@@ -56,21 +62,18 @@ class Withhold(ActionStep):
         self.type = StepType.Withhold
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1),
-            amount=match.group(2)
-        )
+        return {'company': match.group(1), 'amount': match.group(2)}
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         companies.invoke(
-            CompanyState.withholds,
-            dict(amount=row.amount),
-            row.company
+            CompanyState.withholds, {'amount': row.amount}, row.company
         )
 
 
 class BuyShare(ActionStep):
+    """BuyShare
+    """
 
     def __init__(self):
         super().__init__()
@@ -80,68 +83,69 @@ class BuyShare(ActionStep):
         self.type = StepType.BuyShare
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            player=match.group(1),
-            percentage=match.group(2),
-            company=match.group(3),
-            source=match.group(4),
-            amount=match.group(5)
-        )
+        return {
+            'player': match.group(1),
+            'percentage': match.group(2),
+            'company': match.group(3),
+            'source': match.group(4),
+            'amount': match.group(5)
+        }
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
+        num_shares = int(0.1 * row.percentage)
         players.invoke(
             PlayerState.buys_shares,
-            dict(
-                company=row.company,
-                num_shares=int(0.1 * row.percentage),
-                amount=row.amount,
-            ),
+            {
+                'company': row.company,
+                'num_shares': num_shares,
+                'amount': row.amount
+            },
             row.player
         )
         companies.invoke(
             CompanyState.sells_share,
-            dict(
-                num_shares=int(0.1 * row.percentage),
-                source=row.source
-            ),
+            {'num_shares': num_shares, 'source': row.source},
             row.company
         )
 
 
 class SellShare(ActionStep, abc.ABC):
+    """SellShare
+    """
 
     def __init__(self):
         super().__init__()
         self.type = StepType.SellShares
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            player=match.group(1),
-            percentage='{}{}'.format(match.group(2), '0'),
-            company=match.group(3),
-            amount=match.group(4)
-        )
+        return {
+            'player': match.group(1),
+            'percentage': f'{match.group(2)}0',
+            'company': match.group(3),
+            'amount': match.group(4)
+        }
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
+        num_shares = int(0.1 * row.percentage)
         players.invoke(
             PlayerState.sells_shares,
-            dict(
-                company=row.company,
-                num_shares=int(0.1 * row.percentage),
-                amount=row.amount
-            ),
+            {
+                'company': row.company,
+                'num_shares': num_shares,
+                'amount': row.amount
+            },
             row.player
         )
         companies.invoke(
-            CompanyState.receives_share,
-            dict(num_shares=int(0.1 * row.percentage)),
-            row.company
+            CompanyState.receives_share, {'num_shares': num_shares}, row.company
         )
 
 
 class SellSingleShare(SellShare):
+    """SellSingleShare
+    """
 
     def __init__(self):
         super().__init__()
@@ -151,6 +155,8 @@ class SellSingleShare(SellShare):
 
 
 class SellMultipleShares(SellShare):
+    """SellMultipleShares
+    """
 
     def __init__(self):
         super().__init__()
@@ -160,18 +166,20 @@ class SellMultipleShares(SellShare):
 
 
 class Pass(ActionStep, abc.ABC):
+    """Pass
+    """
 
     def __init__(self):
         super().__init__()
         self.type = StepType.Pass
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            entity=match.group(1),
-        )
+        return {'entity': match.group(1)}
 
 
 class NoValidActions(Pass):
+    """NoValidActions
+    """
 
     def __init__(self):
         super().__init__()
@@ -179,6 +187,8 @@ class NoValidActions(Pass):
 
 
 class RegularPass(Pass):
+    """RegularPass
+    """
 
     def __init__(self):
         super().__init__()
@@ -195,6 +205,8 @@ class RegularPass(Pass):
 
 
 class PassBuyPrivate(Pass):
+    """PassBuyPrivate
+    """
 
     def __init__(self):
         super().__init__()
@@ -202,6 +214,8 @@ class PassBuyPrivate(Pass):
 
 
 class PassAuction(Pass):
+    """PassAuction
+    """
 
     def __init__(self):
         super().__init__()
@@ -209,6 +223,8 @@ class PassAuction(Pass):
 
 
 class PassTile(Pass):
+    """PassTile
+    """
 
     def __init__(self):
         super().__init__()
@@ -216,6 +232,8 @@ class PassTile(Pass):
 
 
 class PassToken(Pass):
+    """PassToken
+    """
 
     def __init__(self):
         super().__init__()
@@ -223,6 +241,8 @@ class PassToken(Pass):
 
 
 class PassBuyTrain(Pass):
+    """PassBuyTrain
+    """
 
     def __init__(self):
         super().__init__()
@@ -230,18 +250,20 @@ class PassBuyTrain(Pass):
 
 
 class Skip(ActionStep, abc.ABC):
+    """Skip
+    """
 
     def __init__(self):
         super().__init__()
         self.type = StepType.Skip
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            entity=match.group(1),
-        )
+        return {'entity': match.group(1)}
 
 
 class DeclineSellShare(Skip):
+    """DeclineSellShare
+    """
 
     def __init__(self):
         super().__init__()
@@ -249,6 +271,8 @@ class DeclineSellShare(Skip):
 
 
 class DeclineBuyShare(Skip):
+    """DeclineBuyShare
+    """
 
     def __init__(self):
         super().__init__()
@@ -256,6 +280,8 @@ class DeclineBuyShare(Skip):
 
 
 class SkipBuyPrivate(Skip):
+    """SkipBuyPrivate
+    """
 
     def __init__(self):
         super().__init__()
@@ -263,6 +289,8 @@ class SkipBuyPrivate(Skip):
 
 
 class SkipLayTile(Skip):
+    """SkipLayTile
+    """
 
     def __init__(self):
         super().__init__()
@@ -270,6 +298,8 @@ class SkipLayTile(Skip):
 
 
 class SkipPlaceToken(Skip):
+    """SkipPlaceToken
+    """
 
     def __init__(self):
         super().__init__()
@@ -277,6 +307,8 @@ class SkipPlaceToken(Skip):
 
 
 class SkipBuyTrain(Skip):
+    """SkipBuyTrain
+    """
 
     def __init__(self):
         super().__init__()
@@ -284,6 +316,8 @@ class SkipBuyTrain(Skip):
 
 
 class SkipRunTrain(Skip):
+    """SkipRunTrain
+    """
 
     def __init__(self):
         super().__init__()
@@ -291,6 +325,8 @@ class SkipRunTrain(Skip):
 
 
 class ParCompany(ActionStep):
+    """ParCompany
+    """
 
     def __init__(self):
         super().__init__()
@@ -298,22 +334,24 @@ class ParCompany(ActionStep):
         self.type = StepType.Par
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            player=match.group(1),
-            company=match.group(2),
-            share_price=match.group(3)
-        )
+        return {
+            'player': match.group(1),
+            'company': match.group(2),
+            'share_price': match.group(3)
+        }
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         companies.invoke(
             CompanyState.is_pared,
-            dict(share_price=row.share_price),
+            {'share_price': row.share_price},
             row.company
         )
 
 
 class Bid(ActionStep):
+    """Bid
+    """
 
     def __init__(self):
         super().__init__()
@@ -321,14 +359,16 @@ class Bid(ActionStep):
         self.type = StepType.Bid
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            player=match.group(1),
-            amount=match.group(2),
-            private=match.group(3),
-        )
+        return {
+            'player': match.group(1),
+            'amount': match.group(2),
+            'private': match.group(3)
+        }
 
 
 class Collect(ActionStep):
+    """Collect
+    """
 
     def __init__(self):
         super().__init__()
@@ -336,17 +376,15 @@ class Collect(ActionStep):
         self.type = StepType.Collect
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            entity=match.group(1),
-            amount=match.group(2),
-            source=match.group(3),
-        )
+        return {
+            'entity': match.group(1),
+            'amount': match.group(2),
+            'source': match.group(3)
+        }
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(
-            amount=row.amount
-        )
+        args = {'amount': row.amount}
         if not pd.isna(row.player):
             players.invoke(PlayerState.collects, args, row.player)
         else:
@@ -354,6 +392,8 @@ class Collect(ActionStep):
 
 
 class BuyPrivate(ActionStep, abc.ABC):
+    """BuyPrivate
+    """
 
     def __init__(self):
         super().__init__()
@@ -364,9 +404,11 @@ class BuyPrivate(ActionStep, abc.ABC):
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        args = dict(
-            private=row.private, amount=row.amount, value=privates[row.private]
-        )
+        args = {
+            'private': row.private,
+            'amount': row.amount,
+            'value': privates[row.private]
+        }
         if not pd.isna(row.player):
             # Player buys from Auction.
             players.invoke(PlayerState.buys_private, args, row.player)
@@ -377,6 +419,8 @@ class BuyPrivate(ActionStep, abc.ABC):
 
 
 class BuyPrivateFromPlayer(BuyPrivate):
+    """BuyPrivateFromPlayer
+    """
 
     def __init__(self):
         super().__init__()
@@ -386,15 +430,17 @@ class BuyPrivateFromPlayer(BuyPrivate):
         self._required = ['from']
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            entity=match.group(1),
-            private=match.group(2),
-            source=match.group(3),
-            amount=match.group(4)
-        )
+        return {
+            'entity': match.group(1),
+            'private': match.group(2),
+            'source': match.group(3),
+            'amount': match.group(4)
+        }
 
 
 class BuyPrivateFromAuction(BuyPrivate):
+    """BuyPrivateFromAuction
+    """
 
     def __init__(self):
         super().__init__()
@@ -403,15 +449,17 @@ class BuyPrivateFromAuction(BuyPrivate):
         self._dismiss = ['share', 'train', 'from']
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            entity=match.group(1),
-            private=match.group(2),
-            amount=match.group(3),
-            source='Auction',
-        )
+        return {
+            'entity': match.group(1),
+            'private': match.group(2),
+            'amount': match.group(3),
+            'source': 'Auction'
+        }
 
 
 class WinAuctionAgainst(BuyPrivate):
+    """WinAuctionAgainst
+    """
 
     def __init__(self):
         super().__init__()
@@ -422,15 +470,17 @@ class WinAuctionAgainst(BuyPrivate):
         self._dismiss = ['share', 'train', 'from']
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            entity=match.group(1),
-            private=match.group(2),
-            amount=match.group(3),
-            source='Auction',
-        )
+        return {
+            'entity': match.group(1),
+            'private': match.group(2),
+            'amount': match.group(3),
+            'source': 'Auction'
+        }
 
 
 class WinAuction(BuyPrivate):
+    """WinAuction
+    """
 
     def __init__(self):
         super().__init__()
@@ -441,15 +491,17 @@ class WinAuction(BuyPrivate):
         self._dismiss = ['share', 'train', 'from']
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            entity=match.group(1),
-            private=match.group(2),
-            amount=match.group(3),
-            source='Auction',
-        )
+        return {
+            'entity': match.group(1),
+            'private': match.group(2),
+            'amount': match.group(3),
+            'source': 'Auction'
+        }
 
 
 class LayTile(ActionStep, abc.ABC):
+    """LayTile
+    """
 
     def __init__(self):
         super().__init__()
@@ -461,13 +513,13 @@ class LayTile(ActionStep, abc.ABC):
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         companies.invoke(
-            CompanyState.lays_tile,
-            dict(amount=row.amount),
-            row.company
+            CompanyState.lays_tile, {'amount': row.amount}, row.company
         )
 
 
 class LayTileForMoney(LayTile):
+    """LayTileForMoney
+    """
 
     def __init__(self):
         super().__init__()
@@ -477,16 +529,18 @@ class LayTileForMoney(LayTile):
         )
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1),
-            amount=match.group(2),
-            tile=match.group(3),
-            rotation=match.group(4),
-            location=match.group(5)
-        )
+        return {
+            'company': match.group(1),
+            'amount': match.group(2),
+            'tile': match.group(3),
+            'rotation': match.group(4),
+            'location': match.group(5)
+        }
 
 
 class LayTileForFree(LayTile):
+    """LayTileForFree
+    """
 
     def __init__(self):
         super().__init__()
@@ -497,16 +551,18 @@ class LayTileForFree(LayTile):
         self._dismiss = ['spends']
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1),
-            tile=match.group(2),
-            rotation=match.group(3),
-            location=match.group(4),
-            amount='0'
-        )
+        return {
+            'company': match.group(1),
+            'tile': match.group(2),
+            'rotation': match.group(3),
+            'location': match.group(4),
+            'amount': '0'
+        }
 
 
 class PlaceToken(ActionStep, abc.ABC):
+    """PlaceToken
+    """
 
     def __init__(self):
         super().__init__()
@@ -518,27 +574,29 @@ class PlaceToken(ActionStep, abc.ABC):
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         companies.invoke(
-            CompanyState.places_token,
-            dict(amount=row.amount),
-            row.company
+            CompanyState.places_token, {'amount': row.amount}, row.company
         )
 
 
 class PlaceTokenForMoney(PlaceToken):
+    """PlaceTokenForMoney
+    """
 
     def __init__(self):
         super().__init__()
         self.pattern = re.compile(r'(.*?) places a token on (.*) for \$(\d+)')
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1),
-            location=match.group(2),
-            amount=match.group(3)
-        )
+        return {
+            'company': match.group(1),
+            'location': match.group(2),
+            'amount': match.group(3),
+        }
 
 
 class PlaceTokenForFree(PlaceToken):
+    """PlaceTokenForFree
+    """
 
     def __init__(self):
         super().__init__()
@@ -547,14 +605,16 @@ class PlaceTokenForFree(PlaceToken):
         self._dismiss = ['for']
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1),
-            location=match.group(2),
-            amount='0'
-        )
+        return {
+            'company': match.group(1),
+            'location': match.group(2),
+            'amount': '0',
+        }
 
 
 class BuyTrain(ActionStep):
+    """BuyTrain
+    """
 
     def __init__(self):
         super().__init__()
@@ -564,29 +624,24 @@ class BuyTrain(ActionStep):
         self.type = StepType.BuyTrain
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1),
-            train=match.group(2),
-            amount=match.group(3),
-            source=match.group(4),
-        )
+        return {
+            'company': match.group(1),
+            'train': match.group(2),
+            'amount': match.group(3),
+            'source': match.group(4)
+        }
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
-        companies.invoke(
-            CompanyState.buys_train,
-            dict(train=row.train, amount=row.amount),
-            row.company
-        )
+        args = {'train': row.train, 'amount': row.amount}
+        companies.invoke(CompanyState.buys_train, args, row.company)
         if row.source in [c.name for c in companies.states]:
-            companies.invoke(
-                CompanyState.sells_train,
-                dict(train=row.train, amount=row.amount),
-                row.source
-            )
+            companies.invoke(CompanyState.sells_train, args, row.source)
 
 
 class RunTrain(ActionStep):
+    """RunTrain
+    """
 
     def __init__(self):
         super().__init__()
@@ -594,15 +649,17 @@ class RunTrain(ActionStep):
         self.type = StepType.RunTrain
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1),
-            train=match.group(2),
-            amount=match.group(3),
-            route=match.group(4)
-        )
+        return {
+            'company': match.group(1),
+            'train': match.group(2),
+            'amount': match.group(3),
+            'route': match.group(4)
+        }
 
 
 class DiscardTrain(ActionStep):
+    """DiscardTrain
+    """
 
     def __init__(self):
         super().__init__()
@@ -610,21 +667,18 @@ class DiscardTrain(ActionStep):
         self.type = StepType.DiscardTrain
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1),
-            train=match.group(2)
-        )
+        return {'company': match.group(1), 'train': match.group(2)}
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         companies.invoke(
-            CompanyState.discards_train,
-            dict(train=row.train),
-            row.company
+            CompanyState.discards_train, {'train': row.train}, row.company
         )
 
 
 class ExchangeTrain(ActionStep):
+    """ExchangeTrain
+    """
 
     def __init__(self):
         super().__init__()
@@ -634,28 +688,30 @@ class ExchangeTrain(ActionStep):
         self.type = StepType.ExchangeTrain
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            company=match.group(1),
-            old_train=match.group(2),
-            new_train=match.group(3),
-            amount=match.group(4),
-            source=match.group(5)
-        )
+        return {
+            'company': match.group(1),
+            'old_train': match.group(2),
+            'new_train': match.group(3),
+            'amount': match.group(4),
+            'source': match.group(5),
+        }
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         companies.invoke(
             CompanyState.exchanges_train,
-            dict(
-                old_train=row.old_train,
-                new_train=row.new_train,
-                amount=row.amount
-            ),
+            {
+                'old_train': row.old_train,
+                'new_train': row.new_train,
+                'amount': row.amount
+            },
             row.company
         )
 
 
 class Contribute(ActionStep):
+    """Contribute
+    """
 
     def __init__(self):
         super().__init__()
@@ -663,26 +719,24 @@ class Contribute(ActionStep):
         self.type = StepType.Contribute
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            player=match.group(1),
-            amount=match.group(2)
-        )
+        return {
+            'player': match.group(1),
+            'amount': match.group(2),
+        }
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
         players.invoke(
-            PlayerState.contributes,
-            dict(amount=row.amount),
-            row.player
+            PlayerState.contributes, {'amount': row.amount}, row.player
         )
         companies.invoke(
-            CompanyState.collects,
-            dict(amount=row.amount),
-            row.company
+            CompanyState.collects, {'amount': row.amount}, row.company
         )
 
 
 class ExchangePrivate(ActionStep):
+    """ExchangePrivate
+    """
 
     def __init__(self):
         super().__init__()
@@ -692,27 +746,28 @@ class ExchangePrivate(ActionStep):
         self.type = StepType.ExchangePrivate
 
     def _process_match(self, line: str, match) -> dict:
-        return dict(
-            player=match.group(1),
-            private=match.group(2),
-            source=match.group(3),
-            percentage='{}{}'.format(match.group(4), '0'),
-            company=match.group(5)
-        )
+        return {
+            'player': match.group(1),
+            'private': match.group(2),
+            'source': match.group(3),
+            'percentage': f'{match.group(4)}0',
+            'company': match.group(5)
+        }
 
     def _update(self, row: pd.Series, players: Players, companies: Companies,
                 privates: dict) -> None:
+        num_shares = int(0.1 * row.percentage)
         players.invoke(
             PlayerState.exchanges_private_for_share,
-            dict(
-                private=row.private,
-                num_shares=int(0.1 * row.percentage),
-                company=row.company
-            ),
+            {
+                'private': row.private,
+                'num_shares': num_shares,
+                'company': row.company
+            },
             row.player
         )
         companies.invoke(
             CompanyState.sells_share,
-            dict(num_shares=int(0.1 * row.percentage), source=row.source),
+            {'num_shares': num_shares, 'source': row.source},
             row.company
         )
