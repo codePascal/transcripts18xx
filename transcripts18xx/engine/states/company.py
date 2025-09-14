@@ -4,7 +4,6 @@
 
 Module implements the company state and its maintainer.
 """
-import ast
 import json
 import pandas as pd
 
@@ -55,14 +54,6 @@ class CompanyState(State):
                 self.president == other.president and
                 self.share_price == other.share_price
         )
-
-    @staticmethod
-    def eval(rep: str):
-        st = CompanyState(name=str(), trains={})
-        if isinstance(rep, str):
-            rep = ast.literal_eval(rep)
-        st.__dict__ = rep
-        return st
 
     def flatten(self) -> pd.Series:
         """Creates a series from the state representation.

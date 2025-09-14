@@ -43,8 +43,8 @@ class State:
                 self.privates == other.privates
         )
 
-    @staticmethod
-    def eval(rep: str | dict):
+    @classmethod
+    def eval(cls, rep: str | dict):
         """Construct a State object from its string representation.
 
         Args:
@@ -53,11 +53,11 @@ class State:
         Returns:
             State object.
         """
-        st = State(name=str())
         if isinstance(rep, str):
             rep = ast.literal_eval(rep)
-        st.__dict__ = rep
-        return st
+        obj = cls.__new__(cls)
+        obj.__dict__.update(rep)
+        return obj
 
     def flatten(self) -> pd.Series:
         """Creates a series from the state representation.
@@ -74,9 +74,6 @@ class State:
 
     def update(self, *args, **kwargs) -> None:
         """Update the current state.
-
-        Args:
-            *args: The arguments required for the update.
         """
         return
 

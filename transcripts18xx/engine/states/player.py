@@ -4,7 +4,6 @@
 
 Module implements a player state and maintainer class.
 """
-import ast
 import json
 import pandas as pd
 
@@ -54,14 +53,6 @@ class PlayerState(State):
                 self.shares == other.shares and
                 self.priority_deal == other.priority_deal
         )
-
-    @staticmethod
-    def eval(rep: str):
-        st = PlayerState(name=str(), initial_cash=int(), shares={})
-        if isinstance(rep, str):
-            rep = ast.literal_eval(rep)
-        st.__dict__ = rep
-        return st
 
     def flatten(self) -> pd.Series:
         """Creates a series from the state representation.
