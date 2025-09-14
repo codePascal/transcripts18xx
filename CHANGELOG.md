@@ -11,6 +11,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 
 - Detection for decrease of minimum bid during auction.
+- Detection for declining placing a token (1830: Delaware & Hudson)
 
 ### Changed
 

@@ -279,6 +279,15 @@ class DeclineBuyShare(Skip):
         self.pattern = re.compile(r'(.*?) declines to buy shares')
 
 
+class DeclinePlaceToken(Skip):
+    """DeclinePlaceToken
+    """
+
+    def __init__(self):
+        super().__init__()
+        self.pattern = re.compile(r'(.*?) declines to place token')
+
+
 class SkipBuyPrivate(Skip):
     """SkipBuyPrivate
     """

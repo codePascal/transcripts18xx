@@ -274,6 +274,18 @@ class TestDeclineBuyShare(BaseStepTest):
         self.assertMatch(actions.DeclineBuyShare(), line, expected)
 
 
+class TestDeclinePlaceToken(BaseStepTest):
+
+    def test_match(self):
+        line = 'NYNH (DH) declines to place token'
+        expected = dict(
+            parent='Action',
+            type='Skip',
+            entity='NYNH (DH)'
+        )
+        self.assertMatch(actions.DeclinePlaceToken(), line, expected)
+
+
 class TestSkipBuyPrivate(BaseStepTest):
 
     def test_match(self):
