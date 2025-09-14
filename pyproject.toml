@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "transcripts18xx"
-version = "2.0.0"
+version = "3.0.0"
 description = "A Python package to preprocess game transcripts from 18xx.games"
 authors = ["Pascal <mup0117@gmail.com>"]
 readme = "README.md"
@@ -8,7 +8,6 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 pandas = "^2.2.3"
-
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
