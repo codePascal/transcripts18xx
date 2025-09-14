@@ -13,9 +13,10 @@ import pandas as pd
 from .steps import step
 from .steps import actions, events  # noqa, to find subclasses of EngineStep
 from .states import player, company
+from ..games import Game18xx
 
 
-class EngineSteps(object):
+class EngineSteps:
     """EngineSteps
 
     Class to retrieve all available engine steps, which are concrete subclasses
@@ -26,17 +27,17 @@ class EngineSteps(object):
         pass
 
     @staticmethod
-    def _patterns(cls=step.EngineStep):
+    def _patterns(engine_step=step.EngineStep):
         # Searches subclasses iteratively.
         return list(chain.from_iterable(
             [list(chain.from_iterable([[x], EngineSteps._patterns(x)])) for x
-             in cls.__subclasses__()])
+             in engine_step.__subclasses__()])
         )
 
     @staticmethod
-    def _is_abstract(cls):
+    def _is_abstract(engine_step):
         # Verifies if class is abstract.
-        return bool(getattr(cls, '__abstractmethods__', False))
+        return bool(getattr(engine_step, '__abstractmethods__', False))
 
     def patterns(self):
         """Retrieves engine steps.
@@ -47,7 +48,7 @@ class EngineSteps(object):
         return [cls for cls in self._patterns() if not self._is_abstract(cls)]
 
 
-class LineParser(object):
+class LineParser:
     """LineParser
 
     Class to retrieve and match a line to all engine steps.
@@ -71,7 +72,7 @@ class LineParser(object):
             raise ValueError(
                 'Multiple matches found for line `{}`:\n{}'.format(
                     line,
-                    '\n'.join(m.__str__() for m in matches)
+                    '\n'.join(str(m) for m in matches)
                 )
             )
         if not matches:
@@ -96,7 +97,7 @@ class LineParser(object):
         return match
 
 
-class StepMapper(object):
+class StepMapper:
     """StepMapper
 
     Class to match a step name to its engine.
@@ -121,9 +122,8 @@ class StepMapper(object):
         # Selects the parent of the engine steps.
         if len(result) == 1:
             return result[0]
-        else:
-            # Return the parent class which is in the first position.
-            return result[0]
+        # Return the parent class which is in the first position.
+        return result[0]
 
     def run(self, step_type: step.StepType) -> Type[step.EngineStep]:
         """Maps an engine to its step name.
@@ -136,7 +136,7 @@ class StepMapper(object):
         """
         result = self._search(step_type)
         if not result:
-            raise AttributeError('Could not match step: {}'.format(step_type))
+            raise AttributeError(f'Could not match step: {step_type}')
         engine = self._select(result)
         return engine
 
@@ -152,24 +152,19 @@ class StepMapper(object):
         """
         try:
             result = step.StepType[step_name]
-        except KeyError:
-            raise KeyError(
-                'No matching engine step found: {}'.format(step_name)
-            )
+        except KeyError as e:
+            raise KeyError(f'No matching engine step found: {step_name}') from e
         return result
 
 
-class GameState(object):
+class GameState:
     """GameState
 
     Class maintains the game state of the players and companies.
 
     Args:
         players: Player names in the game.
-        companies: Company names in the game.
-        start_capital: The total initial capital divided by players.
-        trains: The available trains.
-        privates: The privates and their values.
+        game: The underlying 18xx game.
 
     Attributes:
         players: The maintainer class for all players.
@@ -177,11 +172,13 @@ class GameState(object):
         privates: The available privates and their values.
     """
 
-    def __init__(self, players: list[str], companies: list[str],
-                 start_capital: int, trains: list[str], privates: dict):
+    def __init__(self, players: list[str], game: Game18xx):
+        start_capital = game.start_capital[len(players)]
+        companies = sorted(game.companies)
+        trains = sorted(game.trains)
         self.players = player.Players(players, companies, start_capital)
         self.companies = company.Companies(companies, trains)
-        self.privates = privates
+        self.privates = game.privates
 
     def update(self, row: pd.Series, engine: step.EngineStep) -> None:
         """Updates the game state using the step engine.

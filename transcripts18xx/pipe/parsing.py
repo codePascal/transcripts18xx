@@ -284,13 +284,7 @@ class GameStateProcessor:
             raise AttributeError(
                 f'Start capital for `{num_players}` players not set'
             )
-        self._game_state = engine.GameState(
-            players,
-            sorted(game.companies),
-            game.start_capital[num_players],
-            game.trains,
-            game.privates
-        )
+        self._game_state = engine.GameState(players, game)
         self._steps = engine.StepMapper()
 
     def _update(self, row: pd.Series) -> pd.Series:

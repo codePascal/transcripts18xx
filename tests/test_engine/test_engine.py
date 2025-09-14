@@ -159,16 +159,19 @@ class TestStepMapper(unittest.TestCase):
 
 
 class TestGameState(unittest.TestCase):
+    class Dummy18xx(engine.Game18xx):
+
+        def __init__(self):
+            super().__init__()
+
+            self.companies = {'c1', 'c2', 'c3'}
+            self.privates = {'pr': 100, 'pr2': 150, 'pr3': 400, 'pr4': 80}
+            self.trains = {'2', '3', '4', '5', '6'}
+            self.start_capital[3] = 300
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.gs = engine.GameState(
-            ['p1', 'p2', 'p3'],
-            ['c1', 'c2', 'c3'],
-            300,
-            ['2', '3', '4', '5', '6'],
-            dict(pr=100, pr2=150, pr3=400, pr4=80)
-        )
+        cls.gs = engine.GameState(['p1', 'p2', 'p3'], cls.Dummy18xx())
 
     def test_view(self):
         view = self.gs.view()
