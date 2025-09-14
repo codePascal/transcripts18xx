@@ -11,7 +11,7 @@ import json
 import pandas as pd
 
 
-class State(object):
+class State:
     """State
 
     Class implements a state of a game object, e.g., player or company. In 18xx
@@ -31,7 +31,7 @@ class State(object):
         self.name = name
 
         self.cash = 0
-        self.privates = dict()
+        self.privates = {}
 
     def __repr__(self):
         return self.__dict__.__str__()
@@ -65,20 +65,20 @@ class State(object):
         Returns:
             A pandas Series with the members of the state and their values.
         """
-        key = '{}_%s'.format(self.name)
+        key = f'{self.name}_%s'
         data = {
             key % 'cash': self.cash,
             key % 'privates': json.dumps(self.privates)
         }
         return pd.Series(data)
 
-    def update(self, *args) -> None:
+    def update(self, *args, **kwargs) -> None:
         """Update the current state.
 
         Args:
             *args: The arguments required for the update.
         """
-        pass
+        return
 
     def collects(self, amount: int) -> None:
         self.cash += amount
@@ -89,12 +89,12 @@ class State(object):
 
     def private_closes(self, private: str = None) -> None:
         if private is None:
-            self.privates = dict()
+            self.privates = {}
         elif private in self.privates:
             self.privates.pop(private)
 
 
-class States(object):
+class States:
     """States
 
     Class implements a base class to maintain all states of a given type, e.g.,
@@ -105,7 +105,7 @@ class States(object):
     """
 
     def __init__(self):
-        self.states = list()
+        self.states = []
 
     def __repr__(self):
         return '\n'.join([st.__repr__() for st in self.states]) + '\n'
@@ -153,4 +153,4 @@ class States(object):
 
     def as_dict(self) -> dict:
         """Represents the states as dict, with names as keys."""
-        return {st.name: ast.literal_eval(st.__repr__()) for st in self.states}
+        return {st.name: ast.literal_eval(repr(st)) for st in self.states}

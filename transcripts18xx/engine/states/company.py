@@ -5,8 +5,8 @@
 Module implements the company state and its maintainer.
 """
 import ast
-import pandas as pd
 import json
+import pandas as pd
 
 from .state import State, States
 
@@ -58,7 +58,7 @@ class CompanyState(State):
 
     @staticmethod
     def eval(rep: str):
-        st = CompanyState(name=str(), trains=dict())
+        st = CompanyState(name=str(), trains={})
         if isinstance(rep, str):
             rep = ast.literal_eval(rep)
         st.__dict__ = rep
@@ -73,7 +73,7 @@ class CompanyState(State):
         Returns:
             A pandas Series with the members of the state and their values.
         """
-        key = '{}_%s'.format(self.name)
+        key = f'{self.name}_%s'
         data = {
             key % 'cash': self.cash,
             key % 'privates': json.dumps(self.privates),
@@ -90,8 +90,7 @@ class CompanyState(State):
     def _proc_train(train):
         if train == 'D':
             return train
-        else:
-            return str(int(train))
+        return str(int(train))
 
     def receives_dividend(self, per_share: int) -> None:
         self.cash += self.market * per_share
@@ -137,7 +136,7 @@ class CompanyState(State):
         elif source == 'IPO':
             self.ipo -= num_shares
         else:
-            raise ValueError('Source not available: {}'.format(source))
+            raise ValueError(f'Source not available: {source}')
 
     def receives_share(self, num_shares: int):
         self.market += num_shares

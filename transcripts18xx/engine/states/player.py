@@ -5,8 +5,8 @@
 Module implements a player state and maintainer class.
 """
 import ast
-import pandas as pd
 import json
+import pandas as pd
 
 from .state import State, States
 
@@ -57,7 +57,7 @@ class PlayerState(State):
 
     @staticmethod
     def eval(rep: str):
-        st = PlayerState(name=str(), initial_cash=int(), shares=dict())
+        st = PlayerState(name=str(), initial_cash=int(), shares={})
         if isinstance(rep, str):
             rep = ast.literal_eval(rep)
         st.__dict__ = rep
@@ -72,7 +72,7 @@ class PlayerState(State):
         Returns:
             A pandas Series with the members of the state and their values.
         """
-        key = '{}_%s'.format(self.name)
+        key = f'{self.name}_%s'
         data = {
             key % 'cash': self.cash,
             key % 'privates': json.dumps(self.privates),
