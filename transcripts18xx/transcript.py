@@ -129,10 +129,15 @@ class TranscriptParser:
 
         gtp = parsing.GameTranscriptProcessor(self._game)
         df_parsed = gtp.parse_transcript(self._transcript)
+        logger.debug('Game transcript parsed')
+
         tpp = parsing.TranscriptPostProcessor(df_parsed, self._game)
         df_processed = tpp.process()
+        logger.debug('Game transcript post-processed')
+
         gsp = parsing.GameStateProcessor(df_processed, self._game)
         self._df = gsp.generate()
+        logger.debug('Game state mapped')
 
         mapping = self._anonymize_players()
         self._metadata['num_players'] = len(mapping.keys())
