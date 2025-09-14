@@ -8,11 +8,12 @@ Further, implements functions to access results based on the raw
 transcript name and run full verification on these.
 """
 import json
-import pandas as pd
 import ast
 import logging
 
 from pathlib import Path
+
+import pandas as pd
 
 from . import games
 from .pipe import parsing, verification
@@ -21,7 +22,7 @@ from .engine.steps.step import StepType
 logger = logging.getLogger(__name__)
 
 
-class TranscriptParser(object):
+class TranscriptParser:
     """TranscriptParser
 
     Class to run the parsing pipeline. Verifies the final values of the players
@@ -43,7 +44,7 @@ class TranscriptParser(object):
         self._transcript = transcript
         self._game = game
 
-        self._metadata = dict()
+        self._metadata = {}
         game_type, game_id = transcript.stem.split('_')
         self._metadata['game'] = game_type
         self._metadata['id'] = game_id
@@ -53,7 +54,7 @@ class TranscriptParser(object):
     def _anonymize_players(self) -> dict:
         # Map the player names to general format `playerx`.
         players = self._df.player.dropna().unique()
-        mapping = {p: 'player{}'.format(i + 1) for i, p in enumerate(players)}
+        mapping = {p: f'player{i + 1}' for i, p in enumerate(players)}
         return mapping
 
     def _anonymize(self, obj):
@@ -64,11 +65,7 @@ class TranscriptParser(object):
 
     def _evaluate_last_state(self) -> dict:
         # Evaluate the last state if finished and the results.
-        last_state = dict(
-            finished=str(),
-            result=dict(),
-            winner=str()
-        )
+        last_state = {'finished': str(), 'result': {}, 'winner': str()}
         if StepType.GameOver.name not in self._df.type.tolist():
             last_state['finished'] = 'NotFinished'
         else:
@@ -90,10 +87,7 @@ class TranscriptParser(object):
 
     def _run_minimal_verification(self) -> dict:
         # Run the minimal verification comparing final value of the players.
-        result = dict(
-            success=bool(),
-            diffs=dict()
-        )
+        result = {'success': bool(), 'diffs': {}}
 
         transcript_result = self._metadata['result']
         if not transcript_result:
@@ -101,13 +95,13 @@ class TranscriptParser(object):
             result['success'] = False
             return result
 
-        game_state_result = dict()
-        for k, v in self._metadata['mapping'].items():
+        game_state_result = {}
+        for _, v in self._metadata['mapping'].items():
             try:
-                value = self._df['{}_value'.format(v)].iloc[-1]
+                value = self._df[f'{v}_value'].iloc[-1]
                 game_state_result[v] = int(value)
-            except KeyError:
-                raise AttributeError('Player not found: {}'.format(v))
+            except KeyError as e:
+                raise AttributeError(f'Player not found: {v}') from e
 
         checker = verification.StateVerification()
         result['success'] = checker.run(game_state_result, transcript_result)
@@ -130,7 +124,7 @@ class TranscriptParser(object):
         """
         if not self._transcript:
             raise FileNotFoundError(
-                'Transcript does not exist: {}'.format(self._transcript)
+                f'Transcript does not exist: {self._transcript}'
             )
 
         gtp = parsing.GameTranscriptProcessor(self._game)
@@ -183,7 +177,7 @@ def dataframe(transcript: Path) -> pd.DataFrame:
     try:
         return _read_dataframe(file)
     except FileNotFoundError:
-        logger.error('Parsed transcript not found: {}'.format(file))
+        logger.error('Parsed transcript not found: %s', file)
         return pd.DataFrame()
 
 
@@ -212,8 +206,8 @@ def metadata(transcript: Path) -> dict:
     try:
         return _read_json(file)
     except FileNotFoundError:
-        logger.error('Metadata not found: {}'.format(file))
-        return dict()
+        logger.error('Metadata not found: %s', file)
+        return {}
 
 
 def transcript_name(name: str) -> str:
@@ -265,7 +259,7 @@ def full_verification(transcript: Path) -> bool:
     ground_truth = transcript.parent.joinpath(transcript.stem + '_truth.json')
     if not ground_truth.exists():
         raise FileNotFoundError(
-            'Verification file not found: {}'.format(ground_truth)
+            f'Verification file not found: {ground_truth}'
         )
 
     transcript_metadata = metadata(transcript)
@@ -289,7 +283,7 @@ def _read_json(file: Path) -> dict:
     # Read a json file as dict.
     if not file.exists():
         raise FileNotFoundError(file)
-    with open(file, 'r') as f:
+    with open(file, 'r', encoding='utf-8') as f:
         content = json.load(f)
     return content
 
@@ -303,7 +297,7 @@ def _read_dataframe(file: Path) -> pd.DataFrame:
 
 def _write_json(file: Path, content: dict) -> None:
     # Write a json file with indent of 2.
-    with open(file, 'w') as f:
+    with open(file, 'w', encoding='utf-8') as f:
         f.write(json.dumps(content, indent=2))
 
 
@@ -319,13 +313,12 @@ def _replace(obj, old, new):
             k.replace(old, new): _replace(v, old, new) for k, v in
             obj.items()
         }
-    elif isinstance(obj, list):
+    if isinstance(obj, list):
         return [_replace(item, old, new) for item in obj]
-    elif isinstance(obj, str):
+    if isinstance(obj, str):
         return obj.replace(old, new)
-    elif isinstance(obj, pd.DataFrame):
+    if isinstance(obj, pd.DataFrame):
         obj.replace(old, new, regex=False, inplace=True)  # full strings
         obj.columns = obj.columns.str.replace(old, new, regex=False)
         return obj
-    else:
-        return obj
+    return obj
