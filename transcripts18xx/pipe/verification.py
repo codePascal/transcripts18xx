@@ -7,7 +7,7 @@ company states to a ground truth.
 """
 
 
-class StateVerification(object):
+class StateVerification:
     """StateVerification
 
     Class implements the functionality to compare two dictionaries and highlight
@@ -20,7 +20,7 @@ class StateVerification(object):
 
     def __init__(self):
         self._missing = '<missing>'
-        self._diffs = dict()
+        self._diffs = {}
 
     @staticmethod
     def _display_differences(diffs: dict) -> None:
@@ -36,7 +36,7 @@ class StateVerification(object):
         # If left side is `<missing>`, that is fine.
         if not diffs:
             return True
-        left_side = set([v1 for (v1, v2) in diffs.values()])
+        left_side = {v1 for (v1, v2) in diffs.values()}
         if len(left_side) == 1 and list(left_side)[0] == self._missing:
             return True
         return False
@@ -73,7 +73,7 @@ class StateVerification(object):
         Returns:
             True if the two dicts are identical, False otherwise.
         """
-        self._diffs = dict()
+        self._diffs = {}
         diffs = self._compare_nested_dicts(parsed, ground_truth)
         diffs = dict(sorted(diffs.items()))
         if out:
