@@ -7,6 +7,7 @@ transcript, processing the result and mapping player and company states.
 Further, implements functions to access results based on the raw
 transcript name and run full verification on these.
 """
+import enum
 import json
 import ast
 import logging
@@ -20,6 +21,14 @@ from .pipe import parsing, verification
 from .engine.steps.step import StepType
 
 logger = logging.getLogger(__name__)
+
+
+class ProcessingResult(enum.Enum):
+    """ProcessingResult
+
+    Enum describing parse results from the transcript.
+    """
+    SUCCESS = 0
 
 
 class TranscriptParser:
@@ -127,32 +136,33 @@ class TranscriptParser:
                 f'Transcript does not exist: {self._transcript}'
             )
 
-        gtp = parsing.GameTranscriptProcessor(self._game)
-        df_parsed = gtp.parse_transcript(self._transcript)
-        logger.debug('Game transcript parsed')
+        try:
+            gtp = parsing.GameTranscriptProcessor(self._game)
+            df_parsed = gtp.parse_transcript(self._transcript)
+            logger.debug('Game transcript parsed')
 
-        tpp = parsing.TranscriptPostProcessor(df_parsed, self._game)
-        df_processed = tpp.process()
-        logger.debug('Game transcript post-processed')
+            tpp = parsing.TranscriptPostProcessor(df_parsed, self._game)
+            df_processed = tpp.process()
+            logger.debug('Game transcript post-processed')
 
-        gsp = parsing.GameStateProcessor(df_processed, self._game)
-        self._df = gsp.generate()
-        logger.debug('Game state mapped')
+            gsp = parsing.GameStateProcessor(df_processed, self._game)
+            self._df = gsp.generate()
+            logger.debug('Game state mapped')
 
-        mapping = self._anonymize_players()
-        self._metadata['num_players'] = len(mapping.keys())
-        self._metadata['mapping'] = mapping
-
-        self._anonymize(self._df)
-        self._metadata.update(self._anonymize(self._evaluate_last_state()))
-        self._metadata['final_state'] = self._anonymize(gsp.final_state())
-
-        self._metadata['verification'] = self._run_minimal_verification()
-
-        self._metadata['unprocessed_lines'] = gtp.unprocessed_lines()
-
-        _write_dataframe(dataframe_path(self._transcript), self._df)
-        _write_json(metadata_path(self._transcript), self._metadata)
+            mapping = self._anonymize_players()
+            self._metadata['num_players'] = len(mapping.keys())
+            self._metadata['mapping'] = mapping
+            self._anonymize(self._df)
+            self._metadata.update(self._anonymize(self._evaluate_last_state()))
+            self._metadata['final_state'] = self._anonymize(gsp.final_state())
+            self._metadata['verification'] = self._run_minimal_verification()
+            self._metadata['unprocessed_lines'] = gtp.unprocessed_lines()
+            self._metadata['parse_result'] = ProcessingResult.SUCCESS.name
+            _write_dataframe(dataframe_path(self._transcript), self._df)
+        except Exception as e:
+            self._metadata['parse_result'] = e.args[0]
+        finally:
+            _write_json(metadata_path(self._transcript), self._metadata)
 
         return self._metadata
 
@@ -213,6 +223,28 @@ def metadata(transcript: Path) -> dict:
     except FileNotFoundError:
         logger.error('Metadata not found: %s', file)
         return {}
+
+
+def valid_record(transcript: Path) -> bool:
+    """Verifies that record is valid.
+
+    Valid means parsing and verification was successful.
+
+    Args:
+        transcript: The raw game transcript path.
+
+    Returns:
+        Validity of the record.
+    """
+    try:
+        metad = metadata(transcript)
+        verification_result = metad['verification']['success']
+        parse_result = metad['parse_result'] == ProcessingResult.SUCCESS.name
+        return verification_result and parse_result
+    except KeyError:
+        return False
+    except FileNotFoundError:
+        return False
 
 
 def transcript_name(name: str) -> str:

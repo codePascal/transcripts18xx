@@ -256,5 +256,6 @@
       ]
     }
   },
-  "unprocessed_lines": []
+  "unprocessed_lines": [],
+  "parse_result": "SUCCESS"
 }

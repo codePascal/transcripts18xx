@@ -171,7 +171,10 @@ class TestTranscriptRendering(unittest.TestCase):
     def test_metadata(self):
         metadata = transcript.metadata(context.transcript_1830())
         self.assertIsInstance(metadata, dict)
-        self.assertEqual(10, len(metadata.keys()))
+        self.assertEqual(11, len(metadata.keys()))
+
+    def test_valid_record(self):
+        self.assertTrue(transcript.valid_record(context.transcript_1830()))
 
     def test_transcript_name(self):
         self.assertEqual(
