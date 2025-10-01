@@ -225,26 +225,83 @@ def metadata(transcript: Path) -> dict:
         return {}
 
 
-def valid_record(transcript: Path) -> bool:
+def num_players(data: dict) -> int | None:
+    """Extract number of players.
+
+    Args:
+        data: The transcript metadata.
+
+    Returns:
+        Number of players in the game, or None if no information available.
+    """
+    return data.get('num_players', None)
+
+
+def game_ending(data: dict) -> str | None:
+    """Extract game ending.
+
+    Args:
+        data: The transcript metadata.
+
+    Returns:
+        Type of game end, or None if no information available.
+    """
+    return data.get('finished', None)
+
+
+def verification_result(data: dict) -> bool | None:
+    """Extract verification result.
+
+    Args:
+        data: The transcript metadata.
+
+    Returns:
+        If verification was successful, or None if no information available.
+    """
+    verify = data.get('verification', None)
+    if verify is None:
+        return None
+    return verify.get('success', None)
+
+
+def parse_result(data: dict) -> str:
+    """Extract parse result.
+
+    Args:
+        data: The transcript metadata.
+
+    Returns:
+        State of raw transcript parsing.
+    """
+    return data.get('parse_result')
+
+
+def unprocessed_lines(data: dict) -> list[str]:
+    """Extract unprocessed lines for debug purposes.
+
+    Args:
+        data: The transcript metadata.
+
+    Returns:
+        Unprocessed lines during parsing.
+    """
+    return data.get('unprocessed_lines', [])
+
+
+def valid_record(data: dict) -> bool:
     """Verifies that record is valid.
 
     Valid means parsing and verification was successful.
 
     Args:
-        transcript: The raw game transcript path.
+        data: The transcript metadata.
 
     Returns:
         Validity of the record.
     """
-    try:
-        metad = metadata(transcript)
-        verification_result = metad['verification']['success']
-        parse_result = metad['parse_result'] == ProcessingResult.SUCCESS.name
-        return verification_result and parse_result
-    except KeyError:
-        return False
-    except FileNotFoundError:
-        return False
+    v_result = verification_result(data)
+    p_result = parse_result(data) == ProcessingResult.SUCCESS.name
+    return v_result and p_result
 
 
 def transcript_name(name: str) -> str:

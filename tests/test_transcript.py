@@ -173,8 +173,49 @@ class TestTranscriptRendering(unittest.TestCase):
         self.assertIsInstance(metadata, dict)
         self.assertEqual(11, len(metadata.keys()))
 
+    def test_num_players(self):
+        self.assertEqual(4, transcript.num_players({'num_players': 4}))
+        self.assertIsNone(transcript.num_players({}))
+
+    def test_game_ending(self):
+        self.assertEqual(
+            'NotFinished', transcript.game_ending({'finished': 'NotFinished'}))
+
+        self.assertIsNone(transcript.game_ending({}))
+
+    def test_verification_result(self):
+        self.assertFalse(
+            transcript.verification_result({'verification': {'success': False}})
+        )
+        self.assertTrue(
+            transcript.verification_result({'verification': {'success': True}})
+        )
+        self.assertIsNone(transcript.verification_result({'verification': {}}))
+        self.assertIsNone(transcript.verification_result({}))
+
+    def test_parse_result(self):
+        self.assertEqual(
+            'SUCCESS', transcript.parse_result({'parse_result': 'SUCCESS'})
+        )
+        self.assertIsNone(transcript.parse_result({}))
+
     def test_valid_record(self):
-        self.assertTrue(transcript.valid_record(context.transcript_1830()))
+        self.assertTrue(
+            transcript.valid_record(
+                {'verification': {'success': True}, 'parse_result': 'SUCCESS'}
+            )
+        )
+        self.assertFalse(
+            transcript.valid_record(
+                {'verification': {'success': False}, 'parse_result': 'SUCCESS'}
+            )
+        )
+        self.assertFalse(
+            transcript.valid_record(
+                {'verification': {'success': True}, 'parse_result': ''}
+            )
+        )
+        self.assertFalse(transcript.valid_record({}))
 
     def test_transcript_name(self):
         self.assertEqual(

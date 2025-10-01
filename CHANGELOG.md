@@ -15,6 +15,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - The parse result or error received during parsing is written to the metadata.
 - The metadata will be written in any case: Function added to verify validity
   of the record.
+- Functions to retrieve relevant data from metadata, e.g., number of players,
+  game ending, parse and verification results.
 
 ### Changed
 
