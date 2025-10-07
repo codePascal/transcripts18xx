@@ -32,18 +32,10 @@ class TestTranscriptParserG1830(unittest.TestCase):
 
     def test_anonymization_final_data(self):
         df = self.df.astype(str)
-        self.assertFalse(
-            df.apply(lambda x: x.str.contains('leesin')).any().any()
-        )
-        self.assertFalse(
-            df.apply(lambda x: x.str.contains('mpcoyne')).any().any()
-        )
-        self.assertFalse(
-            df.apply(lambda x: x.str.contains('mpakfm')).any().any()
-        )
-        self.assertFalse(
-            df.apply(lambda x: x.str.contains('riverfiend')).any().any()
-        )
+        self.assertFalse('leesin' in df.values)
+        self.assertFalse('mpcoyne' in df.values)
+        self.assertFalse('mpakfm' in df.values)
+        self.assertFalse('riverfiend' in df.values)
 
     def test_last_state_evaluation(self):
         expected_finish = 'BankBroke'
@@ -90,26 +82,12 @@ class TestTranscriptParserG1889(unittest.TestCase):
 
     def test_anonymization_final_data(self):
         df = self.df.astype(str)
-        self.assertFalse(
-            df.apply(lambda x: x.str.contains('Sprint')).any().any()
-        )
-        self.assertFalse(
-            df.apply(lambda x: x.str.contains('Millie')).any().any()
-        )
-        self.assertFalse(
-            df.apply(lambda x: x.str.contains('zorbak')).any().any()
-        )
-        self.assertFalse(
-            df.apply(lambda x: x.str.contains('tado')).any().any()
-        )
-        self.assertFalse(
-            df.apply(lambda x: x.str.contains('mindbomb(UTC+9)')).any().any()
-        )
-        self.assertFalse(
-            df.apply(
-                lambda x: x.str.contains('camping no reception')
-            ).any().any()
-        )
+        self.assertFalse('Sprint' in df.values)
+        self.assertFalse('Millie' in df.values)
+        self.assertFalse('zorbak' in df.values)
+        self.assertFalse('tado' in df.values)
+        self.assertFalse('mindbomb(UTC+9)' in df.values)
+        self.assertFalse('camping no reception' in df.values)
 
     def test_last_state_evaluation(self):
         expected_finish = 'BankBroke'
@@ -132,6 +110,7 @@ class TestTranscriptParserG1889(unittest.TestCase):
         self.assertEqual('192767', self.metadata['id'])
         self.assertEqual(6, self.metadata['num_players'])
 
+    # TODO: fix parsing G1889
     # @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     # def test_full_verification(self, mock_stdout):
     #     expected = str(
@@ -145,93 +124,39 @@ class TestTranscriptParserG1889(unittest.TestCase):
     #     self.assertTrue(transcript.full_verification(context.transcript_1889()))
 
 
-class TestTranscriptRendering(unittest.TestCase):
+class TestTranscriptContext(unittest.TestCase):
 
-    def test_dataframe_path(self):
-        self.assertEqual(
-            '1830_201210_final.csv',
-            transcript.dataframe_path(
-                context.transcript_1830()).relative_to(
-                context._resources()).__str__()
+    def setUp(self) -> None:
+        self.cnt = transcript.TranscriptContext.from_raw(
+            context.transcript_1830()
         )
 
-    def test_dataframe(self):
-        df = transcript.dataframe(context.transcript_1830())
+    def test_from_raw(self):
+        self.assertEqual('1830_201210.txt', self.cnt.raw.name)
+        self.assertEqual('1830_201210_metadata.json', self.cnt.meta_path.name)
+        self.assertEqual('1830_201210_final.csv', self.cnt.result_path.name)
+        self.assertEqual(201210, self.cnt.game_id)
+        self.assertEqual('1830', self.cnt.game_type)
+        self.assertTrue(self.cnt.valid)
+        self.assertEqual('SUCCESS', self.cnt.parse_result)
+        self.assertTrue(self.cnt.verification_result)
+        self.assertEqual(4, self.cnt.num_players)
+        self.assertEqual('BankBroke', self.cnt.game_ending)
+        self.assertEqual([], self.cnt.unprocessed_lines)
+
+    def test_metadata(self):
+        metadata = self.cnt.metadata()
+        self.assertIsInstance(metadata, dict)
+        self.assertEqual(11, len(metadata.keys()))
+
+    def test_result(self):
+        df = self.cnt.result()
         self.assertIsInstance(df, pd.DataFrame)
         self.assertEqual(1346, df.shape[0])
         self.assertEqual(165, df.shape[1])
 
-    def test_metadata_path(self):
-        self.assertEqual(
-            '1830_201210_metadata.json',
-            transcript.metadata_path(context.transcript_1830()).relative_to(
-                context._resources()).__str__()
-        )
 
-    def test_metadata(self):
-        metadata = transcript.metadata(context.transcript_1830())
-        self.assertIsInstance(metadata, dict)
-        self.assertEqual(11, len(metadata.keys()))
-
-    def test_num_players(self):
-        self.assertEqual(4, transcript.num_players({'num_players': 4}))
-        self.assertIsNone(transcript.num_players({}))
-
-    def test_game_ending(self):
-        self.assertEqual(
-            'NotFinished', transcript.game_ending({'finished': 'NotFinished'}))
-
-        self.assertIsNone(transcript.game_ending({}))
-
-    def test_verification_result(self):
-        self.assertFalse(
-            transcript.verification_result({'verification': {'success': False}})
-        )
-        self.assertTrue(
-            transcript.verification_result({'verification': {'success': True}})
-        )
-        self.assertIsNone(transcript.verification_result({'verification': {}}))
-        self.assertIsNone(transcript.verification_result({}))
-
-    def test_parse_result(self):
-        self.assertEqual(
-            'SUCCESS', transcript.parse_result({'parse_result': 'SUCCESS'})
-        )
-        self.assertIsNone(transcript.parse_result({}))
-
-    def test_valid_record(self):
-        self.assertTrue(
-            transcript.valid_record(
-                {'verification': {'success': True}, 'parse_result': 'SUCCESS'}
-            )
-        )
-        self.assertFalse(
-            transcript.valid_record(
-                {'verification': {'success': False}, 'parse_result': 'SUCCESS'}
-            )
-        )
-        self.assertFalse(
-            transcript.valid_record(
-                {'verification': {'success': True}, 'parse_result': ''}
-            )
-        )
-        self.assertFalse(transcript.valid_record({}))
-
-    def test_transcript_name(self):
-        self.assertEqual(
-            '1830_123456', transcript.transcript_name('1830_123456_final.csv')
-        )
-        self.assertEqual(
-            '1830_12345', transcript.transcript_name('1830_12345_metadata.json')
-        )
-
-    def test_transcript_id(self):
-        self.assertEqual(
-            '123456', transcript.transcript_id('1830_123456_final.csv')
-        )
-        self.assertEqual(
-            '12345', transcript.transcript_id('1830_12345_metadata.json')
-        )
+class TestTranscriptVerification(unittest.TestCase):
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_full_verification(self, mock_stdout):

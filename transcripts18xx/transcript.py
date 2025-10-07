@@ -13,6 +13,7 @@ import ast
 import logging
 
 from pathlib import Path
+from dataclasses import dataclass
 
 import pandas as pd
 
@@ -158,176 +159,74 @@ class TranscriptParser:
             self._metadata['verification'] = self._run_minimal_verification()
             self._metadata['unprocessed_lines'] = gtp.unprocessed_lines()
             self._metadata['parse_result'] = ProcessingResult.SUCCESS.name
-            _write_dataframe(dataframe_path(self._transcript), self._df)
+            _write_dataframe(_dataframe_path(self._transcript), self._df)
         except Exception as e:
             self._metadata['parse_result'] = e.args[0]
         finally:
-            _write_json(metadata_path(self._transcript), self._metadata)
+            _write_json(_metadata_path(self._transcript), self._metadata)
 
         return self._metadata
 
 
-def dataframe_path(transcript: Path) -> Path:
-    """Build the path to the parsed transcript.
+@dataclass(frozen=True)
+class TranscriptContext:
+    """TranscriptsContext
 
-    Args:
-        transcript: The raw game transcript path.
-
-    Returns:
-        Path to the parsed transcript file.
+    Class implements a context to access relevant data from a parsed transcript.
     """
-    return _build_path(transcript, '_final.csv')
+    raw: Path
+    meta_path: Path
+    result_path: Path
+    game_id: int
+    game_type: str
+    valid: bool
+    parse_result: str
+    verification_result: bool | None
+    num_players: int | None
+    game_ending: str | None
+    unprocessed_lines: list[str]
 
+    @staticmethod
+    def from_raw(transcript: Path) -> "TranscriptContext":
+        """Create a context from the raw transcript path.
 
-def dataframe(transcript: Path) -> pd.DataFrame:
-    """Loads the parsed transcript.
+        Args:
+            transcript: The raw transcript path.
 
-    Args:
-        transcript: The raw game transcript path.
+        Returns:
+            Its context with relevant data.
+        """
+        meta = _metadata(transcript)
+        cnt = TranscriptContext(
+            raw=transcript,
+            meta_path=_metadata_path(transcript),
+            result_path=_dataframe_path(transcript),
+            game_id=_transcript_id(transcript.stem),
+            game_type=_transcript_game(transcript.stem),
+            valid=_valid_record(meta),
+            parse_result=_parse_result(meta),
+            verification_result=_verification_result(meta),
+            num_players=_num_players(meta),
+            game_ending=_game_ending(meta),
+            unprocessed_lines=_unprocessed_lines(meta)
+        )
+        return cnt
 
-    Returns:
-        The parsed transcript as pandas Dataframe.
-    """
-    file = dataframe_path(transcript)
-    try:
-        return _read_dataframe(file)
-    except FileNotFoundError:
-        logger.error('Parsed transcript not found: %s', file)
-        return pd.DataFrame()
+    def metadata(self) -> dict:
+        """Load metadata of the transcript.
 
+        Returns:
+            The metadata of the transcript.
+        """
+        return _metadata(self.raw)
 
-def metadata_path(transcript: Path) -> Path:
-    """Build the path to the game metadata.
+    def result(self) -> pd.DataFrame:
+        """Load parsed result of the transcript.
 
-    Args:
-        transcript: The game transcript path.
-
-    Returns:
-        Path to the game metadata file.
-    """
-    return _build_path(transcript, '_metadata.json')
-
-
-def metadata(transcript: Path) -> dict:
-    """Loads the metadata of the parsed transcript.
-
-    Args:
-        transcript: The raw game transcript path.
-
-    Returns:
-        The metadata of the parsed transcript as dict.
-    """
-    file = metadata_path(transcript)
-    try:
-        return _read_json(file)
-    except FileNotFoundError:
-        logger.error('Metadata not found: %s', file)
-        return {}
-
-
-def num_players(data: dict) -> int | None:
-    """Extract number of players.
-
-    Args:
-        data: The transcript metadata.
-
-    Returns:
-        Number of players in the game, or None if no information available.
-    """
-    return data.get('num_players', None)
-
-
-def game_ending(data: dict) -> str | None:
-    """Extract game ending.
-
-    Args:
-        data: The transcript metadata.
-
-    Returns:
-        Type of game end, or None if no information available.
-    """
-    return data.get('finished', None)
-
-
-def verification_result(data: dict) -> bool | None:
-    """Extract verification result.
-
-    Args:
-        data: The transcript metadata.
-
-    Returns:
-        If verification was successful, or None if no information available.
-    """
-    verify = data.get('verification', None)
-    if verify is None:
-        return None
-    return verify.get('success', None)
-
-
-def parse_result(data: dict) -> str:
-    """Extract parse result.
-
-    Args:
-        data: The transcript metadata.
-
-    Returns:
-        State of raw transcript parsing.
-    """
-    return data.get('parse_result')
-
-
-def unprocessed_lines(data: dict) -> list[str]:
-    """Extract unprocessed lines for debug purposes.
-
-    Args:
-        data: The transcript metadata.
-
-    Returns:
-        Unprocessed lines during parsing.
-    """
-    return data.get('unprocessed_lines', [])
-
-
-def valid_record(data: dict) -> bool:
-    """Verifies that record is valid.
-
-    Valid means parsing and verification was successful.
-
-    Args:
-        data: The transcript metadata.
-
-    Returns:
-        Validity of the record.
-    """
-    v_result = verification_result(data)
-    p_result = parse_result(data) == ProcessingResult.SUCCESS.name
-    return v_result and p_result
-
-
-def transcript_name(name: str) -> str:
-    """Extracts the transcript name from a filename.
-
-    The transcript name consists of <game>_<id>.
-
-    Args:
-        name: The filename of the transcript.
-
-    Returns:
-        The identifier game name and id, separated by an underscore.
-    """
-    return '_'.join(name.split('_')[:2])
-
-
-def transcript_id(name: str) -> str:
-    """Extracts the transcript ID from a filename.
-
-    Args:
-        name: The filename of the transcript.
-
-    Returns:
-        The transcript id as string.
-    """
-    return name.split('_')[1]
+        Returns:
+            The parsed result of the transcript.
+        """
+        return _dataframe(self.raw)
 
 
 def full_verification(transcript: Path) -> bool:
@@ -356,7 +255,7 @@ def full_verification(transcript: Path) -> bool:
             f'Verification file not found: {ground_truth}'
         )
 
-    transcript_metadata = metadata(transcript)
+    transcript_metadata = _metadata(transcript)
     final_state = transcript_metadata['final_state']
     mapping = transcript_metadata['mapping']
     for name, abbrev in mapping.items():
@@ -366,6 +265,81 @@ def full_verification(transcript: Path) -> bool:
     checker = verification.StateVerification()
     ret = checker.run(final_state, _read_json(ground_truth), out=True)
     return ret
+
+
+def _dataframe_path(transcript: Path) -> Path:
+    # Build the path to the parsed transcript.
+    return _build_path(transcript, '_final.csv')
+
+
+def _metadata_path(transcript: Path) -> Path:
+    # Build the path to the metadata.
+    return _build_path(transcript, '_metadata.json')
+
+
+def _dataframe(transcript: Path) -> pd.DataFrame:
+    # Load the processed result.
+    file = _dataframe_path(transcript)
+    try:
+        return _read_dataframe(file)
+    except FileNotFoundError:
+        logger.error('Parsed transcript not found: %s', file)
+        return pd.DataFrame()
+
+
+def _metadata(transcript: Path) -> dict:
+    # Loads the metadata of the parsed transcript.
+    file = _metadata_path(transcript)
+    try:
+        return _read_json(file)
+    except FileNotFoundError:
+        logger.error('Metadata not found: %s', file)
+        return {}
+
+
+def _num_players(data: dict) -> int | None:
+    # Extract number of players.
+    return data.get('num_players', None)
+
+
+def _game_ending(data: dict) -> str | None:
+    # Extract game ending.
+    return data.get('finished', None)
+
+
+def _verification_result(data: dict) -> bool | None:
+    # Extract verification result.
+    verify = data.get('verification', None)
+    if verify is None:
+        return None
+    return verify.get('success', None)
+
+
+def _parse_result(data: dict) -> str:
+    # Extract parse result.
+    return data.get('parse_result')
+
+
+def _unprocessed_lines(data: dict) -> list[str]:
+    # Extract unprocessed lines.
+    return data.get('unprocessed_lines', [])
+
+
+def _valid_record(data: dict) -> bool:
+    # Verify that record is valid: parsed successfully and verified.
+    v_result = _verification_result(data)
+    p_result = _parse_result(data) == ProcessingResult.SUCCESS.name
+    return v_result and p_result
+
+
+def _transcript_id(name: str) -> int:
+    # Extracts the transcript ID from a filename.
+    return int(name.split('_')[1])
+
+
+def _transcript_game(name: str) -> str:
+    # Extracts the transcript game from a filename.
+    return name.split('_')[0]
 
 
 def _build_path(transcript: Path, suffix: str) -> Path:

@@ -17,10 +17,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   of the record.
 - Functions to retrieve relevant data from metadata, e.g., number of players,
   game ending, parse and verification results.
+- Entry point for package with user accessible modules.
+- Transcript context that contains relevant data about parsed transcript.
 
 ### Changed
 
 ### Removed
+
+- Public functions to access metadata information. Moved to transcript context.
 
 ### Fixed
 
