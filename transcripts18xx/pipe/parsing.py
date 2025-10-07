@@ -59,10 +59,10 @@ class GameTranscriptProcessor:
             if self._process_match(idx, line, parsed_data):
                 data.append(parsed_data)
             else:
-                logger.debug(f'Skipped by rule: {line.strip()}')
+                logger.debug('Skipped by rule: %s', line.strip())
                 self._skipped_lines.append(line.strip())
         else:
-            logger.debug(f'Unprocessed: {line.strip()}')
+            logger.debug('Unprocessed: %s', line.strip())
             self._unprocessed_lines.append(line.strip())
 
     @staticmethod
@@ -306,7 +306,7 @@ class GameStateProcessor:
             raise AttributeError(
                 f'Start capital for `{num_players}` players not set'
             )
-        logger.debug(f'Found players: {players}')
+        logger.debug('Found players: %s', players)
 
         self._game_state = engine.GameState(players, game)
         self._steps = engine.StepMapper()
