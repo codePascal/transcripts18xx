@@ -142,6 +142,7 @@ class TestTranscriptContext(unittest.TestCase):
         self.assertTrue(self.cnt.verification_result)
         self.assertEqual(4, self.cnt.num_players)
         self.assertEqual('BankBroke', self.cnt.game_ending)
+        self.assertEqual('player1', self.cnt.winner)
         self.assertEqual([], self.cnt.unprocessed_lines)
 
     def test_metadata(self):

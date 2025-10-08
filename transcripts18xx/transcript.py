@@ -184,6 +184,7 @@ class TranscriptContext:
     verification_result: bool | None
     num_players: int | None
     game_ending: str | None
+    winner: str | None
     unprocessed_lines: list[str]
 
     @staticmethod
@@ -208,6 +209,7 @@ class TranscriptContext:
             verification_result=_verification_result(meta),
             num_players=_num_players(meta),
             game_ending=_game_ending(meta),
+            winner=_winner(meta),
             unprocessed_lines=_unprocessed_lines(meta)
         )
         return cnt
@@ -305,6 +307,11 @@ def _num_players(data: dict) -> int | None:
 def _game_ending(data: dict) -> str | None:
     # Extract game ending.
     return data.get('finished', None)
+
+
+def _winner(data: dict) -> str | None:
+    # Extract game winner.
+    return data.get('winner', None)
 
 
 def _verification_result(data: dict) -> bool | None:
