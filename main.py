@@ -25,7 +25,7 @@ import logging
 
 from pathlib import Path
 
-from transcripts18xx import transcript
+import transcripts18xx as trx
 
 
 def parse_arguments():
@@ -34,8 +34,8 @@ def parse_arguments():
     )
     parser.add_argument(
         'game',
-        type=transcript.games.Games.argparse,
-        choices=transcript.games.Games,
+        type=trx.Games.argparse,
+        choices=trx.Games,
         help='Game type of transcript, e.g. G1830',
     )
     parser.add_argument(
@@ -70,11 +70,11 @@ def main(args):
     )
 
     game = args.game.select()
-    parser = transcript.TranscriptParser(args.transcript, game)
+    parser = trx.TranscriptParser(args.transcript, game)
     result = parser.parse()
     print(json.dumps(result, indent=2))
     if not args.skip_verify:
-        transcript.full_verification(args.transcript)
+        trx.full_verification(args.transcript)
 
 
 if __name__ == '__main__':
