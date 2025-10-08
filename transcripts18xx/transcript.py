@@ -328,6 +328,8 @@ def _unprocessed_lines(data: dict) -> list[str]:
 def _valid_record(data: dict) -> bool:
     # Verify that record is valid: parsed successfully and verified.
     v_result = _verification_result(data)
+    if v_result is None:
+        return False
     p_result = _parse_result(data) == ProcessingResult.SUCCESS.name
     return v_result and p_result
 
