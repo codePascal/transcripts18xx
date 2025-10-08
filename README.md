@@ -54,17 +54,16 @@ These raw transcripts must follow a consistent naming convention:
 
 ### Transcript parser
 
-The core of the library is the `transcript` module.
-It implements a transcript parser than takes the path to the transcript and the
+The core of the library is the `TranscriptParser` class.
+It implements a transcript parser that takes the path to the transcript and the
 game type as argument and generates a parsed transcript in CSV format and
 complementing metadata in JSON format.
 
 ```pycon
->>> from transcripts18xx import transcript
-
+>>> import transcripts18xx as trx
 >>> transcript_path = Path('1830_123456.txt')
->>> game_type = transcript.games.Game1830()
->>> parser = transcript.TranscriptParser(transcript_path, game_type)
+>>> game_type = trx.Games.G1830.select()
+>>> parser = trx.TranscriptParser(transcript_path, game_type)
 >>> parser.parse()
 ```
 
@@ -75,6 +74,19 @@ This will create two new files within the transcript directory:
 ├── 1830_123456.txt
 ├── 1830_123456_final.csv       --> The parsed final transcript data
 └── 1830_123456_metadata.json   --> The metadata of the game
+```
+
+### Transcript context
+
+To handle multiple parsed transcripts, the `TranscriptContext` is implemented.
+It implements a dataclass that contains the relevant metadata as well as paths
+to the raw transcript, final data and metadata. Further, it can be used to load
+metadata or dataframe of the record.
+
+```pycon
+>>> import transcripts18xx as trx
+>>> transcript_path = Path('1830_123456.txt')
+>>> trx_ctx = trx.TranscriptContext.from_raw(transcript_path)
 ```
 
 Output Artifacts
@@ -242,6 +254,12 @@ Differences will be written to the `diffs` field.
 
 For debugging purposes, unprocessed lines, i.e. lines that were not matched to a
 step during parsing, will be written to the metadata as well.
+
+#### Parse result
+
+The parse result depicts the success of the raw transcript parsing. If no errors
+occurred, it will be set to `SUCCESS`. Otherwise, the received error will be
+written, i.e., `No players found`.
 
 Supported Games
 ---------------
