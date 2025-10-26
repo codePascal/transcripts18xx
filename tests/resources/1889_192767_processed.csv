@@ -1,1054 +1,1054 @@
-phase,type,parent,id,player,amount,private,source,sequence,company,share_price,percentage,location,tile,rotation,direction,train,route,per_share,old_train,new_train,result
-2,NewPhase,Event,1,,,,,ISR 1,,,,,,,,,,,,,
-2,Bid,Action,2,Sprint,35.0,Mitsubishi Ferry,,ISR 1,,,,,,,,,,,,,
-2,Bid,Action,3,Millie,45.0,Ehime Railway,,ISR 1,,,,,,,,,,,,,
-2,Bid,Action,4,zorbak,55.0,Sumitomo Mines Railway,,ISR 1,,,,,,,,,,,,,
-2,Bid,Action,5,tado,155.0,Uno-Takamatsu Ferry,,ISR 1,,,,,,,,,,,,,
-2,Bid,Action,6,mindbomb(UTC+9),85.0,South Iyo Railway,,ISR 1,,,,,,,,,,,,,
-2,Bid,Action,7,camping no reception,65.0,Dougo Railway,,ISR 1,,,,,,,,,,,,,
-2,Pass,Action,8,Sprint,,,,ISR 1,,,,,,,,,,,,,
-2,BuyPrivate,Action,9,Millie,20.0,Takamatsu E-Railroad,Auction,ISR 1,,,,,,,,,,,,,
-2,BuyPrivate,Action,10,Sprint,35.0,Mitsubishi Ferry,Auction,ISR 1,,,,,,,,,,,,,
-2,BuyPrivate,Action,11,Millie,45.0,Ehime Railway,Auction,ISR 1,,,,,,,,,,,,,
-2,BuyPrivate,Action,12,zorbak,55.0,Sumitomo Mines Railway,Auction,ISR 1,,,,,,,,,,,,,
-2,BuyPrivate,Action,13,camping no reception,65.0,Dougo Railway,Auction,ISR 1,,,,,,,,,,,,,
-2,BuyPrivate,Action,14,mindbomb(UTC+9),85.0,South Iyo Railway,Auction,ISR 1,,,,,,,,,,,,,
-2,BuyPrivate,Action,15,tado,155.0,Uno-Takamatsu Ferry,Auction,ISR 1,,,,,,,,,,,,,
-2,PriorityDeal,Event,16,zorbak,,,,ISR 1,,,,,,,,,,,,,
-2,StockRound,Event,17,,,,,SR 1,,,,,,,,,,,,,
-2,Par,Action,18,zorbak,,,,SR 1,IR,65.0,,,,,,,,,,,
-2,BuyShare,Action,19,zorbak,130.0,,IPO,SR 1,IR,,20.0,,,,,,,,,,
-2,PresidentNomination,Event,20,zorbak,,,,SR 1,IR,,,,,,,,,,,,
-2,BuyShare,Action,21,tado,65.0,,IPO,SR 1,IR,,10.0,,,,,,,,,,
-2,BuyShare,Action,23,mindbomb(UTC+9),65.0,,IPO,SR 1,IR,,10.0,,,,,,,,,,
-2,Par,Action,24,camping no reception,,,,SR 1,UR,65.0,,,,,,,,,,,
-2,BuyShare,Action,25,camping no reception,130.0,,IPO,SR 1,UR,,20.0,,,,,,,,,,
-2,PresidentNomination,Event,26,camping no reception,,,,SR 1,UR,,,,,,,,,,,,
-2,Par,Action,27,Sprint,,,,SR 1,TR,65.0,,,,,,,,,,,
-2,BuyShare,Action,28,Sprint,130.0,,IPO,SR 1,TR,,20.0,,,,,,,,,,
-2,PresidentNomination,Event,29,Sprint,,,,SR 1,TR,,,,,,,,,,,,
-2,Par,Action,30,Millie,,,,SR 1,KO,65.0,,,,,,,,,,,
-2,BuyShare,Action,31,Millie,130.0,,IPO,SR 1,KO,,20.0,,,,,,,,,,
-2,PresidentNomination,Event,32,Millie,,,,SR 1,KO,,,,,,,,,,,,
-2,BuyShare,Action,33,zorbak,65.0,,IPO,SR 1,IR,,10.0,,,,,,,,,,
-2,CompanyFloats,Event,34,,,,,SR 1,IR,,,,,,,,,,,,
-2,ReceiveFunds,Event,35,,650.0,,,SR 1,IR,,,,,,,,,,,,
-2,BuyShare,Action,36,tado,65.0,,IPO,SR 1,IR,,10.0,,,,,,,,,,
-2,Par,Action,37,mindbomb(UTC+9),,,,SR 1,SR,65.0,,,,,,,,,,,
-2,BuyShare,Action,38,mindbomb(UTC+9),130.0,,IPO,SR 1,SR,,20.0,,,,,,,,,,
-2,PresidentNomination,Event,39,mindbomb(UTC+9),,,,SR 1,SR,,,,,,,,,,,,
-2,BuyShare,Action,40,camping no reception,65.0,,IPO,SR 1,UR,,10.0,,,,,,,,,,
-2,BuyShare,Action,41,Sprint,65.0,,IPO,SR 1,TR,,10.0,,,,,,,,,,
-2,BuyShare,Action,42,Millie,65.0,,IPO,SR 1,KO,,10.0,,,,,,,,,,
-2,BuyShare,Action,43,zorbak,65.0,,IPO,SR 1,IR,,10.0,,,,,,,,,,
-2,BuyShare,Action,44,tado,65.0,,IPO,SR 1,UR,,10.0,,,,,,,,,,
-2,BuyShare,Action,45,mindbomb(UTC+9),65.0,,IPO,SR 1,SR,,10.0,,,,,,,,,,
-2,BuyShare,Action,46,camping no reception,65.0,,IPO,SR 1,UR,,10.0,,,,,,,,,,
-2,CompanyFloats,Event,47,,,,,SR 1,UR,,,,,,,,,,,,
-2,ReceiveFunds,Event,48,,650.0,,,SR 1,UR,,,,,,,,,,,,
-2,BuyShare,Action,49,Sprint,65.0,,IPO,SR 1,TR,,10.0,,,,,,,,,,
-2,BuyShare,Action,50,Millie,65.0,,IPO,SR 1,KO,,10.0,,,,,,,,,,
-2,BuyShare,Action,51,zorbak,65.0,,IPO,SR 1,IR,,10.0,,,,,,,,,,
-2,Pass,Action,52,tado,,,,SR 1,,,,,,,,,,,,,
-2,Pass,Action,53,mindbomb(UTC+9),,,,SR 1,,,,,,,,,,,,,
-2,BuyShare,Action,54,camping no reception,65.0,,IPO,SR 1,UR,,10.0,,,,,,,,,,
-2,BuyShare,Action,55,Sprint,65.0,,IPO,SR 1,TR,,10.0,,,,,,,,,,
-2,CompanyFloats,Event,56,,,,,SR 1,TR,,,,,,,,,,,,
-2,ReceiveFunds,Event,57,,650.0,,,SR 1,TR,,,,,,,,,,,,
-2,BuyShare,Action,58,Millie,65.0,,IPO,SR 1,KO,,10.0,,,,,,,,,,
-2,CompanyFloats,Event,59,,,,,SR 1,KO,,,,,,,,,,,,
-2,ReceiveFunds,Event,60,,650.0,,,SR 1,KO,,,,,,,,,,,,
-2,Pass,Action,61,zorbak,,,,SR 1,,,,,,,,,,,,,
-2,Pass,Action,62,tado,,,,SR 1,,,,,,,,,,,,,
-2,Pass,Action,63,mindbomb(UTC+9),,,,SR 1,,,,,,,,,,,,,
-2,Pass,Action,64,camping no reception,,,,SR 1,,,,,,,,,,,,,
-2,Pass,Action,65,Sprint,,,,SR 1,,,,,,,,,,,,,
-2,Pass,Action,66,Millie,,,,SR 1,,,,,,,,,,,,,
-2,PriorityDeal,Event,67,zorbak,,,,SR 1,,,,,,,,,,,,,
-2,OperatingRound,Event,68,,,,,OR 1.1,,,,,,,,,,,,,
-2,Collect,Action,69,zorbak,15.0,,Sumitomo Mines Railway,OR 1.1,,,,,,,,,,,,,
-2,Collect,Action,70,tado,30.0,,Uno-Takamatsu Ferry,OR 1.1,,,,,,,,,,,,,
-2,Collect,Action,71,mindbomb(UTC+9),20.0,,South Iyo Railway,OR 1.1,,,,,,,,,,,,,
-2,Collect,Action,72,camping no reception,15.0,,Dougo Railway,OR 1.1,,,,,,,,,,,,,
-2,Collect,Action,73,Sprint,5.0,,Mitsubishi Ferry,OR 1.1,,,,,,,,,,,,,
-2,Collect,Action,74,Millie,5.0,,Takamatsu E-Railroad,OR 1.1,,,,,,,,,,,,,
-2,Collect,Action,75,Millie,10.0,,Ehime Railway,OR 1.1,,,,,,,,,,,,,
-2,PlaceToken,Action,76,,0.0,,,OR 1.1,IR,,,E2,,,,,,,,,
-2,PlaceToken,Action,77,,0.0,,,OR 1.1,UR,,,B7,,,,,,,,,
-2,PlaceToken,Action,78,,0.0,,,OR 1.1,TR,,,F9,,,,,,,,,
-2,PlaceToken,Action,79,,0.0,,,OR 1.1,KO,,,K4,,,,,,,,,
-2,OperatesCompany,Event,80,zorbak,,,,OR 1.1,IR,,,,,,,,,,,,
-2,LayTile,Action,81,,0.0,,,OR 1.1,IR,,,E2,5,4,,,,,,,
-2,Skip,Action,82,,,,,OR 1.1,IR,,,,,,,,,,,,
-2,Skip,Action,83,,,,,OR 1.1,IR,,,,,,,,,,,,
-2,DoesNotRun,Event,84,,,,,OR 1.1,IR,,,,,,,,,,,,
-2,SharePriceMoves,Event,85,,,,,OR 1.1,IR,60.0,,,,,left,,,,,,
-2,BuyTrain,Action,86,,80.0,,The Depot,OR 1.1,IR,,,,,,,2,,,,,
-2,BuyTrain,Action,87,,80.0,,The Depot,OR 1.1,IR,,,,,,,2,,,,,
-2,BuyTrain,Action,88,,80.0,,The Depot,OR 1.1,IR,,,,,,,2,,,,,
-2,Pass,Action,89,,,,,OR 1.1,IR,,,,,,,,,,,,
-2,Skip,Action,90,,,,,OR 1.1,IR,,,,,,,,,,,,
-2,OperatesCompany,Event,91,camping no reception,,,,OR 1.1,UR,,,,,,,,,,,,
-2,LayTile,Action,92,,0.0,,,OR 1.1,UR,,,B5,9,0,,,,,,,
-2,PlaceToken,Action,93,,40.0,,,OR 1.1,UR,,,C4,,,,,,,,,
-2,Skip,Action,94,,,,,OR 1.1,UR,,,,,,,,,,,,
-2,DoesNotRun,Event,95,,,,,OR 1.1,UR,,,,,,,,,,,,
-2,SharePriceMoves,Event,96,,,,,OR 1.1,UR,60.0,,,,,left,,,,,,
-2,BuyTrain,Action,97,,80.0,,The Depot,OR 1.1,UR,,,,,,,2,,,,,
-2,BuyTrain,Action,98,,80.0,,The Depot,OR 1.1,UR,,,,,,,2,,,,,
-2,Pass,Action,99,,,,,OR 1.1,UR,,,,,,,,,,,,
-2,Skip,Action,100,,,,,OR 1.1,UR,,,,,,,,,,,,
-2,OperatesCompany,Event,101,Sprint,,,,OR 1.1,TR,,,,,,,,,,,,
-2,LayTile,Action,103,,0.0,,,OR 1.1,TR,,,G10,437,0,,,,,,,
-2,LayTile,Action,104,,0.0,,,OR 1.1,TR,,,G12,57,0,,,,,,,
-2,PlaceToken,Action,105,,40.0,,,OR 1.1,TR,,,G12,,,,,,,,,
-2,Skip,Action,106,,,,,OR 1.1,TR,,,,,,,,,,,,
-2,DoesNotRun,Event,107,,,,,OR 1.1,TR,,,,,,,,,,,,
-2,SharePriceMoves,Event,108,,,,,OR 1.1,TR,60.0,,,,,left,,,,,,
-2,BuyTrain,Action,109,,80.0,,The Depot,OR 1.1,TR,,,,,,,2,,,,,
-2,BuyTrain,Action,110,,180.0,,The Depot,OR 1.1,TR,,,,,,,3,,,,,
-3,NewPhase,Event,111,,,,,OR 1.1,,,,,,,,,,,,,
-3,BuyPrivate,Action,112,,60.0,Mitsubishi Ferry,Sprint,OR 1.1,TR,,,,,,,,,,,,
-3,BuyTrain,Action,113,,180.0,,The Depot,OR 1.1,TR,,,,,,,3,,,,,
-3,Pass,Action,114,,,,,OR 1.1,TR,,,,,,,,,,,,
-3,Pass,Action,115,,,,,OR 1.1,TR,,,,,,,,,,,,
-3,OperatesCompany,Event,116,Millie,,,,OR 1.1,KO,,,,,,,,,,,,
-3,LayTile,Action,117,,0.0,,,OR 1.1,KO,,,J3,8,3,,,,,,,
-3,Skip,Action,118,,,,,OR 1.1,KO,,,,,,,,,,,,
-3,Skip,Action,119,,,,,OR 1.1,KO,,,,,,,,,,,,
-3,DoesNotRun,Event,120,,,,,OR 1.1,KO,,,,,,,,,,,,
-3,SharePriceMoves,Event,121,,,,,OR 1.1,KO,60.0,,,,,left,,,,,,
-3,BuyTrain,Action,122,,180.0,,The Depot,OR 1.1,KO,,,,,,,3,,,,,
-3,Pass,Action,123,,,,,OR 1.1,KO,,,,,,,,,,,,
-3,Pass,Action,124,,,,,OR 1.1,KO,,,,,,,,,,,,
-3,StockRound,Event,125,,,,,SR 2,,,,,,,,,,,,,
-3,Pass,Action,126,zorbak,,,,SR 2,,,,,,,,,,,,,
-3,BuyShare,Action,127,tado,65.0,,IPO,SR 2,KO,,10.0,,,,,,,,,,
-3,Skip,Action,128,tado,,,,SR 2,,,,,,,,,,,,,
-3,BuyShare,Action,129,mindbomb(UTC+9),65.0,,IPO,SR 2,SR,,10.0,,,,,,,,,,
-3,Skip,Action,130,mindbomb(UTC+9),,,,SR 2,,,,,,,,,,,,,
-3,Pass,Action,131,camping no reception,,,,SR 2,,,,,,,,,,,,,
-3,BuyShare,Action,132,Sprint,65.0,,IPO,SR 2,IR,,10.0,,,,,,,,,,
-3,Skip,Action,133,Sprint,,,,SR 2,,,,,,,,,,,,,
-3,Pass,Action,134,Millie,,,,SR 2,,,,,,,,,,,,,
-3,Pass,Action,135,zorbak,,,,SR 2,,,,,,,,,,,,,
-3,Pass,Action,136,tado,,,,SR 2,,,,,,,,,,,,,
-3,Pass,Action,137,mindbomb(UTC+9),,,,SR 2,,,,,,,,,,,,,
-3,Pass,Action,138,camping no reception,,,,SR 2,,,,,,,,,,,,,
-3,Pass,Action,140,Sprint,,,,SR 2,,,,,,,,,,,,,
-3,PriorityDeal,Event,141,Millie,,,,SR 2,,,,,,,,,,,,,
-3,OperatingRound,Event,142,,,,,OR 2.1,,,,,,,,,,,,,
-3,Collect,Action,143,Millie,5.0,,Takamatsu E-Railroad,OR 2.1,,,,,,,,,,,,,
-3,Collect,Action,144,Millie,10.0,,Ehime Railway,OR 2.1,,,,,,,,,,,,,
-3,Collect,Action,145,zorbak,15.0,,Sumitomo Mines Railway,OR 2.1,,,,,,,,,,,,,
-3,Collect,Action,146,tado,30.0,,Uno-Takamatsu Ferry,OR 2.1,,,,,,,,,,,,,
-3,Collect,Action,147,mindbomb(UTC+9),20.0,,South Iyo Railway,OR 2.1,,,,,,,,,,,,,
-3,Collect,Action,148,camping no reception,15.0,,Dougo Railway,OR 2.1,,,,,,,,,,,,,
-3,Collect,Action,149,,5.0,,Mitsubishi Ferry,OR 2.1,TR,,,,,,,,,,,,
-3,OperatesCompany,Event,150,zorbak,,,,OR 2.1,IR,,,,,,,,,,,,
-3,LayTile,Action,151,,0.0,,,OR 2.1,IR,,,F3,5,2,,,,,,,
-3,PlaceToken,Action,152,,40.0,,,OR 2.1,IR,,,F3,,,,,,,,,
-3,RunTrain,Action,153,,40.0,,,OR 2.1,IR,,,,,,,2,F3-E2,,,,
-3,RunTrain,Action,154,,50.0,,,OR 2.1,IR,,,,,,,2,F3-F1,,,,
-3,RunTrain,Action,155,,50.0,,,OR 2.1,IR,,,,,,,2,E2-F1,,,,
-3,PayOut,Action,156,,140.0,,,OR 2.1,IR,,,,,,,,,14.0,,,
-3,SharePriceMoves,Event,157,,,,,OR 2.1,IR,65.0,,,,,right,,,,,,
-3,Pass,Action,158,,,,,OR 2.1,IR,,,,,,,,,,,,
-3,BuyPrivate,Action,159,,100.0,Sumitomo Mines Railway,zorbak,OR 2.1,IR,,,,,,,,,,,,
-3,Pass,Action,160,,,,,OR 2.1,IR,,,,,,,,,,,,
-3,OperatesCompany,Event,161,camping no reception,,,,OR 2.1,UR,,,,,,,,,,,,
-3,LayTile,Action,162,,0.0,,,OR 2.1,UR,,,C8,9,2,,,,,,,
-3,Skip,Action,163,,,,,OR 2.1,UR,,,,,,,,,,,,
-3,RunTrain,Action,164,,40.0,,,OR 2.1,UR,,,,,,,2,C4-B3,,,,
-3,RunTrain,Action,165,,60.0,,,OR 2.1,UR,,,,,,,2,B7-B3,,,,
-3,PayOut,Action,166,,100.0,,,OR 2.1,UR,,,,,,,,,10.0,,,
-3,SharePriceMoves,Event,167,,,,,OR 2.1,UR,65.0,,,,,right,,,,,,
-3,BuyTrain,Action,168,,180.0,,The Depot,OR 2.1,UR,,,,,,,3,,,,,
-3,Pass,Action,169,,,,,OR 2.1,UR,,,,,,,,,,,,
-3,BuyPrivate,Action,170,,120.0,Dougo Railway,camping no reception,OR 2.1,UR,,,,,,,,,,,,
-3,Pass,Action,171,,,,,OR 2.1,UR,,,,,,,,,,,,
-3,OperatesCompany,Event,172,Sprint,,,,OR 2.1,TR,,,,,,,,,,,,
-3,LayTile,Action,173,,0.0,,,OR 2.1,TR,,,E8,8,5,,,,,,,
-3,Skip,Action,174,,,,,OR 2.1,TR,,,,,,,,,,,,
-3,RunTrain,Action,175,,40.0,,,OR 2.1,TR,,,,,,,3,G12-G14,,,,
-3,RunTrain,Action,176,,50.0,,,OR 2.1,TR,,,,,,,3,G12-G10,,,,
-3,RunTrain,Action,177,,60.0,,,OR 2.1,TR,,,,,,,2,F9-G10,,,,
-3,PayOut,Action,178,,150.0,,,OR 2.1,TR,,,,,,,,,15.0,,,
-3,SharePriceMoves,Event,179,,,,,OR 2.1,TR,65.0,,,,,right,,,,,,
-3,Pass,Action,180,,,,,OR 2.1,TR,,,,,,,,,,,,
-3,Pass,Action,181,,,,,OR 2.1,TR,,,,,,,,,,,,
-3,OperatesCompany,Event,182,Millie,,,,OR 2.1,KO,,,,,,,,,,,,
-3,LayTile,Action,183,,0.0,,,OR 2.1,KO,,,J5,58,2,,,,,,,
-3,Skip,Action,184,,,,,OR 2.1,KO,,,,,,,,,,,,
-3,RunTrain,Action,185,,60.0,,,OR 2.1,KO,,,,,,,3,J1-K4-J5,,,,
-3,PayOut,Action,186,,60.0,,,OR 2.1,KO,,,,,,,,,6.0,,,
-3,SharePriceMoves,Event,187,,,,,OR 2.1,KO,65.0,,,,,right,,,,,,
-3,Pass,Action,188,,,,,OR 2.1,KO,,,,,,,,,,,,
-3,Pass,Action,189,,,,,OR 2.1,KO,,,,,,,,,,,,
-3,OperatingRound,Event,190,,,,,OR 2.2,,,,,,,,,,,,,
-3,Collect,Action,191,Millie,5.0,,Takamatsu E-Railroad,OR 2.2,,,,,,,,,,,,,
-3,Collect,Action,192,Millie,10.0,,Ehime Railway,OR 2.2,,,,,,,,,,,,,
-3,Collect,Action,193,tado,30.0,,Uno-Takamatsu Ferry,OR 2.2,,,,,,,,,,,,,
-3,Collect,Action,194,mindbomb(UTC+9),20.0,,South Iyo Railway,OR 2.2,,,,,,,,,,,,,
-3,Collect,Action,195,,15.0,,Sumitomo Mines Railway,OR 2.2,IR,,,,,,,,,,,,
-3,Collect,Action,196,,15.0,,Dougo Railway,OR 2.2,UR,,,,,,,,,,,,
-3,Collect,Action,197,,5.0,,Mitsubishi Ferry,OR 2.2,TR,,,,,,,,,,,,
-3,OperatesCompany,Event,198,zorbak,,,,OR 2.2,IR,,,,,,,,,,,,
-3,LayTile,Action,199,,0.0,,,OR 2.2,IR,,,F3,205,2,,,,,,,
-3,Skip,Action,200,,,,,OR 2.2,IR,,,,,,,,,,,,
-3,RunTrain,Action,201,,50.0,,,OR 2.2,IR,,,,,,,2,F3-E2,,,,
-3,RunTrain,Action,202,,60.0,,,OR 2.2,IR,,,,,,,2,F3-F1,,,,
-3,RunTrain,Action,203,,50.0,,,OR 2.2,IR,,,,,,,2,E2-F1,,,,
-3,PayOut,Action,204,,160.0,,,OR 2.2,IR,,,,,,,,,16.0,,,
-3,SharePriceMoves,Event,205,,,,,OR 2.2,IR,70.0,,,,,right,,,,,,
-3,Pass,Action,206,,,,,OR 2.2,IR,,,,,,,,,,,,
-3,Pass,Action,207,,,,,OR 2.2,IR,,,,,,,,,,,,
-3,OperatesCompany,Event,208,camping no reception,,,,OR 2.2,UR,,,,,,,,,,,,
-3,LayTile,Action,210,,0.0,,,OR 2.2,UR,,,D9,8,2,,,,,,,
-3,Pass,Action,211,,,,,OR 2.2,UR,,,,,,,,,,,,
-3,RunTrain,Action,212,,100.0,,,OR 2.2,UR,,,,,,,3,B7-F9-G10,,,,
-3,RunTrain,Action,213,,40.0,,,OR 2.2,UR,,,,,,,2,C4-B3,,,,
-3,RunTrain,Action,214,,60.0,,,OR 2.2,UR,,,,,,,2,B7-B3,,,,
-3,PayOut,Action,215,,200.0,,,OR 2.2,UR,,,,,,,,,20.0,,,
-3,SharePriceMoves,Event,216,,,,,OR 2.2,UR,70.0,,,,,right,,,,,,
-3,Pass,Action,217,,,,,OR 2.2,UR,,,,,,,,,,,,
-3,Pass,Action,218,,,,,OR 2.2,UR,,,,,,,,,,,,
-3,OperatesCompany,Event,219,Sprint,,,,OR 2.2,TR,,,,,,,,,,,,
-3,LayTile,Action,220,,0.0,,,OR 2.2,TR,,,G12,15,3,,,,,,,
-3,Pass,Action,221,,,,,OR 2.2,TR,,,,,,,,,,,,
-3,RunTrain,Action,222,,80.0,,,OR 2.2,TR,,,,,,,3,G10-G12-G14,,,,
-3,RunTrain,Action,223,,90.0,,,OR 2.2,TR,,,,,,,3,F9-B7-B3,,,,
-3,RunTrain,Action,224,,60.0,,,OR 2.2,TR,,,,,,,2,F9-G10,,,,
-3,PayOut,Action,225,,230.0,,,OR 2.2,TR,,,,,,,,,23.0,,,
-3,SharePriceMoves,Event,226,,,,,OR 2.2,TR,70.0,,,,,right,,,,,,
-3,Pass,Action,227,,,,,OR 2.2,TR,,,,,,,,,,,,
-3,Pass,Action,228,,,,,OR 2.2,TR,,,,,,,,,,,,
-3,OperatesCompany,Event,229,Millie,,,,OR 2.2,KO,,,,,,,,,,,,
-3,LayTile,Action,230,,80.0,,,OR 2.2,KO,,,I4,438,5,,,,,,,
-3,Pass,Action,231,,,,,OR 2.2,KO,,,,,,,,,,,,
-3,RunTrain,Action,232,,80.0,,,OR 2.2,KO,,,,,,,3,K4-J5-I4,,,,
-3,PayOut,Action,233,,80.0,,,OR 2.2,KO,,,,,,,,,8.0,,,
-3,SharePriceMoves,Event,234,,,,,OR 2.2,KO,70.0,,,,,right,,,,,,
-3,Pass,Action,235,,,,,OR 2.2,KO,,,,,,,,,,,,
-3,BuyPrivate,Action,236,,40.0,Takamatsu E-Railroad,Millie,OR 2.2,KO,,,,,,,,,,,,
-3,Pass,Action,237,,,,,OR 2.2,KO,,,,,,,,,,,,
-3,StockRound,Event,238,,,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,239,Millie,65.0,,IPO,SR 3,TR,,10.0,,,,,,,,,,
-3,Skip,Action,240,Millie,,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,241,zorbak,65.0,,IPO,SR 3,TR,,10.0,,,,,,,,,,
-3,Skip,Action,242,zorbak,,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,243,tado,65.0,,IPO,SR 3,TR,,10.0,,,,,,,,,,
-3,Skip,Action,244,tado,,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,246,mindbomb(UTC+9),65.0,,IPO,SR 3,SR,,10.0,,,,,,,,,,
-3,CompanyFloats,Event,247,,,,,SR 3,SR,,,,,,,,,,,,
-3,ReceiveFunds,Event,248,,650.0,,,SR 3,SR,,,,,,,,,,,,
-3,Skip,Action,249,mindbomb(UTC+9),,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,250,camping no reception,65.0,,IPO,SR 3,IR,,10.0,,,,,,,,,,
-3,Skip,Action,251,camping no reception,,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,252,Sprint,65.0,,IPO,SR 3,TR,,10.0,,,,,,,,,,
-3,Skip,Action,253,Sprint,,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,254,Millie,65.0,,IPO,SR 3,UR,,10.0,,,,,,,,,,
-3,Skip,Action,255,Millie,,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,256,zorbak,65.0,,IPO,SR 3,UR,,10.0,,,,,,,,,,
-3,Skip,Action,257,zorbak,,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,258,tado,65.0,,IPO,SR 3,KO,,10.0,,,,,,,,,,
-3,Skip,Action,259,tado,,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,260,mindbomb(UTC+9),,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,261,camping no reception,65.0,,IPO,SR 3,TR,,10.0,,,,,,,,,,
-3,Skip,Action,262,camping no reception,,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,264,Sprint,65.0,,IPO,SR 3,UR,,10.0,,,,,,,,,,
-3,Skip,Action,265,Sprint,,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,266,Millie,,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,267,zorbak,65.0,,IPO,SR 3,KO,,10.0,,,,,,,,,,
-3,Skip,Action,268,zorbak,,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,269,tado,,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,270,mindbomb(UTC+9),,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,271,camping no reception,65.0,,IPO,SR 3,UR,,10.0,,,,,,,,,,
-3,Skip,Action,272,camping no reception,,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,273,Sprint,65.0,,IPO,SR 3,KO,,10.0,,,,,,,,,,
-3,Skip,Action,274,Sprint,,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,275,Millie,,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,276,zorbak,65.0,,IPO,SR 3,KO,,10.0,,,,,,,,,,
-3,Skip,Action,277,zorbak,,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,278,tado,,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,280,mindbomb(UTC+9),,,,SR 3,,,,,,,,,,,,,
-3,BuyShare,Action,281,camping no reception,65.0,,IPO,SR 3,SR,,10.0,,,,,,,,,,
-3,Skip,Action,282,camping no reception,,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,283,Sprint,,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,284,Millie,,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,285,zorbak,,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,286,tado,,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,287,mindbomb(UTC+9),,,,SR 3,,,,,,,,,,,,,
-3,Pass,Action,288,camping no reception,,,,SR 3,,,,,,,,,,,,,
-3,SharePriceMoves,Event,289,,,,,SR 3,IR,75.0,,,,,up,,,,,,
-3,SharePriceMoves,Event,290,,,,,SR 3,UR,75.0,,,,,up,,,,,,
-3,SharePriceMoves,Event,291,,,,,SR 3,TR,75.0,,,,,up,,,,,,
-3,SharePriceMoves,Event,292,,,,,SR 3,KO,75.0,,,,,up,,,,,,
-3,PriorityDeal,Event,293,Sprint,,,,SR 3,,,,,,,,,,,,,
-3,OperatingRound,Event,294,,,,,OR 3.1,,,,,,,,,,,,,
-3,Collect,Action,295,Millie,10.0,,Ehime Railway,OR 3.1,,,,,,,,,,,,,
-3,Collect,Action,296,tado,30.0,,Uno-Takamatsu Ferry,OR 3.1,,,,,,,,,,,,,
-3,Collect,Action,297,mindbomb(UTC+9),20.0,,South Iyo Railway,OR 3.1,,,,,,,,,,,,,
-3,Collect,Action,298,,15.0,,Sumitomo Mines Railway,OR 3.1,IR,,,,,,,,,,,,
-3,Collect,Action,299,,15.0,,Dougo Railway,OR 3.1,UR,,,,,,,,,,,,
-3,Collect,Action,300,,5.0,,Mitsubishi Ferry,OR 3.1,TR,,,,,,,,,,,,
-3,Collect,Action,301,,5.0,,Takamatsu E-Railroad,OR 3.1,KO,,,,,,,,,,,,
-3,PlaceToken,Action,302,,0.0,,,OR 3.1,SR,,,I2,,,,,,,,,
-3,OperatesCompany,Event,303,zorbak,,,,OR 3.1,IR,,,,,,,,,,,,
-3,LayTile,Action,305,,0.0,,,OR 3.1,IR,,,G4,6,2,,,,,,,
-3,Skip,Action,306,,,,,OR 3.1,IR,,,,,,,,,,,,
-3,RunTrain,Action,307,,50.0,,,OR 3.1,IR,,,,,,,2,F3-E2,,,,
-3,RunTrain,Action,308,,60.0,,,OR 3.1,IR,,,,,,,2,F3-F1,,,,
-3,RunTrain,Action,309,,50.0,,,OR 3.1,IR,,,,,,,2,E2-F1,,,,
-3,PayOut,Action,310,,160.0,,,OR 3.1,IR,,,,,,,,,16.0,,,
-3,SharePriceMoves,Event,311,,,,,OR 3.1,IR,80.0,,,,,right,,,,,,
-3,Pass,Action,312,,,,,OR 3.1,IR,,,,,,,,,,,,
-3,Pass,Action,313,,,,,OR 3.1,IR,,,,,,,,,,,,
-3,OperatesCompany,Event,314,camping no reception,,,,OR 3.1,UR,,,,,,,,,,,,
-3,Pass,Action,315,,,,,OR 3.1,UR,,,,,,,,,,,,
-3,Pass,Action,316,,,,,OR 3.1,UR,,,,,,,,,,,,
-3,RunTrain,Action,317,,100.0,,,OR 3.1,UR,,,,,,,3,B7-F9-G10,,,,
-3,RunTrain,Action,318,,40.0,,,OR 3.1,UR,,,,,,,2,C4-B3,,,,
-3,RunTrain,Action,319,,60.0,,,OR 3.1,UR,,,,,,,2,B7-B3,,,,
-3,PayOut,Action,320,,200.0,,,OR 3.1,UR,,,,,,,,,20.0,,,
-3,SharePriceMoves,Event,321,,,,,OR 3.1,UR,80.0,,,,,right,,,,,,
-3,Pass,Action,322,,,,,OR 3.1,UR,,,,,,,,,,,,
-3,Pass,Action,323,,,,,OR 3.1,UR,,,,,,,,,,,,
-3,OperatesCompany,Event,324,Sprint,,,,OR 3.1,TR,,,,,,,,,,,,
-3,LayTile,Action,325,,0.0,,,OR 3.1,TR,,,B5,23,0,,,,,,,
-3,Pass,Action,326,,,,,OR 3.1,TR,,,,,,,,,,,,
-3,RunTrain,Action,327,,80.0,,,OR 3.1,TR,,,,,,,3,G10-G12-G14,,,,
-3,RunTrain,Action,328,,90.0,,,OR 3.1,TR,,,,,,,3,F9-B7-B3,,,,
-3,RunTrain,Action,329,,60.0,,,OR 3.1,TR,,,,,,,2,F9-G10,,,,
-3,PayOut,Action,330,,230.0,,,OR 3.1,TR,,,,,,,,,23.0,,,
-3,SharePriceMoves,Event,331,,,,,OR 3.1,TR,80.0,,,,,right,,,,,,
-3,Pass,Action,332,,,,,OR 3.1,TR,,,,,,,,,,,,
-3,Pass,Action,333,,,,,OR 3.1,TR,,,,,,,,,,,,
-3,OperatesCompany,Event,334,Millie,,,,OR 3.1,KO,,,,,,,,,,,,
-3,LayTile,Action,335,,80.0,,,OR 3.1,KO,,,I4,439,1,,,,,,,
-3,Pass,Action,336,,,,,OR 3.1,KO,,,,,,,,,,,,
-3,RunTrain,Action,337,,100.0,,,OR 3.1,KO,,,,,,,3,K4-J5-I4,,,,
-3,PayOut,Action,338,,100.0,,,OR 3.1,KO,,,,,,,,,10.0,,,
-3,SharePriceMoves,Event,339,,,,,OR 3.1,KO,80.0,,,,,right,,,,,,
-3,BuyTrain,Action,340,,180.0,,The Depot,OR 3.1,KO,,,,,,,3,,,,,
-3,Pass,Action,341,,,,,OR 3.1,KO,,,,,,,,,,,,
-3,Pass,Action,342,,,,,OR 3.1,KO,,,,,,,,,,,,
-3,OperatesCompany,Event,343,mindbomb(UTC+9),,,,OR 3.1,SR,,,,,,,,,,,,
-3,LayTile,Action,344,,0.0,,,OR 3.1,SR,,,I2,6,4,,,,,,,
-3,PlaceToken,Action,345,,40.0,,,OR 3.1,SR,,,I4,,,,,,,,,
-3,Skip,Action,346,,,,,OR 3.1,SR,,,,,,,,,,,,
-3,DoesNotRun,Event,347,,,,,OR 3.1,SR,,,,,,,,,,,,
-3,SharePriceMoves,Event,348,,,,,OR 3.1,SR,60.0,,,,,left,,,,,,
-3,BuyTrain,Action,349,,300.0,,The Depot,OR 3.1,SR,,,,,,,4,,,,,
-4,NewPhase,Event,350,,,,,OR 3.1,,,,,,,,,,,,,
-4,TrainsRust,Event,351,,,,,OR 3.1,,,,,,,,2,,,,,
-4,BuyTrain,Action,352,,300.0,,The Depot,OR 3.1,SR,,,,,,,4,,,,,
-4,Pass,Action,353,,,,,OR 3.1,SR,,,,,,,,,,,,
-4,Skip,Action,354,,,,,OR 3.1,SR,,,,,,,,,,,,
-4,OperatingRound,Event,355,,,,,OR 3.2,,,,,,,,,,,,,
-4,Collect,Action,356,Millie,10.0,,Ehime Railway,OR 3.2,,,,,,,,,,,,,
-4,Collect,Action,357,tado,30.0,,Uno-Takamatsu Ferry,OR 3.2,,,,,,,,,,,,,
-4,Collect,Action,358,mindbomb(UTC+9),20.0,,South Iyo Railway,OR 3.2,,,,,,,,,,,,,
-4,Collect,Action,359,,15.0,,Sumitomo Mines Railway,OR 3.2,IR,,,,,,,,,,,,
-4,Collect,Action,360,,15.0,,Dougo Railway,OR 3.2,UR,,,,,,,,,,,,
-4,Collect,Action,361,,5.0,,Mitsubishi Ferry,OR 3.2,TR,,,,,,,,,,,,
-4,Collect,Action,362,,5.0,,Takamatsu E-Railroad,OR 3.2,KO,,,,,,,,,,,,
-4,OperatesCompany,Event,363,zorbak,,,,OR 3.2,IR,,,,,,,,,,,,
-4,LayTile,Action,364,,0.0,,,OR 3.2,IR,,,H3,9,1,,,,,,,
-4,Skip,Action,365,,,,,OR 3.2,IR,,,,,,,,,,,,
-4,Skip,Action,366,,,,,OR 3.2,IR,,,,,,,,,,,,
-4,DoesNotRun,Event,367,,,,,OR 3.2,IR,,,,,,,,,,,,
-4,SharePriceMoves,Event,368,,,,,OR 3.2,IR,75.0,,,,,left,,,,,,
-4,BuyTrain,Action,369,,300.0,,The Depot,OR 3.2,IR,,,,,,,4,,,,,
-4,Pass,Action,370,,,,,OR 3.2,IR,,,,,,,,,,,,
-4,Skip,Action,371,,,,,OR 3.2,IR,,,,,,,,,,,,
-4,OperatesCompany,Event,372,camping no reception,,,,OR 3.2,UR,,,,,,,,,,,,
-4,Pass,Action,373,,,,,OR 3.2,UR,,,,,,,,,,,,
-4,Pass,Action,374,,,,,OR 3.2,UR,,,,,,,,,,,,
-4,RunTrain,Action,375,,100.0,,,OR 3.2,UR,,,,,,,3,B7-F9-G10,,,,
-4,PayOut,Action,376,,100.0,,,OR 3.2,UR,,,,,,,,,10.0,,,
-4,SharePriceMoves,Event,377,,,,,OR 3.2,UR,90.0,,,,,right,,,,,,
-4,Pass,Action,378,,,,,OR 3.2,UR,,,,,,,,,,,,
-4,Pass,Action,379,,,,,OR 3.2,UR,,,,,,,,,,,,
-4,OperatesCompany,Event,380,Sprint,,,,OR 3.2,TR,,,,,,,,,,,,
-4,LayTile,Action,381,,0.0,,,OR 3.2,TR,,,E8,25,5,,,,,,,
-4,Pass,Action,382,,,,,OR 3.2,TR,,,,,,,,,,,,
-4,RunTrain,Action,383,,80.0,,,OR 3.2,TR,,,,,,,3,G10-G12-G14,,,,
-4,RunTrain,Action,384,,100.0,,,OR 3.2,TR,,,,,,,3,B7-F9-G10,,,,
-4,PayOut,Action,385,,180.0,,,OR 3.2,TR,,,,,,,,,18.0,,,
-4,SharePriceMoves,Event,386,,,,,OR 3.2,TR,90.0,,,,,right,,,,,,
-4,Pass,Action,387,,,,,OR 3.2,TR,,,,,,,,,,,,
-4,Pass,Action,388,,,,,OR 3.2,TR,,,,,,,,,,,,
-4,OperatesCompany,Event,389,Millie,,,,OR 3.2,KO,,,,,,,,,,,,
-4,LayTile,Action,390,,0.0,,,OR 3.2,KO,,,I2,15,4,,,,,,,
-4,PlaceToken,Action,391,,40.0,,,OR 3.2,KO,,,I2,,,,,,,,,
-4,RunTrain,Action,392,,100.0,,,OR 3.2,KO,,,,,,,3,K4-J5-I4,,,,
-4,RunTrain,Action,393,,110.0,,,OR 3.2,KO,,,,,,,3,I4-I2-G4,,,,
-4,Withhold,Action,394,,210.0,,,OR 3.2,KO,,,,,,,,,,,,
-4,SharePriceMoves,Event,395,,,,,OR 3.2,KO,75.0,,,,,left,,,,,,
-4,Pass,Action,396,,,,,OR 3.2,KO,,,,,,,,,,,,
-4,Pass,Action,397,,,,,OR 3.2,KO,,,,,,,,,,,,
-4,OperatesCompany,Event,398,mindbomb(UTC+9),,,,OR 3.2,SR,,,,,,,,,,,,
-4,Pass,Action,399,,,,,OR 3.2,SR,,,,,,,,,,,,
-4,Skip,Action,400,,,,,OR 3.2,SR,,,,,,,,,,,,
-4,RunTrain,Action,401,,100.0,,,OR 3.2,SR,,,,,,,4,I4-J5-K4,,,,
-4,RunTrain,Action,402,,140.0,,,OR 3.2,SR,,,,,,,4,I4-I2-G4-F3,,,,
-4,PayOut,Action,403,,240.0,,,OR 3.2,SR,,,,,,,,,24.0,,,
-4,SharePriceMoves,Event,404,,,,,OR 3.2,SR,65.0,,,,,right,,,,,,
-4,Pass,Action,405,,,,,OR 3.2,SR,,,,,,,,,,,,
-4,Skip,Action,406,,,,,OR 3.2,SR,,,,,,,,,,,,
-4,StockRound,Event,407,,,,,SR 4,,,,,,,,,,,,,
-4,SellShares,Action,409,Sprint,90.0,,,SR 4,UR,,10.0,,,,,,,,,,
-4,SharePriceMoves,Event,410,,,,,SR 4,UR,80.0,,,,,down,,,,,,
-4,SellShares,Action,411,Sprint,75.0,,,SR 4,KO,,10.0,,,,,,,,,,
-4,SharePriceMoves,Event,412,,,,,SR 4,KO,70.0,,,,,down,,,,,,
-4,Par,Action,413,Sprint,,,,SR 4,KU,100.0,,,,,,,,,,,
-4,BuyShare,Action,414,Sprint,200.0,,IPO,SR 4,KU,,20.0,,,,,,,,,,
-4,PresidentNomination,Event,415,Sprint,,,,SR 4,KU,,,,,,,,,,,,
-4,BuyShare,Action,416,Millie,65.0,,IPO,SR 4,SR,,10.0,,,,,,,,,,
-4,Skip,Action,417,Millie,,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,418,zorbak,65.0,,IPO,SR 4,SR,,10.0,,,,,,,,,,
-4,Skip,Action,419,zorbak,,,,SR 4,,,,,,,,,,,,,
-4,SellShares,Action,420,tado,150.0,,,SR 4,IR,,20.0,,,,,,,,,,
-4,SharePriceMoves,Event,421,,,,,SR 4,IR,65.0,,,,,down,,,,,,
-4,SellShares,Action,422,tado,140.0,,,SR 4,KO,,20.0,,,,,,,,,,
-4,SharePriceMoves,Event,423,,,,,SR 4,KO,60.0,,,,,down,,,,,,
-4,SellShares,Action,424,tado,90.0,,,SR 4,TR,,10.0,,,,,,,,,,
-4,SharePriceMoves,Event,425,,,,,SR 4,TR,80.0,,,,,down,,,,,,
-4,SellShares,Action,426,tado,80.0,,,SR 4,UR,,10.0,,,,,,,,,,
-4,Par,Action,427,tado,,,,SR 4,AR,100.0,,,,,,,,,,,
-4,BuyShare,Action,428,tado,200.0,,IPO,SR 4,AR,,20.0,,,,,,,,,,
-4,PresidentNomination,Event,429,tado,,,,SR 4,AR,,,,,,,,,,,,
-4,BuyShare,Action,430,mindbomb(UTC+9),65.0,,IPO,SR 4,SR,,10.0,,,,,,,,,,
-4,Skip,Action,431,mindbomb(UTC+9),,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,432,camping no reception,60.0,,market,SR 4,KO,,10.0,,,,,,,,,,
-4,Skip,Action,433,camping no reception,,,,SR 4,,,,,,,,,,,,,
-4,SellShares,Action,434,Sprint,80.0,,,SR 4,TR,,10.0,,,,,,,,,,
-4,BuyShare,Action,435,Sprint,65.0,,IPO,SR 4,SR,,10.0,,,,,,,,,,
-4,BuyShare,Action,436,Millie,65.0,,market,SR 4,IR,,10.0,,,,,,,,,,
-4,Skip,Action,437,Millie,,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,438,zorbak,60.0,,market,SR 4,KO,,10.0,,,,,,,,,,
-4,Skip,Action,439,zorbak,,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,440,tado,100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,
-4,Skip,Action,441,tado,,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,442,mindbomb(UTC+9),100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,
-4,Skip,Action,443,mindbomb(UTC+9),,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,444,camping no reception,,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,446,Sprint,100.0,,IPO,SR 4,KU,,10.0,,,,,,,,,,
-4,Skip,Action,447,Sprint,,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,448,Millie,,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,449,zorbak,65.0,,market,SR 4,IR,,10.0,,,,,,,,,,
-4,Skip,Action,450,zorbak,,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,451,tado,100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,
-4,CompanyFloats,Event,452,,,,,SR 4,AR,,,,,,,,,,,,
-4,ReceiveFunds,Event,453,,1000.0,,,SR 4,AR,,,,,,,,,,,,
-4,Skip,Action,454,tado,,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,455,mindbomb(UTC+9),,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,456,camping no reception,100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,
-4,Skip,Action,457,camping no reception,,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,459,Sprint,100.0,,IPO,SR 4,KU,,10.0,,,,,,,,,,
-4,Skip,Action,460,Sprint,,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,461,Millie,,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,462,zorbak,,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,463,tado,100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,
-4,Skip,Action,464,tado,,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,465,mindbomb(UTC+9),,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,466,camping no reception,100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,
-4,Skip,Action,467,camping no reception,,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,468,Sprint,100.0,,IPO,SR 4,KU,,10.0,,,,,,,,,,
-4,CompanyFloats,Event,469,,,,,SR 4,KU,,,,,,,,,,,,
-4,ReceiveFunds,Event,470,,1000.0,,,SR 4,KU,,,,,,,,,,,,
-4,Skip,Action,471,Sprint,,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,472,Millie,,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,473,zorbak,,,,SR 4,,,,,,,,,,,,,
-4,BuyShare,Action,474,tado,100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,
-4,Skip,Action,475,tado,,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,476,mindbomb(UTC+9),,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,477,camping no reception,,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,478,Sprint,,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,479,Millie,,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,480,zorbak,,,,SR 4,,,,,,,,,,,,,
-4,Pass,Action,481,tado,,,,SR 4,,,,,,,,,,,,,
-4,SharePriceMoves,Event,482,,,,,SR 4,IR,70.0,,,,,up,,,,,,
-4,SharePriceMoves,Event,483,,,,,SR 4,SR,70.0,,,,,up,,,,,,
-4,PriorityDeal,Event,484,mindbomb(UTC+9),,,,SR 4,,,,,,,,,,,,,
-4,OperatingRound,Event,485,,,,,OR 4.1,,,,,,,,,,,,,
-4,Collect,Action,486,mindbomb(UTC+9),20.0,,South Iyo Railway,OR 4.1,,,,,,,,,,,,,
-4,Collect,Action,487,Millie,10.0,,Ehime Railway,OR 4.1,,,,,,,,,,,,,
-4,Collect,Action,488,tado,30.0,,Uno-Takamatsu Ferry,OR 4.1,,,,,,,,,,,,,
-4,Collect,Action,489,,15.0,,Dougo Railway,OR 4.1,UR,,,,,,,,,,,,
-4,Collect,Action,490,,5.0,,Mitsubishi Ferry,OR 4.1,TR,,,,,,,,,,,,
-4,Collect,Action,491,,15.0,,Sumitomo Mines Railway,OR 4.1,IR,,,,,,,,,,,,
-4,Collect,Action,492,,5.0,,Takamatsu E-Railroad,OR 4.1,KO,,,,,,,,,,,,
-4,PlaceToken,Action,493,,0.0,,,OR 4.1,KU,,,C10,,,,,,,,,
-4,PlaceToken,Action,494,,0.0,,,OR 4.1,AR,,,K8,,,,,,,,,
-4,OperatesCompany,Event,495,Sprint,,,,OR 4.1,KU,,,,,,,,,,,,
-4,LayTile,Action,496,,0.0,,,OR 4.1,KU,,,C10,5,3,,,,,,,
-4,Skip,Action,497,,,,,OR 4.1,KU,,,,,,,,,,,,
-4,Skip,Action,498,,,,,OR 4.1,KU,,,,,,,,,,,,
-4,DoesNotRun,Event,499,,,,,OR 4.1,KU,,,,,,,,,,,,
-4,SharePriceMoves,Event,500,,,,,OR 4.1,KU,90.0,,,,,left,,,,,,
-4,BuyTrain,Action,501,,300.0,,The Depot,OR 4.1,KU,,,,,,,4,,,,,
-4,BuyTrain,Action,502,,450.0,,The Depot,OR 4.1,KU,,,,,,,5,,,,,
-5,NewPhase,Event,503,,,,,OR 4.1,,,,,,,,,,,,,
-5,AllPrivatesClose,Event,504,,,,,OR 4.1,,,,,,,,,,,,,
-5,Skip,Action,505,,,,,OR 4.1,KU,,,,,,,,,,,,
-5,OperatesCompany,Event,506,tado,,,,OR 4.1,AR,,,,,,,,,,,,
-5,LayTile,Action,507,,0.0,,,OR 4.1,AR,,,K8,57,1,,,,,,,
-5,Skip,Action,508,,,,,OR 4.1,AR,,,,,,,,,,,,
-5,Skip,Action,509,,,,,OR 4.1,AR,,,,,,,,,,,,
-5,DoesNotRun,Event,510,,,,,OR 4.1,AR,,,,,,,,,,,,
-5,SharePriceMoves,Event,511,,,,,OR 4.1,AR,90.0,,,,,left,,,,,,
-5,BuyTrain,Action,512,,450.0,,The Depot,OR 4.1,AR,,,,,,,5,,,,,
-5,Pass,Action,513,,,,,OR 4.1,AR,,,,,,,,,,,,
-5,Skip,Action,514,,,,,OR 4.1,AR,,,,,,,,,,,,
-5,OperatesCompany,Event,515,camping no reception,,,,OR 4.1,UR,,,,,,,,,,,,
-5,LayTile,Action,516,,0.0,,,OR 4.1,UR,,,C4,14,1,,,,,,,
-5,Pass,Action,517,,,,,OR 4.1,UR,,,,,,,,,,,,
-5,RunTrain,Action,518,,100.0,,,OR 4.1,UR,,,,,,,3,C4-B7-F9,,,,
-5,PayOut,Action,519,,100.0,,,OR 4.1,UR,,,,,,,,,10.0,,,
-5,SharePriceMoves,Event,520,,,,,OR 4.1,UR,90.0,,,,,up,,,,,,
-5,Pass,Action,521,,,,,OR 4.1,UR,,,,,,,,,,,,
-5,Skip,Action,522,,,,,OR 4.1,UR,,,,,,,,,,,,
-5,OperatesCompany,Event,523,Sprint,,,,OR 4.1,TR,,,,,,,,,,,,
-5,LayTile,Action,525,,0.0,,,OR 4.1,TR,,,D9,23,4,,,,,,,
-5,Pass,Action,526,,,,,OR 4.1,TR,,,,,,,,,,,,
-5,RunTrain,Action,527,,90.0,,,OR 4.1,TR,,,,,,,3,G12-G10-F9,,,,
-5,RunTrain,Action,528,,100.0,,,OR 4.1,TR,,,,,,,3,F9-B7-C4,,,,
-5,Withhold,Action,529,,190.0,,,OR 4.1,TR,,,,,,,,,,,,
-5,SharePriceMoves,Event,530,,,,,OR 4.1,TR,75.0,,,,,left,,,,,,
-5,Skip,Action,531,,,,,OR 4.1,TR,,,,,,,,,,,,
-5,Skip,Action,532,,,,,OR 4.1,TR,,,,,,,,,,,,
-5,OperatesCompany,Event,533,zorbak,,,,OR 4.1,IR,,,,,,,,,,,,
-5,LayTile,Action,534,,0.0,,,OR 4.1,IR,,,E2,12,4,,,,,,,
-5,Skip,Action,535,,,,,OR 4.1,IR,,,,,,,,,,,,
-5,RunTrain,Action,536,,140.0,,,OR 4.1,IR,,,,,,,4,F1-E2-F3-G4,,,,
-5,PayOut,Action,537,,140.0,,,OR 4.1,IR,,,,,,,,,14.0,,,
-5,SharePriceMoves,Event,538,,,,,OR 4.1,IR,75.0,,,,,right,,,,,,
-5,Pass,Action,539,,,,,OR 4.1,IR,,,,,,,,,,,,
-5,Skip,Action,540,,,,,OR 4.1,IR,,,,,,,,,,,,
-5,OperatesCompany,Event,541,mindbomb(UTC+9),,,,OR 4.1,SR,,,,,,,,,,,,
-5,Pass,Action,542,,,,,OR 4.1,SR,,,,,,,,,,,,
-5,Skip,Action,543,,,,,OR 4.1,SR,,,,,,,,,,,,
-5,RunTrain,Action,544,,120.0,,,OR 4.1,SR,,,,,,,4,J1-I2-G4-F3,,,,
-5,RunTrain,Action,545,,130.0,,,OR 4.1,SR,,,,,,,4,I2-I4-J5-K4,,,,
-5,Withhold,Action,546,,250.0,,,OR 4.1,SR,,,,,,,,,,,,
-5,SharePriceMoves,Event,547,,,,,OR 4.1,SR,65.0,,,,,left,,,,,,
-5,Skip,Action,548,,,,,OR 4.1,SR,,,,,,,,,,,,
-5,Skip,Action,549,,,,,OR 4.1,SR,,,,,,,,,,,,
-5,OperatesCompany,Event,550,Millie,,,,OR 4.1,KO,,,,,,,,,,,,
-5,LayTile,Action,551,,0.0,,,OR 4.1,KO,,,K4,440,0,,,,,,,
-5,Skip,Action,552,,,,,OR 4.1,KO,,,,,,,,,,,,
-5,RunTrain,Action,553,,110.0,,,OR 4.1,KO,,,,,,,3,K4-J5-I4,,,,
-5,RunTrain,Action,554,,130.0,,,OR 4.1,KO,,,,,,,3,J1-I2-I4,,,,
-5,PayOut,Action,555,,240.0,,,OR 4.1,KO,,,,,,,,,24.0,,,
-5,SharePriceMoves,Event,556,,,,,OR 4.1,KO,65.0,,,,,up,,,,,,
-5,Skip,Action,557,,,,,OR 4.1,KO,,,,,,,,,,,,
-5,Skip,Action,558,,,,,OR 4.1,KO,,,,,,,,,,,,
-5,OperatingRound,Event,559,,,,,OR 4.2,,,,,,,,,,,,,
-5,Collect,Action,560,tado,50.0,,Uno-Takamatsu Ferry,OR 4.2,,,,,,,,,,,,,
-5,OperatesCompany,Event,561,camping no reception,,,,OR 4.2,UR,,,,,,,,,,,,
-5,LayTile,Action,562,,0.0,,,OR 4.2,UR,,,D3,9,1,,,,,,,
-5,Pass,Action,563,,,,,OR 4.2,UR,,,,,,,,,,,,
-5,RunTrain,Action,564,,100.0,,,OR 4.2,UR,,,,,,,3,C4-B7-F9,,,,
-5,PayOut,Action,565,,100.0,,,OR 4.2,UR,,,,,,,,,10.0,,,
-5,SharePriceMoves,Event,566,,,,,OR 4.2,UR,100.0,,,,,right,,,,,,
-5,Pass,Action,567,,,,,OR 4.2,UR,,,,,,,,,,,,
-5,Skip,Action,568,,,,,OR 4.2,UR,,,,,,,,,,,,
-5,OperatesCompany,Event,569,Sprint,,,,OR 4.2,KU,,,,,,,,,,,,
-5,LayTile,Action,571,,0.0,,,OR 4.2,KU,,,D9,41,1,,,,,,,
-5,Skip,Action,572,,,,,OR 4.2,KU,,,,,,,,,,,,
-5,RunTrain,Action,573,,130.0,,,OR 4.2,KU,,,,,,,5,C10-F9-G10-G12-G14,,,,
-5,PayOut,Action,574,,130.0,,,OR 4.2,KU,,,,,,,,,13.0,,,
-5,SharePriceMoves,Event,575,,,,,OR 4.2,KU,100.0,,,,,right,,,,,,
-5,Skip,Action,576,,,,,OR 4.2,KU,,,,,,,,,,,,
-5,Skip,Action,577,,,,,OR 4.2,KU,,,,,,,,,,,,
-5,OperatesCompany,Event,578,tado,,,,OR 4.2,AR,,,,,,,,,,,,
-5,LayTile,Action,579,,0.0,,,OR 4.2,AR,,,K8,15,1,,,,,,,
-5,Skip,Action,580,,,,,OR 4.2,AR,,,,,,,,,,,,
-5,RunTrain,Action,581,,70.0,,,OR 4.2,AR,,,,,,,5,K8-L7,,,,
-5,PayOut,Action,582,,70.0,,,OR 4.2,AR,,,,,,,,,7.0,,,
-5,SharePriceMoves,Event,583,,,,,OR 4.2,AR,100.0,,,,,right,,,,,,
-5,Pass,Action,584,,,,,OR 4.2,AR,,,,,,,,,,,,
-5,Skip,Action,585,,,,,OR 4.2,AR,,,,,,,,,,,,
-5,OperatesCompany,Event,586,Sprint,,,,OR 4.2,TR,,,,,,,,,,,,
-5,LayTile,Action,587,,0.0,,,OR 4.2,TR,,,E2,448,4,,,,,,,
-5,PlaceToken,Action,588,,40.0,,,OR 4.2,TR,,,E2,,,,,,,,,
-5,RunTrain,Action,589,,90.0,,,OR 4.2,TR,,,,,,,3,G12-G10-F9,,,,
-5,RunTrain,Action,590,,100.0,,,OR 4.2,TR,,,,,,,3,F9-B7-C4,,,,
-5,PayOut,Action,591,,190.0,,,OR 4.2,TR,,,,,,,,,19.0,,,
-5,SharePriceMoves,Event,592,,,,,OR 4.2,TR,80.0,,,,,right,,,,,,
-5,Skip,Action,593,,,,,OR 4.2,TR,,,,,,,,,,,,
-5,Skip,Action,594,,,,,OR 4.2,TR,,,,,,,,,,,,
-5,OperatesCompany,Event,595,zorbak,,,,OR 4.2,IR,,,,,,,,,,,,
-5,LayTile,Action,596,,0.0,,,OR 4.2,IR,,,C4,611,4,,,,,,,
-5,Skip,Action,597,,,,,OR 4.2,IR,,,,,,,,,,,,
-5,RunTrain,Action,598,,180.0,,,OR 4.2,IR,,,,,,,4,F1-E2-C4-B7,,,,
-5,PayOut,Action,599,,180.0,,,OR 4.2,IR,,,,,,,,,18.0,,,
-5,SharePriceMoves,Event,600,,,,,OR 4.2,IR,80.0,,,,,right,,,,,,
-5,Pass,Action,601,,,,,OR 4.2,IR,,,,,,,,,,,,
-5,Skip,Action,602,,,,,OR 4.2,IR,,,,,,,,,,,,
-5,OperatesCompany,Event,603,Millie,,,,OR 4.2,KO,,,,,,,,,,,,
-5,LayTile,Action,604,,80.0,,,OR 4.2,KO,,,I4,492,0,,,,,,,
-5,Skip,Action,605,,,,,OR 4.2,KO,,,,,,,,,,,,
-5,RunTrain,Action,606,,130.0,,,OR 4.2,KO,,,,,,,3,K4-J5-I4,,,,
-5,RunTrain,Action,607,,150.0,,,OR 4.2,KO,,,,,,,3,J1-I2-I4,,,,
-5,PayOut,Action,608,,280.0,,,OR 4.2,KO,,,,,,,,,28.0,,,
-5,SharePriceMoves,Event,609,,,,,OR 4.2,KO,70.0,,,,,right,,,,,,
-5,Skip,Action,610,,,,,OR 4.2,KO,,,,,,,,,,,,
-5,Skip,Action,611,,,,,OR 4.2,KO,,,,,,,,,,,,
-5,OperatesCompany,Event,612,mindbomb(UTC+9),,,,OR 4.2,SR,,,,,,,,,,,,
-5,LayTile,Action,613,,80.0,,,OR 4.2,SR,,,K6,9,0,,,,,,,
-5,Skip,Action,614,,,,,OR 4.2,SR,,,,,,,,,,,,
-5,RunTrain,Action,615,,160.0,,,OR 4.2,SR,,,,,,,4,I4-I2-G4-F3,,,,
-5,RunTrain,Action,616,,170.0,,,OR 4.2,SR,,,,,,,4,I4-J5-K4-J1,,,,
-5,PayOut,Action,617,,330.0,,,OR 4.2,SR,,,,,,,,,33.0,,,
-5,SharePriceMoves,Event,618,,,,,OR 4.2,SR,70.0,,,,,right,,,,,,
-5,Skip,Action,619,,,,,OR 4.2,SR,,,,,,,,,,,,
-5,Skip,Action,620,,,,,OR 4.2,SR,,,,,,,,,,,,
-5,StockRound,Event,621,,,,,SR 5,,,,,,,,,,,,,
-5,BuyShare,Action,622,mindbomb(UTC+9),100.0,,IPO,SR 5,KU,,10.0,,,,,,,,,,
-5,Skip,Action,623,mindbomb(UTC+9),,,,SR 5,,,,,,,,,,,,,
-5,SellShares,Action,624,camping no reception,100.0,,,SR 5,UR,,10.0,,,,,,,,,,
-5,BuyShare,Action,625,camping no reception,100.0,,IPO,SR 5,AR,,10.0,,,,,,,,,,
-5,SellShares,Action,626,Sprint,80.0,,,SR 5,IR,,10.0,,,,,,,,,,
-5,BuyShare,Action,627,Sprint,100.0,,IPO,SR 5,KU,,10.0,,,,,,,,,,
-5,SellShares,Action,628,Millie,280.0,,,SR 5,KO,,40.0,,,,,,,,,,
-5,PresidentNomination,Event,629,zorbak,,,,SR 5,KO,,,,,,,,,,,,
-5,BuyShare,Action,630,Millie,100.0,,IPO,SR 5,KU,,10.0,,,,,,,,,,
-5,BuyShare,Action,632,zorbak,70.0,,market,SR 5,KO,,10.0,,,,,,,,,,
-5,Skip,Action,633,zorbak,,,,SR 5,,,,,,,,,,,,,
-5,BuyShare,Action,634,tado,100.0,,IPO,SR 5,KU,,10.0,,,,,,,,,,
-5,Skip,Action,635,tado,,,,SR 5,,,,,,,,,,,,,
-5,BuyShare,Action,636,mindbomb(UTC+9),100.0,,IPO,SR 5,KU,,10.0,,,,,,,,,,
-5,Skip,Action,637,mindbomb(UTC+9),,,,SR 5,,,,,,,,,,,,,
-5,Pass,Action,638,camping no reception,,,,SR 5,,,,,,,,,,,,,
-5,BuyShare,Action,640,Sprint,70.0,,market,SR 5,KO,,10.0,,,,,,,,,,
-5,Skip,Action,641,Sprint,,,,SR 5,,,,,,,,,,,,,
-5,Pass,Action,642,Millie,,,,SR 5,,,,,,,,,,,,,
-5,Pass,Action,643,zorbak,,,,SR 5,,,,,,,,,,,,,
-5,BuyShare,Action,644,tado,70.0,,market,SR 5,KO,,10.0,,,,,,,,,,
-5,Skip,Action,645,tado,,,,SR 5,,,,,,,,,,,,,
-5,Pass,Action,646,mindbomb(UTC+9),,,,SR 5,,,,,,,,,,,,,
-5,Pass,Action,647,camping no reception,,,,SR 5,,,,,,,,,,,,,
-5,Pass,Action,648,Sprint,,,,SR 5,,,,,,,,,,,,,
-5,Pass,Action,649,Millie,,,,SR 5,,,,,,,,,,,,,
-5,Pass,Action,650,zorbak,,,,SR 5,,,,,,,,,,,,,
-5,Pass,Action,651,tado,,,,SR 5,,,,,,,,,,,,,
-5,SharePriceMoves,Event,652,,,,,SR 5,SR,75.0,,,,,up,,,,,,
-5,PriorityDeal,Event,653,mindbomb(UTC+9),,,,SR 5,,,,,,,,,,,,,
-5,OperatingRound,Event,654,,,,,OR 5.1,,,,,,,,,,,,,
-5,Collect,Action,655,tado,50.0,,Uno-Takamatsu Ferry,OR 5.1,,,,,,,,,,,,,
-5,OperatesCompany,Event,656,camping no reception,,,,OR 5.1,UR,,,,,,,,,,,,
-5,Pass,Action,657,,,,,OR 5.1,UR,,,,,,,,,,,,
-5,Pass,Action,658,,,,,OR 5.1,UR,,,,,,,,,,,,
-5,RunTrain,Action,659,,120.0,,,OR 5.1,UR,,,,,,,3,B7-C4-E2,,,,
-5,PayOut,Action,660,,120.0,,,OR 5.1,UR,,,,,,,,,12.0,,,
-5,SharePriceMoves,Event,661,,,,,OR 5.1,UR,110.0,,,,,up,,,,,,
-5,Pass,Action,662,,,,,OR 5.1,UR,,,,,,,,,,,,
-5,Skip,Action,663,,,,,OR 5.1,UR,,,,,,,,,,,,
-5,OperatesCompany,Event,664,Sprint,,,,OR 5.1,KU,,,,,,,,,,,,
-5,LayTile,Action,665,,0.0,,,OR 5.1,KU,,,C8,23,2,,,,,,,
-5,Skip,Action,666,,,,,OR 5.1,KU,,,,,,,,,,,,
-5,RunTrain,Action,667,,130.0,,,OR 5.1,KU,,,,,,,5,C10-F9-G10-G12-G14,,,,
-5,RunTrain,Action,668,,140.0,,,OR 5.1,KU,,,,,,,4,C10-B7-C4-E2,,,,
-5,PayOut,Action,669,,270.0,,,OR 5.1,KU,,,,,,,,,27.0,,,
-5,SharePriceMoves,Event,670,,,,,OR 5.1,KU,110.0,,,,,right,,,,,,
-5,Skip,Action,671,,,,,OR 5.1,KU,,,,,,,,,,,,
-5,Skip,Action,672,,,,,OR 5.1,KU,,,,,,,,,,,,
-5,OperatesCompany,Event,673,tado,,,,OR 5.1,AR,,,,,,,,,,,,
-5,LayTile,Action,674,,0.0,,,OR 5.1,AR,,,J9,58,4,,,,,,,
-5,PlaceToken,Action,675,,40.0,,,OR 5.1,AR,,,K4,,,,,,,,,
-5,RunTrain,Action,676,,200.0,,,OR 5.1,AR,,,,,,,5,I4-J5-K4-K8-L7,,,,
-5,PayOut,Action,677,,200.0,,,OR 5.1,AR,,,,,,,,,20.0,,,
-5,SharePriceMoves,Event,678,,,,,OR 5.1,AR,110.0,,,,,right,,,,,,
-5,BuyTrain,Action,679,,450.0,,The Depot,OR 5.1,AR,,,,,,,5,,,,,
-5,Skip,Action,680,,,,,OR 5.1,AR,,,,,,,,,,,,
-5,OperatesCompany,Event,681,Sprint,,,,OR 5.1,TR,,,,,,,,,,,,
-5,LayTile,Action,683,,0.0,,,OR 5.1,TR,,,C10,206,4,,,,,,,
-5,Skip,Action,684,,,,,OR 5.1,TR,,,,,,,,,,,,
-5,RunTrain,Action,685,,110.0,,,OR 5.1,TR,,,,,,,3,F9-B7-C4,,,,
-5,RunTrain,Action,686,,140.0,,,OR 5.1,TR,,,,,,,3,F1-E2-C4,,,,
-5,Withhold,Action,687,,250.0,,,OR 5.1,TR,,,,,,,,,,,,
-5,SharePriceMoves,Event,688,,,,,OR 5.1,TR,75.0,,,,,left,,,,,,
-5,Skip,Action,689,,,,,OR 5.1,TR,,,,,,,,,,,,
-5,Skip,Action,690,,,,,OR 5.1,TR,,,,,,,,,,,,
-5,OperatesCompany,Event,691,zorbak,,,,OR 5.1,IR,,,,,,,,,,,,
-5,LayTile,Action,692,,0.0,,,OR 5.1,IR,,,G4,14,1,,,,,,,
-5,Skip,Action,693,,,,,OR 5.1,IR,,,,,,,,,,,,
-5,RunTrain,Action,694,,180.0,,,OR 5.1,IR,,,,,,,4,F1-E2-C4-B7,,,,
-5,PayOut,Action,695,,180.0,,,OR 5.1,IR,,,,,,,,,18.0,,,
-5,SharePriceMoves,Event,696,,,,,OR 5.1,IR,90.0,,,,,up,,,,,,
-5,Pass,Action,697,,,,,OR 5.1,IR,,,,,,,,,,,,
-5,Skip,Action,698,,,,,OR 5.1,IR,,,,,,,,,,,,
-5,OperatesCompany,Event,699,mindbomb(UTC+9),,,,OR 5.1,SR,,,,,,,,,,,,
-5,LayTile,Action,700,,0.0,,,OR 5.1,SR,,,K4,466,0,,,,,,,
-5,Skip,Action,701,,,,,OR 5.1,SR,,,,,,,,,,,,
-5,RunTrain,Action,702,,150.0,,,OR 5.1,SR,,,,,,,4,I4-J5-K4,,,,
-5,RunTrain,Action,703,,170.0,,,OR 5.1,SR,,,,,,,4,I4-I2-G4-F3,,,,
-5,PayOut,Action,704,,320.0,,,OR 5.1,SR,,,,,,,,,32.0,,,
-5,SharePriceMoves,Event,705,,,,,OR 5.1,SR,80.0,,,,,right,,,,,,
-5,Skip,Action,706,,,,,OR 5.1,SR,,,,,,,,,,,,
-5,Skip,Action,707,,,,,OR 5.1,SR,,,,,,,,,,,,
-5,OperatesCompany,Event,708,zorbak,,,,OR 5.1,KO,,,,,,,,,,,,
-5,LayTile,Action,709,,80.0,,,OR 5.1,KO,,,H5,8,2,,,,,,,
-5,Skip,Action,710,,,,,OR 5.1,KO,,,,,,,,,,,,
-5,RunTrain,Action,711,,150.0,,,OR 5.1,KO,,,,,,,3,K4-J5-I4,,,,
-5,RunTrain,Action,712,,150.0,,,OR 5.1,KO,,,,,,,3,J1-I2-I4,,,,
-5,Withhold,Action,713,,300.0,,,OR 5.1,KO,,,,,,,,,,,,
-5,SharePriceMoves,Event,714,,,,,OR 5.1,KO,65.0,,,,,left,,,,,,
-5,Skip,Action,715,,,,,OR 5.1,KO,,,,,,,,,,,,
-5,Skip,Action,716,,,,,OR 5.1,KO,,,,,,,,,,,,
-5,OperatingRound,Event,717,,,,,OR 5.2,,,,,,,,,,,,,
-5,Collect,Action,718,tado,50.0,,Uno-Takamatsu Ferry,OR 5.2,,,,,,,,,,,,,
-5,OperatesCompany,Event,719,camping no reception,,,,OR 5.2,UR,,,,,,,,,,,,
-5,LayTile,Action,720,,0.0,,,OR 5.2,UR,,,C10,448,1,,,,,,,
-5,Pass,Action,721,,,,,OR 5.2,UR,,,,,,,,,,,,
-5,RunTrain,Action,722,,120.0,,,OR 5.2,UR,,,,,,,3,B7-C4-E2,,,,
-5,PayOut,Action,723,,120.0,,,OR 5.2,UR,,,,,,,,,12.0,,,
-5,SharePriceMoves,Event,724,,,,,OR 5.2,UR,125.0,,,,,right,,,,,,
-5,Pass,Action,725,,,,,OR 5.2,UR,,,,,,,,,,,,
-5,Skip,Action,726,,,,,OR 5.2,UR,,,,,,,,,,,,
-5,OperatesCompany,Event,727,Sprint,,,,OR 5.2,KU,,,,,,,,,,,,
-5,LayTile,Action,728,,80.0,,,OR 5.2,KU,,,F9,465,2,,,,,,,
-5,Skip,Action,729,,,,,OR 5.2,KU,,,,,,,,,,,,
-5,RunTrain,Action,730,,180.0,,,OR 5.2,KU,,,,,,,5,C10-F9-G10-G12-G14,,,,
-5,RunTrain,Action,731,,160.0,,,OR 5.2,KU,,,,,,,4,C10-B7-C4-E2,,,,
-5,PayOut,Action,732,,340.0,,,OR 5.2,KU,,,,,,,,,34.0,,,
-5,SharePriceMoves,Event,733,,,,,OR 5.2,KU,125.0,,,,,right,,,,,,
-5,Skip,Action,734,,,,,OR 5.2,KU,,,,,,,,,,,,
-5,Skip,Action,735,,,,,OR 5.2,KU,,,,,,,,,,,,
-5,OperatesCompany,Event,736,tado,,,,OR 5.2,AR,,,,,,,,,,,,
-5,LayTile,Action,737,,0.0,,,OR 5.2,AR,,,J11,6,1,,,,,,,
-5,Skip,Action,738,,,,,OR 5.2,AR,,,,,,,,,,,,
-5,RunTrain,Action,739,,170.0,,,OR 5.2,AR,,,,,,,5,L7-K8-K4-J1,,,,
-5,RunTrain,Action,740,,210.0,,,OR 5.2,AR,,,,,,,5,K4-J5-I4-G4-I2,,,,
-5,PayOut,Action,741,,380.0,,,OR 5.2,AR,,,,,,,,,38.0,,,
-5,SharePriceMoves,Event,742,,,,,OR 5.2,AR,125.0,,,,,right,,,,,,
-5,Skip,Action,743,,,,,OR 5.2,AR,,,,,,,,,,,,
-5,Skip,Action,744,,,,,OR 5.2,AR,,,,,,,,,,,,
-5,OperatesCompany,Event,745,zorbak,,,,OR 5.2,IR,,,,,,,,,,,,
-5,LayTile,Action,746,,0.0,,,OR 5.2,IR,,,E8,45,1,,,,,,,
-5,Skip,Action,747,,,,,OR 5.2,IR,,,,,,,,,,,,
-5,RunTrain,Action,748,,200.0,,,OR 5.2,IR,,,,,,,4,F1-F3-G4-I4,,,,
-5,PayOut,Action,749,,200.0,,,OR 5.2,IR,,,,,,,,,20.0,,,
-5,SharePriceMoves,Event,750,,,,,OR 5.2,IR,100.0,,,,,right,,,,,,
-5,BuyTrain,Action,751,,13.0,,KO,OR 5.2,IR,,,,,,,3,,,,,
-5,Skip,Action,752,,,,,OR 5.2,IR,,,,,,,,,,,,
-5,OperatesCompany,Event,753,mindbomb(UTC+9),,,,OR 5.2,SR,,,,,,,,,,,,
-5,LayTile,Action,754,,0.0,,,OR 5.2,SR,,,F3,611,5,,,,,,,
-5,Skip,Action,755,,,,,OR 5.2,SR,,,,,,,,,,,,
-5,RunTrain,Action,756,,180.0,,,OR 5.2,SR,,,,,,,4,I2-I4-J5-K4,,,,
-5,RunTrain,Action,757,,210.0,,,OR 5.2,SR,,,,,,,4,I4-G4-F3-F1,,,,
-5,PayOut,Action,758,,390.0,,,OR 5.2,SR,,,,,,,,,39.0,,,
-5,SharePriceMoves,Event,759,,,,,OR 5.2,SR,90.0,,,,,right,,,,,,
-5,Skip,Action,760,,,,,OR 5.2,SR,,,,,,,,,,,,
-5,Skip,Action,761,,,,,OR 5.2,SR,,,,,,,,,,,,
-5,OperatesCompany,Event,762,Sprint,,,,OR 5.2,TR,,,,,,,,,,,,
-5,LayTile,Action,763,,0.0,,,OR 5.2,TR,,,G12,448,3,,,,,,,
-5,Skip,Action,764,,,,,OR 5.2,TR,,,,,,,,,,,,
-5,RunTrain,Action,765,,140.0,,,OR 5.2,TR,,,,,,,3,E2-F3-F1,,,,
-5,RunTrain,Action,766,,140.0,,,OR 5.2,TR,,,,,,,3,F1-E2-C4,,,,
-5,PayOut,Action,767,,280.0,,,OR 5.2,TR,,,,,,,,,28.0,,,
-5,SharePriceMoves,Event,768,,,,,OR 5.2,TR,80.0,,,,,right,,,,,,
-5,Skip,Action,769,,,,,OR 5.2,TR,,,,,,,,,,,,
-5,Skip,Action,770,,,,,OR 5.2,TR,,,,,,,,,,,,
-5,OperatesCompany,Event,771,zorbak,,,,OR 5.2,KO,,,,,,,,,,,,
-5,LayTile,Action,772,,0.0,,,OR 5.2,KO,,,J3,25,5,,,,,,,
-5,Skip,Action,773,,,,,OR 5.2,KO,,,,,,,,,,,,
-5,RunTrain,Action,774,,170.0,,,OR 5.2,KO,,,,,,,3,I4-K4-K8,,,,
-5,Withhold,Action,775,,170.0,,,OR 5.2,KO,,,,,,,,,,,,
-5,SharePriceMoves,Event,776,,,,,OR 5.2,KO,60.0,,,,,left,,,,,,
-5,BuyTrain,Action,777,,630.0,,The Depot,OR 5.2,KO,,,,,,,6,,,,,
-6,NewPhase,Event,778,,,,,OR 5.2,,,,,,,,,,,,,
-6,TrainsRust,Event,779,,,,,OR 5.2,,,,,,,,3,,,,,
-6,Pass,Action,780,,,,,OR 5.2,KO,,,,,,,,,,,,
-6,Skip,Action,781,,,,,OR 5.2,KO,,,,,,,,,,,,
-6,OperatingRound,Event,782,,,,,OR 5.3,,,,,,,,,,,,,
-6,Collect,Action,783,tado,50.0,,Uno-Takamatsu Ferry,OR 5.3,,,,,,,,,,,,,
-6,OperatesCompany,Event,784,camping no reception,,,,OR 5.3,UR,,,,,,,,,,,,
-6,Pass,Action,785,,,,,OR 5.3,UR,,,,,,,,,,,,
-6,Pass,Action,786,,,,,OR 5.3,UR,,,,,,,,,,,,
-6,Skip,Action,787,,,,,OR 5.3,UR,,,,,,,,,,,,
-6,DoesNotRun,Event,788,,,,,OR 5.3,UR,,,,,,,,,,,,
-6,SharePriceMoves,Event,789,,,,,OR 5.3,UR,110.0,,,,,left,,,,,,
-6,Contribute,Action,790,camping no reception,308.0,,,OR 5.3,UR,,,,,,,,,,,,
-6,BuyTrain,Action,791,,630.0,,The Depot,OR 5.3,UR,,,,,,,6,,,,,
-6,Skip,Action,792,,,,,OR 5.3,UR,,,,,,,,,,,,
-6,OperatesCompany,Event,793,Sprint,,,,OR 5.3,KU,,,,,,,,,,,,
-6,LayTile,Action,794,,0.0,,,OR 5.3,KU,,,C8,47,2,,,,,,,
-6,Skip,Action,795,,,,,OR 5.3,KU,,,,,,,,,,,,
-6,RunTrain,Action,796,,180.0,,,OR 5.3,KU,,,,,,,5,C10-B7-B3-C4-E2,,,,
-6,RunTrain,Action,797,,170.0,,,OR 5.3,KU,,,,,,,4,C10-F9-G10-G12,,,,
-6,Withhold,Action,798,,350.0,,,OR 5.3,KU,,,,,,,,,,,,
-6,SharePriceMoves,Event,799,,,,,OR 5.3,KU,110.0,,,,,left,,,,,,
-6,Skip,Action,800,,,,,OR 5.3,KU,,,,,,,,,,,,
-6,Skip,Action,801,,,,,OR 5.3,KU,,,,,,,,,,,,
-6,OperatesCompany,Event,802,tado,,,,OR 5.3,AR,,,,,,,,,,,,
-6,LayTile,Action,803,,0.0,,,OR 5.3,AR,,,K8,448,1,,,,,,,
-6,Skip,Action,804,,,,,OR 5.3,AR,,,,,,,,,,,,
-6,RunTrain,Action,805,,250.0,,,OR 5.3,AR,,,,,,,5,L7-K8-K4-I4-I2,,,,
-6,RunTrain,Action,806,,210.0,,,OR 5.3,AR,,,,,,,5,K4-J5-I4-G4-I2,,,,
-6,PayOut,Action,807,,460.0,,,OR 5.3,AR,,,,,,,,,46.0,,,
-6,SharePriceMoves,Event,808,,,,,OR 5.3,AR,140.0,,,,,right,,,,,,
-6,Skip,Action,809,,,,,OR 5.3,AR,,,,,,,,,,,,
-6,Skip,Action,810,,,,,OR 5.3,AR,,,,,,,,,,,,
-6,OperatesCompany,Event,811,zorbak,,,,OR 5.3,IR,,,,,,,,,,,,
-6,Pass,Action,813,,,,,OR 5.3,IR,,,,,,,,,,,,
-6,Skip,Action,814,,,,,OR 5.3,IR,,,,,,,,,,,,
-6,RunTrain,Action,815,,210.0,,,OR 5.3,IR,,,,,,,4,F1-F3-G4-I4,,,,
-6,Withhold,Action,816,,210.0,,,OR 5.3,IR,,,,,,,,,,,,
-6,SharePriceMoves,Event,817,,,,,OR 5.3,IR,90.0,,,,,left,,,,,,
-6,Pass,Action,818,,,,,OR 5.3,IR,,,,,,,,,,,,
-6,Skip,Action,819,,,,,OR 5.3,IR,,,,,,,,,,,,
-6,OperatesCompany,Event,820,mindbomb(UTC+9),,,,OR 5.3,SR,,,,,,,,,,,,
-6,LayTile,Action,821,,0.0,,,OR 5.3,SR,,,J3,40,1,,,,,,,
-6,Skip,Action,822,,,,,OR 5.3,SR,,,,,,,,,,,,
-6,RunTrain,Action,823,,160.0,,,OR 5.3,SR,,,,,,,4,F1-F3-G4-I2,,,,
-6,RunTrain,Action,824,,190.0,,,OR 5.3,SR,,,,,,,4,K4-J5-I4-J1,,,,
-6,Withhold,Action,825,,350.0,,,OR 5.3,SR,,,,,,,,,,,,
-6,SharePriceMoves,Event,826,,,,,OR 5.3,SR,80.0,,,,,left,,,,,,
-6,Skip,Action,827,,,,,OR 5.3,SR,,,,,,,,,,,,
-6,Skip,Action,828,,,,,OR 5.3,SR,,,,,,,,,,,,
-6,OperatesCompany,Event,829,Sprint,,,,OR 5.3,TR,,,,,,,,,,,,
-6,LayTile,Action,830,,0.0,,,OR 5.3,TR,,,D3,23,1,,,,,,,
-6,Skip,Action,831,,,,,OR 5.3,TR,,,,,,,,,,,,
-6,Skip,Action,832,,,,,OR 5.3,TR,,,,,,,,,,,,
-6,DoesNotRun,Event,833,,,,,OR 5.3,TR,,,,,,,,,,,,
-6,SharePriceMoves,Event,834,,,,,OR 5.3,TR,75.0,,,,,left,,,,,,
-6,BuyTrain,Action,835,,460.0,,KU,OR 5.3,TR,,,,,,,5,,,,,
-6,Pass,Action,836,,,,,OR 5.3,TR,,,,,,,,,,,,
-6,Skip,Action,837,,,,,OR 5.3,TR,,,,,,,,,,,,
-6,OperatesCompany,Event,838,zorbak,,,,OR 5.3,KO,,,,,,,,,,,,
-6,Pass,Action,839,,,,,OR 5.3,KO,,,,,,,,,,,,
-6,Skip,Action,840,,,,,OR 5.3,KO,,,,,,,,,,,,
-6,RunTrain,Action,841,,310.0,,,OR 5.3,KO,,,,,,,6,F1-F3-G4-I4-K4-K8,,,,
-6,PayOut,Action,842,,310.0,,,OR 5.3,KO,,,,,,,,,31.0,,,
-6,SharePriceMoves,Event,843,,,,,OR 5.3,KO,65.0,,,,,right,,,,,,
-6,Pass,Action,844,,,,,OR 5.3,KO,,,,,,,,,,,,
-6,Skip,Action,845,,,,,OR 5.3,KO,,,,,,,,,,,,
-6,StockRound,Event,846,,,,,SR 6,,,,,,,,,,,,,
-6,BuyShare,Action,847,mindbomb(UTC+9),65.0,,market,SR 6,KO,,10.0,,,,,,,,,,
-6,SellShares,Action,848,mindbomb(UTC+9),90.0,,,SR 6,IR,,10.0,,,,,,,,,,
-6,SharePriceMoves,Event,849,,,,,SR 6,IR,80.0,,,,,down,,,,,,
-6,SellShares,Action,850,camping no reception,80.0,,,SR 6,IR,,10.0,,,,,,,,,,
-6,BuyShare,Action,851,camping no reception,110.0,,market,SR 6,UR,,10.0,,,,,,,,,,
-6,SellShares,Action,852,Sprint,80.0,,,SR 6,SR,,10.0,,,,,,,,,,
-6,SharePriceMoves,Event,853,,,,,SR 6,SR,75.0,,,,,down,,,,,,
-6,BuyShare,Action,854,Sprint,110.0,,market,SR 6,UR,,10.0,,,,,,,,,,
-6,BuyShare,Action,855,Millie,75.0,,market,SR 6,TR,,10.0,,,,,,,,,,
-6,Skip,Action,856,Millie,,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,857,zorbak,,,,SR 6,,,,,,,,,,,,,
-6,BuyShare,Action,858,tado,110.0,,market,SR 6,UR,,10.0,,,,,,,,,,
-6,Skip,Action,859,tado,,,,SR 6,,,,,,,,,,,,,
-6,BuyShare,Action,860,mindbomb(UTC+9),65.0,,market,SR 6,KO,,10.0,,,,,,,,,,
-6,Skip,Action,861,mindbomb(UTC+9),,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,863,camping no reception,,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,864,Sprint,,,,SR 6,,,,,,,,,,,,,
-6,BuyShare,Action,865,Millie,75.0,,market,SR 6,TR,,10.0,,,,,,,,,,
-6,Skip,Action,866,Millie,,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,867,zorbak,,,,SR 6,,,,,,,,,,,,,
-6,BuyShare,Action,868,tado,75.0,,market,SR 6,SR,,10.0,,,,,,,,,,
-6,Skip,Action,869,tado,,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,870,mindbomb(UTC+9),,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,871,camping no reception,,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,872,Sprint,,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,873,Millie,,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,874,zorbak,,,,SR 6,,,,,,,,,,,,,
-6,BuyShare,Action,875,tado,80.0,,market,SR 6,IR,,10.0,,,,,,,,,,
-6,Skip,Action,876,tado,,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,877,mindbomb(UTC+9),,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,878,camping no reception,,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,879,Sprint,,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,880,Millie,,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,881,zorbak,,,,SR 6,,,,,,,,,,,,,
-6,Pass,Action,882,tado,,,,SR 6,,,,,,,,,,,,,
-6,SharePriceMoves,Event,883,,,,,SR 6,UR,125.0,,,,,up,,,,,,
-6,SharePriceMoves,Event,884,,,,,SR 6,TR,80.0,,,,,up,,,,,,
-6,SharePriceMoves,Event,885,,,,,SR 6,SR,80.0,,,,,up,,,,,,
-6,SharePriceMoves,Event,886,,,,,SR 6,KO,70.0,,,,,up,,,,,,
-6,PriorityDeal,Event,887,mindbomb(UTC+9),,,,SR 6,,,,,,,,,,,,,
-6,OperatingRound,Event,888,,,,,OR 6.1,,,,,,,,,,,,,
-6,Collect,Action,889,tado,50.0,,Uno-Takamatsu Ferry,OR 6.1,,,,,,,,,,,,,
-6,OperatesCompany,Event,890,tado,,,,OR 6.1,AR,,,,,,,,,,,,
-6,LayTile,Action,891,,0.0,,,OR 6.1,AR,,,K6,24,3,,,,,,,
-6,Skip,Action,892,,,,,OR 6.1,AR,,,,,,,,,,,,
-6,RunTrain,Action,893,,230.0,,,OR 6.1,AR,,,,,,,5,L7-K8-K4-J5-I4,,,,
-6,RunTrain,Action,894,,270.0,,,OR 6.1,AR,,,,,,,5,K4-I4-G4-F3-F1,,,,
-6,PayOut,Action,895,,500.0,,,OR 6.1,AR,,,,,,,,,50.0,,,
-6,SharePriceMoves,Event,896,,,,,OR 6.1,AR,155.0,,,,,right,,,,,,
-6,Skip,Action,897,,,,,OR 6.1,AR,,,,,,,,,,,,
-6,Skip,Action,898,,,,,OR 6.1,AR,,,,,,,,,,,,
-6,OperatesCompany,Event,899,camping no reception,,,,OR 6.1,UR,,,,,,,,,,,,
-6,Pass,Action,900,,,,,OR 6.1,UR,,,,,,,,,,,,
-6,Skip,Action,901,,,,,OR 6.1,UR,,,,,,,,,,,,
-6,RunTrain,Action,902,,250.0,,,OR 6.1,UR,,,,,,,6,E2-C4-B7-C10-F9-G10,,,,
-6,BankBroke,Event,903,,,,,OR 6.1,,,,,,,,,,,,,
-6,PayOut,Action,904,,250.0,,,OR 6.1,UR,,,,,,,,,25.0,,,
-6,SharePriceMoves,Event,905,,,,,OR 6.1,UR,140.0,,,,,right,,,,,,
-6,Skip,Action,906,,,,,OR 6.1,UR,,,,,,,,,,,,
-6,Skip,Action,907,,,,,OR 6.1,UR,,,,,,,,,,,,
-6,OperatesCompany,Event,908,Sprint,,,,OR 6.1,KU,,,,,,,,,,,,
-6,LayTile,Action,910,,80.0,,,OR 6.1,KU,,,E4,8,2,,,,,,,
-6,Skip,Action,911,,,,,OR 6.1,KU,,,,,,,,,,,,
-6,RunTrain,Action,912,,180.0,,,OR 6.1,KU,,,,,,,4,F9-C10-B7-C4,,,,
-6,PayOut,Action,913,,180.0,,,OR 6.1,KU,,,,,,,,,18.0,,,
-6,SharePriceMoves,Event,914,,,,,OR 6.1,KU,125.0,,,,,right,,,,,,
-6,ExchangeTrain,Action,915,,800.0,,The Depot,OR 6.1,KU,,,,,,,,,,4,D,
-D,NewPhase,Event,916,,,,,OR 6.1,,,,,,,,,,,,,
-D,TrainsRust,Event,917,,,,,OR 6.1,,,,,,,,4,,,,,
-D,Pass,Action,918,,,,,OR 6.1,KU,,,,,,,,,,,,
-D,Skip,Action,919,,,,,OR 6.1,KU,,,,,,,,,,,,
-D,OperatesCompany,Event,920,zorbak,,,,OR 6.1,IR,,,,,,,,,,,,
-D,Pass,Action,921,,,,,OR 6.1,IR,,,,,,,,,,,,
-D,Skip,Action,922,,,,,OR 6.1,IR,,,,,,,,,,,,
-D,Skip,Action,923,,,,,OR 6.1,IR,,,,,,,,,,,,
-D,DoesNotRun,Event,924,,,,,OR 6.1,IR,,,,,,,,,,,,
-D,SharePriceMoves,Event,925,,,,,OR 6.1,IR,75.0,,,,,left,,,,,,
-D,Contribute,Action,926,zorbak,835.0,,,OR 6.1,IR,,,,,,,,,,,,
-D,BuyTrain,Action,927,,1100.0,,The Depot,OR 6.1,IR,,,,,,,D,,,,,
-D,Skip,Action,928,,,,,OR 6.1,IR,,,,,,,,,,,,
-D,OperatesCompany,Event,929,Sprint,,,,OR 6.1,TR,,,,,,,,,,,,
-D,LayTile,Action,930,,80.0,,,OR 6.1,TR,,,H11,8,5,,,,,,,
-D,Skip,Action,931,,,,,OR 6.1,TR,,,,,,,,,,,,
-D,RunTrain,Action,932,,250.0,,,OR 6.1,TR,,,,,,,5,F1-E2-F3-G4-I4,,,,
-D,PayOut,Action,933,,250.0,,,OR 6.1,TR,,,,,,,,,25.0,,,
-D,SharePriceMoves,Event,934,,,,,OR 6.1,TR,90.0,,,,,right,,,,,,
-D,Pass,Action,935,,,,,OR 6.1,TR,,,,,,,,,,,,
-D,Skip,Action,936,,,,,OR 6.1,TR,,,,,,,,,,,,
-D,OperatesCompany,Event,937,mindbomb(UTC+9),,,,OR 6.1,SR,,,,,,,,,,,,
-D,LayTile,Action,938,,80.0,,,OR 6.1,SR,,,I6,9,0,,,,,,,
-D,Skip,Action,939,,,,,OR 6.1,SR,,,,,,,,,,,,
-D,Skip,Action,940,,,,,OR 6.1,SR,,,,,,,,,,,,
-D,DoesNotRun,Event,941,,,,,OR 6.1,SR,,,,,,,,,,,,
-D,SharePriceMoves,Event,942,,,,,OR 6.1,SR,75.0,,,,,left,,,,,,
-D,Contribute,Action,943,mindbomb(UTC+9),650.0,,,OR 6.1,SR,,,,,,,,,,,,
-D,BuyTrain,Action,944,,1100.0,,The Depot,OR 6.1,SR,,,,,,,D,,,,,
-D,Skip,Action,945,,,,,OR 6.1,SR,,,,,,,,,,,,
-D,OperatesCompany,Event,946,zorbak,,,,OR 6.1,KO,,,,,,,,,,,,
-D,LayTile,Action,947,,0.0,,,OR 6.1,KO,,,I12,58,2,,,,,,,
-D,Skip,Action,948,,,,,OR 6.1,KO,,,,,,,,,,,,
-D,RunTrain,Action,949,,310.0,,,OR 6.1,KO,,,,,,,6,F1-F3-G4-I4-K4-L7,,,,
-D,PayOut,Action,950,,310.0,,,OR 6.1,KO,,,,,,,,,31.0,,,
-D,SharePriceMoves,Event,951,,,,,OR 6.1,KO,75.0,,,,,right,,,,,,
-D,Pass,Action,952,,,,,OR 6.1,KO,,,,,,,,,,,,
-D,Skip,Action,953,,,,,OR 6.1,KO,,,,,,,,,,,,
-D,OperatingRound,Event,954,,,,,OR 6.2,,,,,,,,,,,,,
-D,Collect,Action,955,tado,50.0,,Uno-Takamatsu Ferry,OR 6.2,,,,,,,,,,,,,
-D,OperatesCompany,Event,956,tado,,,,OR 6.2,AR,,,,,,,,,,,,
-D,LayTile,Action,957,,0.0,,,OR 6.2,AR,,,I8,8,3,,,,,,,
-D,Skip,Action,958,,,,,OR 6.2,AR,,,,,,,,,,,,
-D,RunTrain,Action,959,,230.0,,,OR 6.2,AR,,,,,,,5,L7-K8-K4-J5-I4,,,,
-D,RunTrain,Action,960,,270.0,,,OR 6.2,AR,,,,,,,5,K4-I4-G4-F3-F1,,,,
-D,PayOut,Action,961,,500.0,,,OR 6.2,AR,,,,,,,,,50.0,,,
-D,SharePriceMoves,Event,962,,,,,OR 6.2,AR,175.0,,,,,right,,,,,,
-D,Skip,Action,963,,,,,OR 6.2,AR,,,,,,,,,,,,
-D,Skip,Action,964,,,,,OR 6.2,AR,,,,,,,,,,,,
-D,OperatesCompany,Event,965,camping no reception,,,,OR 6.2,UR,,,,,,,,,,,,
-D,LayTile,Action,966,,0.0,,,OR 6.2,UR,,,I8,29,3,,,,,,,
-D,Skip,Action,967,,,,,OR 6.2,UR,,,,,,,,,,,,
-D,RunTrain,Action,968,,290.0,,,OR 6.2,UR,,,,,,,6,I4-G4-F3-C4-B7-F9,,,,
-D,PayOut,Action,969,,290.0,,,OR 6.2,UR,,,,,,,,,29.0,,,
-D,SharePriceMoves,Event,970,,,,,OR 6.2,UR,155.0,,,,,right,,,,,,
-D,Skip,Action,971,,,,,OR 6.2,UR,,,,,,,,,,,,
-D,Skip,Action,972,,,,,OR 6.2,UR,,,,,,,,,,,,
-D,OperatesCompany,Event,973,Sprint,,,,OR 6.2,KU,,,,,,,,,,,,
-D,LayTile,Action,975,,0.0,,,OR 6.2,KU,,,J11,12,1,,,,,,,
-D,Skip,Action,976,,,,,OR 6.2,KU,,,,,,,,,,,,
-D,RunTrain,Action,977,,670.0,,,OR 6.2,KU,,,,,,,D,L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-F3-G4-I4-J1,,,,
-D,PayOut,Action,978,,670.0,,,OR 6.2,KU,,,,,,,,,67.0,,,
-D,SharePriceMoves,Event,979,,,,,OR 6.2,KU,140.0,,,,,right,,,,,,
-D,Pass,Action,980,,,,,OR 6.2,KU,,,,,,,,,,,,
-D,Skip,Action,981,,,,,OR 6.2,KU,,,,,,,,,,,,
-D,OperatesCompany,Event,982,Sprint,,,,OR 6.2,TR,,,,,,,,,,,,
-D,LayTile,Action,983,,80.0,,,OR 6.2,TR,,,F7,9,0,,,,,,,
-D,Skip,Action,984,,,,,OR 6.2,TR,,,,,,,,,,,,
-D,RunTrain,Action,985,,250.0,,,OR 6.2,TR,,,,,,,5,F1-E2-F3-G4-I4,,,,
-D,PayOut,Action,986,,250.0,,,OR 6.2,TR,,,,,,,,,25.0,,,
-D,SharePriceMoves,Event,987,,,,,OR 6.2,TR,100.0,,,,,right,,,,,,
-D,Pass,Action,988,,,,,OR 6.2,TR,,,,,,,,,,,,
-D,Skip,Action,989,,,,,OR 6.2,TR,,,,,,,,,,,,
-D,OperatesCompany,Event,990,zorbak,,,,OR 6.2,IR,,,,,,,,,,,,
-D,Pass,Action,991,,,,,OR 6.2,IR,,,,,,,,,,,,
-D,Skip,Action,992,,,,,OR 6.2,IR,,,,,,,,,,,,
-D,RunTrain,Action,993,,710.0,,,OR 6.2,IR,,,,,,,D,L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-E2-F3-G4-I4-J1,,,,
-D,PayOut,Action,994,,710.0,,,OR 6.2,IR,,,,,,,,,71.0,,,
-D,SharePriceMoves,Event,995,,,,,OR 6.2,IR,80.0,,,,,right,,,,,,
-D,Pass,Action,996,,,,,OR 6.2,IR,,,,,,,,,,,,
-D,Skip,Action,997,,,,,OR 6.2,IR,,,,,,,,,,,,
-D,OperatesCompany,Event,998,zorbak,,,,OR 6.2,KO,,,,,,,,,,,,
-D,Pass,Action,999,,,,,OR 6.2,KO,,,,,,,,,,,,
-D,Skip,Action,1000,,,,,OR 6.2,KO,,,,,,,,,,,,
-D,RunTrain,Action,1001,,310.0,,,OR 6.2,KO,,,,,,,6,F1-F3-G4-I4-K4-L7,,,,
-D,PayOut,Action,1002,,310.0,,,OR 6.2,KO,,,,,,,,,31.0,,,
-D,SharePriceMoves,Event,1003,,,,,OR 6.2,KO,80.0,,,,,right,,,,,,
-D,Pass,Action,1004,,,,,OR 6.2,KO,,,,,,,,,,,,
-D,Skip,Action,1005,,,,,OR 6.2,KO,,,,,,,,,,,,
-D,OperatesCompany,Event,1006,mindbomb(UTC+9),,,,OR 6.2,SR,,,,,,,,,,,,
-D,LayTile,Action,1007,,0.0,,,OR 6.2,SR,,,I6,27,0,,,,,,,
-D,Skip,Action,1008,,,,,OR 6.2,SR,,,,,,,,,,,,
-D,RunTrain,Action,1009,,720.0,,,OR 6.2,SR,,,,,,,D,F1-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-I4-G4-I2-J1,,,,
-D,PayOut,Action,1010,,720.0,,,OR 6.2,SR,,,,,,,,,72.0,,,
-D,SharePriceMoves,Event,1011,,,,,OR 6.2,SR,80.0,,,,,right,,,,,,
-D,Skip,Action,1012,,,,,OR 6.2,SR,,,,,,,,,,,,
-D,Skip,Action,1013,,,,,OR 6.2,SR,,,,,,,,,,,,
-D,OperatingRound,Event,1014,,,,,OR 6.3,,,,,,,,,,,,,
-D,Collect,Action,1015,tado,50.0,,Uno-Takamatsu Ferry,OR 6.3,,,,,,,,,,,,,
-D,OperatesCompany,Event,1016,tado,,,,OR 6.3,AR,,,,,,,,,,,,
-D,LayTile,Action,1017,,0.0,,,OR 6.3,AR,,,H7,57,1,,,,,,,
-D,Skip,Action,1018,,,,,OR 6.3,AR,,,,,,,,,,,,
-D,RunTrain,Action,1019,,230.0,,,OR 6.3,AR,,,,,,,5,L7-K8-K4-J5-I4,,,,
-D,RunTrain,Action,1020,,270.0,,,OR 6.3,AR,,,,,,,5,K4-I4-G4-F3-F1,,,,
-D,PayOut,Action,1021,,500.0,,,OR 6.3,AR,,,,,,,,,50.0,,,
-D,SharePriceMoves,Event,1022,,,,,OR 6.3,AR,200.0,,,,,right,,,,,,
-D,Skip,Action,1023,,,,,OR 6.3,AR,,,,,,,,,,,,
-D,Skip,Action,1024,,,,,OR 6.3,AR,,,,,,,,,,,,
-D,OperatesCompany,Event,1025,camping no reception,,,,OR 6.3,UR,,,,,,,,,,,,
-D,Pass,Action,1026,,,,,OR 6.3,UR,,,,,,,,,,,,
-D,Skip,Action,1027,,,,,OR 6.3,UR,,,,,,,,,,,,
-D,RunTrain,Action,1028,,290.0,,,OR 6.3,UR,,,,,,,6,I4-G4-F3-C4-B7-F9,,,,
-D,PayOut,Action,1029,,290.0,,,OR 6.3,UR,,,,,,,,,29.0,,,
-D,SharePriceMoves,Event,1030,,,,,OR 6.3,UR,175.0,,,,,right,,,,,,
-D,Skip,Action,1031,,,,,OR 6.3,UR,,,,,,,,,,,,
-D,Skip,Action,1032,,,,,OR 6.3,UR,,,,,,,,,,,,
-D,OperatesCompany,Event,1033,Sprint,,,,OR 6.3,KU,,,,,,,,,,,,
-D,LayTile,Action,1034,,80.0,,,OR 6.3,KU,,,F5,8,4,,,,,,,
-D,Skip,Action,1035,,,,,OR 6.3,KU,,,,,,,,,,,,
-D,RunTrain,Action,1036,,670.0,,,OR 6.3,KU,,,,,,,D,J1-I4-G4-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-L7,,,,
-D,PayOut,Action,1037,,670.0,,,OR 6.3,KU,,,,,,,,,67.0,,,
-D,SharePriceMoves,Event,1038,,,,,OR 6.3,KU,155.0,,,,,right,,,,,,
-D,Pass,Action,1039,,,,,OR 6.3,KU,,,,,,,,,,,,
-D,Skip,Action,1040,,,,,OR 6.3,KU,,,,,,,,,,,,
-D,OperatesCompany,Event,1041,Sprint,,,,OR 6.3,TR,,,,,,,,,,,,
-D,Pass,Action,1042,,,,,OR 6.3,TR,,,,,,,,,,,,
-D,Skip,Action,1043,,,,,OR 6.3,TR,,,,,,,,,,,,
-D,RunTrain,Action,1044,,270.0,,,OR 6.3,TR,,,,,,,5,K4-I4-G4-F9-B7,,,,
-D,PayOut,Action,1045,,270.0,,,OR 6.3,TR,,,,,,,,,27.0,,,
-D,SharePriceMoves,Event,1046,,,,,OR 6.3,TR,110.0,,,,,up,,,,,,
-D,Pass,Action,1047,,,,,OR 6.3,TR,,,,,,,,,,,,
-D,Skip,Action,1048,,,,,OR 6.3,TR,,,,,,,,,,,,
-D,OperatesCompany,Event,1049,zorbak,,,,OR 6.3,IR,,,,,,,,,,,,
-D,Pass,Action,1050,,,,,OR 6.3,IR,,,,,,,,,,,,
-D,Skip,Action,1051,,,,,OR 6.3,IR,,,,,,,,,,,,
-D,RunTrain,Action,1052,,710.0,,,OR 6.3,IR,,,,,,,D,L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-E2-F3-G4-I4-J1,,,,
-D,PayOut,Action,1053,,710.0,,,OR 6.3,IR,,,,,,,,,71.0,,,
-D,SharePriceMoves,Event,1054,,,,,OR 6.3,IR,90.0,,,,,up,,,,,,
-D,Pass,Action,1055,,,,,OR 6.3,IR,,,,,,,,,,,,
-D,Skip,Action,1056,,,,,OR 6.3,IR,,,,,,,,,,,,
-D,OperatesCompany,Event,1057,zorbak,,,,OR 6.3,KO,,,,,,,,,,,,
-D,Pass,Action,1058,,,,,OR 6.3,KO,,,,,,,,,,,,
-D,Skip,Action,1059,,,,,OR 6.3,KO,,,,,,,,,,,,
-D,RunTrain,Action,1060,,310.0,,,OR 6.3,KO,,,,,,,6,F1-F3-G4-I4-K4-L7,,,,
-D,PayOut,Action,1061,,310.0,,,OR 6.3,KO,,,,,,,,,31.0,,,
-D,SharePriceMoves,Event,1062,,,,,OR 6.3,KO,90.0,,,,,up,,,,,,
-D,Pass,Action,1063,,,,,OR 6.3,KO,,,,,,,,,,,,
-D,Skip,Action,1064,,,,,OR 6.3,KO,,,,,,,,,,,,
-D,OperatesCompany,Event,1065,mindbomb(UTC+9),,,,OR 6.3,SR,,,,,,,,,,,,
-D,LayTile,Action,1066,,0.0,,,OR 6.3,SR,,,H7,15,1,,,,,,,
-D,Skip,Action,1067,,,,,OR 6.3,SR,,,,,,,,,,,,
-D,RunTrain,Action,1068,,720.0,,,OR 6.3,SR,,,,,,,D,F1-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-I4-G4-I2-J1,,,,
-D,PayOut,Action,1069,,720.0,,,OR 6.3,SR,,,,,,,,,72.0,,,
-D,SharePriceMoves,Event,1070,,,,,OR 6.3,SR,90.0,,,,,right,,,,,,
-D,Skip,Action,1071,,,,,OR 6.3,SR,,,,,,,,,,,,
-D,Skip,Action,1072,,,,,OR 6.3,SR,,,,,,,,,,,,
-D,GameOver,Event,1073,,,,,OR 6.3,,,,,,,,,,,,,"{'tado': 4249, 'Sprint': 3968, 'camping no reception': 3775, 'mindbomb(UTC+9)': 2807, 'zorbak': 2804, 'Millie': 2468}"
+phase,type,parent,id,player,amount,private,source,sequence,company,share_price,percentage,location,tile,rotation,direction,train,route,per_share,old_train,new_train,result,major_round
+2,NewPhase,Event,1,,,,,ISR 1,,,,,,,,,,,,,,ISR 1
+2,Bid,Action,2,Sprint,35.0,Mitsubishi Ferry,,ISR 1,,,,,,,,,,,,,,ISR 1
+2,Bid,Action,3,Millie,45.0,Ehime Railway,,ISR 1,,,,,,,,,,,,,,ISR 1
+2,Bid,Action,4,zorbak,55.0,Sumitomo Mines Railway,,ISR 1,,,,,,,,,,,,,,ISR 1
+2,Bid,Action,5,tado,155.0,Uno-Takamatsu Ferry,,ISR 1,,,,,,,,,,,,,,ISR 1
+2,Bid,Action,6,mindbomb(UTC+9),85.0,South Iyo Railway,,ISR 1,,,,,,,,,,,,,,ISR 1
+2,Bid,Action,7,camping no reception,65.0,Dougo Railway,,ISR 1,,,,,,,,,,,,,,ISR 1
+2,Pass,Action,8,Sprint,,,,ISR 1,,,,,,,,,,,,,,ISR 1
+2,BuyPrivate,Action,9,Millie,20.0,Takamatsu E-Railroad,Auction,ISR 1,,,,,,,,,,,,,,ISR 1
+2,BuyPrivate,Action,10,Sprint,35.0,Mitsubishi Ferry,Auction,ISR 1,,,,,,,,,,,,,,ISR 1
+2,BuyPrivate,Action,11,Millie,45.0,Ehime Railway,Auction,ISR 1,,,,,,,,,,,,,,ISR 1
+2,BuyPrivate,Action,12,zorbak,55.0,Sumitomo Mines Railway,Auction,ISR 1,,,,,,,,,,,,,,ISR 1
+2,BuyPrivate,Action,13,camping no reception,65.0,Dougo Railway,Auction,ISR 1,,,,,,,,,,,,,,ISR 1
+2,BuyPrivate,Action,14,mindbomb(UTC+9),85.0,South Iyo Railway,Auction,ISR 1,,,,,,,,,,,,,,ISR 1
+2,BuyPrivate,Action,15,tado,155.0,Uno-Takamatsu Ferry,Auction,ISR 1,,,,,,,,,,,,,,ISR 1
+2,PriorityDeal,Event,16,zorbak,,,,ISR 1,,,,,,,,,,,,,,ISR 1
+2,StockRound,Event,17,,,,,SR 1,,,,,,,,,,,,,,SR 1
+2,Par,Action,18,zorbak,,,,SR 1,IR,65.0,,,,,,,,,,,,SR 1
+2,BuyShare,Action,19,zorbak,130.0,,IPO,SR 1,IR,,20.0,,,,,,,,,,,SR 1
+2,PresidentNomination,Event,20,zorbak,,,,SR 1,IR,,,,,,,,,,,,,SR 1
+2,BuyShare,Action,21,tado,65.0,,IPO,SR 1,IR,,10.0,,,,,,,,,,,SR 1
+2,BuyShare,Action,23,mindbomb(UTC+9),65.0,,IPO,SR 1,IR,,10.0,,,,,,,,,,,SR 1
+2,Par,Action,24,camping no reception,,,,SR 1,UR,65.0,,,,,,,,,,,,SR 1
+2,BuyShare,Action,25,camping no reception,130.0,,IPO,SR 1,UR,,20.0,,,,,,,,,,,SR 1
+2,PresidentNomination,Event,26,camping no reception,,,,SR 1,UR,,,,,,,,,,,,,SR 1
+2,Par,Action,27,Sprint,,,,SR 1,TR,65.0,,,,,,,,,,,,SR 1
+2,BuyShare,Action,28,Sprint,130.0,,IPO,SR 1,TR,,20.0,,,,,,,,,,,SR 1
+2,PresidentNomination,Event,29,Sprint,,,,SR 1,TR,,,,,,,,,,,,,SR 1
+2,Par,Action,30,Millie,,,,SR 1,KO,65.0,,,,,,,,,,,,SR 1
+2,BuyShare,Action,31,Millie,130.0,,IPO,SR 1,KO,,20.0,,,,,,,,,,,SR 1
+2,PresidentNomination,Event,32,Millie,,,,SR 1,KO,,,,,,,,,,,,,SR 1
+2,BuyShare,Action,33,zorbak,65.0,,IPO,SR 1,IR,,10.0,,,,,,,,,,,SR 1
+2,CompanyFloats,Event,34,,,,,SR 1,IR,,,,,,,,,,,,,SR 1
+2,ReceiveFunds,Event,35,,650.0,,,SR 1,IR,,,,,,,,,,,,,SR 1
+2,BuyShare,Action,36,tado,65.0,,IPO,SR 1,IR,,10.0,,,,,,,,,,,SR 1
+2,Par,Action,37,mindbomb(UTC+9),,,,SR 1,SR,65.0,,,,,,,,,,,,SR 1
+2,BuyShare,Action,38,mindbomb(UTC+9),130.0,,IPO,SR 1,SR,,20.0,,,,,,,,,,,SR 1
+2,PresidentNomination,Event,39,mindbomb(UTC+9),,,,SR 1,SR,,,,,,,,,,,,,SR 1
+2,BuyShare,Action,40,camping no reception,65.0,,IPO,SR 1,UR,,10.0,,,,,,,,,,,SR 1
+2,BuyShare,Action,41,Sprint,65.0,,IPO,SR 1,TR,,10.0,,,,,,,,,,,SR 1
+2,BuyShare,Action,42,Millie,65.0,,IPO,SR 1,KO,,10.0,,,,,,,,,,,SR 1
+2,BuyShare,Action,43,zorbak,65.0,,IPO,SR 1,IR,,10.0,,,,,,,,,,,SR 1
+2,BuyShare,Action,44,tado,65.0,,IPO,SR 1,UR,,10.0,,,,,,,,,,,SR 1
+2,BuyShare,Action,45,mindbomb(UTC+9),65.0,,IPO,SR 1,SR,,10.0,,,,,,,,,,,SR 1
+2,BuyShare,Action,46,camping no reception,65.0,,IPO,SR 1,UR,,10.0,,,,,,,,,,,SR 1
+2,CompanyFloats,Event,47,,,,,SR 1,UR,,,,,,,,,,,,,SR 1
+2,ReceiveFunds,Event,48,,650.0,,,SR 1,UR,,,,,,,,,,,,,SR 1
+2,BuyShare,Action,49,Sprint,65.0,,IPO,SR 1,TR,,10.0,,,,,,,,,,,SR 1
+2,BuyShare,Action,50,Millie,65.0,,IPO,SR 1,KO,,10.0,,,,,,,,,,,SR 1
+2,BuyShare,Action,51,zorbak,65.0,,IPO,SR 1,IR,,10.0,,,,,,,,,,,SR 1
+2,Pass,Action,52,tado,,,,SR 1,,,,,,,,,,,,,,SR 1
+2,Pass,Action,53,mindbomb(UTC+9),,,,SR 1,,,,,,,,,,,,,,SR 1
+2,BuyShare,Action,54,camping no reception,65.0,,IPO,SR 1,UR,,10.0,,,,,,,,,,,SR 1
+2,BuyShare,Action,55,Sprint,65.0,,IPO,SR 1,TR,,10.0,,,,,,,,,,,SR 1
+2,CompanyFloats,Event,56,,,,,SR 1,TR,,,,,,,,,,,,,SR 1
+2,ReceiveFunds,Event,57,,650.0,,,SR 1,TR,,,,,,,,,,,,,SR 1
+2,BuyShare,Action,58,Millie,65.0,,IPO,SR 1,KO,,10.0,,,,,,,,,,,SR 1
+2,CompanyFloats,Event,59,,,,,SR 1,KO,,,,,,,,,,,,,SR 1
+2,ReceiveFunds,Event,60,,650.0,,,SR 1,KO,,,,,,,,,,,,,SR 1
+2,Pass,Action,61,zorbak,,,,SR 1,,,,,,,,,,,,,,SR 1
+2,Pass,Action,62,tado,,,,SR 1,,,,,,,,,,,,,,SR 1
+2,Pass,Action,63,mindbomb(UTC+9),,,,SR 1,,,,,,,,,,,,,,SR 1
+2,Pass,Action,64,camping no reception,,,,SR 1,,,,,,,,,,,,,,SR 1
+2,Pass,Action,65,Sprint,,,,SR 1,,,,,,,,,,,,,,SR 1
+2,Pass,Action,66,Millie,,,,SR 1,,,,,,,,,,,,,,SR 1
+2,PriorityDeal,Event,67,zorbak,,,,SR 1,,,,,,,,,,,,,,SR 1
+2,OperatingRound,Event,68,,,,,OR 1.1,,,,,,,,,,,,,,OR 1
+2,Collect,Action,69,zorbak,15.0,,Sumitomo Mines Railway,OR 1.1,,,,,,,,,,,,,,OR 1
+2,Collect,Action,70,tado,30.0,,Uno-Takamatsu Ferry,OR 1.1,,,,,,,,,,,,,,OR 1
+2,Collect,Action,71,mindbomb(UTC+9),20.0,,South Iyo Railway,OR 1.1,,,,,,,,,,,,,,OR 1
+2,Collect,Action,72,camping no reception,15.0,,Dougo Railway,OR 1.1,,,,,,,,,,,,,,OR 1
+2,Collect,Action,73,Sprint,5.0,,Mitsubishi Ferry,OR 1.1,,,,,,,,,,,,,,OR 1
+2,Collect,Action,74,Millie,5.0,,Takamatsu E-Railroad,OR 1.1,,,,,,,,,,,,,,OR 1
+2,Collect,Action,75,Millie,10.0,,Ehime Railway,OR 1.1,,,,,,,,,,,,,,OR 1
+2,PlaceToken,Action,76,,0.0,,,OR 1.1,IR,,,E2,,,,,,,,,,OR 1
+2,PlaceToken,Action,77,,0.0,,,OR 1.1,UR,,,B7,,,,,,,,,,OR 1
+2,PlaceToken,Action,78,,0.0,,,OR 1.1,TR,,,F9,,,,,,,,,,OR 1
+2,PlaceToken,Action,79,,0.0,,,OR 1.1,KO,,,K4,,,,,,,,,,OR 1
+2,OperatesCompany,Event,80,zorbak,,,,OR 1.1,IR,,,,,,,,,,,,,OR 1
+2,LayTile,Action,81,,0.0,,,OR 1.1,IR,,,E2,5,4,,,,,,,,OR 1
+2,Skip,Action,82,,,,,OR 1.1,IR,,,,,,,,,,,,,OR 1
+2,Skip,Action,83,,,,,OR 1.1,IR,,,,,,,,,,,,,OR 1
+2,DoesNotRun,Event,84,,,,,OR 1.1,IR,,,,,,,,,,,,,OR 1
+2,SharePriceMoves,Event,85,,,,,OR 1.1,IR,60.0,,,,,left,,,,,,,OR 1
+2,BuyTrain,Action,86,,80.0,,The Depot,OR 1.1,IR,,,,,,,2,,,,,,OR 1
+2,BuyTrain,Action,87,,80.0,,The Depot,OR 1.1,IR,,,,,,,2,,,,,,OR 1
+2,BuyTrain,Action,88,,80.0,,The Depot,OR 1.1,IR,,,,,,,2,,,,,,OR 1
+2,Pass,Action,89,,,,,OR 1.1,IR,,,,,,,,,,,,,OR 1
+2,Skip,Action,90,,,,,OR 1.1,IR,,,,,,,,,,,,,OR 1
+2,OperatesCompany,Event,91,camping no reception,,,,OR 1.1,UR,,,,,,,,,,,,,OR 1
+2,LayTile,Action,92,,0.0,,,OR 1.1,UR,,,B5,9,0,,,,,,,,OR 1
+2,PlaceToken,Action,93,,40.0,,,OR 1.1,UR,,,C4,,,,,,,,,,OR 1
+2,Skip,Action,94,,,,,OR 1.1,UR,,,,,,,,,,,,,OR 1
+2,DoesNotRun,Event,95,,,,,OR 1.1,UR,,,,,,,,,,,,,OR 1
+2,SharePriceMoves,Event,96,,,,,OR 1.1,UR,60.0,,,,,left,,,,,,,OR 1
+2,BuyTrain,Action,97,,80.0,,The Depot,OR 1.1,UR,,,,,,,2,,,,,,OR 1
+2,BuyTrain,Action,98,,80.0,,The Depot,OR 1.1,UR,,,,,,,2,,,,,,OR 1
+2,Pass,Action,99,,,,,OR 1.1,UR,,,,,,,,,,,,,OR 1
+2,Skip,Action,100,,,,,OR 1.1,UR,,,,,,,,,,,,,OR 1
+2,OperatesCompany,Event,101,Sprint,,,,OR 1.1,TR,,,,,,,,,,,,,OR 1
+2,LayTile,Action,103,,0.0,,,OR 1.1,TR,,,G10,437,0,,,,,,,,OR 1
+2,LayTile,Action,104,,0.0,,,OR 1.1,TR,,,G12,57,0,,,,,,,,OR 1
+2,PlaceToken,Action,105,,40.0,,,OR 1.1,TR,,,G12,,,,,,,,,,OR 1
+2,Skip,Action,106,,,,,OR 1.1,TR,,,,,,,,,,,,,OR 1
+2,DoesNotRun,Event,107,,,,,OR 1.1,TR,,,,,,,,,,,,,OR 1
+2,SharePriceMoves,Event,108,,,,,OR 1.1,TR,60.0,,,,,left,,,,,,,OR 1
+2,BuyTrain,Action,109,,80.0,,The Depot,OR 1.1,TR,,,,,,,2,,,,,,OR 1
+2,BuyTrain,Action,110,,180.0,,The Depot,OR 1.1,TR,,,,,,,3,,,,,,OR 1
+3,NewPhase,Event,111,,,,,OR 1.1,,,,,,,,,,,,,,OR 1
+3,BuyPrivate,Action,112,,60.0,Mitsubishi Ferry,Sprint,OR 1.1,TR,,,,,,,,,,,,,OR 1
+3,BuyTrain,Action,113,,180.0,,The Depot,OR 1.1,TR,,,,,,,3,,,,,,OR 1
+3,Pass,Action,114,,,,,OR 1.1,TR,,,,,,,,,,,,,OR 1
+3,Pass,Action,115,,,,,OR 1.1,TR,,,,,,,,,,,,,OR 1
+3,OperatesCompany,Event,116,Millie,,,,OR 1.1,KO,,,,,,,,,,,,,OR 1
+3,LayTile,Action,117,,0.0,,,OR 1.1,KO,,,J3,8,3,,,,,,,,OR 1
+3,Skip,Action,118,,,,,OR 1.1,KO,,,,,,,,,,,,,OR 1
+3,Skip,Action,119,,,,,OR 1.1,KO,,,,,,,,,,,,,OR 1
+3,DoesNotRun,Event,120,,,,,OR 1.1,KO,,,,,,,,,,,,,OR 1
+3,SharePriceMoves,Event,121,,,,,OR 1.1,KO,60.0,,,,,left,,,,,,,OR 1
+3,BuyTrain,Action,122,,180.0,,The Depot,OR 1.1,KO,,,,,,,3,,,,,,OR 1
+3,Pass,Action,123,,,,,OR 1.1,KO,,,,,,,,,,,,,OR 1
+3,Pass,Action,124,,,,,OR 1.1,KO,,,,,,,,,,,,,OR 1
+3,StockRound,Event,125,,,,,SR 2,,,,,,,,,,,,,,SR 2
+3,Pass,Action,126,zorbak,,,,SR 2,,,,,,,,,,,,,,SR 2
+3,BuyShare,Action,127,tado,65.0,,IPO,SR 2,KO,,10.0,,,,,,,,,,,SR 2
+3,Skip,Action,128,tado,,,,SR 2,,,,,,,,,,,,,,SR 2
+3,BuyShare,Action,129,mindbomb(UTC+9),65.0,,IPO,SR 2,SR,,10.0,,,,,,,,,,,SR 2
+3,Skip,Action,130,mindbomb(UTC+9),,,,SR 2,,,,,,,,,,,,,,SR 2
+3,Pass,Action,131,camping no reception,,,,SR 2,,,,,,,,,,,,,,SR 2
+3,BuyShare,Action,132,Sprint,65.0,,IPO,SR 2,IR,,10.0,,,,,,,,,,,SR 2
+3,Skip,Action,133,Sprint,,,,SR 2,,,,,,,,,,,,,,SR 2
+3,Pass,Action,134,Millie,,,,SR 2,,,,,,,,,,,,,,SR 2
+3,Pass,Action,135,zorbak,,,,SR 2,,,,,,,,,,,,,,SR 2
+3,Pass,Action,136,tado,,,,SR 2,,,,,,,,,,,,,,SR 2
+3,Pass,Action,137,mindbomb(UTC+9),,,,SR 2,,,,,,,,,,,,,,SR 2
+3,Pass,Action,138,camping no reception,,,,SR 2,,,,,,,,,,,,,,SR 2
+3,Pass,Action,140,Sprint,,,,SR 2,,,,,,,,,,,,,,SR 2
+3,PriorityDeal,Event,141,Millie,,,,SR 2,,,,,,,,,,,,,,SR 2
+3,OperatingRound,Event,142,,,,,OR 2.1,,,,,,,,,,,,,,OR 2
+3,Collect,Action,143,Millie,5.0,,Takamatsu E-Railroad,OR 2.1,,,,,,,,,,,,,,OR 2
+3,Collect,Action,144,Millie,10.0,,Ehime Railway,OR 2.1,,,,,,,,,,,,,,OR 2
+3,Collect,Action,145,zorbak,15.0,,Sumitomo Mines Railway,OR 2.1,,,,,,,,,,,,,,OR 2
+3,Collect,Action,146,tado,30.0,,Uno-Takamatsu Ferry,OR 2.1,,,,,,,,,,,,,,OR 2
+3,Collect,Action,147,mindbomb(UTC+9),20.0,,South Iyo Railway,OR 2.1,,,,,,,,,,,,,,OR 2
+3,Collect,Action,148,camping no reception,15.0,,Dougo Railway,OR 2.1,,,,,,,,,,,,,,OR 2
+3,Collect,Action,149,,5.0,,Mitsubishi Ferry,OR 2.1,TR,,,,,,,,,,,,,OR 2
+3,OperatesCompany,Event,150,zorbak,,,,OR 2.1,IR,,,,,,,,,,,,,OR 2
+3,LayTile,Action,151,,0.0,,,OR 2.1,IR,,,F3,5,2,,,,,,,,OR 2
+3,PlaceToken,Action,152,,40.0,,,OR 2.1,IR,,,F3,,,,,,,,,,OR 2
+3,RunTrain,Action,153,,40.0,,,OR 2.1,IR,,,,,,,2,F3-E2,,,,,OR 2
+3,RunTrain,Action,154,,50.0,,,OR 2.1,IR,,,,,,,2,F3-F1,,,,,OR 2
+3,RunTrain,Action,155,,50.0,,,OR 2.1,IR,,,,,,,2,E2-F1,,,,,OR 2
+3,PayOut,Action,156,,140.0,,,OR 2.1,IR,,,,,,,,,14.0,,,,OR 2
+3,SharePriceMoves,Event,157,,,,,OR 2.1,IR,65.0,,,,,right,,,,,,,OR 2
+3,Pass,Action,158,,,,,OR 2.1,IR,,,,,,,,,,,,,OR 2
+3,BuyPrivate,Action,159,,100.0,Sumitomo Mines Railway,zorbak,OR 2.1,IR,,,,,,,,,,,,,OR 2
+3,Pass,Action,160,,,,,OR 2.1,IR,,,,,,,,,,,,,OR 2
+3,OperatesCompany,Event,161,camping no reception,,,,OR 2.1,UR,,,,,,,,,,,,,OR 2
+3,LayTile,Action,162,,0.0,,,OR 2.1,UR,,,C8,9,2,,,,,,,,OR 2
+3,Skip,Action,163,,,,,OR 2.1,UR,,,,,,,,,,,,,OR 2
+3,RunTrain,Action,164,,40.0,,,OR 2.1,UR,,,,,,,2,C4-B3,,,,,OR 2
+3,RunTrain,Action,165,,60.0,,,OR 2.1,UR,,,,,,,2,B7-B3,,,,,OR 2
+3,PayOut,Action,166,,100.0,,,OR 2.1,UR,,,,,,,,,10.0,,,,OR 2
+3,SharePriceMoves,Event,167,,,,,OR 2.1,UR,65.0,,,,,right,,,,,,,OR 2
+3,BuyTrain,Action,168,,180.0,,The Depot,OR 2.1,UR,,,,,,,3,,,,,,OR 2
+3,Pass,Action,169,,,,,OR 2.1,UR,,,,,,,,,,,,,OR 2
+3,BuyPrivate,Action,170,,120.0,Dougo Railway,camping no reception,OR 2.1,UR,,,,,,,,,,,,,OR 2
+3,Pass,Action,171,,,,,OR 2.1,UR,,,,,,,,,,,,,OR 2
+3,OperatesCompany,Event,172,Sprint,,,,OR 2.1,TR,,,,,,,,,,,,,OR 2
+3,LayTile,Action,173,,0.0,,,OR 2.1,TR,,,E8,8,5,,,,,,,,OR 2
+3,Skip,Action,174,,,,,OR 2.1,TR,,,,,,,,,,,,,OR 2
+3,RunTrain,Action,175,,40.0,,,OR 2.1,TR,,,,,,,3,G12-G14,,,,,OR 2
+3,RunTrain,Action,176,,50.0,,,OR 2.1,TR,,,,,,,3,G12-G10,,,,,OR 2
+3,RunTrain,Action,177,,60.0,,,OR 2.1,TR,,,,,,,2,F9-G10,,,,,OR 2
+3,PayOut,Action,178,,150.0,,,OR 2.1,TR,,,,,,,,,15.0,,,,OR 2
+3,SharePriceMoves,Event,179,,,,,OR 2.1,TR,65.0,,,,,right,,,,,,,OR 2
+3,Pass,Action,180,,,,,OR 2.1,TR,,,,,,,,,,,,,OR 2
+3,Pass,Action,181,,,,,OR 2.1,TR,,,,,,,,,,,,,OR 2
+3,OperatesCompany,Event,182,Millie,,,,OR 2.1,KO,,,,,,,,,,,,,OR 2
+3,LayTile,Action,183,,0.0,,,OR 2.1,KO,,,J5,58,2,,,,,,,,OR 2
+3,Skip,Action,184,,,,,OR 2.1,KO,,,,,,,,,,,,,OR 2
+3,RunTrain,Action,185,,60.0,,,OR 2.1,KO,,,,,,,3,J1-K4-J5,,,,,OR 2
+3,PayOut,Action,186,,60.0,,,OR 2.1,KO,,,,,,,,,6.0,,,,OR 2
+3,SharePriceMoves,Event,187,,,,,OR 2.1,KO,65.0,,,,,right,,,,,,,OR 2
+3,Pass,Action,188,,,,,OR 2.1,KO,,,,,,,,,,,,,OR 2
+3,Pass,Action,189,,,,,OR 2.1,KO,,,,,,,,,,,,,OR 2
+3,OperatingRound,Event,190,,,,,OR 2.2,,,,,,,,,,,,,,OR 2
+3,Collect,Action,191,Millie,5.0,,Takamatsu E-Railroad,OR 2.2,,,,,,,,,,,,,,OR 2
+3,Collect,Action,192,Millie,10.0,,Ehime Railway,OR 2.2,,,,,,,,,,,,,,OR 2
+3,Collect,Action,193,tado,30.0,,Uno-Takamatsu Ferry,OR 2.2,,,,,,,,,,,,,,OR 2
+3,Collect,Action,194,mindbomb(UTC+9),20.0,,South Iyo Railway,OR 2.2,,,,,,,,,,,,,,OR 2
+3,Collect,Action,195,,15.0,,Sumitomo Mines Railway,OR 2.2,IR,,,,,,,,,,,,,OR 2
+3,Collect,Action,196,,15.0,,Dougo Railway,OR 2.2,UR,,,,,,,,,,,,,OR 2
+3,Collect,Action,197,,5.0,,Mitsubishi Ferry,OR 2.2,TR,,,,,,,,,,,,,OR 2
+3,OperatesCompany,Event,198,zorbak,,,,OR 2.2,IR,,,,,,,,,,,,,OR 2
+3,LayTile,Action,199,,0.0,,,OR 2.2,IR,,,F3,205,2,,,,,,,,OR 2
+3,Skip,Action,200,,,,,OR 2.2,IR,,,,,,,,,,,,,OR 2
+3,RunTrain,Action,201,,50.0,,,OR 2.2,IR,,,,,,,2,F3-E2,,,,,OR 2
+3,RunTrain,Action,202,,60.0,,,OR 2.2,IR,,,,,,,2,F3-F1,,,,,OR 2
+3,RunTrain,Action,203,,50.0,,,OR 2.2,IR,,,,,,,2,E2-F1,,,,,OR 2
+3,PayOut,Action,204,,160.0,,,OR 2.2,IR,,,,,,,,,16.0,,,,OR 2
+3,SharePriceMoves,Event,205,,,,,OR 2.2,IR,70.0,,,,,right,,,,,,,OR 2
+3,Pass,Action,206,,,,,OR 2.2,IR,,,,,,,,,,,,,OR 2
+3,Pass,Action,207,,,,,OR 2.2,IR,,,,,,,,,,,,,OR 2
+3,OperatesCompany,Event,208,camping no reception,,,,OR 2.2,UR,,,,,,,,,,,,,OR 2
+3,LayTile,Action,210,,0.0,,,OR 2.2,UR,,,D9,8,2,,,,,,,,OR 2
+3,Pass,Action,211,,,,,OR 2.2,UR,,,,,,,,,,,,,OR 2
+3,RunTrain,Action,212,,100.0,,,OR 2.2,UR,,,,,,,3,B7-F9-G10,,,,,OR 2
+3,RunTrain,Action,213,,40.0,,,OR 2.2,UR,,,,,,,2,C4-B3,,,,,OR 2
+3,RunTrain,Action,214,,60.0,,,OR 2.2,UR,,,,,,,2,B7-B3,,,,,OR 2
+3,PayOut,Action,215,,200.0,,,OR 2.2,UR,,,,,,,,,20.0,,,,OR 2
+3,SharePriceMoves,Event,216,,,,,OR 2.2,UR,70.0,,,,,right,,,,,,,OR 2
+3,Pass,Action,217,,,,,OR 2.2,UR,,,,,,,,,,,,,OR 2
+3,Pass,Action,218,,,,,OR 2.2,UR,,,,,,,,,,,,,OR 2
+3,OperatesCompany,Event,219,Sprint,,,,OR 2.2,TR,,,,,,,,,,,,,OR 2
+3,LayTile,Action,220,,0.0,,,OR 2.2,TR,,,G12,15,3,,,,,,,,OR 2
+3,Pass,Action,221,,,,,OR 2.2,TR,,,,,,,,,,,,,OR 2
+3,RunTrain,Action,222,,80.0,,,OR 2.2,TR,,,,,,,3,G10-G12-G14,,,,,OR 2
+3,RunTrain,Action,223,,90.0,,,OR 2.2,TR,,,,,,,3,F9-B7-B3,,,,,OR 2
+3,RunTrain,Action,224,,60.0,,,OR 2.2,TR,,,,,,,2,F9-G10,,,,,OR 2
+3,PayOut,Action,225,,230.0,,,OR 2.2,TR,,,,,,,,,23.0,,,,OR 2
+3,SharePriceMoves,Event,226,,,,,OR 2.2,TR,70.0,,,,,right,,,,,,,OR 2
+3,Pass,Action,227,,,,,OR 2.2,TR,,,,,,,,,,,,,OR 2
+3,Pass,Action,228,,,,,OR 2.2,TR,,,,,,,,,,,,,OR 2
+3,OperatesCompany,Event,229,Millie,,,,OR 2.2,KO,,,,,,,,,,,,,OR 2
+3,LayTile,Action,230,,80.0,,,OR 2.2,KO,,,I4,438,5,,,,,,,,OR 2
+3,Pass,Action,231,,,,,OR 2.2,KO,,,,,,,,,,,,,OR 2
+3,RunTrain,Action,232,,80.0,,,OR 2.2,KO,,,,,,,3,K4-J5-I4,,,,,OR 2
+3,PayOut,Action,233,,80.0,,,OR 2.2,KO,,,,,,,,,8.0,,,,OR 2
+3,SharePriceMoves,Event,234,,,,,OR 2.2,KO,70.0,,,,,right,,,,,,,OR 2
+3,Pass,Action,235,,,,,OR 2.2,KO,,,,,,,,,,,,,OR 2
+3,BuyPrivate,Action,236,,40.0,Takamatsu E-Railroad,Millie,OR 2.2,KO,,,,,,,,,,,,,OR 2
+3,Pass,Action,237,,,,,OR 2.2,KO,,,,,,,,,,,,,OR 2
+3,StockRound,Event,238,,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,239,Millie,65.0,,IPO,SR 3,TR,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,240,Millie,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,241,zorbak,65.0,,IPO,SR 3,TR,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,242,zorbak,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,243,tado,65.0,,IPO,SR 3,TR,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,244,tado,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,246,mindbomb(UTC+9),65.0,,IPO,SR 3,SR,,10.0,,,,,,,,,,,SR 3
+3,CompanyFloats,Event,247,,,,,SR 3,SR,,,,,,,,,,,,,SR 3
+3,ReceiveFunds,Event,248,,650.0,,,SR 3,SR,,,,,,,,,,,,,SR 3
+3,Skip,Action,249,mindbomb(UTC+9),,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,250,camping no reception,65.0,,IPO,SR 3,IR,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,251,camping no reception,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,252,Sprint,65.0,,IPO,SR 3,TR,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,253,Sprint,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,254,Millie,65.0,,IPO,SR 3,UR,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,255,Millie,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,256,zorbak,65.0,,IPO,SR 3,UR,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,257,zorbak,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,258,tado,65.0,,IPO,SR 3,KO,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,259,tado,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,260,mindbomb(UTC+9),,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,261,camping no reception,65.0,,IPO,SR 3,TR,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,262,camping no reception,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,264,Sprint,65.0,,IPO,SR 3,UR,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,265,Sprint,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,266,Millie,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,267,zorbak,65.0,,IPO,SR 3,KO,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,268,zorbak,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,269,tado,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,270,mindbomb(UTC+9),,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,271,camping no reception,65.0,,IPO,SR 3,UR,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,272,camping no reception,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,273,Sprint,65.0,,IPO,SR 3,KO,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,274,Sprint,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,275,Millie,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,276,zorbak,65.0,,IPO,SR 3,KO,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,277,zorbak,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,278,tado,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,280,mindbomb(UTC+9),,,,SR 3,,,,,,,,,,,,,,SR 3
+3,BuyShare,Action,281,camping no reception,65.0,,IPO,SR 3,SR,,10.0,,,,,,,,,,,SR 3
+3,Skip,Action,282,camping no reception,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,283,Sprint,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,284,Millie,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,285,zorbak,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,286,tado,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,287,mindbomb(UTC+9),,,,SR 3,,,,,,,,,,,,,,SR 3
+3,Pass,Action,288,camping no reception,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,SharePriceMoves,Event,289,,,,,SR 3,IR,75.0,,,,,up,,,,,,,SR 3
+3,SharePriceMoves,Event,290,,,,,SR 3,UR,75.0,,,,,up,,,,,,,SR 3
+3,SharePriceMoves,Event,291,,,,,SR 3,TR,75.0,,,,,up,,,,,,,SR 3
+3,SharePriceMoves,Event,292,,,,,SR 3,KO,75.0,,,,,up,,,,,,,SR 3
+3,PriorityDeal,Event,293,Sprint,,,,SR 3,,,,,,,,,,,,,,SR 3
+3,OperatingRound,Event,294,,,,,OR 3.1,,,,,,,,,,,,,,OR 3
+3,Collect,Action,295,Millie,10.0,,Ehime Railway,OR 3.1,,,,,,,,,,,,,,OR 3
+3,Collect,Action,296,tado,30.0,,Uno-Takamatsu Ferry,OR 3.1,,,,,,,,,,,,,,OR 3
+3,Collect,Action,297,mindbomb(UTC+9),20.0,,South Iyo Railway,OR 3.1,,,,,,,,,,,,,,OR 3
+3,Collect,Action,298,,15.0,,Sumitomo Mines Railway,OR 3.1,IR,,,,,,,,,,,,,OR 3
+3,Collect,Action,299,,15.0,,Dougo Railway,OR 3.1,UR,,,,,,,,,,,,,OR 3
+3,Collect,Action,300,,5.0,,Mitsubishi Ferry,OR 3.1,TR,,,,,,,,,,,,,OR 3
+3,Collect,Action,301,,5.0,,Takamatsu E-Railroad,OR 3.1,KO,,,,,,,,,,,,,OR 3
+3,PlaceToken,Action,302,,0.0,,,OR 3.1,SR,,,I2,,,,,,,,,,OR 3
+3,OperatesCompany,Event,303,zorbak,,,,OR 3.1,IR,,,,,,,,,,,,,OR 3
+3,LayTile,Action,305,,0.0,,,OR 3.1,IR,,,G4,6,2,,,,,,,,OR 3
+3,Skip,Action,306,,,,,OR 3.1,IR,,,,,,,,,,,,,OR 3
+3,RunTrain,Action,307,,50.0,,,OR 3.1,IR,,,,,,,2,F3-E2,,,,,OR 3
+3,RunTrain,Action,308,,60.0,,,OR 3.1,IR,,,,,,,2,F3-F1,,,,,OR 3
+3,RunTrain,Action,309,,50.0,,,OR 3.1,IR,,,,,,,2,E2-F1,,,,,OR 3
+3,PayOut,Action,310,,160.0,,,OR 3.1,IR,,,,,,,,,16.0,,,,OR 3
+3,SharePriceMoves,Event,311,,,,,OR 3.1,IR,80.0,,,,,right,,,,,,,OR 3
+3,Pass,Action,312,,,,,OR 3.1,IR,,,,,,,,,,,,,OR 3
+3,Pass,Action,313,,,,,OR 3.1,IR,,,,,,,,,,,,,OR 3
+3,OperatesCompany,Event,314,camping no reception,,,,OR 3.1,UR,,,,,,,,,,,,,OR 3
+3,Pass,Action,315,,,,,OR 3.1,UR,,,,,,,,,,,,,OR 3
+3,Pass,Action,316,,,,,OR 3.1,UR,,,,,,,,,,,,,OR 3
+3,RunTrain,Action,317,,100.0,,,OR 3.1,UR,,,,,,,3,B7-F9-G10,,,,,OR 3
+3,RunTrain,Action,318,,40.0,,,OR 3.1,UR,,,,,,,2,C4-B3,,,,,OR 3
+3,RunTrain,Action,319,,60.0,,,OR 3.1,UR,,,,,,,2,B7-B3,,,,,OR 3
+3,PayOut,Action,320,,200.0,,,OR 3.1,UR,,,,,,,,,20.0,,,,OR 3
+3,SharePriceMoves,Event,321,,,,,OR 3.1,UR,80.0,,,,,right,,,,,,,OR 3
+3,Pass,Action,322,,,,,OR 3.1,UR,,,,,,,,,,,,,OR 3
+3,Pass,Action,323,,,,,OR 3.1,UR,,,,,,,,,,,,,OR 3
+3,OperatesCompany,Event,324,Sprint,,,,OR 3.1,TR,,,,,,,,,,,,,OR 3
+3,LayTile,Action,325,,0.0,,,OR 3.1,TR,,,B5,23,0,,,,,,,,OR 3
+3,Pass,Action,326,,,,,OR 3.1,TR,,,,,,,,,,,,,OR 3
+3,RunTrain,Action,327,,80.0,,,OR 3.1,TR,,,,,,,3,G10-G12-G14,,,,,OR 3
+3,RunTrain,Action,328,,90.0,,,OR 3.1,TR,,,,,,,3,F9-B7-B3,,,,,OR 3
+3,RunTrain,Action,329,,60.0,,,OR 3.1,TR,,,,,,,2,F9-G10,,,,,OR 3
+3,PayOut,Action,330,,230.0,,,OR 3.1,TR,,,,,,,,,23.0,,,,OR 3
+3,SharePriceMoves,Event,331,,,,,OR 3.1,TR,80.0,,,,,right,,,,,,,OR 3
+3,Pass,Action,332,,,,,OR 3.1,TR,,,,,,,,,,,,,OR 3
+3,Pass,Action,333,,,,,OR 3.1,TR,,,,,,,,,,,,,OR 3
+3,OperatesCompany,Event,334,Millie,,,,OR 3.1,KO,,,,,,,,,,,,,OR 3
+3,LayTile,Action,335,,80.0,,,OR 3.1,KO,,,I4,439,1,,,,,,,,OR 3
+3,Pass,Action,336,,,,,OR 3.1,KO,,,,,,,,,,,,,OR 3
+3,RunTrain,Action,337,,100.0,,,OR 3.1,KO,,,,,,,3,K4-J5-I4,,,,,OR 3
+3,PayOut,Action,338,,100.0,,,OR 3.1,KO,,,,,,,,,10.0,,,,OR 3
+3,SharePriceMoves,Event,339,,,,,OR 3.1,KO,80.0,,,,,right,,,,,,,OR 3
+3,BuyTrain,Action,340,,180.0,,The Depot,OR 3.1,KO,,,,,,,3,,,,,,OR 3
+3,Pass,Action,341,,,,,OR 3.1,KO,,,,,,,,,,,,,OR 3
+3,Pass,Action,342,,,,,OR 3.1,KO,,,,,,,,,,,,,OR 3
+3,OperatesCompany,Event,343,mindbomb(UTC+9),,,,OR 3.1,SR,,,,,,,,,,,,,OR 3
+3,LayTile,Action,344,,0.0,,,OR 3.1,SR,,,I2,6,4,,,,,,,,OR 3
+3,PlaceToken,Action,345,,40.0,,,OR 3.1,SR,,,I4,,,,,,,,,,OR 3
+3,Skip,Action,346,,,,,OR 3.1,SR,,,,,,,,,,,,,OR 3
+3,DoesNotRun,Event,347,,,,,OR 3.1,SR,,,,,,,,,,,,,OR 3
+3,SharePriceMoves,Event,348,,,,,OR 3.1,SR,60.0,,,,,left,,,,,,,OR 3
+3,BuyTrain,Action,349,,300.0,,The Depot,OR 3.1,SR,,,,,,,4,,,,,,OR 3
+4,NewPhase,Event,350,,,,,OR 3.1,,,,,,,,,,,,,,OR 3
+4,TrainsRust,Event,351,,,,,OR 3.1,,,,,,,,2,,,,,,OR 3
+4,BuyTrain,Action,352,,300.0,,The Depot,OR 3.1,SR,,,,,,,4,,,,,,OR 3
+4,Pass,Action,353,,,,,OR 3.1,SR,,,,,,,,,,,,,OR 3
+4,Skip,Action,354,,,,,OR 3.1,SR,,,,,,,,,,,,,OR 3
+4,OperatingRound,Event,355,,,,,OR 3.2,,,,,,,,,,,,,,OR 3
+4,Collect,Action,356,Millie,10.0,,Ehime Railway,OR 3.2,,,,,,,,,,,,,,OR 3
+4,Collect,Action,357,tado,30.0,,Uno-Takamatsu Ferry,OR 3.2,,,,,,,,,,,,,,OR 3
+4,Collect,Action,358,mindbomb(UTC+9),20.0,,South Iyo Railway,OR 3.2,,,,,,,,,,,,,,OR 3
+4,Collect,Action,359,,15.0,,Sumitomo Mines Railway,OR 3.2,IR,,,,,,,,,,,,,OR 3
+4,Collect,Action,360,,15.0,,Dougo Railway,OR 3.2,UR,,,,,,,,,,,,,OR 3
+4,Collect,Action,361,,5.0,,Mitsubishi Ferry,OR 3.2,TR,,,,,,,,,,,,,OR 3
+4,Collect,Action,362,,5.0,,Takamatsu E-Railroad,OR 3.2,KO,,,,,,,,,,,,,OR 3
+4,OperatesCompany,Event,363,zorbak,,,,OR 3.2,IR,,,,,,,,,,,,,OR 3
+4,LayTile,Action,364,,0.0,,,OR 3.2,IR,,,H3,9,1,,,,,,,,OR 3
+4,Skip,Action,365,,,,,OR 3.2,IR,,,,,,,,,,,,,OR 3
+4,Skip,Action,366,,,,,OR 3.2,IR,,,,,,,,,,,,,OR 3
+4,DoesNotRun,Event,367,,,,,OR 3.2,IR,,,,,,,,,,,,,OR 3
+4,SharePriceMoves,Event,368,,,,,OR 3.2,IR,75.0,,,,,left,,,,,,,OR 3
+4,BuyTrain,Action,369,,300.0,,The Depot,OR 3.2,IR,,,,,,,4,,,,,,OR 3
+4,Pass,Action,370,,,,,OR 3.2,IR,,,,,,,,,,,,,OR 3
+4,Skip,Action,371,,,,,OR 3.2,IR,,,,,,,,,,,,,OR 3
+4,OperatesCompany,Event,372,camping no reception,,,,OR 3.2,UR,,,,,,,,,,,,,OR 3
+4,Pass,Action,373,,,,,OR 3.2,UR,,,,,,,,,,,,,OR 3
+4,Pass,Action,374,,,,,OR 3.2,UR,,,,,,,,,,,,,OR 3
+4,RunTrain,Action,375,,100.0,,,OR 3.2,UR,,,,,,,3,B7-F9-G10,,,,,OR 3
+4,PayOut,Action,376,,100.0,,,OR 3.2,UR,,,,,,,,,10.0,,,,OR 3
+4,SharePriceMoves,Event,377,,,,,OR 3.2,UR,90.0,,,,,right,,,,,,,OR 3
+4,Pass,Action,378,,,,,OR 3.2,UR,,,,,,,,,,,,,OR 3
+4,Pass,Action,379,,,,,OR 3.2,UR,,,,,,,,,,,,,OR 3
+4,OperatesCompany,Event,380,Sprint,,,,OR 3.2,TR,,,,,,,,,,,,,OR 3
+4,LayTile,Action,381,,0.0,,,OR 3.2,TR,,,E8,25,5,,,,,,,,OR 3
+4,Pass,Action,382,,,,,OR 3.2,TR,,,,,,,,,,,,,OR 3
+4,RunTrain,Action,383,,80.0,,,OR 3.2,TR,,,,,,,3,G10-G12-G14,,,,,OR 3
+4,RunTrain,Action,384,,100.0,,,OR 3.2,TR,,,,,,,3,B7-F9-G10,,,,,OR 3
+4,PayOut,Action,385,,180.0,,,OR 3.2,TR,,,,,,,,,18.0,,,,OR 3
+4,SharePriceMoves,Event,386,,,,,OR 3.2,TR,90.0,,,,,right,,,,,,,OR 3
+4,Pass,Action,387,,,,,OR 3.2,TR,,,,,,,,,,,,,OR 3
+4,Pass,Action,388,,,,,OR 3.2,TR,,,,,,,,,,,,,OR 3
+4,OperatesCompany,Event,389,Millie,,,,OR 3.2,KO,,,,,,,,,,,,,OR 3
+4,LayTile,Action,390,,0.0,,,OR 3.2,KO,,,I2,15,4,,,,,,,,OR 3
+4,PlaceToken,Action,391,,40.0,,,OR 3.2,KO,,,I2,,,,,,,,,,OR 3
+4,RunTrain,Action,392,,100.0,,,OR 3.2,KO,,,,,,,3,K4-J5-I4,,,,,OR 3
+4,RunTrain,Action,393,,110.0,,,OR 3.2,KO,,,,,,,3,I4-I2-G4,,,,,OR 3
+4,Withhold,Action,394,,210.0,,,OR 3.2,KO,,,,,,,,,,,,,OR 3
+4,SharePriceMoves,Event,395,,,,,OR 3.2,KO,75.0,,,,,left,,,,,,,OR 3
+4,Pass,Action,396,,,,,OR 3.2,KO,,,,,,,,,,,,,OR 3
+4,Pass,Action,397,,,,,OR 3.2,KO,,,,,,,,,,,,,OR 3
+4,OperatesCompany,Event,398,mindbomb(UTC+9),,,,OR 3.2,SR,,,,,,,,,,,,,OR 3
+4,Pass,Action,399,,,,,OR 3.2,SR,,,,,,,,,,,,,OR 3
+4,Skip,Action,400,,,,,OR 3.2,SR,,,,,,,,,,,,,OR 3
+4,RunTrain,Action,401,,100.0,,,OR 3.2,SR,,,,,,,4,I4-J5-K4,,,,,OR 3
+4,RunTrain,Action,402,,140.0,,,OR 3.2,SR,,,,,,,4,I4-I2-G4-F3,,,,,OR 3
+4,PayOut,Action,403,,240.0,,,OR 3.2,SR,,,,,,,,,24.0,,,,OR 3
+4,SharePriceMoves,Event,404,,,,,OR 3.2,SR,65.0,,,,,right,,,,,,,OR 3
+4,Pass,Action,405,,,,,OR 3.2,SR,,,,,,,,,,,,,OR 3
+4,Skip,Action,406,,,,,OR 3.2,SR,,,,,,,,,,,,,OR 3
+4,StockRound,Event,407,,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,SellShares,Action,409,Sprint,90.0,,,SR 4,UR,,10.0,,,,,,,,,,,SR 4
+4,SharePriceMoves,Event,410,,,,,SR 4,UR,80.0,,,,,down,,,,,,,SR 4
+4,SellShares,Action,411,Sprint,75.0,,,SR 4,KO,,10.0,,,,,,,,,,,SR 4
+4,SharePriceMoves,Event,412,,,,,SR 4,KO,70.0,,,,,down,,,,,,,SR 4
+4,Par,Action,413,Sprint,,,,SR 4,KU,100.0,,,,,,,,,,,,SR 4
+4,BuyShare,Action,414,Sprint,200.0,,IPO,SR 4,KU,,20.0,,,,,,,,,,,SR 4
+4,PresidentNomination,Event,415,Sprint,,,,SR 4,KU,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,416,Millie,65.0,,IPO,SR 4,SR,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,417,Millie,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,418,zorbak,65.0,,IPO,SR 4,SR,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,419,zorbak,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,SellShares,Action,420,tado,150.0,,,SR 4,IR,,20.0,,,,,,,,,,,SR 4
+4,SharePriceMoves,Event,421,,,,,SR 4,IR,65.0,,,,,down,,,,,,,SR 4
+4,SellShares,Action,422,tado,140.0,,,SR 4,KO,,20.0,,,,,,,,,,,SR 4
+4,SharePriceMoves,Event,423,,,,,SR 4,KO,60.0,,,,,down,,,,,,,SR 4
+4,SellShares,Action,424,tado,90.0,,,SR 4,TR,,10.0,,,,,,,,,,,SR 4
+4,SharePriceMoves,Event,425,,,,,SR 4,TR,80.0,,,,,down,,,,,,,SR 4
+4,SellShares,Action,426,tado,80.0,,,SR 4,UR,,10.0,,,,,,,,,,,SR 4
+4,Par,Action,427,tado,,,,SR 4,AR,100.0,,,,,,,,,,,,SR 4
+4,BuyShare,Action,428,tado,200.0,,IPO,SR 4,AR,,20.0,,,,,,,,,,,SR 4
+4,PresidentNomination,Event,429,tado,,,,SR 4,AR,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,430,mindbomb(UTC+9),65.0,,IPO,SR 4,SR,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,431,mindbomb(UTC+9),,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,432,camping no reception,60.0,,market,SR 4,KO,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,433,camping no reception,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,SellShares,Action,434,Sprint,80.0,,,SR 4,TR,,10.0,,,,,,,,,,,SR 4
+4,BuyShare,Action,435,Sprint,65.0,,IPO,SR 4,SR,,10.0,,,,,,,,,,,SR 4
+4,BuyShare,Action,436,Millie,65.0,,market,SR 4,IR,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,437,Millie,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,438,zorbak,60.0,,market,SR 4,KO,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,439,zorbak,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,440,tado,100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,441,tado,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,442,mindbomb(UTC+9),100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,443,mindbomb(UTC+9),,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,444,camping no reception,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,446,Sprint,100.0,,IPO,SR 4,KU,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,447,Sprint,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,448,Millie,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,449,zorbak,65.0,,market,SR 4,IR,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,450,zorbak,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,451,tado,100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,,SR 4
+4,CompanyFloats,Event,452,,,,,SR 4,AR,,,,,,,,,,,,,SR 4
+4,ReceiveFunds,Event,453,,1000.0,,,SR 4,AR,,,,,,,,,,,,,SR 4
+4,Skip,Action,454,tado,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,455,mindbomb(UTC+9),,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,456,camping no reception,100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,457,camping no reception,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,459,Sprint,100.0,,IPO,SR 4,KU,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,460,Sprint,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,461,Millie,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,462,zorbak,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,463,tado,100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,464,tado,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,465,mindbomb(UTC+9),,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,466,camping no reception,100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,467,camping no reception,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,468,Sprint,100.0,,IPO,SR 4,KU,,10.0,,,,,,,,,,,SR 4
+4,CompanyFloats,Event,469,,,,,SR 4,KU,,,,,,,,,,,,,SR 4
+4,ReceiveFunds,Event,470,,1000.0,,,SR 4,KU,,,,,,,,,,,,,SR 4
+4,Skip,Action,471,Sprint,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,472,Millie,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,473,zorbak,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,BuyShare,Action,474,tado,100.0,,IPO,SR 4,AR,,10.0,,,,,,,,,,,SR 4
+4,Skip,Action,475,tado,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,476,mindbomb(UTC+9),,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,477,camping no reception,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,478,Sprint,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,479,Millie,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,480,zorbak,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,Pass,Action,481,tado,,,,SR 4,,,,,,,,,,,,,,SR 4
+4,SharePriceMoves,Event,482,,,,,SR 4,IR,70.0,,,,,up,,,,,,,SR 4
+4,SharePriceMoves,Event,483,,,,,SR 4,SR,70.0,,,,,up,,,,,,,SR 4
+4,PriorityDeal,Event,484,mindbomb(UTC+9),,,,SR 4,,,,,,,,,,,,,,SR 4
+4,OperatingRound,Event,485,,,,,OR 4.1,,,,,,,,,,,,,,OR 4
+4,Collect,Action,486,mindbomb(UTC+9),20.0,,South Iyo Railway,OR 4.1,,,,,,,,,,,,,,OR 4
+4,Collect,Action,487,Millie,10.0,,Ehime Railway,OR 4.1,,,,,,,,,,,,,,OR 4
+4,Collect,Action,488,tado,30.0,,Uno-Takamatsu Ferry,OR 4.1,,,,,,,,,,,,,,OR 4
+4,Collect,Action,489,,15.0,,Dougo Railway,OR 4.1,UR,,,,,,,,,,,,,OR 4
+4,Collect,Action,490,,5.0,,Mitsubishi Ferry,OR 4.1,TR,,,,,,,,,,,,,OR 4
+4,Collect,Action,491,,15.0,,Sumitomo Mines Railway,OR 4.1,IR,,,,,,,,,,,,,OR 4
+4,Collect,Action,492,,5.0,,Takamatsu E-Railroad,OR 4.1,KO,,,,,,,,,,,,,OR 4
+4,PlaceToken,Action,493,,0.0,,,OR 4.1,KU,,,C10,,,,,,,,,,OR 4
+4,PlaceToken,Action,494,,0.0,,,OR 4.1,AR,,,K8,,,,,,,,,,OR 4
+4,OperatesCompany,Event,495,Sprint,,,,OR 4.1,KU,,,,,,,,,,,,,OR 4
+4,LayTile,Action,496,,0.0,,,OR 4.1,KU,,,C10,5,3,,,,,,,,OR 4
+4,Skip,Action,497,,,,,OR 4.1,KU,,,,,,,,,,,,,OR 4
+4,Skip,Action,498,,,,,OR 4.1,KU,,,,,,,,,,,,,OR 4
+4,DoesNotRun,Event,499,,,,,OR 4.1,KU,,,,,,,,,,,,,OR 4
+4,SharePriceMoves,Event,500,,,,,OR 4.1,KU,90.0,,,,,left,,,,,,,OR 4
+4,BuyTrain,Action,501,,300.0,,The Depot,OR 4.1,KU,,,,,,,4,,,,,,OR 4
+4,BuyTrain,Action,502,,450.0,,The Depot,OR 4.1,KU,,,,,,,5,,,,,,OR 4
+5,NewPhase,Event,503,,,,,OR 4.1,,,,,,,,,,,,,,OR 4
+5,AllPrivatesClose,Event,504,,,,,OR 4.1,,,,,,,,,,,,,,OR 4
+5,Skip,Action,505,,,,,OR 4.1,KU,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,506,tado,,,,OR 4.1,AR,,,,,,,,,,,,,OR 4
+5,LayTile,Action,507,,0.0,,,OR 4.1,AR,,,K8,57,1,,,,,,,,OR 4
+5,Skip,Action,508,,,,,OR 4.1,AR,,,,,,,,,,,,,OR 4
+5,Skip,Action,509,,,,,OR 4.1,AR,,,,,,,,,,,,,OR 4
+5,DoesNotRun,Event,510,,,,,OR 4.1,AR,,,,,,,,,,,,,OR 4
+5,SharePriceMoves,Event,511,,,,,OR 4.1,AR,90.0,,,,,left,,,,,,,OR 4
+5,BuyTrain,Action,512,,450.0,,The Depot,OR 4.1,AR,,,,,,,5,,,,,,OR 4
+5,Pass,Action,513,,,,,OR 4.1,AR,,,,,,,,,,,,,OR 4
+5,Skip,Action,514,,,,,OR 4.1,AR,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,515,camping no reception,,,,OR 4.1,UR,,,,,,,,,,,,,OR 4
+5,LayTile,Action,516,,0.0,,,OR 4.1,UR,,,C4,14,1,,,,,,,,OR 4
+5,Pass,Action,517,,,,,OR 4.1,UR,,,,,,,,,,,,,OR 4
+5,RunTrain,Action,518,,100.0,,,OR 4.1,UR,,,,,,,3,C4-B7-F9,,,,,OR 4
+5,PayOut,Action,519,,100.0,,,OR 4.1,UR,,,,,,,,,10.0,,,,OR 4
+5,SharePriceMoves,Event,520,,,,,OR 4.1,UR,90.0,,,,,up,,,,,,,OR 4
+5,Pass,Action,521,,,,,OR 4.1,UR,,,,,,,,,,,,,OR 4
+5,Skip,Action,522,,,,,OR 4.1,UR,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,523,Sprint,,,,OR 4.1,TR,,,,,,,,,,,,,OR 4
+5,LayTile,Action,525,,0.0,,,OR 4.1,TR,,,D9,23,4,,,,,,,,OR 4
+5,Pass,Action,526,,,,,OR 4.1,TR,,,,,,,,,,,,,OR 4
+5,RunTrain,Action,527,,90.0,,,OR 4.1,TR,,,,,,,3,G12-G10-F9,,,,,OR 4
+5,RunTrain,Action,528,,100.0,,,OR 4.1,TR,,,,,,,3,F9-B7-C4,,,,,OR 4
+5,Withhold,Action,529,,190.0,,,OR 4.1,TR,,,,,,,,,,,,,OR 4
+5,SharePriceMoves,Event,530,,,,,OR 4.1,TR,75.0,,,,,left,,,,,,,OR 4
+5,Skip,Action,531,,,,,OR 4.1,TR,,,,,,,,,,,,,OR 4
+5,Skip,Action,532,,,,,OR 4.1,TR,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,533,zorbak,,,,OR 4.1,IR,,,,,,,,,,,,,OR 4
+5,LayTile,Action,534,,0.0,,,OR 4.1,IR,,,E2,12,4,,,,,,,,OR 4
+5,Skip,Action,535,,,,,OR 4.1,IR,,,,,,,,,,,,,OR 4
+5,RunTrain,Action,536,,140.0,,,OR 4.1,IR,,,,,,,4,F1-E2-F3-G4,,,,,OR 4
+5,PayOut,Action,537,,140.0,,,OR 4.1,IR,,,,,,,,,14.0,,,,OR 4
+5,SharePriceMoves,Event,538,,,,,OR 4.1,IR,75.0,,,,,right,,,,,,,OR 4
+5,Pass,Action,539,,,,,OR 4.1,IR,,,,,,,,,,,,,OR 4
+5,Skip,Action,540,,,,,OR 4.1,IR,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,541,mindbomb(UTC+9),,,,OR 4.1,SR,,,,,,,,,,,,,OR 4
+5,Pass,Action,542,,,,,OR 4.1,SR,,,,,,,,,,,,,OR 4
+5,Skip,Action,543,,,,,OR 4.1,SR,,,,,,,,,,,,,OR 4
+5,RunTrain,Action,544,,120.0,,,OR 4.1,SR,,,,,,,4,J1-I2-G4-F3,,,,,OR 4
+5,RunTrain,Action,545,,130.0,,,OR 4.1,SR,,,,,,,4,I2-I4-J5-K4,,,,,OR 4
+5,Withhold,Action,546,,250.0,,,OR 4.1,SR,,,,,,,,,,,,,OR 4
+5,SharePriceMoves,Event,547,,,,,OR 4.1,SR,65.0,,,,,left,,,,,,,OR 4
+5,Skip,Action,548,,,,,OR 4.1,SR,,,,,,,,,,,,,OR 4
+5,Skip,Action,549,,,,,OR 4.1,SR,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,550,Millie,,,,OR 4.1,KO,,,,,,,,,,,,,OR 4
+5,LayTile,Action,551,,0.0,,,OR 4.1,KO,,,K4,440,0,,,,,,,,OR 4
+5,Skip,Action,552,,,,,OR 4.1,KO,,,,,,,,,,,,,OR 4
+5,RunTrain,Action,553,,110.0,,,OR 4.1,KO,,,,,,,3,K4-J5-I4,,,,,OR 4
+5,RunTrain,Action,554,,130.0,,,OR 4.1,KO,,,,,,,3,J1-I2-I4,,,,,OR 4
+5,PayOut,Action,555,,240.0,,,OR 4.1,KO,,,,,,,,,24.0,,,,OR 4
+5,SharePriceMoves,Event,556,,,,,OR 4.1,KO,65.0,,,,,up,,,,,,,OR 4
+5,Skip,Action,557,,,,,OR 4.1,KO,,,,,,,,,,,,,OR 4
+5,Skip,Action,558,,,,,OR 4.1,KO,,,,,,,,,,,,,OR 4
+5,OperatingRound,Event,559,,,,,OR 4.2,,,,,,,,,,,,,,OR 4
+5,Collect,Action,560,tado,50.0,,Uno-Takamatsu Ferry,OR 4.2,,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,561,camping no reception,,,,OR 4.2,UR,,,,,,,,,,,,,OR 4
+5,LayTile,Action,562,,0.0,,,OR 4.2,UR,,,D3,9,1,,,,,,,,OR 4
+5,Pass,Action,563,,,,,OR 4.2,UR,,,,,,,,,,,,,OR 4
+5,RunTrain,Action,564,,100.0,,,OR 4.2,UR,,,,,,,3,C4-B7-F9,,,,,OR 4
+5,PayOut,Action,565,,100.0,,,OR 4.2,UR,,,,,,,,,10.0,,,,OR 4
+5,SharePriceMoves,Event,566,,,,,OR 4.2,UR,100.0,,,,,right,,,,,,,OR 4
+5,Pass,Action,567,,,,,OR 4.2,UR,,,,,,,,,,,,,OR 4
+5,Skip,Action,568,,,,,OR 4.2,UR,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,569,Sprint,,,,OR 4.2,KU,,,,,,,,,,,,,OR 4
+5,LayTile,Action,571,,0.0,,,OR 4.2,KU,,,D9,41,1,,,,,,,,OR 4
+5,Skip,Action,572,,,,,OR 4.2,KU,,,,,,,,,,,,,OR 4
+5,RunTrain,Action,573,,130.0,,,OR 4.2,KU,,,,,,,5,C10-F9-G10-G12-G14,,,,,OR 4
+5,PayOut,Action,574,,130.0,,,OR 4.2,KU,,,,,,,,,13.0,,,,OR 4
+5,SharePriceMoves,Event,575,,,,,OR 4.2,KU,100.0,,,,,right,,,,,,,OR 4
+5,Skip,Action,576,,,,,OR 4.2,KU,,,,,,,,,,,,,OR 4
+5,Skip,Action,577,,,,,OR 4.2,KU,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,578,tado,,,,OR 4.2,AR,,,,,,,,,,,,,OR 4
+5,LayTile,Action,579,,0.0,,,OR 4.2,AR,,,K8,15,1,,,,,,,,OR 4
+5,Skip,Action,580,,,,,OR 4.2,AR,,,,,,,,,,,,,OR 4
+5,RunTrain,Action,581,,70.0,,,OR 4.2,AR,,,,,,,5,K8-L7,,,,,OR 4
+5,PayOut,Action,582,,70.0,,,OR 4.2,AR,,,,,,,,,7.0,,,,OR 4
+5,SharePriceMoves,Event,583,,,,,OR 4.2,AR,100.0,,,,,right,,,,,,,OR 4
+5,Pass,Action,584,,,,,OR 4.2,AR,,,,,,,,,,,,,OR 4
+5,Skip,Action,585,,,,,OR 4.2,AR,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,586,Sprint,,,,OR 4.2,TR,,,,,,,,,,,,,OR 4
+5,LayTile,Action,587,,0.0,,,OR 4.2,TR,,,E2,448,4,,,,,,,,OR 4
+5,PlaceToken,Action,588,,40.0,,,OR 4.2,TR,,,E2,,,,,,,,,,OR 4
+5,RunTrain,Action,589,,90.0,,,OR 4.2,TR,,,,,,,3,G12-G10-F9,,,,,OR 4
+5,RunTrain,Action,590,,100.0,,,OR 4.2,TR,,,,,,,3,F9-B7-C4,,,,,OR 4
+5,PayOut,Action,591,,190.0,,,OR 4.2,TR,,,,,,,,,19.0,,,,OR 4
+5,SharePriceMoves,Event,592,,,,,OR 4.2,TR,80.0,,,,,right,,,,,,,OR 4
+5,Skip,Action,593,,,,,OR 4.2,TR,,,,,,,,,,,,,OR 4
+5,Skip,Action,594,,,,,OR 4.2,TR,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,595,zorbak,,,,OR 4.2,IR,,,,,,,,,,,,,OR 4
+5,LayTile,Action,596,,0.0,,,OR 4.2,IR,,,C4,611,4,,,,,,,,OR 4
+5,Skip,Action,597,,,,,OR 4.2,IR,,,,,,,,,,,,,OR 4
+5,RunTrain,Action,598,,180.0,,,OR 4.2,IR,,,,,,,4,F1-E2-C4-B7,,,,,OR 4
+5,PayOut,Action,599,,180.0,,,OR 4.2,IR,,,,,,,,,18.0,,,,OR 4
+5,SharePriceMoves,Event,600,,,,,OR 4.2,IR,80.0,,,,,right,,,,,,,OR 4
+5,Pass,Action,601,,,,,OR 4.2,IR,,,,,,,,,,,,,OR 4
+5,Skip,Action,602,,,,,OR 4.2,IR,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,603,Millie,,,,OR 4.2,KO,,,,,,,,,,,,,OR 4
+5,LayTile,Action,604,,80.0,,,OR 4.2,KO,,,I4,492,0,,,,,,,,OR 4
+5,Skip,Action,605,,,,,OR 4.2,KO,,,,,,,,,,,,,OR 4
+5,RunTrain,Action,606,,130.0,,,OR 4.2,KO,,,,,,,3,K4-J5-I4,,,,,OR 4
+5,RunTrain,Action,607,,150.0,,,OR 4.2,KO,,,,,,,3,J1-I2-I4,,,,,OR 4
+5,PayOut,Action,608,,280.0,,,OR 4.2,KO,,,,,,,,,28.0,,,,OR 4
+5,SharePriceMoves,Event,609,,,,,OR 4.2,KO,70.0,,,,,right,,,,,,,OR 4
+5,Skip,Action,610,,,,,OR 4.2,KO,,,,,,,,,,,,,OR 4
+5,Skip,Action,611,,,,,OR 4.2,KO,,,,,,,,,,,,,OR 4
+5,OperatesCompany,Event,612,mindbomb(UTC+9),,,,OR 4.2,SR,,,,,,,,,,,,,OR 4
+5,LayTile,Action,613,,80.0,,,OR 4.2,SR,,,K6,9,0,,,,,,,,OR 4
+5,Skip,Action,614,,,,,OR 4.2,SR,,,,,,,,,,,,,OR 4
+5,RunTrain,Action,615,,160.0,,,OR 4.2,SR,,,,,,,4,I4-I2-G4-F3,,,,,OR 4
+5,RunTrain,Action,616,,170.0,,,OR 4.2,SR,,,,,,,4,I4-J5-K4-J1,,,,,OR 4
+5,PayOut,Action,617,,330.0,,,OR 4.2,SR,,,,,,,,,33.0,,,,OR 4
+5,SharePriceMoves,Event,618,,,,,OR 4.2,SR,70.0,,,,,right,,,,,,,OR 4
+5,Skip,Action,619,,,,,OR 4.2,SR,,,,,,,,,,,,,OR 4
+5,Skip,Action,620,,,,,OR 4.2,SR,,,,,,,,,,,,,OR 4
+5,StockRound,Event,621,,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,BuyShare,Action,622,mindbomb(UTC+9),100.0,,IPO,SR 5,KU,,10.0,,,,,,,,,,,SR 5
+5,Skip,Action,623,mindbomb(UTC+9),,,,SR 5,,,,,,,,,,,,,,SR 5
+5,SellShares,Action,624,camping no reception,100.0,,,SR 5,UR,,10.0,,,,,,,,,,,SR 5
+5,BuyShare,Action,625,camping no reception,100.0,,IPO,SR 5,AR,,10.0,,,,,,,,,,,SR 5
+5,SellShares,Action,626,Sprint,80.0,,,SR 5,IR,,10.0,,,,,,,,,,,SR 5
+5,BuyShare,Action,627,Sprint,100.0,,IPO,SR 5,KU,,10.0,,,,,,,,,,,SR 5
+5,SellShares,Action,628,Millie,280.0,,,SR 5,KO,,40.0,,,,,,,,,,,SR 5
+5,PresidentNomination,Event,629,zorbak,,,,SR 5,KO,,,,,,,,,,,,,SR 5
+5,BuyShare,Action,630,Millie,100.0,,IPO,SR 5,KU,,10.0,,,,,,,,,,,SR 5
+5,BuyShare,Action,632,zorbak,70.0,,market,SR 5,KO,,10.0,,,,,,,,,,,SR 5
+5,Skip,Action,633,zorbak,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,BuyShare,Action,634,tado,100.0,,IPO,SR 5,KU,,10.0,,,,,,,,,,,SR 5
+5,Skip,Action,635,tado,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,BuyShare,Action,636,mindbomb(UTC+9),100.0,,IPO,SR 5,KU,,10.0,,,,,,,,,,,SR 5
+5,Skip,Action,637,mindbomb(UTC+9),,,,SR 5,,,,,,,,,,,,,,SR 5
+5,Pass,Action,638,camping no reception,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,BuyShare,Action,640,Sprint,70.0,,market,SR 5,KO,,10.0,,,,,,,,,,,SR 5
+5,Skip,Action,641,Sprint,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,Pass,Action,642,Millie,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,Pass,Action,643,zorbak,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,BuyShare,Action,644,tado,70.0,,market,SR 5,KO,,10.0,,,,,,,,,,,SR 5
+5,Skip,Action,645,tado,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,Pass,Action,646,mindbomb(UTC+9),,,,SR 5,,,,,,,,,,,,,,SR 5
+5,Pass,Action,647,camping no reception,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,Pass,Action,648,Sprint,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,Pass,Action,649,Millie,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,Pass,Action,650,zorbak,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,Pass,Action,651,tado,,,,SR 5,,,,,,,,,,,,,,SR 5
+5,SharePriceMoves,Event,652,,,,,SR 5,SR,75.0,,,,,up,,,,,,,SR 5
+5,PriorityDeal,Event,653,mindbomb(UTC+9),,,,SR 5,,,,,,,,,,,,,,SR 5
+5,OperatingRound,Event,654,,,,,OR 5.1,,,,,,,,,,,,,,OR 5
+5,Collect,Action,655,tado,50.0,,Uno-Takamatsu Ferry,OR 5.1,,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,656,camping no reception,,,,OR 5.1,UR,,,,,,,,,,,,,OR 5
+5,Pass,Action,657,,,,,OR 5.1,UR,,,,,,,,,,,,,OR 5
+5,Pass,Action,658,,,,,OR 5.1,UR,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,659,,120.0,,,OR 5.1,UR,,,,,,,3,B7-C4-E2,,,,,OR 5
+5,PayOut,Action,660,,120.0,,,OR 5.1,UR,,,,,,,,,12.0,,,,OR 5
+5,SharePriceMoves,Event,661,,,,,OR 5.1,UR,110.0,,,,,up,,,,,,,OR 5
+5,Pass,Action,662,,,,,OR 5.1,UR,,,,,,,,,,,,,OR 5
+5,Skip,Action,663,,,,,OR 5.1,UR,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,664,Sprint,,,,OR 5.1,KU,,,,,,,,,,,,,OR 5
+5,LayTile,Action,665,,0.0,,,OR 5.1,KU,,,C8,23,2,,,,,,,,OR 5
+5,Skip,Action,666,,,,,OR 5.1,KU,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,667,,130.0,,,OR 5.1,KU,,,,,,,5,C10-F9-G10-G12-G14,,,,,OR 5
+5,RunTrain,Action,668,,140.0,,,OR 5.1,KU,,,,,,,4,C10-B7-C4-E2,,,,,OR 5
+5,PayOut,Action,669,,270.0,,,OR 5.1,KU,,,,,,,,,27.0,,,,OR 5
+5,SharePriceMoves,Event,670,,,,,OR 5.1,KU,110.0,,,,,right,,,,,,,OR 5
+5,Skip,Action,671,,,,,OR 5.1,KU,,,,,,,,,,,,,OR 5
+5,Skip,Action,672,,,,,OR 5.1,KU,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,673,tado,,,,OR 5.1,AR,,,,,,,,,,,,,OR 5
+5,LayTile,Action,674,,0.0,,,OR 5.1,AR,,,J9,58,4,,,,,,,,OR 5
+5,PlaceToken,Action,675,,40.0,,,OR 5.1,AR,,,K4,,,,,,,,,,OR 5
+5,RunTrain,Action,676,,200.0,,,OR 5.1,AR,,,,,,,5,I4-J5-K4-K8-L7,,,,,OR 5
+5,PayOut,Action,677,,200.0,,,OR 5.1,AR,,,,,,,,,20.0,,,,OR 5
+5,SharePriceMoves,Event,678,,,,,OR 5.1,AR,110.0,,,,,right,,,,,,,OR 5
+5,BuyTrain,Action,679,,450.0,,The Depot,OR 5.1,AR,,,,,,,5,,,,,,OR 5
+5,Skip,Action,680,,,,,OR 5.1,AR,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,681,Sprint,,,,OR 5.1,TR,,,,,,,,,,,,,OR 5
+5,LayTile,Action,683,,0.0,,,OR 5.1,TR,,,C10,206,4,,,,,,,,OR 5
+5,Skip,Action,684,,,,,OR 5.1,TR,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,685,,110.0,,,OR 5.1,TR,,,,,,,3,F9-B7-C4,,,,,OR 5
+5,RunTrain,Action,686,,140.0,,,OR 5.1,TR,,,,,,,3,F1-E2-C4,,,,,OR 5
+5,Withhold,Action,687,,250.0,,,OR 5.1,TR,,,,,,,,,,,,,OR 5
+5,SharePriceMoves,Event,688,,,,,OR 5.1,TR,75.0,,,,,left,,,,,,,OR 5
+5,Skip,Action,689,,,,,OR 5.1,TR,,,,,,,,,,,,,OR 5
+5,Skip,Action,690,,,,,OR 5.1,TR,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,691,zorbak,,,,OR 5.1,IR,,,,,,,,,,,,,OR 5
+5,LayTile,Action,692,,0.0,,,OR 5.1,IR,,,G4,14,1,,,,,,,,OR 5
+5,Skip,Action,693,,,,,OR 5.1,IR,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,694,,180.0,,,OR 5.1,IR,,,,,,,4,F1-E2-C4-B7,,,,,OR 5
+5,PayOut,Action,695,,180.0,,,OR 5.1,IR,,,,,,,,,18.0,,,,OR 5
+5,SharePriceMoves,Event,696,,,,,OR 5.1,IR,90.0,,,,,up,,,,,,,OR 5
+5,Pass,Action,697,,,,,OR 5.1,IR,,,,,,,,,,,,,OR 5
+5,Skip,Action,698,,,,,OR 5.1,IR,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,699,mindbomb(UTC+9),,,,OR 5.1,SR,,,,,,,,,,,,,OR 5
+5,LayTile,Action,700,,0.0,,,OR 5.1,SR,,,K4,466,0,,,,,,,,OR 5
+5,Skip,Action,701,,,,,OR 5.1,SR,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,702,,150.0,,,OR 5.1,SR,,,,,,,4,I4-J5-K4,,,,,OR 5
+5,RunTrain,Action,703,,170.0,,,OR 5.1,SR,,,,,,,4,I4-I2-G4-F3,,,,,OR 5
+5,PayOut,Action,704,,320.0,,,OR 5.1,SR,,,,,,,,,32.0,,,,OR 5
+5,SharePriceMoves,Event,705,,,,,OR 5.1,SR,80.0,,,,,right,,,,,,,OR 5
+5,Skip,Action,706,,,,,OR 5.1,SR,,,,,,,,,,,,,OR 5
+5,Skip,Action,707,,,,,OR 5.1,SR,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,708,zorbak,,,,OR 5.1,KO,,,,,,,,,,,,,OR 5
+5,LayTile,Action,709,,80.0,,,OR 5.1,KO,,,H5,8,2,,,,,,,,OR 5
+5,Skip,Action,710,,,,,OR 5.1,KO,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,711,,150.0,,,OR 5.1,KO,,,,,,,3,K4-J5-I4,,,,,OR 5
+5,RunTrain,Action,712,,150.0,,,OR 5.1,KO,,,,,,,3,J1-I2-I4,,,,,OR 5
+5,Withhold,Action,713,,300.0,,,OR 5.1,KO,,,,,,,,,,,,,OR 5
+5,SharePriceMoves,Event,714,,,,,OR 5.1,KO,65.0,,,,,left,,,,,,,OR 5
+5,Skip,Action,715,,,,,OR 5.1,KO,,,,,,,,,,,,,OR 5
+5,Skip,Action,716,,,,,OR 5.1,KO,,,,,,,,,,,,,OR 5
+5,OperatingRound,Event,717,,,,,OR 5.2,,,,,,,,,,,,,,OR 5
+5,Collect,Action,718,tado,50.0,,Uno-Takamatsu Ferry,OR 5.2,,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,719,camping no reception,,,,OR 5.2,UR,,,,,,,,,,,,,OR 5
+5,LayTile,Action,720,,0.0,,,OR 5.2,UR,,,C10,448,1,,,,,,,,OR 5
+5,Pass,Action,721,,,,,OR 5.2,UR,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,722,,120.0,,,OR 5.2,UR,,,,,,,3,B7-C4-E2,,,,,OR 5
+5,PayOut,Action,723,,120.0,,,OR 5.2,UR,,,,,,,,,12.0,,,,OR 5
+5,SharePriceMoves,Event,724,,,,,OR 5.2,UR,125.0,,,,,right,,,,,,,OR 5
+5,Pass,Action,725,,,,,OR 5.2,UR,,,,,,,,,,,,,OR 5
+5,Skip,Action,726,,,,,OR 5.2,UR,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,727,Sprint,,,,OR 5.2,KU,,,,,,,,,,,,,OR 5
+5,LayTile,Action,728,,80.0,,,OR 5.2,KU,,,F9,465,2,,,,,,,,OR 5
+5,Skip,Action,729,,,,,OR 5.2,KU,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,730,,180.0,,,OR 5.2,KU,,,,,,,5,C10-F9-G10-G12-G14,,,,,OR 5
+5,RunTrain,Action,731,,160.0,,,OR 5.2,KU,,,,,,,4,C10-B7-C4-E2,,,,,OR 5
+5,PayOut,Action,732,,340.0,,,OR 5.2,KU,,,,,,,,,34.0,,,,OR 5
+5,SharePriceMoves,Event,733,,,,,OR 5.2,KU,125.0,,,,,right,,,,,,,OR 5
+5,Skip,Action,734,,,,,OR 5.2,KU,,,,,,,,,,,,,OR 5
+5,Skip,Action,735,,,,,OR 5.2,KU,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,736,tado,,,,OR 5.2,AR,,,,,,,,,,,,,OR 5
+5,LayTile,Action,737,,0.0,,,OR 5.2,AR,,,J11,6,1,,,,,,,,OR 5
+5,Skip,Action,738,,,,,OR 5.2,AR,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,739,,170.0,,,OR 5.2,AR,,,,,,,5,L7-K8-K4-J1,,,,,OR 5
+5,RunTrain,Action,740,,210.0,,,OR 5.2,AR,,,,,,,5,K4-J5-I4-G4-I2,,,,,OR 5
+5,PayOut,Action,741,,380.0,,,OR 5.2,AR,,,,,,,,,38.0,,,,OR 5
+5,SharePriceMoves,Event,742,,,,,OR 5.2,AR,125.0,,,,,right,,,,,,,OR 5
+5,Skip,Action,743,,,,,OR 5.2,AR,,,,,,,,,,,,,OR 5
+5,Skip,Action,744,,,,,OR 5.2,AR,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,745,zorbak,,,,OR 5.2,IR,,,,,,,,,,,,,OR 5
+5,LayTile,Action,746,,0.0,,,OR 5.2,IR,,,E8,45,1,,,,,,,,OR 5
+5,Skip,Action,747,,,,,OR 5.2,IR,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,748,,200.0,,,OR 5.2,IR,,,,,,,4,F1-F3-G4-I4,,,,,OR 5
+5,PayOut,Action,749,,200.0,,,OR 5.2,IR,,,,,,,,,20.0,,,,OR 5
+5,SharePriceMoves,Event,750,,,,,OR 5.2,IR,100.0,,,,,right,,,,,,,OR 5
+5,BuyTrain,Action,751,,13.0,,KO,OR 5.2,IR,,,,,,,3,,,,,,OR 5
+5,Skip,Action,752,,,,,OR 5.2,IR,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,753,mindbomb(UTC+9),,,,OR 5.2,SR,,,,,,,,,,,,,OR 5
+5,LayTile,Action,754,,0.0,,,OR 5.2,SR,,,F3,611,5,,,,,,,,OR 5
+5,Skip,Action,755,,,,,OR 5.2,SR,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,756,,180.0,,,OR 5.2,SR,,,,,,,4,I2-I4-J5-K4,,,,,OR 5
+5,RunTrain,Action,757,,210.0,,,OR 5.2,SR,,,,,,,4,I4-G4-F3-F1,,,,,OR 5
+5,PayOut,Action,758,,390.0,,,OR 5.2,SR,,,,,,,,,39.0,,,,OR 5
+5,SharePriceMoves,Event,759,,,,,OR 5.2,SR,90.0,,,,,right,,,,,,,OR 5
+5,Skip,Action,760,,,,,OR 5.2,SR,,,,,,,,,,,,,OR 5
+5,Skip,Action,761,,,,,OR 5.2,SR,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,762,Sprint,,,,OR 5.2,TR,,,,,,,,,,,,,OR 5
+5,LayTile,Action,763,,0.0,,,OR 5.2,TR,,,G12,448,3,,,,,,,,OR 5
+5,Skip,Action,764,,,,,OR 5.2,TR,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,765,,140.0,,,OR 5.2,TR,,,,,,,3,E2-F3-F1,,,,,OR 5
+5,RunTrain,Action,766,,140.0,,,OR 5.2,TR,,,,,,,3,F1-E2-C4,,,,,OR 5
+5,PayOut,Action,767,,280.0,,,OR 5.2,TR,,,,,,,,,28.0,,,,OR 5
+5,SharePriceMoves,Event,768,,,,,OR 5.2,TR,80.0,,,,,right,,,,,,,OR 5
+5,Skip,Action,769,,,,,OR 5.2,TR,,,,,,,,,,,,,OR 5
+5,Skip,Action,770,,,,,OR 5.2,TR,,,,,,,,,,,,,OR 5
+5,OperatesCompany,Event,771,zorbak,,,,OR 5.2,KO,,,,,,,,,,,,,OR 5
+5,LayTile,Action,772,,0.0,,,OR 5.2,KO,,,J3,25,5,,,,,,,,OR 5
+5,Skip,Action,773,,,,,OR 5.2,KO,,,,,,,,,,,,,OR 5
+5,RunTrain,Action,774,,170.0,,,OR 5.2,KO,,,,,,,3,I4-K4-K8,,,,,OR 5
+5,Withhold,Action,775,,170.0,,,OR 5.2,KO,,,,,,,,,,,,,OR 5
+5,SharePriceMoves,Event,776,,,,,OR 5.2,KO,60.0,,,,,left,,,,,,,OR 5
+5,BuyTrain,Action,777,,630.0,,The Depot,OR 5.2,KO,,,,,,,6,,,,,,OR 5
+6,NewPhase,Event,778,,,,,OR 5.2,,,,,,,,,,,,,,OR 5
+6,TrainsRust,Event,779,,,,,OR 5.2,,,,,,,,3,,,,,,OR 5
+6,Pass,Action,780,,,,,OR 5.2,KO,,,,,,,,,,,,,OR 5
+6,Skip,Action,781,,,,,OR 5.2,KO,,,,,,,,,,,,,OR 5
+6,OperatingRound,Event,782,,,,,OR 5.3,,,,,,,,,,,,,,OR 5
+6,Collect,Action,783,tado,50.0,,Uno-Takamatsu Ferry,OR 5.3,,,,,,,,,,,,,,OR 5
+6,OperatesCompany,Event,784,camping no reception,,,,OR 5.3,UR,,,,,,,,,,,,,OR 5
+6,Pass,Action,785,,,,,OR 5.3,UR,,,,,,,,,,,,,OR 5
+6,Pass,Action,786,,,,,OR 5.3,UR,,,,,,,,,,,,,OR 5
+6,Skip,Action,787,,,,,OR 5.3,UR,,,,,,,,,,,,,OR 5
+6,DoesNotRun,Event,788,,,,,OR 5.3,UR,,,,,,,,,,,,,OR 5
+6,SharePriceMoves,Event,789,,,,,OR 5.3,UR,110.0,,,,,left,,,,,,,OR 5
+6,Contribute,Action,790,camping no reception,308.0,,,OR 5.3,UR,,,,,,,,,,,,,OR 5
+6,BuyTrain,Action,791,,630.0,,The Depot,OR 5.3,UR,,,,,,,6,,,,,,OR 5
+6,Skip,Action,792,,,,,OR 5.3,UR,,,,,,,,,,,,,OR 5
+6,OperatesCompany,Event,793,Sprint,,,,OR 5.3,KU,,,,,,,,,,,,,OR 5
+6,LayTile,Action,794,,0.0,,,OR 5.3,KU,,,C8,47,2,,,,,,,,OR 5
+6,Skip,Action,795,,,,,OR 5.3,KU,,,,,,,,,,,,,OR 5
+6,RunTrain,Action,796,,180.0,,,OR 5.3,KU,,,,,,,5,C10-B7-B3-C4-E2,,,,,OR 5
+6,RunTrain,Action,797,,170.0,,,OR 5.3,KU,,,,,,,4,C10-F9-G10-G12,,,,,OR 5
+6,Withhold,Action,798,,350.0,,,OR 5.3,KU,,,,,,,,,,,,,OR 5
+6,SharePriceMoves,Event,799,,,,,OR 5.3,KU,110.0,,,,,left,,,,,,,OR 5
+6,Skip,Action,800,,,,,OR 5.3,KU,,,,,,,,,,,,,OR 5
+6,Skip,Action,801,,,,,OR 5.3,KU,,,,,,,,,,,,,OR 5
+6,OperatesCompany,Event,802,tado,,,,OR 5.3,AR,,,,,,,,,,,,,OR 5
+6,LayTile,Action,803,,0.0,,,OR 5.3,AR,,,K8,448,1,,,,,,,,OR 5
+6,Skip,Action,804,,,,,OR 5.3,AR,,,,,,,,,,,,,OR 5
+6,RunTrain,Action,805,,250.0,,,OR 5.3,AR,,,,,,,5,L7-K8-K4-I4-I2,,,,,OR 5
+6,RunTrain,Action,806,,210.0,,,OR 5.3,AR,,,,,,,5,K4-J5-I4-G4-I2,,,,,OR 5
+6,PayOut,Action,807,,460.0,,,OR 5.3,AR,,,,,,,,,46.0,,,,OR 5
+6,SharePriceMoves,Event,808,,,,,OR 5.3,AR,140.0,,,,,right,,,,,,,OR 5
+6,Skip,Action,809,,,,,OR 5.3,AR,,,,,,,,,,,,,OR 5
+6,Skip,Action,810,,,,,OR 5.3,AR,,,,,,,,,,,,,OR 5
+6,OperatesCompany,Event,811,zorbak,,,,OR 5.3,IR,,,,,,,,,,,,,OR 5
+6,Pass,Action,813,,,,,OR 5.3,IR,,,,,,,,,,,,,OR 5
+6,Skip,Action,814,,,,,OR 5.3,IR,,,,,,,,,,,,,OR 5
+6,RunTrain,Action,815,,210.0,,,OR 5.3,IR,,,,,,,4,F1-F3-G4-I4,,,,,OR 5
+6,Withhold,Action,816,,210.0,,,OR 5.3,IR,,,,,,,,,,,,,OR 5
+6,SharePriceMoves,Event,817,,,,,OR 5.3,IR,90.0,,,,,left,,,,,,,OR 5
+6,Pass,Action,818,,,,,OR 5.3,IR,,,,,,,,,,,,,OR 5
+6,Skip,Action,819,,,,,OR 5.3,IR,,,,,,,,,,,,,OR 5
+6,OperatesCompany,Event,820,mindbomb(UTC+9),,,,OR 5.3,SR,,,,,,,,,,,,,OR 5
+6,LayTile,Action,821,,0.0,,,OR 5.3,SR,,,J3,40,1,,,,,,,,OR 5
+6,Skip,Action,822,,,,,OR 5.3,SR,,,,,,,,,,,,,OR 5
+6,RunTrain,Action,823,,160.0,,,OR 5.3,SR,,,,,,,4,F1-F3-G4-I2,,,,,OR 5
+6,RunTrain,Action,824,,190.0,,,OR 5.3,SR,,,,,,,4,K4-J5-I4-J1,,,,,OR 5
+6,Withhold,Action,825,,350.0,,,OR 5.3,SR,,,,,,,,,,,,,OR 5
+6,SharePriceMoves,Event,826,,,,,OR 5.3,SR,80.0,,,,,left,,,,,,,OR 5
+6,Skip,Action,827,,,,,OR 5.3,SR,,,,,,,,,,,,,OR 5
+6,Skip,Action,828,,,,,OR 5.3,SR,,,,,,,,,,,,,OR 5
+6,OperatesCompany,Event,829,Sprint,,,,OR 5.3,TR,,,,,,,,,,,,,OR 5
+6,LayTile,Action,830,,0.0,,,OR 5.3,TR,,,D3,23,1,,,,,,,,OR 5
+6,Skip,Action,831,,,,,OR 5.3,TR,,,,,,,,,,,,,OR 5
+6,Skip,Action,832,,,,,OR 5.3,TR,,,,,,,,,,,,,OR 5
+6,DoesNotRun,Event,833,,,,,OR 5.3,TR,,,,,,,,,,,,,OR 5
+6,SharePriceMoves,Event,834,,,,,OR 5.3,TR,75.0,,,,,left,,,,,,,OR 5
+6,BuyTrain,Action,835,,460.0,,KU,OR 5.3,TR,,,,,,,5,,,,,,OR 5
+6,Pass,Action,836,,,,,OR 5.3,TR,,,,,,,,,,,,,OR 5
+6,Skip,Action,837,,,,,OR 5.3,TR,,,,,,,,,,,,,OR 5
+6,OperatesCompany,Event,838,zorbak,,,,OR 5.3,KO,,,,,,,,,,,,,OR 5
+6,Pass,Action,839,,,,,OR 5.3,KO,,,,,,,,,,,,,OR 5
+6,Skip,Action,840,,,,,OR 5.3,KO,,,,,,,,,,,,,OR 5
+6,RunTrain,Action,841,,310.0,,,OR 5.3,KO,,,,,,,6,F1-F3-G4-I4-K4-K8,,,,,OR 5
+6,PayOut,Action,842,,310.0,,,OR 5.3,KO,,,,,,,,,31.0,,,,OR 5
+6,SharePriceMoves,Event,843,,,,,OR 5.3,KO,65.0,,,,,right,,,,,,,OR 5
+6,Pass,Action,844,,,,,OR 5.3,KO,,,,,,,,,,,,,OR 5
+6,Skip,Action,845,,,,,OR 5.3,KO,,,,,,,,,,,,,OR 5
+6,StockRound,Event,846,,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,BuyShare,Action,847,mindbomb(UTC+9),65.0,,market,SR 6,KO,,10.0,,,,,,,,,,,SR 6
+6,SellShares,Action,848,mindbomb(UTC+9),90.0,,,SR 6,IR,,10.0,,,,,,,,,,,SR 6
+6,SharePriceMoves,Event,849,,,,,SR 6,IR,80.0,,,,,down,,,,,,,SR 6
+6,SellShares,Action,850,camping no reception,80.0,,,SR 6,IR,,10.0,,,,,,,,,,,SR 6
+6,BuyShare,Action,851,camping no reception,110.0,,market,SR 6,UR,,10.0,,,,,,,,,,,SR 6
+6,SellShares,Action,852,Sprint,80.0,,,SR 6,SR,,10.0,,,,,,,,,,,SR 6
+6,SharePriceMoves,Event,853,,,,,SR 6,SR,75.0,,,,,down,,,,,,,SR 6
+6,BuyShare,Action,854,Sprint,110.0,,market,SR 6,UR,,10.0,,,,,,,,,,,SR 6
+6,BuyShare,Action,855,Millie,75.0,,market,SR 6,TR,,10.0,,,,,,,,,,,SR 6
+6,Skip,Action,856,Millie,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,857,zorbak,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,BuyShare,Action,858,tado,110.0,,market,SR 6,UR,,10.0,,,,,,,,,,,SR 6
+6,Skip,Action,859,tado,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,BuyShare,Action,860,mindbomb(UTC+9),65.0,,market,SR 6,KO,,10.0,,,,,,,,,,,SR 6
+6,Skip,Action,861,mindbomb(UTC+9),,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,863,camping no reception,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,864,Sprint,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,BuyShare,Action,865,Millie,75.0,,market,SR 6,TR,,10.0,,,,,,,,,,,SR 6
+6,Skip,Action,866,Millie,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,867,zorbak,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,BuyShare,Action,868,tado,75.0,,market,SR 6,SR,,10.0,,,,,,,,,,,SR 6
+6,Skip,Action,869,tado,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,870,mindbomb(UTC+9),,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,871,camping no reception,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,872,Sprint,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,873,Millie,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,874,zorbak,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,BuyShare,Action,875,tado,80.0,,market,SR 6,IR,,10.0,,,,,,,,,,,SR 6
+6,Skip,Action,876,tado,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,877,mindbomb(UTC+9),,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,878,camping no reception,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,879,Sprint,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,880,Millie,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,881,zorbak,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,Pass,Action,882,tado,,,,SR 6,,,,,,,,,,,,,,SR 6
+6,SharePriceMoves,Event,883,,,,,SR 6,UR,125.0,,,,,up,,,,,,,SR 6
+6,SharePriceMoves,Event,884,,,,,SR 6,TR,80.0,,,,,up,,,,,,,SR 6
+6,SharePriceMoves,Event,885,,,,,SR 6,SR,80.0,,,,,up,,,,,,,SR 6
+6,SharePriceMoves,Event,886,,,,,SR 6,KO,70.0,,,,,up,,,,,,,SR 6
+6,PriorityDeal,Event,887,mindbomb(UTC+9),,,,SR 6,,,,,,,,,,,,,,SR 6
+6,OperatingRound,Event,888,,,,,OR 6.1,,,,,,,,,,,,,,OR 6
+6,Collect,Action,889,tado,50.0,,Uno-Takamatsu Ferry,OR 6.1,,,,,,,,,,,,,,OR 6
+6,OperatesCompany,Event,890,tado,,,,OR 6.1,AR,,,,,,,,,,,,,OR 6
+6,LayTile,Action,891,,0.0,,,OR 6.1,AR,,,K6,24,3,,,,,,,,OR 6
+6,Skip,Action,892,,,,,OR 6.1,AR,,,,,,,,,,,,,OR 6
+6,RunTrain,Action,893,,230.0,,,OR 6.1,AR,,,,,,,5,L7-K8-K4-J5-I4,,,,,OR 6
+6,RunTrain,Action,894,,270.0,,,OR 6.1,AR,,,,,,,5,K4-I4-G4-F3-F1,,,,,OR 6
+6,PayOut,Action,895,,500.0,,,OR 6.1,AR,,,,,,,,,50.0,,,,OR 6
+6,SharePriceMoves,Event,896,,,,,OR 6.1,AR,155.0,,,,,right,,,,,,,OR 6
+6,Skip,Action,897,,,,,OR 6.1,AR,,,,,,,,,,,,,OR 6
+6,Skip,Action,898,,,,,OR 6.1,AR,,,,,,,,,,,,,OR 6
+6,OperatesCompany,Event,899,camping no reception,,,,OR 6.1,UR,,,,,,,,,,,,,OR 6
+6,Pass,Action,900,,,,,OR 6.1,UR,,,,,,,,,,,,,OR 6
+6,Skip,Action,901,,,,,OR 6.1,UR,,,,,,,,,,,,,OR 6
+6,RunTrain,Action,902,,250.0,,,OR 6.1,UR,,,,,,,6,E2-C4-B7-C10-F9-G10,,,,,OR 6
+6,BankBroke,Event,903,,,,,OR 6.1,,,,,,,,,,,,,,OR 6
+6,PayOut,Action,904,,250.0,,,OR 6.1,UR,,,,,,,,,25.0,,,,OR 6
+6,SharePriceMoves,Event,905,,,,,OR 6.1,UR,140.0,,,,,right,,,,,,,OR 6
+6,Skip,Action,906,,,,,OR 6.1,UR,,,,,,,,,,,,,OR 6
+6,Skip,Action,907,,,,,OR 6.1,UR,,,,,,,,,,,,,OR 6
+6,OperatesCompany,Event,908,Sprint,,,,OR 6.1,KU,,,,,,,,,,,,,OR 6
+6,LayTile,Action,910,,80.0,,,OR 6.1,KU,,,E4,8,2,,,,,,,,OR 6
+6,Skip,Action,911,,,,,OR 6.1,KU,,,,,,,,,,,,,OR 6
+6,RunTrain,Action,912,,180.0,,,OR 6.1,KU,,,,,,,4,F9-C10-B7-C4,,,,,OR 6
+6,PayOut,Action,913,,180.0,,,OR 6.1,KU,,,,,,,,,18.0,,,,OR 6
+6,SharePriceMoves,Event,914,,,,,OR 6.1,KU,125.0,,,,,right,,,,,,,OR 6
+6,ExchangeTrain,Action,915,,800.0,,The Depot,OR 6.1,KU,,,,,,,,,,4,D,,OR 6
+D,NewPhase,Event,916,,,,,OR 6.1,,,,,,,,,,,,,,OR 6
+D,TrainsRust,Event,917,,,,,OR 6.1,,,,,,,,4,,,,,,OR 6
+D,Pass,Action,918,,,,,OR 6.1,KU,,,,,,,,,,,,,OR 6
+D,Skip,Action,919,,,,,OR 6.1,KU,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,920,zorbak,,,,OR 6.1,IR,,,,,,,,,,,,,OR 6
+D,Pass,Action,921,,,,,OR 6.1,IR,,,,,,,,,,,,,OR 6
+D,Skip,Action,922,,,,,OR 6.1,IR,,,,,,,,,,,,,OR 6
+D,Skip,Action,923,,,,,OR 6.1,IR,,,,,,,,,,,,,OR 6
+D,DoesNotRun,Event,924,,,,,OR 6.1,IR,,,,,,,,,,,,,OR 6
+D,SharePriceMoves,Event,925,,,,,OR 6.1,IR,75.0,,,,,left,,,,,,,OR 6
+D,Contribute,Action,926,zorbak,835.0,,,OR 6.1,IR,,,,,,,,,,,,,OR 6
+D,BuyTrain,Action,927,,1100.0,,The Depot,OR 6.1,IR,,,,,,,D,,,,,,OR 6
+D,Skip,Action,928,,,,,OR 6.1,IR,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,929,Sprint,,,,OR 6.1,TR,,,,,,,,,,,,,OR 6
+D,LayTile,Action,930,,80.0,,,OR 6.1,TR,,,H11,8,5,,,,,,,,OR 6
+D,Skip,Action,931,,,,,OR 6.1,TR,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,932,,250.0,,,OR 6.1,TR,,,,,,,5,F1-E2-F3-G4-I4,,,,,OR 6
+D,PayOut,Action,933,,250.0,,,OR 6.1,TR,,,,,,,,,25.0,,,,OR 6
+D,SharePriceMoves,Event,934,,,,,OR 6.1,TR,90.0,,,,,right,,,,,,,OR 6
+D,Pass,Action,935,,,,,OR 6.1,TR,,,,,,,,,,,,,OR 6
+D,Skip,Action,936,,,,,OR 6.1,TR,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,937,mindbomb(UTC+9),,,,OR 6.1,SR,,,,,,,,,,,,,OR 6
+D,LayTile,Action,938,,80.0,,,OR 6.1,SR,,,I6,9,0,,,,,,,,OR 6
+D,Skip,Action,939,,,,,OR 6.1,SR,,,,,,,,,,,,,OR 6
+D,Skip,Action,940,,,,,OR 6.1,SR,,,,,,,,,,,,,OR 6
+D,DoesNotRun,Event,941,,,,,OR 6.1,SR,,,,,,,,,,,,,OR 6
+D,SharePriceMoves,Event,942,,,,,OR 6.1,SR,75.0,,,,,left,,,,,,,OR 6
+D,Contribute,Action,943,mindbomb(UTC+9),650.0,,,OR 6.1,SR,,,,,,,,,,,,,OR 6
+D,BuyTrain,Action,944,,1100.0,,The Depot,OR 6.1,SR,,,,,,,D,,,,,,OR 6
+D,Skip,Action,945,,,,,OR 6.1,SR,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,946,zorbak,,,,OR 6.1,KO,,,,,,,,,,,,,OR 6
+D,LayTile,Action,947,,0.0,,,OR 6.1,KO,,,I12,58,2,,,,,,,,OR 6
+D,Skip,Action,948,,,,,OR 6.1,KO,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,949,,310.0,,,OR 6.1,KO,,,,,,,6,F1-F3-G4-I4-K4-L7,,,,,OR 6
+D,PayOut,Action,950,,310.0,,,OR 6.1,KO,,,,,,,,,31.0,,,,OR 6
+D,SharePriceMoves,Event,951,,,,,OR 6.1,KO,75.0,,,,,right,,,,,,,OR 6
+D,Pass,Action,952,,,,,OR 6.1,KO,,,,,,,,,,,,,OR 6
+D,Skip,Action,953,,,,,OR 6.1,KO,,,,,,,,,,,,,OR 6
+D,OperatingRound,Event,954,,,,,OR 6.2,,,,,,,,,,,,,,OR 6
+D,Collect,Action,955,tado,50.0,,Uno-Takamatsu Ferry,OR 6.2,,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,956,tado,,,,OR 6.2,AR,,,,,,,,,,,,,OR 6
+D,LayTile,Action,957,,0.0,,,OR 6.2,AR,,,I8,8,3,,,,,,,,OR 6
+D,Skip,Action,958,,,,,OR 6.2,AR,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,959,,230.0,,,OR 6.2,AR,,,,,,,5,L7-K8-K4-J5-I4,,,,,OR 6
+D,RunTrain,Action,960,,270.0,,,OR 6.2,AR,,,,,,,5,K4-I4-G4-F3-F1,,,,,OR 6
+D,PayOut,Action,961,,500.0,,,OR 6.2,AR,,,,,,,,,50.0,,,,OR 6
+D,SharePriceMoves,Event,962,,,,,OR 6.2,AR,175.0,,,,,right,,,,,,,OR 6
+D,Skip,Action,963,,,,,OR 6.2,AR,,,,,,,,,,,,,OR 6
+D,Skip,Action,964,,,,,OR 6.2,AR,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,965,camping no reception,,,,OR 6.2,UR,,,,,,,,,,,,,OR 6
+D,LayTile,Action,966,,0.0,,,OR 6.2,UR,,,I8,29,3,,,,,,,,OR 6
+D,Skip,Action,967,,,,,OR 6.2,UR,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,968,,290.0,,,OR 6.2,UR,,,,,,,6,I4-G4-F3-C4-B7-F9,,,,,OR 6
+D,PayOut,Action,969,,290.0,,,OR 6.2,UR,,,,,,,,,29.0,,,,OR 6
+D,SharePriceMoves,Event,970,,,,,OR 6.2,UR,155.0,,,,,right,,,,,,,OR 6
+D,Skip,Action,971,,,,,OR 6.2,UR,,,,,,,,,,,,,OR 6
+D,Skip,Action,972,,,,,OR 6.2,UR,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,973,Sprint,,,,OR 6.2,KU,,,,,,,,,,,,,OR 6
+D,LayTile,Action,975,,0.0,,,OR 6.2,KU,,,J11,12,1,,,,,,,,OR 6
+D,Skip,Action,976,,,,,OR 6.2,KU,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,977,,670.0,,,OR 6.2,KU,,,,,,,D,L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-F3-G4-I4-J1,,,,,OR 6
+D,PayOut,Action,978,,670.0,,,OR 6.2,KU,,,,,,,,,67.0,,,,OR 6
+D,SharePriceMoves,Event,979,,,,,OR 6.2,KU,140.0,,,,,right,,,,,,,OR 6
+D,Pass,Action,980,,,,,OR 6.2,KU,,,,,,,,,,,,,OR 6
+D,Skip,Action,981,,,,,OR 6.2,KU,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,982,Sprint,,,,OR 6.2,TR,,,,,,,,,,,,,OR 6
+D,LayTile,Action,983,,80.0,,,OR 6.2,TR,,,F7,9,0,,,,,,,,OR 6
+D,Skip,Action,984,,,,,OR 6.2,TR,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,985,,250.0,,,OR 6.2,TR,,,,,,,5,F1-E2-F3-G4-I4,,,,,OR 6
+D,PayOut,Action,986,,250.0,,,OR 6.2,TR,,,,,,,,,25.0,,,,OR 6
+D,SharePriceMoves,Event,987,,,,,OR 6.2,TR,100.0,,,,,right,,,,,,,OR 6
+D,Pass,Action,988,,,,,OR 6.2,TR,,,,,,,,,,,,,OR 6
+D,Skip,Action,989,,,,,OR 6.2,TR,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,990,zorbak,,,,OR 6.2,IR,,,,,,,,,,,,,OR 6
+D,Pass,Action,991,,,,,OR 6.2,IR,,,,,,,,,,,,,OR 6
+D,Skip,Action,992,,,,,OR 6.2,IR,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,993,,710.0,,,OR 6.2,IR,,,,,,,D,L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-E2-F3-G4-I4-J1,,,,,OR 6
+D,PayOut,Action,994,,710.0,,,OR 6.2,IR,,,,,,,,,71.0,,,,OR 6
+D,SharePriceMoves,Event,995,,,,,OR 6.2,IR,80.0,,,,,right,,,,,,,OR 6
+D,Pass,Action,996,,,,,OR 6.2,IR,,,,,,,,,,,,,OR 6
+D,Skip,Action,997,,,,,OR 6.2,IR,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,998,zorbak,,,,OR 6.2,KO,,,,,,,,,,,,,OR 6
+D,Pass,Action,999,,,,,OR 6.2,KO,,,,,,,,,,,,,OR 6
+D,Skip,Action,1000,,,,,OR 6.2,KO,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,1001,,310.0,,,OR 6.2,KO,,,,,,,6,F1-F3-G4-I4-K4-L7,,,,,OR 6
+D,PayOut,Action,1002,,310.0,,,OR 6.2,KO,,,,,,,,,31.0,,,,OR 6
+D,SharePriceMoves,Event,1003,,,,,OR 6.2,KO,80.0,,,,,right,,,,,,,OR 6
+D,Pass,Action,1004,,,,,OR 6.2,KO,,,,,,,,,,,,,OR 6
+D,Skip,Action,1005,,,,,OR 6.2,KO,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,1006,mindbomb(UTC+9),,,,OR 6.2,SR,,,,,,,,,,,,,OR 6
+D,LayTile,Action,1007,,0.0,,,OR 6.2,SR,,,I6,27,0,,,,,,,,OR 6
+D,Skip,Action,1008,,,,,OR 6.2,SR,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,1009,,720.0,,,OR 6.2,SR,,,,,,,D,F1-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-I4-G4-I2-J1,,,,,OR 6
+D,PayOut,Action,1010,,720.0,,,OR 6.2,SR,,,,,,,,,72.0,,,,OR 6
+D,SharePriceMoves,Event,1011,,,,,OR 6.2,SR,80.0,,,,,right,,,,,,,OR 6
+D,Skip,Action,1012,,,,,OR 6.2,SR,,,,,,,,,,,,,OR 6
+D,Skip,Action,1013,,,,,OR 6.2,SR,,,,,,,,,,,,,OR 6
+D,OperatingRound,Event,1014,,,,,OR 6.3,,,,,,,,,,,,,,OR 6
+D,Collect,Action,1015,tado,50.0,,Uno-Takamatsu Ferry,OR 6.3,,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,1016,tado,,,,OR 6.3,AR,,,,,,,,,,,,,OR 6
+D,LayTile,Action,1017,,0.0,,,OR 6.3,AR,,,H7,57,1,,,,,,,,OR 6
+D,Skip,Action,1018,,,,,OR 6.3,AR,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,1019,,230.0,,,OR 6.3,AR,,,,,,,5,L7-K8-K4-J5-I4,,,,,OR 6
+D,RunTrain,Action,1020,,270.0,,,OR 6.3,AR,,,,,,,5,K4-I4-G4-F3-F1,,,,,OR 6
+D,PayOut,Action,1021,,500.0,,,OR 6.3,AR,,,,,,,,,50.0,,,,OR 6
+D,SharePriceMoves,Event,1022,,,,,OR 6.3,AR,200.0,,,,,right,,,,,,,OR 6
+D,Skip,Action,1023,,,,,OR 6.3,AR,,,,,,,,,,,,,OR 6
+D,Skip,Action,1024,,,,,OR 6.3,AR,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,1025,camping no reception,,,,OR 6.3,UR,,,,,,,,,,,,,OR 6
+D,Pass,Action,1026,,,,,OR 6.3,UR,,,,,,,,,,,,,OR 6
+D,Skip,Action,1027,,,,,OR 6.3,UR,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,1028,,290.0,,,OR 6.3,UR,,,,,,,6,I4-G4-F3-C4-B7-F9,,,,,OR 6
+D,PayOut,Action,1029,,290.0,,,OR 6.3,UR,,,,,,,,,29.0,,,,OR 6
+D,SharePriceMoves,Event,1030,,,,,OR 6.3,UR,175.0,,,,,right,,,,,,,OR 6
+D,Skip,Action,1031,,,,,OR 6.3,UR,,,,,,,,,,,,,OR 6
+D,Skip,Action,1032,,,,,OR 6.3,UR,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,1033,Sprint,,,,OR 6.3,KU,,,,,,,,,,,,,OR 6
+D,LayTile,Action,1034,,80.0,,,OR 6.3,KU,,,F5,8,4,,,,,,,,OR 6
+D,Skip,Action,1035,,,,,OR 6.3,KU,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,1036,,670.0,,,OR 6.3,KU,,,,,,,D,J1-I4-G4-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-L7,,,,,OR 6
+D,PayOut,Action,1037,,670.0,,,OR 6.3,KU,,,,,,,,,67.0,,,,OR 6
+D,SharePriceMoves,Event,1038,,,,,OR 6.3,KU,155.0,,,,,right,,,,,,,OR 6
+D,Pass,Action,1039,,,,,OR 6.3,KU,,,,,,,,,,,,,OR 6
+D,Skip,Action,1040,,,,,OR 6.3,KU,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,1041,Sprint,,,,OR 6.3,TR,,,,,,,,,,,,,OR 6
+D,Pass,Action,1042,,,,,OR 6.3,TR,,,,,,,,,,,,,OR 6
+D,Skip,Action,1043,,,,,OR 6.3,TR,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,1044,,270.0,,,OR 6.3,TR,,,,,,,5,K4-I4-G4-F9-B7,,,,,OR 6
+D,PayOut,Action,1045,,270.0,,,OR 6.3,TR,,,,,,,,,27.0,,,,OR 6
+D,SharePriceMoves,Event,1046,,,,,OR 6.3,TR,110.0,,,,,up,,,,,,,OR 6
+D,Pass,Action,1047,,,,,OR 6.3,TR,,,,,,,,,,,,,OR 6
+D,Skip,Action,1048,,,,,OR 6.3,TR,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,1049,zorbak,,,,OR 6.3,IR,,,,,,,,,,,,,OR 6
+D,Pass,Action,1050,,,,,OR 6.3,IR,,,,,,,,,,,,,OR 6
+D,Skip,Action,1051,,,,,OR 6.3,IR,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,1052,,710.0,,,OR 6.3,IR,,,,,,,D,L7-K8-J9-J11-I12-G12-G10-F9-C10-B7-B3-C4-E2-F3-G4-I4-J1,,,,,OR 6
+D,PayOut,Action,1053,,710.0,,,OR 6.3,IR,,,,,,,,,71.0,,,,OR 6
+D,SharePriceMoves,Event,1054,,,,,OR 6.3,IR,90.0,,,,,up,,,,,,,OR 6
+D,Pass,Action,1055,,,,,OR 6.3,IR,,,,,,,,,,,,,OR 6
+D,Skip,Action,1056,,,,,OR 6.3,IR,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,1057,zorbak,,,,OR 6.3,KO,,,,,,,,,,,,,OR 6
+D,Pass,Action,1058,,,,,OR 6.3,KO,,,,,,,,,,,,,OR 6
+D,Skip,Action,1059,,,,,OR 6.3,KO,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,1060,,310.0,,,OR 6.3,KO,,,,,,,6,F1-F3-G4-I4-K4-L7,,,,,OR 6
+D,PayOut,Action,1061,,310.0,,,OR 6.3,KO,,,,,,,,,31.0,,,,OR 6
+D,SharePriceMoves,Event,1062,,,,,OR 6.3,KO,90.0,,,,,up,,,,,,,OR 6
+D,Pass,Action,1063,,,,,OR 6.3,KO,,,,,,,,,,,,,OR 6
+D,Skip,Action,1064,,,,,OR 6.3,KO,,,,,,,,,,,,,OR 6
+D,OperatesCompany,Event,1065,mindbomb(UTC+9),,,,OR 6.3,SR,,,,,,,,,,,,,OR 6
+D,LayTile,Action,1066,,0.0,,,OR 6.3,SR,,,H7,15,1,,,,,,,,OR 6
+D,Skip,Action,1067,,,,,OR 6.3,SR,,,,,,,,,,,,,OR 6
+D,RunTrain,Action,1068,,720.0,,,OR 6.3,SR,,,,,,,D,F1-F3-C4-B3-B7-C10-F9-G10-G12-I12-J11-J9-K8-I4-G4-I2-J1,,,,,OR 6
+D,PayOut,Action,1069,,720.0,,,OR 6.3,SR,,,,,,,,,72.0,,,,OR 6
+D,SharePriceMoves,Event,1070,,,,,OR 6.3,SR,90.0,,,,,right,,,,,,,OR 6
+D,Skip,Action,1071,,,,,OR 6.3,SR,,,,,,,,,,,,,OR 6
+D,Skip,Action,1072,,,,,OR 6.3,SR,,,,,,,,,,,,,OR 6
+D,GameOver,Event,1073,,,,,OR 6.3,,,,,,,,,,,,,"{'tado': 4249, 'Sprint': 3968, 'camping no reception': 3775, 'mindbomb(UTC+9)': 2807, 'zorbak': 2804, 'Millie': 2468}",OR 6

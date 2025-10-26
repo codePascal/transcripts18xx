@@ -206,14 +206,14 @@ class TestTranscriptPostProcessor1889(unittest.TestCase):
 
     def test_shape(self):
         self.assertEqual(1053, self.df.shape[0])
-        self.assertEqual(22, self.df.shape[1])
+        self.assertEqual(23, self.df.shape[1])
 
     def test_columns(self):
         expected = [
             'amount', 'company', 'direction', 'id', 'location', 'new_train',
             'old_train', 'parent', 'per_share', 'percentage', 'phase', 'player',
             'private', 'rotation', 'route', 'sequence', 'share_price', 'source',
-            'tile', 'train', 'type', 'result'
+            'tile', 'train', 'type', 'result', 'major_round'
         ]
         self.assertEqual(sorted(expected), sorted(list(self.df.columns)))
 
@@ -260,3 +260,11 @@ class TestTranscriptPostProcessor1889(unittest.TestCase):
         self.assertEqual('UR', self.df.iloc[773, :].company)
         self.assertEqual('IR', self.df.iloc[906, :].company)
         self.assertEqual('SR', self.df.iloc[923, :].company)
+
+    def test_major_rounds(self):
+        expected = {
+            'ISR 1',
+            'OR 1', 'OR 2', 'OR 3', 'OR 4', 'OR 5', 'OR 6',
+            'SR 1', 'SR 2', 'SR 3', 'SR 4', 'SR 5', 'SR 6',
+        }
+        self.assertEqual(expected, set(self.df.major_round.unique()))

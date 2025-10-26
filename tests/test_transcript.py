@@ -154,7 +154,7 @@ class TestTranscriptContext(unittest.TestCase):
         df = self.cnt.result()
         self.assertIsInstance(df, pd.DataFrame)
         self.assertEqual(1346, df.shape[0])
-        self.assertEqual(165, df.shape[1])
+        self.assertEqual(166, df.shape[1])
 
 
 class TestTranscriptVerification(unittest.TestCase):

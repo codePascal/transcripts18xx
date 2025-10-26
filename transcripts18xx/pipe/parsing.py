@@ -182,6 +182,12 @@ class TranscriptPostProcessor:
             self._df.loc[0, 'sequence'] = self._game.initial_round
         self._df.sequence = self._df.sequence.ffill()
 
+    def _map_major_round(self):
+        # Map major round, e.g., OR 3.1 --> 3.
+        self._df['major_round'] = self._df.sequence.apply(
+            lambda x: x.split('.')[0]
+        )
+
     def _remove_transcript_lines(self):
         # Removes the lines from the transcript.
         self._df.drop('line', axis=1, inplace=True)
@@ -243,6 +249,7 @@ class TranscriptPostProcessor:
         # TODO: parse the GameOver step for players
         self._map_phase()
         self._map_rounds()
+        self._map_major_round()
         self._remove_transcript_lines()
         self._map_entity()
         self._clean_locations()

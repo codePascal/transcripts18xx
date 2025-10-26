@@ -108,6 +108,7 @@ These columns track key actions and events, involved entities and game flow:
 |                      | `sequence`    | Round identifier (e.g., SR 1, OR 3.1)                       | dense          |
 |                      | `id`          | Sequence number within game                                 | dense          |
 |                      | `parent`      | Group of which type is part of (e.g., Action or Event)      | dense          |
+|                      | `major_round` | Major stock and operating round (e.g., SR 1, OR 3`)         | dense          |
 | **Player Actions**   | `player`      | Player involved                                             | sparse         |
 |                      | `amount`      | Amount of money in $ involved                               | sparse         |
 |                      | `source`      | Source involved (e.g., IPO, market, Depot, player, company) | sparse         |

@@ -19,6 +19,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   game ending, parse and verification results.
 - Entry point for package with user accessible modules.
 - Transcript context that contains relevant data about parsed transcript.
+- Column `major_round` depicting major stock and operating rounds.
 
 ### Changed
 
