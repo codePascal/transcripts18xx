@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "transcripts18xx"
-version = "3.0.0"
+version = "4.0.0"
 description = "A Python package to preprocess game transcripts from 18xx.games"
 authors = ["Pascal <mup0117@gmail.com>"]
 readme = "README.md"

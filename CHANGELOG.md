@@ -10,6 +10,16 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+### Changed
+
+### Removed
+
+### Fixed
+
+## [4.0.0] - 2025-10-28
+
+### Added
+
 - Detection for decrease of minimum bid during auction.
 - Detection for declining placing a token (1830: Delaware & Hudson)
 - The parse result or error received during parsing is written to the metadata.
