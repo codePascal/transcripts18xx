@@ -20,6 +20,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Entry point for package with user accessible modules.
 - Transcript context that contains relevant data about parsed transcript.
 - Column `major_round` depicting major stock and operating rounds.
+- Poetry script called `trx` to have main script available after installation.
 
 ### Changed
 

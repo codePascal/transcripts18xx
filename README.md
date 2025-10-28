@@ -97,6 +97,9 @@ Output Artifacts
 The parsing output is saved as Pandas DataFrame and contains detailed game state
 information and can be structured into three major column groups.
 
+An example is shown
+here: [1830_201210_final.csv](https://github.com/codePascal/transcripts18xx/blob/main/tests/resources/1830_201210_final.csv)
+
 #### Core actions and events
 
 These columns track key actions and events, involved entities and game flow:
@@ -158,6 +161,9 @@ Each company has a set of attributes describing its state at any point in time.
 The game metadata complements the processed CSV file.
 It provides game information, the final game state, player results, a
 verification result and unprocessed lines during parsing.
+
+An example is shown
+here: [1830_201210_metadata.json](https://github.com/codePascal/transcripts18xx/blob/main/tests/resources/1830_201210_metadata.json)
 
 #### Game information
 
@@ -261,6 +267,32 @@ step during parsing, will be written to the metadata as well.
 The parse result depicts the success of the raw transcript parsing. If no errors
 occurred, it will be set to `SUCCESS`. Otherwise, the received error will be
 written, i.e., `No players found`.
+
+Parsing a transcript
+--------------------
+
+After installation, single transcripts can be parsed by calling the poetry
+script `trx` from the command line.
+
+Run the following command to see command line options:
+
+```bash
+trx --help
+```
+
+### Run full verification
+
+The script automatically runs a full verification of the final game state based
+on a ground truth file.
+
+The file must be located in the transcript directory and must be named
+`<game>_<id>_truth.json`.
+Its structure is similar to the one depicted in [Final state](#final-state).
+Except that its structure omits the key `final_state` and player names are not
+anonymized but the real player names.
+
+Such an example is shown
+here: [1830_201210_truth.json](https://github.com/codePascal/transcripts18xx/blob/main/tests/resources/1830_201210_truth.json)
 
 Supported Games
 ---------------

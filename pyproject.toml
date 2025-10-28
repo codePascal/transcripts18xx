@@ -25,7 +25,7 @@ without_hashes = true
 without = ["dev"]
 
 [tool.poetry.scripts]
-tsx = "main:main"
+trx = "main:main"
 
 [build-system]
 requires = ["poetry-core"]
