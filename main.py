@@ -56,7 +56,9 @@ def parse_arguments():
     return parser.parse_args()
 
 
-def main(args):
+def main():
+    args = parse_arguments()
+
     level = logging.INFO
     if args.debug:
         level = logging.DEBUG
@@ -78,4 +80,4 @@ def main(args):
 
 
 if __name__ == '__main__':
-    main(parse_arguments())
+    main()
