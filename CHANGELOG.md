@@ -16,6 +16,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+## [4.0.1] - 2025-11-09
+
+### Added
+
+- GitHub workflow to run tests upon push
+- Issue templates for bug reports and feature requests.
+- readthedocs configuration file and requirements.
+
 ## [4.0.0] - 2025-10-28
 
 ### Added
@@ -32,13 +40,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Column `major_round` depicting major stock and operating rounds.
 - Poetry script called `trx` to have main script available after installation.
 
-### Changed
-
 ### Removed
 
 - Public functions to access metadata information. Moved to transcript context.
-
-### Fixed
 
 ## [3.0.0] - 2025-09-14
 
@@ -57,8 +61,6 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Start capital of Games18xx denote starting capital of each player and not the
   sum that is divided.
-
-### Removed
 
 ### Fixed
 
