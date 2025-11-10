@@ -19,6 +19,7 @@ furo = "^2024.8.6"
 myst-parser = "^4.0.1"
 sphinx-new-tab-link = "^0.8.0"
 pylint = "^3.3.8"
+sphinx-multiversion = "^0.2.4"
 
 [tool.poetry-auto-export]
 output = "requirements.txt"

@@ -9,8 +9,7 @@ def main():
 
 def build():
     subprocess.run(
-        ['sphinx-build', '-M', 'html', './docs/source', './docs/build'],
-        check=True
+        ['sphinx-multiversion', './docs/source', './docs/build'], check=True
     )
 
 
