@@ -15,4 +15,13 @@ Content
     usage
     reference
 
+Supported games
+---------------
 
+The following games are supported:
+
+* `1830: Railroads & Robber Barons <https://en.wikipedia.org/wiki/1830:_The_Game_of_Railroads_and_Robber_Barons>`_
+
+Games soon to be supported:
+
+* `Shikoku 1889: <https://boardgamegeek.com/boardgame/23540/shikoku-1889>`_
