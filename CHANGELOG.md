@@ -16,6 +16,17 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+## [4.0.2] - 2025-11-10
+
+### Added
+
+- The base classes for 18xx games (18xx, 1830, 1889) are now directly accessible
+  using the import of the package.
+
+### Changed
+
+- Polished the documentation and updated README.
+
 ## [4.0.1] - 2025-11-09
 
 ### Added
