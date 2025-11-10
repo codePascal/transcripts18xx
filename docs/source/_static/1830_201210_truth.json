@@ -1,0 +1,226 @@
+{
+  "players": {
+    "mpakfm": {
+      "name": "mpakfm",
+      "cash": 1260,
+      "value": 2740,
+      "liquidity": 2610,
+      "certs": 7,
+      "privates": {},
+      "shares": {
+        "B&M": 0,
+        "B&O": 2,
+        "C&O": 0,
+        "CPR": 0,
+        "ERIE": 0,
+        "NYC": 6,
+        "NYNH": 0,
+        "PRR": 0
+      },
+      "priority_deal": true
+    },
+    "mpcoyne": {
+      "name": "mpcoyne",
+      "cash": 3304,
+      "value": 6735,
+      "liquidity": 6248,
+      "certs": 17,
+      "privates": {},
+      "shares": {
+        "B&M": 6,
+        "B&O": 6,
+        "C&O": 1,
+        "CPR": 0,
+        "ERIE": 4,
+        "NYC": 1,
+        "NYNH": 0,
+        "PRR": 1
+      },
+      "priority_deal": false
+    },
+    "riverfiend": {
+      "name": "riverfiend",
+      "cash": 3560,
+      "value": 5523,
+      "liquidity": 5142,
+      "certs": 17,
+      "privates": {},
+      "shares": {
+        "B&M": 3,
+        "B&O": 0,
+        "C&O": 6,
+        "CPR": 0,
+        "ERIE": 6,
+        "NYC": 1,
+        "NYNH": 2,
+        "PRR": 1
+      },
+      "priority_deal": false
+    },
+    "leesin": {
+      "name": "leesin",
+      "cash": 3432,
+      "value": 6648,
+      "liquidity": 5807,
+      "certs": 23,
+      "privates": {},
+      "shares": {
+        "B&M": 1,
+        "B&O": 2,
+        "C&O": 1,
+        "CPR": 6,
+        "ERIE": 0,
+        "NYC": 2,
+        "NYNH": 6,
+        "PRR": 8
+      },
+      "priority_deal": false
+    }
+  },
+  "companies": {
+    "B&M": {
+      "name": "B&M",
+      "cash": 0,
+      "ipo": 0,
+      "market": 0,
+      "president": "mpcoyne",
+      "tokens": 0,
+      "share_price": 100,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "D": 1
+      }
+    },
+    "B&O": {
+      "name": "B&O",
+      "cash": 0,
+      "ipo": 0,
+      "market": 0,
+      "president": "mpcoyne",
+      "tokens": 1,
+      "share_price": 350,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 1,
+        "D": 0
+      }
+    },
+    "C&O": {
+      "name": "C&O",
+      "cash": 140,
+      "ipo": 0,
+      "market": 2,
+      "president": "riverfiend",
+      "tokens": 0,
+      "share_price": 90,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "D": 0
+      }
+    },
+    "CPR": {
+      "name": "CPR",
+      "cash": 40,
+      "ipo": 3,
+      "market": 1,
+      "president": "leesin",
+      "tokens": 3,
+      "share_price": 125,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "D": 1
+      }
+    },
+    "ERIE": {
+      "name": "ERIE",
+      "cash": 2,
+      "ipo": 0,
+      "market": 0,
+      "president": "riverfiend",
+      "tokens": 2,
+      "share_price": 111,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 1,
+        "D": 0
+      }
+    },
+    "NYC": {
+      "name": "NYC",
+      "cash": 56,
+      "ipo": 0,
+      "market": 0,
+      "president": "mpakfm",
+      "tokens": 1,
+      "share_price": 130,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "D": 1
+      }
+    },
+    "NYNH": {
+      "name": "NYNH",
+      "cash": 170,
+      "ipo": 0,
+      "market": 2,
+      "president": "leesin",
+      "tokens": 0,
+      "share_price": 130,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "D": 0
+      }
+    },
+    "PRR": {
+      "name": "PRR",
+      "cash": 40,
+      "ipo": 0,
+      "market": 0,
+      "president": "leesin",
+      "tokens": 0,
+      "share_price": 67,
+      "privates": {},
+      "trains": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "D": 1
+      }
+    }
+  }
+}
