@@ -39,12 +39,6 @@ class TranscriptParser:
     with the result in the game log in case the game was finished. Parsed
     transcript and its metadata are saved in the raw transcript folder.
 
-    Attributes:
-        _transcript: The path to the game transcript.
-        _game: The underlying 18xx game.
-        _metadata: The metadata to the parsing result.
-        _df: The parsed transcript data.
-
     Args:
         transcript: The filepath to the transcript.
         game: The underlying 18xx game, see `games.G18xx`.

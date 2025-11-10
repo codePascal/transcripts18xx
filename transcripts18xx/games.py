@@ -39,6 +39,8 @@ class Game18xx(abc.ABC):
 class Game1830(Game18xx):
     """Game1830
 
+    The class to represent `1830: Railways & Robber Barons` game variants.
+
     See Also:
         https://github.com/tobymao/18xx/wiki/1830
     """
@@ -71,6 +73,8 @@ class Game1830(Game18xx):
 
 class Game1889(Game18xx):
     """Game1889
+
+    The class to represent `Shikoku 1889` game variants.
 
     See Also:
         https://github.com/tobymao/18xx/wiki/1889
