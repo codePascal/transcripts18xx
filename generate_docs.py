@@ -4,14 +4,7 @@ import subprocess
 
 
 def main():
-    update()
     build()
-
-
-def update():
-    subprocess.run(
-        ['sphinx-apidoc', '-o', './docs/source', './transcripts18xx']
-    )
 
 
 def build():
