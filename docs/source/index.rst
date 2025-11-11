@@ -24,4 +24,4 @@ The following games are supported:
 
 Games soon to be supported:
 
-* `Shikoku 1889: <https://boardgamegeek.com/boardgame/23540/shikoku-1889>`_
+* `Shikoku 1889 <https://boardgamegeek.com/boardgame/23540/shikoku-1889>`_
